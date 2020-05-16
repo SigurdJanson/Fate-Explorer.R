@@ -23,14 +23,22 @@
                      tabPanel("Decide Your Fate",
                               sidebarLayout(
                                   sidebarPanel(
-                                      radioButtons("RollType", "Type of Roll",
-                                                   c("Scatter"="p", "Line"="l")
-                                      ),
-                                      actionButton("ThrowDice", "Now!")
+                                      checkboxInput("SkillIgnore", "Ignore skill, just throw", TRUE),
+                                      hr(),
+                                      sliderInput("SkillTrait1", "1st Trait", min = 1, max = 20, value = 11),
+                                      sliderInput("SkillTrait2", "2nd Trait", min = 1, max = 20, value = 11),
+                                      sliderInput("SkillTrait3", "3rd Trait", min = 1, max = 20, value = 11),
+                                      hr(),
+                                      sliderInput("SkillValue", "Skill", min = 0, max = 20, value = 4),
+                                      sliderInput("SkillMod", "Modifier", min = -10, max = 10, value = 0),
+                                      conditionalPanel(condition = "input.SkillMod < 0", helpText("Impediment")),
+                                      conditionalPanel(condition = "input.SkillMod > 0", helpText("Advantage"))
                                   ),
-                                  mainPanel({
-                                      renderText(Thrown)
-                                  })
+                                  mainPanel(
+                                      actionButton("doSkillThrow", "Now!"),
+                                      hr(),
+                                      h3(textOutput("SkillThrow"))
+                                  )
                               )),
                    tabPanel("Fight",
                             sidebarLayout(
@@ -38,14 +46,13 @@
                                     sliderInput("ATValue", "AT", min = 1, max = 20, value = 11),
                                     sliderInput("PAValue", "PA", min = 1, max = 20, value = 4),
                                     numericInput("Damage", "Damage W6+", value = 1),
-                                    actionButton("doAttackThrow", "Attack!", icon = icon("skull"), width = "100%"),
-                                    actionButton("doParryThrow", "Parry!", icon = icon("shield-alt"), width = "100%"),
                                 ),
                                 mainPanel(
-                                    h3(textOutput("ATValue")),
-                                    helpText("Go for it, buster!"),
-                                    #textOutput("AttackThrow"),
-                                    textOutput("CombatAction")
+                                    actionButton("doAttackThrow", "Attack!", icon = icon("skull"), width = "49%"),
+                                    actionButton("doParryThrow", "Parry!", icon = icon("shield-alt"), width = "49%"),
+                                    hr(),
+                                    h3(textOutput("CombatAction"))
+                                    
                                 )
                             )),
                    

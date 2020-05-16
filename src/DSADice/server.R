@@ -8,35 +8,28 @@
 #
 
 library(shiny)
+source("dicelogic.R")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-    # LastThrow <- "NULL"
-    # 
-    # output$distPlot <- renderPlot({
-    #     # generate bins based on input$bins from ui.R
-    #     x    <- faithful[, 2]
-    #     bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    #     # draw the histogram with the specified number of bins
-    #     hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    # })
-    # 
-    # output$TraitDie <- renderText(
-    #     paste("Here it comes:", LastThrow)
+    # SkillModifierLabel <- eventReactive(
+    #     #impediment
+    #     #advantage
     # )
-    # 
-    # output$Thrown <- renderText(
-    #    LastThrow
-    # )
-    
-    # observeEvent(input$ThrowDice, {
-    #     #cat("Showing", input$x, "rows\n")
-    #     LastThrow <- sample.int(20, 3)
-    #     cat(LastThrow, "\n")
-    # })
-    LastThrow <- eventReactive(input$ThrowDice, {
-        sample.int(20, 3)
+    LastThrow <- eventReactive(input$doSkillThrow, {
+        sample.int(20, 3, TRUE)
     })
+    output$SkillThrow <- renderPrint({
+        Result <- LastThrow()
+        if(!input$SkillIgnore) {
+            Success <- VerifySkillRoll(Result, 
+                                       c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3), 
+                                       input$SkillValue, input$SkillMod)
+            Result <- c(Result, ifelse(Success, "Success", "Failure"))
+        }
+        cat(Result)
+    })
+
     
     # FIGHTING TAB --------------------
     FightVal <- reactiveValues(AT = NA, PA = NA)
@@ -49,12 +42,15 @@ shinyServer(function(input, output) {
     observeEvent(input$doParryThrow, {
         FightVal$PA <- sample.int(20, 1)
         FightVal$AT <- NA
-    })  
+    })
     
     output$CombatAction <- renderPrint({
         if (!is.na(FightVal$AT)) {
-            cat("Attack\n")
-            Result <- paste(FightVal$AT, ifelse(FightVal$AT <= input$ATValue, "Success", "Failure"))
+            Result <- "Attack\n"
+            Result <- c(Result, paste(FightVal$AT, ifelse(FightVal$AT <= input$ATValue, "Success", "Failure")))
+            Result <- c(Result, "Damage:")
+            Result <- c(Result, sample.int(6, 1)+input$Damage)
+            Result <- c(Result, "\n")
         } else if (!is.na(FightVal$PA)) {
             cat("Parry\n")
             Result <- paste(FightVal$PA, ifelse(FightVal$PA <= input$PAValue, "Success", "Failure"))
