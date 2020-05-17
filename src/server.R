@@ -13,7 +13,7 @@ source("dicelogic.R")
 
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
     # SKILL TAB   -----------------------
     LastThrow <- eventReactive(input$doSkillThrow, {
         sample.int(20, 3, TRUE)
@@ -39,7 +39,7 @@ shinyServer(function(input, output) {
         FightVal$Action  <- "Attack"
         FightVal$Roll    <- CombatRoll()
         FightVal$Success <- VerifyCombatRoll(FightVal$Roll, input$ATValue)
-        # 
+        # Level of success
         if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
             FightVal$ConfirmRoll <- CombatRoll()
             Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, input$ATValue)
@@ -49,7 +49,8 @@ shinyServer(function(input, output) {
         } else {
             FightVal$ConfirmRoll <- NA
         }
-        # 
+        FightVal$EffectOfFumble <- NA
+        # Damage
         if (FightVal$Success == "Critical")
             FightVal$Damage <- 2 * DamageRoll(input$Damage)
         else if  (FightVal$Success == "Success")
@@ -63,7 +64,7 @@ shinyServer(function(input, output) {
         FightVal$Roll    <- CombatRoll()
         FightVal$Success <- VerifyCombatRoll(FightVal$Roll, input$PAValue)
         FightVal$Damage  <- NA
-        # 
+        # Level of success
         if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
             FightVal$ConfirmRoll <- CombatRoll()
             Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, input$ATValue)
@@ -73,6 +74,7 @@ shinyServer(function(input, output) {
         } else {
             FightVal$ConfirmRoll <- NA
         }
+        FightVal$EffectOfFumble <- NA
     })
     
     output$CombatAction <- renderPrint({
@@ -89,14 +91,13 @@ shinyServer(function(input, output) {
     
     output$CombatConfirm <- renderPrint({
         if (FightVal$Success == "Fumble") {
-            #icon("frown-open")
-            Result <- "Fumble!"
+            Result <- "Fumble!" #icon("frown-open")
         } else if (FightVal$Success == "Critical") {
-            Result <- "Critical confirmed"
+            Result <- "Critical confirmed!"
         } else if (FightVal$Success == "Success") {
             Result <- "Critical was lost :-("
         } else if (FightVal$Success == "Fail") {
-            Result <- ""
+            Result <- "Fumble avoided :-)"
         } else Result <- ""
         
         cat(Result)
@@ -110,5 +111,26 @@ shinyServer(function(input, output) {
     
     output$CombatDamage <- renderPrint({
         cat("Hit points: ", FightVal$Damage)
+    })
+    
+    
+    # Fumble Panel
+    output$ShowCombatFumble <- reactive({
+        return( FightVal$Success == "Fumble" )
+    })
+    outputOptions(output, 'ShowCombatFumble', suspendWhenHidden = FALSE)
+    
+    output$CombatFumble <- renderPrint({
+        if(!is.na(FightVal$EffectOfFumble)) {
+            Result <- GetCombatFumbleEffect(FightVal$EffectOfFumble)
+        } else Result <- "Test"
+
+        cat(Result)
+    })
+    
+    observeEvent(input$doCombatFumble, {
+        FightVal$EffectOfFumble <- CombatFumbleRoll()
+        #session$sendCustomMessage(type = 'testmessage',
+        #                          message = 'Thank you for clicking')
     })
 })

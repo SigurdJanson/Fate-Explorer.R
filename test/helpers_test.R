@@ -31,3 +31,29 @@ test_that("VerifyCombatRoll", {
     }
   }
 })
+
+
+
+test_that("CombatFumbleRoll", {
+  for(i in 1:100) {
+    o <- CombatFumbleRoll()
+    expect_gte(o, 2)
+    expect_lte(o, 12)
+  }
+})
+
+
+
+test_that("GetCombatFumbleEffect", {
+  expect_error(GetCombatFumbleEffect(0))
+  expect_error(GetCombatFumbleEffect(1))
+  expect_error(GetCombatFumbleEffect(13))
+  
+  for(r in 2:12) {
+    o <- expect_silent(GetCombatFumbleEffect(r))
+    expect_gte(length(o), 0)
+  }
+  
+  expect_identical(GetCombatFumbleEffect(2), "Weapon destroyed")
+  expect_identical(GetCombatFumbleEffect(12), "Hurt yourself BAD")
+})

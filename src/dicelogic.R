@@ -8,6 +8,29 @@ DamageRoll <- function(Mod = 0) {
   return(sample.int(6, 1) + Mod)
 }
 
+CombatFumbleRoll <- function() {
+  Result <- sum(sample.int(6, 2))
+}
+
+GetCombatFumbleEffect <- function(Roll) {
+  if(missing(Roll)) stop("No roll given")
+  if(Roll < 2 || Roll > 12) stop("Invalid fumble roll")
+  
+  Text <- data.frame(Roll = 2:12, Effect = c("Weapon destroyed",
+                                            "Weapon heavily damaged",
+                                            "Weapon damaged",
+                                            "Weapon lost",
+                                            "Weapon is stuck",
+                                            "You fell",
+                                            "You stumble",
+                                            "Twisted foot",
+                                            "Beule",
+                                            "Hurt yourself",
+                                            "Hurt yourself BAD"))
+  Result <- Text$Effect[Text$Roll == Roll]
+  return(as.character(Result))
+}
+
 
 #' VerifyCombatRoll
 #'

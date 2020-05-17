@@ -56,7 +56,13 @@ shinyUI(fluidPage(
                                     conditionalPanel(
                                       condition = "output.ShowCombatDamage",
                                       textOutput("CombatDamage")
+                                    ),
+                                    conditionalPanel(
+                                      condition = "output.ShowCombatFumble",
+                                      actionButton("doCombatFumble", "See what happens...", icon = icon("shield-alt")),
+                                      textOutput("CombatFumble")
                                     )
+                                    
                                 )
                             )),
                    
