@@ -1,13 +1,16 @@
 
 sidebarLayout(
   sidebarPanel(
-    sliderInput("ATValue", "AT", min = 1, max = 20, value = 11),
-    sliderInput("PAValue", "PA", min = 1, max = 20, value = 4),
+    sliderInput("ATValue", "Attack", min = 1, max = 20, value = 11),
+    sliderInput("PAValue", "Parry",  min = 1, max = 20, value = 4),
     numericInput("Damage", "Damage W6+", value = 1),
+    hr(),
+    sliderInput("DodgeValue",   "Dodge",  min = 1, max = 10, value = 5),
   ),
   mainPanel(
-    actionButton("doAttackThrow", "Attack!", icon = icon("skull"), width = "49%"),
-    actionButton("doParryThrow", "Parry!", icon = icon("shield-alt"), width = "49%"),
+    actionButton("doAttackThrow", "Attack", icon = icon("skull"), width = "32%"),
+    actionButton("doParryThrow", "Parry", icon = icon("shield-alt"), width = "32%"),
+    actionButton("doDodge", "Dodge", icon = icon("running"), width = "32%"),
     hr(),
     h3(textOutput("CombatAction")),
     conditionalPanel(
