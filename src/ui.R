@@ -1,70 +1,21 @@
 #
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
 #
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
+
+
 shinyUI(fluidPage(
-# 
 #     # Application title
 #     titlePanel(title, windowTitle = title)
      ui <- 
         navbarPage("Dark Eye - Fate Explorer", 
-                     position = c("static-top"), inverse = TRUE, collapsible = TRUE,
-                     tabPanel("Decide Your Fate",
-                              sidebarLayout(
-                                  sidebarPanel(
-                                      checkboxInput("SkillIgnore", "Ignore skill, just throw", TRUE),
-                                      conditionalPanel(condition = "input.SkillIgnore == 0",
-                                          hr(),
-                                          sliderInput("SkillTrait1", "1st Trait", min = 1, max = 20, value = 11),
-                                          sliderInput("SkillTrait2", "2nd Trait", min = 1, max = 20, value = 11),
-                                          sliderInput("SkillTrait3", "3rd Trait", min = 1, max = 20, value = 11),
-                                          hr(),
-                                          sliderInput("SkillValue", "Skill", min = 0, max = 20, value = 4),
-                                          sliderInput("SkillMod", "Modifier", min = -10, max = 10, value = 0),
-                                          conditionalPanel(condition = "input.SkillMod < 0", helpText("Impediment")),
-                                          conditionalPanel(condition = "input.SkillMod > 0", helpText("Advantage"))
-                                      ),
-                                  ),
-                                  mainPanel(
-                                      actionButton("doSkillThrow", "Now!"),
-                                      hr(),
-                                      h3(textOutput("SkillThrow"))
-                                  )
-                              )),
+                   position = c("static-top"), inverse = TRUE, collapsible = TRUE,
+                   tabPanel("Decide Your Fate",
+                            source(file.path("ui", "tab_skill_ui.R"),  local = TRUE)$value
+                           ),
+                   
                    tabPanel("Fight",
-                            sidebarLayout(
-                                sidebarPanel(
-                                    sliderInput("ATValue", "AT", min = 1, max = 20, value = 11),
-                                    sliderInput("PAValue", "PA", min = 1, max = 20, value = 4),
-                                    numericInput("Damage", "Damage W6+", value = 1),
-                                ),
-                                mainPanel(
-                                    actionButton("doAttackThrow", "Attack!", icon = icon("skull"), width = "49%"),
-                                    actionButton("doParryThrow", "Parry!", icon = icon("shield-alt"), width = "49%"),
-                                    hr(),
-                                    h3(textOutput("CombatAction")),
-                                    conditionalPanel(
-                                      condition = "output.ShowCombatConfirm",
-                                      textOutput("CombatConfirm")
-                                    ),
-                                    conditionalPanel(
-                                      condition = "output.ShowCombatDamage",
-                                      textOutput("CombatDamage")
-                                    ),
-                                    conditionalPanel(
-                                      condition = "output.ShowCombatFumble",
-                                      actionButton("doCombatFumble", "See what happens...", icon = icon("shield-alt")),
-                                      textOutput("CombatFumble")
-                                    )
-                                    
-                                )
-                            )),
+                            source(file.path("ui", "tab_combat_ui.R"),  local = TRUE)$value
+                           ),
                    
                    tabPanel("Explore", {}),
                    
