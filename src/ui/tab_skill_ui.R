@@ -9,9 +9,13 @@ sidebarLayout(
                      sliderInput("SkillTrait3", "3rd Trait", min = 1, max = 20, value = 11),
                      hr(),
                      sliderInput("SkillValue", "Skill", min = 0, max = 20, value = 4),
+                     div(style="float:right",
+                         conditionalPanel(condition = "input.SkillMod < 0", 
+                                          icon("minus-circle"), "Impediment"),
+                         conditionalPanel(condition = "input.SkillMod > 0", 
+                                          icon("plus-circle"), "Advantage")
+                     ),
                      sliderInput("SkillMod", "Modifier", min = -10, max = 10, value = 0),
-                     conditionalPanel(condition = "input.SkillMod < 0", helpText("Impediment")),
-                     conditionalPanel(condition = "input.SkillMod > 0", helpText("Advantage"))
     ),
   ),
   mainPanel(
