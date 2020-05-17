@@ -13,7 +13,12 @@ sidebarLayout(
   ),
   mainPanel(
     h3(textOutput("CharacterName")),
-    hr(),
+    conditionalPanel(
+      condition = "output.ShowSetupWeapons",
+      hr(), h3("Weapons"),
+      tableOutput("SetupWeapons")
+    ),
+    hr(), h3("Json File"),
     textOutput("RawContents")
   )
 )
