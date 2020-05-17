@@ -31,96 +31,84 @@ shinyServer(function(input, output) {
 
     
     # FIGHTING TAB --------------------
-    FightVal <- reactiveValues(AT = NA, PA = NA, Success = "Fail", Damage = 0)
+    FightVal <- reactiveValues(Action = NA, Roll = NA, 
+                               Success = "Fail", Damage = 0,
+                               ConfirmRoll = 0, Confirmation = NA)
     
     observeEvent(input$doAttackThrow, {
-        FightVal$AT <- sample.int(20, 1)
-        FightVal$PA <- NA
-        FightVal$Success <- VerifyCombatRoll(FightVal$AT, input$ATValue)
-        FightVal$Damage <- sample.int(6, 1) + input$Damage
+        FightVal$Action  <- "Attack"
+        FightVal$Roll    <- CombatRoll()
+        FightVal$Success <- VerifyCombatRoll(FightVal$Roll, input$ATValue)
+        # 
+        if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
+            FightVal$ConfirmRoll <- CombatRoll()
+            Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, input$ATValue)
+            FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+            if (!FightVal$Confirmation)
+                FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+        } else {
+            FightVal$ConfirmRoll <- NA
+        }
+        # 
+        if (FightVal$Success == "Critical")
+            FightVal$Damage <- 2 * DamageRoll(input$Damage)
+        else if  (FightVal$Success == "Success")
+            FightVal$Damage <- DamageRoll(input$Damage)
+        else 
+            FightVal$Damage <- NA
     })
     
     observeEvent(input$doParryThrow, {
-        FightVal$PA <- sample.int(20, 1)
-        FightVal$AT <- NA
-        FightVal$Success <- VerifyCombatRoll(FightVal$PA, input$PAValue)
-        FightVal$Damage <- 0
+        FightVal$Action  <- "Parry"
+        FightVal$Roll    <- CombatRoll()
+        FightVal$Success <- VerifyCombatRoll(FightVal$Roll, input$PAValue)
+        FightVal$Damage  <- NA
+        # 
+        if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
+            FightVal$ConfirmRoll <- CombatRoll()
+            Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, input$ATValue)
+            FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+            if (!FightVal$Confirmation)
+                FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+        } else {
+            FightVal$ConfirmRoll <- NA
+        }
     })
     
     output$CombatAction <- renderPrint({
-        if (!is.na(FightVal$AT)) {
-            Result <- paste("Attack:", FightVal$AT, FightVal$Success)
-        } else if (!is.na(FightVal$PA)) {
-            Result <- "Attack: "
-            Result <- paste("Parry:", FightVal$PA, FightVal$Success)
-        } else Result = ""
-
+        Result <- paste0(FightVal$Action, ": ", FightVal$Roll, " - ", FightVal$Success)
         cat(Result)
     })
     
-    output$CombatConfirmation <- reactive({
-        return( (FightVal$Success == "Fumble") | 
-                    (FightVal$Success == "Critical") )
+    # Confirmation Panel
+    output$ShowCombatConfirm <- reactive({
+        #return( (FightVal$Success == "Fumble") | (FightVal$Success == "Critical") )
+        return(!is.na(FightVal$ConfirmRoll))
     })
-    outputOptions(output, 'CombatConfirmation', suspendWhenHidden = FALSE)
+    outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
     
     output$CombatConfirm <- renderPrint({
-        Limit <- ifelse(is.na(FightVal$AT), FightVal$PA, FightVal$AT)
-
         if (FightVal$Success == "Fumble") {
-            Fumble <- sample.int(20, 1)
-            if (Fumble > Limit) {
-                #icon("frown-open")
-                Result <- "Fumble!"
-            } else {
-                Result <- "Fumble avoided"
-                #FightVal$Success <- "Fail"
-            }
+            #icon("frown-open")
+            Result <- "Fumble!"
         } else if (FightVal$Success == "Critical") {
-            Critical <- sample.int(20, 1)
-            if (Critical <= Limit) {
-                #icon("smile-open")
-                Result <- paste("Critical confirmed - Damage:", FightVal$Damage)
-            } else {
-                Result <- "Critical was lost"
-                #FightVal$Success <- "Success"
-            }
-        }
+            Result <- "Critical confirmed"
+        } else if (FightVal$Success == "Success") {
+            Result <- "Critical was lost :-("
+        } else if (FightVal$Success == "Fail") {
+            Result <- ""
+        } else Result <- ""
+        
         cat(Result)
     })
 
-    # output$CombatCriticals <- renderUI({
-    #     Limit <- ifelse(is.na(FightVal$AT), FightVal$PA, FightVal$AT)
-    #         
-    #     if (FightVal$Success == "Fumble") {
-    #         Fumble <- sample.int(20, 1)
-    #         if (Fumble > Limit) {
-    #             icon("frown-open")
-    #             helpText("Fumble confirmed")
-    #         } else {
-    #             helpText("Fumble avoided")
-    #             FightVal$Success <- "Fail"
-    #         }
-    #     } else if (FightVal$Success == "Critical") {
-    #         Critical <- sample.int(20, 1)
-    #         if (Critical <= Limit) {
-    #             icon("smile-open")
-    #             helpText("Critical confirmed")
-    #         } else {
-    #             helpText("Critical not confirmed")
-    #             FightVal$Success <- "Success"
-    #         }
-    #     }
-    #     
-    #     helpText(FightVal$Success)
-    #     if (!is.na(FightVal$AT)) {
-    #         switch (FightVal$Success,
-    #                 Critical = {helpText(paste("Damage x2:", FightVal$Damage*2))},
-    #                 Success = {helpText(paste("Damage:", FightVal$Damage))},
-    #                 Fail = {helpText("-")},
-    #                 Fumble = {helpText("-")}
-    #         )
-    #     }
-    #     helpText("HELP!")
-    # })
+    # Damage Panel
+    output$ShowCombatDamage <- reactive({
+        return( !is.na(FightVal$Damage) )
+    })
+    outputOptions(output, 'ShowCombatDamage', suspendWhenHidden = FALSE)
+    
+    output$CombatDamage <- renderPrint({
+        cat("Hit points: ", FightVal$Damage)
+    })
 })

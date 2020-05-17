@@ -50,11 +50,13 @@ shinyUI(fluidPage(
                                     hr(),
                                     h3(textOutput("CombatAction")),
                                     conditionalPanel(
-                                        condition = "output.CombatConfirmation",
-                                        #helpText("Test Square"),
-                                        #icon(""),
-                                        textOutput("CombatConfirm")
-                                        )
+                                      condition = "output.ShowCombatConfirm",
+                                      textOutput("CombatConfirm")
+                                    ),
+                                    conditionalPanel(
+                                      condition = "output.ShowCombatDamage",
+                                      textOutput("CombatDamage")
+                                    )
                                 )
                             )),
                    

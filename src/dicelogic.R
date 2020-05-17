@@ -1,5 +1,14 @@
 # 
 
+CombatRoll <- function() {
+  return(sample.int(20, 1))
+}
+
+DamageRoll <- function(Mod = 0) {
+  return(sample.int(6, 1) + Mod)
+}
+
+
 #' VerifyCombatRoll
 #'
 #' @param Roll 
