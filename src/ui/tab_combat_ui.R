@@ -3,7 +3,10 @@ sidebarLayout(
   sidebarPanel(
     sliderInput("ATValue", "Attack", min = 1, max = 20, value = 11),
     sliderInput("PAValue", "Parry",  min = 1, max = 20, value = 4),
-    numericInput("Damage", "Damage W6+", value = 1),
+    splitLayout(cellWidths = c("12rem", "12rem"),
+        numericInput("DamageDieCount", "Dice 4 Damage", value = 1, min = 1, width = "12rem"),
+        numericInput("Damage", "Modifier", value = 2, min = 0, width = "12rem")
+    ),
     hr(),
     sliderInput("DodgeValue",   "Dodge",  min = 1, max = 10, value = 5),
   ),
