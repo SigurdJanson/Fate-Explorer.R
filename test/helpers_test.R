@@ -34,6 +34,28 @@ test_that("VerifyCombatRoll", {
 
 
 
+test_that("DamageRoll", {
+  # 1W6 + Modifier
+  for (m in c(0, 1, 2, 4, 8, 12)) {  #Modifier
+    for (i in 1:25) {
+      o <- DamageRoll(1, m)
+      expect_gte(o, 1+m)
+      expect_lte(o, 6+m)
+    }
+  }
+  # 2W6 + Modifier
+  for (m in c(0, 1, 4, 8, 12)) {  #Modifier
+    for (i in 1:25) {
+      o <- DamageRoll(2, m)
+      expect_gte(o, 2+m)
+      expect_lte(o, 12+m)
+    }
+  }
+  
+})
+
+
+
 test_that("CombatFumbleRoll", {
   for(i in 1:100) {
     o <- CombatFumbleRoll()

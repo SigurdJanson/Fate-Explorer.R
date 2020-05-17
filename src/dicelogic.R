@@ -4,8 +4,8 @@ CombatRoll <- function() {
   return(sample.int(20, 1))
 }
 
-DamageRoll <- function(Mod = 0) {
-  return(sample.int(6, 1) + Mod)
+DamageRoll <- function(W6 = 1, Mod = 0) {
+  return(sum(sample.int(6, W6)) + Mod)
 }
 
 CombatFumbleRoll <- function() {
