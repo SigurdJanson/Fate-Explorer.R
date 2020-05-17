@@ -23,9 +23,9 @@ sidebarLayout(
     ),
     conditionalPanel(
       condition = "output.ShowCombatFumble",
-      actionButton("doCombatFumble", "See what happens...", icon = icon("shield-alt")),
+      hr(),
+      actionLink("doCombatFumble", "See what happens...", icon = icon("shield-alt")),
       textOutput("CombatFumble")
     )
-    
   )
 )
