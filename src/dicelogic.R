@@ -24,7 +24,7 @@ GetCombatFumbleEffect <- function(Roll) {
                                             "You fell",
                                             "You stumble",
                                             "Twisted foot",
-                                            "Beule",
+                                            "Bump on the head",
                                             "Hurt yourself",
                                             "Hurt yourself BAD"))
   Result <- Text$Effect[Text$Roll == Roll]
