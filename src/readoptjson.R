@@ -1,16 +1,15 @@
 # Import and transform data
 
 
-#' ReadAttributes_Opt
+#' GetAttributes_Opt
 #' Read character attributes/abilities as data frame.
 #' @param Attr An Optholit Json attribute node
 #' @return Data frame with attribute names as column names and values in
 #' first row.
-ReadAttributes_Opt <- function(Attr) {
-  NameMapping <- GetAttributes()
+GetAbilities_Opt <- function(Attr) {
   # Create data frame with attributes
   Result <- data.frame(lapply(Attr, `[[`, 2))
-  colnames(Result) <- NameMapping[match(sapply(Attr, `[[`, 1), NameMapping[,1]), 2]
+  colnames(Result) <- lapply(Attr, `[[`, 1)
   return(Result)
 }
 
@@ -20,20 +19,34 @@ ReadAttributes_Opt <- function(Attr) {
 #' @details 
 #' Base values for AT and PA depend on: courage, character skill, weapon modifiers, 
 #' and enhancements through the primary attribute.
-#' @param CombatTechniques 
-#' @param Technique 
+#' @param WeaponName String
 #' @param Attr 
-GetCombatSkill <- function(CombatTechniques, Technique, Attr) {
-  Courage  <- Attr[["MU"]]
-  PrimeAttr <- Attr[["GE"]]
+#' @param Skill 
+#' @note Not vectorised
+GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
+  #browser()
   
-  Skill <- CombatTechniques[[Technique]]
+  WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE)
+  Weapon     <- GetWeapons(Which = WeaponName)
+  
+  Courage  <- Attr[["ATTR_1"]]
+  PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # Attr[["GE"]] # TODO
+  if (length(PrimeAttr) > 1) { # more than 1 primary attribute
+    # choose max
+    PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
+  } else 
+    PrimeAttr <- Attr[[PrimeAttr]]
+  
+  Technique <- Weapon[["combattechID"]]
+  ATMod <- Weapon[["at"]]
+  PAMod <- Weapon[["pa"]]
+  Skill <- Skill[[Technique]]
   if (is.null(Skill)) Skill <- 6 # default value
   
   CourageMod   <- ((Courage-8) %/% 3)
   PrimeAttrMod <- ((PrimeAttr-8) %/% 3)
-  CT <- list(AT = Skill + CourageMod,
-             PA = round(Skill/2) + PrimeAttrMod)
+  CT <- list(AT = Skill + CourageMod + ATMod,
+             PA = round(Skill/2) + PrimeAttrMod + PAMod)
   return(CT)
 }
 
@@ -43,7 +56,7 @@ GetCombatSkill <- function(CombatTechniques, Technique, Attr) {
 
 GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits) {
   Weapons <- data.frame(
-    Brawl = c("Brawl", NA, NA, "1", "0"),
+    Unarmed = c("Unarmed", NA, NA, "1", "0"),
     Other = c("User-Defined", NA, NA, NA, NA)
   )
   rownames(Weapons) <- c("Name", "AT", "PA", "DamageDice", "DamageMod")
@@ -52,7 +65,7 @@ GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits) {
     #[["belongings"]][["items"]][["ITEM_22"]][["damageDiceNumber"]]
     if (!is.null(Item$combatTechnique) && length(Item$combatTechnique) > 0) {
       Skill <- list(AT=666, PA=656)#
-      Skill <- GetCombatSkill(CombatTechniques, Item$combatTechnique, Traits)
+      Skill <- GetCombatSkill(Item$name, Traits, CombatTechniques) #(CombatTechniques, Item$combatTechnique, Traits)
       
       Weapons <- cbind(
         c(Item$name, 

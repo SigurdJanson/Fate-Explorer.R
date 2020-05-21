@@ -3,6 +3,7 @@ library(shiny)
 require(rjson)
 source("dicelogic.R")
 source("readoptjson.R")
+source("rules.R")
 
 
 

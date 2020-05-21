@@ -4,7 +4,7 @@
 # JSON Schema: optolith-client/app/Schema/Hero/Hero.schema.json
 
 Character <- reactiveValues(Name = "No character has been uploaded", 
-                            Attr = numeric(), Weapons = NULL)
+                            Attr = NULL, Weapons = NULL)
 
 
 output$CharacterName <- renderPrint({
@@ -14,20 +14,45 @@ output$CharacterName <- renderPrint({
   cat(Result)
 })
 
+# Json Panel ------------------------
+output$ShowSetupJson <- reactive({
+  return( !is.null(Character$Attr) )
+})
+outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 
 output$RawContents <- renderPrint({
   req(input$CharFile)
-
+  
   Data <- fromJSON(file = input$CharFile$datapath)
-
+  
   Character$Name <- Data$name
-  Character$Attr <- Data$attr
-  Character$Weapons <- GetWeapons_Opt(Data$belongings$items)
+  Character$Attr <- GetAbilities_Opt(Data[["attr"]][["values"]])
+  
+  Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
+  updateVarSelectInput(session, "CombatSelectWeapon", data = Character$Weapons)
   
   print(Data)
 })
 
-# Damage Panel
+
+
+# Attributes Panel ---------------------
+output$ShowSetupAttr <- reactive({
+  return( !is.null(Character$Attr) )
+})
+outputOptions(output, 'ShowSetupAttr', suspendWhenHidden = FALSE)
+
+output$SetupAttr <- renderTable({
+  Result <- Character$Attr
+  # Show names not codes
+  NameMapping <- GetAbilities()
+  colnames(Result) <- NameMapping[match(names(Result), NameMapping[["attrID"]]), "shortname"]
+  
+  Result
+}, rownames = FALSE, na = "-", digits = 0)
+
+
+# Weapons Panel ------------------------
 output$ShowSetupWeapons <- reactive({
   return( !is.null(Character$Weapons) )
 })
@@ -38,6 +63,8 @@ output$SetupWeapons <- renderTable({
 }, rownames = TRUE, na = "-")
 
 
+
+# TESTING  ----------------
 observeEvent(input$doTestChallenge, {
   Character$Name <- paste(Character$Name, sample(letters, 1))
 })

@@ -5,6 +5,20 @@ FightVal <- reactiveValues(Action = "", Roll = NA,
                            Success = "", Damage = 0,
                            ConfirmRoll = 0, Confirmation = NA)
 
+
+# VALUES -------------------------------
+observeEvent(input$CombatSelectWeapon, {
+  Weapon <- as.character(input$CombatSelectWeapon)
+  # Update values
+  updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
+  updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
+  updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
+  updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
+  #input$PAValue <- Character$Weapons[3, Weapon] #"PA"
+  #input$DamageDieCount <-  Character$Weapons[4, Weapon] #"DamageDice"
+  #input$Damage <-  Character$Weapons[5, Weapon] #"DamageMod"
+})
+  
 observeEvent(input$doAttackThrow, {
   FightVal$Action  <- "Attack"
   FightVal$Roll    <- CombatRoll()
@@ -22,13 +36,15 @@ observeEvent(input$doAttackThrow, {
   FightVal$EffectOfFumble <- NA
   # Damage
   if (FightVal$Success == "Critical")
-    FightVal$Damage <- 2 * DamageRoll(input$Damage)
+    FightVal$Damage <- 2 * DamageRoll(input$DamageDieCount, input$Damage)
   else if  (FightVal$Success == "Success")
-    FightVal$Damage <- DamageRoll(input$Damage)
+    FightVal$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
   else 
     FightVal$Damage <- NA
 })
 
+
+# ACTIONS -------------------------------
 observeEvent(input$doParryThrow, {
   FightVal$Action  <- "Parry"
   FightVal$Roll    <- CombatRoll()
@@ -46,6 +62,7 @@ observeEvent(input$doParryThrow, {
   }
   FightVal$EffectOfFumble <- NA
 })
+
 
 observeEvent(input$doDodge, {
   FightVal$Action  <- "Dodge"
@@ -118,6 +135,4 @@ output$CombatFumble <- renderPrint({
 
 observeEvent(input$doCombatFumble, {
   FightVal$EffectOfFumble <- CombatFumbleRoll()
-  #session$sendCustomMessage(type = 'testmessage',
-  #                          message = 'Thank you for clicking')
 })
