@@ -5,7 +5,7 @@ setwd("./test")
 # Functions ----
 test_that("CombatTechniques", {
   setwd("..")
-  CT <- Rules$CombatTechniques()
+  CT <- GetCombatTechniques()
   setwd("./test")
   expect_s3_class(CT, "data.frame")
   expect_named(CT, paste0("CT_", 1:21))
@@ -16,7 +16,7 @@ test_that("CombatTechniques", {
 
 test_that("Abilities", {
   setwd("..")
-  AB <- Rules$Abilities()
+  AB <- GetAbilities()
   setwd("./test")
   expect_s3_class(AB, "data.frame")
   expect_named(AB, c("attrID", "shortname", "name"))
@@ -27,12 +27,28 @@ test_that("Abilities", {
 
 test_that("Weapons", {
   cn <- c("name", "technik", "leiteigenschaft", "schwelle", "grundschaden",
-          "bonus", "at", "pa", "rw", "gewicht", "preis", "bf", "combattechID")
+          "bonus", "at", "pa", "rw", "gewicht", "preis", "bf", 
+          "combattechID", "primeattrID")
   setwd("..")
-  W <- Rules$Weapons()
+  W <- GetWeapons()
   setwd("./test")
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 150)
-  expect_equal(ncol(W), 13)
-  expect_named(W, c("at", "pa", "preis"), ignore.order = TRUE)
+  expect_equal(ncol(W), 14)
+  expect_named(W, cn, ignore.order = TRUE)
+})
+
+
+test_that("PrimaryWeaponAttribute", {
+  o <- GetPrimaryWeaponAttribute("Waqqif")
+  e <- "ATTR_6"
+  expect_identical(o, e)
+  
+  o <- GetPrimaryWeaponAttribute("Barbarenschwert")
+  e <- c("ATTR_6", "ATTR_8")
+  expect_identical(o, e)
+  
+  o <- GetPrimaryWeaponAttribute("Turnierlanze")
+  e <- NA_character_
+  expect_identical(o, e)
 })
