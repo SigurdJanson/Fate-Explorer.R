@@ -21,7 +21,6 @@ sidebarLayout(
   mainPanel(
     actionButton("doSkillThrow", "Now!"),
     hr(),
-    #h3(textOutput("SkillThrow"))
-    tableOutput("SkillThrow")
+    div(tableOutput("SkillThrow"), style = "font-size:140%")
   )
 )
