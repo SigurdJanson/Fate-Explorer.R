@@ -4,9 +4,9 @@ setwd("./test")
 
 # Functions ----
 test_that("CombatTechniques", {
-  setwd("..")
+  #setwd("..")
   CT <- GetCombatTechniques()
-  setwd("./test")
+  #setwd("./test")
   expect_s3_class(CT, "data.frame")
   expect_named(CT, paste0("CT_", 1:21))
   expect_equal(nrow(CT), 1)
@@ -15,9 +15,9 @@ test_that("CombatTechniques", {
 
 
 test_that("Abilities", {
-  setwd("..")
+  #setwd("..")
   AB <- GetAbilities()
-  setwd("./test")
+  #setwd("./test")
   expect_s3_class(AB, "data.frame")
   expect_named(AB, c("attrID", "shortname", "name"))
   expect_equal(nrow(AB), 8)
@@ -29,13 +29,19 @@ test_that("Weapons", {
   cn <- c("name", "technik", "leiteigenschaft", "schwelle", "grundschaden",
           "bonus", "at", "pa", "rw", "gewicht", "preis", "bf", 
           "combattechID", "primeattrID")
-  setwd("..")
+  #setwd("..")
   W <- GetWeapons()
-  setwd("./test")
+  #setwd("./test")
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 150)
   expect_equal(ncol(W), 14)
   expect_named(W, cn, ignore.order = TRUE)
+  
+  #setwd("..")
+  W <- GetWeapons("Waqqif")
+  expect_equal(W$name, "Waqqif")
+  #setwd("./test")
+  
 })
 
 

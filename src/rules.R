@@ -9,14 +9,15 @@ require(jsonlite)
 
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
-    .Attribs <<- read_json("./data/attributes_en.json", simplifyVector = TRUE)
+    .Attribs <<- read_json("../data/attributes_en.json", simplifyVector = TRUE)
   }
   return(.Attribs)
 }
 
+
 GetCombatTechniques <- function() {
   if (is.null(.ComTecs)) {
-    .ComTecs <<- read_json("./data/combattechs_en.json", simplifyVector = FALSE, flatten = TRUE)
+    .ComTecs <<- read_json("../data/combattechs_en.json", simplifyVector = FALSE, flatten = TRUE)
     .ComTecs <<- as.data.frame(.ComTecs, stringsAsFactors = FALSE)
   }
   return(.ComTecs)
@@ -24,18 +25,21 @@ GetCombatTechniques <- function() {
 
 
 GetWeapons <- function(Which = "All", Type = "Melee") {
+  #browser()
   if (Type == "Melee") {
     if (is.null(.Melee)) {
-      .Melee <<- read_json("./data/weapon-list.json", simplifyVector = TRUE)
+      .Melee <<- read_json("../data/weapon-list.json", simplifyVector = TRUE)
     }
     if (Which == "All")
       return(.Melee)
     else
-      return(as.list(.Melee[ which(.Melee$attrID == Which),]))
+      return(as.list(.Melee[ which(.Melee$name == Which),]))
     } else {
     stop("Other weapons than melee are not supported, yet")
   }
 }
+#GetWeapons("Waqqif")
+
 
 GetPrimaryWeaponAttribute <- function( Weapon ) {
   # PRECONDITIONS
