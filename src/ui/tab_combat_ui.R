@@ -2,8 +2,16 @@
 sidebarLayout(
   sidebarPanel(
     conditionalPanel(
-      condition = "output.ShowSetupWeapons", #see "tab_setup_srv"
-      varSelectInput("CombatSelectWeapon", "Select Weapon", data)
+      condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
+      checkboxInput("PredefinedWeapon", "Use Weapon from Character", TRUE)
+    ),
+    conditionalPanel(
+      condition = "output.ShowPredefinedWeapons",
+      selectizeInput("CombatSelectWeapon", "Select Weapon", choices = "",
+                     options = list(
+                         placeholder = 'Select your weapon',
+                         onInitialize = I('function() { this.setValue(""); }'))
+      )
     ),
     hr(),
     sliderInput("ATValue", "Attack", min = 1, max = 20, value = 11),

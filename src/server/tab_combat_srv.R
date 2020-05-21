@@ -7,18 +7,34 @@ FightVal <- reactiveValues(Action = "", Roll = NA,
 
 
 # VALUES -------------------------------
-observeEvent(input$CombatSelectWeapon, {
-  Weapon <- as.character(input$CombatSelectWeapon)
-  # Update values
-  updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
-  updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
-  updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
-  updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
-  #input$PAValue <- Character$Weapons[3, Weapon] #"PA"
-  #input$DamageDieCount <-  Character$Weapons[4, Weapon] #"DamageDice"
-  #input$Damage <-  Character$Weapons[5, Weapon] #"DamageMod"
+# Source of Weapons Panel
+output$ShowPredefinedWeapons <- reactive({
+  return( !is.null(Character$Weapons) && input$PredefinedWeapon )
 })
+outputOptions(output, 'ShowPredefinedWeapons', suspendWhenHidden = FALSE)
+
+observeEvent(input$PredefinedWeapon,{
+  updateSelectizeInput(session, "CombatSelectWeapon", selected = NA)
+})
+
+observeEvent(input$CombatSelectWeapon, {
+  if (input$PredefinedWeapon) {
+    Weapon <- as.character(input$CombatSelectWeapon)
+    # Update values
+    updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
+    updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
+    updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
+    updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
+  } else {
+    updateNumericInput(session, "ATValue", value = 6)
+    updateNumericInput(session, "PAValue", value = 3)
+    updateNumericInput(session, "DamageDieCount", value = 1)
+    updateNumericInput(session, "Damage", value = 0)
+  }
+}, ignoreNULL = FALSE)
+
   
+# ACTIONS -------------------------------
 observeEvent(input$doAttackThrow, {
   FightVal$Action  <- "Attack"
   FightVal$Roll    <- CombatRoll()
@@ -44,7 +60,6 @@ observeEvent(input$doAttackThrow, {
 })
 
 
-# ACTIONS -------------------------------
 observeEvent(input$doParryThrow, {
   FightVal$Action  <- "Parry"
   FightVal$Roll    <- CombatRoll()

@@ -29,7 +29,7 @@ output$RawContents <- renderPrint({
   Character$Attr <- GetAbilities_Opt(Data[["attr"]][["values"]])
   
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
-  updateVarSelectInput(session, "CombatSelectWeapon", data = Character$Weapons)
+  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,])
   
   print(Data)
 })
