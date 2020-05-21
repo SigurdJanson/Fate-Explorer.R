@@ -21,6 +21,7 @@ sidebarLayout(
   mainPanel(
     actionButton("doSkillThrow", "Now!"),
     hr(),
-    h3(textOutput("SkillThrow"))
+    #h3(textOutput("SkillThrow"))
+    tableOutput("SkillThrow")
   )
 )
