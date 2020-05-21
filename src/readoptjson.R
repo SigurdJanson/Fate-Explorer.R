@@ -54,29 +54,32 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 
-GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits) {
-  Weapons <- data.frame(
-    Unarmed = c("Unarmed", NA, NA, "1", "0"),
-    Other = c("User-Defined", NA, NA, NA, NA)
-  )
-  rownames(Weapons) <- c("Name", "AT", "PA", "DamageDice", "DamageMod")
+GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits, AddUnarmed = TRUE) {
+  # name = c("Unarmed", "User-defined"), 
+  # at = rep(NA, 2), pa = rep(NA, 2)
+  # Unarmed = c("Unarmed", NA, NA, "1", "0"),
+  # Other = c("User-Defined", NA, NA, NA, NA)
+  if (AddUnarmed) {
+    BelongingItems <- c(BelongingItems, 
+                        ITEM_99 = list(list(id = 99, name = "Waffenlos", combatTechnique = "CT_9",
+                                       at = 0, pa = 0, damageDiceNumber = 1, damageFlat = 0)))
+  }
   
+  Weapons <- NULL
   for (Item in BelongingItems) {
     #[["belongings"]][["items"]][["ITEM_22"]][["damageDiceNumber"]]
     if (!is.null(Item$combatTechnique) && length(Item$combatTechnique) > 0) {
-      Skill <- list(AT=666, PA=656)#
       Skill <- GetCombatSkill(Item$name, Traits, CombatTechniques) #(CombatTechniques, Item$combatTechnique, Traits)
       
       Weapons <- cbind(
-        c(Item$name, 
-          Item$at + Skill$AT, 
-          Item$pa + Skill$PA, 
+        c(Item$name, Skill$AT, Skill$PA, 
           Item$damageDiceNumber, Item$damageFlat),
         Weapons
       )
       colnames(Weapons)[1] <- Item$name
     }
   }# for
+  rownames(Weapons) <- c("Name", "AT", "PA", "DamageDice", "DamageMod")
   
   return(Weapons)
 }
