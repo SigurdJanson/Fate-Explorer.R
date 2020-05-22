@@ -99,7 +99,9 @@ observeEvent(input$doDodge, {
 
 
 output$CombatAction <- renderPrint({
-  Result <- paste0(FightVal$Action, ": ", FightVal$Roll, " - ", FightVal$Success)
+  Result <- paste0(i18n$t(FightVal$Action), ": ", 
+                   FightVal$Roll, " - ", 
+                   i18n$t(FightVal$Success))
   cat(Result)
 })
 
@@ -111,16 +113,16 @@ outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
 
 output$CombatConfirm <- renderPrint({
   if (FightVal$Success == "Fumble") {
-    Result <- "Fumble!" #icon("frown-open")
+    Result <- "Fumble" #icon("frown-open")
   } else if (FightVal$Success == "Critical") {
-    Result <- "Critical confirmed!"
+    Result <- "Critical confirmed"
   } else if (FightVal$Success == "Success") {
-    Result <- "Critical was lost :-("
+    Result <- "Critical was lost"
   } else if (FightVal$Success == "Fail") {
-    Result <- "Fumble avoided :-)"
+    Result <- "Fumble avoided"
   } else Result <- ""
   
-  cat(Result)
+  cat(i18n$t(Result))
 })
 
 # Damage Panel
@@ -130,7 +132,7 @@ output$ShowCombatDamage <- reactive({
 outputOptions(output, 'ShowCombatDamage', suspendWhenHidden = FALSE)
 
 output$CombatDamage <- renderPrint({
-  cat("Hit points: ", FightVal$Damage)
+  cat(i18n$t("Hit points"), ": ", FightVal$Damage, sep = "")
 })
 
 
@@ -145,7 +147,7 @@ output$CombatFumble <- renderPrint({
     Result <- GetCombatFumbleEffect(FightVal$EffectOfFumble)
   } else Result <- ""
   
-  cat(Result)
+  cat(i18n$t(Result))
 })
 
 observeEvent(input$doCombatFumble, {

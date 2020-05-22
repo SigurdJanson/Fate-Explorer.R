@@ -3,14 +3,14 @@
 # JSON Schema: optolith-client/app/Schema/Hero/Hero.experimental.schema.json
 # JSON Schema: optolith-client/app/Schema/Hero/Hero.schema.json
 
-Character <- reactiveValues(Name = "No character has been uploaded", 
+Character <- reactiveValues(Name = i18n$t("No character has been uploaded"), 
                             Attr = NULL, Weapons = NULL)
 
 
 output$CharacterName <- renderPrint({
   if(!is.na(Character$Name)) {
     Result <- Character$Name
-  } else Result <- "No character has been uploaded"
+  } else Result <- i18n$t("No character has been uploaded")
   cat(Result)
 })
 
@@ -22,8 +22,8 @@ outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 
 output$RawContents <- renderPrint({
   req(input$CharFile)
-  
-  Data <- fromJSON(file = input$CharFile$datapath)
+
+  Data <- read_json(path = input$CharFile$datapath)
   
   Character$Name <- Data$name
   Character$Attr <- GetAbilities_Opt(Data[["attr"]][["values"]])

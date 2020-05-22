@@ -9,7 +9,8 @@ require(jsonlite)
 
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
-    .Attribs <<- read_json("./data/attributes_en.json", simplifyVector = TRUE)
+    JsonFile <- file.path("data", paste0("attributes_", i18n$translation_language, ".json"))
+    .Attribs <<- read_json(JsonFile, simplifyVector = TRUE)
   }
   return(.Attribs)
 }
@@ -17,7 +18,8 @@ GetAbilities <- function() {
 
 GetCombatTechniques <- function() {
   if (is.null(.ComTecs)) {
-    .ComTecs <<- read_json("./data/combattechs_en.json", simplifyVector = FALSE, flatten = TRUE)
+    JsonFile <- file.path("data", paste0("combattechs_", i18n$translation_language, ".json"))
+    .ComTecs <<- read_json(JsonFile, simplifyVector = FALSE, flatten = TRUE)
     .ComTecs <<- as.data.frame(.ComTecs, stringsAsFactors = FALSE)
   }
   return(.ComTecs)
@@ -28,7 +30,8 @@ GetWeapons <- function(Which = "All", Type = "Melee") {
   #browser()
   if (Type == "Melee") {
     if (is.null(.Melee)) {
-      .Melee <<- read_json("./data/weapon-list.json", simplifyVector = TRUE)
+      JsonFile <- file.path("data", paste0("weapon-list_", i18n$translation_language, ".json"))
+      .Melee <<- read_json(JsonFile, simplifyVector = TRUE)
     }
     if (Which == "All")
       return(.Melee)

@@ -17,16 +17,16 @@ GetCombatFumbleEffect <- function(Roll) {
   if(Roll < 2 || Roll > 12) stop("Invalid fumble roll")
   
   Text <- data.frame(Roll = 2:12, Effect = c("Weapon destroyed",
-                                            "Weapon heavily damaged",
-                                            "Weapon damaged",
-                                            "Weapon lost",
-                                            "Weapon is stuck",
-                                            "You fell",
-                                            "You stumble",
-                                            "Twisted foot",
-                                            "Bump on the head",
-                                            "Hurt yourself",
-                                            "Hurt yourself BAD"))
+                                             "Weapon heavily damaged",
+                                             "Weapon damaged",
+                                             "Weapon lost",
+                                             "Weapon stuck",
+                                             "You fell",
+                                             "Stumble",
+                                             "Twisted foot",
+                                             "Bump on the head",
+                                             "Hurt yourself",
+                                             "Hurt yourself bad"))
   Result <- Text$Effect[Text$Roll == Roll]
   return(as.character(Result))
 }

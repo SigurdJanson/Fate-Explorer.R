@@ -11,14 +11,14 @@ output$SkillThrow <- renderTable({
   Result <- matrix(Throw, nrow = 3)
   if(!input$SkillIgnore) {
     Result <- cbind(Result, TraitVals)
-    colnames(Result) <- c("Result", "Ability")
+    colnames(Result) <- c(i18n$t("Result"), i18n$t("Ability"))
     
     Success <- VerifySkillRoll(Throw, 
                                TraitVals, 
                                input$SkillValue, input$SkillMod)
-    Result <- rbind(as.matrix(Result), c(Success, ""))#rbind(Result, Success)
+    Result <- rbind(as.matrix(Result), c(i18n$t(Success), ""))#rbind(Result, Success)
   } else {
-    colnames(Result) <- c("Result")
+    colnames(Result) <- i18n$t(c("Result"))
   }
   Result
 }, spacing = "l")
