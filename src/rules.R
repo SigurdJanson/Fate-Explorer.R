@@ -1,6 +1,4 @@
 # DSA 5 Rules
-require(jsonlite)
-
 
 .Attribs <- NULL
 .ComTecs <- NULL
