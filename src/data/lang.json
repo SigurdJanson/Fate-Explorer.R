@@ -53,5 +53,9 @@
     {"en": "No character has been uploaded", "de": "Kein Character geladen"},
     {"en": "No file selected", "de": "Keine Datei ausgewählt"},
     {"en": "Json File", "de": "Json Datei"},
-    {"en": "Browse...", "de": "Durchsuchen..."}
+    {"en": "Choose your language", "de": "Wähle Deine Sprache"},
+    {"en": "Deutsch", "de": "Deutsch"},
+    {"en": "English", "de": "English"},
+    {"en": "Please note: this app can talk to you in English but it may not be able to read English Optolith files.", "de": "Auch wenn die App Englisch mit Euch spricht, kann sie vermutlich noch keine Englischen Optolith-Dateien verstehen."},
+    {"en": "Browse...",  "de": "Durchsuche..."}
 ]}
