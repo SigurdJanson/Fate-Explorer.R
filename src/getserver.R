@@ -1,7 +1,3 @@
-source("dicelogic.R")
-source("readoptjson.R")
-source("rules.R")
-
 
 server <- shinyServer(function(input, output, session) {
   source(file.path("server", "tab_skill_srv.R"), local = TRUE)$value

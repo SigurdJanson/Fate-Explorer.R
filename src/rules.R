@@ -7,7 +7,9 @@
 
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
-    JsonFile <- file.path("data", paste0("attributes_", i18n$translation_language, ".json"))
+    browser()
+    lang <- ifelse(length(i18n$translation_language) == 0, "en", i18n$translation_language)
+    JsonFile <- file.path("data", paste0("attributes_", lang, ".json"))
     .Attribs <<- read_json(JsonFile, simplifyVector = TRUE)
   }
   return(.Attribs)
@@ -16,7 +18,8 @@ GetAbilities <- function() {
 
 GetCombatTechniques <- function() {
   if (is.null(.ComTecs)) {
-    JsonFile <- file.path("data", paste0("combattechs_", i18n$translation_language, ".json"))
+    lang <- ifelse(length(i18n$translation_language) == 0, "en", i18n$translation_language)
+    JsonFile <- file.path("data", paste0("combattechs_", lang, ".json"))
     .ComTecs <<- read_json(JsonFile, simplifyVector = FALSE, flatten = TRUE)
     .ComTecs <<- as.data.frame(.ComTecs, stringsAsFactors = FALSE)
   }
@@ -28,7 +31,7 @@ GetWeapons <- function(Which = "All", Type = "Melee") {
   #browser()
   if (Type == "Melee") {
     if (is.null(.Melee)) {
-      JsonFile <- file.path("data", paste0("weapon-list_", i18n$translation_language, ".json"))
+      JsonFile <- file.path("data", paste0("weapon-list", ".json"))
       .Melee <<- read_json(JsonFile, simplifyVector = TRUE)
     }
     if (Which == "All")
