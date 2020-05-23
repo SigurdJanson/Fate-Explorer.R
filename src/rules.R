@@ -7,7 +7,7 @@
 
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
-    browser()
+
     lang <- ifelse(length(i18n$translation_language) == 0, "en", i18n$translation_language)
     JsonFile <- file.path("data", paste0("attributes_", lang, ".json"))
     .Attribs <<- read_json(JsonFile, simplifyVector = TRUE)
