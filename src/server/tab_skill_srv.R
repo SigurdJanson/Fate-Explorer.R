@@ -1,14 +1,14 @@
 # SKILL TAB
 
 LastThrow <- eventReactive(input$doSkillThrow, {
-  sample.int(20, 3, TRUE)
+  SkillRoll
 })
 
 output$SkillThrow <- renderTable({
   Throw <- LastThrow()
   TraitVals <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
   
-  Result <- matrix(Throw, nrow = 3)
+  Result <- matrix(Throw, nrow = 3L)
   if(!input$SkillIgnore) {
     Result <- cbind(Result, TraitVals)
     colnames(Result) <- c(i18n$t("Result"), i18n$t("Ability"))

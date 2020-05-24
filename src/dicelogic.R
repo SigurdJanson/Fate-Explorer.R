@@ -1,5 +1,7 @@
 # 
 
+# COMBAT ---------------------------
+
 #' CombatRoll
 #' A combat roll is a roll with a 20-sided die.
 #' @return A random number between 1 and 20
@@ -72,6 +74,14 @@ VerifyCombatRoll <- function(Roll, Skill, Penalty = 0L) {
 #VerifyCombatRoll(2, 9)
 
 
+# SKILL ------------------------------
+
+#' SkillRoll
+#' A combat roll is a 3 x d20 roll.
+#' @return A numeric vector with 3 random numbers between 1 and 20
+SkillRoll <- function() {
+  return(sample.int(20, 3, TRUE))
+}
 
 
 #' VerifySkillRoll

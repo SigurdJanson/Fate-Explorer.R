@@ -50,7 +50,7 @@ output$SetupAttr <- renderTable({
   colnames(Result) <- NameMapping[match(names(Result), NameMapping[["attrID"]]), "shortname"]
   
   Result
-}, rownames = FALSE, na = "-", digits = 0)
+}, rownames = FALSE, na = "-", digits = 0L)
 
 
 # Weapons Panel ------------------------
