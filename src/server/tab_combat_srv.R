@@ -2,8 +2,8 @@
 
 
 FightVal <- reactiveValues(Action = "", Roll = NA, 
-                           Success = "", Damage = 0L,
-                           ConfirmRoll = 0L, Confirmation = NA)
+                           Success = "", Damage = NA,
+                           ConfirmRoll = NA, Confirmation = NA)
 
 
 # VALUES -------------------------------
@@ -110,11 +110,15 @@ observeEvent(input$doDodge, {
 })
 
 
+# OUTPUT -------------------------------
+# Roll
 output$CombatAction <- renderPrint({
-  Result <- paste0(i18n$t(FightVal$Action), ": ", 
-                   FightVal$Roll, " - ", 
-                   i18n$t(FightVal$Success))
-  cat(Result)
+  if (!is.na(FightVal$Roll)) {
+    Result <- paste0(i18n$t(FightVal$Action), ": ", 
+                     FightVal$Roll, " - ", 
+                     i18n$t(FightVal$Success))
+    cat(Result)
+  }
 })
 
 # Confirmation Panel
