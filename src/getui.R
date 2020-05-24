@@ -21,6 +21,10 @@ ui <- shinyUI(fluidPage(
              
              tabPanel(i18n$t("Setup"), 
                       source(file.path("ui", "tab_setup_ui.R"), local = TRUE)$value
+             ),
+             
+             tabPanel(i18n$t("About..."), 
+                      source(file.path("ui", "tab_about_ui.R"), local = TRUE)$value
              )
   )
 ))
