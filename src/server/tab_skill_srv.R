@@ -1,7 +1,10 @@
 # SKILL TAB
 
+#print(length(input))
+#print(input$Values) # can only be done from inside a reactive expression or observer.
+
 LastThrow <- eventReactive(input$doSkillThrow, {
-  SkillRoll
+  SkillRoll()
 })
 
 output$SkillThrow <- renderTable({
