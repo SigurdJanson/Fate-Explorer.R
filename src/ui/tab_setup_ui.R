@@ -9,7 +9,6 @@ sidebarLayout(
               buttonLabel = i18n$t("Browse..."),
               placeholder = i18n$t("No file selected")),
     hr()#,
-    #actionButton("doTestChallenge", "test")
   ),
   mainPanel(
     h3(textOutput("CharacterName")),

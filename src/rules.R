@@ -5,6 +5,18 @@
 .Melee   <- NULL
 
 
+#' 
+#' Required for language changes
+ReloadRules <- function() {
+  .Attribs <<- NULL
+  GetAbilities()
+  .ComTecs <<- NULL
+  GetCombatTechniques()
+  #.Melee   <<- NULL# Currently not required
+  #GetWeapons() # Currently not required
+}
+
+
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
 
@@ -45,12 +57,15 @@ GetWeapons <- function(Which = "All", Type = "Melee") {
 #GetWeapons("Waqqif")
 
 
+#' GetPrimaryWeaponAttribute
+#' Get the primary attribute of a weapon
+#' @param A string with the actual name of the weapon.
 GetPrimaryWeaponAttribute <- function( Weapon ) {
   # PRECONDITIONS
   if(missing(Weapon)) stop("A weapon is required.")
   # RUN
   W <- GetWeapons()
-  row <- which(W[["name"]] == Weapon)
+  row <- which(W[["name"]] == Weapon) #TODO: using a code would be safer
   PrimeAttr <- W[row, "primeattrID"]
   # Parse and translate
   if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"

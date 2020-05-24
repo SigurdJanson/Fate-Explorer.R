@@ -1,9 +1,6 @@
 # SETUP
 
-# JSON Schema: optolith-client/app/Schema/Hero/Hero.experimental.schema.json
-# JSON Schema: optolith-client/app/Schema/Hero/Hero.schema.json
-
-Character <- reactiveValues(Name = i18n$t("No character has been uploaded"), 
+Character <- reactiveValues(Name = "No character has been uploaded",
                             Attr = NULL, Weapons = NULL)
 
 
@@ -13,6 +10,10 @@ output$CharacterName <- renderPrint({
   } else Result <- i18n$t("No character has been uploaded")
   cat(Result)
 })
+
+
+
+
 
 # Json Panel ------------------------
 output$ShowSetupJson <- reactive({
@@ -64,7 +65,3 @@ output$SetupWeapons <- renderTable({
 
 
 
-# TESTING  ----------------
-observeEvent(input$doTestChallenge, {
-  Character$Name <- paste(Character$Name, sample(letters, 1))
-})

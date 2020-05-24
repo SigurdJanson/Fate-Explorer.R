@@ -1,6 +1,11 @@
 # UI Skeleton
 
+#jscode <- "shinyjs.refresh = function() { history.go(0); }"
+
+
 ui <- shinyUI(fluidPage(
+  # useShinyjs(),
+  # extendShinyjs(text = jscode),
   navbarPage(i18n$t("The Dark Eye - Fate Explorer"), 
              #titlePanel(title = "titleabc", windowTitle = "title"),
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
