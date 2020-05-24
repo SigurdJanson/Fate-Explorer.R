@@ -22,7 +22,10 @@ sidebarLayout(
     ),
     hr(),
     sliderInput("DodgeValue", i18n$t("Dodge"),  min = 1, max = 10, value = 5),
-  ),
+    hr(),
+    sliderTextInput("CombatPenalty", i18n$t("Penalty"),  choices = seq(from = 0, to = -10, by = -1),
+                    selected = 0, grid = TRUE)
+    ),
   mainPanel(
     actionButton("doAttackThrow", i18n$t("Attack"), icon = icon("skull"), width = "32%"),
     actionButton("doParryThrow", i18n$t("Parry"), icon = icon("shield-alt"), width = "32%"),
