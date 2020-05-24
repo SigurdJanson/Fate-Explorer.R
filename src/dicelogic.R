@@ -39,7 +39,7 @@ GetCombatFumbleEffect <- function(Roll) {
                                              "Weapon damaged",
                                              "Weapon lost",
                                              "Weapon stuck",
-                                             "You fell",
+                                             "Fall",
                                              "Stumble",
                                              "Twisted foot",
                                              "Bump on the head",
