@@ -52,8 +52,9 @@ GetCombatFumbleEffect <- function(Roll) {
 #' Confirms a fumble or critical with a d20.
 #' @param Roll The result of a d20
 #' @param Skill The combat skill against which was rolled.
+#' @param Penalty A penalty on the skill, integer <= 0
 #' @return A string indicating the result, one of: Fumble, Fail, Success, Critical.
-VerifyCombatRoll <- function(Roll, Skill) {
+VerifyCombatRoll <- function(Roll, Skill, Penalty = 0L) {
   # PRECONDITIONS
   if (Roll < 1 || Roll > 20) stop("Invalid roll")
   if(Skill < 0) stop("Invalid skill")
@@ -64,7 +65,7 @@ VerifyCombatRoll <- function(Roll, Skill) {
   else if (Roll == 1)
     Success <- "Critical"
   else
-    Success <- ifelse(Roll <= Skill, "Success", "Fail")
+    Success <- ifelse(Roll <= Skill+Penalty, "Success", "Fail")
   
   return(Success)
 }

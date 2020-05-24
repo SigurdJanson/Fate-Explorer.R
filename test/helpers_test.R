@@ -30,6 +30,17 @@ test_that("VerifyCombatRoll", {
       expect_identical(o, e, info = paste(r, s))
     }
   }
+  
+  for(s in 0:20) { #20 skill levels
+    for(r in 2:19) {#rolls
+      for(p in 0:(-5)) {
+        o <- VerifyCombatRoll(r, s, p)
+        e <- ifelse(r <= s+p, "Success", "Fail")
+        expect_identical(o, e, info = paste(r, s))
+      }
+    }
+  }
+  
 })
 
 
@@ -77,5 +88,5 @@ test_that("GetCombatFumbleEffect", {
   }
   
   expect_identical(GetCombatFumbleEffect(2), "Weapon destroyed")
-  expect_identical(GetCombatFumbleEffect(12), "Hurt yourself BAD")
+  expect_identical(GetCombatFumbleEffect(12), "Hurt yourself bad")
 })
