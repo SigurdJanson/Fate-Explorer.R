@@ -2,8 +2,8 @@
 
 
 FightVal <- reactiveValues(Action = "", Roll = NA, 
-                           Success = "", Damage = 0,
-                           ConfirmRoll = 0, Confirmation = NA)
+                           Success = "", Damage = 0L,
+                           ConfirmRoll = 0L, Confirmation = NA)
 
 
 # VALUES -------------------------------
@@ -26,10 +26,10 @@ observeEvent(input$CombatSelectWeapon, {
     updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
     updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
   } else {
-    updateNumericInput(session, "ATValue", value = 6)
-    updateNumericInput(session, "PAValue", value = 3)
-    updateNumericInput(session, "DamageDieCount", value = 1)
-    updateNumericInput(session, "Damage", value = 0)
+    updateNumericInput(session, "ATValue", value = 6L)
+    updateNumericInput(session, "PAValue", value = 3L)
+    updateNumericInput(session, "DamageDieCount", value = 1L)
+    updateNumericInput(session, "Damage", value = 0L)
   }
 }, ignoreNULL = FALSE)
 

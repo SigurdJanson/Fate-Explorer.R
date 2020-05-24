@@ -31,7 +31,7 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
   
   Courage  <- Attr[["ATTR_1"]]
   PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # Attr[["GE"]] # TODO
-  if (length(PrimeAttr) > 1) { # more than 1 primary attribute
+  if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
     # choose max
     PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
   } else 
@@ -41,12 +41,12 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
   ATMod <- Weapon[["at"]]
   PAMod <- Weapon[["pa"]]
   Skill <- Skill[[Technique]]
-  if (is.null(Skill)) Skill <- 6 # default value
+  if (is.null(Skill)) Skill <- 6L # default value
   
-  CourageMod   <- ((Courage-8) %/% 3)
-  PrimeAttrMod <- ((PrimeAttr-8) %/% 3)
+  CourageMod   <- ((Courage-8L) %/% 3L)
+  PrimeAttrMod <- ((PrimeAttr-8L) %/% 3L)
   CT <- list(AT = Skill + CourageMod + ATMod,
-             PA = round(Skill/2) + PrimeAttrMod + PAMod)
+             PA = round(Skill/2L) + PrimeAttrMod + PAMod)
   return(CT)
 }
 
@@ -61,8 +61,8 @@ GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits, AddUnarmed 
   # Other = c("User-Defined", NA, NA, NA, NA)
   if (AddUnarmed) {
     BelongingItems <- c(BelongingItems, 
-                        ITEM_99 = list(list(id = 99, name = "Waffenlos", combatTechnique = "CT_9",
-                                       at = 0, pa = 0, damageDiceNumber = 1, damageFlat = 0)))
+                        ITEM_99 = list(list(id = 99L, name = "Waffenlos", combatTechnique = "CT_9",
+                                       at = 0L, pa = 0L, damageDiceNumber = 1L, damageFlat = 0L)))
   }
   
   Weapons <- NULL
@@ -76,7 +76,7 @@ GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits, AddUnarmed 
           Item$damageDiceNumber, Item$damageFlat),
         Weapons
       )
-      colnames(Weapons)[1] <- Item$name
+      colnames(Weapons)[1L] <- Item$name
     }
   }# for
   rownames(Weapons) <- c("Name", "AT", "PA", "DamageDice", "DamageMod")

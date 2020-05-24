@@ -20,7 +20,7 @@ ReloadRules <- function() {
 GetAbilities <- function() {
   if (is.null(.Attribs)) {
 
-    lang <- ifelse(length(i18n$translation_language) == 0, "en", i18n$translation_language)
+    lang <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
     JsonFile <- file.path("data", paste0("attributes_", lang, ".json"))
     .Attribs <<- read_json(JsonFile, simplifyVector = TRUE)
   }
@@ -30,7 +30,7 @@ GetAbilities <- function() {
 
 GetCombatTechniques <- function() {
   if (is.null(.ComTecs)) {
-    lang <- ifelse(length(i18n$translation_language) == 0, "en", i18n$translation_language)
+    lang <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
     JsonFile <- file.path("data", paste0("combattechs_", lang, ".json"))
     .ComTecs <<- read_json(JsonFile, simplifyVector = FALSE, flatten = TRUE)
     .ComTecs <<- as.data.frame(.ComTecs, stringsAsFactors = FALSE)
