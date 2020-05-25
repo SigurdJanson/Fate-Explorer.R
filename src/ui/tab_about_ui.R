@@ -5,7 +5,7 @@ fluidPage(
     column(12, h1("DSA5 Fate Explorer", style = "align=center"))
   ),
 fluidRow(
-  column(3, imageOutput("imgAboutShield"), imageOutput("imgAboutGods")),
+  column(3, imageOutput("imgAboutShield")),
   column(6, i18n$t("The Fate Explorer helps you play the Dark Eye table top games. "), 
          i18n$t("Using you can roll your dice easier. "), 
          i18n$t("Consecutive checks are done automatically."), i18n$t("and checked"), 
@@ -27,7 +27,7 @@ fluidRow(
          " ", i18n$t("and"), " ",
          a(i18n$t("Ulysses publishers"), href="https://ulisses-spiele.de/"), "."
          ),
-  column(3)
+  column(3, imageOutput("imgAboutGods"))
 ),
 fluidRow(
   column(12)
