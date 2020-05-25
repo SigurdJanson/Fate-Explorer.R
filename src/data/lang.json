@@ -12,13 +12,16 @@
     {"en": "Result", "de": "Ergebnis"},
     {"en": "Ability", "de": "Eigenschaft"},
     {"en": "Abilities", "de": "Eigenschaften"},
+    {"en": "Skill", "de": "Fertigkeit"},
     {"en": "Penalty", "de": "Malus"},
+    {"en": "Set", "de": "Gruppe"},
+    {"en": "SC", "de": "Probe"},
+    {"en": "SR", "de": "FW"},
 
     {"en": "Ignore skill, just throw", "de": "Vergiss Eigenschaften - einfach würfeln"},
     {"en": "1st Ability", "de": "1. Eigenschaft"},
     {"en": "2nd Ability", "de": "2. Eigenschaft"},
     {"en": "3rd Ability", "de": "3. Eigenschaft"},
-    {"en": "Skill", "de": "Talent"},
     {"en": "Now!", "de": "Los!"},
 
     {"en": "Attack", "de": "Attacke"},
