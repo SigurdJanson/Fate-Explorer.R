@@ -1,6 +1,7 @@
 # DSA 5 Rules
 
 .Attribs <- NULL
+.Skills  <- NULL
 .ComTecs <- NULL
 .Melee   <- NULL
 
@@ -10,6 +11,8 @@
 ReloadRules <- function() {
   .Attribs <<- NULL
   GetAbilities()
+  .Skills <<- NULL
+  GetSkills()
   .ComTecs <<- NULL
   GetCombatTechniques()
   #.Melee   <<- NULL# Currently not required
@@ -25,6 +28,29 @@ GetAbilities <- function() {
     .Attribs <<- read_json(JsonFile, simplifyVector = TRUE)
   }
   return(.Attribs)
+}
+
+
+IsRoutineCheckValid <- function(Skill, Modifier = 0) {
+  stop("Not implemented, yet")
+  # Get ability values for Skill
+  # if (any(Ability < 13)) return(NA)
+  # Get TaW for Skill
+  # Get minimum skill value for given Modifier
+  SRMin <- seq(19, by = -3, length.out =  7) # 
+  SRMin <- SRMin[Modifier +1]
+  return(SRMin)
+}
+
+
+GetSkills <- function() {
+  if (is.null(.Skills)) {
+    
+    lang <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+    JsonFile <- file.path("data", paste0("skills_", lang, ".json"))
+    .Skills <<- read_json(JsonFile, simplifyVector = TRUE)
+  }
+  return(.Skills)
 }
 
 

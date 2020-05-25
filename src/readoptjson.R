@@ -14,6 +14,20 @@ GetAbilities_Opt <- function(Attr) {
 }
 
 
+GetSkills_Opt <- function(Skills) {
+  # Get data frame with skill definitions
+  SkillList <- GetSkills()
+  SkillList$value <- 0
+  # 
+  SkillValID <- match(names(Skills), SkillList$attrID)
+  #SkillValID <- SkillValID[-which(is.na(SkillValID))]
+  SkillList$value[SkillValID] <- unlist(Skills)
+  
+  return(SkillList)
+}
+
+
+
 #' GetCombatSkill
 #' Compute combat skill based on DSA5 rules
 #' @details 

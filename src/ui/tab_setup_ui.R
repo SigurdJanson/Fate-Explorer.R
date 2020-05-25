@@ -18,6 +18,11 @@ sidebarLayout(
       tableOutput("SetupAttr")
     ),
     conditionalPanel(
+      condition = "output.ShowSetupSkills",
+      hr(), h3(i18n$t("Skills")),
+      tableOutput("SetupSkills")
+    ),
+    conditionalPanel(
       condition = "output.ShowSetupWeapons",
       hr(), h3(i18n$t("Weapons")),
       tableOutput("SetupWeapons")
@@ -25,7 +30,7 @@ sidebarLayout(
     #conditionalPanel(
     #  condition = "output.ShowSetupJson",
       hr(), h3(i18n$t("Json File")),
-      textOutput("RawContents")
+    verbatimTextOutput("RawContents")
     #)
   )
 )

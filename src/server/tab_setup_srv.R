@@ -1,7 +1,7 @@
 # SETUP
 
 Character <- reactiveValues(Name = "No character has been uploaded",
-                            Attr = NULL, Weapons = NULL)
+                            Attr = NULL, Skills = NULL, Weapons = NULL)
 
 
 output$CharacterName <- renderPrint({
@@ -26,10 +26,11 @@ output$RawContents <- renderPrint({
 
   Data <- read_json(path = input$CharFile$datapath)
   
-  Character$Name <- Data$name
-  Character$Attr <- GetAbilities_Opt(Data[["attr"]][["values"]])
-  
+  Character$Name    <- Data$name
+  Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
+  Character$Skills  <- GetSkills_Opt(Data[["talents"]])
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
+  # Update dropdownlist
   updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,])
   
   print(Data)
@@ -51,6 +52,29 @@ output$SetupAttr <- renderTable({
   
   Result
 }, rownames = FALSE, na = "-", digits = 0L)
+
+
+# Skills Panel ---------------------
+output$ShowSetupSkills <- reactive({
+  return( !is.null(Character$Skills) )
+})
+outputOptions(output, 'ShowSetupSkills', suspendWhenHidden = FALSE)
+
+output$SetupSkills <- renderTable({
+  Result <- Character$Skills
+  Result <- Result[-which(names(Result) == "attrID")]
+  Result <- Result[-which(names(Result) == "classID")]
+  # Show names not codes
+  NameMapping <- GetAbilities()
+  for (ablty in paste0("ab", 1:3)) {
+    Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
+  }
+  # Column names
+  colnames(Result) <- c(i18n$t("Skill"), i18n$t("Set"), 
+                        paste(i18n$t("SC"), 1:3), i18n$t("SR"))
+  
+  Result
+}, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
 
 
 # Weapons Panel ------------------------
