@@ -9,6 +9,7 @@ sidebarLayout(
                      sliderInput("SkillTrait3", i18n$t("3rd Ability"), min = 1L, max = 20L, value = 11L, step = 1L),
                      hr(),
                      sliderInput("SkillValue", i18n$t("Skill"), min = 0L, max = 20L, value = 4L, step = 1L),
+                     hr(),
                      div(style="float:right",
                          conditionalPanel(condition = "input.SkillMod < 0", 
                                           icon("minus-circle"), i18n$t("Impediment")),
