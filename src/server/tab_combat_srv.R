@@ -64,6 +64,7 @@ observeEvent(input$doAttackThrow, {
 })
 
 
+# Parry Roll
 observeEvent(input$doParryThrow, {
   FightVal$Action  <- "Parry"
   FightVal$Roll    <- CombatRoll()
@@ -87,6 +88,7 @@ observeEvent(input$doParryThrow, {
 })
 
 
+# Dodge Roll
 observeEvent(input$doDodge, {
   FightVal$Action  <- "Dodge"
   FightVal$Roll    <- CombatRoll()
@@ -112,7 +114,7 @@ observeEvent(input$doDodge, {
 
 # OUTPUT -------------------------------
 # Roll
-output$CombatAction <- renderPrint({
+output$CombatAction <- renderPrint({ #TODO: is this still needed?
   if (!is.na(FightVal$Roll)) {
     Result <- paste0(i18n$t(FightVal$Action), ": ", 
                      FightVal$Roll, " - ", 
@@ -120,6 +122,8 @@ output$CombatAction <- renderPrint({
     cat(Result)
   }
 })
+
+
 
 # Confirmation Panel
 output$ShowCombatConfirm <- reactive({
@@ -141,6 +145,7 @@ output$CombatConfirm <- renderPrint({
   
   cat(i18n$t(Result))
 })
+
 
 # Damage Panel
 output$ShowCombatDamage <- reactive({

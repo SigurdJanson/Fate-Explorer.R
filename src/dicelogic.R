@@ -86,10 +86,10 @@ SkillRoll <- function() {
 
 #' VerifySkillRoll
 #' Checks if a skill roll was successfull
-#' @param Roll Three results of a 1d20
-#' @param Abilities Values of three abilities
+#' @param Roll Three results of a 1d20 (integer)
+#' @param Abilities Values of three abilities (integer)
 #' @param Skill Skill value (integer)
-#' @param Modifier Integer
+#' @param Modifier Penalty or advantage (integer)
 #' @return A string indicating the result, one of: Fumble, Fail, Success, Critical.
 VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L) {
   if (length(Roll) != 3L) stop("Skill roll shall have exactly three values")
