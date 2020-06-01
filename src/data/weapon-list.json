@@ -6,5 +6,7 @@
     {"name":"Knochenkeule","technik":"Hiebwaffen","leiteigenschaft":"KK","schwelle":14,"grundschaden":"1W6","bonus":1,"at":0,"pa":-1,"rw":"mittel","gewicht":"0,5Stn","preis":0.6,"bf":999,"primeattrID":"ATTR_8","combattechID":"CT_5"},
     {"name":"Senaloscher Sehnenschneider","technik":"Hiebwaffen","leiteigenschaft":"KK","schwelle":13,"grundschaden":"1W6","bonus":3,"at":0,"pa":-1,"rw":"mittel","gewicht":"2Stn","preis":100,"bf":999,"primeattrID":"ATTR_8","combattechID":"CT_5"},
     {"name":"L\u00FBrer Lindwurmschläger","technik":"Hiebwaffen","leiteigenschaft":"KK","schwelle":14,"grundschaden":"1W6","bonus":4,"at":0,"pa":-1,"rw":"mittel","gewicht":"1Stn","preis":90,"bf":999,"primeattrID":"ATTR_8","combattechID":"CT_5"},
-    {"name":"Zwergenskraja","technik":"Hiebwaffen","leiteigenschaft":"KK","schwelle":13,"grundschaden":"1W6","bonus":3,"at":0,"pa":-1,"rw":"mittel","gewicht":"2Stn","preis":100,"bf":999,"primeattrID":"ATTR_8","combattechID":"CT_5"}
+    {"name":"Zwergenskraja","technik":"Hiebwaffen","leiteigenschaft":"KK","schwelle":13,"grundschaden":"1W6","bonus":3,"at":0,"pa":-1,"rw":"mittel","gewicht":"2Stn","preis":100,"bf":999,"primeattrID":"ATTR_8","combattechID":"CT_5"},
+    {"name":"Charib’Yzz-Dolch","technik":"Dolche","leiteigenschaft":"GE/KK","schwelle":15,"grundschaden":"1W6","bonus":3,"at":0,"pa":-1,"rw":"mittel","gewicht":"2Stn","preis":60,"bf":999,"primeattrID":"ATTR_6/ATTR_8","combattechID":"CT_3"},
+    {"name":"Schneiderschere","technik":"Dolche","leiteigenschaft":"GE/KK","schwelle":16,"grundschaden":"1W6","bonus":1,"at":-2,"pa":-3,"rw":"kurz","gewicht":"0,3Stn","preis":7,"bf":999,"primeattrID":"ATTR_6/ATTR_8","combattechID":"CT_3"}
 ]
