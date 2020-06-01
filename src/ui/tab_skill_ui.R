@@ -1,12 +1,14 @@
 
 sidebarLayout(
   sidebarPanel(
-    #checkboxInput("SkillIgnore", i18n$t("Ignore skill, just throw"), TRUE),
     radioGroupButtons(
       inputId = "rdbSkillSource",
-      choices = c(`<i class='fa fa-question'> Unchecked</i>` = "NoSkill", 
-                  `<i class='fa fa-sliders-h'> Manual</i>` = "ManualSkill", 
-                  `<i class='fa fa-bars'> Character Skill</i>` = "CharSkill"),
+      choiceNames = paste0("<i class='fa fa-", 
+                           c("question", "sliders-h", "bars"),
+                           "'>  ", 
+                           i18n$t(c("Unchecked", "Manual", "Character Skills")), 
+                           "</i>"),
+      choiceValues = c("NoSkill", "ManualSkill", "CharSkill"),
       justified = TRUE
     ),
     
