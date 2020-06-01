@@ -1,17 +1,8 @@
 
 sidebarLayout(
   sidebarPanel(
-    radioGroupButtons(
-      inputId = "rdbSkillSource",
-      choiceNames = paste0("<i class='fa fa-", 
-                           c("question", "sliders-h", "bars"),
-                           "'>  ", 
-                           i18n$t(c("Unchecked", "Manual", "Character Skills")), 
-                           "</i>"),
-      choiceValues = c("NoSkill", "ManualSkill", "CharSkill"),
-      justified = TRUE
-    ),
-    
+    CreateSkillSourceRadioButton(),
+
     # manually chosen skill values
     conditionalPanel(condition = "input.rdbSkillSource == 'ManualSkill'",
                      #hr(),

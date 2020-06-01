@@ -30,9 +30,13 @@ output$RawContents <- renderPrint({
   Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
   Character$Skills  <- GetSkills_Opt(Data[["talents"]])
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
+
+  # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update dropdown list on Combat Tab
   updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,])
+  
   # Update dropdown list on Skills Tab
+  UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
   updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
   updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
   

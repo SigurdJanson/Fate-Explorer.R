@@ -1,7 +1,7 @@
 # UI Skeleton
 
 #jscode <- "shinyjs.refresh = function() { history.go(0); }"
-
+source(file.path("ui", "btn_skill_rdbsource.R"), local = TRUE)
 
 ui <- shinyUI(fluidPage(
   # useShinyjs(),
