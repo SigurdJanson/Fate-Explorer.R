@@ -28,8 +28,8 @@ sidebarLayout(
     
     # Skills loaded from character sheet
     conditionalPanel(condition = "input.rdbSkillSource == 'CharSkill'",
-                     #hr(),
-                     selectInput("lbCharSkills", NULL, NULL, selectize = FALSE, width = "100%", size = 12)
+                     selectInput("lbSkillGroups", NULL, NULL, selectize = FALSE, width = "100%"),
+                     selectInput("lbCharSkills", NULL, NULL, selectize = FALSE, width = "100%", size = 14)
     ),
     
     

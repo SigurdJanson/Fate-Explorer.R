@@ -34,6 +34,7 @@ output$RawContents <- renderPrint({
   updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,])
   # Update dropdown list on Skills Tab
   updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
+  updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
   
   print(Data)
 })
