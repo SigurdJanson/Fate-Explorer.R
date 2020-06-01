@@ -1,5 +1,7 @@
 # SKILL TAB
 
+
+# Apply group filter for list of character skills
 observe({
   # React to changes of the skill groups: filter the skills
   if (exists("Character") && !is.null(Character$Skills)) {
@@ -19,12 +21,13 @@ observe({
 })
 
 
-#
+# Initiate skill roll
 LastThrow <- eventReactive(input$doSkillThrow, {
   SkillRoll()
 })
 
-# 
+
+# Display result of skill roll
 output$SkillThrow <- renderTable({
   Throw <- LastThrow()
   Result <- matrix(Throw, nrow = 3L)
@@ -37,6 +40,7 @@ output$SkillThrow <- renderTable({
     Roll <- VerifySkillRoll(Throw, TraitVals, 
                             input$SkillValue, input$SkillMod)
     Result <- rbind(as.matrix(Result), 
+                    c(i18n$t("Skill"), input$SkillValue),
                     c(i18n$t(Roll$Message), ""), 
                     c(i18n$t("QL"), ifelse(Roll$QL > 0, Roll$QL, "-") ))
     
@@ -54,6 +58,7 @@ output$SkillThrow <- renderTable({
                               Character$Skills[SkillIndex, "value"], 
                               input$SkillMod)
     Result <- rbind(as.matrix(Result), 
+                    c(i18n$t("Skill"), Character$Skills[SkillIndex, "value"]),
                     c(i18n$t(Roll$Message), ""), 
                     c(i18n$t("QL"),ifelse(Roll$QL > 0, Roll$QL, "-") ))
     
