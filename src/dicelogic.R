@@ -84,6 +84,10 @@ SkillRoll <- function() {
 }
 
 
+#' SkillRollQuality
+#' Determine quality level
+#' @param Remainder The remainder of a skill roll.
+#' @return  A quality level. If the roll wasn't successfull it returns 0.
 SkillRollQuality <- function(Remainder) {
   if (Remainder < 0L) return(0L)
   return(max( ((Remainder-1L) %/% 3L)+1L, 1L ))
@@ -103,11 +107,15 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
   
   EffectiveQualities <- Abilities + Modifier
   Check <- pmax(Roll - EffectiveQualities, rep(0L, 3L))
-  Success <- ifelse(sum(Check) <= Skill, "Success", "Fail")
+  Remainder <- Skill - sum(Check)
+  
+  Success <- ifelse(Remainder >= 0, "Success", "Fail")
+  QL <- SkillRollQuality(Remainder)
+  
   if (sum(Roll == 20L) >= 2L) 
     Success <- "Fumble"
   else if (sum(Roll == 1L) >= 2L)
     Success <- "Critical"
   
-  return(Success)
+  return(list(Message = Success, QL = QL))
 }
