@@ -90,3 +90,16 @@ test_that("GetCombatFumbleEffect", {
   expect_identical(GetCombatFumbleEffect(2), "Weapon destroyed")
   expect_identical(GetCombatFumbleEffect(12), "Hurt yourself bad")
 })
+
+
+
+
+test_that("SkillRollQuality", {
+  expect_identical(SkillRollQuality(-1), 0L)
+  
+  Result <- c(rep(1L,4), rep(2:6, each = 3L))
+  for(i in 0:18) {
+    expect_identical(SkillRollQuality(i), Result[i+1])
+  }
+  
+})

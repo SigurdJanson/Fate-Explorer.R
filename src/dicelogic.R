@@ -84,6 +84,12 @@ SkillRoll <- function() {
 }
 
 
+SkillRollQuality <- function(Remainder) {
+  if (Remainder < 0L) return(0L)
+  return(max( ((Remainder-1L) %/% 3L)+1L, 1L ))
+}
+
+
 #' VerifySkillRoll
 #' Checks if a skill roll was successfull
 #' @param Roll Three results of a 1d20 (integer)
