@@ -59,6 +59,10 @@ doCombatRollBase <- function(Action) {
   FightVal$Confirmation <- FALSE
   FightVal$EffectOfFumble <- NA
   FightVal$Damage <- NA
+  if(FightVal$Action == "Attack") {
+    if  (FightVal$Success == "Success")
+      FightVal$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
+  }
 }
 
 observeEvent(input$doAttackThrow, {
@@ -120,7 +124,7 @@ observeEvent(input$doCombatConfirm, {
   } else {
     FightVal$Damage <- NA
   }
-  updateActionButton(session, "doCombatConfirm", )
+  updateActionButton(session, "doCombatConfirm", label = NULL)
 })
 
 output$ShowCombatConfirm <- reactive({    
