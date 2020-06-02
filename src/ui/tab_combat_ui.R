@@ -34,6 +34,7 @@ sidebarLayout(
     h3(textOutput("CombatAction")),
     conditionalPanel(
       condition = "output.ShowCombatConfirm",
+      actionLink("doCombatConfirm", "-"),
       textOutput("CombatConfirm")
     ),
     conditionalPanel(

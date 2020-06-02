@@ -3,8 +3,8 @@
 
 FightVal <- reactiveValues(Action = "", Roll = NA, 
                            Success = "", Damage = NA,
-                           ConfirmRoll = NA, Confirmation = NA)
-
+                           ConfirmRoll = NA, Confirmation = FALSE)
+ShowConfirmation <- FALSE
 
 # VALUES -------------------------------
 # Source of Weapons Panel
@@ -35,86 +35,113 @@ observeEvent(input$CombatSelectWeapon, {
 
   
 # ACTIONS -------------------------------
-observeEvent(input$doAttackThrow, {
-  FightVal$Action  <- "Attack"
+doCombatRollBase <- function(Action) {
+  ShowConfirmation <- FALSE
+  FightVal$Action  <- Action
   FightVal$Roll    <- CombatRoll()
-  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
-                                       input$ATValue, 
-                                       as.numeric(input$CombatPenalty))
-  # Level of success
+
+  Penalty <- as.numeric(input$CombatPenalty)
+  if (Action == "Attack") {
+    Check <- input$ATValue
+  } else if (Action == "Parry") {
+    Check <- input$PAValue
+  } else if (Action == "Dodge") {
+    Check <- input$DodgeValue
+  }
+  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, Check, Penalty)
   if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
-    FightVal$ConfirmRoll <- CombatRoll()
-    Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
-                                     input$ATValue, 
-                                     as.numeric(input$CombatPenalty))
-    FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
-    if (!FightVal$Confirmation)
-      FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+    FightVal$ConfirmRoll <- "Required"
   } else {
     FightVal$ConfirmRoll <- NA
   }
+  FightVal$Confirmation <- FALSE
   FightVal$EffectOfFumble <- NA
-  # Damage
-  if (FightVal$Success == "Critical")
-    FightVal$Damage <- 2 * DamageRoll(input$DamageDieCount, input$Damage)
-  else if  (FightVal$Success == "Success")
-    FightVal$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
-  else 
-    FightVal$Damage <- NA
+  FightVal$Damage <- NA
+}
+
+observeEvent(input$doAttackThrow, {
+  doCombatRollBase("Attack")
+  # FightVal$Action  <- "Attack"
+  # FightVal$Roll    <- CombatRoll()
+  # FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
+  #                                      input$ATValue, 
+  #                                      as.numeric(input$CombatPenalty))
+  # Level of success
+  # if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
+    # FightVal$ConfirmRoll <- CombatRoll()
+    # Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
+    #                                  input$ATValue, 
+    #                                  as.numeric(input$CombatPenalty))
+    # FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+  #   if (!FightVal$Confirmation)
+  #     FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+  # } else {
+  #   FightVal$ConfirmRoll <- NA
+  # }
+  # FightVal$EffectOfFumble <- NA
+  # # Damage
+  # if (FightVal$Success == "Critical")
+  #   FightVal$Damage <- 2 * DamageRoll(input$DamageDieCount, input$Damage)
+  # else if  (FightVal$Success == "Success")
+  #   FightVal$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
+  # else 
+  #   FightVal$Damage <- NA
 })
 
 
 # Parry Roll
 observeEvent(input$doParryThrow, {
-  FightVal$Action  <- "Parry"
-  FightVal$Roll    <- CombatRoll()
-  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
-                                       input$PAValue, 
-                                       as.numeric(input$CombatPenalty))
-  FightVal$Damage  <- NA
-  # Level of success
-  if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
-    FightVal$ConfirmRoll <- CombatRoll()
-    Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
-                                     input$ATValue, 
-                                     as.numeric(input$CombatPenalty))
-    FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
-    if (!FightVal$Confirmation)
-      FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
-  } else {
-    FightVal$ConfirmRoll <- NA
-  }
-  FightVal$EffectOfFumble <- NA
+  doCombatRollBase("Parry")
+  # FightVal$Action  <- "Parry"
+  # FightVal$Roll    <- CombatRoll()
+  # FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
+  #                                      input$PAValue, 
+  #                                      as.numeric(input$CombatPenalty))
+  # FightVal$Damage  <- NA
+  # # Level of success
+  # if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
+  #   FightVal$ConfirmRoll <- CombatRoll()
+  #   Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
+  #                                    input$PAValue, 
+  #                                    as.numeric(input$CombatPenalty))
+  #   FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+  #   if (!FightVal$Confirmation)
+  #     FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+  # } else {
+  #   FightVal$ConfirmRoll <- NA
+  # }
+  # FightVal$EffectOfFumble <- NA
 })
 
 
 # Dodge Roll
 observeEvent(input$doDodge, {
-  FightVal$Action  <- "Dodge"
-  FightVal$Roll    <- CombatRoll()
-  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
-                                       input$DodgeValue, 
-                                       as.numeric(input$CombatPenalty))
-  FightVal$Damage  <- NA
-  # Level of success
-  if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
-    FightVal$ConfirmRoll <- CombatRoll()
-    Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
-                                     input$ATValue, 
-                                     as.numeric(input$CombatPenalty))
-    FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
-    if (!FightVal$Confirmation)
-      FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
-  } else {
-    FightVal$ConfirmRoll <- NA
-  }
-  FightVal$EffectOfFumble <- NA
+  doCombatRollBase("Dodge")
+  # FightVal$Action  <- "Dodge"
+  # FightVal$Roll    <- CombatRoll()
+  # FightVal$Success <- VerifyCombatRoll(FightVal$Roll, 
+  #                                      input$DodgeValue, 
+  #                                      as.numeric(input$CombatPenalty))
+  # FightVal$Damage  <- NA
+  # # Level of success
+  # if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
+  #   FightVal$ConfirmRoll <- CombatRoll()
+  #   Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, 
+  #                                    input$DodgeValue, 
+  #                                    as.numeric(input$CombatPenalty))
+  #   FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+  #   if (!FightVal$Confirmation)
+  #     FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+  # } else {
+  #   FightVal$ConfirmRoll <- NA
+  # }
+  # FightVal$EffectOfFumble <- NA
 })
 
 
 # OUTPUT -------------------------------
 # Roll
-output$CombatAction <- renderPrint({ #TODO: is this still needed?
+output$CombatAction <- renderPrint({ 
   if (!is.na(FightVal$Roll)) {
     Result <- paste0(i18n$t(FightVal$Action), ": ", 
                      FightVal$Roll, " - ", 
@@ -126,21 +153,53 @@ output$CombatAction <- renderPrint({ #TODO: is this still needed?
 
 
 # Confirmation Panel
-output$ShowCombatConfirm <- reactive({
+observeEvent(input$doCombatConfirm, {
+  Penalty <- as.numeric(input$CombatPenalty)
+  if (FightVal$Action == "Attack") {
+    Check <- input$ATValue
+  } else if (FightVal$Action == "Parry") {
+    Check <- input$PAValue
+  } else if (FightVal$Action == "Dodge") {
+    Check <- input$DodgeValue
+  }
+  
+  FightVal$ConfirmRoll <- CombatRoll()
+  Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, Check, Penalty)
+  FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
+  if (!FightVal$Confirmation)
+    FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
+
+  # Damage
+  if(FightVal$Action == "Attack") {
+    if (FightVal$Success == "Critical")
+      FightVal$Damage <- 2 * DamageRoll(input$DamageDieCount, input$Damage)
+    else if  (FightVal$Success == "Success")
+      FightVal$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
+  } else {
+    FightVal$Damage <- NA
+  }
+  updateActionButton(session, "doCombatConfirm", )
+})
+
+output$ShowCombatConfirm <- reactive({    
+  ConfirmLabel <- ifelse(FightVal$Success =="Critical", i18n$t("Confirm!"), i18n$t("Avert!")) #######TODO####
+  updateActionButton(session, "doCombatConfirm", label = ConfirmLabel)
   return(!is.na(FightVal$ConfirmRoll))
 })
 outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
 
 
 output$CombatConfirm <- renderPrint({
-  if (FightVal$Success == "Fumble") {
-    Result <- "Fumble" #icon("frown-open")
-  } else if (FightVal$Success == "Critical") {
-    Result <- "Critical confirmed"
-  } else if (FightVal$Success == "Success") {
-    Result <- "Critical was lost"
-  } else if (FightVal$Success == "Fail") {
-    Result <- "Fumble avoided"
+  if (FightVal$ConfirmRoll != "Required") {
+    if (FightVal$Success == "Fumble") {
+      Result <- "Still a Fumble"
+    } else if (FightVal$Success == "Critical") {
+      Result <- "Critical confirmed"
+    } else if (FightVal$Success == "Success") {
+      Result <- "Critical was lost"
+    } else if (FightVal$Success == "Fail") {
+      Result <- "Fumble avoided"
+    }
   } else Result <- ""
   
   cat(i18n$t(Result))
@@ -160,7 +219,7 @@ output$CombatDamage <- renderPrint({
 
 # Fumble Panel
 output$ShowCombatFumble <- reactive({
-  return( FightVal$Success == "Fumble" )
+  return( FightVal$Success == "Fumble" & FightVal$Confirmation )
 })
 outputOptions(output, 'ShowCombatFumble', suspendWhenHidden = FALSE)
 
