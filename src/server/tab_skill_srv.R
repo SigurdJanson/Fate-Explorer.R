@@ -45,6 +45,7 @@ output$SkillThrow <- renderTable({
                     c(i18n$t("QL"), ifelse(Roll$QL > 0, Roll$QL, "-") ))
     
   } else if (input$rdbSkillSource == "CharSkill") {
+    req(input$lbCharSkills)
     Skill <- input$lbCharSkills
     SkillIndex <- which(Character$Skills$name == Skill)
     
