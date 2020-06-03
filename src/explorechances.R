@@ -1,27 +1,38 @@
 # Explore Probabilities / Chances
 
 
+#' dSumOfDice
+#' Get the probability of rolling a sum of dice.
+#' @param Expected 
+#' @param DieCount Number of dice to sum up.
+#' @param DieSides Sides of all dice
+#' @note Works up to a `DieCount` of 20 with a d6.
+#' @return The probability of rolling the sum `Expected` with `DieCount` dice with 
+#' `DieSides` sides each.
+#' @source Weisstein, E. W. "Dice." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/Dice.html
 dSumOfDice <- function(Expected, DieCount, DieSides) {
   if (Expected < DieCount || Expected > DieCount*DieSides)
     return(0)
-  kmax <- floor((Expected-DieCount) / DieSides)
+  kmax <- floor((Expected-DieCount) / DieSides) # floor((p-n)/s)
   k <- seq(0L, kmax)
-  term1 <- sum( (-1)^k * choose(DieCount, k) *
-                choose((Expected - DieSides*k -1), (Expected - DieSides*k -DieCount)) )
-  term1 / DieSides^DieCount
+  term1 <- (-1)^k
+  term2 <- choose(DieCount, k)
+  #term3 <- choose((Expected - DieSides*k -1), (Expected - DieSides*k -DieCount))
+  term3 <- choose((Expected - DieSides*k -1), (DieCount-1))
+  sum(term1*term2*term3) / DieSides^DieCount
 }
 
 
 #' ChancesOfAttack
-#'
+#' Returns the probabilities of achieveing botch, fail and hit points 
+#' of an attack roll.
 #' @param Value Attack value
-#' @param Modifier Modifier
-#' @param DmgDieCount 
-#' @param DmgDieSides 
-#' @param DmgMod 
-#'
-#' @return A list
-#' @examples 
+#' @param Modifier Modifier, i.e. penalty or advantage on attack roll
+#' @param DmgDieCount Number of dice used in the hit point roll
+#' @param DmgDieSides Sides of dice in hit point roll
+#' @param DmgMod Modifier for hit point roll
+#' @return A data frame with the result in the first column and the probability
+#' in the second.
 ChancesOfAttack <- function(Value, Modifier = 0, 
                             DmgDieCount = 1, DmgDieSides = 6, DmgMod = 0) {
   # Basic probabilities
