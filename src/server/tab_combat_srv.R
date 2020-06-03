@@ -124,12 +124,17 @@ observeEvent(input$doCombatConfirm, {
   } else {
     FightVal$Damage <- NA
   }
-  updateActionButton(session, "doCombatConfirm", label = NULL)
+  updateActionButton(session, "doCombatConfirm", label = "")
 })
 
-output$ShowCombatConfirm <- reactive({    
-  ConfirmLabel <- ifelse(FightVal$Success =="Critical", i18n$t("Confirm!"), i18n$t("Avert!")) #######TODO####
+
+output$ShowCombatConfirm <- reactive({
+  if (FightVal$Success =="Critical")
+    ConfirmLabel <- i18n$t("Confirm!")
+  else if (FightVal$Success =="Fumble")
+    i18n$t("Avert!")
   updateActionButton(session, "doCombatConfirm", label = ConfirmLabel)
+  
   return(!is.na(FightVal$ConfirmRoll))
 })
 outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
