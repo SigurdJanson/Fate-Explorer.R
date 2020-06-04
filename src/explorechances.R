@@ -23,11 +23,13 @@ dSumOfDice <- function(Expected, DieCount, DieSides) {
 }
 
 
+
 #' ChancesOfAttack
 #' Returns the probabilities of achieveing botch, fail and hit points 
 #' of an attack roll.
 #' @param Value Attack value
-#' @param Modifier Modifier, i.e. penalty or advantage on attack roll
+#' @param Modifier Modifier, i.e. penalty or advantage on attack roll. 
+#' Negative values are penalties.
 #' @param DmgDieCount Number of dice used in the hit point roll
 #' @param DmgDieSides Sides of dice in hit point roll
 #' @param DmgMod Modifier for hit point roll
@@ -35,11 +37,12 @@ dSumOfDice <- function(Expected, DieCount, DieSides) {
 #' in the second.
 ChancesOfAttack <- function(Value, Modifier = 0, 
                             DmgDieCount = 1, DmgDieSides = 6, DmgMod = 0) {
+  ev <- Value + Modifier # Effective Value
   # Basic probabilities
-  pC <- Value / 20 / 20      # probability p(Critical)
-  pB <- (20-Value) / 20 / 20 # probability p(Botch)
-  pS <- Value/20 - pC        # p(Success)
-  pF <- (20-Value)/20 - pB
+  pC <- ev / 20 / 20      # probability p(Critical)
+  pB <- (20-ev) / 20 / 20 # p(Botch)
+  pS <- ev/20 - pC        # p(Success)
+  pF <- (20-ev)/20 - pB   # p(Fail)
   
   # Damage probabilities: vector
   MinPts <- DmgDieCount # without modifier
@@ -62,4 +65,29 @@ ChancesOfAttack <- function(Value, Modifier = 0,
   
   return(TotalHitPoints)
 }
+
+
+
+#' ChancesOfDefense
+#' Probabilities of parry and dodge rolls.
+#' @param Value Either a parry or dodge value
+#' @param Modifier Check modifier
+#' @return Data frame with probabities
+ChancesOfDefense <- function(Value, Modifier = 0) {
+  ev <- Value + Modifier # Effective Value
+  # Basic probabilities
+  pC <- ev / 20 / 20      # probability p(Critical)
+  pB <- (20-ev) / 20 / 20 # p(Botch)
+  pS <- ev/20 - pC        # p(Success)
+  pF <- (20-ev)/20 - pB   # p(Fail)
+  
+  TotalHitPoints <- data.frame(character(), TotalChance = numeric())
+  TotalHitPoints <- rbind(list("Fumble", pB), 
+                          list("Fail", pF), 
+                          list("Success", pS),
+                          list("Critical", pC))
+  return(as.data.frame(TotalHitPoints))
+}
+
+
 

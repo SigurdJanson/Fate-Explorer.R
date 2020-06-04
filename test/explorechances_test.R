@@ -77,4 +77,20 @@ test_that("ChancesOfAttack", {
     }
   }
   
+  
+})
+
+
+
+test_that("ChancesOfDefense", {
+  # Symmetry test: if the value is 10, critical == botch 
+  for (m in -3:3) { # Modifier
+    Result <- ChancesOfDefense(10-m, m)
+    o <- Result[which(Result[[1]] == "Fumble"), "TotalChance"]
+    e <- Result[which(Result[[1]] == "Critical"), "TotalChance"]
+    expect_equal(o, e)
+    o <- Result[which(Result[[1]] == "Fail"), "TotalChance"]
+    e <- Result[which(Result[[1]] == "Success"), "TotalChance"]
+    expect_equal(o, e)
+  }
 })
