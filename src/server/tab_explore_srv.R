@@ -9,6 +9,8 @@ output$imgProbabilities <- renderPlot({
     Chances   <- ChancesOfSkill( Abilities = TraitVals, 
                                  Skill = input$SkillValue, 
                                  Modifier = input$SkillMod )
+    PlotTitle <- paste0("[", paste0(TraitVals-input$SkillMod, collapse = ", "), "], ",
+                       input$SkillValue)
 
   } else if (input$rdbSkillSource == "CharSkill") {
     req(input$lbCharSkills)
@@ -20,15 +22,16 @@ output$imgProbabilities <- renderPlot({
     Chances   <- ChancesOfSkill( Abilities = TraitVals, 
                                  Skill = Character$Skills[SkillIndex, "value"], 
                                  Modifier = input$SkillMod )
-  }
-  Chances$Type  <- grepl("QS", Chances[["Names"]])
+    PlotTitle <- Skill
+  } else return()
+  Chances$Type  <- grepl("QL", Chances[["Names"]])
+  Chances[["Names"]] <- c(i18n$t(Chances[["Names"]][1:4]), paste0(i18n$t("QL"), 1:6))
     
   ggplot(data = Chances, aes(x = reorder(Names, 1:10), y = Chance, fill=Type)) +
     geom_bar(stat="identity") +
-    scale_fill_manual(values = c("black", "orange")) +
+    scale_fill_manual(values = c("darkgray", "lightgray")) +
     guides(fill = FALSE) +
     xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
-    ggtitle(i18n$t("Chances of a Skill Roll"))
-    #geom_col(aes(fill = supp), width = 0.7)
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle))
 })
 
