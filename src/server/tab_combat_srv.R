@@ -132,7 +132,8 @@ output$ShowCombatConfirm <- reactive({
   if (FightVal$Success =="Critical")
     ConfirmLabel <- i18n$t("Confirm!")
   else if (FightVal$Success =="Fumble")
-    i18n$t("Avert!")
+    ConfirmLabel <- i18n$t("Avert!")
+  else ConfirmLabel <- ""
   updateActionButton(session, "doCombatConfirm", label = ConfirmLabel)
   
   return(!is.na(FightVal$ConfirmRoll))
