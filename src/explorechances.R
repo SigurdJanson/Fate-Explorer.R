@@ -136,7 +136,7 @@ ChancesOfSkill <- function( Abilities = c(10, 10, 10), Skill = 0, Modifier = 0 )
         
       } #loop
   
-  Result <- c(Fumbles, Fail, Success, Criticals, QS) / MaxD^3
+  Result <- c(Fumbles, Fail-Fumbles, Success-Criticals, Criticals, QS) / MaxD^3
   Names  <- c("Fumble", "Fail", "Success", "Critical", paste0("QL", 1:MaxQS))
   return(data.frame(Names = Names, Chance = Result, stringsAsFactors = FALSE))
 }

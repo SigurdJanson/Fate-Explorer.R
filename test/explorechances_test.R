@@ -82,6 +82,7 @@ test_that("ChancesOfAttack", {
 
 
 
+
 test_that("ChancesOfDefense", {
   # Symmetry test: if the value is 10, critical == botch 
   for (m in -3:3) { # Modifier
@@ -147,34 +148,46 @@ test_that("ChancesOfSkill", {
     Result
   }
 
+  
+  Names <- c("Fumble", "Fail", "Success", "Critical", paste0("QL", 1:6))
+  
   o <- ChancesOfSkill(Abilities = c(15, 15, 12), Skill=5, Modifier=-2)
-  e <- c(0.52675, round(1-0.52675, digits = 10), 0.25925, 0.26750, 0, 0, 0, 0, 0.00725, 0.00725)
-  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
-  expect_equal(o, e)
-  expect_equal(sum(o[2:7]), 1)
+  e <- c(0.00725, round(1-0.52675, digits = 10)-0.00725, 0.52675-0.00725, 0.00725, 
+         0.25925, 0.26750, 0, 0, 0, 0)
+  expect_equal(o[["Chance"]], e)
+  expect_equal(sum(o[["Chance"]][1:4]), 1)
+  expect_equal(sum(o[["Chance"]][c(1:2, 5:10)]), 1)
+  expect_equal(o[["Names"]], Names)
   
   o <- ChancesOfSkill(Abilities = c(13, 14, 12), Skill=2, Modifier=1)
-  e <- c(0.49475, round(1-0.49475, digits = 10), 0.49475, 0, 0, 0, 0, 0, 0.00725, 0.00725)
-  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
-  expect_equal(o, e)
-  expect_equal(sum(o[2:7]), 1)
+  e <- c(0.00725, round(1-0.49475, digits = 10)-0.00725, 0.49475-0.00725, 0.00725, 
+         0.49475, 0, 0, 0, 0, 0)
+  expect_equal(o[["Chance"]], e)
+  expect_equal(sum(o[["Chance"]][1:4]), 1)
+  expect_equal(sum(o[["Chance"]][c(1:2, 5:10)]), 1)
+  expect_equal(o[["Names"]], Names)
   
   o <- ChancesOfSkill(Abilities = c(9, 2, 12), Skill = 0, Modifier = 0)
-  e <- c(0.031625, round(1-0.031625, digits = 10), 0.031625, 0, 0, 0, 0, 0, 0.00725, 0.00725)
-  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
-  expect_equal(o, e)
-  expect_equal(sum(o[2:7]), 1)
+  e <- c(0.00725, round(1-0.031625-0.00725, digits = 10), 0.031625-0.00725, 0.00725, 
+         0.031625, 0, 0, 0, 0, 0)
+  expect_equal(o[["Chance"]], e)
+  expect_equal(sum(o[["Chance"]][1:4]), 1)
+  expect_equal(sum(o[["Chance"]][c(1:2, 5:10)]), 1)
+  expect_equal(o[["Names"]], Names)
   
   o <- ChancesOfSkill(Abilities = c(9, 2, 12), Skill = 15, Modifier = 1)
-  e <- c(0.692125, round(1-0.692125, digits = 10), 0.19975, 0.1490, 0.134125, 0.10400, 0.10525, 0, 0.00725, 0.00725)
-  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
-  expect_equal(o, e)
-  expect_equal(sum(o[2:7]), 1)
+  e <- c(0.00725, round(1-0.692125-0.00725, digits = 10), 0.692125-0.00725, 0.00725, 
+         0.19975, 0.1490, 0.134125, 0.10400, 0.10525, 0)
+  expect_equal(o[["Chance"]], e)
+  expect_equal(sum(o[["Chance"]][1:4]), 1)
+  expect_equal(sum(o[["Chance"]][c(1:2, 5:10)]), 1)
+  expect_equal(o[["Names"]], Names)
   
   o <- ChancesOfSkill(Abilities = c(1, 20, 1), Skill = 0, Modifier = 0)
-  e <- c(0.00725, round(1-0.00725, digits = 10), 0.00725, 0, 0, 0, 0, 0, 0.00725, 0.00725)
-  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
-  expect_equal(o, e)
-  expect_equal(sum(o[2:7]), 1)
-  
+  e <- c(0.00725, round(1-0.00725-0.00725, digits = 10), 0.00725-0.00725, 0.00725, 
+         0.00725, 0, 0, 0, 0, 0)
+  expect_equal(o[["Chance"]], e)
+  expect_equal(sum(o[["Chance"]][1:4]), 1)
+  expect_equal(sum(o[["Chance"]][c(1:2, 5:10)]), 1)
+  expect_equal(o[["Names"]], Names)
 })
