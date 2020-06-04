@@ -2,6 +2,7 @@ library(shiny)
 library(jsonlite)
 library(shiny.i18n)
 library(shinyWidgets)
+library(ggplot2)
 #library(shinyjs)
 
 # Set language
@@ -16,6 +17,7 @@ i18n$set_translation_language("de")
 source("dicelogic.R", local = TRUE)
 source("readoptjson.R", local = TRUE)
 source("rules.R", local = TRUE)
+source("explorechances.R", local = TRUE)
 
 source("getui.R", local = TRUE)
 source("getserver.R", local = TRUE)
