@@ -91,3 +91,56 @@ ChancesOfDefense <- function(Value, Modifier = 0) {
 
 
 
+#' ChancesOfSkill
+#' @param Abilities Trait values for the skill ckeck
+#' @param Skill Skill value
+#' @param Modifier Advantage or penalty for skill check.
+#' @note Uses a brute force algorithm simply testing all combinations
+ChancesOfSkill <- function( Abilities = c(10, 10, 10), Skill = 0, Modifier = 0 ) {
+  # setup and precondition checks
+  if(any(Abilities + Modifier <= 0)) 
+    stop("Cannot roll against effective skill < 0")
+  
+  MaxD <- 20
+  MaxQS <- 6
+  Rolls <- 3
+  if(length(Abilities) != Rolls) stop("3 Eigenschaftswerte erforderlich")
+  
+  # Fumbles and criticals can be computed directly
+  Fumbles <- (1 + 3 * 19) # 1 if all three dice equal 20; (3*19) if only 2 dice do.
+  Criticals <- (1 + 3 * 19) # same logic here
+  
+  # initialise values
+  EffectiveAbilities <- Abilities + Modifier
+  Success <- 0L
+  Fail <- 0L
+  QS <- rep(0, MaxQS)
+  
+  # Brute 
+  for( d1 in 1:MaxD ) 
+    for( d2 in 1:MaxD )
+      for( d3 in 1:MaxD ) {
+        Roll <- c(d1, d2, d3)
+        Check <- pmax(Roll, EffectiveAbilities)
+        
+        # if critical (2 or 3 ones) or normal success
+        if(sum(Roll == 1) > 1  || sum(Check) <= sum(EffectiveAbilities) + Skill) {
+          Success <- Success + 1
+          if(sum(Roll == 1) > 1) CurrentQS <- ceiling(Skill / 3)
+          else CurrentQS <- ceiling((Skill - sum(Check - EffectiveAbilities)) / 3)
+          CurrentQS <- max(CurrentQS, 1) # correct for 0
+          QS[CurrentQS] <- QS[CurrentQS] +1
+        } else { 
+          Fail <- Fail + 1
+        }
+        
+      } #loop
+  
+  Result <- c( Success, Fail, QS, Criticals, Fumbles ) / MaxD^3
+  names(Result) <- c("Success", "Fail", paste0("QS", 1:MaxQS), "Critical", "Fumble")
+  Result
+}
+
+
+
+

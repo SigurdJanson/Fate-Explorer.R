@@ -94,3 +94,87 @@ test_that("ChancesOfDefense", {
     expect_equal(o, e)
   }
 })
+
+
+
+
+test_that("ChancesOfSkill", {
+  ChancesOfSkill.bf <- function( Abilities = c(10, 10, 10), Skill = 0, Modifier = 0 ) {
+    # setup and precondition checks
+    if(any(Abilities + Modifier <= 0)) 
+      stop("Cannot roll against effective skill < 0")
+    
+    MaxD <- 20
+    MaxQS <- 6
+    Rolls <- 3
+    if(length(Abilities) != Rolls) stop("3 Eigenschaftswerte erforderlich")
+    
+    # Fumbles and criticals can be computed directly
+    Fumbles <- (1 + 3 * 19) # 1 if all three dice equal 20; (3*19) if only 2 dice do.
+    Criticals <- (1 + 3 * 19) # same logic here
+    
+    # initialise values
+    EffectiveAbilities <- Abilities + Modifier
+    Success <- 0
+    Fail <- 0
+    QS <- rep(0, MaxQS)
+    
+    # Brute 
+    for( d1 in 1:MaxD )
+      for( d2 in 1:MaxD )
+        for( d3 in 1:MaxD ) {
+          Roll <- c(d1, d2, d3)
+          Check <- pmax(Roll, EffectiveAbilities)
+          
+          # if critical (2 or 3 ones) or normal success
+          if(sum(Roll == 1) > 1  || sum(Check) <= sum(EffectiveAbilities) + Skill) {
+            Success <- Success + 1
+            if(sum(Roll == 1) > 1) CurrentQS <- ceiling(Skill / 3)
+            else CurrentQS <- ceiling((Skill - sum(Check - EffectiveAbilities)) / 3)
+            CurrentQS <- max(CurrentQS, 1) # correct for 0
+            QS[CurrentQS] <- QS[CurrentQS] +1
+          } else { 
+            Fail <- Fail + 1
+          }
+          
+        } #loop
+    
+    if(Success + Fail != 20^3)
+      stop(paste("Algorithm error: ", Success, " -- ", Fail))
+    
+    Result <- c( Success, Fail, QS, Criticals, Fumbles ) / MaxD^3
+    names(Result) <- c("Success", "Fail", paste0("QS", 1:MaxQS), "Critical", "Fumble")
+    Result
+  }
+
+  o <- ChancesOfSkill(Abilities = c(15, 15, 12), Skill=5, Modifier=-2)
+  e <- c(0.52675, round(1-0.52675, digits = 10), 0.25925, 0.26750, 0, 0, 0, 0, 0.00725, 0.00725)
+  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
+  expect_equal(o, e)
+  expect_equal(sum(o[2:7]), 1)
+  
+  o <- ChancesOfSkill(Abilities = c(13, 14, 12), Skill=2, Modifier=1)
+  e <- c(0.49475, round(1-0.49475, digits = 10), 0.49475, 0, 0, 0, 0, 0, 0.00725, 0.00725)
+  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
+  expect_equal(o, e)
+  expect_equal(sum(o[2:7]), 1)
+  
+  o <- ChancesOfSkill(Abilities = c(9, 2, 12), Skill = 0, Modifier = 0)
+  e <- c(0.031625, round(1-0.031625, digits = 10), 0.031625, 0, 0, 0, 0, 0, 0.00725, 0.00725)
+  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
+  expect_equal(o, e)
+  expect_equal(sum(o[2:7]), 1)
+  
+  o <- ChancesOfSkill(Abilities = c(9, 2, 12), Skill = 15, Modifier = 1)
+  e <- c(0.692125, round(1-0.692125, digits = 10), 0.19975, 0.1490, 0.134125, 0.10400, 0.10525, 0, 0.00725, 0.00725)
+  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
+  expect_equal(o, e)
+  expect_equal(sum(o[2:7]), 1)
+  
+  o <- ChancesOfSkill(Abilities = c(1, 20, 1), Skill = 0, Modifier = 0)
+  e <- c(0.00725, round(1-0.00725, digits = 10), 0.00725, 0, 0, 0, 0, 0, 0.00725, 0.00725)
+  names(e) <- c("Success", "Fail", paste0("QS", 1:6), "Critical", "Fumble")
+  expect_equal(o, e)
+  expect_equal(sum(o[2:7]), 1)
+  
+})
