@@ -203,10 +203,14 @@ outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
 output$WeaponDetails <- renderText({
   Result <- ""
   if (input$PredefinedWeapon) {
+    Weapon <- as.character(input$CombatSelectWeapon)
+    WeaponData <- GetWeapons(Weapon)
+    Improvised <- WeaponData[["improvised"]]
     # Make name URL comform
-    Weapon <- tolower(as.character(input$CombatSelectWeapon))
+    Weapon <- tolower(Weapon)
     Weapon <- gsub("[ ,]+", "-", Weapon)
     Weapon <- replace_umlauts(Weapon)
+    Weapon <- paste0(Weapon, ifelse(Improvised, "-i", ""))
     
     # harvest HTML page
     if( nchar(Weapon) > 0) {
