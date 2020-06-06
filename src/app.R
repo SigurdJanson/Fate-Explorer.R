@@ -3,6 +3,7 @@ library(jsonlite)
 library(shiny.i18n)
 library(shinyWidgets)
 library(ggplot2)
+library(rvest)
 #library(shinyjs)
 
 # Set language
@@ -14,6 +15,7 @@ if(file.exists(file.path("src", "data", "lang.json"))) {
 i18n$set_translation_language("de")
 
 # RUN
+source("helpers.R", local = TRUE, encoding = "UTF-8")
 source("dicelogic.R", local = TRUE)
 source("readoptjson.R", local = TRUE)
 source("rules.R", local = TRUE)

@@ -46,6 +46,11 @@ sidebarLayout(
       hr(),
       actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
       textOutput("CombatFumble")
+    ),
+    conditionalPanel(
+      condition = "output.ShowWeaponDetails",
+      hr(),
+      htmlOutput("WeaponDetails")
     )
   )
 )

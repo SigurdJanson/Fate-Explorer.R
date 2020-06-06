@@ -1,9 +1,10 @@
 # COMBAT TAB
 
-
+# Values of last combat roll
 FightVal <- reactiveValues(Action = "", Roll = NA, 
                            Success = "", Damage = NA,
                            ConfirmRoll = NA, Confirmation = FALSE)
+# Indicates if confirmation roll of last critical/botch is being displayed
 ShowConfirmation <- FALSE
 
 
@@ -189,3 +190,45 @@ output$CombatFumble <- renderPrint({
 observeEvent(input$doCombatFumble, {
   FightVal$EffectOfFumble <- CombatFumbleRoll()
 })
+
+
+#
+# Weapon details Panel
+# (harvest Ulisses Wiki)
+output$ShowWeaponDetails <- reactive({
+  return( !is.null(Character$Weapons) && input$PredefinedWeapon )
+})
+outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
+
+output$WeaponDetails <- renderText({
+  Result <- ""
+  if (input$PredefinedWeapon) {
+    # Make name URL comform
+    Weapon <- tolower(as.character(input$CombatSelectWeapon))
+    Weapon <- gsub("[ ,]+", "-", Weapon)
+    Weapon <- replace_umlauts(Weapon)
+    
+    # harvest HTML page
+    if( nchar(Weapon) > 0) {
+      URL <- paste0("https://ulisses-regelwiki.de/index.php/", 
+                  Weapon, ".html")
+      Sssn <- try(html_session(URL))
+      if (httr::status_code(Sssn) == 200) {
+        Nodes <- html_nodes(Sssn, "div.ce_text.last.block")
+        Nodes <- html_children(Nodes)
+        Result <- as.character(Nodes)
+      } else {
+        Result  <- paste0("<p>", i18n$t("Not available"), "</p>") ##TODO: TRANSLATE
+      }
+    }
+    # Render result to HTML
+    Title <- "<p><strong>Weapon Details</strong></p>"
+    Result <- paste0(Result, collapse="") # Collapse several strings into one
+    Result <- paste0("<div style='color:gray;padding:0.5em;border: 1px solid lightgray'>", 
+                     Title, Result, 
+                     "</div")
+  }
+  
+  return(Result)
+})
+
