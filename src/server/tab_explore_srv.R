@@ -4,6 +4,8 @@
 
 # Display result of skill roll
 output$imgProbabilities <- renderPlot({
+  
+  # Fetch values
   if (input$rdbSkillSource == "ManualSkill") {
     TraitVals <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
     Chances   <- ChancesOfSkill( Abilities = TraitVals, 
@@ -24,9 +26,11 @@ output$imgProbabilities <- renderPlot({
                                  Modifier = input$SkillMod )
     PlotTitle <- Skill
   } else return()
+  
+  # Plot labels
   Chances$Type  <- grepl("QL", Chances[["Names"]])
   Chances[["Names"]] <- c(i18n$t(Chances[["Names"]][1:4]), paste0(i18n$t("QL"), 1:6))
-    
+  # Plot
   ggplot(data = Chances, aes(x = reorder(Names, 1:10), y = Chance, fill=Type)) +
     geom_bar(stat="identity") +
     scale_fill_manual(values = c("darkgray", "lightgray")) +
@@ -35,3 +39,33 @@ output$imgProbabilities <- renderPlot({
     ggtitle(paste(i18n$t("Chances of"), PlotTitle))
 })
 
+
+# Display result of combat rolls
+output$imgAttackChances <- renderPlot({
+  Value <- input$ATValue
+  Mod   <- input$CombatPenalty
+  DmgCount <- input$DamageDieCount
+  DmgSides <- 6
+  DmgMod   <- input$Damage
+
+  Chances <- ChancesOfAttack(Value = Value, Modifier = Mod, 
+                             DmgDieCount = DmgCount, 
+                             DmgDieSides = DmgSides, DmgMod = input$Damage)
+  if (input$PredefinedWeapon) {
+    PlotTitle <- as.character(input$CombatSelectWeapon)
+  } else {
+    PlotTitle <- paste0("[", Value-Mod, "] Damage ", 
+                        DmgCount, "d", DmgSides, "+", DmgMod)
+  }
+  
+  Chances[["HitPoints"]][1:2] <- i18n$t(Chances[["HitPoints"]][1:2])
+  
+  # Plot
+  ggplot(data = Chances, aes(x = reorder(HitPoints, 1:nrow(Chances)), y = TotalChance)) +
+    geom_bar(stat="identity") +
+    scale_fill_manual(values = c("darkgray")) +
+    guides(fill = FALSE) +
+    xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle))
+})
+  
