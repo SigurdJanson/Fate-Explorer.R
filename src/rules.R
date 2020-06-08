@@ -66,7 +66,6 @@ GetCombatTechniques <- function() {
 
 
 GetWeapons <- function(Which = "All", Type = "Melee") {
-  #browser()
   if (Type == "Melee") {
     if (is.null(.Melee)) {
       JsonFile <- file.path("data", paste0("weapon-list", ".json"))
@@ -74,13 +73,14 @@ GetWeapons <- function(Which = "All", Type = "Melee") {
     }
     if (Which == "All")
       return(.Melee)
-    else
+    else {
+      Which <- gsub("[[:blank:]]", "", Which)
       return(as.list(.Melee[ which(.Melee$name == Which),]))
-    } else {
+    }
+  } else {
     stop("Other weapons than melee are not supported, yet")
   }
 }
-#GetWeapons("Waqqif")
 
 
 #' GetPrimaryWeaponAttribute

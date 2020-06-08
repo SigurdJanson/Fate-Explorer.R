@@ -204,18 +204,13 @@ output$WeaponDetails <- renderText({
   Result <- ""
   if (input$PredefinedWeapon) {
     Weapon <- as.character(input$CombatSelectWeapon)
-    WeaponData <- GetWeapons(Weapon)
-    Improvised <- WeaponData[["improvised"]]
-    # Make name URL comform
-    Weapon <- tolower(Weapon)
-    Weapon <- gsub("[ ,]+", "-", Weapon)
-    Weapon <- replace_umlauts(Weapon)
-    Weapon <- paste0(Weapon, ifelse(Improvised, "-i", ""))
     
+    WeaponData <- GetWeapons(Weapon)
+    URL <- WeaponData[["url"]]
+
     # harvest HTML page
-    if( nchar(Weapon) > 0) {
-      URL <- paste0("https://ulisses-regelwiki.de/index.php/", 
-                  Weapon, ".html")
+    if( length(URL) > 0 && nchar(URL) > 0) {
+      URL <- paste0("https://ulisses-regelwiki.de/", URL)
       Sssn <- try(html_session(URL))
       if (httr::status_code(Sssn) == 200) {
         Nodes <- html_nodes(Sssn, "div.ce_text.last.block")
