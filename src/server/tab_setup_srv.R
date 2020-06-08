@@ -24,8 +24,10 @@ outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 output$RawContents <- renderPrint({
   req(input$CharFile)
 
+  # # handle dependencies to compontens that display data of last character
+  # input$CombatSelectWeapon
+  # 
   Data <- read_json(path = input$CharFile$datapath)
-  
   Character$Name    <- Data$name
   Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
   Character$Skills  <- GetSkills_Opt(Data[["talents"]])
@@ -33,7 +35,7 @@ output$RawContents <- renderPrint({
 
   # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update dropdown list on Combat Tab
-  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,])
+  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
   
   # Update dropdown list on Skills Tab
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )

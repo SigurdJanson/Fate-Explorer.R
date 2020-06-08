@@ -23,10 +23,12 @@ observeEvent(input$CombatSelectWeapon, {
   if (input$PredefinedWeapon) {
     Weapon <- as.character(input$CombatSelectWeapon)
     # Update values
-    updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
-    updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
-    updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
-    updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
+    if(nchar(Weapon) > 0) {
+      updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
+      updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
+      updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
+      updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
+    }
   } else {
     updateNumericInput(session, "ATValue", value = 6L)
     updateNumericInput(session, "PAValue", value = 3L)
