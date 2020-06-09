@@ -44,14 +44,14 @@ ChancesOfAttack <- function(Value, Modifier = 0,
   pS <- ev/20 - pC        # p(Success)
   pF <- (20-ev)/20 - pB   # p(Fail)
   
-  # Damage probabilities: vector
-  MinPts <- DmgDieCount # without modifier
-  MaxPts <- DmgDieCount * DmgDieSides # without modifier 
+  # Vector of base hit points (without damage modifier)
+  MinPts <- DmgDieCount
+  MaxPts <- DmgDieCount * DmgDieSides
   Points <- MinPts:MaxPts
   Chance <- sapply(Points, dSumOfDice, DmgDieCount, DmgDieSides)
-  
-  HitPoints <- Points + Modifier # = [2, 12] for a 2d6+0
-  CriticalHitPoints <- (Points + Modifier)*2
+  # Add modifier and create hit point vectors for normal and critical hits
+  HitPoints <- Points + DmgMod # = [2, 12] for a 2d6+0
+  CriticalHitPoints <- (Points + DmgMod)*2
   HitPointChance <- Chance * pS
   CriticalHitPointChance <- Chance * pC
   
@@ -65,7 +65,6 @@ ChancesOfAttack <- function(Value, Modifier = 0,
   
   return(TotalHitPoints)
 }
-
 
 
 #' ChancesOfDefense

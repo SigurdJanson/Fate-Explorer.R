@@ -2,6 +2,7 @@ setwd("..")
 source("./src/explorechances.R")
 setwd("./test")
 
+
 test_that("dSumOfDice", {
   # sum(`2d6`) - https://wizardofodds.com/gambling/dice/2/
   e <- c(0.027777777777778, 0.055555555555556, 0.083333333333333, 
@@ -77,6 +78,15 @@ test_that("ChancesOfAttack", {
     }
   }
   
+  Result <- ChancesOfAttack(10, 0, 1, 6, DmgMod = 0)
+  o <- as.integer(Result[["HitPoints"]][-(1:2)])
+  e <- c(1L:6L, 8L, 10L, 12L)
+  expect_identical(o, e)
+  
+  Result <- ChancesOfAttack(10, 0, 1, 6, DmgMod = 5)
+  o <- as.integer(Result[["HitPoints"]][-(1:2)])
+  e <- c(6L:11L, 12L, 14L, 16L, 18L, 20L, 22L)
+  expect_identical(o, e)
   
 })
 
