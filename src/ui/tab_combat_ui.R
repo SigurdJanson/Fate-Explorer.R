@@ -3,7 +3,7 @@ sidebarLayout(
   sidebarPanel(
     conditionalPanel(
       condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
-      checkboxInput("PredefinedWeapon", i18n$t("Use Weapon from Character"), TRUE)
+      checkboxInput("PredefinedWeapon", i18n$t("Use Weapon from Character"), FALSE)
     ),
     conditionalPanel(
       condition = "output.ShowPredefinedWeapons",
