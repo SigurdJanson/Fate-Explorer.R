@@ -36,7 +36,8 @@ output$imgProbabilities <- renderPlot({
     scale_fill_manual(values = c("darkgray", "lightgray")) +
     guides(fill = FALSE) +
     xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
-    ggtitle(paste(i18n$t("Chances of"), PlotTitle))
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle)) +
+    theme_light()
 })
 
 
@@ -63,9 +64,10 @@ output$imgAttackChances <- renderPlot({
   # Plot
   ggplot(data = Chances, aes(x = reorder(HitPoints, 1:nrow(Chances)), y = TotalChance)) +
     geom_bar(stat="identity") +
-    scale_fill_manual(values = c("darkgray")) +
+    scale_fill_manual(values = c("gray")) +
     guides(fill = FALSE) +
     xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
-    ggtitle(paste(i18n$t("Chances of"), PlotTitle))
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle)) +
+    theme_light()
 })
   
