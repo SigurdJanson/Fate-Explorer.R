@@ -2842,5 +2842,41 @@
         "combattechID": "CT_3",
         "improvised": true,
         "url": "index.php/schneiderschere-i.html"
+    },
+    {
+        "name": "Federmesser",
+        "technik": "Dolche",
+        "leiteigenschaft": "GE/KK",
+        "schwelle": 16,
+        "grundschaden": "1W6",
+        "bonus": 1,
+        "at": -1,
+        "pa": -4,
+        "rw": "kurz",
+        "gewicht": "0,2Stn",
+        "preis": 3,
+        "bf": 999,
+        "primeattrID": "ATTR_6/ATTR_8",
+        "combattechID": "CT_3",
+        "improvised": true,
+        "url": "index.php/federmesser-i.html"
+    },
+    {
+        "name": "Elfendolch",
+        "technik": "Dolche",
+        "leiteigenschaft": "GE",
+        "schwelle": 16,
+        "grundschaden": "1W6",
+        "bonus": 1,
+        "at": 0,
+        "pa": 0,
+        "rw": "kurz",
+        "gewicht": "0,5Stn",
+        "preis": 100,
+        "bf": 999,
+        "primeattrID": "ATTR_6",
+        "combattechID": "CT_3",
+        "improvised": false,
+        "url": "index.php/elfendolch.html"
     }
 ]
