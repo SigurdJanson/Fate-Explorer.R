@@ -8,7 +8,9 @@ sidebarLayout(
               accept = c("text/json","text/plain",".json"),
               buttonLabel = i18n$t("Browse..."),
               placeholder = i18n$t("No file selected")),
-    hr()#,
+    hr(),#,
+    switchInput(inputId = "chbExploreChances", label = i18n$t("Explore roll probabilities"), 
+                labelWidth = "100%")
   ),
   mainPanel(
     h3(textOutput("CharacterName")),
@@ -29,7 +31,7 @@ sidebarLayout(
     ),
     #conditionalPanel(
     #  condition = "output.ShowSetupJson",
-      hr(), h3(i18n$t("Json File")),
+    hr(), h3(i18n$t("Json File")),
     verbatimTextOutput("RawContents")
     #)
   )

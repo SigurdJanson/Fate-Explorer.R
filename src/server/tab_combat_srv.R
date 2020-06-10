@@ -233,3 +233,9 @@ output$WeaponDetails <- renderText({
   return(Result)
 })
 
+
+# Exploration Panel ----
+output$ShowExploreFightingChances <- reactive({
+  return( input$chbExploreChances )
+})
+outputOptions(output, 'ShowExploreFightingChances', suspendWhenHidden = FALSE)

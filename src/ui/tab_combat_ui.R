@@ -53,6 +53,11 @@ sidebarLayout(
       condition = "output.ShowWeaponDetails",
       hr(),
       htmlOutput("WeaponDetails")
-    )
+    ),
+    conditionalPanel(
+      condition = "output.ShowExploreFightingChances",
+      h3(i18n$t("Combat Roll")),
+      plotOutput("imgAttackChances", width = "100%", height = "200px")
+    ),
   )
 )

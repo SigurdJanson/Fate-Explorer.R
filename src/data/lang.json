@@ -61,6 +61,8 @@
     {"en": "Hurt yourself",  "de": "Selbst verletzt"},
     {"en": "Hurt yourself bad",  "de": "Selbst schwer verletzt"},
     {"en": "Not available",  "de": "Nicht verfügbar"},
+    {"en": "Combat Roll",  "de": "Kampfprobe"},
+    {"en": "Explore roll probabilities",  "de": "Probenwahrscheinlichkeiten inspizieren"},
 
     {"en": "Probability",  "de": "Wahrscheinlichkeit"},
     {"en": "Chances of",  "de": "Chancen für"},
