@@ -62,7 +62,7 @@ test_that("dSumOfDice", {
 
 
 
-
+# Chances of Attack ----
 test_that("ChancesOfAttack", {
   # Sum test - the sum of all probabilities must be 1
   for (v in 1:20) { # AT values
@@ -78,6 +78,7 @@ test_that("ChancesOfAttack", {
     }
   }
   
+  # Check hit points for different conditions
   Result <- ChancesOfAttack(10, 0, 1, 6, DmgMod = 0)
   o <- as.integer(Result[["HitPoints"]][-(1:2)])
   e <- c(1L:6L, 8L, 10L, 12L)
@@ -88,11 +89,16 @@ test_that("ChancesOfAttack", {
   e <- c(6L:11L, 12L, 14L, 16L, 18L, 20L, 22L)
   expect_identical(o, e)
   
+  Result <- ChancesOfAttack(10, 0, 2, 6, DmgMod = 1)
+  o <- as.integer(Result[["HitPoints"]][-(1:2)])
+  e <- c(3L:13L, seq(14L, 26L, by = 2L))
+  expect_identical(o, e)
+  
 })
 
 
 
-
+# Chances of Defense ----
 test_that("ChancesOfDefense", {
   # Symmetry test: if the value is 10, critical == botch 
   for (m in -3:3) { # Modifier
@@ -108,7 +114,7 @@ test_that("ChancesOfDefense", {
 
 
 
-
+# Chances of SKill ----
 test_that("ChancesOfSkill", {
   ChancesOfSkill.bf <- function( Abilities = c(10, 10, 10), Skill = 0, Modifier = 0 ) {
     # setup and precondition checks
