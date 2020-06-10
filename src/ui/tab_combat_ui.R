@@ -15,10 +15,12 @@ sidebarLayout(
     ),
     hr(),
     sliderInput("ATValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
-    sliderInput("PAValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 4L, step = 1L),
+    sliderInput("PAValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
     splitLayout(cellWidths = c("49%", "49%"),
-        numericInput("DamageDieCount", i18n$t("Dice 4 Damage"), value = 1L, min = 1L, width = "100%"),
-        numericInput("Damage", i18n$t("Modifier"), value = 2L, min = 0L, width = "100%")
+        numericInputIcon("DamageDieCount", i18n$t("Dice 4 Damage"), value = 1L, min = 1L, 
+                         width = "100%", icon = list(NULL, "W6")),
+        numericInputIcon("Damage", i18n$t("Modifier"), value = 2L, min = 0L, 
+                         width = "100%", icon = list("+"))
     ),
     hr(),
     sliderInput("DodgeValue", i18n$t("Dodge"),  min = 1L, max = 10L, value = 5L, step = 1L),
