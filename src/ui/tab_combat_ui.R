@@ -58,6 +58,6 @@ sidebarLayout(
       condition = "output.ShowExploreFightingChances",
       h3(i18n$t("Combat Roll")),
       plotOutput("imgAttackChances", width = "100%", height = "200px")
-    ),
+    )
   )
 )
