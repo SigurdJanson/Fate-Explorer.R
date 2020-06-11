@@ -73,7 +73,7 @@ output$SkillThrow <- renderTable({
 
 # Exploration Panel ----
 output$ShowExploreSkillChances <- reactive({
-  return( input$chbExploreChances )
+  return( input$chbExploreChances &  input$rdbSkillSource !=  "NoSkill" )
 })
 outputOptions(output, 'ShowExploreSkillChances', suspendWhenHidden = FALSE)
 
