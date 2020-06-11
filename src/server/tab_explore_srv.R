@@ -35,8 +35,9 @@ output$imgSkillChances <- renderPlot({
     scale_fill_manual(values = c("darkgray", "lightgray")) +
     guides(fill = FALSE) +
     xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
-    ggtitle(paste(i18n$t("Chances of"), PlotTitle)) +
-    theme_light()
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle))+
+    geom_text(aes(label = round(Chance, 2), y = 0.05), vjust=0, color="black", size=3.5)+
+    theme_minimal()
 })
 
 
@@ -66,7 +67,8 @@ output$imgAttackChances <- renderPlot({
     scale_fill_manual(values = c("gray")) +
     guides(fill = FALSE) +
     xlab(i18n$t("Result")) + ylab(i18n$t("Probability")) +
-    ggtitle(paste(i18n$t("Chances of"), PlotTitle)) +
-    theme_light()
+    ggtitle(paste(i18n$t("Chances of"), PlotTitle))+
+    geom_text(aes(label = round(TotalChance, 2), y = 0.05), vjust=0, color="black", size=3.5)+
+    theme_minimal()
 })
   
