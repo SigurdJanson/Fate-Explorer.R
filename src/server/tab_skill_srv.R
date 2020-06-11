@@ -28,46 +28,54 @@ LastThrow <- eventReactive(input$doSkillThrow, {
 
 
 # Display result of skill roll
-output$SkillThrow <- renderTable({
-  Throw <- LastThrow()
-  Result <- matrix(Throw, nrow = 3L)
-
+output$SkillThrow <- renderText({
+  Values <- LastThrow()
+  
   if (input$rdbSkillSource == "ManualSkill") {
-    TraitVals <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
-    Result <- cbind(Result, TraitVals)
-    colnames(Result) <- c(i18n$t("Result"), i18n$t("Ability"))
+    Abilities <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
     
-    Roll <- VerifySkillRoll(Throw, TraitVals, 
-                            input$SkillValue, input$SkillMod)
-    Result <- rbind(as.matrix(Result), 
-                    c(i18n$t("Skill"), input$SkillValue),
-                    c(i18n$t(Roll$Message), ""), 
-                    c(i18n$t("QL"), ifelse(Roll$QL > 0, Roll$QL, "-") ))
+    RollCheck <- VerifySkillRoll(Values, Abilities, input$SkillValue, input$SkillMod)
+    # Content for Rendering
+    Labels    <- NULL
+    Abilities <- c(Abilities, input$SkillValue)
+    Values    <- c(Values, RollCheck$Remainder)
     
   } else if (input$rdbSkillSource == "CharSkill") {
     req(input$lbCharSkills)
-    Skill <- input$lbCharSkills
+    Skill      <- input$lbCharSkills
     SkillIndex <- which(Character$Skills$name == Skill)
     
-    TraitVals <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
-    TraitVals <- unlist(Character$Attr[, TraitVals]) # Values
+    Labels    <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
+    Abilities <- unlist(Character$Attr[, Labels]) 
     
-    Result <- cbind(Result, TraitVals)
-    colnames(Result) <- c(i18n$t("Result"), i18n$t("Ability"))
-    
-    Roll <- VerifySkillRoll(Throw, TraitVals, 
-                              Character$Skills[SkillIndex, "value"], 
-                              input$SkillMod)
-    Result <- rbind(as.matrix(Result), 
-                    c(i18n$t("Skill"), Character$Skills[SkillIndex, "value"]),
-                    c(i18n$t(Roll$Message), ""), 
-                    c(i18n$t("QL"),ifelse(Roll$QL > 0, Roll$QL, "-") ))
+    RollCheck <- VerifySkillRoll(Values, Abilities, 
+                                 Character$Skills[SkillIndex, "value"], input$SkillMod)
+    # Content for Rendering
+    NameMapping <- GetAbilities()
+    Labels    <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
+    Abilities <- c(Abilities, Character$Skills[SkillIndex, "value"])
+    Values    <- c(Values, RollCheck$Remainder)
     
   } else {
-    colnames(Result) <- i18n$t(c("Result"))
+    Labels    <- NULL
+    Abilities <- NULL
+    RollCheck <- list(Message = "", QL = -1, Remainder = NA) # fake VerifySkillRoll() results
   }
-  Result
-}, spacing = "l")
+
+  # Rendering
+  Rows <- list(tags$tr( tags$td(i18n$t("Roll")),  lapply(Values, tags$td) ))
+  if (!is.null(Abilities)) 
+    Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(Abilities-input$SkillMod, tags$td) ), Rows)
+  if (!is.null(Labels)) 
+    Rows <- list(tags$th( tags$td(), lapply(Labels, tags$td)), Rows)
+  Result <- tags$div(
+    tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
+    p( span(i18n$t(RollCheck$Message)), 
+       span(ifelse(RollCheck$QL > 0, paste(i18n$t("with"), RollCheck$QL, i18n$t("QL")), "")) ),
+    class = "shiny-html-output shiny-bound-output")
+  
+  return(paste((Result), collapse=""))
+})
 
 
 

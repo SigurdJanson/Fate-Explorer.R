@@ -117,5 +117,5 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
   else if (sum(Roll == 1L) >= 2L)
     Success <- "Critical"
   
-  return(list(Message = Success, QL = QL))
+  return(list(Message = Success, QL = QL, Remainder = Remainder))
 }
