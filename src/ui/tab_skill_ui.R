@@ -35,6 +35,12 @@ sidebarLayout(
   mainPanel(
     actionButton("doSkillThrow", i18n$t("Now!")),
     hr(),
-    div(tableOutput("SkillThrow"), style = "font-size:140%")
+    div(tableOutput("SkillThrow"), style = "font-size:140%"),
+    # Exploration Panel for Skill roll probabilities ----
+    conditionalPanel(
+      condition = "output.ShowExploreSkillChances",
+      h3(i18n$t("Skill Roll")),
+      plotOutput("imgSkillChances", width = "100%", height = "200px")
+    )
   )
 )

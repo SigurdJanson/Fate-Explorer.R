@@ -17,9 +17,9 @@ ui <- shinyUI(fluidPage(
                source(file.path("ui", "tab_combat_ui.R"), local = TRUE)$value
              ),
              
-             tabPanel(i18n$t("Explore"), {
-               source(file.path("ui", "tab_explore_ui.R"), local = TRUE)$value
-             }),
+             #tabPanel(i18n$t("Explore"), {
+            #   source(file.path("ui", "tab_explore_ui.R"), local = TRUE)$value
+            # }),
              
              tabPanel(i18n$t("Setup"), 
                source(file.path("ui", "tab_setup_ui.R"), local = TRUE)$value

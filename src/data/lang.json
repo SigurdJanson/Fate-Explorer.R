@@ -28,6 +28,7 @@
     {"en": "Unchecked",  "de": "Ohne Werte"},
     {"en": "Manual",  "de": "Selbstgewählt"},
     {"en": "Character Skills",  "de": "Charakterwerte"},
+    {"en": "Skill Roll",  "de": "Fertigkeitsprobe"},
 
     {"en": "Attack", "de": "Attacke"},
     {"en": "Parry", "de": "Parade"},

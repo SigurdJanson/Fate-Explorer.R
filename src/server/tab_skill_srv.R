@@ -69,3 +69,11 @@ output$SkillThrow <- renderTable({
   Result
 }, spacing = "l")
 
+
+
+# Exploration Panel ----
+output$ShowExploreSkillChances <- reactive({
+  return( input$chbExploreChances )
+})
+outputOptions(output, 'ShowExploreSkillChances', suspendWhenHidden = FALSE)
+

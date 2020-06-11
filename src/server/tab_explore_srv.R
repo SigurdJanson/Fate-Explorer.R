@@ -1,9 +1,8 @@
 # EXPLORE TAB
 
 
-
 # Display result of skill roll
-output$imgProbabilities <- renderPlot({
+output$imgSkillChances <- renderPlot({
   
   # Fetch values
   if (input$rdbSkillSource == "ManualSkill") {
