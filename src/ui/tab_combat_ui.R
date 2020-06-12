@@ -33,22 +33,24 @@ sidebarLayout(
     actionButton("doParryThrow", i18n$t("Parry"), icon = icon("shield-alt"), width = "32%"),
     actionButton("doDodge", i18n$t("Dodge"), icon = icon("running"), width = "32%"),
     hr(),
-    h3(textOutput("CombatAction")),
-    conditionalPanel(
-      condition = "output.ShowCombatConfirm",
-      actionLink("doCombatConfirm", "-"),
-      textOutput("CombatConfirm")
-    ),
-    conditionalPanel(
-      condition = "output.ShowCombatDamage",
-      textOutput("CombatDamage")
-    ),
-    conditionalPanel(
-      condition = "output.ShowCombatFumble",
-      hr(),
-      actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
-      textOutput("CombatFumble")
-    ),
+    div(
+      h3(textOutput("CombatAction")),
+        conditionalPanel(
+          condition = "output.ShowCombatConfirm",
+          actionLink("doCombatConfirm", "-"),
+          textOutput("CombatConfirm")
+        ),
+        conditionalPanel(
+          condition = "output.ShowCombatDamage",
+          textOutput("CombatDamage")
+        ),
+        conditionalPanel(
+          condition = "output.ShowCombatFumble",
+          hr(),
+          actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
+          textOutput("CombatFumble")
+        ),
+    style = "height:18rem"),
     conditionalPanel(
       condition = "output.ShowWeaponDetails",
       hr(),
