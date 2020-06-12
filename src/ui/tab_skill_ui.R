@@ -33,7 +33,7 @@ sidebarLayout(
     ),
   ),
   mainPanel(
-    actionButton("doSkillThrow", i18n$t("Now!")),
+    actionButton("doSkillThrow", i18n$t("Now!"), width = "25%"),
     hr(),
     div(
         htmlOutput("SkillThrow", style = "font-size:140%"),
