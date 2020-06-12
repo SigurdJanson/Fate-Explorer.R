@@ -18,7 +18,7 @@ fluidRow(
          h3(i18n$t("Honorable mentions")), br(), 
          i18n$t("This work would not have been possible without the support of"),
          "Sadik al'Dudei, Moran Lichtpfeil, Meschok, Sohn des Ssok, Ahgans Guelden (R.I.P),",
-         "Alassar von Tundrien, Anjin Siebenstich, Sina ibn Rushd, Junis Djelf ibn Yakuban, Torfin Hardsgersen & Phileasson Fogwulf.",
+         "Alassar von Tundrien, Anjin Siebenstich, Sina ibn Rushd, Junis Djelf ibn Yakuban, Torfin Hardsgersen & Asleif Phileasson Foggwulf.",
          br(), br(),
          i18n$t("Furthermore"),
          a(i18n$t("the creator of the Optolith client"), href="https://github.com/elyukai"), 
