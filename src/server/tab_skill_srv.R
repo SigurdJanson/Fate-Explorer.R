@@ -67,7 +67,7 @@ output$SkillThrow <- renderText({
   if (!is.null(Abilities)) 
     Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(Abilities-input$SkillMod, tags$td) ), Rows)
   if (!is.null(Labels)) 
-    Rows <- list(tags$th( tags$td(), lapply(Labels, tags$td)), Rows)
+    Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
   Result <- tags$div(
     tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
     p( span(i18n$t(RollCheck$Message)), 
