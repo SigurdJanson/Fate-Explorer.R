@@ -23,6 +23,10 @@
     {"en": "SR", "de": "FW"},
     {"en": "QL", "de": "QS"},
 
+    {"en": "Character Abilities", "de": "Charakterwerte"},
+    {"en": "COU", "de": "MU"},{"en": "SAG", "de": "KL"},{"en": "INT", "de": "IN"},{"en": "CHA", "de": "CH"},
+    {"en": "DEX", "de": "FF"},{"en": "AGI", "de": "GE"},{"en": "CON", "de": "KO"},{"en": "STR", "de": "KK"},
+
     {"en": "Ignore skill, just throw", "de": "Vergiss Eigenschaften - einfach würfeln"},
     {"en": "1st Ability", "de": "1. Eigenschaft"},
     {"en": "2nd Ability", "de": "2. Eigenschaft"},
