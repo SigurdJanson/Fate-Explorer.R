@@ -1,5 +1,36 @@
 # 
 
+#' AbilityRoll
+#' An abilityRoll roll is a roll with a 20-sided die.
+#' @return A random number between 1 and 20
+AbilityRoll <- function() {
+  return(sample.int(20L, 1L))
+}
+
+#' Title
+#'
+#' @param Roll Result of a die roll (1d20).
+#' @param Ability The characters ability value (value between 1 and 20).
+#' @param Modifier Values < 0 are penalties, >0 bonuses (integer).
+#' @return A string indicating the result, one of: Fumble, Fail, Success, Critical.
+VerifyAbilityRoll <- function(Roll, Ability, Modifier = 0L) {
+  # PRECONDITIONS
+  if (missing(Roll) || is.null(Roll)) return(NA)
+  if (Roll < 1L || Roll > 20L) stop("Invalid roll")
+  if(Ability < 0L) stop("Invalid ability")
+  
+  # RUN
+  if (Roll == 20L)
+    Success <- "Fumble"
+  else if (Roll == 1L)
+    Success <- "Critical"
+  else
+    Success <- ifelse(Roll <= Ability+Modifier, "Success", "Fail")
+  
+  return(Success)
+}
+
+
 # COMBAT ---------------------------
 
 #' CombatRoll
