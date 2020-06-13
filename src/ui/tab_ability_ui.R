@@ -12,19 +12,10 @@ sidebarLayout(
     conditionalPanel(condition = "output.ShowCharacterAbilities",
         radioGroupButtons(inputId = "rdbCharacterAbility",
                choiceNames = i18n$t(c("COU", "SAG", "INT", "CHA", "DEX", "AGI", "CON", "STR")),
-               choiceValues = paste0("ATTR_", 1:8),#c("COU", "SAG", "INT", "CHA", "DEX", "AGI", "CON", "STR"), 
-               justified = TRUE,
-               #checkIcon = list(yes = icon("ok", lib = "glyphicon")),
-               size = "xs"
+               choiceValues = paste0("ATTR_", 1:8),
+               justified = TRUE#,
+               #size = "xs"
              )
-            # actionButton("doCourageRoll", i18n$t("COU")),
-            # actionButton("doSagacityRoll", i18n$t("SAG")),
-            # actionButton("doIntuitionRoll", i18n$t("INT")),
-            # actionButton("doCharismaRoll", i18n$t("CHA")),
-            # actionButton("doDexterityRoll", i18n$t("DEX")),
-            # actionButton("doAgilityRoll", i18n$t("AGI")),
-            # actionButton("doConstitutionRoll", i18n$t("CON")),
-            # actionButton("doStrengthRoll", i18n$t("STR")),
     ),
     # Sliders to set values
     sliderInput("inpAbility", i18n$t("Ability"), min = 1L, max = 20L, value = 11L, step = 1L),

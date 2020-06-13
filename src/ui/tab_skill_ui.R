@@ -5,7 +5,6 @@ sidebarLayout(
 
     # manually chosen skill values
     conditionalPanel(condition = "input.rdbSkillSource == 'ManualSkill'",
-                     #hr(),
                      sliderInput("SkillTrait1", i18n$t("1st Ability"), min = 1L, max = 20L, value = 11L, step = 1L),
                      sliderInput("SkillTrait2", i18n$t("2nd Ability"), min = 1L, max = 20L, value = 11L, step = 1L),
                      sliderInput("SkillTrait3", i18n$t("3rd Ability"), min = 1L, max = 20L, value = 11L, step = 1L),

@@ -10,8 +10,8 @@ ui <- shinyUI(fluidPage(
   ),
   # useShinyjs(),
   # extendShinyjs(text = jscode),
+  # titlePanel(title = "Fate Explorer", windowTitle = "Fate Explorer"),
   navbarPage(i18n$t("The Dark Eye - Fate Explorer"), 
-             #titlePanel(title = "titleabc", windowTitle = "title"),
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
              
              tabPanel(i18n$t("Be"),
