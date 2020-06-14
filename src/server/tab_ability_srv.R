@@ -48,16 +48,16 @@ output$AbilityRoll <- renderText({
 
     SuccessStr   <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
     if (SuccessStr == "Fumble") 
-      SuccessIcon  <- "fa fa-skull fa-fw col-fumble"
+      SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble"#"fa fa-skull fa-fw col-fumble"
     else if (SuccessStr == "Critical") 
-      SuccessIcon  <- "fa fa-trophy fa-fw col-critical"
+      SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical"
     else if (SuccessStr == "Success") 
-      SuccessIcon  <- "fa fa-trophy fa-fw col-success"
+      SuccessIcon  <- "game-icon game-icon-trophy-cup col-success" # "fa fa-trophy fa-fw"
     else # Fail
-      SuccessIcon  <- "fa fa-times fa-fw col-fail"
+      SuccessIcon  <- "game-icon game-icon-spectre col-fail"#evil-eyes ghost imp-laugh spectre
     
-    Result <- div(tags$p(Value, style = value.style), 
-                  tags$p(tags$i(class = SuccessIcon), style = result.style),
+    Result <- div(tags$p(tags$i(class = SuccessIcon), Value, style = value.style), 
+                  #tags$p(),#, style = result.style),
                   tags$p(i18n$t(SuccessStr), style = result.style),
                   class = "roll-ab-div")
   }
