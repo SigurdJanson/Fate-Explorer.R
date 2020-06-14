@@ -34,9 +34,6 @@ output$RawContents <- renderPrint({
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
 
   # THIS SECTION IS A BIT OUT OF PLACE HERE
-  # Update dropdown list on Combat Tab
-  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
-  
   # Update dropdown list on Skills Tab
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
   updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
@@ -79,8 +76,7 @@ output$SetupSkills <- renderTable({
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
   }
   # Column names
-  colnames(Result) <- c(i18n$t("Skill"), i18n$t("Set"), 
-                        paste(i18n$t("SC"), 1:3), i18n$t("SR"))
+  colnames(Result) <- c(i18n$t("Skill"), i18n$t("Set"), paste(i18n$t("SC"), 1:3), i18n$t("SR"))
   
   Result
 }, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
@@ -93,6 +89,16 @@ output$ShowSetupWeapons <- reactive({
 outputOptions(output, 'ShowSetupWeapons', suspendWhenHidden = FALSE)
 
 output$SetupWeapons <- renderTable({
+  # Correct weapon's hit points
+  # for (w in Character$Weapons) {
+  #   
+  # }
+  
+  # Correct for encumbrance: TODO (EEC = Effective Encumbrance)
+  
+  # Update dropdown list on Combat Tab
+  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
+  
   Character$Weapons
 }, rownames = TRUE, na = "-")
 
