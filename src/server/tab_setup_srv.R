@@ -93,9 +93,13 @@ outputOptions(output, 'ShowSetupWeapons', suspendWhenHidden = FALSE)
 
 output$SetupWeapons <- renderTable({
   # Correct weapon's hit points
-  # for (w in Character$Weapons) {
-  #   
-  # }
+  isolate({
+    for (w in 1:ncol(Character$Weapons)) {
+      Bonus <- GetHitpointBonus(Character$Weapons["Name", w], Character$Attr)
+      #browser()
+      Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
+    }
+  })
   
   # Correct for encumbrance: TODO (EEC = Effective Encumbrance)
   
