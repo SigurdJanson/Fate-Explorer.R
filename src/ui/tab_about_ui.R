@@ -22,7 +22,8 @@ fluidRow(
          br(), br(),
          i18n$t("Furthermore"),
          a(i18n$t("the creator of the Optolith client"), href="https://github.com/elyukai"), 
-         ", ",
+         ", ", a(i18n$t("the creator of the Game Icons library"), href="https://github.com/seiyria/gameicons-font"), 
+         i18n$t("including everyone"), a(i18n$t("who contributed to it"), href="https://game-icons.net/"),
          i18n$t("all the heroes from"), a("Wiki Aventurica", href="https://www.wiki-aventurica.de/"),
          " ", i18n$t("and"), " ",
          a(i18n$t("Ulysses publishers"), href="https://ulisses-spiele.de/"), "."
