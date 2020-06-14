@@ -27,10 +27,11 @@ output$RawContents <- renderPrint({
   # # handle dependencies to compontens that display data of last character
   # input$CombatSelectWeapon
   # 
+  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
   Data <- read_json(path = input$CharFile$datapath)
   Character$Name    <- Data$name
   Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
-  Character$Skills  <- GetSkills_Opt(Data[["talents"]])
+  Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
 
   # THIS SECTION IS A BIT OUT OF PLACE HERE
@@ -53,7 +54,8 @@ outputOptions(output, 'ShowSetupAttr', suspendWhenHidden = FALSE)
 output$SetupAttr <- renderTable({
   Result <- Character$Attr
   # Show names not codes
-  NameMapping <- GetAbilities()
+  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  NameMapping <- GetAbilities(Language)
   colnames(Result) <- NameMapping[match(names(Result), NameMapping[["attrID"]]), "shortname"]
   
   Result
@@ -71,7 +73,8 @@ output$SetupSkills <- renderTable({
   Result <- Result[-which(names(Result) == "attrID")]
   Result <- Result[-which(names(Result) == "classID")]
   # Show names not codes
-  NameMapping <- GetAbilities()
+  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  NameMapping <- GetAbilities(Language)
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
   }

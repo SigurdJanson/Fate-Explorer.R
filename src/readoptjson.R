@@ -14,9 +14,9 @@ GetAbilities_Opt <- function(Attr) {
 }
 
 
-GetSkills_Opt <- function(Skills) {
+GetSkills_Opt <- function(Skills, Language = "de") {
   # Get data frame with skill definitions
-  SkillList <- GetSkills()
+  SkillList <- GetSkills(Language)
   SkillList$value <- 0
   # 
   SkillValID <- match(names(Skills), SkillList$attrID)

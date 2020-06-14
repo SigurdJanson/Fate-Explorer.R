@@ -51,7 +51,8 @@ output$SkillThrow <- renderText({
     RollCheck <- VerifySkillRoll(Values, Abilities, 
                                  Character$Skills[SkillIndex, "value"], input$SkillMod)
     # Content for Rendering
-    NameMapping <- GetAbilities()
+    Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+    NameMapping <- GetAbilities(Language)
     Labels    <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
     Abilities <- c(Abilities, Character$Skills[SkillIndex, "value"])
     Values    <- c(Values, RollCheck$Remainder)

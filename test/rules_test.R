@@ -1,12 +1,17 @@
+library(testthat)
+library(jsonlite)
+
 setwd("..")
 source("./src/rules.R")
 setwd("./test")
 
+
+
 # Functions ----
 test_that("CombatTechniques", {
-  #setwd("..")
+  setwd("../src")
   CT <- GetCombatTechniques()
-  #setwd("./test")
+  setwd("../test")
   expect_s3_class(CT, "data.frame")
   expect_named(CT, paste0("CT_", 1:21))
   expect_equal(nrow(CT), 1)
@@ -15,32 +20,41 @@ test_that("CombatTechniques", {
 
 
 test_that("Abilities", {
-  #setwd("..")
+  setwd("../src")
   AB <- GetAbilities()
-  #setwd("./test")
+  setwd("../test")
   expect_s3_class(AB, "data.frame")
   expect_named(AB, c("attrID", "shortname", "name"))
   expect_equal(nrow(AB), 8)
   expect_equal(ncol(AB), 3)
 })
 
+test_that("Skills", {
+  setwd("../src")
+  SK <- GetSkills()
+  setwd("../test")
+  expect_s3_class(SK, "data.frame")
+  expect_named(SK, c("attrID", "name", "class", "classID", "ab1", "ab2", "ab3"))
+  expect_equal(nrow(SK), 59)
+  expect_equal(ncol(SK), 7)
+})
+
+
 
 test_that("Weapons", {
   cn <- c("name", "technik", "leiteigenschaft", "schwelle", "grundschaden",
           "bonus", "at", "pa", "rw", "gewicht", "preis", "bf", 
-          "combattechID", "primeattrID")
-  #setwd("..")
+          "combattechID", "primeattrID", "improvised", "url")
+  setwd("../src")
   W <- GetWeapons()
-  #setwd("./test")
+  setwd("../test")
   expect_s3_class(W, "data.frame")
-  expect_equal(nrow(W), 150)
-  expect_equal(ncol(W), 14)
+  expect_equal(nrow(W), 184)
+  expect_equal(ncol(W), 16)
   expect_named(W, cn, ignore.order = TRUE)
   
-  #setwd("..")
   W <- GetWeapons("Waqqif")
   expect_equal(W$name, "Waqqif")
-  #setwd("./test")
   
 })
 
@@ -58,3 +72,5 @@ test_that("PrimaryWeaponAttribute", {
   e <- NA_character_
   expect_identical(o, e)
 })
+
+
