@@ -6,14 +6,22 @@
 
 
 .ico-success {
-  font-size: 80%;
+  font-size: 75%;
 }
 
 .roll-ab-div {
-    margin:0 40% 0 40%;
-    min-width: 16rem; 
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
     border: 1px solid lightgray;
     border-radius:3px;
     height:18rem;
+    /*position: absolute;*/
 }
 
+@media only screen and (min-width : 400px) {
+    .roll-ab-div {
+        margin: 0 32% 0 32%;
+        width:auto;
+    }
+}
