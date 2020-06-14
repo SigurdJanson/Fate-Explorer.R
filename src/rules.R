@@ -97,3 +97,31 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
   return(PrimeAttr)
 }
 
+
+
+#' GetHitpointBonus
+#'
+#' @param Weapon The actual name of one weapon (see `GetPrimaryWeaponAttribute()`)
+#' @param Abilities A data frame with the ability values
+#' @return A numeric value indicating the extra bonus that must be added to the 
+#' weapons hit points.
+GetHitpointBonus <- function( Weapon, Abilities ) {
+  # PRECONDITIONS
+  if (missing(Weapon)) return(0)
+  if (missing(Abilities) || !is.data.frame(Abilities)) 
+    stop("Argument 'Abilities' is missing")
+
+  # RUN
+  WeaponData <- GetWeapons( Weapon )
+  Primaries  <- GetPrimaryWeaponAttribute( Weapon )
+  
+  if (!anyNA(Primaries)) {
+    Threshold  <- WeaponData[["schwelle"]]
+    AbIndex <- which(names(Abilities) %in% Primaries)
+    Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold)
+  } else Bonus <- 0L
+  
+  return(Bonus)
+}
+#GetHitpointBonus("Barbarenschwert", ab)
+
