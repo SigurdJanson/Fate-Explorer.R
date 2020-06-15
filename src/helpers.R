@@ -20,10 +20,11 @@ replace_umlauts <- function(x) {
 
 #' gicon
 #' Replacement for the `icon()` function of shiny. Accepts other icon libs.
-#' @param name 
-#' @param class 
-#' @param lib 
-#' @return 
+#' @param name Name of icon according to icon lib (i.e. without prefixes like the
+#' "fa-" and "glyphicon-" prefixes).
+#' @param class Additional classes to customize the style of the icon.
+#' @param lib Icon library to use ("font-awesome", "glyphicon", or "gameicon)
+#' @return An icon element (which is a browsable object).
 #' @source https://stackoverflow.com/questions/55163719/r-shiny-how-to-use-fontawesome-pro-version-with-the-icon-function
 gicon <- function (name, class = NULL, lib = "font-awesome") {
   
