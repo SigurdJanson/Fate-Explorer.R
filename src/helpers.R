@@ -53,3 +53,28 @@ gicon <- function (name, class = NULL, lib = "font-awesome") {
   }
   htmltools::browsable(iconTag)
 }
+
+
+RenderRollKeyResult <- function(RollValue, RollResult) {
+  value.style  <- "font-size: 440%"
+  result.style <- "font-size: 140%"
+  
+  if (RollResult == "Fumble") 
+    SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble ico-success"
+  else if (RollResult == "Critical") 
+    SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
+  else if (RollResult == "Success") 
+    SuccessIcon  <- "game-icon game-icon-trophy-cup col-success ico-success"
+  else # Fail
+    SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
+  
+  if (RollValue < 0)  {
+    RollValue <- "Ø"
+    SuccessIcon  <- "game-icon game-icon-dice-eight-faces-eight"
+  }
+  
+  Result <- div(tags$p( tags$i(class = SuccessIcon), 
+                        RollValue, style = value.style ), 
+                tags$p(i18n$t(RollResult), style = result.style),
+                class = "roll-keyval")
+}

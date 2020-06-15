@@ -42,25 +42,8 @@ LastAbilityRoll <- eventReactive(input$doAbilityRoll, {
 output$AbilityRoll <- renderText({
   Value <- LastAbilityRoll()
   if (is.numeric(Value)) {
-    #base.style   <- "margin:0 40% 0 40%;border: 1px solid lightgray;border-radius:3px;height:18rem"
-    value.style  <- "text-align: center;font-size: 440%;padding-top:5%"
-    result.style <- "text-align: center;font-size: 140%"
-
-    SuccessStr   <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
-    if (SuccessStr == "Fumble") 
-      SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble ico-success"
-    else if (SuccessStr == "Critical") 
-      SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
-    else if (SuccessStr == "Success") 
-      SuccessIcon  <- "game-icon game-icon-trophy-cup col-success ico-success"
-    else # Fail
-      SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
-    
-    Result <- div(tags$p( tags$i(class = SuccessIcon), 
-                          Value, style = value.style ), 
-                  #tags$p(),#, style = result.style),
-                  tags$p(i18n$t(SuccessStr), style = result.style),
-                  class = "roll-ab-div")
+    SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
+    Result     <- RenderRollKeyResult(Value, SuccessStr)
   }
   return(paste((Result), collapse=""))
 })

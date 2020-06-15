@@ -4,23 +4,38 @@
 .col-fail {color:inherit;}
 .col-fumble {color: #B22222;}
 
-
 .ico-success {
   font-size: 75%;
 }
 
-.roll-ab-div {
+
+.roll-keyval {
     width: 100%;
     margin: 0;
     padding: 0 1rem;
     border: 1px solid lightgray;
     border-radius:3px;
     height:18rem;
-    /*position: absolute;*/
 }
 
-@media only screen and (min-width : 400px) {
-    .roll-ab-div {
+.roll-keyval p{
+    text-align: center;
+}
+
+@media only screen and (min-width : 500px) {
+    .roll {
+        display: flex;
+    }
+    .roll div {
+        flex: 1;
+    }
+    .roll div:first-child {
+        margin:0 auto;
+    }
+    .roll div:nth-child(2) {
+        margin-left: 1rem;
+    }
+    .roll-keyval {
         margin: 0 32% 0 32%;
         width:auto;
     }

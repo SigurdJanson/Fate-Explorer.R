@@ -31,6 +31,7 @@ LastThrow <- eventReactive(input$doSkillThrow, {
 output$SkillThrow <- renderText({
   Values <- LastThrow()
   
+  # User-defined Skill Values
   if (input$rdbSkillSource == "ManualSkill") {
     Abilities <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
     
@@ -40,6 +41,7 @@ output$SkillThrow <- renderText({
     Abilities <- c(Abilities, input$SkillValue)
     Values    <- c(Values, RollCheck$Remainder)
     
+  # Skill Values from Character Sheet
   } else if (input$rdbSkillSource == "CharSkill") {
     req(input$lbCharSkills)
     Skill      <- input$lbCharSkills
@@ -69,11 +71,13 @@ output$SkillThrow <- renderText({
     Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(Abilities-input$SkillMod, tags$td) ), Rows)
   if (!is.null(Labels)) 
     Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
-  Result <- tags$div(
-    tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
-    p( span(i18n$t(RollCheck$Message)), 
-       span(ifelse(RollCheck$QL > 0, paste(i18n$t("with"), RollCheck$QL, i18n$t("QL")), "")) ),
-    class = "shiny-html-output shiny-bound-output")
+
+  Result <- div(
+    RenderRollKeyResult(RollCheck$QL, RollCheck$Message),
+    div(
+      tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto")
+    ),
+    class = "shiny-html-output shiny-bound-output roll")
   
   return(paste((Result), collapse=""))
 })
