@@ -150,3 +150,45 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
   
   return(list(Message = Success, QL = QL, Remainder = Remainder))
 }
+
+
+
+#' CanRoutineSkillCheck
+#' Determines for a given skill if a routine check is valid
+#' @param Skill A single skill value (integer)
+#' @param Abilities A vector with exactly three ability values (integer)
+#' @param Mod A check modifier
+#' @details 
+#' `(-Mod+4)*3-2`with `Mod <- c(-3:3)` returns the values in table 
+#' of [routine check requirements](https://ulisses-regelwiki.de/index.php/GR_Routineprobe.html).
+#' @source Basic rules, german edition Seite 184/185.
+#' @return TRUE/ FALSE. If `Mod`is `NA` then a 
+CanRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = NA) {
+  if (length(Abilities) != 3) stop("Three abilities make a skill check")
+  if (length(Skill) != 1) stop("Exactly one skill value is needed for skill check")
+  
+  if (is.na(Modifier)) 
+    SufficientSkill <- TRUE
+  else
+    SufficientSkill <- Skill >= (-Modifier+4)*3-2
+  
+  SufficientAbility <- all(Abilities >= 13)
+  #
+  return( SufficientAbility & SufficientSkill )
+}
+
+
+#' RoutineCheck
+#'
+#' @param Skill A list with all the skill data
+#' @param Abilities A data frame containing the ability values
+#' @param Mod A check modifier
+#' @return 
+RoutineCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0) {
+  if (CanRoutineSkillCheck(Abilities, Skill, Modifier)) {
+    QL <- as.integer( SkillRollQuality(round(Skill / 2)) )
+  } else {
+    QL <- 0L
+  }
+  return( QL )
+}

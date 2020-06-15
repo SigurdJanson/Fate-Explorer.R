@@ -103,3 +103,58 @@ test_that("SkillRollQuality", {
   }
   
 })
+
+
+
+test_that("CanRoutineSkillCheck / RoutineCheck", {
+  # Preconditions
+  expect_error(CanRoutineSkillCheck(10:11, Skill, 0), "Three abilities make a skill check")
+  expect_error(RoutineCheck        (10:11, Skill, 0), "Three abilities make a skill check")
+  expect_error(CanRoutineSkillCheck(11:14, Skill, 0), "Three abilities make a skill check")
+  expect_error(RoutineCheck        (11:14, Skill, 0), "Three abilities make a skill check")
+  expect_error(CanRoutineSkillCheck(11:13, numeric(), 0), "Exactly one skill value is needed for skill check")
+  expect_error(RoutineCheck        (11:13, numeric(), 0), "Exactly one skill value is needed for skill check")
+  expect_error(CanRoutineSkillCheck(11:13, 2:1, 0), "Exactly one skill value is needed for skill check")
+  expect_error(RoutineCheck        (11:13, 2:1, 0), "Exactly one skill value is needed for skill check")
+  
+  # Never possible because ability[3] < 13
+  Abilities <- c(13, 13, 12)
+  Mod <- 3
+  for (Skill in 0L:12L) {
+    expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+    expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  }
+  Skill <- 12
+  for (Mod in -3L:3L) {
+    expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+    expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  }
+  
+  # Depends on combination of Skill & Mod
+  Abilities <- c(13, 13, 13)
+  Skill <- 0 # way too low
+  Mod <- 0
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  Skill <- 9 # too low
+  Mod <- 0
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  Skill <- 10 # just enough
+  Mod <- 0
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), TRUE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 2L)
+  
+  Skill <- 1 
+  Mod <- -3 # way too low
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  Skill <- 1 
+  Mod <- 2 # too low
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), FALSE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 0L)
+  Skill <- 1 
+  Mod <- 3 # just enough
+  expect_identical(CanRoutineSkillCheck(Abilities, Skill, Mod), TRUE)
+  expect_identical(RoutineCheck(Abilities, Skill, Mod), 1L)
+})
