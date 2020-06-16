@@ -1,5 +1,8 @@
 # ABILITY TAB
 
+LastAbilityConfirmationRoll <- reactiveVal()
+
+
 # Panel Ability Source: Selection buttons for ability source ----
 output$ShowAbilitySoureSelection <- reactive({
   return( !is.null(Character$Attr) )
@@ -27,23 +30,50 @@ observeEvent(input$rdbCharacterAbility, {
 observeEvent(input$inpAbility, {
   isolate(
     updateRadioGroupButtons(session = session, inputId = "rdbCharacterAbility", selected = NA)
-  ) 
+  )
+  LastAbilityConfirmationRoll(NULL) # is invalid after change of ability
 }, ignoreNULL = TRUE, ignoreInit = TRUE)
 
 
 
 # Main Panel ----
-# Initiate skill roll
-LastAbilityRoll <- eventReactive(input$doAbilityRoll, {
-  return(AbilityRoll())
+observeEvent(input$doAbilityConfirmationRoll, {
+  LastAbilityConfirmationRoll( AbilityRoll() )
 })
+
+# Initiate ability roll ans store die result
+LastAbilityRoll <- eventReactive(input$doAbilityRoll, {
+  isolate(LastAbilityConfirmationRoll(NULL)) # is invalid after re-roll
+  return(AbilityRoll())
+}, ignoreInit = TRUE)
+
 
 # Display result of skill roll
 output$AbilityRoll <- renderText({
   Value <- LastAbilityRoll()
-  if (is.numeric(Value)) {
-    SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
-    Result     <- RenderRollKeyResult(Value, SuccessStr)
+  Confirmation <- LastAbilityConfirmationRoll()
+  
+  ###if (is.numeric(Value)) {
+  SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
+  # Critical or Fumble waiting for confirmation
+  if (SuccessStr == "Critical" || SuccessStr == "Fumble") {
+    if (!is.null(Confirmation)) {
+      ConfirmationResult <- VerifyAbilityRoll(Confirmation, input$inpAbility, input$inpAbilityMod)
+      SuccessStr <- VerifyConfirmation( SuccessStr, ConfirmationResult )
+      ConfirmationStr <- paste0(i18n$t(ConfirmationResult), " (", Confirmation, ")") #ifelse( ConfirmationResult %in% ""
+    } else {
+      Label <- i18n$t(ifelse(SuccessStr == "Critical", "Confirm!", "Avert!"))
+      ConfirmationStr <- actionLink("doAbilityConfirmationRoll", Label)
+    }
+  } else {
+    ConfirmationStr <- NULL
   }
+  ###}
+  Result <- RenderRollKeyResult(Value, SuccessStr)
+  if (!is.null(ConfirmationStr)) # add confirmation <div/>
+    Result <- div(Result, div( ConfirmationStr ),
+                  class = "shiny-html-output shiny-bound-output roll")
+  
   return(paste((Result), collapse=""))
 })
+
