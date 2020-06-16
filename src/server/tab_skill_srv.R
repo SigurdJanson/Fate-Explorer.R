@@ -22,14 +22,17 @@ observe({
 
 
 # Initiate skill roll
-LastThrow <- eventReactive(input$doSkillThrow, {
+LastSkillRoll <- eventReactive(input$doSkillThrow, {
   SkillRoll()
 })
-
+# # Initiate routine check
+# LastSkillRoutine <- eventReactive(input$doSkillRoutine, {
+#   
+# })
 
 # Display result of skill roll
 output$SkillThrow <- renderText({
-  Values <- LastThrow()
+  Values <- LastSkillRoll()
   
   # User-defined Skill Values
   if (input$rdbSkillSource == "ManualSkill") {
