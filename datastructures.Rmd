@@ -1,0 +1,227 @@
+---
+title: "Data Structures in Fate Explorer"
+author: "Dr. Jan Seifert"
+date: "14 6 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Basic Tables {.tabset}
+
+## Abilities
+
+`GetAbilities()`
+
+```{r echo=FALSE}
+ab <- structure(list(attrID = c("ATTR_1", "ATTR_2", "ATTR_3", "ATTR_4", 
+"ATTR_5", "ATTR_6", "ATTR_7", "ATTR_8"), shortname = c("MU", 
+"KL", "IN", "CH", "FF", "GE", "KO", "KK"), name = c("Mut", "Klugheit", 
+"Intuition", "Charisma", "Fingerfertigkeit", "Gewandheit", "Konstitution", 
+"Körperkraft")), class = "data.frame", row.names = c(NA, 8L))
+ab
+```
+
+* Type: <`r class(ab)`>
+* Identifiers are stored in first column `attrID` (language independent)
+* Available in German and English
+* Loaded from "attributes_[lang].json"
+
+
+
+## Skills
+
+`GetSkills()`
+
+```{r echo=FALSE}
+sk <- structure(list(attrID = c("TAL_1", "TAL_2", "TAL_3", "TAL_4", 
+"TAL_5", "TAL_6"), name = c("Fliegen", "Gaukeleien", "Klettern", 
+"Körperbeherrschung", "Kraftakt", "Reiten"), class = c("Körpertalente", 
+"Körpertalente", "Körpertalente", "Körpertalente", "Körpertalente", 
+"Körpertalente"), classID = c(1L, 1L, 1L, 1L, 1L, 1L), ab1 = c("ATTR_1", 
+"ATTR_1", "ATTR_1", "ATTR_6", "ATTR_7", "ATTR_4"), ab2 = c("ATTR_3", 
+"ATTR_4", "ATTR_6", "ATTR_6", "ATTR_8", "ATTR_6"), ab3 = c("ATTR_6", 
+"ATTR_5", "ATTR_8", "ATTR_7", "ATTR_8", "ATTR_8")), row.names = c(NA, 
+6L), class = "data.frame")
+sk
+```
+
+* Type: <`r class(sk)`>
+* Identifiers are stored in first column `attrID` (language independent)
+* Available only in German at the moment
+* Loaded from "skills_[lang].json"
+
+
+## Weapons
+
+`GetWeapons()`
+
+```{r echo=FALSE}
+wp <- structure(list(name = c("Basiliskenzunge", "Dolch", "Drachenzahn", 
+"Linkhand", "Messer", "SchwererDolch"), technik = c("Dolche", 
+"Dolche", "Dolche", "Dolche", "Dolche", "Dolche"), leiteigenschaft = c("GE", 
+"GE", "GE", "GE", "GE", "GE"), schwelle = c(14L, 14L, 14L, 14L, 
+14L, 14L), grundschaden = c("1W6", "1W6", "1W6", "1W6", "1W6", 
+"1W6"), bonus = c(2L, 1L, 2L, 1L, 1L, 2L), at = c(0L, 0L, 0L, 
+0L, 0L, 0L), pa = c(-1L, 0L, -1L, 0L, -2L, -1L), rw = c("kurz", 
+"kurz", "kurz", "kurz", "kurz", "kurz"), gewicht = c("0,5Stn", 
+"0,5Stn", "0,75Stn", "0,75Stn", "0,25Stn", "0,75Stn"), preis = c(50, 
+45, 70, 90, 10, 60), bf = c(12L, 12L, 12L, 12L, 12L, 12L), primeattrID = c("ATTR_6", 
+"ATTR_6", "ATTR_6", "ATTR_6", "ATTR_6", "ATTR_6"), combattechID = c("CT_3", 
+"CT_3", "CT_3", "CT_3", "CT_3", "CT_3"), improvised = c(FALSE, 
+FALSE, FALSE, FALSE, FALSE, FALSE), url = c("index.php/basiliskenzunge.html", 
+"index.php/dolch.html", "index.php/drachenzahn.html", "index.php/linkhand.html", 
+"index.php/messer.html", "index.php/schwerer-dolch.html")), row.names = c(NA, 
+6L), class = "data.frame")
+wp
+```
+
+* Type: <`r class(wp)`>
+* Identifiers (at this point) are stored in the "name" column 
+* Available in German
+* Loaded from "weapon-list.json"
+
+
+`GetWeapons("Waqqif")`
+
+```{r echo=FALSE}
+# dput(GetWeapons("Waqqif"))
+wp <- list(name = "Waqqif", technik = "Dolche", leiteigenschaft = "GE", 
+    schwelle = 14L, grundschaden = "1W6", bonus = 2L, at = 0L, 
+    pa = -1L, rw = "kurz", gewicht = "0,5Stn", preis = 60, bf = 12L, 
+    primeattrID = "ATTR_6", combattechID = "CT_3", improvised = FALSE, 
+    url = "index.php/waqqif.html")
+wp
+```
+
+* Type: <`r class(wp)`> (list)
+
+
+# Character {.tabset}
+
+## Name
+
+* Type: `character(1)`
+
+
+## Abilities
+
+```{r echo=FALSE}
+ab <- structure(list(ATTR_1 = 12L, ATTR_2 = 11L, ATTR_3 = 13L, ATTR_4 = 14L, 
+    ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), class = "data.frame", row.names = c(NA, -1L))
+ab
+```
+
+* Type: <`r class(ab)`>
+* Identifiers are stored in the names (`names(Character$Attr)`)
+
+
+
+## Weapons
+
+```{r echo=FALSE}
+wp <- structure(c("Waffenlos", "16", "10", "1", "0", "Nachtwind", "13", 
+"8", "1", "4", "Waqqif", "16", "9", "1", "2"), .Dim = c(5L, 3L
+), .Dimnames = list(c("Name", "AT", "PA", "DamageDice", "DamageMod"
+), c("Waffenlos", "Nachtwind", "Waqqif")))
+wp
+```
+
+* Type: <`r class(wp)`>
+* Idenfitfiers are German weapon names  stored in the column names and first row
+  * Access id with `Character$Weapons[1,]`
+  * Access id with `names(Character$Weapons)`
+
+## Skills
+
+```{r echo=FALSE}
+sk <- structure(list(attrID = c("TAL_1", "TAL_2", "TAL_3", "TAL_4", 
+"TAL_5", "TAL_6", "TAL_7", "TAL_8", "TAL_9", "TAL_10", "TAL_11", 
+"TAL_12", "TAL_13", "TAL_14", "TAL_15", "TAL_16", "TAL_17", "TAL_18", 
+"TAL_19", "TAL_20", "TAL_21", "TAL_22", "TAL_23", "TAL_24", "TAL_25", 
+"TAL_26", "TAL_27", "TAL_28", "TAL_29", "TAL_30", "TAL_31", "TAL_32", 
+"TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", 
+"TAL_40", "TAL_41", "TAL_42", "TAL_43", "TAL_44", "TAL_45", "TAL_46", 
+"TAL_47", "TAL_48", "TAL_49", "TAL_50", "TAL_51", "TAL_52", "TAL_53", 
+"TAL_54", "TAL_55", "TAL_56", "TAL_57", "TAL_58", "TAL_59"), 
+    name = c("Fliegen", "Gaukeleien", "Klettern", "Körperbeherrschung", 
+    "Kraftakt", "Reiten", "Schwimmen", "Selbstbeherrschung", 
+    "Singen", "Sinnesschärfe", "Tanzen", "Taschendiebstahl", 
+    "Verbergen", "Zechen", "Bekehren & Überzeugen", "Betören", 
+    "Einschüchtern", "Etikette", "Gassenwissen", "Menschenkenntnis", 
+    "Überreden", "Verkleiden", "Willenskraft", "Fährtensuchen", 
+    "Fesseln", "Fischen & Angeln", "Orientierung", "Pflanzenkunde", 
+    "Tierkunde", "Wildnisleben", "Brett- & Glückspiel", "Geographie", 
+    "Geschichtswissen", "Götter & Kulte", "Kriegskunst", "Magiekunde", 
+    "Mechanik", "Rechnen", "Rechtskunde", "Sagen & Legenden", 
+    "Sphärenkunde", "Sternkunde", "Alchimie", "Boote & Schiffe", 
+    "Fahrzeuge", "Handel", "Heilkunde Gift", "Heilkunde Krankheiten", 
+    "Heilkunde Seele", "Heilkunde Wunden", "Holzbearbeitung", 
+    "Lebensmittelbearbeitung", "Lederbearbeitung", "Malen & Zeichnen", 
+    "Metallbearbeitung", "Musizieren", "Schlösserknacken", "Steinbearbeitung", 
+    "Stoffbearbeitung"), class = c("Körpertalente", "Körpertalente", 
+    "Körpertalente", "Körpertalente", "Körpertalente", "Körpertalente", 
+    "Körpertalente", "Körpertalente", "Körpertalente", "Körpertalente", 
+    "Körpertalente", "Körpertalente", "Körpertalente", "Körpertalente", 
+    "Gesellschaftstalente", "Gesellschaftstalente", "Gesellschaftstalente", 
+    "Gesellschaftstalente", "Gesellschaftstalente", "Gesellschaftstalente", 
+    "Gesellschaftstalente", "Gesellschaftstalente", "Gesellschaftstalente", 
+    "Naturtalente", "Naturtalente", "Naturtalente", "Naturtalente", 
+    "Naturtalente", "Naturtalente", "Naturtalente", "Wissenstalente", 
+    "Wissenstalente", "Wissenstalente", "Wissenstalente", "Wissenstalente", 
+    "Wissenstalente", "Wissenstalente", "Wissenstalente", "Wissenstalente", 
+    "Wissenstalente", "Wissenstalente", "Wissenstalente", "Handwerkstalente", 
+    "Handwerkstalente", "Handwerkstalente", "Handwerkstalente", 
+    "Handwerkstalente", "Handwerkstalente", "Handwerkstalente", 
+    "Handwerkstalente", "Handwerkstalente", "Handwerkstalente", 
+    "Handwerkstalente", "Handwerkstalente", "Handwerkstalente", 
+    "Handwerkstalente", "Handwerkstalente", "Handwerkstalente", 
+    "Handwerkstalente"), classID = c(1L, 1L, 1L, 1L, 1L, 1L, 
+    1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 
+    2L, 2L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 4L, 4L, 4L, 4L, 4L, 4L, 
+    4L, 4L, 4L, 4L, 4L, 4L, 5L, 5L, 5L, 5L, 5L, 5L, 5L, 5L, 5L, 
+    5L, 5L, 5L, 5L, 5L, 5L, 5L, 5L), ab1 = c("ATTR_1", "ATTR_1", 
+    "ATTR_1", "ATTR_6", "ATTR_7", "ATTR_4", "ATTR_6", "ATTR_1", 
+    "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_1", "ATTR_1", "ATTR_2", 
+    "ATTR_1", "ATTR_1", "ATTR_1", "ATTR_1", "ATTR_2", "ATTR_2", 
+    "ATTR_1", "ATTR_3", "ATTR_1", "ATTR_1", "ATTR_2", "ATTR_5", 
+    "ATTR_2", "ATTR_2", "ATTR_1", "ATTR_1", "ATTR_2", "ATTR_2", 
+    "ATTR_2", "ATTR_2", "ATTR_1", "ATTR_2", "ATTR_2", "ATTR_2", 
+    "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_1", "ATTR_5", 
+    "ATTR_4", "ATTR_2", "ATTR_1", "ATTR_1", "ATTR_3", "ATTR_2", 
+    "ATTR_5", "ATTR_3", "ATTR_5", "ATTR_3", "ATTR_5", "ATTR_4", 
+    "ATTR_3", "ATTR_5", "ATTR_2"), ab2 = c("ATTR_3", "ATTR_4", 
+    "ATTR_6", "ATTR_6", "ATTR_8", "ATTR_6", "ATTR_7", "ATTR_1", 
+    "ATTR_4", "ATTR_3", "ATTR_4", "ATTR_5", "ATTR_3", "ATTR_7", 
+    "ATTR_2", "ATTR_4", "ATTR_3", "ATTR_3", "ATTR_3", "ATTR_3", 
+    "ATTR_3", "ATTR_4", "ATTR_3", "ATTR_3", "ATTR_5", "ATTR_6", 
+    "ATTR_3", "ATTR_5", "ATTR_1", "ATTR_6", "ATTR_2", "ATTR_2", 
+    "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", 
+    "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_2", "ATTR_6", 
+    "ATTR_5", "ATTR_3", "ATTR_2", "ATTR_3", "ATTR_4", "ATTR_5", 
+    "ATTR_6", "ATTR_5", "ATTR_6", "ATTR_5", "ATTR_7", "ATTR_5", 
+    "ATTR_5", "ATTR_5", "ATTR_5"), ab3 = c("ATTR_6", "ATTR_5", 
+    "ATTR_8", "ATTR_7", "ATTR_8", "ATTR_8", "ATTR_8", "ATTR_7", 
+    "ATTR_7", "ATTR_3", "ATTR_6", "ATTR_6", "ATTR_6", "ATTR_8", 
+    "ATTR_4", "ATTR_4", "ATTR_4", "ATTR_4", "ATTR_4", "ATTR_4", 
+    "ATTR_4", "ATTR_6", "ATTR_4", "ATTR_6", "ATTR_8", "ATTR_7", 
+    "ATTR_3", "ATTR_7", "ATTR_4", "ATTR_7", "ATTR_3", "ATTR_3", 
+    "ATTR_3", "ATTR_3", "ATTR_3", "ATTR_3", "ATTR_5", "ATTR_3", 
+    "ATTR_3", "ATTR_3", "ATTR_3", "ATTR_3", "ATTR_5", "ATTR_8", 
+    "ATTR_7", "ATTR_4", "ATTR_3", "ATTR_7", "ATTR_7", "ATTR_5", 
+    "ATTR_8", "ATTR_5", "ATTR_7", "ATTR_5", "ATTR_8", "ATTR_7", 
+    "ATTR_5", "ATTR_8", "ATTR_5"), value = c(0, 0, 10, 11, 0, 
+    5, 0, 7, 0, 10, 3, 4, 10, 0, 0, 0, 0, 7, 8, 8, 10, 10, 8, 
+    1, 0, 0, 3, 0, 0, 4, 1, 4, 3, 4, 0, 0, 2, 4, 3, 3, 0, 0, 
+    2, 3, 2, 8, 4, 0, 0, 4, 0, 0, 3, 3, 0, 0, 7, 0, 12)), row.names = c(NA, 
+59L), class = "data.frame")
+head(sk)
+```
+
+* Type: <`r class(sk)`>
+* Skill idenfitfiers are stored in the first column `attrID`.
+  * Access id with `Character$Skill[["attrID"]]`
+* Ability identifiers are coded as `r paste("ATTR_", 1:8)`
+* Skill class is a numeric identifier
