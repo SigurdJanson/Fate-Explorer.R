@@ -32,7 +32,10 @@ sidebarLayout(
     ),
   ),
   mainPanel(
-    actionButton("doSkillThrow", i18n$t("Now!"), icon = gicon("fist-2", lib = "gameicon"), width = "100%"),
+    actionButton("doSkillThrow", i18n$t("Now!"), icon = gicon("fist-2", lib = "gameicon"), 
+                 width = "49%", style = "font-size: 140%"),
+    actionButton("doSkillRoutine", i18n$t("Routine Check"), icon = gicon("boot-prints", lib = "gameicon"), 
+                 width = "49%", style = "font-size: 140%"),
     hr(),
     div(
         htmlOutput("SkillThrow", style = "font-size:140%"),

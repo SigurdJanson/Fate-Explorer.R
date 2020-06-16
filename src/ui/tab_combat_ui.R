@@ -29,9 +29,12 @@ sidebarLayout(
                     selected = 0L, grid = TRUE)
     ),
   mainPanel(
-    actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe", lib = "gameicon"), width = "32%"), #skull
-    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("griffin-shield", lib = "gameicon"), width = "32%"), #shield-alt
-    actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"), width = "32%"), #running
+    actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe", lib = "gameicon"),
+                 width = "32%", style = "font-size: 140%"),
+    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("griffin-shield", lib = "gameicon"),
+                 width = "32%", style = "font-size: 140%"),
+    actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"),
+                 width = "32%", style = "font-size: 140%"),
     hr(),
     div(
       h3(textOutput("CombatAction")),
