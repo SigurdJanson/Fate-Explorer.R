@@ -65,7 +65,7 @@ RenderRollKeyResult <- function(RollValue, RollResult) {
   else if (RollResult == "Critical") 
     SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
   else if (RollResult == "Success") 
-    SuccessIcon  <- "game-icon game-icon-trophy-cup col-success ico-success"
+    SuccessIcon  <- "game-icon game-icon-laurels col-success ico-success"
   else # Fail
     SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
   
