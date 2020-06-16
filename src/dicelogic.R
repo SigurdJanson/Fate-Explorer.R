@@ -1,5 +1,19 @@
 # 
 
+VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
+  if (RollResult %in% c("Fumble", "Critical")) {
+    PositiveCheck   <- (RollResult == "Critical")
+    PositiveConfirm <- (ConfirmationResult %in% c("Success", "Critical"))
+    Result <- c("Fumble", "Fail", "Success", "Critical")
+    Result <- Result[(PositiveCheck*2 + PositiveConfirm) +1]
+    return(Result)
+  } else { # if not a critical/fumble this function does not add information
+    return(RollResult) 
+  }
+}
+
+# ABILITIES ---------------------------------------
+
 #' AbilityRoll
 #' An abilityRoll roll is a roll with a 20-sided die.
 #' @return A random number between 1 and 20
@@ -29,6 +43,7 @@ VerifyAbilityRoll <- function(Roll, Ability, Modifier = 0L) {
   
   return(Success)
 }
+
 
 
 # COMBAT ---------------------------

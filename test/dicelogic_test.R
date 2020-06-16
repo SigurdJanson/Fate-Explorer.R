@@ -2,7 +2,44 @@ setwd("..")
 source("./src/dicelogic.R")
 setwd("./test")
 
-# Helper Functions ----
+# General -----
+test_that("VerifyConfirmation", {
+  o <- VerifyConfirmation("Success", "Anything")
+  e <- "Success"
+  expect_identical(o, e)
+
+  o <- VerifyConfirmation("Fail", "Something")
+  e <- "Fail"
+  expect_identical(o, e)
+  
+  o <- VerifyConfirmation("Critical", "Critical")
+  e <- "Critical"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Critical", "Success")
+  e <- "Critical"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Critical", "Fail")
+  e <- "Success"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Critical", "Fumble")
+  e <- "Success"
+  expect_identical(o, e)
+  
+  o <- VerifyConfirmation("Fumble", "Critical")
+  e <- "Fail"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Fumble", "Success")
+  e <- "Fail"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Fumble", "Fail")
+  e <- "Fumble"
+  expect_identical(o, e)
+  o <- VerifyConfirmation("Fumble", "Fumble")
+  e <- "Fumble"
+  expect_identical(o, e)
+})
+
+# Combat ----
 test_that("VerifyCombatRoll", {
   # PRECONDITIONS
   expect_error(VerifyCombatRoll(0, 20))
