@@ -24,14 +24,14 @@ observeEvent(input$CombatSelectWeapon, {
     Weapon <- as.character(input$CombatSelectWeapon)
     # Update values
     if(nchar(Weapon) > 0) {
-      updateNumericInput(session, "ATValue", value = Character$Weapons["AT", Weapon])
-      updateNumericInput(session, "PAValue", value = Character$Weapons["PA", Weapon])
+      updateNumericInput(session, "AttackValue", value = Character$Weapons["AT", Weapon])
+      updateNumericInput(session, "ParryValue", value = Character$Weapons["PA", Weapon])
       updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
       updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
     }
   } else {
-    updateNumericInput(session, "ATValue", value = 6L)
-    updateNumericInput(session, "PAValue", value = 3L)
+    updateNumericInput(session, "AttackValue", value = 6L)
+    updateNumericInput(session, "ParryValue", value = 3L)
     updateNumericInput(session, "DamageDieCount", value = 1L)
     updateNumericInput(session, "Damage", value = 0L)
   }
@@ -46,13 +46,7 @@ doCombatRollBase <- function(Action) {
   FightVal$Roll    <- CombatRoll()
 
   Penalty <- as.numeric(input$CombatPenalty)
-  if (Action == "Attack") {
-    Check <- input$ATValue
-  } else if (Action == "Parry") {
-    Check <- input$PAValue
-  } else if (Action == "Dodge") {
-    Check <- input$DodgeValue
-  }
+  Check <- input[[ paste0(Action, "Value") ]]
   FightVal$Success <- VerifyCombatRoll(FightVal$Roll, Check, Penalty)
   if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
     FightVal$ConfirmRoll <- "Required"
@@ -98,22 +92,18 @@ output$CombatAction <- renderPrint({
 
 
 
-# Confirmation Panel
+# Confirmation Panel: Confirm Critical/Botch
 observeEvent(input$doCombatConfirm, {
+  Check <- input[[ paste0(FightVal$Action, "Value") ]]
   Penalty <- as.numeric(input$CombatPenalty)
-  if (FightVal$Action == "Attack") {
-    Check <- input$ATValue
-  } else if (FightVal$Action == "Parry") {
-    Check <- input$PAValue
-  } else if (FightVal$Action == "Dodge") {
-    Check <- input$DodgeValue
-  }
   
   FightVal$ConfirmRoll <- CombatRoll()
   Confirmation <- VerifyCombatRoll(FightVal$ConfirmRoll, Check, Penalty)
+  
+  #FightVal$Confirmation <- VerifyConfirmation(FightVal$Success, Confirmation)
   if (FightVal$Success == "Critical")
     FightVal$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
-  else 
+  else
     FightVal$Confirmation <- Confirmation == "Fail" | Confirmation == "Fumble"
   if (!FightVal$Confirmation)
     FightVal$Success <- ifelse(FightVal$Success == "Critical", "Success", "Fail")
@@ -219,7 +209,7 @@ output$WeaponDetails <- renderText({
         Nodes <- html_children(Nodes)
         Result <- as.character(Nodes)
       } else {
-        Result  <- paste0("<p>", i18n$t("Not available"), "</p>") ##TODO: TRANSLATE
+        Result  <- paste0("<p>", i18n$t("Not available"), "</p>")
       }
     }
     # Render result to HTML

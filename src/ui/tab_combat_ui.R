@@ -14,8 +14,8 @@ sidebarLayout(
       )
     ),
     hr(),
-    sliderInput("ATValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
-    sliderInput("PAValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
+    sliderInput("AttackValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
+    sliderInput("ParryValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
     splitLayout(cellWidths = c("49%", "49%"),
         numericInputIcon("DamageDieCount", i18n$t("Dice 4 Damage"), value = 1L, min = 1L, 
                          width = "100%", icon = list(NULL, "W6")),
