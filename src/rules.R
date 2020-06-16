@@ -30,17 +30,6 @@ GetAbilities <- function(lang = "de") {
 }
 
 
-IsRoutineCheckValid <- function(Skill, Modifier = 0) {
-  stop("Not implemented, yet")
-  # Get ability values for Skill
-  # if (any(Ability < 13)) return(NA)
-  # Get TaW for Skill
-  # Get minimum skill value for given Modifier
-  SRMin <- seq(19, by = -3, length.out =  7) # 
-  SRMin <- SRMin[Modifier +1]
-  return(SRMin)
-}
-
 
 GetSkills <- function(lang = "de") {
   if (is.null(.Skills)) {
