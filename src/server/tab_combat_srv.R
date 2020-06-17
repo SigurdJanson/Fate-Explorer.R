@@ -137,15 +137,12 @@ outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
 
 output$CombatConfirm <- renderPrint({
   if (!is.na(CombatConfirmRoll$ConfirmRoll) && CombatConfirmRoll$ConfirmRoll != "Required") {
-    if (CombatRollEffect$Success == "Fumble") {
-      Result <- "Still a Fumble"
-    } else if (CombatRollEffect$Success == "Critical") {
-      Result <- "Critical confirmed"
-    } else if (CombatRollEffect$Success == "Success") {
-      Result <- "Critical was lost"
-    } else if (CombatRollEffect$Success == "Fail") {
-      Result <- "Fumble avoided"
-    }
+    Result <- switch(CombatRollEffect$Success,
+                     Fumble   = "Still a Fumble",
+                     Critical = "Critical confirmed",
+                     Success  = "Critical was lost",
+                     Fail     = "Fumble avoided",
+                     "")
   } else Result <- ""
   
   if(Result != "")
