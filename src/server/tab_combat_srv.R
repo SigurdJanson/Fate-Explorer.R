@@ -46,8 +46,8 @@ doCombatRollBase <- function(Action) {
   FightVal$Roll    <- CombatRoll()
 
   Penalty <- as.numeric(input$CombatPenalty)
-  Check <- input[[ paste0(Action, "Value") ]]
-  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, Check, Penalty)
+  SkillValue <- input[[ paste0(Action, "Value") ]]
+  FightVal$Success <- VerifyCombatRoll(FightVal$Roll, SkillValue, Penalty)
   if(FightVal$Success == "Critical" || FightVal$Success == "Fumble") {
     FightVal$ConfirmRoll <- "Required"
   } else {
