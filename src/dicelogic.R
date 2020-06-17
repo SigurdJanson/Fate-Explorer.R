@@ -199,11 +199,11 @@ CanRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modif
 #' @param Abilities A data frame containing the ability values
 #' @param Mod A check modifier
 #' @return 
-RoutineCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0) {
+VerifyRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0) {
   if (CanRoutineSkillCheck(Abilities, Skill, Modifier)) {
     QL <- as.integer( SkillRollQuality(round(Skill / 2)) )
   } else {
     QL <- 0L
   }
-  return( QL )
+  return(list(Message = ifelse(QL > 0, "Success", "Fail"), QL = QL, Remainder = "."))
 }
