@@ -58,7 +58,8 @@ observeEvent(input$doAbilityConfirmationRoll, {
 
 # Display result of skill roll
 output$AbilityRoll <- renderText({
-  Value <- LastAbilityRoll()
+  
+  Value <- req(LastAbilityRoll(), cancelOutput = TRUE)
   Confirmation <- LastAbilityConfirmationRoll()
   
   SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
@@ -73,7 +74,7 @@ output$AbilityRoll <- renderText({
                                        Success  = "Critical lost",
                                        Fail     = "Fumble avoided",
                                        ""))
-      ConfirmationStr <- paste0(i18n$t(ConfirmationStr), " (", Confirmation, ")")
+      ConfirmationStr <- paste0(ConfirmationStr, " (", Confirmation, ")")
     } else {
       Label <- i18n$t(ifelse(SuccessStr == "Critical", "Confirm!", "Avert!"))
       ConfirmationStr <- actionLink("doAbilityConfirmationRoll", Label)
