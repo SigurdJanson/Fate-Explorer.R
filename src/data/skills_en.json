@@ -1,0 +1,533 @@
+[
+    {
+        "attrID": "TAL_1",
+        "name": "Flying",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_2",
+        "name": "Gaukelei",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_3",
+        "name": "Climbing",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_4",
+        "name": "Body Control",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_6",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_5",
+        "name": "Feat of Strength",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_7",
+        "ab2": "ATTR_8",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_6",
+        "name": "Riding",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_4",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_7",
+        "name": "Swimming",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_6",
+        "ab2": "ATTR_7",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_8",
+        "name": "Self-Control",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_1",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_9",
+        "name": "Singing",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_10",
+        "name": "Perception",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_11",
+        "name": "Dancing",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_12",
+        "name": "Pickpocket",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_13",
+        "name": "Stealth",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_14",
+        "name": "Carousing",
+        "class": "Physical Skills",
+        "classID": 1,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_7",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_15",
+        "name": "Persuasion",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_16",
+        "name": "Seduction",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_17",
+        "name": "Intimidation",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_18",
+        "name": "Etiquette",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_19",
+        "name": "Streetwise",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_20",
+        "name": "Empathy",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_21",
+        "name": "Fast-Talk",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_22",
+        "name": "Disguise",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_23",
+        "name": "Willpower",
+        "class": "Social Skills",
+        "classID": 2,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_24",
+        "name": "Tracking",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "attrID": "TAL_25",
+        "name": "Ropes",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_26",
+        "name": "Fishing",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_27",
+        "name": "Orienting",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_28",
+        "name": "Plant Lore",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_29",
+        "name": "Animal Lore",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_1",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_30",
+        "name": "Survival",
+        "class": "Nature Skills",
+        "classID": 3,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_31",
+        "name": "Gambling",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_32",
+        "name": "Geography",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_33",
+        "name": "History",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_34",
+        "name": "Religions",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_35",
+        "name": "Warfare",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_36",
+        "name": "Magical Lore",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_37",
+        "name": "Mechanics",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_38",
+        "name": "Math",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_39",
+        "name": "Law",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_40",
+        "name": "Myths & Legends",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_41",
+        "name": "Sphere Lore",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_42",
+        "name": "Astronomy",
+        "class": "Knowledge Skills",
+        "classID": 4,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_43",
+        "name": "Alchemy",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_44",
+        "name": "Sailing",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_45",
+        "name": "Driving",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_4",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_46",
+        "name": "Commerce",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "attrID": "TAL_47",
+        "name": "Treat Poison",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "attrID": "TAL_48",
+        "name": "Treat Disease",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_49",
+        "name": "Treat Soul",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_50",
+        "name": "Treat Wounds",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_51",
+        "name": "Woodworking",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_52",
+        "name": "Prepare Food",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_53",
+        "name": "Leatherworking",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_6",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_54",
+        "name": "Artistic Ability",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_55",
+        "name": "Metalworking",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_7",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_56",
+        "name": "Music",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_4",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_7"
+    },
+    {
+        "attrID": "TAL_57",
+        "name": "Pick Locks",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_5"
+    },
+    {
+        "attrID": "TAL_58",
+        "name": "Earthencraft",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_5",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "attrID": "TAL_59",
+        "name": "Clothworking",
+        "class": "Craft Skills",
+        "classID": 5,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_5"
+    }
+]
