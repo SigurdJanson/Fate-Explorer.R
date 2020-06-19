@@ -65,7 +65,8 @@ observeEvent(input$doDodge, { # Dodge Roll
 
 # OUTPUT -------------------------------
 # Roll
-output$CombatAction <- renderPrint({ 
+output$CombatAction <- renderPrint({
+  req(CombatRoll$Action)
   # Compute
   Penalty <- as.numeric(input$CombatPenalty)
   SkillValue <- input[[ paste0(CombatRoll$Action, "Value") ]]
@@ -123,9 +124,9 @@ observeEvent(input$doCombatConfirm, {
 
 
 output$ShowCombatConfirm <- reactive({
-  if (CombatRollEffect$Success =="Critical")
+  if (CombatRollEffect$Success == "Critical")
     ConfirmLabel <- i18n$t("Confirm!")
-  else if (CombatRollEffect$Success =="Fumble")
+  else if (CombatRollEffect$Success == "Fumble")
     ConfirmLabel <- i18n$t("Avert!")
   else ConfirmLabel <- ""
   updateActionButton(session, "doCombatConfirm", label = ConfirmLabel)

@@ -34,11 +34,12 @@ observeEvent(input$doSkillRoutine, {
 
 # Display result of skill roll
 output$SkillThrow <- renderText({
-  Values <- LastSkillRoll$Roll
-  
   # Regular Roll 
   if (!LastSkillRoll$Routine) {
     # User-defined Skill Values
+    req(LastSkillRoll$Roll)
+    Values <- LastSkillRoll$Roll
+
     if (input$rdbSkillSource == "ManualSkill") {
       Abilities <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
       
@@ -82,11 +83,18 @@ output$SkillThrow <- renderText({
       RollCheck <- VerifyRoutineSkillCheck(Abilities, Skill, input$SkillMod)
     }
     else  if (input$rdbSkillSource == "CharSkill") {
+      req(input$lbCharSkills)
+      Skill      <- input$lbCharSkills
+      SkillIndex <- which(Character$Skills$name == Skill)
+      
       Labels    <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
       Abilities <- unlist(Character$Attr[, Labels]) 
       Skill <- Character$Skills[SkillIndex, "value"]
       
       RollCheck <- VerifyRoutineSkillCheck(Abilities, Skill, input$SkillMod)
+      NameMapping <- GetAbilities(Language)
+      Labels    <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
+      
     }
     else {
       Labels    <- NULL
