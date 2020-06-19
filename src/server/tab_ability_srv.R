@@ -1,5 +1,6 @@
 # ABILITY TAB
 
+LastAbilityRoll <- reactiveVal()
 LastAbilityConfirmationRoll <- reactiveVal()
 
 
@@ -16,17 +17,21 @@ output$ShowCharacterAbilities <- reactive({
 })
 outputOptions(output, 'ShowCharacterAbilities', suspendWhenHidden = FALSE)
 
-
+# user clicked on specific ability
 observeEvent(input$rdbCharacterAbility, {
   Abilities <- Character$Attr
   ActiveAbility <- Abilities[1, names(Abilities) == input$rdbCharacterAbility ]
   
+  # 
   updateSliderInput(session, "inpAbility", value = ActiveAbility)
-  # TODO: can I trigger a roll instantly?
+  
+  # Directly trigger next roll
+  isolate(LastAbilityConfirmationRoll(NULL))
+  LastAbilityRoll(AbilityRoll())
 }, ignoreNULL = TRUE, ignoreInit = TRUE)
 
 
-# Value slider
+# user changed ability value slider
 observeEvent(input$inpAbility, {
   isolate(
     updateRadioGroupButtons(session = session, inputId = "rdbCharacterAbility", selected = NA)
@@ -37,15 +42,18 @@ observeEvent(input$inpAbility, {
 
 
 # Main Panel ----
+
+# Initiate ability roll and store die result
+observeEvent(input$doAbilityRoll, {
+  isolate(LastAbilityConfirmationRoll(NULL)) # is invalid after re-roll
+  LastAbilityRoll(AbilityRoll())
+}, ignoreInit = TRUE)
+
+
+# initiate confirmation roll
 observeEvent(input$doAbilityConfirmationRoll, {
   LastAbilityConfirmationRoll( AbilityRoll() )
 })
-
-# Initiate ability roll ans store die result
-LastAbilityRoll <- eventReactive(input$doAbilityRoll, {
-  isolate(LastAbilityConfirmationRoll(NULL)) # is invalid after re-roll
-  return(AbilityRoll())
-}, ignoreInit = TRUE)
 
 
 # Display result of skill roll
@@ -62,7 +70,7 @@ output$AbilityRoll <- renderText({
       ConfirmationStr <- i18n$t(switch(SuccessStr,
                                        Fumble   = "Still a Fumble",
                                        Critical = "Critical confirmed",
-                                       Success  = "Critical was lost",
+                                       Success  = "Critical lost",
                                        Fail     = "Fumble avoided",
                                        ""))
       ConfirmationStr <- paste0(i18n$t(ConfirmationStr), " (", Confirmation, ")")
