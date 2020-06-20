@@ -2,10 +2,10 @@
 
 fluidPage(
   fluidRow(
-    column(12, h1("DSA5 Fate Explorer", align = "center"))
+    column(12, h1("DSA5", "Fate Explorer", align = "center"))
   ),
 fluidRow(
-  column(3, imageOutput("imgAboutShield")),
+  column(3, imageOutput("imgAboutMagic"), imageOutput("imgAboutSkeletons")),
   column(6, i18n$t("The Fate Explorer helps you play the Dark Eye table top games. "), 
          i18n$t("Using you can roll your dice easier. "), 
          i18n$t("Consecutive checks are done automatically."), i18n$t("and checked"), 
@@ -21,14 +21,20 @@ fluidRow(
          "Alassar von Tundrien, Anjin Siebenstich, Sina ibn Rushd, Junis Djelef ibn Yakuban, Torfin Hardsgersen & Asleif Phileasson Foggwulf.",
          br(), br(),
          i18n$t("Furthermore"),
-         a(i18n$t("the creator of the Optolith client"), href="https://github.com/elyukai"), 
-         ", ", a(i18n$t("the creator of the Game Icons library"), href="https://github.com/seiyria/gameicons-font"), 
-         i18n$t("including everyone"), a(i18n$t("who contributed to it"), href="https://game-icons.net/"),
-         i18n$t("all the heroes from"), a("Wiki Aventurica", href="https://www.wiki-aventurica.de/"),
+         a(i18n$t("the creator of the Optolith"), href="https://github.com/elyukai", .noWS = "after"), 
+         ", ", 
+         a(i18n$t("the creator of the"), "Game Icons", i18n$t("library"), href="https://github.com/seiyria/gameicons-font", .noWS = "after"),
+         i18n$t("including everyone"), 
+         a(i18n$t("who contributed to it"), href="https://game-icons.net/", .noWS = "after"),
+         ", ", 
+         a(paste(i18n$t("the creator of the"), i18n$t("illustrations on this page")), href="https://pixabay.com/users/parker_west-7094318/", .noWS = "after"), 
+         ", ", 
+         i18n$t("all the heroes from"), 
+         a("Wiki Aventurica", href="https://www.wiki-aventurica.de/", .noWS = "after"),
          " ", i18n$t("and"), " ",
-         a(i18n$t("Ulysses publishers"), href="https://ulisses-spiele.de/"), "."
+         a(i18n$t("Ulysses publishers"), href="https://ulisses-spiele.de/", .noWS = "after"), "."
          ),
-  column(3, imageOutput("imgAboutGods"))
+  column(3, imageOutput("imgAboutBat"), imageOutput("imgAboutBarbarian"))
 ),
 fluidRow(
   column(12)
