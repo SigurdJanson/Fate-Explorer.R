@@ -24,8 +24,7 @@ outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 output$RawContents <- renderPrint({
   req(input$CharFile)
 
-  # # handle dependencies to compontens that display data of last character
-  # input$CombatSelectWeapon
+  # handle dependencies to components that display data of last character
   # 
   Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
   Data <- read_json(path = input$CharFile$datapath)
@@ -104,7 +103,7 @@ output$SetupWeapons <- renderTable({
   # Correct for encumbrance: TODO (EEC = Effective Encumbrance)
   
   # Update dropdown list on Combat Tab
-  updateSelectInput(session, "CombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
+  updateSelectInput(session, "cmbCombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
   
   Character$Weapons
 }, rownames = TRUE, na = "-")

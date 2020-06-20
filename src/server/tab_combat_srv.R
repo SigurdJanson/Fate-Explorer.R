@@ -13,17 +13,17 @@ ShowConfirmation <- FALSE
 # VALUES -------------------------------
 # Source of Weapons Panel
 output$ShowPredefinedWeapons <- reactive({
-  return( !is.null(Character$Weapons) && input$PredefinedWeapon )
+  return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )
 })
 outputOptions(output, 'ShowPredefinedWeapons', suspendWhenHidden = FALSE)
 
-observeEvent(input$PredefinedWeapon,{
-  updateSelectizeInput(session, "CombatSelectWeapon", selected = NA)
+observeEvent(input$chbPredefinedWeapon,{
+  updateSelectizeInput(session, "cmbCombatSelectWeapon", selected = NA)
 })
 
-observeEvent(input$CombatSelectWeapon, {
-  if (input$PredefinedWeapon) {
-    Weapon <- as.character(input$CombatSelectWeapon)
+observeEvent(input$cmbCombatSelectWeapon, {
+  if (input$chbPredefinedWeapon) {
+    Weapon <- as.character(input$cmbCombatSelectWeapon)
     # Update values
     if(nchar(Weapon) > 0) {
       updateNumericInput(session, "AttackValue", value = Character$Weapons["AT", Weapon])
@@ -187,14 +187,14 @@ observeEvent(input$doCombatFumble, {
 # Weapon details Panel ------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
-  return( !is.null(Character$Weapons) && input$PredefinedWeapon )
+  return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )
 })
 outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
 
 output$WeaponDetails <- renderText({
   Result <- ""
-  if (input$PredefinedWeapon) {
-    Weapon <- as.character(input$CombatSelectWeapon)
+  if (input$chbPredefinedWeapon) {
+    Weapon <- as.character(input$cmbCombatSelectWeapon)
     
     WeaponData <- GetWeapons(Weapon)
     URL <- WeaponData[["url"]]

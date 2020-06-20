@@ -1,18 +1,24 @@
 
 sidebarLayout(
   sidebarPanel(
-    conditionalPanel(
-      condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
-      checkboxInput("PredefinedWeapon", i18n$t("Use Weapon from Character"), FALSE)
-    ),
-    conditionalPanel(
-      condition = "output.ShowPredefinedWeapons",
-      selectizeInput("CombatSelectWeapon", i18n$t("Select Weapon"), choices = "",
-                     options = list(
-                         placeholder = i18n$t("Select your weapon"),
-                         onInitialize = I('function() { this.setValue(""); }'))
+    fluidRow(
+      column(width=5,
+             conditionalPanel(
+               condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
+               checkboxInput("chbPredefinedWeapon", i18n$t("Use Weapon Character"), FALSE)
+             )),
+      column(width = 7,
+             conditionalPanel(
+               condition = "output.ShowPredefinedWeapons",
+               selectizeInput("cmbCombatSelectWeapon", NULL, choices = "",
+                              options = list(
+                                placeholder = i18n$t("Select your weapon"),
+                                onInitialize = I('function() { this.setValue(""); }'))
+               )
+            ),
       )
     ),
+
     hr(),
     sliderInput("AttackValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
     sliderInput("ParryValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
@@ -31,7 +37,7 @@ sidebarLayout(
   mainPanel(
     actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe", lib = "gameicon"),
                  width = "32%", style = "font-size: 140%"),
-    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("griffin-shield", lib = "gameicon"),
+    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("shield", lib = "gameicon"),
                  width = "32%", style = "font-size: 140%"),
     actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"),
                  width = "32%", style = "font-size: 140%"),

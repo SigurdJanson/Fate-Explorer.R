@@ -52,8 +52,8 @@ output$imgAttackChances <- renderPlot({
   Chances <- ChancesOfAttack(Value = Value, Modifier = Mod, 
                              DmgDieCount = DmgCount, 
                              DmgDieSides = DmgSides, DmgMod = input$Damage)
-  if (input$PredefinedWeapon) {
-    PlotTitle <- as.character(input$CombatSelectWeapon)
+  if (input$chbPredefinedWeapon) {
+    PlotTitle <- as.character(input$cmbCombatSelectWeapon)
   } else {
     PlotTitle <- paste0("[", Value-Mod, "] Damage ", 
                         DmgCount, "d", DmgSides, "+", DmgMod)
