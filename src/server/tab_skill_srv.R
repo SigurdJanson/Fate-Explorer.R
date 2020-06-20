@@ -20,6 +20,33 @@ observe({
   }
 })
 
+output$uiDoSkillRoutine <- renderUI({
+  req(input$rdbSkillSource)
+  
+  if (input$rdbSkillSource != "NoSkill") {
+    # fetch ability values to check of routine check is allowed
+    if (input$rdbSkillSource == "ManualSkill") {
+      Abilities  <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
+      SkillValue <- input$SkillValue
+      Modifier   <- input$SkillMod
+    } else if (input$rdbSkillSource == "CharSkill") {
+      req(input$lbCharSkills)
+      Skill      <- input$lbCharSkills
+      SkillIndex <- which(Character$Skills$name == Skill)
+      Labels     <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
+      Abilities  <- unlist(Character$Attr[, Labels])
+      SkillValue <- Character$Skills[SkillIndex, "value"]
+      Modifier   <- input$SkillMod
+    } else Abilities <- c(0, 0, 0)
+    
+    if (CanRoutineSkillCheck(Abilities, SkillValue, Modifier)) {
+      actionButton("doSkillRoutine", i18n$t("Routine Check"), 
+                   icon = gicon("boot-prints", lib = "gameicon"), 
+                   width = "49%", style = "font-size: 140%")
+    }
+  }
+})
+
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
 # Initiate skill roll
 observeEvent(input$doSkillThrow, {
@@ -95,8 +122,7 @@ output$SkillThrow <- renderText({
       NameMapping <- GetAbilities(Language)
       Labels    <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
       
-    }
-    else {
+    } else {
       Labels    <- NULL
       Abilities <- NULL
       RollCheck <- list(Message = "", QL = "-", Remainder = NA) # fake VerifySkillRoll() results
