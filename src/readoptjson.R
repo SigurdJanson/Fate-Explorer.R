@@ -20,7 +20,6 @@ GetSkills_Opt <- function(Skills, Language = "de") {
   SkillList$value <- 0
   # 
   SkillValID <- match(names(Skills), SkillList$attrID)
-  #SkillValID <- SkillValID[-which(is.na(SkillValID))]
   SkillList$value[SkillValID] <- unlist(Skills)
   
   return(SkillList)
@@ -38,13 +37,12 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 #' @param Skill 
 #' @note Not vectorised
 GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
-  #browser()
   
   WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE)
   Weapon     <- GetWeapons(Which = WeaponName)
   
   Courage  <- Attr[["ATTR_1"]]
-  PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # Attr[["GE"]] # TODO
+  PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
   if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
     # choose max
     PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
@@ -69,21 +67,17 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits, AddUnarmed = TRUE) {
-  # name = c("Unarmed", "User-defined"), 
-  # at = rep(NA, 2), pa = rep(NA, 2)
-  # Unarmed = c("Unarmed", NA, NA, "1", "0"),
-  # Other = c("User-Defined", NA, NA, NA, NA)
   if (AddUnarmed) {
     BelongingItems <- c(BelongingItems, 
                         ITEM_99 = list(list(id = 99L, name = "Waffenlos", combatTechnique = "CT_9",
                                        at = 0L, pa = 0L, damageDiceNumber = 1L, damageFlat = 0L)))
   }
-  
+  #browser()
   Weapons <- NULL
   for (Item in BelongingItems) {
-    #[["belongings"]][["items"]][["ITEM_22"]][["damageDiceNumber"]]
+    
     if (!is.null(Item$combatTechnique) && length(Item$combatTechnique) > 0) {
-      Skill <- GetCombatSkill(Item$name, Traits, CombatTechniques) #(CombatTechniques, Item$combatTechnique, Traits)
+      Skill <- GetCombatSkill(Item$name, Traits, CombatTechniques) 
       
       Weapons <- cbind(
         c(Item$name, Skill$AT, Skill$PA, 
