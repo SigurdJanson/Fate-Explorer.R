@@ -60,17 +60,17 @@ RenderRollKeyResult <- function(RollValue, RollResult) {
   value.style  <- "font-size: 440%"
   result.style <- "font-size: 140%"
   
-  if (RollResult == "Fumble") 
+  if (grep("Fumble", RollResult) == 1)
     SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble ico-success"
-  else if (RollResult == "Critical") 
+  else if (grep("Critical", RollResult) == 1) #(RollResult == "Critical") 
     SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
-  else if (RollResult == "Success") 
+  else if (grep("Success", RollResult) == 1) #(RollResult == "Success") 
     SuccessIcon  <- "game-icon game-icon-laurels col-success ico-success"
   else # Fail
     SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
   
   if (RollValue < 0)  {
-    RollValue <- "Ø"
+    RollValue <- "·"
     SuccessIcon  <- "game-icon game-icon-dice-eight-faces-eight"
   }
   
