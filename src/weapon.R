@@ -112,7 +112,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     self$LastDamage <- 0L
     if (self$LastAction == .CombatActions["Attack"])
       if (self$LastResult %in% .SuccessLevels[c("Success", "Critical")])
-        self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$Bonus)
+        self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$DP, self$Damage$Bonus)
       
     self$ConfirmationMissing <- self$LastResult %in% .SuccessLevels[c("Fumble", "Critical")]
     self$ConfirmRoll <- NA

@@ -28,8 +28,12 @@ test_that("", {
     for(i in 1:100) {
       W$Roll(A)
       expect_identical(W$LastAction, .CombatActions[A])
-      expect_gte(W$LastRoll, 1)
-      expect_lte(W$LastRoll, 20)
+      expect_gte(W$LastRoll, 1L)
+      expect_lte(W$LastRoll, 20L)
+      if(A == "Attack" && W$LastResult %in% .SuccessLevels[c("Critical", "Success")]) {
+        expect_gte(W$LastDamage, 5L)
+        expect_lte(W$LastDamage, 10L)
+      }
       expect_identical(W$LastModifier, 0L)
       if(W$LastRoll == 20) 
         expect_identical(W$LastResult, .SuccessLevels["Fumble"])
@@ -47,6 +51,18 @@ test_that("", {
   expect_identical(W$Technique, "CT_9")
   expect_identical(W$Damage$N, 1L)
   expect_identical(W$Damage$DP, 6L)
-  expect_identical(W$Damage$Bonus, 0L+2L) # Base value 2 + [ATTR_6 (GE) > 14]
+  expect_identical(W$Damage$Bonus, 0L+2L) # Base value 0 + [ATTR_6 (GE) > 14]
   
+  # Fake weapon with 1d3 
+  W$Damage$DP <- 3L
+  for(i in 1:30) {
+    W$Roll("Attack")
+    expect_identical(W$LastAction, .CombatActions["Attack"])
+    expect_gte(W$LastRoll, 1L)
+    expect_lte(W$LastRoll, 20L)
+    if(W$LastResult %in% .SuccessLevels[c("Critical", "Success")]) {
+      expect_gte(W$LastDamage, 3L)
+      expect_lte(W$LastDamage, 5L)
+    }
+  }
 })
