@@ -105,7 +105,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
   Primaries  <- GetPrimaryWeaponAttribute( Weapon )
   
   if (!anyNA(Primaries)) {
-    Threshold  <- WeaponData[["schwelle"]]
+    Threshold  <- WeaponData[["threshold"]]
     AbIndex <- which(names(Abilities) %in% Primaries)
     Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold)
   } else Bonus <- 0L
