@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+require(jsonlite)
 ```
 
 # Enumerations
@@ -14,12 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 Enumerations are realised as named atomic vectors.
 
 ```{r echo=FALSE}
-source("./src/weapon.R")
-#.WeaponType    <- c(Weaponless = 0L, Melee = 1L, Ranged = 2L)
+source("./src/weapon.R")#, echo = FALSE, verbose = FALSE, continue.echo = FALSE)
 print(.WeaponType)
-#.CombatActions <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
 print(.CombatActions)
-#.SuccessLevels <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
 print(.SuccessLevels)
 ```
 
@@ -136,6 +134,17 @@ wp
 ```
 
 * Type: <`r class(wp)`> (list)
+
+
+## Combat Techniques
+
+```{r echo=FALSE}
+ct <- read_json("./src/data/combattechs_de.json", simplifyVector = FALSE, flatten = TRUE)
+ct <- as.data.frame(ct, stringsAsFactors = FALSE)
+ct
+```
+
+
 
 
 # Character {.tabset}
