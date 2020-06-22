@@ -9,6 +9,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Enumerations
+
+Enumerations are realised as named atomic vectors.
+
+```{r echo=FALSE}
+source("./src/weapon.R")
+#.WeaponType    <- c(Weaponless = 0L, Melee = 1L, Ranged = 2L)
+print(.WeaponType)
+#.CombatActions <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
+print(.CombatActions)
+#.SuccessLevels <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
+print(.SuccessLevels)
+```
+
+
+
+CombatTechniques
+
+
 # Basic Tables {.tabset}
 
 ## Abilities
@@ -60,21 +79,22 @@ sk
 
 ```{r echo=FALSE}
 wp <- structure(list(name = c("Basiliskenzunge", "Dolch", "Drachenzahn", 
-"Linkhand", "Messer", "SchwererDolch"), technik = c("Dolche", 
-"Dolche", "Dolche", "Dolche", "Dolche", "Dolche"), leiteigenschaft = c("GE", 
-"GE", "GE", "GE", "GE", "GE"), schwelle = c(14L, 14L, 14L, 14L, 
-14L, 14L), grundschaden = c("1W6", "1W6", "1W6", "1W6", "1W6", 
-"1W6"), bonus = c(2L, 1L, 2L, 1L, 1L, 2L), at = c(0L, 0L, 0L, 
-0L, 0L, 0L), pa = c(-1L, 0L, -1L, 0L, -2L, -1L), rw = c("kurz", 
-"kurz", "kurz", "kurz", "kurz", "kurz"), gewicht = c("0,5Stn", 
-"0,5Stn", "0,75Stn", "0,75Stn", "0,25Stn", "0,75Stn"), preis = c(50, 
-45, 70, 90, 10, 60), bf = c(12L, 12L, 12L, 12L, 12L, 12L), primeattrID = c("ATTR_6", 
+"Linkhand", "Messer", "SchwererDolch"), combattech = c("Dolche", 
+"Dolche", "Dolche", "Dolche", "Dolche", "Dolche"), primaryattr = c("GE", 
+"GE", "GE", "GE", "GE", "GE"), threshold = c(14L, 14L, 14L, 14L, 
+14L, 14L), damage = c("1W6", "1W6", "1W6", "1W6", "1W6", "1W6"
+), bonus = c(2L, 1L, 2L, 1L, 1L, 2L), at = c(0L, 0L, 0L, 0L, 
+0L, 0L), pa = c(-1L, 0L, -1L, 0L, -2L, -1L), range = c("kurz", 
+"kurz", "kurz", "kurz", "kurz", "kurz"), weight = c("0,5Stn", 
+"0,5Stn", "0,75Stn", "0,75Stn", "0,25Stn", "0,75Stn"), price = c(50, 
+45, 70, 90, 10, 60), sf = c(12L, 12L, 12L, 12L, 12L, 12L), primeattrID = c("ATTR_6", 
 "ATTR_6", "ATTR_6", "ATTR_6", "ATTR_6", "ATTR_6"), combattechID = c("CT_3", 
 "CT_3", "CT_3", "CT_3", "CT_3", "CT_3"), improvised = c(FALSE, 
 FALSE, FALSE, FALSE, FALSE, FALSE), url = c("index.php/basiliskenzunge.html", 
 "index.php/dolch.html", "index.php/drachenzahn.html", "index.php/linkhand.html", 
-"index.php/messer.html", "index.php/schwerer-dolch.html")), row.names = c(NA, 
-6L), class = "data.frame")
+"index.php/messer.html", "index.php/schwerer-dolch.html"), clsrng = c(TRUE, 
+TRUE, TRUE, TRUE, TRUE, TRUE), armed = c(TRUE, TRUE, TRUE, TRUE, 
+TRUE, TRUE)), row.names = c(NA, 6L), class = "data.frame")
 wp
 ```
 
@@ -82,6 +102,25 @@ wp
 * Identifiers (at this point) are stored in the "name" column 
 * Available in German
 * Loaded from "weapon-list.json"
+* Columns
+  * `$name` (language dependent)
+  * `$combattech` Label of combat technique (language dependent)
+  * `$combattechID` Combat technique (ID)
+  * `$primaryattr` Label of primary weapons attribute(s) (language dependent)
+  * `$primeattrID` Primary weapons attribute(s) (ID)
+  * `$threshold`
+  * `$damage` 
+  * `$bonus` 
+  * `$at` 
+  * `$pa` 
+  * `$range` label for range (language dependent)
+  * `$weight` (language dependent)
+  * `$price` 
+  * `$sf` sheer factor (German: Bruchfaktor)
+  * `$improvised` (`TRUE`/`FALSE`)
+  * `$clsrng` data set represents weapon values for close or ranged combat (`TRUE`/`FALSE`)
+  * `$armed` is armed combat? (`TRUE`/`FALSE`)
+  * `$url` (`TRUE`/`FALSE`)
 
 
 `GetWeapons("Waqqif")`
