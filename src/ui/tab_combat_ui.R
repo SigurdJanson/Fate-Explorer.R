@@ -3,20 +3,18 @@ sidebarLayout(
   sidebarPanel(
     fluidRow(
       column(width=5,
-             conditionalPanel(
+           conditionalPanel(
                condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
                checkboxInput("chbPredefinedWeapon", i18n$t("Use Weapon Character"), FALSE)
-             )),
+      )),
       column(width = 7,
-             conditionalPanel(
+           conditionalPanel(
                condition = "output.ShowPredefinedWeapons",
                selectizeInput("cmbCombatSelectWeapon", NULL, choices = "",
                               options = list(
                                 placeholder = i18n$t("Select your weapon"),
-                                onInitialize = I('function() { this.setValue(""); }'))
-               )
-            ),
-      )
+                                onInitialize = I('function() { this.setValue(""); }')))
+      ))
     ),
 
     hr(),
@@ -42,13 +40,14 @@ sidebarLayout(
     actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"),
                  width = "32%", style = "font-size: 140%"),
     hr(),
+    htmlOutput("uiCombatRoll"),
     div(
       h3(textOutput("CombatAction")),
-        conditionalPanel(
-          condition = "output.ShowCombatConfirm",
-          actionLink("doCombatConfirm", "-"),
-          textOutput("CombatConfirm")
-        ),
+        #conditionalPanel(
+        #  condition = "output.ShowCombatConfirm",
+          #actionLink("doCombatConfirm", "-"),
+          #textOutput("CombatConfirm")
+        #),
         conditionalPanel(
           condition = "output.ShowCombatDamage",
           textOutput("CombatDamage")
