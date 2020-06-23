@@ -1,7 +1,8 @@
 # SETUP
 
 Character <- reactiveValues(Name = "No character has been uploaded",
-                            Attr = NULL, Skills = NULL, Weapons = NULL)
+                            Attr = NULL, Skills = NULL, Weapons = NULL,
+                            CombatSkills = NULL)
 
 
 output$CharacterName <- renderPrint({
@@ -23,6 +24,9 @@ outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 
 output$RawContents <- renderPrint({
   req(input$CharFile)
+  
+  if (input$CharFile$type != "application/json") 
+    return(i18n$t("I only understand json files. That wasn't one."))
 
   # handle dependencies to components that display data of last character
   # 
@@ -84,7 +88,7 @@ output$SetupSkills <- renderTable({
 }, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
 
 
-# Weapons Panel ------------------------
+# Combat Panel ------------------------
 output$ShowSetupWeapons <- reactive({
   return( !is.null(Character$Weapons) )
 })
@@ -93,7 +97,7 @@ outputOptions(output, 'ShowSetupWeapons', suspendWhenHidden = FALSE)
 output$SetupWeapons <- renderTable({
   # Correct weapon's hit points
   isolate({
-    for (w in 1:ncol(Character$Weapons)) {
+    for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
       Bonus <- GetHitpointBonus(Character$Weapons["Name", w], Character$Attr)
       #browser()
       Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus

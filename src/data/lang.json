@@ -81,6 +81,7 @@
     {"en": "No character has been uploaded", "de": "Kein Character geladen"},
     {"en": "No file selected", "de": "Keine Datei ausgewählt"},
     {"en": "Json File", "de": "Json Datei"},
+    {"en": "I only understand json files. That wasn't one.", "de": "Verstehe nur was von .json Dateien. Das war keine."},
     {"en": "Choose your language", "de": "Wähle Deine Sprache"},
     {"en": "Deutsch", "de": "Deutsch"},
     {"en": "English", "de": "English"},
