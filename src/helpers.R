@@ -88,7 +88,7 @@ RenderRollKeyResult <- function(RollValue, RollResult) {
     SuccessIcon  <- "game-icon game-icon-laurels col-success ico-success"
   else if (grepl("Fail", RollResult))
     SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
-  else stop("Unknown roll result")
+  else SuccessIcon  <- ""
   
   if (RollValue < 0)  {
     RollValue <- "·"
