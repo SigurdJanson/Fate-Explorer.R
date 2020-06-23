@@ -63,18 +63,15 @@ output$AbilityRoll <- renderText({
   Confirmation <- LastAbilityConfirmationRoll()
   
   SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
+  
   # Critical or Fumble waiting for confirmation
   if (SuccessStr == "Critical" || SuccessStr == "Fumble") {
     if (!is.null(Confirmation)) {
       ConfirmationResult <- VerifyAbilityRoll(Confirmation, input$inpAbility, input$inpAbilityMod)
       SuccessStr <- VerifyConfirmation( SuccessStr, ConfirmationResult )
-      ConfirmationStr <- i18n$t(switch(SuccessStr,
-                                       Fumble   = "Still a Fumble",
-                                       Critical = "Critical confirmed",
-                                       Success  = "Critical lost",
-                                       Fail     = "Fumble avoided",
-                                       ""))
-      ConfirmationStr <- paste0(ConfirmationStr, " (", Confirmation, ")")
+
+      ConfirmationStr <- RenderRollConfirmation(SuccessStr, Value = Confirmation, i18n = i18n)
+      #ConfirmationStr <- paste0(ConfirmationStr, " (", Confirmation, ")")
     } else {
       Label <- i18n$t(ifelse(SuccessStr == "Critical", "Confirm!", "Avert!"))
       ConfirmationStr <- actionLink("doAbilityConfirmationRoll", Label)

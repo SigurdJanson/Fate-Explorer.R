@@ -1,6 +1,7 @@
 # Various helper functions
 
 
+# MODEL -------------
 
 #' replace_umlauts
 #' Replaces German umlauts ä with ae, ö with oe, ...
@@ -17,6 +18,7 @@ replace_umlauts <- function(x) {
 }
 
 
+# VIEW -----------
 
 #' gicon
 #' Replacement for the `icon()` function of shiny. Accepts other icon libs.
@@ -27,7 +29,7 @@ replace_umlauts <- function(x) {
 #' @return An icon element (which is a browsable object).
 #' @source https://stackoverflow.com/questions/55163719/r-shiny-how-to-use-fontawesome-pro-version-with-the-icon-function
 gicon <- function (name, class = NULL, lib = "font-awesome") {
-  
+
   prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon")
   prefix <- prefixes[[lib]]
   if (is.null(prefix)) {
@@ -56,18 +58,37 @@ gicon <- function (name, class = NULL, lib = "font-awesome") {
 }
 
 
+
+RenderRollConfirmation <- function( Success, Value = NA, i18n = NULL ) {
+  Message <- switch(Success,
+               Fumble   = "Still a Fumble",
+               Critical = "Critical confirmed",
+               Success  = "Critical lost",
+               Fail     = "Fumble avoided",
+               "")
+  if (isTruthy(i18n)) Message <- i18n$t(Message)
+  if (isTruthy(Value)) {
+    Message <- paste0(Message, " (", Value, ")")
+  }
+  
+  return(Message)
+}
+
+
+
 RenderRollKeyResult <- function(RollValue, RollResult) {
   value.style  <- "font-size: 440%"
   result.style <- "font-size: 140%"
   
-  if (grep("Fumble", RollResult) == 1)
+  if (grepl("Fumble", RollResult))
     SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble ico-success"
-  else if (grep("Critical", RollResult) == 1) #(RollResult == "Critical") 
+  else if (grepl("Critical", RollResult)) 
     SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
-  else if (grep("Success", RollResult) == 1) #(RollResult == "Success") 
+  else if (grepl("Success", RollResult))
     SuccessIcon  <- "game-icon game-icon-laurels col-success ico-success"
-  else # Fail
+  else if (grepl("Fail", RollResult))
     SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
+  else stop("Unknown roll result")
   
   if (RollValue < 0)  {
     RollValue <- "·"
