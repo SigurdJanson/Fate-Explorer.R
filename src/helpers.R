@@ -21,12 +21,13 @@ replace_umlauts <- function(x) {
 # VIEW -----------
 
 #' gicon
-#' Replacement for the `icon()` function of shiny. Accepts other icon libs.
+#' Renders an icon from an icon font.
 #' @param name Name of icon according to icon lib (i.e. without prefixes like the
 #' "fa-" and "glyphicon-" prefixes).
 #' @param class Additional classes to customize the style of the icon.
 #' @param lib Icon library to use ("font-awesome", "glyphicon", or "gameicon)
 #' @return An icon element (which is a browsable object).
+#' @note Replacement for the `icon()` function of shiny. Accepts other icon libs.
 #' @source https://stackoverflow.com/questions/55163719/r-shiny-how-to-use-fontawesome-pro-version-with-the-icon-function
 gicon <- function (name, class = NULL, lib = "font-awesome") {
 
@@ -59,16 +60,23 @@ gicon <- function (name, class = NULL, lib = "font-awesome") {
 
 
 
-RenderRollConfirmation <- function( Success, Value = NA, i18n = NULL ) {
-  Message <- switch(Success,
+#' RenderRollConfirmation
+#' The outout of this function provides the confirmation message of a fumble/critical
+#' in a format that can directly be used in `renderText`.
+#' @param RollResult String indicating critical, succes, fail or fumble.
+#' @param RollValue Value of the confirmation roll (numeric, optional).
+#' @param i18n A `shiny.i18n` object.
+#' @return Character string
+RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
+  Message <- switch(RollResult,
                Fumble   = "Still a Fumble",
                Critical = "Critical confirmed",
                Success  = "Critical lost",
                Fail     = "Fumble avoided",
                "")
   if (isTruthy(i18n)) Message <- i18n$t(Message)
-  if (isTruthy(Value)) {
-    Message <- paste0(Message, " (", Value, ")")
+  if (isTruthy(RollValue)) {
+    Message <- paste0(Message, " (", RollValue, ")")
   }
   
   return(Message)
@@ -76,7 +84,14 @@ RenderRollConfirmation <- function( Success, Value = NA, i18n = NULL ) {
 
 
 
-RenderRollKeyResult <- function(RollValue, RollResult) {
+#' RenderRollKeyResult
+#' The outout of this function provides the html representation
+#' to display a roll result in a format that can directly be used in `renderText`.
+#' @param RollResult String indicating critical, succes, fail or fumble.
+#' @param RollValue Value of the confirmation roll (numeric).
+#' @return The result from these functions is a tag object, which can be 
+#' converted using `as.character()`.
+RenderRollKeyResult <- function(RollResult, RollValue) {
   value.style  <- "font-size: 440%"
   result.style <- "font-size: 140%"
   

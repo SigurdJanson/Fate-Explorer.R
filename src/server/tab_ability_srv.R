@@ -80,7 +80,7 @@ output$AbilityRoll <- renderText({
     ConfirmationStr <- NULL
   }
   
-  Result <- RenderRollKeyResult(Value, SuccessStr)
+  Result <- RenderRollKeyResult(SuccessStr, Value)
   if (!is.null(ConfirmationStr)) # add confirmation <div/>
     Result <- div(Result, div( ConfirmationStr ),
                   class = "shiny-html-output shiny-bound-output roll")
