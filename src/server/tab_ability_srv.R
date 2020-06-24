@@ -69,9 +69,7 @@ output$AbilityRoll <- renderText({
     if (!is.null(Confirmation)) {
       ConfirmationResult <- VerifyAbilityRoll(Confirmation, input$inpAbility, input$inpAbilityMod)
       SuccessStr <- VerifyConfirmation( SuccessStr, ConfirmationResult )
-
-      ConfirmationStr <- RenderRollConfirmation(SuccessStr, Value = Confirmation, i18n = i18n)
-      #ConfirmationStr <- paste0(ConfirmationStr, " (", Confirmation, ")")
+      ConfirmationStr <- RenderRollConfirmation(SuccessStr, Confirmation, i18n)
     } else {
       Label <- i18n$t(ifelse(SuccessStr == "Critical", "Confirm!", "Avert!"))
       ConfirmationStr <- actionLink("doAbilityConfirmationRoll", Label)

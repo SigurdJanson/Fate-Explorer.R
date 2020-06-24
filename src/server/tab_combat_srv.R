@@ -3,7 +3,7 @@
 # Values of last combat roll
 ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
-UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll - the value is unimportant
+UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll - value is unimportant
 
 
 
@@ -57,6 +57,15 @@ observeEvent(input$doDodge, { # Dodge Roll
   doCombatRollBase("Dodge")
 })
 
+observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
+  UpdateCombatResult( ActiveWeapon$Confirm() )
+})
+
+observeEvent(input$doCombatFumble, { # Show fumble result
+  UpdateCombatResult( ActiveWeapon$FumbleRoll() )
+})
+
+
 
 # UI COMBAT ROLL -----------------------
 output$uiCombatRoll <- renderText({
@@ -74,51 +83,39 @@ output$uiCombatRoll <- renderText({
     ConfirmLabel <- i18n$t("Avert!")
 
   # Render the result
-  Result <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll)
-  
+  KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll)
+  Result <- tagList()
+
   # Confirmation
   # Waiting for confirmation
   if (isTRUE(ActiveWeapon$ConfirmationMissing))
-    Result <- div(Result, div( actionLink("doCombatConfirm", ConfirmLabel, icon = NULL) ),
-                  class = "shiny-html-output shiny-bound-output roll")
+    Result <- tagAppendChild(Result, actionLink("doCombatConfirm", ConfirmLabel, icon = NULL))
   # Show confirmation result (add confirmation <div/>)
   if (!is.null(ConfirmationStr)) {
-    Result <- div(Result, div( ConfirmationStr ), class = "shiny-html-output shiny-bound-output roll")
+    Result <- tagAppendChild(Result, p(ConfirmationStr))
 
     # Fumble effects
     # Waiting for fumble roll
     if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"]) {
       if (!isTruthy(ActiveWeapon$LastFumbleEffect)) {
-        Result <- div(Result, actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
-                      class = "shiny-html-output shiny-bound-output roll")
+        Result <- tagAppendChild(Result, p(actionLink("doCombatFumble", i18n$t("See what happens..."))))
+        
       } else { # Show fumble effects
-        Result <- div(Result, div(i18n$t(ActiveWeapon$LastFumbleEffect)),
-                      class = "shiny-html-output shiny-bound-output roll")
+        Result <- tagAppendChild(Result, p(i18n$t(ActiveWeapon$LastFumbleEffect)))
       }
     }
   }
-  
-  
-  
-  return(paste((Result), collapse=""))
+  if (length(Result) > 0) # two panels
+    return(as.character( div(KeyResult, 
+                             div(Result, class = "shiny-html-output shiny-bound-output"), 
+                             class = "roll")))
+  else # key result panel, only
+    return(as.character(KeyResult))
 })
 
 
-# OUTPUT -------------------------------
 
-# Confirmation Panel: Confirm Critical/Botch
-observeEvent(input$doCombatConfirm, {
-  UpdateCombatResult( ActiveWeapon$Confirm() )
-})
-
-
-observeEvent(input$doCombatFumble, {
-  UpdateCombatResult( ActiveWeapon$FumbleRoll() )
-})
-
-
-#
-# Weapon details Panel ----------
+# VIEW: Weapon details Panel ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
   return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )
@@ -157,7 +154,7 @@ output$WeaponDetails <- renderText({
 })
 
 
-# Exploration Panel ----
+# View: Exploration Panel ----
 output$ShowExploreFightingChances <- reactive({
   return( input$chbExploreChances )
 })
