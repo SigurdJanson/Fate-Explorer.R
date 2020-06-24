@@ -1,8 +1,8 @@
 library(testthat)
 library(jsonlite)
-setwd("..")
-source("./src/weapon.R")
-setwd("./test")
+setwd("../src")
+source("./weapon.R")
+setwd("../test")
 
 test_that("", {
   setwd("../src")
@@ -11,7 +11,7 @@ test_that("", {
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
   ct <- list(CT_3 = 15, CT_9 = 15, CT_12 = 12, CT_14 = 13)
-  W <- WeaponBase$new(Name, ab, ct)
+  W <- MeleeWeapon$new(Name, ab, ct)
   setwd("../test")
   
   expect_identical(W$Name, Name)
@@ -24,28 +24,28 @@ test_that("", {
   expect_identical(W$Damage$Bonus, 2L+2L) # Base value 2 + [ATTR_6 (GE) > 14]
 
   # Rolling
-  for(A in names(.CombatActions))
+  for(A in names(.CombatAction))
     for(i in 1:100) {
       W$Roll(A)
-      expect_identical(W$LastAction, .CombatActions[A])
+      expect_identical(W$LastAction, .CombatAction[A])
       expect_gte(W$LastRoll, 1L)
       expect_lte(W$LastRoll, 20L)
-      if(A == "Attack" && W$LastResult %in% .SuccessLevels[c("Critical", "Success")]) {
+      if(A == "Attack" && W$LastResult %in% .SuccessLevel[c("Critical", "Success")]) {
         expect_gte(W$LastDamage, 5L)
         expect_lte(W$LastDamage, 10L)
       }
       expect_identical(W$LastModifier, 0L)
       if(W$LastRoll == 20) 
-        expect_identical(W$LastResult, .SuccessLevels["Fumble"])
+        expect_identical(W$LastResult, .SuccessLevel["Fumble"])
       if(W$LastRoll == 1) 
-        expect_identical(W$LastResult, .SuccessLevels["Critical"])
+        expect_identical(W$LastResult, .SuccessLevel["Critical"])
       if(W$LastRoll == 20 || W$LastRoll == 1)
         expect_identical(W$ConfirmationMissing, TRUE)
     }
   
   # WAFFENLOS
   Name <- "Waffenlos"
-  W <- WeaponBase$new(Name, ab, ct)
+  W <- MeleeWeapon$new(Name, ab, ct)
   expect_identical(W$Name, Name)
   expect_identical(W$Type, .WeaponType["Unarmed"])
   expect_identical(W$Technique, "CT_9")
@@ -57,10 +57,10 @@ test_that("", {
   W$Damage$DP <- 3L
   for(i in 1:30) {
     W$Roll("Attack")
-    expect_identical(W$LastAction, .CombatActions["Attack"])
+    expect_identical(W$LastAction, .CombatAction["Attack"])
     expect_gte(W$LastRoll, 1L)
     expect_lte(W$LastRoll, 20L)
-    if(W$LastResult %in% .SuccessLevels[c("Critical", "Success")]) {
+    if(W$LastResult %in% .SuccessLevel[c("Critical", "Success")]) {
       expect_gte(W$LastDamage, 3L)
       expect_lte(W$LastDamage, 5L)
     }

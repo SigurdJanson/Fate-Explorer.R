@@ -1,13 +1,10 @@
 # COMBAT TAB
 
 # Values of last combat roll
-CombatRoll <- reactiveValues(Action = "", Roll = NA)
-CombatConfirmRoll <- reactiveValues(ConfirmRoll = NA, Confirmation = FALSE)
-CombatRollEffect <- reactiveValues(Success = "", Damage = NA)
-CombatFumble <- reactiveValues(EffectOfFumble = NA)
+ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
+                                Damage = list(N = 1L, DP = 6L, Bonus = 0L))
+UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll - the value is unimportant
 
-# Indicates if confirmation roll of last critical/botch is being displayed
-ShowConfirmation <- FALSE
 
 
 # VALUES -------------------------------
@@ -22,32 +19,30 @@ observeEvent(input$chbPredefinedWeapon,{
 })
 
 observeEvent(input$cmbCombatSelectWeapon, {
+  # Select weapon
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
-    # Update values
     if(nchar(Weapon) > 0) {
-      updateNumericInput(session, "AttackValue", value = Character$Weapons["AT", Weapon])
-      updateNumericInput(session, "ParryValue", value = Character$Weapons["PA", Weapon])
-      updateNumericInput(session, "DamageDieCount", value = Character$Weapons["DamageDice", Weapon])
-      updateNumericInput(session, "Damage", value = Character$Weapons["DamageMod", Weapon])
+      ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Abilities, Character$CombatSkills)
     }
   } else {
-    updateNumericInput(session, "AttackValue", value = 6L)
-    updateNumericInput(session, "ParryValue", value = 3L)
-    updateNumericInput(session, "DamageDieCount", value = 1L)
-    updateNumericInput(session, "Damage", value = 0L)
+    ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
+                                    Damage = list(N = 1L, DP = 6L, Bonus = 0L))
   }
+  # Update ui controls
+  for(Action in names(.CombatActions)) {
+    updateNumericInput(session, paste0(Action, "Value"), value = ActiveWeapon$Skill[[Action]])
+  }
+  updateNumericInput(session, "DamageDieCount", value = ActiveWeapon$Damage$N)
+  updateNumericInput(session, "Damage", value = ActiveWeapon$Damage$Bonus)
+  
 }, ignoreNULL = FALSE)
 
 
   
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
-  ShowConfirmation <- FALSE
-  CombatRoll$Action  <- Action
-  CombatRoll$Roll    <- CombatRoll()
-  CombatConfirmRoll$Confirmation <- FALSE
-  CombatFumble$EffectOfFumble <- NA
+  UpdateCombatResult( ActiveWeapon$Roll( Action, as.numeric(input$CombatPenalty) ) )
 }
 
 observeEvent(input$doAttackThrow, { # Attack Roll
@@ -63,128 +58,67 @@ observeEvent(input$doDodge, { # Dodge Roll
 })
 
 
-# OUTPUT -------------------------------
-# Roll
-output$CombatAction <- renderPrint({
-  req(CombatRoll$Action)
-  # Compute
-  Penalty <- as.numeric(input$CombatPenalty)
-  SkillValue <- input[[ paste0(CombatRoll$Action, "Value") ]]
-  CombatRollEffect$Success <- VerifyCombatRoll(CombatRoll$Roll, SkillValue, Penalty)
+# UI COMBAT ROLL -----------------------
+output$uiCombatRoll <- renderText({
+  req(UpdateCombatResult())
+
+  if (isTruthy(ActiveWeapon$ConfirmRoll))
+    ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),
+                                              ActiveWeapon$ConfirmRoll, i18n) 
+  else 
+    ConfirmationStr <- NULL
   
-  isolate({
-    if (CombatRollEffect$Success == "Critical" || CombatRollEffect$Success == "Fumble") {
-      CombatConfirmRoll$ConfirmRoll <- "Required"
-    } else {
-      CombatConfirmRoll$ConfirmRoll <- NA
+  if (ActiveWeapon$LastResult == .SuccessLevel["Critical"])
+    ConfirmLabel <- i18n$t("Confirm!")
+  else if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"])
+    ConfirmLabel <- i18n$t("Avert!")
+
+  # Render the result
+  Result <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll)
+  
+  # Confirmation
+  # Waiting for confirmation
+  if (isTRUE(ActiveWeapon$ConfirmationMissing))
+    Result <- div(Result, div( actionLink("doCombatConfirm", ConfirmLabel, icon = NULL) ),
+                  class = "shiny-html-output shiny-bound-output roll")
+  # Show confirmation result (add confirmation <div/>)
+  if (!is.null(ConfirmationStr)) {
+    Result <- div(Result, div( ConfirmationStr ), class = "shiny-html-output shiny-bound-output roll")
+
+    # Fumble effects
+    # Waiting for fumble roll
+    if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"]) {
+      if (!isTruthy(ActiveWeapon$LastFumbleEffect)) {
+        Result <- div(Result, actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
+                      class = "shiny-html-output shiny-bound-output roll")
+      } else { # Show fumble effects
+        Result <- div(Result, div(i18n$t(ActiveWeapon$LastFumbleEffect)),
+                      class = "shiny-html-output shiny-bound-output roll")
+      }
     }
-    CombatRollEffect$Damage <- NA
-    if(CombatRoll$Action == "Attack") {
-      if  (CombatRollEffect$Success == "Success")
-        CombatRollEffect$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
-    }
-  })
-  # Print
-  if (!is.na(CombatRoll$Roll)) {
-    Result <- paste0(i18n$t(CombatRoll$Action), ": ", 
-                     CombatRoll$Roll, " - ", 
-                     i18n$t(CombatRollEffect$Success))
-    cat(Result)
   }
+  
+  
+  
+  return(paste((Result), collapse=""))
 })
 
 
+# OUTPUT -------------------------------
 
 # Confirmation Panel: Confirm Critical/Botch
 observeEvent(input$doCombatConfirm, {
-  Check <- input[[ paste0(CombatRoll$Action, "Value") ]]
-  Penalty <- as.numeric(input$CombatPenalty)
-  CombatConfirmRoll$ConfirmRoll <- CombatRoll()
-  Confirmation <- VerifyCombatRoll(CombatConfirmRoll$ConfirmRoll, Check, Penalty)
-  
-  #FightVal$Confirmation <- VerifyConfirmation(FightVal$Success, Confirmation)
-  if (CombatRollEffect$Success == "Critical")
-    CombatConfirmRoll$Confirmation <- Confirmation == "Success" | Confirmation == "Critical"
-  else
-    CombatConfirmRoll$Confirmation <- Confirmation == "Fail" | Confirmation == "Fumble"
-  if (!CombatConfirmRoll$Confirmation)
-    CombatRollEffect$Success <- ifelse(CombatRollEffect$Success == "Critical", "Success", "Fail")
-
-  # Damage
-  if(CombatRoll$Action == "Attack") {
-    if (CombatRollEffect$Success == "Critical")
-      CombatRollEffect$Damage <- 2 * DamageRoll(input$DamageDieCount, input$Damage)
-    else if  (CombatRollEffect$Success == "Success")
-      CombatRollEffect$Damage <- DamageRoll(input$DamageDieCount, input$Damage)
-  } else {
-    CombatRollEffect$Damage <- NA
-  }
-  updateActionButton(session, "doCombatConfirm", label = "")
+  UpdateCombatResult( ActiveWeapon$Confirm() )
 })
 
-
-output$ShowCombatConfirm <- reactive({
-  if (CombatRollEffect$Success == "Critical")
-    ConfirmLabel <- i18n$t("Confirm!")
-  else if (CombatRollEffect$Success == "Fumble")
-    ConfirmLabel <- i18n$t("Avert!")
-  else ConfirmLabel <- ""
-  updateActionButton(session, "doCombatConfirm", label = ConfirmLabel)
-  
-  return(!is.na(CombatConfirmRoll$ConfirmRoll))
-})
-outputOptions(output, 'ShowCombatConfirm', suspendWhenHidden = FALSE)
-
-
-output$CombatConfirm <- renderPrint({
-  if (!is.na(CombatConfirmRoll$ConfirmRoll) && CombatConfirmRoll$ConfirmRoll != "Required") {
-    Result <- switch(CombatRollEffect$Success,
-                     Fumble   = "Still a Fumble",
-                     Critical = "Critical confirmed",
-                     Success  = "Critical was lost",
-                     Fail     = "Fumble avoided",
-                     "")
-  } else Result <- ""
-  
-  if(Result != "")
-    return(cat(i18n$t(Result), " (", CombatConfirmRoll$ConfirmRoll, ")", sep = ""))
-  else 
-    return(cat(""))
-})
-
-
-# Damage Panel ----
-output$ShowCombatDamage <- reactive({
-  return( !is.na(CombatRollEffect$Damage) )
-})
-outputOptions(output, 'ShowCombatDamage', suspendWhenHidden = FALSE)
-
-output$CombatDamage <- renderPrint({
-  cat(i18n$t("Hit points"), ": ", CombatRollEffect$Damage, sep = "")
-})
-
-
-# Fumble Panel ----
-output$ShowCombatFumble <- reactive({
-  return( CombatRollEffect$Success == "Fumble" & CombatConfirmRoll$Confirmation )
-})
-outputOptions(output, 'ShowCombatFumble', suspendWhenHidden = FALSE)
-
-output$CombatFumble <- renderPrint({
-  if(!is.na(CombatFumble$EffectOfFumble)) {
-    Result <- GetCombatFumbleEffect(CombatFumble$EffectOfFumble)
-  } else Result <- ""
-  
-  cat(i18n$t(Result))
-})
 
 observeEvent(input$doCombatFumble, {
-  CombatFumble$EffectOfFumble <- CombatFumbleRoll()
+  UpdateCombatResult( ActiveWeapon$FumbleRoll() )
 })
 
 
 #
-# Weapon details Panel ------
+# Weapon details Panel ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
   return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )

@@ -39,26 +39,10 @@ sidebarLayout(
                  width = "32%", style = "font-size: 140%"),
     actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"),
                  width = "32%", style = "font-size: 140%"),
+
     hr(),
     htmlOutput("uiCombatRoll"),
-    div(
-      h3(textOutput("CombatAction")),
-        #conditionalPanel(
-        #  condition = "output.ShowCombatConfirm",
-          #actionLink("doCombatConfirm", "-"),
-          #textOutput("CombatConfirm")
-        #),
-        conditionalPanel(
-          condition = "output.ShowCombatDamage",
-          textOutput("CombatDamage")
-        ),
-        conditionalPanel(
-          condition = "output.ShowCombatFumble",
-          hr(),
-          actionLink("doCombatFumble", i18n$t("See what happens..."), icon = icon("shield-alt")),
-          textOutput("CombatFumble")
-        ),
-    style = "height:18rem"),
+    
     conditionalPanel(
       condition = "output.ShowWeaponDetails",
       hr(),
