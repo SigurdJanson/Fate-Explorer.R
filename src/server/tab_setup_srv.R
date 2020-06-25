@@ -35,6 +35,7 @@ output$RawContents <- renderPrint({
   Character$Name    <- Data$name
   Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
   Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
+  Character$CombatSkills <- Data[["ct"]]
   Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
 
   # THIS SECTION IS A BIT OUT OF PLACE HERE
@@ -89,11 +90,6 @@ output$SetupSkills <- renderTable({
 
 
 # Combat Panel ------------------------
-output$ShowSetupWeapons <- reactive({
-  return( !is.null(Character$Weapons) )
-})
-outputOptions(output, 'ShowSetupWeapons', suspendWhenHidden = FALSE)
-
 output$SetupWeapons <- renderTable({
   # Correct weapon's hit points
   isolate({
