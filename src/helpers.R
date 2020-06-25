@@ -110,8 +110,8 @@ RenderRollKeyResult <- function(RollResult, RollValue) {
     SuccessIcon  <- "icon icon-d8-eight"
   }
   
-  Result <- div(tags$p( tags$i(class = SuccessIcon), 
-                        RollValue, style = value.style ), 
+  Result <- div(tags$p( tags$i(class = SuccessIcon, .noWS = c("after")), 
+                        RollValue, style = value.style, .noWS = c("before") ), 
                 tags$p(i18n$t(RollResult), style = result.style),
                 class = "roll-keyval")
 }
