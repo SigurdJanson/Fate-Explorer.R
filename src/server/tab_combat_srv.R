@@ -9,6 +9,12 @@ UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll 
 
 # VALUES -------------------------------
 # Source of Weapons Panel
+output$ShowSetupWeapons <- reactive({
+  return( !is.null(Character$Weapons) )
+})
+outputOptions(output, 'ShowSetupWeapons', suspendWhenHidden = FALSE)
+
+
 output$ShowPredefinedWeapons <- reactive({
   return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )
 })
@@ -23,7 +29,7 @@ observeEvent(input$cmbCombatSelectWeapon, {
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
     if(nchar(Weapon) > 0) {
-      ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Abilities, Character$CombatSkills)
+      ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
     }
   } else {
     ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 

@@ -33,11 +33,11 @@ sidebarLayout(
                     selected = 0L, grid = TRUE)
     ),
   mainPanel(
-    actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe", lib = "gameicon"),
+    actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe"),
                  width = "32%", style = "font-size: 140%"),
-    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("shield", lib = "gameicon"),
+    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("shield"),
                  width = "32%", style = "font-size: 140%"),
-    actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodging", lib = "gameicon"),
+    actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodge"),
                  width = "32%", style = "font-size: 140%"),
 
     hr(),

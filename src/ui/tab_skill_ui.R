@@ -13,9 +13,9 @@ sidebarLayout(
                      hr(),
                      div(style="float:right",
                          conditionalPanel(condition = "input.SkillMod < 0", 
-                                          icon("minus-circle"), i18n$t("Impediment")),
+                                          gicon("minus-circle"), i18n$t("Impediment")),
                          conditionalPanel(condition = "input.SkillMod > 0", 
-                                          icon("plus-circle"), i18n$t("Advantage"))
+                                          gicon("plus-circle"), i18n$t("Advantage"))
                      )),
     
     # Skills loaded from character sheet
@@ -33,11 +33,9 @@ sidebarLayout(
   ),
 
   mainPanel(
-    actionButton("doSkillThrow", i18n$t("Now!"), icon = gicon("fist-2", lib = "gameicon"), 
+    actionButton("doSkillThrow", i18n$t("Now!"), icon = gicon("fist"), 
                  width = "49%", style = "font-size: 140%"),
     htmlOutput("uiDoSkillRoutine", inline = TRUE), #Button for routine checks
-    #actionButton("doSkillRoutine", i18n$t("Routine Check"), icon = gicon("boot-prints", lib = "gameicon"), 
-    #             width = "49%", style = "font-size: 140%"),
     hr(),
     div(
         htmlOutput("SkillThrow", style = "font-size:140%"),

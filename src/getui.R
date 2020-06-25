@@ -5,7 +5,7 @@ source(file.path("ui", "btn_skill_rdbsource.R"), local = TRUE)
 
 ui <- shinyUI(fluidPage(
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "game-icons.css"),
+    tags$link(rel = "stylesheet", type = "text/css", href = "fontello.css"),
     tags$link(rel = "stylesheet", type = "text/css", href = "rolloutput.css")
   ),
   # useShinyjs(),

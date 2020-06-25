@@ -13,8 +13,7 @@ sidebarLayout(
         radioGroupButtons(inputId = "rdbCharacterAbility",
                choiceNames = i18n$t(c("COU", "SAG", "INT", "CHA", "DEX", "AGI", "CON", "STR")),
                choiceValues = paste0("ATTR_", 1:8),
-               justified = TRUE#,
-               #size = "xs"
+               justified = TRUE
              )
     ),
     # Sliders to set values
@@ -22,14 +21,14 @@ sidebarLayout(
     # Modifier
     div(style="float:right",
         conditionalPanel(condition = "input.inpAbilityMod < 0", 
-                         icon("minus-circle"), i18n$t("Impediment")),
+                         gicon("minus-circle"), i18n$t("Impediment")),
         conditionalPanel(condition = "input.inpAbilityMod > 0", 
-                         icon("plus-circle"), i18n$t("Advantage"))
+                         gicon("plus-circle"), i18n$t("Advantage"))
     ),
     sliderInput("inpAbilityMod", i18n$t("Modifier"), min = -10L, max = 10L, value = 0L, step = 1L)
   ),
   mainPanel(
-    actionButton("doAbilityRoll", i18n$t("Ability"), icon = gicon("body-swapping", lib = "gameicon"), 
+    actionButton("doAbilityRoll", i18n$t("Ability"), icon = gicon("body-swapping"), 
                width = "100%", style = "font-size: 140%"),
     hr(),
     htmlOutput("AbilityRoll")

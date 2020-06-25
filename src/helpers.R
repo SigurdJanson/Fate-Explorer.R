@@ -29,9 +29,9 @@ replace_umlauts <- function(x) {
 #' @return An icon element (which is a browsable object).
 #' @note Replacement for the `icon()` function of shiny. Accepts other icon libs.
 #' @source https://stackoverflow.com/questions/55163719/r-shiny-how-to-use-fontawesome-pro-version-with-the-icon-function
-gicon <- function (name, class = NULL, lib = "font-awesome") {
+gicon <- function (name, class = NULL, lib = "fontello") {
 
-  prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon")
+  prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon", fontello = "icon")
   prefix <- prefixes[[lib]]
   if (is.null(prefix)) {
     stop("Unknown font library '", lib, "' specified. Must be one of ", 
@@ -96,18 +96,18 @@ RenderRollKeyResult <- function(RollResult, RollValue) {
   result.style <- "font-size: 140%"
   
   if (grepl("Fumble", RollResult))
-    SuccessIcon  <- "game-icon game-icon-crowned-skull col-fumble ico-success"
+    SuccessIcon  <- "icon icon-crowned-skull col-fumble ico-success"
   else if (grepl("Critical", RollResult)) 
-    SuccessIcon  <- "game-icon game-icon-laurel-crown col-critical ico-success"
+    SuccessIcon  <- "icon icon-laurel-crown col-critical ico-success"
   else if (grepl("Success", RollResult))
-    SuccessIcon  <- "game-icon game-icon-laurels col-success ico-success"
+    SuccessIcon  <- "icon icon-laurels col-success ico-success"
   else if (grepl("Fail", RollResult))
-    SuccessIcon  <- "game-icon game-icon-spectre col-fail ico-success"
+    SuccessIcon  <- "icon icon-spectre col-fail ico-success"
   else SuccessIcon  <- ""
   
   if (RollValue < 0)  {
     RollValue <- "·"
-    SuccessIcon  <- "game-icon game-icon-dice-eight-faces-eight"
+    SuccessIcon  <- "icon icon-d8-eight"
   }
   
   Result <- div(tags$p( tags$i(class = SuccessIcon), 

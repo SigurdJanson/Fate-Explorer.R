@@ -41,7 +41,7 @@ output$uiDoSkillRoutine <- renderUI({
     
     if (CanRoutineSkillCheck(Abilities, SkillValue, Modifier)) {
       actionButton("doSkillRoutine", i18n$t("Routine Check"), 
-                   icon = gicon("boot-prints", lib = "gameicon"), 
+                   icon = gicon("boot-prints"), 
                    width = "49%", style = "font-size: 140%")
     }
   }
