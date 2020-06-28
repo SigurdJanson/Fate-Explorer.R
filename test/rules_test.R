@@ -42,21 +42,62 @@ test_that("Skills", {
 
 
 test_that("Weapons", {
-  cn <- c("name", "technik", "leiteigenschaft", "schwelle", "grundschaden",
-          "bonus", "at", "pa", "rw", "gewicht", "preis", "bf", 
-          "combattechID", "primeattrID", "improvised", "url")
+  # PRECONDITIONS
+  expect_error(GetWeapons(Type = "Blabla"), "\"Melee\", \"Ranged\", \"Any\"")
+  expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
+  
+  # MELEE WEAPONS
+  cn <- c("name", "combattech", "primaryattr", "threshold", "damage",
+          "bonus", "at", "pa", "range", "weight", "price", "sf", 
+          "combattechID", "primeattrID", "improvised", "url", "clsrng", 
+          "armed", "templateID")
   setwd("../src")
   W <- GetWeapons()
   setwd("../test")
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 184)
-  expect_equal(ncol(W), 16)
+  expect_equal(ncol(W), length(cn))
   expect_named(W, cn, ignore.order = TRUE)
   
-  W <- GetWeapons("Waqqif")
+  W <- GetWeapons("Waqqif") # Use name, "Melee" is default
   expect_equal(W$name, "Waqqif")
+  expect_equal(W$templateID, "ITEMTPL_7")
+  setwd("../src")
+  W <- GetWeapons("Waqqif", "Any") # Use name
+  setwd("../test")
+  expect_equal(W$name, "Waqqif")
+  expect_equal(W$templateID, "ITEMTPL_7")
   
+  W <- GetWeapons("Waqqif", "Ranged") # Use name
+  expect_equal(nrow(as.data.frame(W)), 0)
+  
+  
+  W <- GetWeapons("ITEMTPL_549") # Use optholit ID
+  expect_equal(W$name, "Nostrisches Langschwert")
+  
+  # RANGED WEAPONS
+  cn <- c("combattech", "loadtime", "damage", "name", 
+          "bonus", "ammo", "range", "weight", "price", "sf", 
+          "combattechID", "improvised", "url", "clsrng", 
+          "armed", "templateID")
+  setwd("../src")
+  W <- GetWeapons(Type = "Ranged")
+  setwd("../test")
+  expect_s3_class(W, "data.frame")
+  expect_equal(nrow(W), 52)
+  expect_equal(ncol(W), length(cn))
+  expect_named(W, cn, ignore.order = TRUE)
+  
+  W <- GetWeapons("Waqqif", "Ranged") # Use name
+  expect_equal(nrow(W), NULL) # close combat weapon
+  W <- GetWeapons("Fledermaus", "Ranged") 
+  expect_equal(W$name, "Fledermaus")
+  expect_equal(W$templateID, NA_character_)
+  
+  W <- GetWeapons("ITEMTPL_539", "Ranged") # Use optholit ID
+  expect_equal(W$name, "Windhager Schleuder")
 })
+
 
 
 test_that("PrimaryWeaponAttribute", {
