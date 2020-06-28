@@ -88,9 +88,9 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
     else {
       Which <- gsub("[[:blank:]]", "", Which)
       Select <- .Melee[ which(.Melee$templateID == Which), ]
-      if (nrow(Select) == 0)
+      if (length(unlist(Select)) == 0)
         Select <- .Melee[ which(.Melee$name == Which), ]
-      if (nrow(Select) != 0 || Type == "Melee")
+      if (length(unlist(Select)) != 0 || Type == "Melee")
         return(as.list(Select))
     }
   }
@@ -101,7 +101,7 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
     else {
       Which <- gsub("[[:blank:]]", "", Which)
       Select <- .Ranged[ which(.Ranged$templateID == Which), ]
-      if (nrow(Select) == 0)
+      if (length(unlist(Select)) == 0)
         Select <- .Ranged[ which(.Ranged$name == Which), ]
       return(as.list(Select))
     }
