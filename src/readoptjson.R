@@ -37,28 +37,42 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 #' @param Skill 
 #' @note Not vectorised
 GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
-  
-  WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE)
+  WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE) # trim
   Weapon     <- GetWeapons(Which = WeaponName, Type = "Any")
+
+  if (length(unlist(Weapon)) != 0L) { # Weapon found!
+    Courage  <- Attr[["ATTR_1"]]
+    PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
+    if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
+      # choose max
+      PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
+    } else if (length(PrimeAttr) == 1L) {
+      PrimeAttr <- Attr[[PrimeAttr]]
+    } else PrimeAttr <- 0L # this way it has no effect later
+    #browser()#################
+    Technique <- Weapon[["combattechID"]]
+    Skill <- Skill[[Technique]]
+    if (is.null(Skill)) Skill <- 6L # default value
+    
+    if (Weapon[["clsrng"]]) { # close combat
+      ATSkill    <- Skill
+      PASkill    <- ceiling(Skill/2L)
+      ATSkillMod <- Weapon[["at"]]
+      PASkillMod <- Weapon[["pa"]]
+      ATAttrMod  <- max((Courage-8L) %/% 3L, 0L)
+      PAAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
+    } else { # ranged weapon
+      ATSkill    <- Skill
+      PASkill    <- 0L
+      ATSkillMod <- 0L
+      PASkillMod <- 0L
+      ATAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
+      PAAttrMod  <- 0L
+    }
+    CT <- list(AT = Skill + ATAttrMod + ATSkillMod,
+               PA = round(Skill/2L) + PAAttrMod + PASkillMod)
+  } else CT <- list()
   
-  Courage  <- Attr[["ATTR_1"]]
-  PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
-  if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
-    # choose max
-    PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
-  } else 
-    PrimeAttr <- Attr[[PrimeAttr]]
-  
-  Technique <- Weapon[["combattechID"]]
-  ATMod <- Weapon[["at"]]
-  PAMod <- Weapon[["pa"]]
-  Skill <- Skill[[Technique]]
-  if (is.null(Skill)) Skill <- 6L # default value
-  
-  CourageMod   <- ((Courage-8L) %/% 3L)
-  PrimeAttrMod <- ((PrimeAttr-8L) %/% 3L)
-  CT <- list(AT = Skill + CourageMod + ATMod,
-             PA = round(Skill/2L) + PrimeAttrMod + PAMod)
   return(CT)
 }
 
@@ -66,28 +80,27 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 
-GetWeapons_Opt <- function(BelongingItems, CombatTechniques, Traits, AddUnarmed = TRUE) {
+GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits, AddUnarmed = TRUE) {
   if (AddUnarmed) {
-    BelongingItems <- c(BelongingItems, 
-                        ITEM_99 = list(list(id = 99L, name = "Waffenlos", combatTechnique = "CT_9",
-                                       at = 0L, pa = 0L, damageDiceNumber = 1L, damageFlat = 0L)))
+    Belongings <- c(Belongings, 
+                    WEAPONLESS = list(list(id = 99L, name = "Waffenlos", combatTechnique = "CT_9",
+                                   at = 0L, pa = 0L, damageDiceNumber = 1L, damageFlat = 0L,
+                                   template = "WEAPONLESS")))
   }
   #browser()
   Weapons <- NULL
-  for (Item in BelongingItems) {
-    
-    if (!is.null(Item$combatTechnique) && length(Item$combatTechnique) > 0) {
-      Skill <- GetCombatSkill(Item$name, Traits, CombatTechniques) 
-      
-      Weapons <- cbind(
-        c(Item$name, Skill$AT, Skill$PA, 
-          Item$damageDiceNumber, Item$damageFlat),
-        Weapons
-      )
+  for (Item in Belongings) {
+    ItemIsWeapon <- length(unlist(GetWeapons(Item$template, "Any"))) > 0
+    #browser()##############################
+    if (ItemIsWeapon) {
+      Skill <- GetCombatSkill(Item$template, Traits, CombatTechniques) 
+      Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 
+                          Item$damageDiceNumber, Item$damageFlat),
+                        Weapons )
       colnames(Weapons)[1L] <- Item$name
     }
   }# for
-  rownames(Weapons) <- c("Name", "AT", "PA", "DamageDice", "DamageMod")
+  rownames(Weapons) <- c("Name", "templateID", "AT", "PA", "DamageDice", "DamageMod")
   
   return(Weapons)
 }
