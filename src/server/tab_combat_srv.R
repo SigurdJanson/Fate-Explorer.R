@@ -128,6 +128,7 @@ output$ShowWeaponDetails <- reactive({
 })
 outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
 
+
 output$WeaponDetails <- renderText({
   Result <- ""
   if (input$chbPredefinedWeapon) {
@@ -138,7 +139,7 @@ output$WeaponDetails <- renderText({
 
     # harvest HTML page
     if( length(URL) > 0 && nchar(URL) > 0) {
-      URL <- paste0("https://ulisses-regelwiki.de/", URL)
+      URL <- paste0("http://ulisses-regelwiki.de/", URL)
       Sssn <- try(html_session(URL))
       if (httr::status_code(Sssn) == 200) {
         Nodes <- html_nodes(Sssn, "div.ce_text.last.block")
