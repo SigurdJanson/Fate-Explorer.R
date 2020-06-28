@@ -115,22 +115,27 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
 
 #' GetPrimaryWeaponAttribute
 #' Get the primary attribute of a weapon
-#' @param A string with the actual name of the weapon.
+#' @param A string with the actual name or template ID of the weapon.
+#' @return The string of the ability or `character(0)` if the weapon
+#' has no primary ability.
 GetPrimaryWeaponAttribute <- function( Weapon ) {
   # PRECONDITIONS
   if(missing(Weapon)) stop("A weapon is required.")
   # RUN
-  W <- GetWeapons()
+  W <- GetWeapons() # only melees have a primary weapons attribute
   # Try finding weapon by "ID" first, then "name" if not successful
-  row <- which(W[["templateID"]] == Weapon) #TODO: using a code would be safer
-  if (length(row) == 0)
+  row <- which(W[["templateID"]] == Weapon)
+  if (length(row) == 0) # try weapon name if ID does not work
     row <- which(W[["name"]] == Weapon)
-  
-  PrimeAttr <- W[row, "primeattrID"]
-  # Parse and translate
-  if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"
-    PrimeAttr <- unlist(strsplit(PrimeAttr, "/"))
-  }
+
+  if (length(row) != 0) { # "Weapon" is melee
+    PrimeAttr <- W[row, "primeattrID"]
+    # Parse and translate
+    if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"
+      PrimeAttr <- unlist(strsplit(PrimeAttr, "/"))
+    }
+  } else PrimeAttr <- character(0)
+
   return(PrimeAttr)
 }
 
