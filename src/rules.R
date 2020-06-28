@@ -4,6 +4,7 @@
 .Skills  <- NULL
 .ComTecs <- NULL
 .Melee   <- NULL
+.Ranged  <- NULL
 
 
 #' 
@@ -16,7 +17,9 @@ ReloadRules <- function(lang = "de") {
   .ComTecs <<- NULL
   GetCombatTechniques(lang)
   #.Melee   <<- NULL# Currently not required
-  #GetWeapons() # Currently not required
+  #GetWeapons(Type = "Melee") # Currently not required
+  #.Ranged   <<- NULL# Currently not required
+  #GetWeapons(Type = "Ranged") # Currently not required
 }
 
 
@@ -51,22 +54,63 @@ GetCombatTechniques <- function(lang = "de") {
 }
 
 
-GetWeapons <- function(Which = "All", Type = "Melee") {
-  if (Type == "Melee") {
+#' GetWeapons
+#' Returns a list of weapons with DSA attributes
+#' @param Which A string identifiyng a weapon or "All" which returns all 
+#' weapons of the given type (character).
+#' @param Type "Melee", "Ranged" or "Any" (default is "Melee"; character).
+#' @note "All" for argument "which" cannot be combined with "Any" type.
+#' @return A list
+GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
+  # PRECONDITIONS
+  Type <- match.arg(Type)
+  if (Type == "Any" && Which == "All") 
+    stop("Invalid combination of arguments. 'all' weapons not allowed with type 'any'")
+  
+  # Make sure the data is available - load if not
+  if (!is.na(pmatch(Type, c("Melee", "Any")))) { 
     if (is.null(.Melee)) {
-      JsonFile <- file.path("data", paste0("weapon-list", ".json"))
+      JsonFile <- file.path("data", paste0("melee-list", ".json"))
       .Melee <<- read_json(JsonFile, simplifyVector = TRUE)
     }
+  }
+  if (!is.na(pmatch(Type, c("Ranged", "Any")))) {
+    if (is.null(.Ranged)) {
+      JsonFile <- file.path("data", paste0("ranged-list", ".json"))
+      .Ranged <<- read_json(JsonFile, simplifyVector = TRUE)
+    } 
+  } 
+  
+  # Match the requested Weapon "Which"
+  if (Type %in% c("Melee", "Any")) {
     if (Which == "All")
       return(.Melee)
     else {
       Which <- gsub("[[:blank:]]", "", Which)
-      return(as.list(.Melee[ which(.Melee$name == Which),]))
+      Select <- .Melee[ which(.Melee$templateID == Which), ]
+      if (nrow(Select) == 0)
+        Select <- .Melee[ which(.Melee$name == Which), ]
+      if (nrow(Select) != 0 || Type == "Melee")
+        return(as.list(Select))
     }
-  } else {
-    stop("Other weapons than melee are not supported, yet")
+  }
+
+  if (Type %in% c("Ranged", "Any")) {
+    if (Which == "All")
+      return(.Ranged)
+    else {
+      Which <- gsub("[[:blank:]]", "", Which)
+      Select <- .Ranged[ which(.Ranged$templateID == Which), ]
+      if (nrow(Select) == 0)
+        Select <- .Ranged[ which(.Ranged$name == Which), ]
+      return(as.list(Select))
+    }
   }
 }
+# setwd("./src")
+# W <- GetWeapons("Waqqif", "Ranged")
+# setwd("../")
+
 
 
 #' GetPrimaryWeaponAttribute
@@ -77,7 +121,11 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
   if(missing(Weapon)) stop("A weapon is required.")
   # RUN
   W <- GetWeapons()
-  row <- which(W[["name"]] == Weapon) #TODO: using a code would be safer
+  # Try finding weapon by "ID" first, then "name" if not successful
+  row <- which(W[["templateID"]] == Weapon) #TODO: using a code would be safer
+  if (length(row) == 0)
+    row <- which(W[["name"]] == Weapon)
+  
   PrimeAttr <- W[row, "primeattrID"]
   # Parse and translate
   if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"
@@ -101,7 +149,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
     stop("Argument 'Abilities' is missing")
 
   # RUN
-  WeaponData <- GetWeapons( Weapon )
+  WeaponData <- GetWeapons( Weapon, "Melee" ) #only melee has a bonus
   Primaries  <- GetPrimaryWeaponAttribute( Weapon )
   
   if (!anyNA(Primaries)) {
