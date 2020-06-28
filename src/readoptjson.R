@@ -39,7 +39,7 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
   
   WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE)
-  Weapon     <- GetWeapons(Which = WeaponName)
+  Weapon     <- GetWeapons(Which = WeaponName, Type = "Any")
   
   Courage  <- Attr[["ATTR_1"]]
   PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
