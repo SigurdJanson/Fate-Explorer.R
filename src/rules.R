@@ -59,6 +59,8 @@ GetCombatTechniques <- function(lang = "de") {
 #' @param Which A string identifiyng a weapon or "All" which returns all 
 #' weapons of the given type (character).
 #' @param Type "Melee", "Ranged" or "Any" (default is "Melee"; character).
+#' @details The search by weapon name ignores upper/lower case and 
+#' space characters.
 #' @note "All" for argument "which" cannot be combined with "Any" type.
 #' @return A list
 GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
@@ -88,8 +90,11 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
     else {
       Which <- gsub("[[:blank:]]", "", Which)
       Select <- .Melee[ which(.Melee$templateID == Which), ]
-      if (length(unlist(Select)) == 0)
-        Select <- .Melee[ which(.Melee$name == Which), ]
+      if (length(unlist(Select)) == 0) {
+        NamedWhich <- tolower(Which)
+        Names      <- tolower(gsub("[[:blank:]]", "", .Melee$name))
+        Select <- .Melee[ which(Names == NamedWhich), ]
+      }
       if (length(unlist(Select)) != 0 || Type == "Melee")
         return(as.list(Select))
     }
@@ -101,16 +106,42 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
     else {
       Which <- gsub("[[:blank:]]", "", Which)
       Select <- .Ranged[ which(.Ranged$templateID == Which), ]
-      if (length(unlist(Select)) == 0)
-        Select <- .Ranged[ which(.Ranged$name == Which), ]
+      if (length(unlist(Select)) == 0) {
+        NamedWhich <- tolower(Which)
+        Names      <- tolower(gsub("[[:blank:]]", "", .Ranged$name))
+        Select <- .Ranged[ which(Names == NamedWhich), ]
+      }
       return(as.list(Select))
     }
   }
 }
 # setwd("./src")
-# W <- GetWeapons("Waqqif", "Ranged")
+# W <- GetWeapons("Schwere Armbrust", "Any")
 # setwd("../")
 
+
+#' IsRangedWeapon
+#' Is a weapon a ranged weapon?
+#' @param Weapon A vector of IDs (which is preferred) or weapon names (character).
+#' @param CombatTech A combat tech ID (character).
+#' @return A logical vector.
+IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
+  if (missing(Weapon) && missing(CombatTech)) 
+    stop("No arguments to define weapon")
+  
+  if (!missing(Weapon)) {
+    DatabaseWeapon <- GetWeapons(Weapon, "Any")
+    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+      IsRanged <- !(DatabaseWeapon$clsrng)
+    } else {
+      IsRanged <- FALSE
+    }
+  } else { #if (!missing(CombatTech)) {
+    IsRanged <- !is.na(match(CombatTech, paste0("CT_", c(1:2, 11, 14, 17:19))))
+  }
+  
+  return(IsRanged)
+}
 
 
 #' GetPrimaryWeaponAttribute

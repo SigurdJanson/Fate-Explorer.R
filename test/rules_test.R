@@ -79,7 +79,7 @@ test_that("Weapons", {
   cn <- c("combattech", "loadtime", "damage", "name", 
           "bonus", "ammo", "range", "weight", "price", "sf", 
           "combattechID", "improvised", "url", "clsrng", 
-          "armed", "templateID")
+          "armed", "templateID", "primaryattr", "primaryattrID")
   setwd("../src")
   W <- GetWeapons(Type = "Ranged")
   setwd("../test")
@@ -148,4 +148,41 @@ test_that("PrimaryWeaponAttribute", {
   o <- GetHitpointBonus("Barbarenschwert", ab) # thrshold: 15
   e <- 0L
   expect_identical(o, e)
+})
+
+
+
+test_that("IsRangedWeapon", {
+  # PRECONDITIONS
+  expect_error(IsRangedWeapon(), "No arguments to define weapon")
+  
+  # Melee
+  expect_identical(IsRangedWeapon("Shakagra-Krummsäbel"), FALSE)
+  expect_identical(IsRangedWeapon("Bratspieß"), FALSE)
+  expect_identical(IsRangedWeapon("Ogerschelle"), FALSE)
+  expect_identical(IsRangedWeapon("Zwergenschlägel"), FALSE)
+  
+  expect_identical(IsRangedWeapon("ITEMTPL_15"), FALSE)
+  expect_identical(IsRangedWeapon("ITEMTPL_35"), FALSE)
+  expect_identical(IsRangedWeapon("ITEMTPL_476"), FALSE)
+  expect_identical(IsRangedWeapon("ITEMTPL_584"), FALSE)
+  
+  # Ranged
+  expect_identical(IsRangedWeapon("Schwere Armbrust"), TRUE)
+  expect_identical(IsRangedWeapon("Wurfspeer"), TRUE)
+  expect_identical(IsRangedWeapon("Feuerspeien"), TRUE)
+  expect_identical(IsRangedWeapon("Diskus"), TRUE)
+  
+  expect_identical(IsRangedWeapon("ITEMTPL_60"), TRUE)
+  expect_identical(IsRangedWeapon("ITEMTPL_70"), TRUE)
+  expect_identical(IsRangedWeapon("ITEMTPL_465"), TRUE)
+  expect_identical(IsRangedWeapon("ITEMTPL_540"), TRUE)
+  
+  # By combat technique
+  ct <- paste0("CT_", c(1:21))
+  expect_identical(IsRangedWeapon(CombatTech = ct), 
+                   c(TRUE, TRUE, rep(FALSE, 8), 
+                     TRUE, rep(FALSE, 2), 
+                     TRUE, rep(FALSE, 2), 
+                     rep(TRUE, 3), rep(FALSE, 2)))
 })
