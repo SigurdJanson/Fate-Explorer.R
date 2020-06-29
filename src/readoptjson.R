@@ -49,7 +49,7 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
     } else if (length(PrimeAttr) == 1L) {
       PrimeAttr <- Attr[[PrimeAttr]]
     } else PrimeAttr <- 0L # this way it has no effect later
-    #browser()#################
+    
     Technique <- Weapon[["combattechID"]]
     Skill <- Skill[[Technique]]
     if (is.null(Skill)) Skill <- 6L # default value
@@ -83,17 +83,21 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits, AddUnarmed = TRUE) {
   if (AddUnarmed) {
     Belongings <- c(Belongings, 
-                    WEAPONLESS = list(list(id = 99L, name = "Waffenlos", combatTechnique = "CT_9",
-                                   at = 0L, pa = 0L, damageDiceNumber = 1L, damageFlat = 0L,
-                                   template = "WEAPONLESS")))
+                    WEAPONLESS = list(list(name = "Waffenlos",
+                                           template = "WEAPONLESS", 
+                                           combatTechnique = "CT_9",
+                                           at = 0L, pa = 0L, 
+                                           damageDiceNumber = 1L, 
+                                           damageFlat = 0L)))
   }
-  #browser()
   Weapons <- NULL
   for (Item in Belongings) {
-    ItemIsWeapon <- length(unlist(GetWeapons(Item$template, "Any"))) > 0
-    #browser()##############################
+    DatabaseWeapon <- GetWeapons(Item$template, "Any")
+    ItemIsWeapon <- length(unlist(DatabaseWeapon)) > 0
     if (ItemIsWeapon) {
       Skill <- GetCombatSkill(Item$template, Traits, CombatTechniques) 
+      if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
+      if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
       Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 
                           Item$damageDiceNumber, Item$damageFlat),
                         Weapons )
