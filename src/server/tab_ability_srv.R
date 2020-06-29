@@ -4,7 +4,7 @@ LastAbilityRoll <- reactiveVal()
 LastAbilityConfirmationRoll <- reactiveVal()
 
 
-# Panel Ability Source: Selection buttons for ability source ----
+# Panel: Ability Source: Selection buttons for ability source ----
 output$ShowAbilitySoureSelection <- reactive({
   return( !is.null(Character$Attr) )
 })
@@ -17,14 +17,15 @@ output$ShowCharacterAbilities <- reactive({
 })
 outputOptions(output, 'ShowCharacterAbilities', suspendWhenHidden = FALSE)
 
+
 # user clicked on specific ability
 observeEvent(input$rdbCharacterAbility, {
   Abilities <- Character$Attr
   ActiveAbility <- Abilities[1, names(Abilities) == input$rdbCharacterAbility ]
-  
-  # 
-  updateSliderInput(session, "inpAbility", value = ActiveAbility)
-  
+  # Update (isolate because a change directly triggers result rendering)
+  isolate(
+    updateSliderInput(session, "inpAbility", value = ActiveAbility)
+  )
   # Directly trigger next roll
   isolate(LastAbilityConfirmationRoll(NULL))
   LastAbilityRoll(AbilityRoll())
@@ -34,7 +35,7 @@ observeEvent(input$rdbCharacterAbility, {
 # user changed ability value slider
 observeEvent(input$inpAbility, {
   isolate(
-    updateRadioGroupButtons(session = session, inputId = "rdbCharacterAbility", selected = NA)
+    updateRadioGroupButtons(session = session, inputId = "rdbCharacterAbility", selected = character(0))
   )
   LastAbilityConfirmationRoll(NULL) # is invalid after change of ability
 }, ignoreNULL = TRUE, ignoreInit = TRUE)
