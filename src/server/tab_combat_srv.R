@@ -1,7 +1,7 @@
 # COMBAT TAB
 
 # Values of last combat roll
-ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
+ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
 UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll - value is unimportant
 
@@ -29,7 +29,12 @@ observeEvent(input$cmbCombatSelectWeapon, {
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
     if(nchar(Weapon) > 0) {
-      ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
+      # Get ID and determine if weapon is for close or ranged combat
+      Weapon <- Character$Weapons["templateID", Weapon] # ID
+      if ( IsRangedWeapon(Weapon) )
+        ActiveWeapon <- RangedWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
+      else
+        ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
     }
   } else {
     ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
@@ -39,11 +44,33 @@ observeEvent(input$cmbCombatSelectWeapon, {
   for(Action in names(.CombatActions)) {
     updateNumericInput(session, paste0(Action, "Value"), value = ActiveWeapon$Skill[[Action]])
   }
-  updateNumericInput(session, "DamageDieCount", value = ActiveWeapon$Damage$N)
-  updateNumericInput(session, "Damage", value = ActiveWeapon$Damage$Bonus)
+  updateNumericInput(session, "inpDamageDieCount", value = ActiveWeapon$Damage$N)
+  updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
   
 }, ignoreNULL = FALSE)
 
+
+# Weapon skill slider: react to changes
+observeEvent(input$inpAttackValue, {
+  if (isTruthy(input$inpAttackValue))
+    ActiveWeapon$Skill[["Attack"]] <- input$inpAttackValue
+})
+observeEvent(input$inpParryValue, {
+  if (isTruthy(input$inpParryValue))
+    ActiveWeapon$Skill[["Parry"]] <- input$inpParryValue
+})
+observeEvent(input$inpDodgeValue, {
+  if (isTruthy(input$inpDodgeValue))
+    ActiveWeapon$Skill[["Dodge"]] <- input$inpDodgeValue
+})
+observeEvent(input$inpDamageDieCount, {
+  if (isTruthy(input$inpDamageDieCount))
+    ActiveWeapon$Damage[["N"]] <- input$inpDamageDieCount
+})
+observeEvent(input$inpDamage, {
+  if (isTruthy(input$inpDamage))
+    ActiveWeapon$Damage[["Bonus"]] <- input$inpDamage
+})
 
   
 # ACTIONS -------------------------------
