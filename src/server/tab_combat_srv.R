@@ -161,7 +161,7 @@ output$WeaponDetails <- renderText({
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
     
-    WeaponData <- GetWeapons(Weapon)
+    WeaponData <- GetWeapons(Weapon, "Any")
     URL <- WeaponData[["url"]]
 
     # harvest HTML page
