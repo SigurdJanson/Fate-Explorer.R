@@ -14,11 +14,13 @@ require(jsonlite)
 
 Enumerations are realised as named atomic vectors.
 
-```{r echo=FALSE}
-source("./src/weapon.R")#, echo = FALSE, verbose = FALSE, continue.echo = FALSE)
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+source(file.path("D:/Programmierung/R/DSADiceApp.git", "src/weapon.R"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 print(.WeaponType)
-print(.CombatActions)
-print(.SuccessLevels)
+print(.CombatAction)
+print(.SuccessLevel)
 ```
 
 
@@ -139,8 +141,11 @@ wp
 ## Combat Techniques
 
 ```{r echo=FALSE}
-ct <- read_json("./src/data/combattechs_de.json", simplifyVector = FALSE, flatten = TRUE)
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+ct <- read_json("./data/combattechs_de.json", simplifyVector = FALSE, flatten = TRUE)
 ct <- as.data.frame(ct, stringsAsFactors = FALSE)
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+
 ct
 ```
 
