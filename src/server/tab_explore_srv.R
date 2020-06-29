@@ -43,15 +43,15 @@ output$imgSkillChances <- renderPlot({
 
 # Display result of combat rolls
 output$imgAttackChances <- renderPlot({
-  Value <- input$AttackValue
+  Value <- input$inpAttackValue
   Mod   <- input$CombatPenalty
-  DmgCount <- input$DamageDieCount
+  DmgCount <- input$inpDamageDieCount
   DmgSides <- 6
-  DmgMod   <- input$Damage
+  DmgMod   <- input$inpDamage
 
   Chances <- ChancesOfAttack(Value = Value, Modifier = Mod, 
                              DmgDieCount = DmgCount, 
-                             DmgDieSides = DmgSides, DmgMod = input$Damage)
+                             DmgDieSides = DmgSides, DmgMod = input$inpDamage)
   if (input$chbPredefinedWeapon) {
     PlotTitle <- as.character(input$cmbCombatSelectWeapon)
   } else {

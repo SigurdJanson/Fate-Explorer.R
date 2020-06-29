@@ -18,16 +18,16 @@ sidebarLayout(
     ),
 
     hr(),
-    sliderInput("AttackValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
-    sliderInput("ParryValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
+    sliderInput("inpAttackValue", i18n$t("Attack"), min = 1L, max = 20L, value = 11L, step = 1L),
+    sliderInput("inpParryValue", i18n$t("Parry"),  min = 1L, max = 20L, value = 7L, step = 1L),
     splitLayout(cellWidths = c("49%", "49%"),
-        numericInputIcon("DamageDieCount", i18n$t("Dice 4 Damage"), value = 1L, min = 1L, 
+        numericInputIcon("inpDamageDieCount", i18n$t("Dice 4 Damage"), value = 1L, min = 1L, 
                          width = "100%", icon = list(NULL, "W6")),
-        numericInputIcon("Damage", i18n$t("Modifier"), value = 2L, min = 0L, 
+        numericInputIcon("inpDamage", i18n$t("Modifier"), value = 2L, min = 0L, 
                          width = "100%", icon = list("+"))
     ),
     hr(),
-    sliderInput("DodgeValue", i18n$t("Dodge"),  min = 1L, max = 10L, value = 5L, step = 1L),
+    sliderInput("inpDodgeValue", i18n$t("Dodge"),  min = 1L, max = 10L, value = 5L, step = 1L),
     hr(),
     sliderTextInput("CombatPenalty", i18n$t("Penalty"),  choices = seq(from = 0L, to = -10L, by = -1L),
                     selected = 0L, grid = TRUE)
