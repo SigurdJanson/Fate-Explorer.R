@@ -61,7 +61,10 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       self$Damage <- args[["Damage"]]
       self$Modifier  <- 0L
     } else {
-      if (is.character(Weapon)) self$RawWeaponData <- GetWeapons(Weapon)
+      if (is.character(Weapon)) 
+        self$RawWeaponData <- GetWeapons(Weapon)
+      else 
+        self$RawWeaponData <- Weapon
       self$Name      <- self$RawWeaponData[["name"]]
       self$Type      <- .WeaponType[1+ self$RawWeaponData[["armed"]] + !self$RawWeaponData[["clsrng"]] ]
       self$Technique <- self$RawWeaponData[["combattechID"]]
@@ -246,6 +249,7 @@ RangedWeapon <- R6Class("RangedWeapon",
   #' @param CombatTecSkills Named list of combat tech skills (name is the combattec ID)
   #' @return `self`
   initialize = function(Weapon, Abilities, CombatTecSkills, ...) {
+   if (is.character(Weapon)) Weapon <- GetWeapons(Weapon, "Ranged")
    super$initialize(Weapon, Abilities, CombatTecSkills, ...)
    
     if (!missing(Weapon)) {
