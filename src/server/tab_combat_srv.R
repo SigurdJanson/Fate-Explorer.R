@@ -42,7 +42,7 @@ observeEvent(input$cmbCombatSelectWeapon, {
   }
   # Update ui controls
   for(Action in names(.CombatActions)) {
-    updateNumericInput(session, paste0(Action, "Value"), value = ActiveWeapon$Skill[[Action]])
+    updateNumericInput(session, paste0("inp", Action, "Value"), value = ActiveWeapon$Skill[[Action]])
   }
   updateNumericInput(session, "inpDamageDieCount", value = ActiveWeapon$Damage$N)
   updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
