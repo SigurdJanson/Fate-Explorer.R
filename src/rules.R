@@ -58,16 +58,18 @@ GetCombatTechniques <- function(lang = "de") {
 #' Returns a list of weapons with DSA attributes
 #' @param Which A string identifiyng a weapon or "All" which returns all 
 #' weapons of the given type (character).
-#' @param Type "Melee", "Ranged" or "Any" (default is "Melee"; character).
+#' @param Type "Melee", "Unarmed", "Ranged" or "Any" (default is "Melee", 
+#' "Unarmed" is treated as "Melee"; character).
 #' @details The search by weapon name ignores upper/lower case and 
 #' space characters.
 #' @note "All" for argument "which" cannot be combined with "Any" type.
 #' @return A list
-GetWeapons <- function(Which = "All", Type = c("Melee", "Ranged", "Any")) {
+GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "Any")) {
   # PRECONDITIONS
   Type <- match.arg(Type)
   if (Type == "Any" && Which == "All") 
     stop("Invalid combination of arguments. 'all' weapons not allowed with type 'any'")
+  if (Type == "Unarmed") Type <- "Melee"
   
   # Make sure the data is available - load if not
   if (!is.na(pmatch(Type, c("Melee", "Any")))) { 

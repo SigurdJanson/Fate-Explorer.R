@@ -43,7 +43,7 @@ test_that("Skills", {
 
 test_that("Weapons", {
   # PRECONDITIONS
-  expect_error(GetWeapons(Type = "Blabla"), "\"Melee\", \"Ranged\", \"Any\"")
+  expect_error(GetWeapons(Type = "Blabla"), "\"Melee\", \"Unarmed\", \"Ranged\", \"Any\"")
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
   
   # MELEE WEAPONS
@@ -65,6 +65,10 @@ test_that("Weapons", {
   setwd("../src")
   W <- GetWeapons("Waqqif", "Any") # Use name
   setwd("../test")
+  expect_equal(W$name, "Waqqif")
+  expect_equal(W$templateID, "ITEMTPL_7")
+
+  W <- GetWeapons("Waqqif", "Unarmed") # same result as "Melee"
   expect_equal(W$name, "Waqqif")
   expect_equal(W$templateID, "ITEMTPL_7")
   
