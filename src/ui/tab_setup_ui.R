@@ -9,8 +9,8 @@ sidebarLayout(
               buttonLabel = i18n$t("Browse..."),
               placeholder = i18n$t("No file selected")),
     hr(),#,
-    switchInput(inputId = "chbExploreChances", label = i18n$t("Explore roll probabilities"), 
-                labelWidth = "100%")
+    checkboxInput(inputId = "chbExploreChances", label = i18n$t("Explore roll probabilities")),
+    checkboxInput(inputId = "chbShowImprovWeapons", label = i18n$t("Show improvised weapons"))
   ),
   mainPanel(
     h3(textOutput("CharacterName")),
@@ -29,11 +29,8 @@ sidebarLayout(
       hr(), h3(i18n$t("Weapons")),
       tableOutput("SetupWeapons")
     ),
-    #conditionalPanel(
-    #  condition = "output.ShowSetupJson",
     hr(), h3(i18n$t("Json File")),
     verbatimTextOutput("RawContents")
-    #)
   )
 )
 

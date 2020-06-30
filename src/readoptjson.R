@@ -80,20 +80,22 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 
-GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits, AddUnarmed = TRUE) {
+GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits, 
+                           AddUnarmed = TRUE, AddImprov = FALSE) {
+
   if (AddUnarmed) {
-    Belongings <- c(Belongings, 
-                    WEAPONLESS = list(list(name = "Waffenlos",
-                                           template = "WEAPONLESS", 
-                                           combatTechnique = "CT_9",
-                                           at = 0L, pa = 0L, 
-                                           damageDiceNumber = 1L, 
-                                           damageFlat = 0L)))
+    Weaponless <- list(list(name = "Waffenlos", template = "WEAPONLESS", 
+                           combatTechnique = "CT_9", at = 0L, pa = 0L, 
+                           damageDiceNumber = 1L, damageFlat = 0L))
+    Belongings <- c(Belongings, WEAPONLESS = Weaponless)
   }
+
   Weapons <- NULL
   for (Item in Belongings) {
     DatabaseWeapon <- GetWeapons(Item$template, "Any")
     ItemIsWeapon <- length(unlist(DatabaseWeapon)) > 0
+    if (!AddImprov) ItemIsWeapon <- ItemIsWeapon & isFALSE(DatabaseWeapon$improvised)
+
     if (ItemIsWeapon) {
       Skill <- GetCombatSkill(Item$template, Traits, CombatTechniques) 
       if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage

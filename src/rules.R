@@ -146,6 +146,23 @@ IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
 }
 
 
+
+IsImprovisedWeapon <- function( Weapon = NULL ) {
+  if (missing(Weapon) && missing(CombatTech)) 
+    stop("No arguments to define weapon")
+
+  IsImprov <- FALSE
+  if (!missing(Weapon)) {
+    DatabaseWeapon <- GetWeapons(Weapon, "Any")
+    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+      IsImprov <- DatabaseWeapon$improvised
+    }
+  }
+  
+  return(IsImprov)
+}
+
+
 #' GetPrimaryWeaponAttribute
 #' Get the primary attribute of a weapon
 #' @param A string with the actual name or template ID of the weapon.

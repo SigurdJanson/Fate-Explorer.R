@@ -3,15 +3,64 @@
 Character <- reactiveValues(Name = "No character has been uploaded",
                             Attr = NULL, Skills = NULL, Weapons = NULL,
                             CombatSkills = NULL)
+RawCharacterFile <- reactiveVal() # raw data container of json content
 
 
+SetupCharacterWeapons <- function(AddImprov = FALSE) {
+  Character$Weapons <- GetWeapons_Opt(RawCharacterFile()[["belongings"]][["items"]], # belongings
+                                      Character$CombatSkills,  # combat techniques
+                                      Character$Attr,
+                                      AddUnarmed = TRUE, AddImprov = AddImprov)
+
+  for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
+    ID <- Character$Weapons["Name", w]
+    if ( input$chbShowImprovWeapons && IsImprovisedWeapon(ID) ) {
+      Bonus  <- GetHitpointBonus(ID, Character$Attr)
+      Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
+    }
+  }
+}
+
+
+# Open new character file (.json)
+observeEvent(input$CharFile, {
+  if (input$CharFile$type != "application/json") 
+    RawCharacterFile(paste(i18n$t("Fate Explorer only understands Json files."), 
+                                  input$CharFile$name, i18n$t("is not Json.")))
+  
+
+  # handle dependencies to components that display data of last character
+  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  Data <- read_json(path = input$CharFile$datapath)
+  
+  RawCharacterFile(Data) # update raw data container
+
+  Character$Name    <- Data$name
+  Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
+  Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
+  Character$CombatSkills <- Data[["ct"]]
+  #Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
+  SetupCharacterWeapons(input$chbShowImprovWeapons)
+  
+  # THIS SECTION IS A BIT OUT OF PLACE HERE
+  # Update dropdown list on Skills Tab
+  UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
+  updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
+  updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
+}) # If new JSON file
+
+
+observeEvent(input$chbShowImprovWeapons, {
+  SetupCharacterWeapons(input$chbShowImprovWeapons)
+})
+
+# Name of hero / character
 output$CharacterName <- renderPrint({
   if(!is.na(Character$Name)) {
     Result <- Character$Name
   } else Result <- i18n$t("No character has been uploaded")
   cat(Result)
 })
-
 
 
 
@@ -24,27 +73,7 @@ outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 
 output$RawContents <- renderPrint({
   req(input$CharFile)
-  
-  if (input$CharFile$type != "application/json") 
-    return(i18n$t("I only understand json files. That wasn't one."))
-
-  # handle dependencies to components that display data of last character
-  # 
-  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
-  Data <- read_json(path = input$CharFile$datapath)
-  Character$Name    <- Data$name
-  Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
-  Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
-  Character$CombatSkills <- Data[["ct"]]
-  Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
-
-  # THIS SECTION IS A BIT OUT OF PLACE HERE
-  # Update dropdown list on Skills Tab
-  UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
-  updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
-  updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
-  
-  print(Data)
+  print(RawCharacterFile())
 })
 
 
@@ -64,6 +93,7 @@ output$SetupAttr <- renderTable({
   
   Result
 }, rownames = FALSE, na = "-", digits = 0L)
+
 
 
 # Skills Panel ---------------------
@@ -91,14 +121,17 @@ output$SetupSkills <- renderTable({
 
 # Combat Panel ------------------------
 output$SetupWeapons <- renderTable({
+  req(Character$Weapons)
   # Correct weapon's hit points
-  isolate({
-    for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
-      Bonus <- GetHitpointBonus(Character$Weapons["Name", w], Character$Attr)
-      #browser()
-      Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
-    }
-  })
+  #isolate({
+    # for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
+    #   ID <- Character$Weapons["Name", w]
+    #   if ( input$chbShowImprovWeapons && IsImprovisedWeapon(ID) ) {
+    #     Bonus  <- GetHitpointBonus(ID, Character$Attr)
+    #     Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
+    #   }
+    # }
+  #})
   
   # Correct for encumbrance: TODO (EEC = Effective Encumbrance)
   
