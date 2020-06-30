@@ -5,7 +5,6 @@
 observe({
   # React to changes of the skill groups: filter the skills
   if (exists("Character") && !is.null(Character$Skills)) {
-    #SkillClasses <- unique(Character$Skills[["class"]])
     SelectedItem <- input$lbSkillGroups
     if (length(SelectedItem) != 0 && !is.null(SelectedItem) && SelectedItem != "") {
       SelectedSkills <- which(Character$Skills[["class"]] == input$lbSkillGroups)
@@ -65,16 +64,16 @@ output$SkillThrow <- renderText({
   if (!LastSkillRoll$Routine) {
     # User-defined Skill Values
     req(LastSkillRoll$Roll)
-    Values <- LastSkillRoll$Roll
+    RollVal <- LastSkillRoll$Roll
 
     if (input$rdbSkillSource == "ManualSkill") {
       Abilities <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
       
-      RollCheck <- VerifySkillRoll(Values, Abilities, input$SkillValue, input$SkillMod)
+      RollCheck <- VerifySkillRoll(RollVal, Abilities, input$SkillValue, input$SkillMod)
       # Content for Rendering
       Labels    <- NULL
-      Abilities <- c(Abilities, input$SkillValue)
-      Values    <- c(Values, RollCheck$Remainder)
+      EffectiveCharVal <- c(Abilities + rep(input$SkillMod, 3), input$SkillValue)
+      RollVal    <- c(RollVal, RollCheck$Remainder)
       
       # Skill Values from Character Sheet
     } else if (input$rdbSkillSource == "CharSkill") {
@@ -85,22 +84,24 @@ output$SkillThrow <- renderText({
       Labels    <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
       Abilities <- unlist(Character$Attr[, Labels]) 
       
-      RollCheck <- VerifySkillRoll(Values, Abilities, 
+      RollCheck <- VerifySkillRoll(RollVal, Abilities, 
                                    Character$Skills[SkillIndex, "value"], input$SkillMod)
       # Content for Rendering
       Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
       NameMapping <- GetAbilities(Language)
-      Labels    <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
-      Abilities <- c(Abilities, Character$Skills[SkillIndex, "value"])
-      Values    <- c(Values, RollCheck$Remainder)
+      Labels  <- NameMapping[match(Labels, NameMapping[["attrID"]]), "shortname"]
+      RollVal <- c(RollVal, RollCheck$Remainder)
+      CharVal <- c(Abilities, Character$Skills[SkillIndex, "value"])
+      EffectiveCharVal <- CharVal + c(rep(input$SkillMod, 3), 0)
       
     } else {
       Labels    <- NULL
       Abilities <- NULL
-      RollCheck <- list(Message = "", QL = "-", Remainder = NA) # fake VerifySkillRoll() results
+      EffectiveCharVal <- NULL
+      RollCheck <- list(Message = "", QL = "-", Remainder = NA) # fake `VerifySkillRoll()` results
     }
   } else {   # Routine Check 
-    Values <- rep("-", 3)
+    RollVal <- rep("-", 3)
     
     if (input$rdbSkillSource == "ManualSkill") {
       Labels    <- NULL
@@ -108,6 +109,7 @@ output$SkillThrow <- renderText({
       Skill <- input$SkillValue
       
       RollCheck <- VerifyRoutineSkillCheck(Abilities, Skill, input$SkillMod)
+      EffectiveCharVal <- Abilities
     }
     else  if (input$rdbSkillSource == "CharSkill") {
       req(input$lbCharSkills)
@@ -115,8 +117,9 @@ output$SkillThrow <- renderText({
       SkillIndex <- which(Character$Skills$name == Skill)
       
       Labels    <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
-      Abilities <- unlist(Character$Attr[, Labels]) 
+      Abilities <- unlist(Character$Attr[, Labels])
       Skill <- Character$Skills[SkillIndex, "value"]
+      EffectiveCharVal <- Abilities
       
       RollCheck <- VerifyRoutineSkillCheck(Abilities, Skill, input$SkillMod)
       NameMapping <- GetAbilities(Language)
@@ -125,17 +128,19 @@ output$SkillThrow <- renderText({
     } else {
       Labels    <- NULL
       Abilities <- NULL
-      RollCheck <- list(Message = "", QL = "-", Remainder = NA) # fake VerifySkillRoll() results
+      EffectiveCharVal   <- NULL
+      RollCheck <- list(Message = "", QL = "-", Remainder = NA) # fake `VerifySkillRoll()` results
     }
   }
 
   # Rendering
-  Rows <- list(tags$tr( tags$td(i18n$t("Roll")),  lapply(Values, tags$td) ))
-  if (!is.null(Abilities)) 
-    Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(Abilities+input$SkillMod, tags$td) ), Rows)
+  # * roll result in reverse order
+  Rows <- list(tags$tr( tags$td(i18n$t("Roll")),  lapply(RollVal, tags$td) ))
+  if (!is.null(EffectiveCharVal))
+    Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(EffectiveCharVal, tags$td) ), Rows)
   if (!is.null(Labels)) 
     Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
-
+  # * final rendering
   Result <- div(
     RenderRollKeyResult(RollCheck$Message, RollCheck$QL),
     div(
