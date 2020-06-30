@@ -29,8 +29,11 @@ sidebarLayout(
       hr(), h3(i18n$t("Weapons")),
       tableOutput("SetupWeapons")
     ),
-    hr(), h3(i18n$t("Json File")),
-    verbatimTextOutput("RawContents")
+    conditionalPanel(
+      condition = "output.ShowSetupJson",
+      hr(), h3(i18n$t("Json File")),
+      verbatimTextOutput("RawContents")
+    )
   )
 )
 

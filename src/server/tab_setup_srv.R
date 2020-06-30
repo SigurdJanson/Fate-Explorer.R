@@ -3,7 +3,7 @@
 Character <- reactiveValues(Name = "No character has been uploaded",
                             Attr = NULL, Skills = NULL, Weapons = NULL,
                             CombatSkills = NULL)
-RawCharacterFile <- reactiveVal() # raw data container of json content
+RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
 
 
 # Global function to extract the list of weapons from Json
@@ -77,12 +77,12 @@ output$CharacterName <- renderPrint({
 
 # Json Panel ------------------------
 output$ShowSetupJson <- reactive({
-  return( !is.null(Character$Attr) )
+  return( !is.null(RawCharacterFile()) )
 })
 outputOptions(output, 'ShowSetupJson', suspendWhenHidden = FALSE)
 
 output$RawContents <- renderPrint({
-  req(input$CharFile)
+  req(RawCharacterFile())
   print(RawCharacterFile())
 })
 
