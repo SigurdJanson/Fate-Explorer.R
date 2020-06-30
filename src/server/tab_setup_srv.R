@@ -6,19 +6,25 @@ Character <- reactiveValues(Name = "No character has been uploaded",
 RawCharacterFile <- reactiveVal() # raw data container of json content
 
 
+# Global function to extract the list of weapons from Json
 SetupCharacterWeapons <- function(AddImprov = FALSE) {
   Character$Weapons <- GetWeapons_Opt(RawCharacterFile()[["belongings"]][["items"]], # belongings
                                       Character$CombatSkills,  # combat techniques
                                       Character$Attr,
                                       AddUnarmed = TRUE, AddImprov = AddImprov)
-
-  for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
+  # Correct weapon's hit points
+  for (w in 1:ncol(Character$Weapons)) {
     ID <- Character$Weapons["Name", w]
     if ( input$chbShowImprovWeapons && IsImprovisedWeapon(ID) ) {
       Bonus  <- GetHitpointBonus(ID, Character$Attr)
       Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
     }
   }
+  
+  #TODO: Correct for encumbrance: TODO (EEC = Effective Encumbrance)
+  
+  # Update dropdown list on Combat Tab
+  updateSelectInput(session, "cmbCombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
 }
 
 
@@ -47,13 +53,18 @@ observeEvent(input$CharFile, {
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
   updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
   updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
-}) # If new JSON file
+}, ignoreNULL = TRUE, ignoreInit = TRUE) # If new JSON file
 
 
+# Show/Hide improvised weapons
 observeEvent(input$chbShowImprovWeapons, {
+  req(RawCharacterFile())
   SetupCharacterWeapons(input$chbShowImprovWeapons)
-})
+}, ignoreNULL = TRUE, ignoreInit = TRUE)
 
+
+
+# CHARACTER TITLE --------------------
 # Name of hero / character
 output$CharacterName <- renderPrint({
   if(!is.na(Character$Name)) {
@@ -61,7 +72,6 @@ output$CharacterName <- renderPrint({
   } else Result <- i18n$t("No character has been uploaded")
   cat(Result)
 })
-
 
 
 
@@ -119,28 +129,10 @@ output$SetupSkills <- renderTable({
 }, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
 
 
+
 # Combat Panel ------------------------
 output$SetupWeapons <- renderTable({
   req(Character$Weapons)
-  # Correct weapon's hit points
-  #isolate({
-    # for (w in 1:ncol(Character$Weapons)) { #this dies not belong here and should be done when loading the stuff
-    #   ID <- Character$Weapons["Name", w]
-    #   if ( input$chbShowImprovWeapons && IsImprovisedWeapon(ID) ) {
-    #     Bonus  <- GetHitpointBonus(ID, Character$Attr)
-    #     Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
-    #   }
-    # }
-  #})
-  
-  # Correct for encumbrance: TODO (EEC = Effective Encumbrance)
-  
-  # Update dropdown list on Combat Tab
-  updateSelectInput(session, "cmbCombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
-  
   Character$Weapons
 }, rownames = TRUE, na = "-")
 
-
-
- 
