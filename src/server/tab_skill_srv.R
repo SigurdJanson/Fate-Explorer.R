@@ -142,7 +142,7 @@ output$SkillThrow <- renderText({
     Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
   # * final rendering
   Result <- div(
-    RenderRollKeyResult(RollCheck$Message, RollCheck$QL),
+    RenderRollKeyResult(RollCheck$Message, RollCheck$QL, KeyUnit = "ql"),
     div(
       tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto")
     ),
