@@ -116,7 +116,13 @@ output$uiCombatRoll <- renderText({
     ConfirmLabel <- i18n$t("Avert!")
 
   # Render the result
-  KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll)
+  if (ActiveWeapon$LastAction == .CombatAction["Attack"])
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastDamage, 
+                                     ActiveWeapon$LastRoll, KeyUnit = "hp")
+  else
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll, 
+                                     KeyUnit = "dr")
+  
   Result <- tagList()
 
   # Confirmation
