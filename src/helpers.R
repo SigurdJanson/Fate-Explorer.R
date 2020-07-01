@@ -87,31 +87,42 @@ RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
 #' RenderRollKeyResult
 #' The outout of this function provides the html representation
 #' to display a roll result in a format that can directly be used in `renderText`.
-#' @param RollResult String indicating critical, succes, fail or fumble.
-#' @param RollValue Value of the confirmation roll (numeric).
+#' @param KeyResult String indicating critical, succes, fail or fumble.
+#' @param keyValue Value of the confirmation roll (numeric).
+#' @param FurtherValue An additional number or string that will be appended to `KeyResult`
+#' in brackets.
 #' @return The result from these functions is a tag object, which can be 
 #' converted using `as.character()`.
-RenderRollKeyResult <- function(RollResult, RollValue) {
-  value.style  <- "font-size: 440%"
-  result.style <- "font-size: 140%"
-  
-  if (grepl("Fumble", RollResult))
+RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL, 
+                                KeyUnit = c("dr", "ql", "hp")) {
+  if (grepl("Fumble", KeyResult))
     SuccessIcon  <- "icon icon-crowned-skull col-fumble ico-success"
-  else if (grepl("Critical", RollResult)) 
+  else if (grepl("Critical", KeyResult)) 
     SuccessIcon  <- "icon icon-laurel-crown col-critical ico-success"
-  else if (grepl("Success", RollResult))
+  else if (grepl("Success", KeyResult))
     SuccessIcon  <- "icon icon-laurels col-success ico-success"
-  else if (grepl("Fail", RollResult))
+  else if (grepl("Fail", KeyResult))
     SuccessIcon  <- "icon icon-spectre col-fail ico-success"
   else SuccessIcon  <- ""
   
-  if (RollValue < 0)  {
-    RollValue <- "·"
+  if (KeyValue < 0)  {
+    KeyValue <- "·"
     SuccessIcon  <- "icon icon-d8-eight"
   }
+  if (isTruthy(FurtherValue))
+    KeyResult <- paste0(i18n$t(KeyResult), " (", FurtherValue, ")")
+  else 
+    KeyResult <- i18n$t(KeyResult)
+  
+  if (!missing(KeyUnit))
+    KeyUnit <- match.arg(KeyUnit)
+  else
+    KeyUnit <- "dr"
+  ParClass <- "keyval"
   
   Result <- div(tags$p( tags$i(class = SuccessIcon, .noWS = c("after")), 
-                        RollValue, style = value.style, .noWS = c("before") ), 
-                tags$p(i18n$t(RollResult), style = result.style),
+                        span(format(KeyValue, width = 2, justify = "right"), class = KeyUnit), 
+                        class = ParClass, .noWS = c("before") ), 
+                tags$p(KeyResult, class = "keyresult"),
                 class = "roll-keyval")
 }

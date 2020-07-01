@@ -22,6 +22,28 @@
     text-align: center;
 }
 
+.keyval {
+    font-size: 440%;
+}
+
+.dr{
+    background-image: url("d20ddd.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.hp{
+    background-image: url("hpddd.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.keyresult {
+    font-size: 140%;
+}
+
+
 @media only screen and (min-width : 500px) {
     .roll {
         display: flex;
