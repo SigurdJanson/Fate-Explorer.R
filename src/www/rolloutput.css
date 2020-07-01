@@ -28,15 +28,17 @@
 
 .dr{
     background-image: url("d20ddd.svg");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: auto;
 }
 .hp{
     background-image: url("hpddd.svg");
+}
+.ql {
+    background-image: url("qlddd.svg");
+}
+.dr, .ql, .hp {
     background-position: right;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: auto;    
 }
 
 .keyresult {
