@@ -147,6 +147,11 @@ IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
 
 
 
+#' IsImprovisedWeapon
+#' Looks the weapon up in the data base and finds out if the weapon is a "real" 
+#' weapon or improvised.
+#' @param Weapon A string identifying the weapon (template id or name)
+#' @return TRUE/FALSE
 IsImprovisedWeapon <- function( Weapon = NULL ) {
   if (missing(Weapon) && missing(CombatTech)) 
     stop("No arguments to define weapon")
@@ -165,21 +170,19 @@ IsImprovisedWeapon <- function( Weapon = NULL ) {
 
 #' GetPrimaryWeaponAttribute
 #' Get the primary attribute of a weapon
-#' @param A string with the actual name or template ID of the weapon.
+#' @param Weapon A string identifying the weapon (template id or name)
+#' @note Function is not vectorised.
 #' @return The string of the ability or `character(0)` if the weapon
 #' has no primary ability.
 GetPrimaryWeaponAttribute <- function( Weapon ) {
   # PRECONDITIONS
   if(missing(Weapon)) stop("A weapon is required.")
-  # RUN
-  W <- GetWeapons() # only melees have a primary weapons attribute
-  # Try finding weapon by "ID" first, then "name" if not successful
-  row <- which(W[["templateID"]] == Weapon)
-  if (length(row) == 0) # try weapon name if ID does not work
-    row <- which(W[["name"]] == Weapon)
 
-  if (length(row) != 0) { # "Weapon" is melee
-    PrimeAttr <- W[row, "primeattrID"]
+  # RUN
+  W <- GetWeapons(Weapon, "Any") 
+
+  if (length(unlist(W)) > 0) { 
+    PrimeAttr <- W[["primeattrID"]] ##UPDATE for vectorisation: sapply(W, `[[`, "primeattrID")
     # Parse and translate
     if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"
       PrimeAttr <- unlist(strsplit(PrimeAttr, "/"))
@@ -206,7 +209,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
   # RUN
   WeaponData <- GetWeapons( Weapon, "Melee" ) #only melee has a bonus
   Primaries  <- GetPrimaryWeaponAttribute( Weapon )
-  
+
   if (!anyNA(Primaries)) {
     Threshold  <- WeaponData[["threshold"]]
     AbIndex <- which(names(Abilities) %in% Primaries)
