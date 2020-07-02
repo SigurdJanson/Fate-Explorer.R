@@ -6,25 +6,28 @@ Character <- reactiveValues(Name = "No character has been uploaded",
 RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
 
 
+
 # Global function to extract the list of weapons from Json
 SetupCharacterWeapons <- function(AddImprov = FALSE) {
-  Character$Weapons <- GetWeapons_Opt(RawCharacterFile()[["belongings"]][["items"]], # belongings
-                                      Character$CombatSkills,  # combat techniques
-                                      Character$Attr,
-                                      AddUnarmed = TRUE, AddImprov = AddImprov)
-  # Correct weapon's hit points
-  for (w in 1:ncol(Character$Weapons)) {
-    ID <- Character$Weapons["Name", w]
-    if ( input$chbShowImprovWeapons && IsImprovisedWeapon(ID) ) {
-      Bonus  <- GetHitpointBonus(ID, Character$Attr)
-      Character$Weapons["DamageMod", w] <- as.numeric(Character$Weapons["DamageMod", w]) + Bonus
-    }
+  Weapons <- GetWeapons_Opt(RawCharacterFile()[["belongings"]][["items"]], # belongings
+                            Character$CombatSkills,  # combat techniques
+                            Character$Attr, AddUnarmed = TRUE, AddImprov = AddImprov)
+#browser()
+  Character$Weapons <- NULL
+  WeaponNames <- NULL
+  for (w in Weapons["templateID", ]) {
+    if ( IsRangedWeapon(w) )
+      ActiveWeapon <- RangedWeapon$new(w, Character$Attr, Character$CombatSkills)
+    else
+      ActiveWeapon <- MeleeWeapon$new(w, Character$Attr, Character$CombatSkills)
+
+    Character$Weapons <- c(Character$Weapons, ActiveWeapon)
+    WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
+    #TODO: Correct for encumbrance: TODO (EEC = Effective Encumbrance)
   }
   
-  #TODO: Correct for encumbrance: TODO (EEC = Effective Encumbrance)
-  
   # Update dropdown list on Combat Tab
-  updateSelectInput(session, "cmbCombatSelectWeapon", choices = Character$Weapons[1,], selected = 1)
+  updateSelectInput(session, "cmbCombatSelectWeapon", choices = WeaponNames, selected = 1)
 }
 
 
@@ -45,14 +48,16 @@ observeEvent(input$CharFile, {
   Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
   Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
   Character$CombatSkills <- Data[["ct"]]
-  #Character$Weapons <- GetWeapons_Opt(Data[["belongings"]][["items"]], Data[["ct"]], Character$Attr)
   SetupCharacterWeapons(input$chbShowImprovWeapons)
   
   # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update dropdown list on Skills Tab
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
   updateSelectInput(session, "lbCharSkills", choices = Character$Skills[, "name"])
-  updateSelectInput(session, "lbSkillGroups", choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
+  updateSelectInput(session, "lbSkillGroups", 
+                    choices = c('All Skills' = '', unique(Character$Skills[, "class"])))
+  # Update Combat value with weaponless brawling
+  updateSliderInput(session, "inpDodgeValue", value = Character$Weapons[[1]]$Skill$Dodge)
 }, ignoreNULL = TRUE, ignoreInit = TRUE) # If new JSON file
 
 
@@ -132,7 +137,16 @@ output$SetupSkills <- renderTable({
 
 # Combat Panel ------------------------
 output$SetupWeapons <- renderTable({
-  req(Character$Weapons)
-  Character$Weapons
+  req(Character$Weapons); browser()
+  WT <- data.frame(a = character(), b = character(), c = integer(), d = integer(), e = character(),
+                   stringsAsFactors = FALSE)
+  for (W in Character$Weapons) {
+    WT <- rbind(WT, list(W$Name, i18n$t(names(W$Type)),
+                         as.integer(W$Skill$Attack), as.integer(W$Skill$Parry),
+                         sprintf(i18n$t("%dd%d+%d"), W$Damage$N, W$Damage$DP, W$Damage$Bonus)),
+                stringsAsFactors = FALSE)
+  }
+  names(WT) <- i18n$t(c("Name", "Type", "AT", "PA", "Hit points"))
+  return(WT)
 }, rownames = TRUE, na = "-")
 

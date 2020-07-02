@@ -29,15 +29,16 @@ observeEvent(input$cmbCombatSelectWeapon, {
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
     if(nchar(Weapon) > 0) {
-      # Get ID and determine if weapon is for close or ranged combat
-      Weapon <- Character$Weapons["templateID", Weapon] # ID
-      if ( IsRangedWeapon(Weapon) )
-        ActiveWeapon <- RangedWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
-      else
-        ActiveWeapon <- MeleeWeapon$new(Weapon, Character$Attr, Character$CombatSkills)
+      # Get weapon from character
+      for (w in Character$Weapons) {
+        if (w$Name == Weapon) {
+          ActiveWeapon <- w; break
+        }
+      }
     }
   } else {
-    ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, Dodge = 5L), 
+    ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, 
+                                                  Dodge = Character$Weapon[[1]]$Skill$Dodge), 
                                     Damage = list(N = 1L, DP = 6L, Bonus = 0L))
   }
   # Update ui controls
