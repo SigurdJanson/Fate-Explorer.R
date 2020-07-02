@@ -27,7 +27,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   Type = NA, # Weaponless, Melee, Ranged
   Technique = NA, # Combat technique
   Range = NA, # interpretation differs based on `Type`
-  Skill  = list(Attack = 0, Parry = 0, Dodge = 0), # dodge this is actually not dependent on the active weapon
+  Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge this is actually not dependent on the active weapon
   Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
   Modifier = 0L, # default modifier because of special abilities
   
@@ -213,7 +213,7 @@ MeleeWeapon <- R6Class("MeleeWeapon",
       AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
       self$Skill <- list(Attack = AtPaSkill$AT, 
                          Parry = AtPaSkill$PA, 
-                         Dodge = ceiling(CharAbs[["ATTR_6"]] / 2))
+                         Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
       return(invisible(self))
     },
     
@@ -269,8 +269,8 @@ RangedWeapon <- R6Class("RangedWeapon",
   CalcSkill = function(CharAbs, CombatTecSkill) {
    AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
    self$Skill <- list(Attack = AtPaSkill$AT, 
-                      Parry = AtPaSkill$PA, 
-                      Dodge = ceiling(CharAbs[["ATTR_6"]] / 2))
+                      Parry = 0, 
+                      Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
    return(invisible(self))
   },
   
