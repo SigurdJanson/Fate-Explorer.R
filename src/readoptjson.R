@@ -33,8 +33,8 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 #' Base values for AT and PA depend on: courage, character skill, weapon modifiers, 
 #' and enhancements through the primary attribute.
 #' @param WeaponName String
-#' @param Attr 
-#' @param Skill 
+#' @param Attr A data frame containing the characters abilities
+#' @param Skill Skill value(s) of combat techniques.
 #' @note Not vectorised
 GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
   WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE) # trim
@@ -70,7 +70,7 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
       PAAttrMod  <- 0L
     }
     CT <- list(AT = Skill + ATAttrMod + ATSkillMod,
-               PA = round(Skill/2L) + PAAttrMod + PASkillMod)
+               PA = ceiling(Skill/2L) + PAAttrMod + PASkillMod)
   } else CT <- list()
   
   return(CT)
