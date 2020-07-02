@@ -141,8 +141,13 @@ output$SkillThrow <- renderText({
   if (!is.null(Labels)) 
     Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
   # * final rendering
+  if (input$rdbSkillSource == "NoSkill")
+    RenderedKeyResult <- ""
+  else
+    RenderedKeyResult <- RenderRollKeyResult(RollCheck$Message, RollCheck$QL, KeyUnit = "ql")
+  
   Result <- div(
-    RenderRollKeyResult(RollCheck$Message, RollCheck$QL, KeyUnit = "ql"),
+    RenderedKeyResult,
     div(
       tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto")
     ),

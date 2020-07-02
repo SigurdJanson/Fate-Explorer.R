@@ -104,11 +104,7 @@ RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL,
   else if (grepl("Fail", KeyResult))
     SuccessIcon  <- "icon icon-spectre col-fail ico-success"
   else SuccessIcon  <- ""
-  
-  if (KeyValue < 0)  {
-    KeyValue <- "·"
-    SuccessIcon  <- "icon icon-d8-eight"
-  }
+
   if (isTruthy(FurtherValue))
     KeyResult <- paste0(i18n$t(KeyResult), " (", FurtherValue, ")")
   else 
