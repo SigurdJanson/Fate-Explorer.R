@@ -17,12 +17,16 @@ ReloadRules <- function(lang = "de") {
   .ComTecs <<- NULL
   GetCombatTechniques(lang)
   #.Melee   <<- NULL# Currently not required
-  #GetWeapons(Type = "Melee") # Currently not required
+  #GetWeapons(Type = "Melee") # Currently not required because not localised
   #.Ranged   <<- NULL# Currently not required
-  #GetWeapons(Type = "Ranged") # Currently not required
+  #GetWeapons(Type = "Ranged") # Currently not required because not localised
 }
 
 
+#' GetAbilities
+#' Read list of basic character abilities available in DSA5
+#' @param lang Requested language to translate labels ("en", "de").
+#' @return 
 GetAbilities <- function(lang = "de") {
   if (is.null(.Attribs)) {
 
@@ -34,6 +38,10 @@ GetAbilities <- function(lang = "de") {
 
 
 
+#' GetSkills
+#' Get the list of skills available in DSA5 (excluding magic and religious skills).
+#' @param lang  Requested language to translate labels ("en", "de").
+#' @return
 GetSkills <- function(lang = "de") {
   if (is.null(.Skills)) {
     
@@ -44,6 +52,10 @@ GetSkills <- function(lang = "de") {
 }
 
 
+#' GetCombatTechniques
+#' Get the list of combat techniques available in DSA5
+#' @param lang  Requested language to translate labels ("en", "de").
+#' @return
 GetCombatTechniques <- function(lang = "de") {
   if (is.null(.ComTecs)) {
     JsonFile <- file.path("data", paste0("combattechs_", lang, ".json"))
@@ -55,7 +67,7 @@ GetCombatTechniques <- function(lang = "de") {
 
 
 #' GetWeapons
-#' Returns a list of weapons with DSA attributes
+#' Returns a list of weapons with DSA attributes as available in DSA5
 #' @param Which A string identifiyng a weapon or "All" which returns all 
 #' weapons of the given type (character).
 #' @param Type "Melee", "Unarmed", "Ranged" or "Any" (default is "Melee", 
@@ -195,7 +207,7 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
 
 
 #' GetHitpointBonus
-#'
+#' Get possible hit point bonus depending on character's abilities.
 #' @param Weapon The actual name of one weapon (see `GetPrimaryWeaponAttribute()`)
 #' @param Abilities A data frame with the ability values
 #' @return A numeric value indicating the extra bonus that must be added to the 

@@ -14,6 +14,13 @@ GetAbilities_Opt <- function(Attr) {
 }
 
 
+#' GetSkills_Opt
+#' Takes the skills from an Optholit Json object and merges it with the information
+#' from the database to return a data frame with characters skill (excluding magical and
+#' religious skills).
+#' @param Skills Skills as extracted from Optholit Json
+#' @param Language String indicating the requested language ("en" or "de")
+#' @return Data frame of character skills
 GetSkills_Opt <- function(Skills, Language = "de") {
   # Get data frame with skill definitions
   SkillList <- GetSkills(Language)
@@ -80,7 +87,17 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 
-GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits, 
+#' GetWeapons_Opt
+#' Returns a data frame with the character's weapons.
+#' @param Belongings The complete list of items carried by a character as loaded from an
+#' Optholit character sheet.
+#' @param CombatTechniques Characters combat skills per combat technique.
+#' @param Abilities Data frame with character abilities
+#' @param AddUnarmed Wether to include "unarmed" as pseudo weapon in the result 
+#' (default: TRUE; logical).
+#' @param AddImprov Wether to include improvised weapons in the result (default: TRUE; logical).
+#' @return Data frame with a column per weapon
+GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities, 
                            AddUnarmed = TRUE, AddImprov = FALSE) {
 
   if (AddUnarmed) {
@@ -97,7 +114,7 @@ GetWeapons_Opt <- function(Belongings, CombatTechniques, Traits,
     if (!AddImprov) ItemIsWeapon <- ItemIsWeapon & isFALSE(DatabaseWeapon$improvised)
 
     if (ItemIsWeapon) {
-      Skill <- GetCombatSkill(Item$template, Traits, CombatTechniques) 
+      Skill <- GetCombatSkill(Item$template, Abilities, CombatTechniques) 
       if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
       if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
       Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 

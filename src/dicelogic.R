@@ -1,5 +1,11 @@
 # 
 
+#' VerifyConfirmation
+#' Ascertain whether a confirmation roll was successful based on the result strings
+#' of the original roll and its confirmation (i.e. it's success assessment).
+#' @param RollResult A string  (one of Critical, Success, Fail, Fumble)
+#' @param ConfirmationResult  A string  (one of Critical, Success, Fail, Fumble)
+#' @return A string indicating the result (Critical, Success, Fail, Fumble)
 VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
   if (RollResult %in% c("Fumble", "Critical")) {
     PositiveCheck   <- (RollResult == "Critical")
@@ -21,8 +27,7 @@ AbilityRoll <- function() {
   return(sample.int(20L, 1L))
 }
 
-#' Title
-#'
+#' VerifyAbilityRoll
 #' @param Roll Result of a die roll (1d20).
 #' @param Ability The characters ability value (value between 1 and 20).
 #' @param Modifier Values < 0 are penalties, >0 bonuses (integer).
@@ -193,12 +198,13 @@ CanRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modif
 }
 
 
-#' RoutineCheck
-#'
+#' VerifyRoutineSkillCheck
+#' Verify the result of a routine skill check. 
 #' @param Skill A list with all the skill data
 #' @param Abilities A data frame containing the ability values
 #' @param Mod A check modifier
-#' @return 
+#' @return Returns a list with success, quality level and remaining skill points (equivalent
+#' to [VerifySkillRoll()]).
 VerifyRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0) {
   if (CanRoutineSkillCheck(Abilities, Skill, Modifier)) {
     QL <- as.integer( SkillRollQuality(round(Skill / 2)) )

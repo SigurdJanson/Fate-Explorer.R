@@ -91,7 +91,7 @@ ChancesOfDefense <- function(Value, Modifier = 0) {
 
 
 #' ChancesOfSkill
-#' @param Abilities Trait values for the skill ckeck
+#' @param Abilities Basic ability values for the skill ckeck
 #' @param Skill Skill value
 #' @param Modifier Advantage or penalty for skill check.
 #' @note Uses a brute force algorithm simply testing all combinations
