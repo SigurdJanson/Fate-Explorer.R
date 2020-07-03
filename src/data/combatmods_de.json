@@ -1,0 +1,48 @@
+{
+    "range": {
+        "SkillMod": [ {"close": 2}, {"medium": 0}, {"far": -2} ],
+        "HPMod": [ {"close": 1}, {"medium": 0}, {"far": -1} ]
+    },
+    "size": [
+        {"id": "tiny", "mod": -8, "example": "Ratte, Kröte, Spatz"},
+        {"id": "small", "mod": -4, "example": "Rehkitz, Schaf, Ziege"},
+        {"id": "medium", "mod": 0, "example": "Mensch, Zwerg, Esel"},
+        {"id": "large", "mod": 4, "example": "Oger, Troll, Rind"},
+        {"id": "huge", "mod": 8, "example": "Drache, Riese, Elefant"}
+    ],
+    "targetspeed": [
+        {"id": "still", "mod": 2, "speed": 0},
+        {"id": "slow", "mod": 0, "speed": 4},
+        {"id": "fast", "mod": -2, "speed": 5},
+        {"id": "zigzag", "mod": -4, "speed": 2}
+    ],
+    "attackerspeed": [
+        {"id": "still", "mod": 0, "speed": 0},
+        {"id": "walk", "mod": -2, "speed": 4},
+        {"id": "run", "mod": -4, "speed": 5}
+    ],
+    "speedunit": "yards/action",
+    "visibility": [
+        {"id": "level0", "mod": 0, "label": "Klare Sicht", "example": "Tageslicht, Dämmerung"},
+        {"id": "level1", "mod": -2, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
+        {"id": "level2", "mod": -4, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
+        {"id": "level3", "mod": -6, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        {"id": "level4", "mod": -20, "label": "Ziel unsichtbar", "example": "dichter Rauch, völlige Dunkelheit"}
+    ],
+    "reach": [
+        {"at": "short", "pa": "short", "mod": 0},
+        {"at": "short", "pa": "medium", "mod": -2},
+        {"at": "short", "pa": "long", "mod": -4},
+        {"at": "medium", "pa": "short", "mod": 0},
+        {"at": "medium", "pa": "medium", "mod": 0},
+        {"at": "medium", "pa": "long", "mod": -2},
+        {"at": "long", "pa": "short", "mod": 0},
+        {"at": "long", "pa": "medium", "mod": 0},
+        {"at": "long", "pa": "long", "mod": 0}
+    ],
+    "crampedspace": [
+        {"reach": "short", "at": 0, "pa": 0},
+        {"reach": "medium", "at": -4, "pa": -4},
+        {"reach": "long", "at": -8, "pa": -8}
+    ]
+}

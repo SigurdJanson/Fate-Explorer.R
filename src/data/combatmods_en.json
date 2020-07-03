@@ -1,0 +1,48 @@
+{
+    "range": {
+        "SkillMod": [ {"close": 2}, {"medium": 0}, {"far": -2} ],
+        "HPMod": [ {"close": 1}, {"medium": 0}, {"far": -1} ]
+    },
+    "size": [
+        {"id": "tiny", "mod": -8, "example": "Rat, toad, sparrow"},
+        {"id": "small", "mod": -4, "example": "Fawn, goat, sheep"},
+        {"id": "medium", "mod": 0, "example": "Human, dwarf, donkey"},
+        {"id": "large", "mod": 4, "example": "Ogre, troll, cow"},
+        {"id": "huge", "mod": 8, "example": "Dragon, elephant, giant"}
+    ],
+    "targetspeed": [
+        {"id": "still", "mod": 2, "speed": 0},
+        {"id": "slow", "mod": 0, "speed": 4},
+        {"id": "fast", "mod": -2, "speed": 5},
+        {"id": "zigzag", "mod": -4, "speed": 2}
+    ],
+    "attackerspeed": [
+        {"id": "still", "mod": 0, "speed": 0},
+        {"id": "walk", "mod": -2, "speed": 4},
+        {"id": "run", "mod": -4, "speed": 5}
+    ],
+    "speedunit": "yards/action",
+    "visibility": [
+        {"id": "level0", "mod": 0, "label": "Clear sight", "example": "Daylight"},
+        {"id": "level1", "mod": -2, "label": "Vision slightly impaired", "example": "Sparse leaves, morning mist"},
+        {"id": "level2", "mod": -4, "label": "Target’s shape can be seen", "example": "Fog, moonlight"},
+        {"id": "level3", "mod": -6, "label": "Target’s shape can be roughly seen", "example": "Dense fog, starlight"},
+        {"id": "level4", "mod": -20, "label": "Target cannot be seen", "example": "Thick smoke, complete darkness"}
+    ],
+    "reach": [
+        {"at": "short", "pa": "short", "mod": 0},
+        {"at": "short", "pa": "medium", "mod": -2},
+        {"at": "short", "pa": "long", "mod": -4},
+        {"at": "medium", "pa": "short", "mod": 0},
+        {"at": "medium", "pa": "medium", "mod": 0},
+        {"at": "medium", "pa": "long", "mod": -2},
+        {"at": "long", "pa": "short", "mod": 0},
+        {"at": "long", "pa": "medium", "mod": 0},
+        {"at": "long", "pa": "long", "mod": 0}
+    ],
+    "crampedspace": [
+        {"reach": "short", "at": 0, "pa": 0},
+        {"reach": "medium", "at": -4, "pa": -4},
+        {"reach": "long", "at": -8, "pa": -8}
+    ]
+}
