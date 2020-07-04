@@ -8,6 +8,7 @@ source("./readoptjson.R")
 # Open tasks
 # - Ranged: use range to modify values
 # - Ranged: Use target size
+# - Make use of permanent modifier
 
 # Enumerations
 .WeaponType    <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L)
@@ -24,12 +25,12 @@ source("./readoptjson.R")
 WeaponBase <- R6Class("WeaponBase", public = list(
 
   Name = "",
-  Type = NA, # Weaponless, Melee, Ranged
+  Type = NA,      # Weaponless, Melee, Ranged
   Technique = NA, # Combat technique
-  Range = NA, # interpretation differs based on `Type`
+  Range = NA,     # interpretation differs based on `Type`
   Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge this is actually not dependent on the active weapon
   Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
-  Modifier = 0L, # default modifier because of special abilities
+  Modifier = 0L,  # default modifier because of special abilities
   
   RawWeaponData = NULL,
   
@@ -174,6 +175,15 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   
   GetHitPoints = function() {
     return(self$LastDamage)
+  },
+  
+  CanParry = function() {
+    if (!is.na(self$Technique))
+      Can <- IsParryWeapon(CombatTech = self$Technique) && 
+             self$Skill$Parry > 0
+    else
+      Can <- self$Skill$Parry > 0
+    return(Can)
   }
 ))
 

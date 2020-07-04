@@ -59,8 +59,7 @@ GetSkills <- function(lang = "de") {
 GetCombatTechniques <- function(lang = "de") {
   if (is.null(.ComTecs)) {
     JsonFile <- file.path("data", paste0("combattechs_", lang, ".json"))
-    .ComTecs <<- read_json(JsonFile, simplifyVector = FALSE, flatten = TRUE)
-    .ComTecs <<- as.data.frame(.ComTecs, stringsAsFactors = FALSE)
+    .ComTecs <<- read_json(JsonFile, simplifyVector = TRUE, flatten = TRUE)
   }
   return(.ComTecs)
 }
@@ -151,12 +150,40 @@ IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
       IsRanged <- FALSE
     }
   } else { #if (!missing(CombatTech)) {
+    browser()
+    ct <- GetCombatTechniques()
     IsRanged <- !is.na(match(CombatTech, paste0("CT_", c(1:2, 11, 14, 17:19))))
   }
   
   return(IsRanged)
 }
 
+
+#' IsParryWeapon
+#' Does the carried weapon support a parry roll?
+#' @param Weapon A vector of IDs (which is preferred) or weapon names (character).
+#' @param CombatTech A combat tech ID (character).
+#' @return A logical vector.
+IsParryWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
+  if (missing(Weapon) && missing(CombatTech)) 
+    stop("No arguments to define weapon")
+  
+  if (isTruthy(Weapon)) {
+    DatabaseWeapon <- GetWeapons(Weapon, "Any")
+    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+      CombatTech <- DatabaseWeapon$combattechID
+    }
+  }
+    
+  if (!missing(CombatTech)) {
+    ct <- GetCombatTechniques()
+    IsParry <- ct[ct[["id"]] == CombatTech, "parry"]
+  } else {
+    IsParry <- FALSE
+  }
+  
+  return(IsParry)
+}
 
 
 #' IsImprovisedWeapon
@@ -231,4 +258,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
   return(Bonus)
 }
 #GetHitpointBonus("Barbarenschwert", ab)
+
+
+# Modifiers for Ranged Combat --------------------
 

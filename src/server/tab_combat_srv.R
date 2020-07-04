@@ -47,7 +47,14 @@ observeEvent(input$cmbCombatSelectWeapon, {
   }
   updateNumericInput(session, "inpDamageDieCount", value = ActiveWeapon$Damage$N)
   updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
-  
+  if(ActiveWeapon$CanParry()) {
+    shinyjs::enable("doParryThrow")
+    shinyjs::enable("inpParryValue")
+  }
+  else {
+    shinyjs::disable("doParryThrow")
+    shinyjs::disable("inpParryValue")
+  }
 }, ignoreNULL = FALSE)
 
 

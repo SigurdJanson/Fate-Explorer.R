@@ -1,10 +1,10 @@
 library(shiny)
 library(jsonlite)
+library(shinyjs)
 library(shiny.i18n)
 library(shinyWidgets)
 library(ggplot2)
 library(rvest)
-#library(shinyjs)
 
 # Set language
 if (file.exists(file.path("src", "data", "lang.json"))) {

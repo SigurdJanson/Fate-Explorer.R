@@ -137,7 +137,7 @@ output$SetupSkills <- renderTable({
 
 # Combat Panel ------------------------
 output$SetupWeapons <- renderTable({
-  req(Character$Weapons); browser()
+  req(Character$Weapons)
   WT <- data.frame(a = character(), b = character(), c = integer(), d = integer(), e = character(),
                    stringsAsFactors = FALSE)
   for (W in Character$Weapons) {
