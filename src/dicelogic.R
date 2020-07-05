@@ -20,9 +20,19 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
 
 
 
+#' GetFumbleEffect
+#' Returns a list that describes the effect of a fumble roll depending
+#' on the action.
+#' @param RollValue The dice roll with 2d6 (2-12, integer).
+#' @param RollType String that identifies the action ("Skill", "Attack", "Parry", "Dodge")
+#' @param SubType String that further identifies the roll 
+#' (one of `names(.WeaponType)` for combat actions or 
+#' c("Magic", "Liturgical") for skill rolls)
+#' @return A list with the `id`, a `label` and a detailed description (`descr`)
+#' of the fumble.
 GetFumbleEffect <- function(RollValue, 
                             RollType = c("Skill", "Attack", "Parry", "Dodge"),
-                            SubType = NULL, Object = NA ) {
+                            SubType = NULL ) {
   # PRECONDITIONS
   if(missing(RollValue)) stop("No roll given")
   if(RollValue < 2L || RollValue > 12L) stop("Invalid fumble roll")
@@ -33,13 +43,6 @@ GetFumbleEffect <- function(RollValue,
   # Determine correct table
   Index <- sapply(sapply(Data[["Tables"]][["Roll"]], `%in%`, RollType), any)
   Index <- which(Data[["Tables"]][["Type"]] == SubType & Index)
-  if (length(Index) > 1) {
-    if (is.na(Object))
-      Index <- intersect(Index, which(is.na(Data[["Tables"]][["Weapon"]])))
-    else
-      Index <- intersect(Index, which(Data[["Tables"]][["Weapon"]] == Object))
-   # Index <- Data[["Tables"]][["Weapon"]][ Index ]
-  } 
   stopifnot(length(Index) == 1)
   EffectTable <- Data[["Tables"]][["Effect"]][[Index]]
 

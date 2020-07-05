@@ -7,11 +7,11 @@
 
         {"id": "FMBL_12",   "label": "Waffe stecken geblieben", "descr": "Die Waffe des Helden ist in einem Baum, einer Holzwand, dem Boden oder Ähnlichem stecken geblieben. Um sie zu befreien, ist 1 Aktion und eine um 1 erschwerte Probe auf Kraftakt (Ziehen & Zerren) notwendig."},
 
-        {"id": "FMBL_21",  "label": "Schild zerstört", "descr": "Der Schild ist unwiederbringlich zerstört. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
-        {"id": "FMBL_22",  "label": "Schild schwer beschädigt", "descr": "Der Schild ist nicht mehr verwendbar, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
-        {"id": "FMBL_23",  "label": "Schild beschädigt", "descr": "Der Schild ist beschädigt worden. Alle Proben auf Attacke und Parade sind um 2 erschwert, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
-        {"id": "FMBL_24",  "label": "Schild verloren", "descr": "Der Schild ist zu Boden gefallen."},
-        {"id": "FMBL_25",  "label": "Schild stecken geblieben", "descr": "Der Schild des Helden ist in einem Baum, einer Holzwand, dem Boden oder Ähnlichem stecken geblieben. Um ihn zu befreien, ist 1 Aktion und eine um 1 erschwerte Probe auf Kraftakt (Ziehen & Zerren) notwendig."},
+        {"id": "FMBL_21", "label": "Schild zerstört", "descr": "Der Schild ist unwiederbringlich zerstört. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_22", "label": "Schild schwer beschädigt", "descr": "Der Schild ist nicht mehr verwendbar, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_23", "label": "Schild beschädigt", "descr": "Der Schild ist beschädigt worden. Alle Proben auf Attacke und Parade sind um 2 erschwert, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_24", "label": "Schild verloren", "descr": "Der Schild ist zu Boden gefallen."},
+        {"id": "FMBL_25", "label": "Schild stecken geblieben", "descr": "Der Schild des Helden ist in einem Baum, einer Holzwand, dem Boden oder Ähnlichem stecken geblieben. Um ihn zu befreien, ist 1 Aktion und eine um 1 erschwerte Probe auf Kraftakt (Ziehen & Zerren) notwendig."},
 
         {"id": "FMBL_5", "label": "Kamerad/Unschuldiger getroffen", "descr": "Das Geschoss trifft aus Versehen einen Freund oder einen am Kampf Unbeteiligten. Ist kein solches Ziel in der Nähe, wird diese Auswirkung wie 11 Selbst verletzt behandelt. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt."},
         {"id": "FMBL_6", "label": "Fehlschuss", "descr": "Der spektakuläre Fehlschuss trifft ein Objekt (Ladenschild heruntergeschossen, Glasfenster zu Bruch gegangen etc.)."},
@@ -22,10 +22,10 @@
         {"id": "FMBL_10", "label": "Selbst verletzt", "descr": "Der Held hat sich selbst verletzt und erleidet Schaden. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt."},
         {"id": "FMBL_11", "label": "Selbst schwer verletzt", "descr": "Ein schwerer Eigentreffer. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt und dann verdoppelt."},
 
-        {"id": "FMBL_13",   "label": "Sturz", "descr": "Der Held stolpert und stürzt, wenn seinem Spieler nicht eine um 2 erschwerte Probe auf Körperbeherrschung (Balance) gelingt. Sollte er das nicht schaffen, erhält der Held den Status Liegend."},
-        {"id": "FMBL_14",   "label": "Stolpern", "descr": "Der Held stolpert, seine nächste Handlung ist um 2 erschwert."},
-        {"id": "FMBL_15",   "label": "Fuß verdreht", "descr": "Der Held erhält für 3 Kampfrunden eine Stufe Schmerz."},
-        {"id": "FMBL_16",  "label": "Beule", "descr": "Der Held hat sich im Eifer des Gefechts den Kopf gestoßen. Er erhält für eine Stunde eine Stufe Betäubung."},
+        {"id": "FMBL_13", "label": "Sturz", "descr": "Der Held stolpert und stürzt, wenn seinem Spieler nicht eine um 2 erschwerte Probe auf Körperbeherrschung (Balance) gelingt. Sollte er das nicht schaffen, erhält der Held den Status Liegend."},
+        {"id": "FMBL_14", "label": "Stolpern", "descr": "Der Held stolpert, seine nächste Handlung ist um 2 erschwert."},
+        {"id": "FMBL_15", "label": "Fuß verdreht", "descr": "Der Held erhält für 3 Kampfrunden eine Stufe Schmerz."},
+        {"id": "FMBL_16", "label": "Beule", "descr": "Der Held hat sich im Eifer des Gefechts den Kopf gestoßen. Er erhält für eine Stunde eine Stufe Betäubung."},
 
         {"id": "FMBL_31", "label": "Seelentausch", "descr": "Der Geist des Zauberers tauscht für 1W6 Tage den Körper mit dem nächsten Lebewesen in seiner Nähe, das größer ist als eine Ratte."},
         {"id": "FMBL_32", "label": "Mindergeist", "descr": "Der Zauberer wird für 1W6 Tage von einem Mindergeist verfolgt."},
@@ -61,26 +61,26 @@
         "Type": "Melee",
         "Url": "Opt_Nahkampf-Patzertabelle.html",
         "Effect": [
-        {"dr": 2,  "ref": "FMBL_1"},
-        {"dr": 3,  "ref": "FMBL_2"},
-        {"dr": 4,  "ref": "FMBL_3"},
-        {"dr": 5,  "ref": "FMBL_4"},
-        {"dr": 6,  "ref": "FMBL_12"},
-        {"dr": 7,  "ref": "FMBL_13"},
-        {"dr": 8,  "ref": "FMBL_14"},
-        {"dr": 9,  "ref": "FMBL_15"},
-        {"dr": 10,  "ref": "FMBL_16"},
-        {"dr": 11,  "ref": "FMBL_10"},
-        {"dr": 12,  "ref": "FMBL_11"}]
+        {"dr": 2, "ref": "FMBL_1"},
+        {"dr": 3, "ref": "FMBL_2"},
+        {"dr": 4, "ref": "FMBL_3"},
+        {"dr": 5, "ref": "FMBL_4"},
+        {"dr": 6, "ref": "FMBL_12"},
+        {"dr": 7, "ref": "FMBL_13"},
+        {"dr": 8, "ref": "FMBL_14"},
+        {"dr": 9, "ref": "FMBL_15"},
+        {"dr": 10, "ref": "FMBL_16"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
     },
     {
         "Roll": "Attack",
         "Type": "Unarmed",
         "Url": "Opt_Nahkampf-Patzertabelle.html",
         "Effect": [
-        {"dr": [2, 7],  "ref": "FMBL_13"},
-        {"dr": [3, 8],  "ref": "FMBL_14"},
-        {"dr": [4, 9],  "ref": "FMBL_15"},
+        {"dr": [2, 7], "ref": "FMBL_13"},
+        {"dr": [3, 8], "ref": "FMBL_14"},
+        {"dr": [4, 9], "ref": "FMBL_15"},
         {"dr": [5, 10], "ref": "FMBL_16"},
         {"dr": [6, 11], "ref": "FMBL_10"},
         {"dr": 12,      "ref": "FMBL_11"}]
@@ -104,8 +104,7 @@
     },
     {
         "Roll": "Parry",
-        "Type": "Melee",
-        "Weapon": "Parryweapon",
+        "Type": "Shield",
         "Url": "Opt_Verteidigung-Patzertabelle-Schild.html",
         "Effect": [
         {"dr": 2, "ref": "FMBL_21"},
@@ -122,8 +121,7 @@
     },
     {
         "Roll": "Dodge",
-        "Type": "Melee",
-        "Weapon": "Parryweapon",
+        "Type": "Shield",
         "Url": "Opt_Verteidigung-Patzertabelle-Schild.html",
         "Effect": [
         {"dr": [2, 7], "ref": "FMBL_13"},
@@ -148,7 +146,6 @@
     {
         "Roll": "Attack",
         "Type": "Ranged",
-        "Weapon": "Any",
         "Url": "Opt_Fernkampf-Patzertabelle.html",
         "Effect": [
         {"dr": 2, "ref": "FMBL_1"},
@@ -166,7 +163,6 @@
     {
         "Roll": "Skill",
         "Type": "Magic",
-        "Weapon": "Any",
         "Url": "Patzer_Zauber.html",
         "Effect": [
         {"dr": 2, "ref": "FMBL_31"},
@@ -184,7 +180,6 @@
     {
         "Roll": "Skill",
         "Type": "Liturgical",
-        "Weapon": "Any",
         "Url": "Patzer_Liturgien.html",
         "Effect": [
         {"dr": 2, "ref": "FMBL_51"},

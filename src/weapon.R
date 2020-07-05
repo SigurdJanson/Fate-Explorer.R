@@ -11,7 +11,7 @@ source("./readoptjson.R")
 # - Make use of permanent modifier
 
 # Enumerations
-.WeaponType    <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L)
+.WeaponType    <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L, Shield = 3L)
 .CombatAction <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
 .SuccessLevel <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
 .CloseCombatRange  <- c(Short = 1L, Medium = 2L, Long = 3L)
@@ -164,7 +164,9 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   FumbleRoll = function() {
     if (!isTruthy(self$LastFumbleEffect))
       if (self$LastResult == .SuccessLevel["Fumble"]) {
-        self$LastFumbleEffect <- GetCombatFumbleEffect(CombatFumbleRoll())
+        self$LastFumbleEffect <- GetFumbleEffect(CombatFumbleRoll(),
+                                                 self$LastAction, 
+                                                 self$Type)
       }
     return(self$LastFumbleEffect)
   },

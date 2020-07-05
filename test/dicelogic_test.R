@@ -78,7 +78,7 @@ test_that("GetFumbleEffect", {
   expect_identical(o, list(id = "FMBL_16", 
                            label = "Beule", 
                            descr = "Der Held hat sich im Eifer des Gefechts den Kopf gestoßen. Er erhält für eine Stunde eine Stufe Betäubung."))
-  o <- GetFumbleEffect(4L, "Dodge", "Melee", Object = "Parryweapon")
+  o <- GetFumbleEffect(4L, "Dodge", "Shield")
   expect_identical(o, list(id = "FMBL_15", 
                            label = "Fuß verdreht", 
                            descr = "Der Held erhält für 3 Kampfrunden eine Stufe Schmerz."))
