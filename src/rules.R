@@ -2,14 +2,14 @@
 
 
 
-# Enumerations
+# Enumerations ----
 .WeaponType   <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L, Shield = 3L)
 .CombatAction <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
 .SuccessLevel <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
 .CloseCombatRange  <- c(Short = 1L, Medium = 2L, Long = 3L)
 .RangedCombatRange <- c(Close = 1L, Medium = 2L, Far = 3L)
 
-# 
+# Data objects ----
 .Attribs <- NULL
 .Skills  <- NULL
 .ComTecs <- NULL
@@ -17,10 +17,13 @@
 .Ranged  <- NULL
 .FumbleEffects <- NULL
 
+.Language <- "de"
 
+
+# Functions ----
 #' 
 #' Required for language changes
-ReloadRules <- function(lang = "de") {
+ReloadRules <- function(lang = .Language) {
   .Attribs <<- NULL
   GetAbilities(lang)
   .Skills <<- NULL
@@ -40,7 +43,7 @@ ReloadRules <- function(lang = "de") {
 #' Read list of basic character abilities available in DSA5
 #' @param lang Requested language to translate labels ("en", "de").
 #' @return 
-GetAbilities <- function(lang = "de") {
+GetAbilities <- function(lang = .Language) {
   if (is.null(.Attribs)) {
 
     JsonFile <- file.path("data", paste0("attributes_", lang, ".json"))
@@ -55,7 +58,7 @@ GetAbilities <- function(lang = "de") {
 #' Get the list of skills available in DSA5 (excluding magic and religious skills).
 #' @param lang Requested language to translate labels ("en", "de").
 #' @return a data frame of skills.
-GetSkills <- function(lang = "de") {
+GetSkills <- function(lang = .Language) {
   if (is.null(.Skills)) {
     JsonFile <- file.path("data", paste0("skills_", lang, ".json"))
     .Skills <<- read_json(JsonFile, simplifyVector = TRUE)
@@ -68,7 +71,7 @@ GetSkills <- function(lang = "de") {
 #' Get the tables that contain the effects of fumbles.
 #' @param lang Requested language to translate labels ("en", "de").
 #' @return A list with two data frames.
-GetAllFumbleEffects <- function(lang = "de") {
+GetAllFumbleEffects <- function(lang = .Language) {
   if (is.null(.FumbleEffects)) {
     JsonFile <- file.path("data", paste0("fumbles_", lang, ".json"))
     .FumbleEffects <<- read_json(JsonFile, simplifyVector = TRUE)
@@ -81,7 +84,7 @@ GetAllFumbleEffects <- function(lang = "de") {
 #' Get the list of combat techniques available in DSA5
 #' @param lang  Requested language to translate labels ("en", "de").
 #' @return
-GetCombatTechniques <- function(lang = "de") {
+GetCombatTechniques <- function(lang = .Language) {
   if (is.null(.ComTecs)) {
     JsonFile <- file.path("data", paste0("combattechs_", lang, ".json"))
     .ComTecs <<- read_json(JsonFile, simplifyVector = TRUE, flatten = TRUE)
@@ -283,7 +286,4 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
   return(Bonus)
 }
 #GetHitpointBonus("Barbarenschwert", ab)
-
-
-# Modifiers for Ranged Combat --------------------
 

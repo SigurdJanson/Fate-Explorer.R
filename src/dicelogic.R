@@ -40,7 +40,7 @@ GetFumbleEffect <- function(RollValue,
   RollType <- match.arg(RollType)
   SubType  <- match.arg(SubType)
   
-  Data <- GetAllFumbleEffects("de")####TODO############
+  Data <- GetAllFumbleEffects()
   # Determine correct table
   Index <- sapply(sapply(Data[["Tables"]][["Roll"]], `%in%`, RollType), any)
   Index <- which(Data[["Tables"]][["Type"]] == SubType & Index)

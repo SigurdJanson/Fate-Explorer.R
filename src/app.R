@@ -19,6 +19,8 @@ source("helpers.R", local = TRUE, encoding = "UTF-8")
 source("dicelogic.R", local = TRUE)
 source("readoptjson.R", local = TRUE)
 source("rules.R", local = TRUE)
+.Language <- i18n$translation_language
+
 source("explorechances.R", local = TRUE)
 source("weapon.R", local = TRUE, encoding = "UTF-8")
 
