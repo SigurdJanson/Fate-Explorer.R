@@ -124,29 +124,6 @@ CombatFumbleRoll <- function() {
 }
 
 
-#' GetCombatFumbleEffect
-#' Describe the effect of a fumble in combat.
-#' @param Roll Number between 2 and 12. The result of `CombatFumbleRoll`.
-#' @return A string
-GetCombatFumbleEffect <- function(Roll) {
-  if(missing(Roll)) stop("No roll given")
-  if(Roll < 2L || Roll > 12L) stop("Invalid fumble roll")
-  
-  Text <- data.frame(Roll = 2:12, Effect = c("Weapon destroyed",
-                                             "Weapon heavily damaged",
-                                             "Weapon damaged",
-                                             "Weapon lost",
-                                             "Weapon stuck",
-                                             "Fall",
-                                             "Stumble",
-                                             "Twisted foot",
-                                             "Bump on the head",
-                                             "Hurt yourself",
-                                             "Hurt yourself bad"))
-  Result <- Text$Effect[Text$Roll == Roll]
-  return(as.character(Result))
-}
-
 
 #' VerifyCombatRoll
 #' Confirms a fumble or critical with a d20.

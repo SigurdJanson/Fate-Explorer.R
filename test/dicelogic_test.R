@@ -161,21 +161,6 @@ test_that("CombatFumbleRoll", {
 
 
 
-test_that("GetCombatFumbleEffect", {
-  expect_error(GetCombatFumbleEffect(0))
-  expect_error(GetCombatFumbleEffect(1))
-  expect_error(GetCombatFumbleEffect(13))
-  
-  for(r in 2:12) {
-    o <- expect_silent(GetCombatFumbleEffect(r))
-    expect_gte(length(o), 0)
-  }
-  
-  expect_identical(GetCombatFumbleEffect(2), "Weapon destroyed")
-  expect_identical(GetCombatFumbleEffect(12), "Hurt yourself bad")
-})
-
-
 
 
 test_that("SkillRollQuality", {
