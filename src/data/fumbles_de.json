@@ -1,0 +1,202 @@
+{   
+    "Effects": [
+        {"id": "FMBL_1", "label": "Waffe zerstört", "descr": "Die Waffe ist unwiederbringlich zerstört. Bei unzerstörbaren Waffen wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_2", "label": "Waffe schwer beschädigt", "descr": "Die Waffe ist nicht mehr einsetzbar, bis sie repariert wird. Bei unzerstörbaren Waffen wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_3", "label": "Waffe beschädigt", "descr": "Die Waffe ist beschädigt worden. Alle Proben auf Fernkampf sind um 4 erschwert, bis sie repariert wird. Bei unzerstörbaren Waffen wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_4", "label": "Waffe verloren", "descr": "Die Waffe ist zu Boden gefallen."},
+
+        {"id": "FMBL_12",   "label": "Waffe stecken geblieben", "descr": "Die Waffe des Helden ist in einem Baum, einer Holzwand, dem Boden oder Ähnlichem stecken geblieben. Um sie zu befreien, ist 1 Aktion und eine um 1 erschwerte Probe auf Kraftakt (Ziehen & Zerren) notwendig."},
+
+        {"id": "FMBL_21",  "label": "Schild zerstört", "descr": "Der Schild ist unwiederbringlich zerstört. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_22",  "label": "Schild schwer beschädigt", "descr": "Der Schild ist nicht mehr verwendbar, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_23",  "label": "Schild beschädigt", "descr": "Der Schild ist beschädigt worden. Alle Proben auf Attacke und Parade sind um 2 erschwert, bis er repariert wird. Bei unzerstörbaren Schilden wird das Ergebnis wie bei 5 behandelt."},
+        {"id": "FMBL_24",  "label": "Schild verloren", "descr": "Der Schild ist zu Boden gefallen."},
+        {"id": "FMBL_25",  "label": "Schild stecken geblieben", "descr": "Der Schild des Helden ist in einem Baum, einer Holzwand, dem Boden oder Ähnlichem stecken geblieben. Um ihn zu befreien, ist 1 Aktion und eine um 1 erschwerte Probe auf Kraftakt (Ziehen & Zerren) notwendig."},
+
+        {"id": "FMBL_5", "label": "Kamerad/Unschuldiger getroffen", "descr": "Das Geschoss trifft aus Versehen einen Freund oder einen am Kampf Unbeteiligten. Ist kein solches Ziel in der Nähe, wird diese Auswirkung wie 11 Selbst verletzt behandelt. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt."},
+        {"id": "FMBL_6", "label": "Fehlschuss", "descr": "Der spektakuläre Fehlschuss trifft ein Objekt (Ladenschild heruntergeschossen, Glasfenster zu Bruch gegangen etc.)."},
+        {"id": "FMBL_7", "label": "Zerrung", "descr": "Der Held hat Rückenschmerzen und erleidet für die nächsten 3 Kampfrunden eine Stufe Schmerz."},
+        {"id": "FMBL_8", "label": "Sehne herausgerutscht/ Waffe nicht richtig gegriffen/ Ladehemmung", "descr": "Der Held benötigt 2 komplette Kampfrunden, um die Waffe wieder einsatzbereit zu machen."},
+        {"id": "FMBL_9", "label": "Zu konzentriert", "descr": "Der Held ist mit Zielen oder mit seiner Waffe beschäftigt. Bis zu seiner nächsten Aktion kann er keine Verteidigungen ausführen."},
+
+        {"id": "FMBL_10", "label": "Selbst verletzt", "descr": "Der Held hat sich selbst verletzt und erleidet Schaden. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt."},
+        {"id": "FMBL_11", "label": "Selbst schwer verletzt", "descr": "Ein schwerer Eigentreffer. Der Schaden der Waffe wird unter Einbeziehung des Schadensbonus ausgewürfelt und dann verdoppelt."},
+
+        {"id": "FMBL_13",   "label": "Sturz", "descr": "Der Held stolpert und stürzt, wenn seinem Spieler nicht eine um 2 erschwerte Probe auf Körperbeherrschung (Balance) gelingt. Sollte er das nicht schaffen, erhält der Held den Status Liegend."},
+        {"id": "FMBL_14",   "label": "Stolpern", "descr": "Der Held stolpert, seine nächste Handlung ist um 2 erschwert."},
+        {"id": "FMBL_15",   "label": "Fuß verdreht", "descr": "Der Held erhält für 3 Kampfrunden eine Stufe Schmerz."},
+        {"id": "FMBL_16",  "label": "Beule", "descr": "Der Held hat sich im Eifer des Gefechts den Kopf gestoßen. Er erhält für eine Stunde eine Stufe Betäubung."},
+
+        {"id": "FMBL_31", "label": "Seelentausch", "descr": "Der Geist des Zauberers tauscht für 1W6 Tage den Körper mit dem nächsten Lebewesen in seiner Nähe, das größer ist als eine Ratte."},
+        {"id": "FMBL_32", "label": "Mindergeist", "descr": "Der Zauberer wird für 1W6 Tage von einem Mindergeist verfolgt."},
+
+        {"id": "FMBL_91", "label": "Neues Ziel", "descr": "Das Ziel des Handlung ändert sich zufällig nach Wahl des Meisters."},
+
+        {"id": "FMBL_34", "label": "Verwandlung", "descr": "Der Zauberer verwandelt sich für 1W6 Stunden in ein Kleintier nach Wahl des Spielleiters."},
+        {"id": "FMBL_35", "label": "Verpuffung", "descr": "Die gesamte Astralkraft verlässt den Körper des Zauberers und manifestiert sich als Regen aus bunten Funken, illusionären Schmetterlingen und kleinen Regenbögen. Die verlorenen Astralpunkte können regulär regeneriert werden."},
+        {"id": "FMBL_36", "label": "Magieblockade", "descr": "Der Zauberer verliert für 1W6 Tage die Fähigkeit, auf seinen AE-Vorrat zuzugreifen."},
+        {"id": "FMBL_37", "label": "Kopfschmerzen", "descr": "Der Zauberer hat für die nächsten 1W6 Tage pochende Kopfschmerzen. Er leidet während dieser Zeit unter einer Stufe des Zustands Betäubung."},
+        {"id": "FMBL_38", "label": "Astrale Senke", "descr": "Die gesamte Astralkraft verlässt den Körper des Zauberers und springt auf das nächste magisch begabte Ziel über. Das Ziel erhält die gesamten Astralpunkte des Zauberers, auch über sein natürliches Maximum an Astralenergie hinaus. Der Zauberer kann die verlorenen Astralpunkte regulär regenerieren."},
+
+        {"id": "FMBL_92", "label": "Stumm", "descr": "Der Held verliert für 1W6 Tage seine Befähigung zu sprechen."},
+
+        {"id": "FMBL_40", "label": "Buntes Haar", "descr": "Haar und Bart des Zauberers färben sich bunt, wachsen später jedoch in der ursprünglichen Farbe nach."},
+        {"id": "FMBL_41", "label": "Warnung", "descr": "Eine ätherische Stimme erklingt aus dem Nichts und sagt 'Tu das nie wieder!'"},
+    
+        {"id": "FMBL_51", "label": "Feuer", "descr": "Im Umkreis von 2W6 Metern gehen brennbare Materialien in Flammen auf (außer Lebewesen und die Kleidung des Geweihten)."},
+        {"id": "FMBL_52", "label": "Umkehrung", "descr": "Die gewirkte Liturgie/Zeremonie hat einen gegenteiligen Effekt. Ein Bann des Lichts erzeugt Licht, ein Heilsegen fügt dem Ziel Schaden zu usw."},
+
+        {"id": "FMBL_54", "label": "Visionen und Alpträume", "descr": "Der Geweihte hat für 1W6 Tage nachts seltsame Visionen und Alpträume."},
+        {"id": "FMBL_55", "label": "Eingeschüchtert", "descr": "Durch einen Blick in die Sphären ist der Geweihte so eingeschüchtert, dass er einen Tag lang 3 Stufen Furcht erhält."},
+        {"id": "FMBL_56", "label": "Karmablockade", "descr": "Der Geweihte verliert für 1W6 Tage die Fähigkeit, auf seinen KE-Vorrat zuzugreifen."},
+        {"id": "FMBL_57", "label": "Entrückung", "descr": "Der Geweihte erhält für einen Tag 4 Stufen Entrückung."},
+        {"id": "FMBL_58", "label": "Verwirrung", "descr": "Der Geweihte ist für einen Tag lang verwirrt und redet unverständliches Zeug, an das er sich später nicht mehr erinnert. Er erhält 3 Stufen Verwirrung."},
+
+        {"id": "FMBL_60", "label": "Stigmatisiert", "descr": "Für einen Tag erhält der Geweihte ein Stigma."},
+        {"id": "FMBL_61", "label": "Verwurzelung", "descr": "Der Geweihte verwurzelt mit dem Boden und kann seine Füße für 1W6 Minuten nicht bewegen. Er erhält währenddessen den Status Fixiert."}
+    ],
+    "Tables": [
+    {
+        "Roll": "Attack",
+        "Type": "Melee",
+        "Url": "Opt_Nahkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": 2,  "ref": "FMBL_1"},
+        {"dr": 3,  "ref": "FMBL_2"},
+        {"dr": 4,  "ref": "FMBL_3"},
+        {"dr": 5,  "ref": "FMBL_4"},
+        {"dr": 6,  "ref": "FMBL_12"},
+        {"dr": 7,  "ref": "FMBL_13"},
+        {"dr": 8,  "ref": "FMBL_14"},
+        {"dr": 9,  "ref": "FMBL_15"},
+        {"dr": 10,  "ref": "FMBL_16"},
+        {"dr": 11,  "ref": "FMBL_10"},
+        {"dr": 12,  "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Attack",
+        "Type": "Unarmed",
+        "Url": "Opt_Nahkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": [2, 7],  "ref": "FMBL_13"},
+        {"dr": [3, 8],  "ref": "FMBL_14"},
+        {"dr": [4, 9],  "ref": "FMBL_15"},
+        {"dr": [5, 10], "ref": "FMBL_16"},
+        {"dr": [6, 11], "ref": "FMBL_10"},
+        {"dr": 12,      "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": ["Parry", "Dodge"],
+        "Type": "Melee",
+        "Url": "Opt_Verteidigung-Patzertabelle-oSchild.html",
+        "Effect": [
+            {"dr": 2, "ref": "FMBL_1"},
+            {"dr": 3, "ref": "FMBL_2"},
+            {"dr": 4, "ref": "FMBL_3"},
+            {"dr": 5, "ref": "FMBL_4"},
+            {"dr": 6, "ref": "FMBL_12"},
+            {"dr": 7, "ref": "FMBL_13"},
+            {"dr": 8, "ref": "FMBL_14"},
+            {"dr": 9, "ref": "FMBL_15"},
+            {"dr": 10, "ref": "FMBL_16"},
+            {"dr": 11, "ref": "FMBL_10"},
+            {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Parry",
+        "Type": "Melee",
+        "Weapon": "Parryweapon",
+        "Url": "Opt_Verteidigung-Patzertabelle-Schild.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_21"},
+        {"dr": 3, "ref": "FMBL_22"},
+        {"dr": 4, "ref": "FMBL_23"},
+        {"dr": 5, "ref": "FMBL_24"},
+        {"dr": 6, "ref": "FMBL_25"},
+        {"dr": 7, "ref": "FMBL_13"},
+        {"dr": 8, "ref": "FMBL_14"},
+        {"dr": 9, "ref": "FMBL_15"},
+        {"dr": 10, "ref": "FMBL_16"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Dodge",
+        "Type": "Melee",
+        "Weapon": "Parryweapon",
+        "Url": "Opt_Verteidigung-Patzertabelle-Schild.html",
+        "Effect": [
+        {"dr": [2, 7], "ref": "FMBL_13"},
+        {"dr": [3, 8], "ref": "FMBL_14"},
+        {"dr": [4, 9], "ref": "FMBL_15"},
+        {"dr": [5, 10], "ref": "FMBL_16"},
+        {"dr": [6, 11], "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}] 
+    },
+    {
+        "Roll": ["Parry", "Dodge"],
+        "Type": "Unarmed",
+        "Url": "Opt_Verteidigung-Patzertabelle-oSchild.html",
+        "Effect": [
+            {"dr": [2, 7], "ref": "FMBL_13"},
+            {"dr": [3, 8], "ref": "FMBL_14"},
+            {"dr": [4, 9], "ref": "FMBL_15"},
+            {"dr": [5, 10], "ref": "FMBL_16"},
+            {"dr": [6, 11], "ref": "FMBL_10"},
+            {"dr": 12, "ref": "FMBL_11"}] 
+    },
+    {
+        "Roll": "Attack",
+        "Type": "Ranged",
+        "Weapon": "Any",
+        "Url": "Opt_Fernkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_1"},
+        {"dr": 3, "ref": "FMBL_2"},
+        {"dr": 4, "ref": "FMBL_3"},
+        {"dr": 5, "ref": "FMBL_4"},
+        {"dr": 6, "ref": "FMBL_5"},
+        {"dr": 7, "ref": "FMBL_6"},
+        {"dr": 8, "ref": "FMBL_7"},
+        {"dr": 9, "ref": "FMBL_8"},
+        {"dr": 10, "ref": "FMBL_9"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Skill",
+        "Type": "Magic",
+        "Weapon": "Any",
+        "Url": "Patzer_Zauber.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_31"},
+        {"dr": 3, "ref": "FMBL_32"},
+        {"dr": 4, "ref": "FMBL_91"},
+        {"dr": 5, "ref": "FMBL_34"},
+        {"dr": 6, "ref": "FMBL_35"},
+        {"dr": 7, "ref": "FMBL_36"},
+        {"dr": 8, "ref": "FMBL_37"},
+        {"dr": 9, "ref": "FMBL_38"},
+        {"dr": 10, "ref": "FMBL_92"},
+        {"dr": 11, "ref": "FMBL_40"},
+        {"dr": 12, "ref": "FMBL_41"}]
+    },
+    {
+        "Roll": "Skill",
+        "Type": "Liturgical",
+        "Weapon": "Any",
+        "Url": "Patzer_Liturgien.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_51"},
+        {"dr": 3, "ref": "FMBL_52"},
+        {"dr": 4, "ref": "FMBL_91"},
+        {"dr": 5, "ref": "FMBL_54"},
+        {"dr": 6, "ref": "FMBL_55"},
+        {"dr": 7, "ref": "FMBL_56"},
+        {"dr": 8, "ref": "FMBL_57"},
+        {"dr": 9, "ref": "FMBL_58"},
+        {"dr": 10, "ref": "FMBL_92"},
+        {"dr": 11, "ref": "FMBL_60"},
+        {"dr": 12, "ref": "FMBL_61"}]
+    }
+]}

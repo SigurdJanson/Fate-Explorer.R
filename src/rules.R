@@ -5,6 +5,7 @@
 .ComTecs <- NULL
 .Melee   <- NULL
 .Ranged  <- NULL
+.FumbleEffects <- NULL
 
 
 #' 
@@ -16,6 +17,8 @@ ReloadRules <- function(lang = "de") {
   GetSkills(lang)
   .ComTecs <<- NULL
   GetCombatTechniques(lang)
+  .FumbleEffects <<- NULL
+  GetFumbleEffects(lang)
   #.Melee   <<- NULL# Currently not required
   #GetWeapons(Type = "Melee") # Currently not required because not localised
   #.Ranged   <<- NULL# Currently not required
@@ -40,15 +43,27 @@ GetAbilities <- function(lang = "de") {
 
 #' GetSkills
 #' Get the list of skills available in DSA5 (excluding magic and religious skills).
-#' @param lang  Requested language to translate labels ("en", "de").
-#' @return
+#' @param lang Requested language to translate labels ("en", "de").
+#' @return a data frame of skills.
 GetSkills <- function(lang = "de") {
   if (is.null(.Skills)) {
-    
     JsonFile <- file.path("data", paste0("skills_", lang, ".json"))
     .Skills <<- read_json(JsonFile, simplifyVector = TRUE)
   }
   return(.Skills)
+}
+
+
+#' GetFumbleEffects
+#' Get the tables that contain the effects of fumbles.
+#' @param lang Requested language to translate labels ("en", "de").
+#' @return A list with two data frames.
+GetAllFumbleEffects <- function(lang = "de") {
+  if (is.null(.FumbleEffects)) {
+    JsonFile <- file.path("data", paste0("fumbles_", lang, ".json"))
+    .FumbleEffects <<- read_json(JsonFile, simplifyVector = TRUE)
+  }
+  return(.FumbleEffects)
 }
 
 

@@ -18,6 +18,48 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
   }
 }
 
+
+
+GetFumbleEffect <- function(RollValue, 
+                            RollType = c("Skill", "Attack", "Parry", "Dodge"),
+                            SubType = NULL, Object = NA ) {
+  # PRECONDITIONS
+  if(missing(RollValue)) stop("No roll given")
+  if(RollValue < 2L || RollValue > 12L) stop("Invalid fumble roll")
+  RollType <- match.arg(RollType)
+  #SubType  <- match.arg(SubType)####TODO############
+  
+  Data <- GetAllFumbleEffects("de")####TODO############
+  # Determine correct table
+  Index <- sapply(sapply(Data[["Tables"]][["Roll"]], `%in%`, RollType), any)
+  Index <- which(Data[["Tables"]][["Type"]] == SubType & Index)
+  if (length(Index) > 1) {
+    if (is.na(Object))
+      Index <- intersect(Index, which(is.na(Data[["Tables"]][["Weapon"]])))
+    else
+      Index <- intersect(Index, which(Data[["Tables"]][["Weapon"]] == Object))
+   # Index <- Data[["Tables"]][["Weapon"]][ Index ]
+  } 
+  stopifnot(length(Index) == 1)
+  EffectTable <- Data[["Tables"]][["Effect"]][[Index]]
+
+  # Extract fumble ID
+  Index <- sapply(sapply(EffectTable[["dr"]], `%in%`, RollValue), any)
+  ID <- EffectTable[["ref"]][ Index ]
+  
+  # Look up fumble ID and return the result
+  ListOfEffects <- Data[["Effects"]]
+  Index <- ListOfEffects[["id"]] == ID
+  Result <- ListOfEffects[Index, ] # return complete row as result
+  
+  return(as.list(Result)) # 
+}
+# setwd("./src")
+# #x <- GetFumbleEffect(3L, "Attack", "Unarmed")#GetFumbleEffect(2L, "Skill", "Magic")
+# x <- GetFumbleEffect(3L, "Dodge", "Melee")
+# setwd("..")
+
+
 # ABILITIES ---------------------------------------
 
 #' AbilityRoll
