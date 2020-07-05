@@ -13,9 +13,9 @@ test_that("CombatTechniques", {
   CT <- GetCombatTechniques()
   setwd("../test")
   expect_s3_class(CT, "data.frame")
-  expect_named(CT, paste0("CT_", 1:21))
-  expect_equal(nrow(CT), 1)
-  expect_equal(ncol(CT), 21)
+  expect_equal(CT[[1]], paste0("CT_", 1:21))
+  expect_equal(nrow(CT), 21)
+  expect_equal(ncol(CT), 5)
 })
 
 
@@ -47,7 +47,7 @@ test_that("Weapons", {
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
   
   # MELEE WEAPONS
-  cn <- c("name", "combattech", "primaryattr", "threshold", "damage",
+  cn <- c("name", "combattech", "primeattr", "threshold", "damage",
           "bonus", "at", "pa", "range", "weight", "price", "sf", 
           "combattechID", "primeattrID", "improvised", "url", "clsrng", 
           "armed", "templateID")
@@ -83,7 +83,7 @@ test_that("Weapons", {
   cn <- c("combattech", "loadtime", "damage", "name", 
           "bonus", "ammo", "range", "weight", "price", "sf", 
           "combattechID", "improvised", "url", "clsrng", 
-          "armed", "templateID", "primaryattr", "primaryattrID")
+          "armed", "templateID", "primeattr", "primeattrID")
   setwd("../src")
   W <- GetWeapons(Type = "Ranged")
   setwd("../test")
@@ -189,4 +189,44 @@ test_that("IsRangedWeapon", {
                      TRUE, rep(FALSE, 2), 
                      TRUE, rep(FALSE, 2), 
                      rep(TRUE, 3), rep(FALSE, 2)))
+})
+
+
+
+test_that("IsParryWeapon", {
+  # PRECONDITIONS
+  expect_error(IsParryWeapon(), "No arguments to define weapon")
+
+  expect_identical(IsParryWeapon("Shakagra-Krummsäbel"), TRUE)
+  expect_identical(IsParryWeapon("Bratspieß"), TRUE)
+  expect_identical(IsParryWeapon("Ogerschelle"), FALSE)
+  expect_identical(IsParryWeapon("Zwergenschlägel"), TRUE)
+  
+  expect_identical(IsParryWeapon("ITEMTPL_15"), TRUE)
+  expect_identical(IsParryWeapon("ITEMTPL_24"), FALSE)
+  expect_identical(IsParryWeapon("ITEMTPL_449"), FALSE)
+  expect_identical(IsParryWeapon("ITEMTPL_584"), TRUE)
+  
+  # Ranged
+  expect_identical(IsParryWeapon("Schwere Armbrust"), FALSE)
+  expect_identical(IsParryWeapon("Wurfspeer"), FALSE)
+  expect_identical(IsParryWeapon("Feuerspeien"), FALSE)
+  expect_identical(IsParryWeapon("Diskus"), FALSE)
+  
+  expect_identical(IsParryWeapon("ITEMTPL_60"), FALSE)
+  expect_identical(IsParryWeapon("ITEMTPL_70"), FALSE)
+  expect_identical(IsParryWeapon("ITEMTPL_465"), FALSE)
+  expect_identical(IsParryWeapon("ITEMTPL_540"), FALSE)
+  
+  # By combat technique
+  ct <- paste0("CT_", c(1:21))
+  o <- IsParryWeapon(CombatTech = ct)
+  expect_identical(o, 
+                   c(FALSE, FALSE, rep(TRUE, 3), #5
+                     rep(FALSE, 3), rep(TRUE, 2), #10
+                     FALSE, rep(TRUE, 2), #10
+                     FALSE, rep(TRUE, 2), 
+                     rep(FALSE, 3), TRUE, FALSE))
+  expect_identical(IsParryWeapon(CombatTech = "CT_17"), FALSE) # spit fire
+  expect_identical(IsParryWeapon(CombatTech = "CT_12"), TRUE) # sword
 })
