@@ -1,8 +1,8 @@
 require(jsonlite)
-setwd("..")
-source("./src/dicelogic.R")
-source("./src/rules.R")
-setwd("./test")
+setwd("../src")
+source("./dicelogic.R")
+source("./rules.R")
+setwd("../test")
 
 # General -----
 test_that("VerifyConfirmation", {

@@ -33,12 +33,12 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
 #' of the fumble.
 GetFumbleEffect <- function(RollValue, 
                             RollType = c("Skill", "Attack", "Parry", "Dodge"),
-                            SubType = NULL ) {
+                            SubType = c(names(.WeaponType), "Magic", "Liturgical") ) {
   # PRECONDITIONS
   if(missing(RollValue)) stop("No roll given")
   if(RollValue < 2L || RollValue > 12L) stop("Invalid fumble roll")
   RollType <- match.arg(RollType)
-  #SubType  <- match.arg(SubType)####TODO############
+  SubType  <- match.arg(SubType)
   
   Data <- GetAllFumbleEffects("de")####TODO############
   # Determine correct table
@@ -59,8 +59,9 @@ GetFumbleEffect <- function(RollValue,
   return(as.list(Result)) # 
 }
 # setwd("./src")
-# #x <- GetFumbleEffect(3L, "Attack", "Unarmed")#GetFumbleEffect(2L, "Skill", "Magic")
-# x <- GetFumbleEffect(3L, "Dodge", "Melee")
+# GetFumbleEffect(3L, "Attack", "Unarmed")
+# GetFumbleEffect(2L, "Skill", "Magic")
+# x <- GetFumbleEffect(2L, "Dodge", "Melee")
 # setwd("..")
 
 
