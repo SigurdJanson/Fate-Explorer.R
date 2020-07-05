@@ -1,3 +1,4 @@
+source("./rules.R")
 # 
 
 #' VerifyConfirmation

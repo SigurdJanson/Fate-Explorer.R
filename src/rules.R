@@ -1,5 +1,15 @@
 # DSA 5 Rules
 
+
+
+# Enumerations
+.WeaponType   <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L, Shield = 3L)
+.CombatAction <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
+.SuccessLevel <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
+.CloseCombatRange  <- c(Short = 1L, Medium = 2L, Long = 3L)
+.RangedCombatRange <- c(Close = 1L, Medium = 2L, Far = 3L)
+
+# 
 .Attribs <- NULL
 .Skills  <- NULL
 .ComTecs <- NULL
