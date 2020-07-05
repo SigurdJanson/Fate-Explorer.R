@@ -146,9 +146,8 @@ output$uiCombatRoll <- renderText({
     if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"]) {
       if (!isTruthy(ActiveWeapon$LastFumbleEffect)) {
         Result <- tagAppendChild(Result, p(actionLink("doCombatFumble", i18n$t("See what happens..."))))
-        
       } else { # Show fumble effects
-        Result <- tagAppendChild(Result, p(i18n$t(ActiveWeapon$LastFumbleEffect)))
+        Result <- tagAppendChild( Result, p(i18n$t(ActiveWeapon[["LastFumbleEffect"]][["label"]])) )
       }
     }
   }
