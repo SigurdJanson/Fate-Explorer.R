@@ -272,7 +272,8 @@
         "spell": true,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
-        "ab3": "ATTR_5"
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_104"
     },
     {
         "url": "index.php/ZS_AurisIllusionis.html",
@@ -289,7 +290,8 @@
         "spell": true,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
-        "ab3": "ATTR_4"
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_241"
     },
     {
         "url": "index.php/ZS_Axxeleratus.html",
@@ -297,7 +299,8 @@
         "spell": true,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
-        "ab3": "ATTR_5"
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_4"
     },
     {
         "url": "index.php/ZS_Balsam.html",
@@ -1104,7 +1107,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK"
+        "modagainst": "SK",
+        "spellid": "SPELL_134"
     },
     {
         "url": "index.php/ZS_Impersona.html",
@@ -1112,7 +1116,8 @@
         "spell": true,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
-        "ab3": "ATTR_5"
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_135"
     },
     {
         "url": "index.php/ZS_Incendio.html",
@@ -1575,7 +1580,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK"
+        "modagainst": "SK",
+        "spellid": "SPELL_35"
     },
     {
         "url": "index.php/ZS_Salander.html",
@@ -1768,7 +1774,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK"
+        "modagainst": "SK",
+        "spellid": "SPELL_40"
     },
     {
         "url": "index.php/ZS_Sphaerenbann.html",
@@ -1989,7 +1996,8 @@
         "spell": true,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
-        "ab3": "ATTR_8"
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_298"
     },
     {
         "url": "index.php/wds.html",
@@ -1997,7 +2005,8 @@
         "spell": true,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
-        "ab3": "ATTR_8"
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_299"
     },
     {
         "url": "index.php/wl.html",
@@ -2229,5 +2238,25 @@
         "ab2": "",
         "ab3": "",
         "spellid": "SPELL_306"
+    },
+    {
+        "url": "",
+        "name": "Wogenform",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_334"
+    },
+    {
+        "url": "",
+        "name": "Widerwille",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_181"
     }
 ]
