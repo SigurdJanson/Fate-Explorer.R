@@ -1,0 +1,2233 @@
+[
+    {
+        "url": "index.php/ZS_Ablativum.html",
+        "name": "Ablativum",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_89"
+    },
+    {
+        "url": "index.php/ZS_Abvenenum.html",
+        "name": "Abvenenum",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_90"
+    },
+    {
+        "url": "index.php/ZS_Adlerauge.html",
+        "name": "Adlerauge",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_1"
+    },
+    {
+        "url": "index.php/ZS_Adlerschwinge.html",
+        "name": "Adlerschwinge",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6",
+        "spellid": "SPELL_91"
+    },
+    {
+        "url": "index.php/ZS_Aeolito.html",
+        "name": "Aeolito",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_92"
+    },
+    {
+        "url": "index.php/aa.html",
+        "name": "Affenarme",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_234"
+    },
+    {
+        "url": "index.php/ar.html",
+        "name": "Affenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_235"
+    },
+    {
+        "url": "index.php/ZS_Alpgestalt.html",
+        "name": "Alpgestalt",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "modagainst": "SK",
+        "spellid": "SPELL_93"
+    },
+    {
+        "url": "index.php/ZS_Altisonus.html",
+        "name": "Altisonus",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "spellid": "SPELL_94"
+    },
+    {
+        "url": "index.php/ZS_Analys.html",
+        "name": "Analys Arkanstruktur",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "spellid": "SPELL_2"
+    },
+    {
+        "url": "index.php/ZS_Angstausloesen.html",
+        "name": "Angst auslösen",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "spellid": "SPELL_95"
+    },
+    {
+        "url": "index.php/ZS_Aquafaxius.html",
+        "name": "Aquafaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Aquasphaero.html",
+        "name": "Aquasphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/an.html",
+        "name": "Arachnea",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_236"
+    },
+    {
+        "url": "index.php/ZS_Archofaxius.html",
+        "name": "Archofaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_96"
+    },
+    {
+        "url": "index.php/ZS_Archosphaero.html",
+        "name": "Archosphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7",
+        "spellid": "SPELL_97"
+    },
+    {
+        "url": "index.php/ZS_Armatrutz.html",
+        "name": "Armatrutz",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_3"
+    },
+    {
+        "url": "index.php/ZS_AromatisIllusionis.html",
+        "name": "Aromatis Illusionis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_98"
+    },
+    {
+        "url": "index.php/ZS_Atemnot.html",
+        "name": "Atemnot",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_69"
+    },
+    {
+        "url": "index.php/ZS_AttributoCharisma.html",
+        "name": "Attributo (Charisma)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_99"
+    },
+    {
+        "url": "index.php/ZS_AttributoFingerfertigkeit.html",
+        "name": "Attributo (Fingerfertigkeit)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_100"
+    },
+    {
+        "url": "index.php/attge.html",
+        "name": "Attributo (Gewandtheit)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/attributo-intuition.html",
+        "name": "Attributo (Intuition)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_3"
+    },
+    {
+        "url": "index.php/ZS_AttributoKlugheit.html",
+        "name": "Attributo (Klugheit)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "spellid": "SPELL_101"
+    },
+    {
+        "url": "index.php/ak.html",
+        "name": "Attributo (Konstitution)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Attributo_Körperkraft.html",
+        "name": "Attributo (Körperkraft)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_70"
+    },
+    {
+        "url": "index.php/am.html",
+        "name": "Attributo (Mut)",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "spellid": "SPELL_239"
+    },
+    {
+        "url": "index.php/ZS_Aufwecken.html",
+        "name": "Aufwecken",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_102"
+    },
+    {
+        "url": "index.php/ZS_AugedesLimbus.html",
+        "name": "Auge des Limbus",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_103"
+    },
+    {
+        "url": "index.php/ZS_Aura_der_Erschoepfung.html",
+        "name": "Aura der Erschöpfung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Aureolus.html",
+        "name": "Aureolus",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_AurisIllusionis.html",
+        "name": "Auris Illusionis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_105"
+    },
+    {
+        "url": "index.php/avl.html",
+        "name": "Avilea",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Axxeleratus.html",
+        "name": "Axxeleratus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Balsam.html",
+        "name": "Balsam Salabunde",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_5"
+    },
+    {
+        "url": "index.php/ZS_BandundFessel.html",
+        "name": "Band und Fessel",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_8",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Bannbaladin.html",
+        "name": "Bannbaladin",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_6"
+    },
+    {
+        "url": "index.php/bl.html",
+        "name": "Basaltleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_BlickaufsWesen.html",
+        "name": "Blick aufs Wesen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Blick_in_die_Gedanken.html",
+        "name": "Blick in die Gedanken",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "modagainst": "SK",
+        "spellid": "SPELL_7"
+    },
+    {
+        "url": "index.php/ZS_Blindheit.html",
+        "name": "Blindheit",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_108"
+    },
+    {
+        "url": "index.php/ZS_Blitz.html",
+        "name": "Blitz dich find",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_8"
+    },
+    {
+        "url": "index.php/ZS_Blitzball.html",
+        "name": "Blitzball",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/brl.html",
+        "name": "Brandungsleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/brazoraghs-hieb.html",
+        "name": "Brazoraghs Hieb",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_7",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/bh.html",
+        "name": "Brennender Hass",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Boeser_Blick.html",
+        "name": "Böser Blick",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Chamaelioni.html",
+        "name": "Chamaelioni",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Claudibus.html",
+        "name": "Claudibus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_71"
+    },
+    {
+        "url": "index.php/ZS_Corpofesso.html",
+        "name": "Corpofesso",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_9"
+    },
+    {
+        "url": "index.php/ZS_Corpofrigo.html",
+        "name": "Corpofrigo",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_72"
+    },
+    {
+        "url": "index.php/ZS_Debilitatio.html",
+        "name": "Debilitatio",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Desintegratus.html",
+        "name": "Desintegratus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Disruptivo.html",
+        "name": "Disruptivo",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_10"
+    },
+    {
+        "url": "index.php/ZS_Dornenwand.html",
+        "name": "Dornenwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/dl.html",
+        "name": "Drachenleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Dunkelheit.html",
+        "name": "Dunkelheit",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Duplicatus.html",
+        "name": "Duplicatus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Daemonenbann.html",
+        "name": "Dämonenbann",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Daemonenschild.html",
+        "name": "Dämonenschild",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_111"
+    },
+    {
+        "url": "index.php/dv.html",
+        "name": "Dämonisches Vergessen",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Ecliptifactus.html",
+        "name": "Ecliptifactus",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/el.html",
+        "name": "Eichenleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ed.html",
+        "name": "Eigene Dummheit",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_EigeneAengste.html",
+        "name": "Eigene Ängste",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Einflussbann.html",
+        "name": "Einflussbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Eisenrost.html",
+        "name": "Eisenrost",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "spellid": "SPELL_115"
+    },
+    {
+        "url": "index.php/eispf.html",
+        "name": "Eispfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Eiswand.html",
+        "name": "Eiswand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Elementarbann.html",
+        "name": "Elementarbann",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Elfenstimme.html",
+        "name": "Elfenstimme",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Erinnerungverlassedich.html",
+        "name": "Erinnerung verlasse dich",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Erschoepfungen_lindern.html",
+        "name": "Erschöpfungen lindern",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/erzpf.html",
+        "name": "Erzpfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/er.html",
+        "name": "Eulenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Exposami.html",
+        "name": "Exposami",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/SZ_Falkenauge.html",
+        "name": "Falkenauge",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "url": "index.php/ZS_Favilludo.html",
+        "name": "Favilludo",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/fl.html",
+        "name": "Federleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/fs.html",
+        "name": "Feenstaub",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Fesselfeld.html",
+        "name": "Fesselfeld",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/feuerpf.html",
+        "name": "Feuerpfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Firnlauf.html",
+        "name": "Firnlauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Fischflosse.html",
+        "name": "Fischflosse",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/flw.html",
+        "name": "Flammenwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/flr.html",
+        "name": "Fledermausruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Flim_Flam.html",
+        "name": "Flim Flam",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_13"
+    },
+    {
+        "url": "index.php/ZS_Foramen.html",
+        "name": "Foramen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Fortifex.html",
+        "name": "Fortifex",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/frigifaxius.html",
+        "name": "Frigifaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Frigisphaero.html",
+        "name": "Frigisphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/frostlb.html",
+        "name": "Frostleib",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Fulminictus.html",
+        "name": "Fulminictus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_14"
+    },
+    {
+        "url": "index.php/ZS_Gardianium.html",
+        "name": "Gardianum",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Gedankenbilder.html",
+        "name": "Gedankenbilder",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Gefunden.html",
+        "name": "Gefunden",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ge.html",
+        "name": "Geisteressenz",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/gifth.html",
+        "name": "Gifthaut",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/gl.html",
+        "name": "Glutlauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_GrosseGier.html",
+        "name": "Große Gier",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_GrosseVerwirrung.html",
+        "name": "Große Verwirrung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Halluzination.html",
+        "name": "Halluzination",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Harmlose_Gestalt.html",
+        "name": "Harmlose Gestalt",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Haselbusch.html",
+        "name": "Haselbusch",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Heilungsbann.html",
+        "name": "Heilungsbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Hellsichtbann.html",
+        "name": "Hellsichtbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Heptagramma.html",
+        "name": "Heptagramma",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Herr_ueber_das_Tierreich.html",
+        "name": "Herr über das Tierreich",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Herzschlagruhe.html",
+        "name": "Herzschlag ruhe",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_8",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/ZS_Hexagramma.html",
+        "name": "Hexagramma",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Hexengalle.html",
+        "name": "Hexengalle",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Hexenholz.html",
+        "name": "Hexenholz",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Hexenknoten.html",
+        "name": "Hexenknoten",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Hexenkrallen.html",
+        "name": "Hexenkrallen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/hs.html",
+        "name": "Hexenspeichel",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/hp.html",
+        "name": "Hilfreiche Pfote",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/hilfsw.html",
+        "name": "Hilfreiche Schwinge",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ht.html",
+        "name": "Hilfreiche Tatze",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/hl.html",
+        "name": "Himmelslauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/hr.html",
+        "name": "Hornissenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Horriphobus.html",
+        "name": "Horriphobus",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_20"
+    },
+    {
+        "url": "index.php/ZS_Humofaxius.html",
+        "name": "Humofaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Humosphaero.html",
+        "name": "Humosphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/hpf.html",
+        "name": "Humuspfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Höllenpein.html",
+        "name": "Höllenpein",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_79"
+    },
+    {
+        "url": "index.php/ZS_Ignifaxius.html",
+        "name": "Ignifaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Ignisphaero.html",
+        "name": "Ignisphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Ignorantia.html",
+        "name": "Ignorantia",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Illusionsbann.html",
+        "name": "Illusionsbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Imperavi.html",
+        "name": "Imperavi",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Impersona.html",
+        "name": "Impersona",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Incendio.html",
+        "name": "Incendio",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/ZS_Invercano.html",
+        "name": "Invercano",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Invinculo.html",
+        "name": "Invinculo",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/ZS_Invominima.html",
+        "name": "Invocatio Minima",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Karnifilo.html",
+        "name": "Karnifilo",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Katzenaugen.html",
+        "name": "Katzenaugen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/kr.html",
+        "name": "Katzenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Klarum_Purum.html",
+        "name": "Klarum Purum",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ks.html",
+        "name": "Krabbelnder Schrecken",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/kraft-aus-schmerzen.html",
+        "name": "Kraft aus Schmerzen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/kdt.html",
+        "name": "Kraft des Tieres",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/krär.html",
+        "name": "Krähenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Krötensprung.html",
+        "name": "Krötensprung",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/kn.html",
+        "name": "Kulminatio",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Kusch.html",
+        "name": "Kusch",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_LastdesAlters.html",
+        "name": "Last des Alters",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/lf.html",
+        "name": "Levthans Feuer",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/lpf.html",
+        "name": "Luftpfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_LungedesLeviatan.html",
+        "name": "Lunge des Leviatan",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/mde.html",
+        "name": "Mal der Erschöpfung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/mds.html",
+        "name": "Mal der Schwäche",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Manifesto.html",
+        "name": "Manifesto",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_ManusIllusionis.html",
+        "name": "Manus Illusionis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Manus_Miracula.html",
+        "name": "Manus Miracula",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Memorans.html",
+        "name": "Memorans",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "url": "index.php/ZS_Menetekel.html",
+        "name": "Menetekel",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Motoricus.html",
+        "name": "Motoricus",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Nebelform.html",
+        "name": "Nebelform",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Nebelwand.html",
+        "name": "Nebelwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Nuntiovolo.html",
+        "name": "Nuntiovolo",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Objectobscuro.html",
+        "name": "Objectobscuro",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Objectofixo.html",
+        "name": "Objectofixo",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/obv.html",
+        "name": "Objectovoco",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Objektbann.html",
+        "name": "Objektbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_OculusAstralis.html",
+        "name": "Oculus Astralis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Oculus_llusionis.html",
+        "name": "Oculus Illusionis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Odem_Arcanum.html",
+        "name": "Odem Arcanum",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_3",
+        "spellid": "SPELL_30"
+    },
+    {
+        "url": "index.php/ZS_Oktagramma.html",
+        "name": "Oktagramma",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Orcanofaxius.html",
+        "name": "Orcanofaxius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Orcanosphaero.html",
+        "name": "Orcanosphaero",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/pd.html",
+        "name": "Pandaemonium",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Panik_ueberkomme_euch.html",
+        "name": "Panik überkomme euch",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/paral.html",
+        "name": "Paralysis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK",
+        "spellid": "SPELL_31"
+    },
+    {
+        "url": "index.php/ZS_Penetrizzel.html",
+        "name": "Penetrizzel",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
+        "spellid": "SPELL_32"
+    },
+    {
+        "url": "index.php/ZS_Pentagramma.html",
+        "name": "Pentagramma",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Pestilenz_erspueren.html",
+        "name": "Pestilenz erspüren",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3"
+    },
+    {
+        "url": "index.php/po.html",
+        "name": "Pestodem",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Physiostabilis.html",
+        "name": "Physiostabilis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Plumbumbarum.html",
+        "name": "Plumbumbarum",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Projectimago.html",
+        "name": "Projectimago",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Psychostabilis.html",
+        "name": "Psychostabilis",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Radau.html",
+        "name": "Radau",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Reflectimago.html",
+        "name": "Reflectimago",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Regeneratio.html",
+        "name": "Regeneratio",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/rept.html",
+        "name": "Reptilea",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Respondami.html",
+        "name": "Respondami",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Salander.html",
+        "name": "Salander",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/sf.html",
+        "name": "Sanfter Fall",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Sanftmut.html",
+        "name": "Sanftmut",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Sapefacta.html",
+        "name": "Sapefacta",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Satuarias_Herrlichkeit.html",
+        "name": "Satuarias Herrlichkeit",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Schimmernder_Schild.html",
+        "name": "Schimmernder Schild",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Schlangenruf.html",
+        "name": "Schlangenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/sa.html",
+        "name": "Schlechte Ausstrahlung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/sdu.html",
+        "name": "Schleier der Unwissenheit",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Schmerzenlindern.html",
+        "name": "Schmerzen lindern",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Schuppenhaut.html",
+        "name": "Schuppenhaut",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_SchwarzundRot.html",
+        "name": "Schwarz und Rot",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/ZS_SchwarzerSchrecken.html",
+        "name": "Schwarzer Schrecken",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/se.html",
+        "name": "Seelentier erkennen",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/sz.html",
+        "name": "Seidenzunge",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Sensattacco.html",
+        "name": "Sensattacco",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Sensibar.html",
+        "name": "Sensibar",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/st.html",
+        "name": "Serpentialis",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Silentium.html",
+        "name": "Silentium",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/ZS_Sinesigil.html",
+        "name": "Sinesigil",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Skelettarius.html",
+        "name": "Skelettarius",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Solidirid.html",
+        "name": "Solidirid",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Somnigravis.html",
+        "name": "Somnigravis",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Sphaerenbann.html",
+        "name": "Sphärenbann",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Spinnenlauf.html",
+        "name": "Spinnenlauf",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/sr.html",
+        "name": "Spinnenruf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Spurlos.html",
+        "name": "Spurlos",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/standfest.html",
+        "name": "Standfest",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/sw.html",
+        "name": "Steinwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Stillstand.html",
+        "name": "Stillstand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Sturm_der_Verunsicherung.html",
+        "name": "Sturm der Verunsicherung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Sturmwand.html",
+        "name": "Sturmwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Sumus_Elixiere.html",
+        "name": "Sumus Elixiere",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_3"
+    },
+    {
+        "url": "index.php/ZS_Taubheit.html",
+        "name": "Taubheit",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Telekinesebann.html",
+        "name": "Telekinesebann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Temporalbann.html",
+        "name": "Temporalbann",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Tempus_Stasis.html",
+        "name": "Tempus Stasis",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/tb.html",
+        "name": "Tiere besprechen",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Tiergedanken.html",
+        "name": "Tiergedanken",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Transversalis.html",
+        "name": "Transversalis",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/uef.html",
+        "name": "Unentflammbarkeit",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ug.html",
+        "name": "Ungeschickt",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/vu.html",
+        "name": "Verunsicherung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Verwandlungsbann.html",
+        "name": "Verwandlungsbann",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/ZS_Vipernblick.html",
+        "name": "Vipernblick",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_1",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Visibili.html",
+        "name": "Visibili",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Vogelzwitschern.html",
+        "name": "Vogelzwitschern",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Wasseratem.html",
+        "name": "Wasseratem",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/wpf.html",
+        "name": "Wasserpfeil",
+        "spell": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5"
+    },
+    {
+        "url": "index.php/wdr.html",
+        "name": "Welle der Reinigung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/wds.html",
+        "name": "Welle des Schmerzes",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_8"
+    },
+    {
+        "url": "index.php/wl.html",
+        "name": "Wellenlauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Wellenwand.html",
+        "name": "Wellenwand",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/wipl.html",
+        "name": "Wipfellauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/ZS_Woge_der_Versteinerung.html",
+        "name": "Woge der Versteinerung",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7"
+    },
+    {
+        "url": "index.php/ZS_Wolfstatze.html",
+        "name": "Wolfstatze",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/wül.html",
+        "name": "Wüstenlauf",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_6"
+    },
+    {
+        "url": "index.php/zh.html",
+        "name": "Zauberpferd herbeirufen",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/zf.html",
+        "name": "Zitterfinger",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Zorn_der_Elemente.html",
+        "name": "Zorn der Elemente",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4"
+    },
+    {
+        "url": "index.php/ZS_Zunge_betäuben.html",
+        "name": "Zunge betäuben",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "ZK"
+    },
+    {
+        "url": "index.php/ZS_Zweifel_schueren.html",
+        "name": "Zweifel schüren",
+        "spell": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "modagainst": "SK"
+    },
+    {
+        "url": "index.php/ZS_Zwingtanz.html",
+        "name": "Zwingtanz",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_88"
+    },
+    {
+        "url": "index.php/ZS_Ängste_lindern.html",
+        "name": "Ängste lindern",
+        "spell": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_4",
+        "spellid": "SPELL_68"
+    },
+    {
+        "url": "index.php/Rit_MagischerRaub.html",
+        "name": "Magischer Raub",
+        "spell": false,
+        "ritual": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_7",
+        "modagainst": "SK",
+        "spellid": "SPELL_176"
+    },
+    {
+        "url": "index.php/db.html",
+        "name": "Destructibo",
+        "spell": false,
+        "ritual": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_311"
+    },
+    {
+        "url": "index.php/cd.html",
+        "name": "Custodosigil",
+        "spell": false,
+        "ritual": true,
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_310"
+    },
+    {
+        "url": "",
+        "name": "Brandform",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_309"
+    },
+    {   
+        "url": "",
+        "name": "Caldofrigo",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_170"
+    },
+    {
+        "url": "",
+        "name": "Blick in die Vergangenheit",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_308"
+    },
+    {
+        "url": "",
+        "name": "Arcanovi",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_46"
+    },
+    {
+        "url": "",
+        "name": "Animatio",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_305"
+    },
+    {
+        "url": "",
+        "name": "Adamantium",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_304"
+    },
+    {
+        "url": "",
+        "name": "Accuratum",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_172"
+    },
+    {
+        "url": "",
+        "name": "Bärenruhe",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_307"
+    },
+    {
+        "url": "",
+        "name": "Band der Freundschaft",
+        "spell": false,
+        "ritual": true,
+        "ab1": "",
+        "ab2": "",
+        "ab3": "",
+        "spellid": "SPELL_306"
+    }
+]
