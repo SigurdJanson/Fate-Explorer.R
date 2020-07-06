@@ -29,9 +29,9 @@ replace_umlauts <- function(x) {
 #' @return An icon element (which is a browsable object).
 #' @note Replacement for the `icon()` function of shiny. Accepts other icon libs.
 #' @source https://stackoverflow.com/questions/55163719/r-shiny-how-to-use-fontawesome-pro-version-with-the-icon-function
-gicon <- function (name, class = NULL, lib = "fontello") {
+gicon <- function (name, class = NULL, lib = "fe") {
 
-  prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon", fontello = "icon")
+  prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon", fe = "icon-fe")
   prefix <- prefixes[[lib]]
   if (is.null(prefix)) {
     stop("Unknown font library '", lib, "' specified. Must be one of ", 

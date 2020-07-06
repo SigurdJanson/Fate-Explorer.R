@@ -1,16 +1,13 @@
 # UI Skeleton
 
-#jscode <- "shinyjs.refresh = function() { history.go(0); }"
 source(file.path("ui", "btn_skill_rdbsource.R"), local = TRUE)
 
 ui <- shinyUI(fluidPage(
   shinyjs::useShinyjs(),
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "fontello.css"),
+    tags$link(rel = "stylesheet", type = "text/css", href = "fatexplorer.css"),
     tags$link(rel = "stylesheet", type = "text/css", href = "rolloutput.css")
   ),
-  # useShinyjs(),
-  # extendShinyjs(text = jscode),
   # titlePanel(title = "Fate Explorer", windowTitle = "Fate Explorer"),
   navbarPage(i18n$t("The Dark Eye - Fate Explorer"), 
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
