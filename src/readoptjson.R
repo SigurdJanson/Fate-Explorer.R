@@ -34,6 +34,23 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 
 
 
+GetSpells_Opt <- function(Spells, Language = "de") {
+  # Get data frame with skill definitions
+  SpellList <- GetSpells(Language)
+  SpellList$value <- 0
+  # 
+  SpellValID <- match(names(Spells), SpellList[["spellid"]])
+  # filter out NAs when spell is not in db
+  Spells     <- Spells[!is.na(SpellValID)]
+  SpellValID <- SpellValID[!is.na(SpellValID)]
+  # sort and filter out the spells the hero hasn't  mastered, yet
+  SpellList <- SpellList[SpellValID, ]
+  SpellList$value <- unlist(Spells)
+
+  return(SpellList)
+}
+
+
 #' GetCombatSkill
 #' Compute combat skill based on DSA5 rules
 #' @details 

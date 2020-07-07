@@ -2,17 +2,18 @@
 
 Character <- reactiveValues(Name = "No character has been uploaded",
                             Attr = NULL, Skills = NULL, Weapons = NULL,
-                            CombatSkills = NULL)
+                            CombatSkills = NULL, MagicSkills = NULL)
 RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
 
 
-
-# Global function to extract the list of weapons from Json
+#' SetupCharacterWeapons
+#' Global function to extract the list of weapons from Json
+#' @param AddImprov Shall improvised weapons be loaded as well? (`TRUE`/`FALSE`)
+#' @return NULL
 SetupCharacterWeapons <- function(AddImprov = FALSE) {
   Weapons <- GetWeapons_Opt(RawCharacterFile()[["belongings"]][["items"]], # belongings
                             Character$CombatSkills,  # combat techniques
                             Character$Attr, AddUnarmed = TRUE, AddImprov = AddImprov)
-#browser()
   Character$Weapons <- NULL
   WeaponNames <- NULL
   for (w in Weapons["templateID", ]) {
@@ -28,6 +29,23 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
   
   # Update dropdown list on Combat Tab
   updateSelectInput(session, "cmbCombatSelectWeapon", choices = WeaponNames, selected = 1)
+  
+  invisible(NULL)
+}
+
+
+#' SetupMagicSkills
+#' Global function to extract the list of weapons from Json and merge it with the 
+#' skill values of the character.
+#' @return NULL
+SetupMagicSkills <- function() {
+#browser()
+  Data <- RawCharacterFile()[["spells"]]
+  if (isTruthy(Data) && length(Data) > 0) {
+    Character$MagicSkills <- GetSpells_Opt(Data)
+  }
+  
+  invisible(NULL)
 }
 
 
@@ -49,6 +67,7 @@ observeEvent(input$CharFile, {
   Character$Skills  <- GetSkills_Opt(Data[["talents"]], Language)
   Character$CombatSkills <- Data[["ct"]]
   SetupCharacterWeapons(input$chbShowImprovWeapons)
+  SetupMagicSkills()
   
   # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update dropdown list on Skills Tab
@@ -111,7 +130,7 @@ output$SetupAttr <- renderTable({
 
 
 
-# Skills Panel ---------------------
+# Skills Panels ---------------------
 output$ShowSetupSkills <- reactive({
   return( !is.null(Character$Skills) )
 })
@@ -133,6 +152,29 @@ output$SetupSkills <- renderTable({
   Result
 }, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
 
+
+
+output$ShowSetupSpells <- reactive({
+  return( !is.null(Character$MagicSkills) )
+})
+outputOptions(output, 'ShowSetupSpells', suspendWhenHidden = FALSE)
+
+output$SetupSpells <- renderTable({
+  Result <- Character$MagicSkills
+  Result <- Result[-which(names(Result) == "url")]
+  Result <- Result[-which(names(Result) == "spellid")]
+  
+  # Show names not codes
+  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  NameMapping <- GetAbilities(Language)
+  for (ablty in paste0("ab", 1:3)) {
+    Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
+  }
+  # Column names
+  colnames(Result) <- c(i18n$t("Skill"), i18n$t("Zauber"), paste(i18n$t("SC"), 1:3), i18n$t("Modifier"), "___", i18n$t("SR"))
+  
+  Result
+})
 
 
 # Combat Panel ------------------------
