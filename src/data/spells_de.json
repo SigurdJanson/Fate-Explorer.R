@@ -2127,7 +2127,8 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
         "modagainst": "SK",
-        "spellid": "SPELL_176"
+        "spellid": "SPELL_176",
+        "category": "Einfluss"
     },
     {
         "url": "index.php/db.html",
@@ -2137,7 +2138,8 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_311"
+        "spellid": "SPELL_311",
+        "category": "Objekt"
     },
     {
         "url": "index.php/cd.html",
@@ -2147,116 +2149,150 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_310"
+        "spellid": "SPELL_310",
+        "category": "Objekt"
     },
     {
-        "url": "",
+        "url": "index.php/bf.html",
         "name": "Brandform",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_309"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_309",
+        "category": "Elementar"
     },
     {   
-        "url": "",
+        "url": "index.php/Rit_Caldofrigo.html",
         "name": "Caldofrigo",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_170"
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_7",
+        "spellid": "SPELL_170",
+        "category": "Elementar"
     },
     {
-        "url": "",
+        "url": "index.php/bidv.html",
         "name": "Blick in die Vergangenheit",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_2",
+        "ab3": "ATTR_3",
         "spellid": "SPELL_308"
     },
     {
-        "url": "",
+        "url": "index.php/Rit_Arcanovi.html",
         "name": "Arcanovi",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_46"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_46",
+        "category": "Objekt"
     },
     {
-        "url": "",
+        "url": "index.php/anim.html",
         "name": "Animatio",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_305"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_6",
+        "spellid": "SPELL_305",
+        "category": "Telekinese"
     },
     {
-        "url": "",
+        "url": "index.php/ad.html",
         "name": "Adamantium",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_304"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "spellid": "SPELL_304",
+        "category":"Elementar"
     },
     {
-        "url": "",
+        "url": "index.php/Rit_Accuratum.html",
         "name": "Accuratum",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_172"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5",
+        "spellid": "SPELL_172",
+        "category": "Objekt"
     },
     {
-        "url": "",
+        "url": "index.php/br.html",
         "name": "Bärenruhe",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_307"
+        "ab1": "ATTR_1",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_7",
+        "spellid": "SPELL_307",
+        "category": "Verwandlung"
     },
     {
-        "url": "",
+        "url": "index.php/bdf.html",
         "name": "Band der Freundschaft",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_306"
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_4",
+        "modagainst": "SK",
+        "spellid": "SPELL_306",
+        "category": "Einfluss"
     },
     {
-        "url": "",
+        "url": "index.php/wf.html",
         "name": "Wogenform",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_334"
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_5",
+        "ab3": "ATTR_8",
+        "spellid": "SPELL_334",
+        "category": "Elementar"
     },
     {
-        "url": "",
+        "url": "index.php/Rit_Widerwille.html",
         "name": "Widerwille",
         "spell": false,
         "ritual": true,
-        "ab1": "",
-        "ab2": "",
-        "ab3": "",
-        "spellid": "SPELL_181"
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_6",
+        "spellid": "SPELL_181",
+        "category": "Einfluss"
+    },
+    {
+        "url": "index.php/Rit_AufmerksamerWaechter.html",
+        "name": "Aufmerksamer Wächter",
+        "spell": false,
+        "ritual": true,
+        "ab1": "ATTR_3",
+        "ab2": "ATTR_4",
+        "ab3": "ATTR_5",
+        "spellid": "",
+        "category": "Objekt"
+    },
+    {
+        "url": "index.php/ZS_Applicatus.html",
+        "name": "Applicatus",
+        "spell": false,
+        "ritual": true,
+        "ab1": "ATTR_2",
+        "ab2": "ATTR_3",
+        "ab3": "ATTR_5",
+        "spellid": "",
+        "category": "Objekt"
     }
 ]
