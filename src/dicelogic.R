@@ -180,17 +180,23 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
   if (length(Roll) != 3L) stop("Skill roll shall have exactly three values")
   if (length(Abilities) != 3L) stop("Skill roll requires 3 abilities to roll against")
   
-  EffectiveQualities <- Abilities + Modifier
-  Check <- pmax(Roll - EffectiveQualities, rep(0L, 3L))
-  Remainder <- Skill - sum(Check)
-  
-  Success <- ifelse(Remainder >= 0, "Success", "Fail")
-  QL <- SkillRollQuality(Remainder)
-  
-  if (sum(Roll == 20L) >= 2L) 
+  if (sum(Roll == 20L) >= 2L) {
     Success <- "Fumble"
-  else if (sum(Roll == 1L) >= 2L)
+    Remainder <- 0L
+    QL <- 0L
+  }
+  else if (sum(Roll == 1L) >= 2L) {
     Success <- "Critical"
+    Remainder <- Skill
+    QL <- SkillRollQuality(Remainder)
+  } else {
+    EffectiveAbilities <- Abilities + Modifier
+    Check <- pmax(Roll - EffectiveAbilities, rep(0L, 3L))
+    Remainder <- Skill - sum(Check)
+
+    Success <- ifelse(Remainder >= 0, "Success", "Fail")
+    QL <- SkillRollQuality(Remainder)
+  }
   
   return(list(Message = Success, QL = QL, Remainder = Remainder))
 }

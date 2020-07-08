@@ -161,7 +161,7 @@ test_that("CombatFumbleRoll", {
 
 
 
-
+# Skill -------------
 
 test_that("SkillRollQuality", {
   expect_identical(SkillRollQuality(-1), 0L)
@@ -173,6 +173,33 @@ test_that("SkillRollQuality", {
   
 })
 
+test_that("VerifySkillRoll", {
+  
+  # Different rolls
+  for (r in 2:10) {
+    o <- VerifySkillRoll(rep(r, 3), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L)
+    expect_identical(o, list(Message = "Success", QL = 1L, Remainder = 0L))
+  }
+  for (r in 11:19) {
+    o <- VerifySkillRoll(rep(r, 3), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L)
+    expect_identical(o, list(Message = "Fail", QL = 0L, Remainder = -3L*(r-10L)))
+  }
+  o <- VerifySkillRoll(c(1, 20, 1), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L)
+  expect_identical(o, list(Message = "Critical", QL = 1L, Remainder = 0L))
+  o <- VerifySkillRoll(c(20, 20, 1), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L)
+  expect_identical(o, list(Message = "Fumble", QL = 0L, Remainder = 0L))
+  
+  # Different mods
+  for (m in -5L:-1L) {
+    o <- VerifySkillRoll(rep(10L, 3), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = m)
+    expect_identical(o, list(Message = "Fail", QL = 0L, Remainder = 3L*m))
+  }
+  for (m in 0L:5L) {
+    o <- VerifySkillRoll(rep(10L, 3), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = m)
+    expect_identical(o, list(Message = "Success", QL = 1L, Remainder = 0L))
+  }
+  
+})
 
 
 test_that("CanRoutineSkillCheck / RoutineCheck", {
