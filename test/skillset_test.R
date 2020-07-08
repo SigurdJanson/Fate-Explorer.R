@@ -3,7 +3,7 @@ library(testthat)
 library(jsonlite)
 library(shiny)
 setwd("../src")
-source("./skillsets.R")
+source("./skillset.R")
 setwd("../test")
 
 # Skill import
@@ -137,4 +137,15 @@ test_that("Profane Skill Set", {
   
   o <- Set$GetSkillIndex(c("TAL_1", "TAL_59"))
   expect_identical(o, c(1L, 59L))
+  
+  #
+  o <- Set$GetSkillName("All")
+  expect_length(o, 59)
+  expect_type(o, "character")
+  
+  # 
+  o <- Set$GetClasses()
+  e <- c("Körpertalente","Gesellschaftstalente", "Naturtalente", 
+         "Wissenstalente", "Handwerkstalente")
+  expect_identical(o, e)
 })

@@ -14,7 +14,7 @@ SkillSet <- R6Class("SkillSet", public = list(
   LastSkill     = NA, # skill of last roll
   LastRoll      = NA, # die roll, `numeric(3)` or TRUE/FALSE in case of routine check
   LastAbilities = NA,
-  LastSkillVal = NA,
+  LastSkillVal  = NA,
   LastModifier  = NA, # additional situation dependent modifier
   LastResult    = NA, # Critical, Success, Fail, Botch
   LastQL        = NA, # Quality level
@@ -107,7 +107,10 @@ SkillSet <- R6Class("SkillSet", public = list(
   #' GetSkillName
   #' Returns the names of a given vector of skills
   GetSkillName = function(SkillIdent) {
-    SkillIndex <- self$GetSkillIndex(SkillIdent)
+    if (!is.na(pmatch(SkillIdent, "All")))
+      SkillIndex <- 1:nrow(self$Skills)
+    else
+      SkillIndex <- self$GetSkillIndex(SkillIdent)
     
     return(self$Skills[SkillIndex, "name"])
   },
@@ -119,6 +122,12 @@ SkillSet <- R6Class("SkillSet", public = list(
     SkillIndex <- self$GetSkillIndex(SkillIdent)
     
     return(self$Skills[SkillIndex, "attrID"])
+  },
+  
+
+  #' GetClasses
+  GetClasses = function() {
+    unique(self$Skills[, "class"])
   },
   
   
