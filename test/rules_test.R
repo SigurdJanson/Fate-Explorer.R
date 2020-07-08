@@ -1,5 +1,6 @@
 library(testthat)
 library(jsonlite)
+library(shiny)
 
 setwd("..")
 source("./src/rules.R")
