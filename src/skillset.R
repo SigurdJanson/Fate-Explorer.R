@@ -37,7 +37,13 @@ SkillSet <- R6Class("SkillSet", public = list(
                                   abval1 = 10, abval1 = 10, abval1 = 10)
       self$Modifier <- 0L
     } else {
-      self$Skills   <- GetSkills_Opt(Skills)
+      if (Type == .SkillType["Profane"]) {
+        self$Skills <- GetSkills_Opt(Skills)
+      } else if (Type == .SkillType["Magic"]) {
+        self$Skills <- GetSpells_Opt(Skills)
+      } else  if (Type == .SkillType["Sacred"]) {
+        #TODO#################
+      } else stop("Unknown type of skill")
       self$Modifier <- 0L
       # Add ability values to each skill
       AbilityIDs  <- self$Skills[, paste0("ab", 1:3)]
