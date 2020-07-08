@@ -6,7 +6,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_89"
+        "attrID": "SPELL_89"
     },
     {
         "url": "index.php/ZS_Abvenenum.html",
@@ -15,7 +15,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_90"
+        "attrID": "SPELL_90"
     },
     {
         "url": "index.php/ZS_Adlerauge.html",
@@ -24,7 +24,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_1"
+        "attrID": "SPELL_1"
     },
     {
         "url": "index.php/ZS_Adlerschwinge.html",
@@ -33,7 +33,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_91"
+        "attrID": "SPELL_91"
     },
     {
         "url": "index.php/ZS_Aeolito.html",
@@ -43,7 +43,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_92"
+        "attrID": "SPELL_92"
     },
     {
         "url": "index.php/aa.html",
@@ -52,7 +52,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_234"
+        "attrID": "SPELL_234"
     },
     {
         "url": "index.php/ar.html",
@@ -61,7 +61,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_235"
+        "attrID": "SPELL_235"
     },
     {
         "url": "index.php/ZS_Alpgestalt.html",
@@ -71,7 +71,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
         "modagainst": "SK",
-        "spellid": "SPELL_93"
+        "attrID": "SPELL_93"
     },
     {
         "url": "index.php/ZS_Altisonus.html",
@@ -80,7 +80,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_94"
+        "attrID": "SPELL_94"
     },
     {
         "url": "index.php/ZS_Analys.html",
@@ -89,7 +89,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_2"
+        "attrID": "SPELL_2"
     },
     {
         "url": "index.php/ZS_Angstausloesen.html",
@@ -98,7 +98,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_95"
+        "attrID": "SPELL_95"
     },
     {
         "url": "index.php/ZS_Aquafaxius.html",
@@ -123,7 +123,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_236"
+        "attrID": "SPELL_236"
     },
     {
         "url": "index.php/ZS_Archofaxius.html",
@@ -132,7 +132,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_96"
+        "attrID": "SPELL_96"
     },
     {
         "url": "index.php/ZS_Archosphaero.html",
@@ -141,7 +141,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_97"
+        "attrID": "SPELL_97"
     },
     {
         "url": "index.php/ZS_Armatrutz.html",
@@ -150,7 +150,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_3"
+        "attrID": "SPELL_3"
     },
     {
         "url": "index.php/ZS_AromatisIllusionis.html",
@@ -159,7 +159,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_98"
+        "attrID": "SPELL_98"
     },
     {
         "url": "index.php/ZS_Atemnot.html",
@@ -169,7 +169,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_69"
+        "attrID": "SPELL_69"
     },
     {
         "url": "index.php/ZS_AttributoCharisma.html",
@@ -178,7 +178,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_99"
+        "attrID": "SPELL_99"
     },
     {
         "url": "index.php/ZS_AttributoFingerfertigkeit.html",
@@ -187,7 +187,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_100"
+        "attrID": "SPELL_100"
     },
     {
         "url": "index.php/attge.html",
@@ -196,7 +196,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_237"
+        "attrID": "SPELL_237"
     },
     {
         "url": "index.php/attributo-intuition.html",
@@ -205,7 +205,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_238"
+        "attrID": "SPELL_238"
     },
     {
         "url": "index.php/ZS_AttributoKlugheit.html",
@@ -214,7 +214,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_101"
+        "attrID": "SPELL_101"
     },
     {
         "url": "index.php/ak.html",
@@ -223,7 +223,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_240"
+        "attrID": "SPELL_240"
     },
     {
         "url": "index.php/ZS_Attributo_Körperkraft.html",
@@ -232,7 +232,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_70"
+        "attrID": "SPELL_70"
     },
     {
         "url": "index.php/am.html",
@@ -241,7 +241,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_239"
+        "attrID": "SPELL_239"
     },
     {
         "url": "index.php/ZS_Aufwecken.html",
@@ -250,7 +250,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_102"
+        "attrID": "SPELL_102"
     },
     {
         "url": "index.php/ZS_AugedesLimbus.html",
@@ -259,7 +259,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_103"
+        "attrID": "SPELL_103"
     },
     {
         "url": "index.php/ZS_Aura_der_Erschoepfung.html",
@@ -276,7 +276,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_104"
+        "attrID": "SPELL_104"
     },
     {
         "url": "index.php/ZS_AurisIllusionis.html",
@@ -285,7 +285,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_105"
+        "attrID": "SPELL_105"
     },
     {
         "url": "index.php/avl.html",
@@ -294,7 +294,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_241"
+        "attrID": "SPELL_241"
     },
     {
         "url": "index.php/ZS_Axxeleratus.html",
@@ -303,7 +303,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_4"
+        "attrID": "SPELL_4"
     },
     {
         "url": "index.php/ZS_Balsam.html",
@@ -312,7 +312,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_5"
+        "attrID": "SPELL_5"
     },
     {
         "url": "index.php/ZS_BandundFessel.html",
@@ -322,7 +322,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
         "modagainst": "SK",
-        "spellid": "SPELL_106"
+        "attrID": "SPELL_106"
     },
     {
         "url": "index.php/ZS_Bannbaladin.html",
@@ -332,7 +332,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_6"
+        "attrID": "SPELL_6"
     },
     {
         "url": "index.php/bl.html",
@@ -341,7 +341,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_242"
+        "attrID": "SPELL_242"
     },
     {
         "url": "index.php/ZS_BlickaufsWesen.html",
@@ -351,7 +351,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_107"
+        "attrID": "SPELL_107"
     },
     {
         "url": "index.php/ZS_Blick_in_die_Gedanken.html",
@@ -361,7 +361,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "modagainst": "SK",
-        "spellid": "SPELL_7"
+        "attrID": "SPELL_7"
     },
     {
         "url": "index.php/ZS_Blindheit.html",
@@ -371,7 +371,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_108"
+        "attrID": "SPELL_108"
     },
     {
         "url": "index.php/ZS_Blitz.html",
@@ -381,7 +381,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_8"
+        "attrID": "SPELL_8"
     },
     {
         "url": "index.php/ZS_Blitzball.html",
@@ -398,7 +398,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_243"
+        "attrID": "SPELL_243"
     },
     {
         "url": "index.php/brazoraghs-hieb.html",
@@ -416,7 +416,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_244"
+        "attrID": "SPELL_244"
     },
     {
         "url": "index.php/ZS_Boeser_Blick.html",
@@ -434,7 +434,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_109"
+        "attrID": "SPELL_109"
     },
     {
         "url": "index.php/ZS_Claudibus.html",
@@ -443,7 +443,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_71"
+        "attrID": "SPELL_71"
     },
     {
         "url": "index.php/ZS_Corpofesso.html",
@@ -453,7 +453,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_9"
+        "attrID": "SPELL_9"
     },
     {
         "url": "index.php/ZS_Corpofrigo.html",
@@ -463,7 +463,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_72"
+        "attrID": "SPELL_72"
     },
     {
         "url": "index.php/ZS_Debilitatio.html",
@@ -472,7 +472,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_112"
+        "attrID": "SPELL_112"
     },
     {
         "url": "index.php/ZS_Desintegratus.html",
@@ -481,7 +481,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_113"
+        "attrID": "SPELL_113"
     },
     {
         "url": "index.php/ZS_Disruptivo.html",
@@ -490,7 +490,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_10"
+        "attrID": "SPELL_10"
     },
     {
         "url": "index.php/ZS_Dornenwand.html",
@@ -507,7 +507,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_246"
+        "attrID": "SPELL_246"
     },
     {
         "url": "index.php/ZS_Dunkelheit.html",
@@ -516,7 +516,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_73"
+        "attrID": "SPELL_73"
     },
     {
         "url": "index.php/ZS_Duplicatus.html",
@@ -525,7 +525,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_11"
+        "attrID": "SPELL_11"
     },
     {
         "url": "index.php/ZS_Daemonenbann.html",
@@ -534,7 +534,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_110"
+        "attrID": "SPELL_110"
     },
     {
         "url": "index.php/ZS_Daemonenschild.html",
@@ -543,7 +543,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_111"
+        "attrID": "SPELL_111"
     },
     {
         "url": "index.php/dv.html",
@@ -553,7 +553,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "modagainst": "SK",
-        "spellid": "SPELL_245"
+        "attrID": "SPELL_245"
     },
     {
         "url": "index.php/ZS_Ecliptifactus.html",
@@ -562,7 +562,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_74"
+        "attrID": "SPELL_74"
     },
     {
         "url": "index.php/el.html",
@@ -580,7 +580,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_249"
+        "attrID": "SPELL_249"
     },
     {
         "url": "index.php/ZS_EigeneAengste.html",
@@ -590,7 +590,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_248"
+        "attrID": "SPELL_248"
     },
     {
         "url": "index.php/ZS_Einflussbann.html",
@@ -599,7 +599,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_114"
+        "attrID": "SPELL_114"
     },
     {
         "url": "index.php/ZS_Eisenrost.html",
@@ -608,7 +608,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_115"
+        "attrID": "SPELL_115"
     },
     {
         "url": "index.php/eispf.html",
@@ -650,7 +650,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_118"
+        "attrID": "SPELL_118"
     },
     {
         "url": "index.php/ZS_Erschoepfungen_lindern.html",
@@ -771,7 +771,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_13"
+        "attrID": "SPELL_13"
     },
     {
         "url": "index.php/ZS_Foramen.html",
@@ -821,7 +821,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_14"
+        "attrID": "SPELL_14"
     },
     {
         "url": "index.php/ZS_Gardianium.html",
@@ -1052,7 +1052,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_20"
+        "attrID": "SPELL_20"
     },
     {
         "url": "index.php/ZS_Humofaxius.html",
@@ -1086,7 +1086,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_79"
+        "attrID": "SPELL_79"
     },
     {
         "url": "index.php/ZS_Ignifaxius.html",
@@ -1129,7 +1129,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_134"
+        "attrID": "SPELL_134"
     },
     {
         "url": "index.php/ZS_Impersona.html",
@@ -1138,7 +1138,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_135"
+        "attrID": "SPELL_135"
     },
     {
         "url": "index.php/ZS_Incendio.html",
@@ -1428,7 +1428,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_149"
+        "attrID": "SPELL_149"
     },
     {
         "url": "index.php/ZS_Oculus_llusionis.html",
@@ -1437,7 +1437,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_29"
+        "attrID": "SPELL_29"
     },
     {
         "url": "index.php/ZS_Odem_Arcanum.html",
@@ -1446,7 +1446,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_30"
+        "attrID": "SPELL_30"
     },
     {
         "url": "index.php/ZS_Oktagramma.html",
@@ -1496,7 +1496,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
-        "spellid": "SPELL_31"
+        "attrID": "SPELL_31"
     },
     {
         "url": "index.php/ZS_Penetrizzel.html",
@@ -1505,7 +1505,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_32"
+        "attrID": "SPELL_32"
     },
     {
         "url": "index.php/ZS_Pentagramma.html",
@@ -1604,7 +1604,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_35"
+        "attrID": "SPELL_35"
     },
     {
         "url": "index.php/ZS_Salander.html",
@@ -1798,7 +1798,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_40"
+        "attrID": "SPELL_40"
     },
     {
         "url": "index.php/ZS_Sphaerenbann.html",
@@ -2020,7 +2020,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_298"
+        "attrID": "SPELL_298"
     },
     {
         "url": "index.php/wds.html",
@@ -2029,7 +2029,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_299"
+        "attrID": "SPELL_299"
     },
     {
         "url": "index.php/wl.html",
@@ -2130,7 +2130,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_88"
+        "attrID": "SPELL_88"
     },
     {
         "url": "index.php/ZS_Ängste_lindern.html",
@@ -2139,7 +2139,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "spellid": "SPELL_68"
+        "attrID": "SPELL_68"
     },
     {
         "url": "index.php/Rit_MagischerRaub.html",
@@ -2149,7 +2149,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
         "modagainst": "SK",
-        "spellid": "SPELL_176",
+        "attrID": "SPELL_176",
         "category": "Einfluss"
     },
     {
@@ -2159,7 +2159,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_311",
+        "attrID": "SPELL_311",
         "category": "Objekt"
     },
     {
@@ -2169,7 +2169,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_310",
+        "attrID": "SPELL_310",
         "category": "Objekt"
     },
     {
@@ -2179,7 +2179,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_309",
+        "attrID": "SPELL_309",
         "category": "Elementar"
     },
     {   
@@ -2189,7 +2189,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_170",
+        "attrID": "SPELL_170",
         "category": "Elementar"
     },
     {
@@ -2199,7 +2199,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "spellid": "SPELL_308"
+        "attrID": "SPELL_308"
     },
     {
         "url": "index.php/Rit_Arcanovi.html",
@@ -2208,7 +2208,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_46",
+        "attrID": "SPELL_46",
         "category": "Objekt"
     },
     {
@@ -2218,7 +2218,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_305",
+        "attrID": "SPELL_305",
         "category": "Telekinese"
     },
     {
@@ -2228,7 +2228,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_304",
+        "attrID": "SPELL_304",
         "category":"Elementar"
     },
     {
@@ -2238,7 +2238,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "spellid": "SPELL_172",
+        "attrID": "SPELL_172",
         "category": "Objekt"
     },
     {
@@ -2248,7 +2248,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_307",
+        "attrID": "SPELL_307",
         "category": "Verwandlung"
     },
     {
@@ -2259,7 +2259,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "spellid": "SPELL_306",
+        "attrID": "SPELL_306",
         "category": "Einfluss"
     },
     {
@@ -2269,7 +2269,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
-        "spellid": "SPELL_334",
+        "attrID": "SPELL_334",
         "category": "Elementar"
     },
     {
@@ -2279,7 +2279,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "spellid": "SPELL_181",
+        "attrID": "SPELL_181",
         "category": "Einfluss"
     },
     {
@@ -2289,7 +2289,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "spellid": "",
+        "attrID": "",
         "category": "Objekt"
     },
     {
@@ -2299,7 +2299,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
-        "spellid": "",
+        "attrID": "",
         "category": "Objekt"
     },
     {
@@ -2309,7 +2309,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "spellid": "SPELL_314",
+        "attrID": "SPELL_314",
         "category": "Elementar"
     }
 ]
