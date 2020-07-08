@@ -65,7 +65,16 @@ SkillSet <- R6Class("SkillSet", public = list(
     Abilities  <- self$Skills[SkillIndex, paste0("abval", 1:3)]
     return(unlist(Abilities))
   },
-  
+
+  #' GetAbilityID
+  #' Get the IDs of the abilities that a skill roll is rolled against
+  GetAbilityID = function(SkillIndex) {
+    if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
+      stop("Invalid skill index")
+    
+    Abilities  <- self$Skills[SkillIndex, paste0("ab", 1:3)]
+    return(unlist(Abilities))
+  },
   
   #' GetSkillIndex
   #' Get numeric index of skill in `self$Skills` from ID string, name. 
@@ -226,7 +235,6 @@ SkillSet <- R6Class("SkillSet", public = list(
   
   #' Verifies if the desired skill supports a skill check
   CanRoutineCheck = function(SkillIdent, Mod) {
-#browser()
     Values <- self$GetSkillValues(SkillIdent, 0, NoSkill = FALSE)
     Result <- CanRoutineSkillCheck(Values[1:3], Values[4], self$Modifier + Mod)
     return(Result)
