@@ -193,7 +193,6 @@ IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
       IsRanged <- FALSE
     }
   } else { #if (!missing(CombatTech)) {
-    browser()
     ct <- GetCombatTechniques()
     IsRanged <- !is.na(match(CombatTech, paste0("CT_", c(1:2, 11, 14, 17:19))))
   }
