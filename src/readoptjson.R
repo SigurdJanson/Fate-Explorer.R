@@ -39,7 +39,7 @@ GetSpells_Opt <- function(Spells, Language = "de") {
   SpellList <- GetSpells(Language)
   SpellList$value <- 0
   # 
-  SpellValID <- match(names(Spells), SpellList[["spellid"]])
+  SpellValID <- match(names(Spells), SpellList[["attrID"]])
   # filter out NAs when spell is not in db
   Spells     <- Spells[!is.na(SpellValID)]
   SpellValID <- SpellValID[!is.na(SpellValID)]
