@@ -65,6 +65,15 @@ GetFumbleEffect <- function(RollValue,
 # setwd("..")
 
 
+
+#' FumbleRoll
+#' Determine the effect after a fumble.
+#' @return A 2d6 random number (i.e. between 2 and 12)
+FumbleRoll <- function() {
+  Result <- sum(sample.int(6L, 2L, replace = TRUE))
+}
+
+
 # ABILITIES ---------------------------------------
 
 #' AbilityRoll
@@ -114,13 +123,6 @@ CombatRoll <- function() {
 #' @return nD + m, i.e. a random number between n+m and (n*6)+m
 DamageRoll <- function(D = 1L, DP = 6L, Mod = 0L) {
   return(sum(sample.int(DP, D, replace = TRUE)) + Mod)
-}
-
-#' CombatFumbleRoll
-#' Determine the effect after a fumble in combat.
-#' @return A 2d6 random number (i.e. between 2 and 12)
-CombatFumbleRoll <- function() {
-  Result <- sum(sample.int(6L, 2L, replace = TRUE))
 }
 
 

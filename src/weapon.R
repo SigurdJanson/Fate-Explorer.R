@@ -158,7 +158,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   FumbleRoll = function() {
     if (!isTruthy(self$LastFumbleEffect))
       if (self$LastResult == .SuccessLevel["Fumble"]) {
-        self$LastFumbleEffect <- GetFumbleEffect(CombatFumbleRoll(),
+        self$LastFumbleEffect <- GetFumbleEffect(FumbleRoll(),
                                                  names(self$LastAction),
                                                  names(self$Type))
       }

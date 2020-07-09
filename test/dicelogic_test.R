@@ -151,9 +151,9 @@ test_that("DamageRoll", {
 
 
 
-test_that("CombatFumbleRoll", {
+test_that("FumbleRoll", {
   for(i in 1:100) {
-    o <- CombatFumbleRoll()
+    o <- FumbleRoll()
     expect_gte(o, 2)
     expect_lte(o, 12)
   }
