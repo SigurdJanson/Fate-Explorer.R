@@ -10,17 +10,11 @@ sidebarLayout(
                      sliderInput("SkillTrait3", i18n$t("3rd Ability"), min = 1L, max = 20L, value = 11L, step = 1L),
                      hr(),
                      sliderInput("SkillValue", i18n$t("Skill"), min = 0L, max = 20L, value = 4L, step = 1L),
-                     hr(),
-                     div(style="float:right",
-                         conditionalPanel(condition = "input.SkillMod < 0", 
-                                          gicon("minus-circle"), i18n$t("Impediment")),
-                         conditionalPanel(condition = "input.SkillMod > 0", 
-                                          gicon("plus-circle"), i18n$t("Advantage"))
-                     )),
+                     hr()),
     
     # Skills loaded from character sheet
     conditionalPanel(condition = "input.rdbSkillSource == 'CharSkill'",
-                     selectInput("lbSkillGroups", NULL, NULL, selectize = FALSE, width = "100%"),
+                     selectInput("lbSkillClasses", NULL, NULL, selectize = FALSE, width = "100%"),
                      selectInput("lbCharSkills", NULL, NULL, selectize = FALSE, width = "100%", size = 14)
     ),
     
@@ -28,6 +22,12 @@ sidebarLayout(
     # Modifier in case we roll against values
     conditionalPanel(condition = "input.rdbSkillSource == 'CharSkill' || input.rdbSkillSource == 'ManualSkill'",
                      hr(),
+                     div(style="float:right",
+                         conditionalPanel(condition = "input.SkillMod < 0", 
+                                          gicon("minus-circle"), i18n$t("Impediment")),
+                         conditionalPanel(condition = "input.SkillMod > 0", 
+                                          gicon("plus-circle"), i18n$t("Advantage"))
+                     ),
                      sliderInput("SkillMod", i18n$t("Modifier"), min = -10L, max = 10L, value = 0L, step = 1L)
     ),
   ),
