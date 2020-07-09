@@ -5,6 +5,8 @@ source("./dicelogic.R")
 source("./rules.R")
 source("./readoptjson.R")
 
+# SkillSet -------------
+
 SkillSet <- R6Class("SkillSet", public = list(
   
   Type = NA,      # enum Type `.SkillType` (Profane, Magic, Sacred)
@@ -17,6 +19,8 @@ SkillSet <- R6Class("SkillSet", public = list(
   LastSkillVal  = NA,
   LastModifier  = NA, # additional situation dependent modifier
   LastResult    = NA, # Critical, Success, Fail, Botch
+  ConfirmationMissing = NA,
+  LastConfirmRoll = NA,
   LastQL        = NA, # Quality level
   LastRemainder = NA, # remaining skill points
   LastFumbleEffect = NA, # EffectOfFumble: consequence of 2d6
@@ -34,7 +38,7 @@ SkillSet <- R6Class("SkillSet", public = list(
       self$Skills   <- data.frame(attrID = "ANY", name = "ANY", 
                                   class = "ALL", classID = 99,
                                   ab1 = "ATTR", ab2 = "ATTR", ab3 = "ATTR", value = 5,
-                                  abval1 = 10, abval1 = 10, abval1 = 10)
+                                  abval1 = 10, abval2 = 10, abval3 = 10)
       self$Modifier <- 0L
     } else {
       if (Type == .SkillType["Profane"]) {
@@ -122,7 +126,7 @@ SkillSet <- R6Class("SkillSet", public = list(
   #' GetSkillName
   #' Returns the names of a given vector of skills
   GetSkillName = function(SkillIdent) {
-    if (!is.na(pmatch(SkillIdent, "All")))
+    if (length(SkillIdent) == 1 && !is.na(pmatch(SkillIdent, "All")))
       SkillIndex <- 1:nrow(self$Skills)
     else
       SkillIndex <- self$GetSkillIndex(SkillIdent)
@@ -189,16 +193,17 @@ SkillSet <- R6Class("SkillSet", public = list(
     self$LastAbilities <- Values[1:3]
     self$LastSkillVal <- Values[4]
     self$LastModifier <- Mod + self$Modifier
-    self$LastQL <- NA
-    self$LastResult <- NA
-    self$LastRemainder <- NA
-    self$LastFumbleEffect <- NA
-    
+
     if (!Routine)
       self$LastRoll <- SkillRoll()
     else 
       self$LastRoll <- TRUE
+    self$VerifyLastRoll()
 
+    self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
+    self$LastConfirmRoll <- NA
+    self$LastFumbleEffect <- NA
+    
     invisible(self)
   },
   
@@ -215,15 +220,23 @@ SkillSet <- R6Class("SkillSet", public = list(
       Result <- VerifyRoutineSkillCheck(self$LastAbilities, 
                                         self$LastSkillVal, 
                                         self$LastModifier)
-    else
-      Result <- NA
-    
+
     self$LastQL <- Result[["QL"]]
     self$LastResult <- Result[["Message"]]
     self$LastRemainder <- Result[["Remainder"]]
     return(Result)
   },
   
+  
+  #' Return the dice score of the latest roll
+  GetLastScore = function() {
+    if (is.logical(self$LastRoll))
+      return(rep(NA, 3))
+    else if (is.numeric(self$LastRoll))
+      return(self$LastRoll)
+    else
+      return(NA)
+  },
   
   #' Return the quality level (compute it first if necessary).
   GetLastQL = function() {
@@ -241,11 +254,93 @@ SkillSet <- R6Class("SkillSet", public = list(
   },
   
   
-  FumbleRollRequired = function() {
-    return(FALSE) # not applicable for profane skills
+  RollNeedsConfirmation = function() {
+    return(!is.na(self$LastRoll) && self$ConfirmationMissing)
+  },
+
+  
+  NeedFumbleRoll = function() {
+    if (self$Type == .SkillType["Profane"]) 
+      return(FALSE) # not applicable for profane skills
+    else {
+      return(is.na(self$LastFumbleEffect) && 
+               self$LastResult == .SuccessLevel["Fumble"])
+    }
   },
   
-  RollFumble = function() {
-    invisible(self) # not applicable for profane skills
+  
+  FumbleRoll = function() {
+    if (NeedFumbleRoll) {
+      self$LastFumbleEffect <- 
+        GetFumbleEffect(FumbleRoll(), "Skill", names(self$Type))
+    }
+    return(self$LastFumbleEffect)
   }
 ))
+
+
+# CharacterSkills -------------
+CharacterSkills <- R6Class("CharacterSkills", public = list(
+  
+  Sets = list(Profane = NA, Magic = NA, Sacred = NA),
+
+  #' Constructor
+  #' @param Type is skill set profane or supernatural (i.e. magic or sacred)
+  #' (integer or string of enum `.SkillType`)
+  #' @param Skills Data frame of skills (1 column with values; row names are skill IDs)
+  #' @param Abilities Character abilities (data frame)
+  #' @return `self`
+  initialize = function(ProfaneSet, MagicSet = NULL, SacredSet = NULL) {
+    self$Sets[["Profane"]] <- ProfaneSet
+    self$Sets[["Magic"]]   <- MagicSet
+    self$Sets[["Sacred"]]  <- SacredSet
+    invisible(self)
+  },
+  
+  #' Determines and returns the skill set that contains the requested
+  #' skill (via `Ident`) or skill `Class`.
+  #' @return `Null` if the requested information is not available. 
+  #' Otherwise an R6 class `SkillSet`.
+  GetSkillSet = function(Ident = NULL, Class = NULL) {
+    SkillSource <- NULL
+    for (s in self$Sets) {
+      if (isTruthy(s)) {
+        if(!missing(Ident) && !is.na(s$GetSkillIndex(Ident)))
+          SkillSource <- s
+        else if(!missing(Class) && Class %in% s$GetClasses())
+          SkillSource <- s
+      }
+      if(!is.null(SkillSource)) break
+    }
+    return(SkillSource)
+  },
+  
+  
+  GetSkillNames = function() {
+    AllNames <- character()
+    for (s in self$Sets) {
+      if (isTruthy(s)) {
+        AllNames <- c(AllNames, s$GetSkillName("All"))
+      }
+    }
+    return(AllNames)
+  },
+  
+  GetSkillClasses = function() {
+    AllClasses <- character()
+    for (s in self$Sets) {
+      if (isTruthy(s)) {
+        AllClasses <- c(AllClasses, s$GetClasses())
+      }
+    }
+    return(AllClasses)
+  },
+  
+  HasTalent = function(Type = .SkillType) {
+    if (! (Type %in% .SkillType)) stop("Unknown type of skill")
+    return( any(names(self$Sets) == names(.SkillType[Type])) )
+  }
+  
+))
+  
+  
