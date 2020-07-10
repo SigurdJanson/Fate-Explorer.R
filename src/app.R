@@ -23,6 +23,7 @@ source("rules.R", local = TRUE)
 
 source("explorechances.R", local = TRUE)
 source("weapon.R", local = TRUE, encoding = "UTF-8")
+source("skillset.R", local = TRUE, encoding = "UTF-8")
 
 # RUN
 source("getui.R", local = TRUE)
