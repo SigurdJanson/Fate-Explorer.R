@@ -42,6 +42,9 @@
     {"en": "Routine Check", "de": "Routineprobe"},
     {"en": "with", "de": "mit"},
     {"en": "Value", "de": "Wert"},
+    {"en": "Spell", "de": "Zauber"},
+    {"en": "Spells", "de": "Zauber"},
+    {"en": "Property", "de": "Merkmal"},
 
     {"en": "Attack", "de": "Attackieren"},
     {"en": "Parry", "de": "Parieren"},

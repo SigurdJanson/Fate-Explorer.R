@@ -33,12 +33,12 @@ sidebarLayout(
   ),
 
   mainPanel(
-    actionButton("doSkillThrow", i18n$t("Now!"), icon = gicon("fist"), 
+    actionButton("doSkillRoll", i18n$t("Now!"), icon = gicon("fist"), 
                  width = "49%", style = "font-size: 140%"),
     htmlOutput("uiDoSkillRoutine", inline = TRUE), #Button for routine checks
     hr(),
     div(
-        htmlOutput("SkillThrow", style = "font-size:140%"),
+        htmlOutput("SkillRoll", style = "font-size:140%"),
         style = "height:18rem"
     ),
     # Exploration Panel for Skill roll probabilities ----
