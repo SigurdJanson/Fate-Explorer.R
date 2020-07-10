@@ -181,6 +181,18 @@ SkillSet <- R6Class("SkillSet", public = list(
   },
   
   
+  #' Verifies if the desired skill supports a skill check
+  CanRoutineCheck = function(SkillIdent, Mod) {
+    Values <- self$GetSkillValues(SkillIdent, 0, NoSkill = FALSE)
+    if (!is.null(Values))
+      Result <- CanRoutineSkillCheck(Values[1:3], Values[4], self$Modifier + Mod)
+    else
+      Result <- FALSE
+    
+    return(Result)
+  },
+
+  
   #' SetSkill
   #' 
   #' @param SkillIdent Identifier of the skill, either an ID string, the name, 
@@ -290,15 +302,16 @@ SkillSet <- R6Class("SkillSet", public = list(
     return(self$LastQL)
   },
   
-  #' Verifies if the desired skill supports a skill check
-  CanRoutineCheck = function(SkillIdent, Mod) {
-    Values <- self$GetSkillValues(SkillIdent, 0, NoSkill = FALSE)
-    if (!is.null(Values))
-      Result <- CanRoutineSkillCheck(Values[1:3], Values[4], self$Modifier + Mod)
+  
+  UpdateModifier = function(RollMod, PermanentMod = NULL) {
+    if (missing(PermanentMod)) 
+      PermanentMod <- self$Modifier
     else
-      Result <- FALSE
+      self$Modifier
     
-    return(Result)
+    self$LastModifier <- RollMod + PermanentMod
+    
+    return(self)
   },
   
   

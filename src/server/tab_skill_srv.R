@@ -87,6 +87,17 @@ observeEvent(
   ignoreInit = TRUE
 )
 
+# React when users change the modifier
+observeEvent(eventExpr = {req(input$SkillMod)}, 
+  handlerExpr = {
+    req(ActiveSkillSets, LastSkillRoll$Roll)
+    SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+    SkillSource$UpdateModifier(input$SkillMod)
+    UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
+  },#handler
+  ignoreInit = TRUE
+)
+
 
 # Decide whether to show the routine check button or not.
 output$uiDoSkillRoutine <- renderUI({
