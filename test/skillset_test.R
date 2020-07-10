@@ -45,7 +45,7 @@ test_that("Empty Skill Set", {
   expect_false(Set$CanRoutineCheck(1L, -1L))
   Set$SetSkill(SkillIdent = 1L, Abilities = c(13, 13, 13), SkillValue = 9)
   o <- Set$SetSkill(SkillIdent = 1L, SkillValue = 9) # change skill ONLY
-  e <- c(abval1 = 13, abval2 = 13, abval3 = 13, value = 9)
+  e <- c(abval1 = 13L, abval2 = 13L, abval3 = 13L, value = 9L)
   expect_identical(o, e)
   expect_false(Set$CanRoutineCheck(1L, 0L))
   expect_true(Set$CanRoutineCheck(1L, 1L))
@@ -57,7 +57,7 @@ test_that("Empty Skill Set", {
   expect_identical(Set$GetSkillIndex("TAL_1"), NA_integer_) # Invalid
   
   # Abilities
-  expect_identical(Set$GetAbilities(1L), c(abval1 = 13, abval2 = 13, abval3 = 13))
+  expect_identical(Set$GetAbilities(1L), c(abval1 = 13L, abval2 = 13L, abval3 = 13L))
   expect_error(Set$GetAbilities(2L), "Invalid skill index")
   expect_silent(Set$SetAbility(1L, c(NO = 9, AB = 10, CD = 11)))
   # check values
@@ -94,15 +94,11 @@ test_that("Empty Skill Set", {
     expect_true(all(Set$Roll(1L, 0L, Routine = FALSE)$LastRoll > 0L))
     expect_true(all(Set$LastRoll < 21L))
     expect_identical(Set$LastSkill, 1L)
-    expect_identical(Set$LastSkillVal, c(r %/% 2))
-    expect_identical(Set$LastAbilities, Set$GetSkillValues(1L, 0L, NoSkill = TRUE))
   }
   
   # Success and quality levels
-  Set$SetSkill(SkillIdent = 1L, Abilities = c(13L, 13L, 13L), SkillValue = 0)
+  Set$SetSkill(SkillIdent = 1L, Abilities = c(13L, 13L, 13L), SkillValue = 0L)
   Set$LastRoll <- c(13L, 13L, 13L)
-  Set$LastAbilities <- c(13L, 13L, 13L)
-  Set$LastSkillVal <- 0L
   Set$LastModifier <- 0L
   
   o <- Set$VerifyLastRoll()
@@ -124,11 +120,7 @@ test_that("Empty Skill Set", {
   expect_identical(Set$GetLastQL(), 1L)
   
   Set$LastRoll <- c(20L, 1L, 20L)
-  Set$LastSkillVal <- 0L
   o <- Set$VerifyLastRoll()
-  expect_identical(o, list(Message = "Fumble", QL = 0L, Remainder = 0L))
-  expect_identical(Set$GetLastQL(), 0L)
-  Set$LastSkillVal <- 15L
   expect_identical(o, list(Message = "Fumble", QL = 0L, Remainder = 0L))
   expect_identical(Set$GetLastQL(), 0L)
 })

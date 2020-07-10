@@ -13,10 +13,8 @@ SkillSet <- R6Class("SkillSet", public = list(
   Modifier = 0L,  # permanent default modifier because of special abilities
   Skills = NA,    # List of skills
   # Roll properties
-  LastSkill     = NA, # skill of last roll
+  LastSkill     = NA, # numeric index of the skill of last roll
   LastRoll      = NA, # die roll, `numeric(3)` or TRUE/FALSE in case of routine check
-  LastAbilities = NA,
-  LastSkillVal  = NA,
   LastModifier  = NA, # additional situation dependent modifier
   LastResult    = NA, # Critical, Success, Fail, Botch
   ConfirmationMissing = NA,
@@ -37,8 +35,8 @@ SkillSet <- R6Class("SkillSet", public = list(
     if (missing(Skills)) {
       self$Skills   <- data.frame(attrID = "ANY", name = "ANY", 
                                   class = "ALL", classID = 99,
-                                  ab1 = "", ab2 = "", ab3 = "", value = 0,
-                                  abval1 = -1, abval2 = -1, abval3 = -1,
+                                  ab1 = "", ab2 = "", ab3 = "", value = 0L,
+                                  abval1 = -1L, abval2 = -1L, abval3 = -1L,
                                   stringsAsFactors = FALSE)
       self$Modifier <- 0L
     } else {
@@ -100,14 +98,14 @@ SkillSet <- R6Class("SkillSet", public = list(
   #' SetAbility
   #' Set the ability values for exactly 1 skill
   SetAbility = function(SkillIndex, Abilities) {
-    if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
+    if (!isTruthy(SkillIndex) || SkillIndex < 1L || SkillIndex > nrow(self$Skills))
       stop("Invalid skill index")
     if(length(Abilities) != 3) stop("A skill requires exactly 3 abilities")
     
-    if (length(names(Abilities)) > 0)
+    if (length(names(Abilities)) > 0L)
       if(all(startsWith(names(Abilities), "ATTR_")))
         self$Skills[SkillIndex, paste0("ab", 1:3)] <- names(Abilities)
-    self$Skills[SkillIndex, paste0("abval", 1:3)] <- Abilities
+    self$Skills[SkillIndex, paste0("abval", 1:3)] <- as.integer(Abilities)
     return(invisible(self))
   },
   
@@ -230,8 +228,6 @@ SkillSet <- R6Class("SkillSet", public = list(
   Roll = function(SkillIdent, Mod, Routine = FALSE) {
     SkillIndex <- self$GetSkillIndex(SkillIdent)
     self$LastSkill <- SkillIndex
-    self$LastAbilities <- unlist(self$Skills[SkillIndex, paste0("abval", 1:3)])
-    self$LastSkillVal <- self$Skills[["value"]][SkillIndex]
     self$LastModifier <- Mod + self$Modifier
 
     if (!Routine)
@@ -253,17 +249,20 @@ SkillSet <- R6Class("SkillSet", public = list(
   VerifyLastRoll = function() {
     if (!isTruthy(self$LastRoll)) return(NA)
     
+    SkillIndex    <- self$LastSkill
+    LastAbilities <- as.integer(unlist(self$Skills[SkillIndex, paste0("abval", 1L:3L)]))
+    LastSkillVal  <- self$Skills[["value"]][SkillIndex]
+
     if(is.numeric(self$LastRoll))
-      if(any(self$LastAbilities < 0)) {
+      if(any(LastAbilities < 0L)) {
         # Unchecked roll not against any values
         Result <- list(Message = "", QL = "-", Remainder = NA)
       } else {
-        Result <- VerifySkillRoll(self$LastRoll, self$LastAbilities, 
-                                  self$LastSkillVal, self$LastModifier)
+        Result <- VerifySkillRoll(self$LastRoll, LastAbilities, 
+                                  LastSkillVal, self$LastModifier)
       }
     else if (isTRUE(self$LastRoll))
-      Result <- VerifyRoutineSkillCheck(self$LastAbilities, 
-                                        self$LastSkillVal, 
+      Result <- VerifyRoutineSkillCheck(LastAbilities, LastSkillVal, 
                                         self$LastModifier)
 
     self$LastQL <- Result[["QL"]]
