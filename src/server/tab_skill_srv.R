@@ -66,6 +66,7 @@ observeEvent(
       req(input$lbCharSkills)
       ActiveSkillIdent <<- input$lbCharSkills
     }
+    UpdateSkillResult(UpdateSkillResult()+1)
   }#handler
 )
 
@@ -76,18 +77,19 @@ observeEvent(
     req(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3, 
         input$SkillValue)
   }, handlerExpr = {
-    req(Character$Skills)
+    req(ActiveSkillSets)
     SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
     SkillSource$SetSkill(ActiveSkillIdent, 
                          Abilities = c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3), 
-                         SkillValue = input$SkillValue) 
+                         SkillValue = input$SkillValue)
+    UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
   }#handler
 )
 
 
 # Decide whether to show the routine check button or not.
 output$uiDoSkillRoutine <- renderUI({
-  req(input$rdbSkillSource)
+  req(input$rdbSkillSource, UpdateSkillResult())
 
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   RoutineCheck <- SkillSource$CanRoutineCheck(ActiveSkillIdent, input$SkillMod)
@@ -103,6 +105,9 @@ BasicSkillSets <- CharacterSkills$new(SkillSet$new("Profane")) # A basic set for
 ActiveSkillIdent <- "ANY"
 ActiveSkillSets <- BasicSkillSets
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
+# Trigger to recognize a new roll - value is unimportant
+UpdateSkillResult <- reactiveVal() 
+
 
 # Initiate skill roll
 observeEvent(input$doSkillRoll, {
@@ -110,6 +115,7 @@ observeEvent(input$doSkillRoll, {
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = FALSE)
   LastSkillRoll$Roll <- SkillSource$LastRoll
   LastSkillRoll$Routine <- FALSE
+  UpdateSkillResult(0)
 })
 # Initiate routine check
 observeEvent(input$doSkillRoutine, {
@@ -117,15 +123,16 @@ observeEvent(input$doSkillRoutine, {
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = TRUE)
   LastSkillRoll$Roll <- NA
   LastSkillRoll$Routine <- SkillSource$LastRoll
+  UpdateSkillResult(0)
 })
 
 
 # Display result of skill roll (View) ----
 output$SkillRoll <- renderText({
+  req(LastSkillRoll$Roll, UpdateSkillResult())
+  
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillIndex  <- SkillSource$GetSkillIndex(ActiveSkillIdent)
-  
-  req(LastSkillRoll$Roll)
 
   RollCheck <- SkillSource$VerifyLastRoll()
   EffectiveCharVal <- SkillSource$GetSkillValues(SkillIndex, input$SkillMod)
