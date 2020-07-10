@@ -96,13 +96,13 @@ RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
 RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL, 
                                 KeyUnit = c("dr", "ql", "hp")) {
   if (grepl("Fumble", KeyResult))
-    SuccessIcon  <- "icon icon-crowned-skull col-fumble ico-success"
+    SuccessIcon  <- "icon icon-fe-crowned-skull col-fumble ico-success"
   else if (grepl("Critical", KeyResult)) 
-    SuccessIcon  <- "icon icon-laurel-crown col-critical ico-success"
+    SuccessIcon  <- "icon-fe icon-fe-laurel-crown col-critical ico-success"
   else if (grepl("Success", KeyResult))
-    SuccessIcon  <- "icon icon-laurels col-success ico-success"
+    SuccessIcon  <- "icon-fe icon-fe-laurels col-success ico-success"
   else if (grepl("Fail", KeyResult))
-    SuccessIcon  <- "icon icon-spectre col-fail ico-success"
+    SuccessIcon  <- "icon-fe icon-fe-spectre col-fail ico-success"
   else SuccessIcon  <- ""
 
   if (isTruthy(FurtherValue))
