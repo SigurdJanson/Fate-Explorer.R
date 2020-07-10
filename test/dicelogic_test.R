@@ -198,7 +198,10 @@ test_that("VerifySkillRoll", {
     o <- VerifySkillRoll(rep(10L, 3), Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = m)
     expect_identical(o, list(Message = "Success", QL = 1L, Remainder = 0L))
   }
-  
+
+  # A skill < 0 is always a fail (even with fantastic abilities and divine mod)
+  o <- VerifySkillRoll(rep(10L, 3), Abilities = c(19L, 17L, 18L), Skill = -1L, Modifier = 99L)
+  expect_identical(o, list(Message = "Fail", QL = 0L, Remainder = -1L))
 })
 
 
