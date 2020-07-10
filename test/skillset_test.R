@@ -61,13 +61,13 @@ test_that("Empty Skill Set", {
   expect_error(Set$GetAbilities(2L), "Invalid skill index")
   expect_silent(Set$SetAbility(1L, c(NO = 9, AB = 10, CD = 11)))
   # check values
-  expect_identical(Set$GetAbilities(1L), c(abval1 = 9, abval2 = 10, abval3 = 11))
+  expect_identical(Set$GetAbilities(1L), c(abval1 = 9L, abval2 = 10L, abval3 = 11L))
   # check "attrIDs" that shall not be used because they do not match "ATTR_"
   expect_identical(unlist(Set$Skills[1, c("ab1", "ab2", "ab3")]), 
                    c(ab1 = "", ab2 = "", ab3 = ""))
   # again but with valid attrIDs
-  expect_silent(Set$SetAbility(1L, c(ATTR_97 = 1, ATTR_98 = 19, ATTR_99 = 2)))
-  expect_identical(Set$GetAbilities(1L), c(abval1 = 1, abval2 = 19, abval3 = 2))
+  expect_silent(Set$SetAbility(1L, c(ATTR_97 = 1L, ATTR_98 = 19L, ATTR_99 = 2L)))
+  expect_identical(Set$GetAbilities(1L), c(abval1 = 1L, abval2 = 19L, abval3 = 2L))
   expect_identical(unlist(Set$Skills[1, c("ab1", "ab2", "ab3")]), 
                    c(ab1 = "ATTR_97", ab2 = "ATTR_98", ab3 = "ATTR_99"))
   # No abilities to check against
@@ -81,7 +81,7 @@ test_that("Empty Skill Set", {
   expect_silent(Set$SetAbility(1L, c(13L, 13L, 13L)))
   
   # Skill values
-  e <- c(abval1 = 13, abval2 = 13, abval3 = 13, value = 9) # see above
+  e <- c(abval1 = 13L, abval2 = 13L, abval3 = 13L, value = 9L) # see above
   expect_identical(Set$GetSkillValues(1L, 0L), e)
   expect_identical(Set$GetSkillValues(1L, 0L, NoSkill = TRUE), e[1:3])
   expect_identical(Set$GetSkillValues(2L, 0L), NA)

@@ -143,7 +143,7 @@ SkillSet <- R6Class("SkillSet", public = list(
     
     if (isTruthy(SkillIndex)) { # get numeric values
       Abilities <- unlist(self$Skills[SkillIndex, paste0("abval", 1:3)])
-      if (any(Abilities < 0)) return(NULL)
+      if (any(Abilities < 0L)) return(NULL)
       Abilities <- Abilities + Mod + self$Modifier
     } else return(NA)
 
