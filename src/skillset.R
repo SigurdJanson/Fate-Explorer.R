@@ -8,11 +8,11 @@ source("./readoptjson.R")
 # SkillSet -------------
 
 SkillSet <- R6Class("SkillSet", public = list(
-  
+  # Skill properties
   Type = NA,      # enum Type `.SkillType` (Profane, Magic, Sacred)
   Modifier = 0L,  # permanent default modifier because of special abilities
   Skills = NA,    # List of skills
-  
+  # Roll properties
   LastSkill     = NA, # skill of last roll
   LastRoll      = NA, # die roll, `numeric(3)` or TRUE/FALSE in case of routine check
   LastAbilities = NA,
@@ -215,6 +215,14 @@ SkillSet <- R6Class("SkillSet", public = list(
     
     names(Abilities) <- paste0("abval", 1:3)
     return(c(Abilities, value = SkillValue))
+  },
+
+
+  #' Change the skill so that this class will do a simple die roll
+  #' without checking it against any values.
+  UncheckSkill = function(SkillIndent) {
+    self$SetSkill(SkillIndent, rep(-1L, 3L), 0L)
+    return(invisible(self))
   },
   
   
