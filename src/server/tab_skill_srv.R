@@ -83,7 +83,8 @@ observeEvent(
                          Abilities = c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3), 
                          SkillValue = input$SkillValue)
     UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
-  }#handler
+  },#handler
+  ignoreInit = TRUE
 )
 
 
