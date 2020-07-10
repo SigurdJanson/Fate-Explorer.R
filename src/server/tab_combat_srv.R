@@ -3,7 +3,8 @@
 # Values of last combat roll
 ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
-UpdateCombatResult <- reactiveVal() # necessary trigger to recognize a new roll - value is unimportant
+# necessary trigger to recognize a new roll - value is unimportant
+UpdateCombatResult <- reactiveVal() 
 
 
 
