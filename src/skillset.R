@@ -37,8 +37,8 @@ SkillSet <- R6Class("SkillSet", public = list(
     if (missing(Skills)) {
       self$Skills   <- data.frame(attrID = "ANY", name = "ANY", 
                                   class = "ALL", classID = 99,
-                                  ab1 = "ATTR", ab2 = "ATTR", ab3 = "ATTR", value = 5,
-                                  abval1 = 10, abval2 = 10, abval3 = 10,
+                                  ab1 = "", ab2 = "", ab3 = "", value = 0,
+                                  abval1 = -1, abval2 = -1, abval3 = -1,
                                   stringsAsFactors = FALSE)
       self$Modifier <- 0L
     } else {
@@ -62,7 +62,7 @@ SkillSet <- R6Class("SkillSet", public = list(
 
     
   #' GetAbilities
-  #' Extract rlevant abilities from data frame of with all character abilities
+  #' Extract relevant abilities from data frame of with all character abilities
   GetAbilities = function(SkillIndex) {
     if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
       stop("Invalid skill index")
@@ -79,6 +79,22 @@ SkillSet <- R6Class("SkillSet", public = list(
     
     Abilities  <- self$Skills[SkillIndex, paste0("ab", 1:3)]
     return(unlist(Abilities))
+  },
+  
+  #' GetAbilities
+  #' Extract rlevant abilities from data frame of with all character abilities
+  GetAbilityLabels = function(SkillIndex) {
+    if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
+      stop("Invalid skill index")
+    
+    Mapping   <- GetAbilities() # get all abilities from db
+    Abilities <- self$Skills[SkillIndex, paste0("ab", 1:3)]
+    if (all(startsWith(names(Abilities), "ATTR_")))
+      Labels    <- Mapping[match(Abilities, Mapping[["attrID"]]), "shortname"]
+    else
+      Labels <- NULL
+    
+    return(Labels)
   },
   
   #' SetAbility
@@ -129,6 +145,7 @@ SkillSet <- R6Class("SkillSet", public = list(
     
     if (isTruthy(SkillIndex)) { # get numeric values
       Abilities <- unlist(self$Skills[SkillIndex, paste0("abval", 1:3)])
+      if (any(Abilities < 0)) return(NULL)
       Abilities <- Abilities + Mod + self$Modifier
     } else return(NA)
 
@@ -205,9 +222,8 @@ SkillSet <- R6Class("SkillSet", public = list(
   Roll = function(SkillIdent, Mod, Routine = FALSE) {
     SkillIndex <- self$GetSkillIndex(SkillIdent)
     self$LastSkill <- SkillIndex
-    Values <- self$GetSkillValues(SkillIndex, Mod + self$Modifier)
-    self$LastAbilities <- Values[1:3]
-    self$LastSkillVal <- Values[4]
+    self$LastAbilities <- unlist(self$Skills[SkillIndex, paste0("abval", 1:3)])
+    self$LastSkillVal <- self$Skills[["value"]][SkillIndex]
     self$LastModifier <- Mod + self$Modifier
 
     if (!Routine)
@@ -230,8 +246,13 @@ SkillSet <- R6Class("SkillSet", public = list(
     if (!isTruthy(self$LastRoll)) return(NA)
     
     if(is.numeric(self$LastRoll))
-      Result <- VerifySkillRoll(self$LastRoll, self$LastAbilities, 
-                                self$LastSkillVal, self$LastModifier)
+      if(any(self$LastAbilities < 0)) {
+        # Unchecked roll not against any values
+        Result <- list(Message = "", QL = "-", Remainder = NA)
+      } else {
+        Result <- VerifySkillRoll(self$LastRoll, self$LastAbilities, 
+                                  self$LastSkillVal, self$LastModifier)
+      }
     else if (isTRUE(self$LastRoll))
       Result <- VerifyRoutineSkillCheck(self$LastAbilities, 
                                         self$LastSkillVal, 
@@ -265,7 +286,11 @@ SkillSet <- R6Class("SkillSet", public = list(
   #' Verifies if the desired skill supports a skill check
   CanRoutineCheck = function(SkillIdent, Mod) {
     Values <- self$GetSkillValues(SkillIdent, 0, NoSkill = FALSE)
-    Result <- CanRoutineSkillCheck(Values[1:3], Values[4], self$Modifier + Mod)
+    if (!is.null(Values))
+      Result <- CanRoutineSkillCheck(Values[1:3], Values[4], self$Modifier + Mod)
+    else
+      Result <- FALSE
+    
     return(Result)
   },
   
