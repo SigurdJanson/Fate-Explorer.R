@@ -59,6 +59,19 @@ test_that("Empty Skill Set", {
   # Abilities
   expect_identical(Set$GetAbilities(1L), c(abval1 = 13, abval2 = 13, abval3 = 13))
   expect_error(Set$GetAbilities(2L), "Invalid skill index")
+  expect_silent(Set$SetAbility(1L, c(NO = 9, AB = 10, CD = 11)))
+  # check values
+  expect_identical(Set$GetAbilities(1L), c(abval1 = 9, abval2 = 10, abval3 = 11))
+  # check "attrIDs" that shall not be used because they do not match "ATTR_"
+  expect_identical(unlist(Set$Skills[1, c("ab1", "ab2", "ab3")]), 
+                   c(ab1 = "ATTR", ab2 = "ATTR", ab3 = "ATTR"))
+  # again but with valid attrIDs
+  expect_silent(Set$SetAbility(1L, c(ATTR_97 = 1, ATTR_98 = 19, ATTR_99 = 2)))
+  expect_identical(Set$GetAbilities(1L), c(abval1 = 1, abval2 = 19, abval3 = 2))
+  expect_identical(unlist(Set$Skills[1, c("ab1", "ab2", "ab3")]), 
+                   c(ab1 = "ATTR_97", ab2 = "ATTR_98", ab3 = "ATTR_99"))
+  # reset to avoid follow-up errors
+  expect_silent(Set$SetAbility(1L, c(13, 13, 13)))
   
   # Skill values
   e <- c(abval1 = 13, abval2 = 13, abval3 = 13, value = 9) # see above

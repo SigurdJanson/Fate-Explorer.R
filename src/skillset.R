@@ -38,7 +38,8 @@ SkillSet <- R6Class("SkillSet", public = list(
       self$Skills   <- data.frame(attrID = "ANY", name = "ANY", 
                                   class = "ALL", classID = 99,
                                   ab1 = "ATTR", ab2 = "ATTR", ab3 = "ATTR", value = 5,
-                                  abval1 = 10, abval2 = 10, abval3 = 10)
+                                  abval1 = 10, abval2 = 10, abval3 = 10,
+                                  stringsAsFactors = FALSE)
       self$Modifier <- 0L
     } else {
       if (Type == .SkillType["Profane"]) {
@@ -79,6 +80,21 @@ SkillSet <- R6Class("SkillSet", public = list(
     Abilities  <- self$Skills[SkillIndex, paste0("ab", 1:3)]
     return(unlist(Abilities))
   },
+  
+  #' SetAbility
+  #' Set the ability values for exactly 1 skill
+  SetAbility = function(SkillIndex, Abilities) {
+    if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
+      stop("Invalid skill index")
+    if(length(Abilities) != 3) stop("A skill requires exactly 3 abilities")
+    
+    if (length(names(Abilities)) > 0)
+      if(all(startsWith(names(Abilities), "ATTR_")))
+        self$Skills[SkillIndex, paste0("ab", 1:3)] <- names(Abilities)
+    self$Skills[SkillIndex, paste0("abval", 1:3)] <- Abilities
+    return(invisible(self))
+  },
+  
   
   #' GetSkillIndex
   #' Get numeric index of skill in `self$Skills` from ID string, name. 
