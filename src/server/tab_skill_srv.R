@@ -65,6 +65,8 @@ observeEvent(
     } else if (input$rdbSkillSource == "CharSkill") {
       req(input$lbCharSkills)
       ActiveSkillIdent <<- input$lbCharSkills
+      SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+      SkillSource$LastSkill <- SkillSource$GetSkillIndex(ActiveSkillIdent)
     }
     UpdateSkillResult(UpdateSkillResult()+1)
   }#handler
@@ -88,7 +90,7 @@ observeEvent(
 )
 
 # React when users change the modifier
-observeEvent(eventExpr = {req(input$SkillMod)}, 
+observeEvent(eventExpr = input$SkillMod, 
   handlerExpr = {
     req(ActiveSkillSets, LastSkillRoll$Roll)
     SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
