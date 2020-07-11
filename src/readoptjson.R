@@ -21,9 +21,9 @@ GetAbilities_Opt <- function(Attr) {
 #' @param Skills Skills as extracted from Optholit Json
 #' @param Language String indicating the requested language ("en" or "de")
 #' @return Data frame of character skills
-GetSkills_Opt <- function(Skills, Language = "de") {
+GetSkills_Opt <- function(Skills) {
   # Get data frame with skill definitions
-  SkillList <- GetSkills(Language)
+  SkillList <- GetSkills()
   SkillList$value <- 0
   # 
   SkillValID <- match(names(Skills), SkillList$attrID)
@@ -34,9 +34,9 @@ GetSkills_Opt <- function(Skills, Language = "de") {
 
 
 
-GetSpells_Opt <- function(Spells, Language = "de") {
+GetSpells_Opt <- function(Spells) {
   # Get data frame with skill definitions
-  SpellList <- GetSpells(Language)
+  SpellList <- GetSpells()
   SpellList$value <- 0
   # 
   SpellValID <- match(names(Spells), SpellList[["attrID"]])
@@ -51,9 +51,9 @@ GetSpells_Opt <- function(Spells, Language = "de") {
 }
 
 
-GetChants_Opt <- function(Chants, Language = "de") {
+GetChants_Opt <- function(Chants) {
   # Get data frame with skill definitions
-  ChantList <- GetChants(Language)
+  ChantList <- GetChants()
   ChantList$value <- 0
   # 
   ChantValID <- match(names(Chants), ChantList[["attrID"]])
