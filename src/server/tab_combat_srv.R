@@ -118,11 +118,6 @@ output$uiCombatRoll <- renderText({
                                               ActiveWeapon$ConfirmRoll, i18n) 
   else 
     ConfirmationStr <- NULL
-  
-  if (ActiveWeapon$LastResult == .SuccessLevel["Critical"])
-    ConfirmLabel <- i18n$t("Confirm!")
-  else if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"])
-    ConfirmLabel <- i18n$t("Avert!")
 
   # Render the result
   if (ActiveWeapon$LastAction == .CombatAction["Attack"])
@@ -137,7 +132,8 @@ output$uiCombatRoll <- renderText({
   # Confirmation
   # Waiting for confirmation
   if (isTRUE(ActiveWeapon$ConfirmationMissing))
-    Result <- tagAppendChild(Result, actionLink("doCombatConfirm", ConfirmLabel, icon = NULL))
+    Result <- tagAppendChild(Result, RenderConfirmationRequest(ActiveWeapon$LastResult, 
+                                                               names(ActiveWeapon$LastAction)))
   # Show confirmation result (add confirmation <div/>)
   if (!is.null(ConfirmationStr)) {
     Result <- tagAppendChild(Result, p(ConfirmationStr))
