@@ -44,6 +44,8 @@
     {"en": "Value", "de": "Wert"},
     {"en": "Spell", "de": "Zauber"},
     {"en": "Spells", "de": "Zauber"},
+    {"en": "Form of Prayer", "de": "Gebetsform"},
+    {"en": "Chants", "de": "Gebete"},
     {"en": "Property", "de": "Merkmal"},
 
     {"en": "Attack", "de": "Attackieren"},

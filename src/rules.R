@@ -14,6 +14,7 @@
 .Attribs <- NULL
 .Skills  <- NULL
 .Spells  <- NULL
+.Chants  <- NULL
 .ComTecs <- NULL
 .Melee   <- NULL
 .Ranged  <- NULL
@@ -80,6 +81,17 @@ GetSpells <- function(lang = .Language) {
   return(.Spells)
 }
 
+#' GetChants
+#' Get the list of magic skills available in DSA5.
+#' @param lang Requested language to translate labels ("en", "de").
+#' @return a data frame of skills.
+GetChants <- function(lang = .Language) {
+  if (is.null(.Chants)) {
+    JsonFile <- file.path("data", paste0("chants_", lang, ".json"))
+    .Chants <<- read_json(JsonFile, simplifyVector = TRUE)
+  }
+  return(.Chants)
+}
 
 
 #' GetFumbleEffects

@@ -41,15 +41,21 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
 SetupSkills <- function() {
   Data <- RawCharacterFile()[["talents"]]
   ProfaneSkills <- SkillSet$new(1L, Data, Character$Attr)
-
+#browser()
   # Add magic skills if hero has them
   Data <- RawCharacterFile()[["spells"]]
-  if (isTruthy(Data)) {
+  if (isTruthy(Data) && length(Data) > 0) {
     MagicSkills <- SkillSet$new(2L, Data, Character$Attr)
   } else {
     MagicSkills <- NULL
   }
-  SacredSkills <- NULL # TODO: #########
+
+  Data <- RawCharacterFile()[["liturgies"]]
+  if (isTruthy(Data) && length(Data) > 0) {
+    SacredSkills <- SkillSet$new(3L, Data, Character$Attr)
+  } else {
+    SacredSkills <- NULL
+  }
   
   Character$Skills <- CharacterSkills$new(ProfaneSkills, MagicSkills, SacredSkills)
 
@@ -168,17 +174,44 @@ outputOptions(output, 'ShowSetupSpells', suspendWhenHidden = FALSE)
 
 output$SetupSpells <- renderTable({
   Result <- Character$Skills$Sets$Magic$Skills
-  Result <- Result[-which(names(Result) %in% c("url", "attrID", "class"))]
+  Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
 
   # Show names not codes
-  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
-  NameMapping <- GetAbilities(Language)
+  #Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  NameMapping <- GetAbilities()#Language
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
   }
   # Column names
   colnames(Result) <- c(i18n$t("Skill"), i18n$t("Spell"), paste(i18n$t("SC"), 1:3), 
                         i18n$t("Modifier"), i18n$t("Property"), i18n$t("SR"),
+                        paste(i18n$t("Value"), 1:3))
+  
+  return(Result)
+}, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
+
+
+
+
+output$ShowSetupChants <- reactive({
+  return( isTruthy(Character$Skills) && 
+            Character$Skills$HasTalent(.SkillType["Sacred"]) )
+})
+outputOptions(output, 'ShowSetupChants', suspendWhenHidden = FALSE)
+
+output$SetupChants <- renderTable({
+  Result <- Character$Skills$Sets$Sacred$Skills
+  Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
+  
+  # Show names not codes
+  #Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  NameMapping <- GetAbilities()#Language
+  for (ablty in paste0("ab", 1:3)) {
+    Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
+  }
+  # Column names
+  colnames(Result) <- c(i18n$t("Skill"), paste(i18n$t("SC"), 1:3), i18n$t("Form of Prayer"), 
+                        i18n$t("Modifier"), i18n$t("SR"),
                         paste(i18n$t("Value"), 1:3))
   
   return(Result)

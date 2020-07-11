@@ -51,6 +51,23 @@ GetSpells_Opt <- function(Spells, Language = "de") {
 }
 
 
+GetChants_Opt <- function(Chants, Language = "de") {
+  # Get data frame with skill definitions
+  ChantList <- GetChants(Language)
+  ChantList$value <- 0
+  # 
+  ChantValID <- match(names(Chants), ChantList[["attrID"]])
+  # filter out NAs when spell is not in db
+  Chants     <- Chants[!is.na(ChantValID)]
+  ChantValID <- ChantValID[!is.na(ChantValID)]
+  # sort and filter out the spells the hero hasn't  mastered, yet
+  ChantList <- ChantList[ChantValID, ]
+  ChantList$value <- unlist(Chants)
+  
+  return(ChantList)
+}
+
+
 #' GetCombatSkill
 #' Compute combat skill based on DSA5 rules
 #' @details 

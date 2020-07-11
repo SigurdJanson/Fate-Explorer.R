@@ -66,6 +66,7 @@ observeEvent(
       req(input$lbCharSkills)
       ActiveSkillIdent <<- input$lbCharSkills
       SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+      # Update LastSkill to redraw the visible roll result
       SkillSource$LastSkill <- SkillSource$GetSkillIndex(ActiveSkillIdent)
     }
     UpdateSkillResult(UpdateSkillResult()+1)

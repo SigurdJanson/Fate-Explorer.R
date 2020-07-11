@@ -20,19 +20,24 @@ sidebarLayout(
       tableOutput("SetupAttr")
     ),
     conditionalPanel(
-      condition = "output.ShowSetupSkills",
-      hr(), h3(i18n$t("Skills")),
-      tableOutput("SetupSkills")
-    ),
-    conditionalPanel(
       condition = "output.ShowSetupWeapons",
       hr(), h3(i18n$t("Weapons")),
       tableOutput("SetupWeapons")
     ),
     conditionalPanel(
+      condition = "output.ShowSetupSkills",
+      hr(), h3(i18n$t("Skills")),
+      tableOutput("SetupSkills")
+    ),
+    conditionalPanel(
       condition = "output.ShowSetupSpells",
       hr(), h3(i18n$t("Spells")),
       tableOutput("SetupSpells")
+    ),
+    conditionalPanel(
+      condition = "output.ShowSetupChants",
+      hr(), h3(i18n$t("Chants")),
+      tableOutput("SetupChants")
     ),
     conditionalPanel(
       condition = "output.ShowSetupJson",

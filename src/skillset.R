@@ -45,10 +45,11 @@ SkillSet <- R6Class("SkillSet", public = list(
       } else if (Type == .SkillType["Magic"]) {
         self$Skills <- GetSpells_Opt(Skills)
       } else  if (Type == .SkillType["Sacred"]) {
-        #TODO#################
+        self$Skills <- GetChants_Opt(Skills)
       } else stop("Unknown type of skill")
       self$Modifier <- 0L
       # Add ability values to each skill
+
       AbilityIDs  <- self$Skills[, paste0("ab", 1:3)]
       AbilityVals <- as.data.frame(sapply(AbilityIDs, function(x) Abilities[x]))
       names(AbilityVals) <- paste0("abval", 1:3)
