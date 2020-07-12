@@ -18,7 +18,7 @@ SkillSet <- R6Class("SkillSet", public = list(
   LastModifier  = NA, # additional situation dependent modifier
   LastResult    = NA, # Critical, Success, Fail, Botch
   ConfirmationMissing = NA,
-  LastConfirmRoll = NA,
+  ConfirmRoll = NA,
   LastQL        = NA, # Quality level
   LastRemainder = NA, # remaining skill points
   LastFumbleEffect = NA, # EffectOfFumble: consequence of 2d6
@@ -249,10 +249,6 @@ SkillSet <- R6Class("SkillSet", public = list(
       self$LastRoll <- TRUE
     self$VerifyLastRoll()
 
-    self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
-    self$LastConfirmRoll <- NA
-    self$LastFumbleEffect <- NA
-    
     invisible(self)
   },
   
@@ -279,8 +275,11 @@ SkillSet <- R6Class("SkillSet", public = list(
                                         self$LastModifier)
 
     self$LastQL <- Result[["QL"]]
-    self$LastResult <- Result[["Message"]]
+    self$LastResult <- .SuccessLevel[ Result[["Message"]] ]
     self$LastRemainder <- Result[["Remainder"]]
+    self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[ c("Fumble", "Critical") ]
+    self$ConfirmRoll <- NA
+    self$LastFumbleEffect <- NA
     return(Result)
   },
   
@@ -320,6 +319,24 @@ SkillSet <- R6Class("SkillSet", public = list(
     return(!is.na(self$LastRoll) && self$ConfirmationMissing)
   },
 
+
+  Confirm = function() {
+    if (anyNA(self$LastRoll)) return(NA)
+    if (!self$ConfirmationMissing) return(NA)
+
+    LastSkillVal  <- self$Skills[["value"]][self$LastSkill]
+    LastAbilities <- self$GetAbilities(self$LastSkill)
+    
+    self$ConfirmRoll <- SkillRoll()
+    Result <- VerifySkillRoll(self$ConfirmRoll, LastAbilities,
+                              LastSkillVal, self$Modifier)
+    NewResult <- VerifyConfirmation(names(self$LastResult), Result$Message)
+    self$LastResult <- .SuccessLevel[NewResult]
+
+    self$ConfirmationMissing <- FALSE
+    return(self$ConfirmRoll)
+  },
+
   
   NeedFumbleRoll = function() {
     if (self$Type == .SkillType["Profane"]) 
@@ -332,11 +349,12 @@ SkillSet <- R6Class("SkillSet", public = list(
   
   
   FumbleRoll = function() {
-    if (NeedFumbleRoll) {
-      self$LastFumbleEffect <- 
-        GetFumbleEffect(FumbleRoll(), "Skill", names(self$Type))
+    if (self$NeedFumbleRoll()) {
+      Roll <- FumbleRoll()
+      Effect <- GetFumbleEffect(Roll, "Skill", names(self$Type))
+      self$LastFumbleEffect <- Effect
     }
-    return(self$LastFumbleEffect)
+    return(Roll)
   }
 ))
 

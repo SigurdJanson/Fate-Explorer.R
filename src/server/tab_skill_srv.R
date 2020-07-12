@@ -128,6 +128,10 @@ UpdateSkillResult <- reactiveVal()
 observeEvent(input$doSkillRoll, {
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = FALSE)
+  #### DEBUGGING
+  #SkillSource$LastRoll <- sample(c(20, 1, 20), 3)
+  #SkillSource$VerifyLastRoll()
+  #### DEBUGGING
   LastSkillRoll$Roll <- SkillSource$LastRoll
   LastSkillRoll$Routine <- FALSE
   UpdateSkillResult(0)
@@ -141,6 +145,16 @@ observeEvent(input$doSkillRoutine, {
   UpdateSkillResult(0)
 })
 
+observeEvent(input$doSkillConfirm, { # Confirm Critical/Botch
+  SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+  UpdateSkillResult( SkillSource$Confirm()+100 )
+})
+
+observeEvent(input$doSkillFumble, { # Show fumble result
+  SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+  UpdateSkillResult( SkillSource$FumbleRoll()+200 )
+})
+
 
 # Display result of skill roll (View) ----
 output$SkillRoll <- renderText({
@@ -149,7 +163,6 @@ output$SkillRoll <- renderText({
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillIndex  <- SkillSource$GetSkillIndex(ActiveSkillIdent)
 
-  RollCheck <- SkillSource$VerifyLastRoll()
   EffectiveCharVal <- SkillSource$GetSkillValues(SkillIndex, input$SkillMod)
   Labels  <- SkillSource$GetAbilityLabels(SkillIndex)
   RollVal <- SkillSource$GetLastScore()
@@ -170,12 +183,33 @@ output$SkillRoll <- renderText({
   if (input$rdbSkillSource == "NoSkill")
     RenderedKeyResult <- ""
   else
-    RenderedKeyResult <- RenderRollKeyResult(RollCheck$Message, RollCheck$QL, KeyUnit = "ql")
+    RenderedKeyResult <- RenderRollKeyResult(names(SkillSource$LastResult), 
+                                             SkillSource$LastQL, KeyUnit = "ql")
+  #browser()  
+  # Confirmation
+  ConfirmResult <- tagList()
+  if (SkillSource$RollNeedsConfirmation())
+    ConfirmResult <- tagAppendChild(ConfirmResult, 
+                                    RenderConfirmationRequest("doSkillConfirm", SkillSource$LastResult))
+  else {
+    if (isTruthy(SkillSource$ConfirmRoll))
+      ConfirmResult <- tagAppendChild(ConfirmResult, 
+                                      RenderRollConfirmation(names(SkillSource$LastResult),
+                                                             SkillSource$ConfirmRoll, 
+                                                             i18n))
+    if (SkillSource$NeedFumbleRoll()) {# show link button to perform the roll
+      ConfirmResult <- tagAppendChild(ConfirmResult, 
+                                      RenderFumbleRollRequest("doSkillFumble"))
+    } else if (isTruthy(SkillSource$LastFumbleEffect)) { # show result of fumble roll
+      ConfirmResult <- tagAppendChild(ConfirmResult, RenderFumbleRollEffect(SkillSource$LastFumbleEffect))
+    }
+  }
   
   Result <- div(
     RenderedKeyResult,
     div(
-      tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto")
+      tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
+      ConfirmResult
     ),
     class = "shiny-html-output shiny-bound-output roll")
   

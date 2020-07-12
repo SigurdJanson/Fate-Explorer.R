@@ -86,21 +86,22 @@ RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
                "")
   if (isTruthy(i18n)) Message <- i18n$t(Message)
   if (isTruthy(RollValue)) {
-    Message <- paste0(Message, " (", RollValue, ")")
+    Message <- paste0(Message, " (", paste0(RollValue, collapse = " / "), ")")
   }
   
-  return(Message)
+  return(p(Message))
 }
 
 #' RenderFumbleRollRequest
 RenderFumbleRollRequest <- function( inputId ) {
-  return(p(actionLink(inputId, i18n$t("See what happens..."))))
+  return( p(actionLink(inputId, i18n$t("See what happens..."))) )
 }
 
 
 #' RenderFumbleRollRequest
+#' @param Effect A list with the components  `id`, `label`, and `descr`.
 RenderFumbleRollEffect <- function( Effect ) {
-  return(p(Effect))
+  return( p(Effect[["label"]]) )
 }
 
 
