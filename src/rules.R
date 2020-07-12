@@ -69,6 +69,7 @@ GetSkills <- function(lang = .Language) {
   return(.Skills)
 }
 
+
 #' GetSpells
 #' Get the list of magic skills available in DSA5.
 #' @param lang Requested language to translate labels ("en", "de").
@@ -80,6 +81,7 @@ GetSpells <- function(lang = .Language) {
   }
   return(.Spells)
 }
+
 
 #' GetChants
 #' Get the list of magic skills available in DSA5.
