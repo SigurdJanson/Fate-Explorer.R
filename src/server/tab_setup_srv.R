@@ -41,7 +41,7 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
 SetupSkills <- function() {
   Data <- RawCharacterFile()[["talents"]]
   ProfaneSkills <- SkillSet$new(1L, Data, Character$Attr)
-#browser()
+
   # Add magic skills if hero has them
   Data <- RawCharacterFile()[["spells"]]
   if (isTruthy(Data) && length(Data) > 0) {
@@ -177,7 +177,6 @@ output$SetupSpells <- renderTable({
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
 
   # Show names not codes
-  #Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
   NameMapping <- GetAbilities()#Language
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
@@ -204,7 +203,6 @@ output$SetupChants <- renderTable({
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
   
   # Show names not codes
-  #Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
   NameMapping <- GetAbilities()#Language
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
