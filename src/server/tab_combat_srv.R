@@ -132,8 +132,7 @@ output$uiCombatRoll <- renderText({
   # Confirmation
   # Waiting for confirmation
   if (isTRUE(ActiveWeapon$ConfirmationMissing))
-    Result <- tagAppendChild(Result, RenderConfirmationRequest(ActiveWeapon$LastResult, 
-                                                               names(ActiveWeapon$LastAction)))
+    Result <- tagAppendChild(Result, RenderConfirmationRequest("doCombatConfirm", ActiveWeapon$LastResult))
   # Show confirmation result (add confirmation <div/>)
   if (!is.null(ConfirmationStr)) {
     Result <- tagAppendChild(Result, p(ConfirmationStr))
@@ -142,9 +141,9 @@ output$uiCombatRoll <- renderText({
     # Waiting for fumble roll
     if (ActiveWeapon$LastResult == .SuccessLevel["Fumble"]) {
       if (!isTruthy(ActiveWeapon$LastFumbleEffect)) {
-        Result <- tagAppendChild(Result, p(actionLink("doCombatFumble", i18n$t("See what happens..."))))
+        Result <- tagAppendChild( Result, RenderFumbleRollRequest("doCombatFumble") )
       } else { # Show fumble effects
-        Result <- tagAppendChild( Result, p(ActiveWeapon[["LastFumbleEffect"]][["label"]]) )
+        Result <- tagAppendChild( Result, RenderFumbleRollEffect(ActiveWeapon[["LastFumbleEffect"]][["label"]]) )
       }
     }
   }

@@ -60,21 +60,14 @@ gicon <- function (name, class = NULL, lib = "fe") {
 
 
 #' RenderConfirmationRequest
-RenderConfirmationRequest <- function(Result, RollType = c("Skill", "Attack", "Parry", "Dodge")) {
-  RollType <- match.arg(RollType)
-  
+RenderConfirmationRequest <- function(inputId, Result) {#RollType = c("Skill", "Attack", "Parry", "Dodge")) {
   if (Result == .SuccessLevel["Critical"])
     ConfirmLabel <- i18n$t("Confirm!")
   else if (Result == .SuccessLevel["Fumble"])
     ConfirmLabel <- i18n$t("Avert!")
   else stop("Inadequate success level for a confirmation roll")
-  
-  if (RollType == "Skill")
-    WidgetId <- "doSkillConfirm"
-  else
-    WidgetId <- "doCombatConfirm"
-  
-  return( actionLink(WidgetId, ConfirmLabel, icon = NULL) )
+
+  return( actionLink(inputId, ConfirmLabel, icon = NULL) )
 }
 
 #' RenderRollConfirmation
@@ -99,6 +92,16 @@ RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
   return(Message)
 }
 
+#' RenderFumbleRollRequest
+RenderFumbleRollRequest <- function( inputId ) {
+  return(p(actionLink(inputId, i18n$t("See what happens..."))))
+}
+
+
+#' RenderFumbleRollRequest
+RenderFumbleRollEffect <- function( Effect ) {
+  return(p(Effect))
+}
 
 
 #' RenderRollKeyResult
