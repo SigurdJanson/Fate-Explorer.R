@@ -129,7 +129,7 @@ observeEvent(input$doSkillRoll, {
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = FALSE)
   #### DEBUGGING
-  #SkillSource$LastRoll <- sample(c(20, 1, 20), 3)
+  #SkillSource$LastRoll <- sample(c(20, 20, 1), 3)
   #SkillSource$VerifyLastRoll()
   #### DEBUGGING
   LastSkillRoll$Roll <- SkillSource$LastRoll
@@ -207,10 +207,8 @@ output$SkillRoll <- renderText({
   
   Result <- div(
     RenderedKeyResult,
-    div(
-      tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
-      ConfirmResult
-    ),
+    div(tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"), 
+        ConfirmResult), 
     class = "shiny-html-output shiny-bound-output roll")
   
   return(paste((Result), collapse=""))

@@ -33,7 +33,7 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
 #' of the fumble.
 GetFumbleEffect <- function(RollValue, 
                             RollType = c("Skill", "Attack", "Parry", "Dodge"),
-                            SubType = c(names(.WeaponType), "Magic", "Liturgical") ) {
+                            SubType = c(names(.WeaponType), "Magic", "Sacred") ) {
   # PRECONDITIONS
   if(missing(RollValue)) stop("No roll given")
   if(RollValue < 2L || RollValue > 12L) stop("Invalid fumble roll")

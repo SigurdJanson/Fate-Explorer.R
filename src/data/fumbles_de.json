@@ -179,7 +179,7 @@
     },
     {
         "Roll": "Skill",
-        "Type": "Liturgical",
+        "Type": "Sacred",
         "Url": "Patzer_Liturgien.html",
         "Effect": [
         {"dr": 2, "ref": "FMBL_51"},

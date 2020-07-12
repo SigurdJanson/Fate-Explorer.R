@@ -104,7 +104,7 @@ observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
 })
 
 observeEvent(input$doCombatFumble, { # Show fumble result
-  UpdateCombatResult( ActiveWeapon$FumbleRoll()+200 )
+  UpdateCombatResult( ActiveWeapon$FumbleRoll() )
 })
 
 
@@ -143,14 +143,14 @@ output$uiCombatRoll <- renderText({
       if (!isTruthy(ActiveWeapon$LastFumbleEffect)) {
         Result <- tagAppendChild( Result, RenderFumbleRollRequest("doCombatFumble") )
       } else { # Show fumble effects
-        Result <- tagAppendChild( Result, RenderFumbleRollEffect(ActiveWeapon[["LastFumbleEffect"]][["label"]]) )
+        Result <- tagAppendChild( Result, RenderFumbleRollEffect(ActiveWeapon[["LastFumbleEffect"]]) )
       }
     }
   }
   if (length(Result) > 0) # two panels
     return(as.character( div(KeyResult, 
                              div(Result, class = "shiny-html-output shiny-bound-output"), 
-                             class = "roll")))
+                             class = "roll") ))
   else # key result panel, only
     return(as.character(KeyResult))
 })

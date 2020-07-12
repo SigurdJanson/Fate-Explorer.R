@@ -98,10 +98,12 @@ RenderFumbleRollRequest <- function( inputId ) {
 }
 
 
+
 #' RenderFumbleRollRequest
 #' @param Effect A list with the components  `id`, `label`, and `descr`.
 RenderFumbleRollEffect <- function( Effect ) {
-  return( p(Effect[["label"]]) )
+  Tooltip <- span(Effect[["descr"]], class="tooltiptext")
+  return( div(Effect[["label"]], Tooltip, class = "tooltipped") )
 }
 
 
