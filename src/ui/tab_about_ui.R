@@ -2,7 +2,7 @@
 
 fluidPage(
   fluidRow(
-    column(12, h1("DSA5", "Fate Explorer", align = "center"))
+    column(12, h1(gicon("logo-fateexplorer", class = "fe-logo"), "Fate Explorer", align = "center"))
   ),
 fluidRow(
   column(3, imageOutput("imgAboutMagic"), imageOutput("imgAboutSkeletons")),

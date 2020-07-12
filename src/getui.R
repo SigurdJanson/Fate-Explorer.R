@@ -8,8 +8,8 @@ ui <- shinyUI(fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "fatexplorer.css"),
     tags$link(rel = "stylesheet", type = "text/css", href = "rolloutput.css")
   ),
-  # titlePanel(title = "Fate Explorer", windowTitle = "Fate Explorer"),
-  navbarPage(i18n$t("The Dark Eye - Fate Explorer"), 
+  navbarPage(title = p(gicon("logo-fateexplorer", class = "fe-logo"), "Fate Explorer"),
+             windowTitle = "Fate Explorer",
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
              
              tabPanel(i18n$t("Be"),
