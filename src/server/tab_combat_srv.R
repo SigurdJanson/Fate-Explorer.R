@@ -100,11 +100,11 @@ observeEvent(input$doDodge, { # Dodge Roll
 })
 
 observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
-  UpdateCombatResult( ActiveWeapon$Confirm() )
+  UpdateCombatResult( ActiveWeapon$Confirm()+100 )
 })
 
 observeEvent(input$doCombatFumble, { # Show fumble result
-  UpdateCombatResult( ActiveWeapon$FumbleRoll() )
+  UpdateCombatResult( ActiveWeapon$FumbleRoll()+200 )
 })
 
 
