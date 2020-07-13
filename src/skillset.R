@@ -9,7 +9,7 @@ source("./readoptjson.R")
 
 SkillSet <- R6Class("SkillSet", public = list(
   # Skill properties
-  Type = NA,      # enum Type `.SkillType` (Profane, Magic, Sacred)
+  Type = NA,      # enum Type `.SkillType` (Mundane, Magic, Blessed)
   Modifier = 0L,  # permanent default modifier because of special abilities
   Skills = NA,    # List of skills
   # Roll properties
@@ -25,7 +25,7 @@ SkillSet <- R6Class("SkillSet", public = list(
   
   
   #' Constructor
-  #' @param Type is skill set profane or supernatural (i.e. magic or sacred)
+  #' @param Type is skill set mundane or supernatural (i.e. magic or blessed)
   #' (integer or string of enum `.SkillType`)
   #' @param Skills Data frame of skills (1 column with values; row names are skill IDs)
   #' @param Abilities Character abilities (data frame)
@@ -40,11 +40,11 @@ SkillSet <- R6Class("SkillSet", public = list(
                                   stringsAsFactors = FALSE)
       self$Modifier <- 0L
     } else {
-      if (Type == .SkillType["Profane"]) {
+      if (Type == .SkillType["Mundane"]) {
         self$Skills <- GetSkills_Opt(Skills)
       } else if (Type == .SkillType["Magic"]) {
         self$Skills <- GetSpells_Opt(Skills)
-      } else  if (Type == .SkillType["Sacred"]) {
+      } else  if (Type == .SkillType["Blessed"]) {
         self$Skills <- GetChants_Opt(Skills)
       } else stop("Unknown type of skill")
       self$Modifier <- 0L
@@ -339,8 +339,8 @@ SkillSet <- R6Class("SkillSet", public = list(
 
   
   NeedFumbleRoll = function() {
-    if (self$Type == .SkillType["Profane"]) 
-      return(FALSE) # not applicable for profane skills
+    if (self$Type == .SkillType["Mundane"]) 
+      return(FALSE) # not applicable for mundane skills
     else {
       return(is.na(self$LastFumbleEffect) && 
                self$LastResult == .SuccessLevel["Fumble"])
@@ -362,18 +362,18 @@ SkillSet <- R6Class("SkillSet", public = list(
 # CharacterSkills -------------
 CharacterSkills <- R6Class("CharacterSkills", public = list(
   
-  Sets = list(Profane = NA, Magic = NA, Sacred = NA),
+  Sets = list(Mundane = NA, Magic = NA, Blessed = NA),
 
   #' Constructor
-  #' @param Type is skill set profane or supernatural (i.e. magic or sacred)
+  #' @param Type is skill set mundane or supernatural (i.e. magic or blessed)
   #' (integer or string of enum `.SkillType`)
   #' @param Skills Data frame of skills (1 column with values; row names are skill IDs)
   #' @param Abilities Character abilities (data frame)
   #' @return `self`
-  initialize = function(ProfaneSet, MagicSet = NULL, SacredSet = NULL) {
-    self$Sets[["Profane"]] <- ProfaneSet
-    self$Sets[["Magic"]]   <- MagicSet
-    self$Sets[["Sacred"]]  <- SacredSet
+  initialize = function(MundaneSet, MagicSet = NULL, BlessedSet = NULL) {
+    self$Sets[["Mundane"]]  <- MundaneSet
+    self$Sets[["Magic"]]    <- MagicSet
+    self$Sets[["Blessed"]]  <- BlessedSet
     invisible(self)
   },
   

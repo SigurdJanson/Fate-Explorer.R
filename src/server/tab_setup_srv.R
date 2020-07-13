@@ -40,7 +40,7 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
 #' @return NULL
 SetupSkills <- function() {
   Data <- RawCharacterFile()[["talents"]]
-  ProfaneSkills <- SkillSet$new(1L, Data, Character$Attr)
+  MundaneSkills <- SkillSet$new(1L, Data, Character$Attr)
 
   # Add magic skills if hero has them
   Data <- RawCharacterFile()[["spells"]]
@@ -52,12 +52,12 @@ SetupSkills <- function() {
 
   Data <- RawCharacterFile()[["liturgies"]]
   if (isTruthy(Data) && length(Data) > 0) {
-    SacredSkills <- SkillSet$new(3L, Data, Character$Attr)
+    BlessedSkills <- SkillSet$new(3L, Data, Character$Attr)
   } else {
-    SacredSkills <- NULL
+    BlessedSkills <- NULL
   }
   
-  Character$Skills <- CharacterSkills$new(ProfaneSkills, MagicSkills, SacredSkills)
+  Character$Skills <- CharacterSkills$new(MundaneSkills, MagicSkills, BlessedSkills)
 
   # Update dropdown list on Skills Tab
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
@@ -143,12 +143,12 @@ output$SetupAttr <- renderTable({
 # Skills Panels ---------------------
 output$ShowSetupSkills <- reactive({
   return( isTruthy(Character$Skills) && 
-          Character$Skills$HasTalent(.SkillType["Profane"]) )
+          Character$Skills$HasTalent(.SkillType["Mundane"]) )
 })
 outputOptions(output, 'ShowSetupSkills', suspendWhenHidden = FALSE)
 
 output$SetupSkills <- renderTable({
-  Result <- Character$Skills$Sets$Profane$Skills
+  Result <- Character$Skills$Sets$Mundane$Skills
   Result <- Result[-which(names(Result) == "attrID")]
   Result <- Result[-which(names(Result) == "classID")]
   # Show names not codes
@@ -194,12 +194,12 @@ output$SetupSpells <- renderTable({
 
 output$ShowSetupChants <- reactive({
   return( isTruthy(Character$Skills) && 
-            Character$Skills$HasTalent(.SkillType["Sacred"]) )
+            Character$Skills$HasTalent(.SkillType["Blessed"]) )
 })
 outputOptions(output, 'ShowSetupChants', suspendWhenHidden = FALSE)
 
 output$SetupChants <- renderTable({
-  Result <- Character$Skills$Sets$Sacred$Skills
+  Result <- Character$Skills$Sets$Blessed$Skills
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
   
   # Show names not codes

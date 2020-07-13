@@ -8,7 +8,7 @@
 .SuccessLevel <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
 .CloseCombatRange  <- c(Short = 1L, Medium = 2L, Long = 3L)
 .RangedCombatRange <- c(Close = 1L, Medium = 2L, Far = 3L)
-.SkillType    <- c(Profane = 1L, Magic = 2L, Sacred = 3L)
+.SkillType    <- c(Mundane = 1L, Magic = 2L, Blessed = 3L)
 
 # Data objects ----
 .Attribs <- NULL
