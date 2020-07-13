@@ -84,7 +84,7 @@ observeEvent(input$inpDamage, {
   
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
-  UpdateCombatResult( ActiveWeapon$Roll( Action, as.numeric(input$CombatPenalty) ) )
+  UpdateCombatResult( ActiveWeapon$Roll( Action, input$inpCombatMod ) )
 }
 
 observeEvent(input$doAttackThrow, { # Attack Roll

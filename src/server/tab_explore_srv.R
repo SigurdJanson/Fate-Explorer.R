@@ -44,7 +44,7 @@ output$imgSkillChances <- renderPlot({
 # Display result of combat rolls
 output$imgAttackChances <- renderPlot({
   Value <- input$inpAttackValue
-  Mod   <- input$CombatPenalty
+  Mod   <- input$inpCombatMod
   DmgCount <- input$inpDamageDieCount
   DmgSides <- 6
   DmgMod   <- input$inpDamage

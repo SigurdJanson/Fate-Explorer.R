@@ -29,8 +29,13 @@ sidebarLayout(
     hr(),
     sliderInput("inpDodgeValue", i18n$t("Dodge"),  min = 1L, max = 10L, value = 5L, step = 1L),
     hr(),
-    sliderTextInput("CombatPenalty", i18n$t("Penalty"),  choices = seq(from = 0L, to = -10L, by = -1L),
-                    selected = 0L, grid = TRUE)
+    div(style="float:right",
+        conditionalPanel(condition = "input.inpCombatMod < 0", 
+                         gicon("minus-circle"), i18n$t("Impediment")),
+        conditionalPanel(condition = "input.inpCombatMod > 0", 
+                         gicon("plus-circle"), i18n$t("Advantage"))
+    ),
+    sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L)
     ),
   mainPanel(
     actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe"),
