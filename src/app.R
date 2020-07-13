@@ -15,10 +15,10 @@ if (file.exists(file.path("src", "data", "lang.json"))) {
 i18n$set_translation_language("de")
 
 # 
+source("rules.R", local = TRUE)
 source("helpers.R", local = TRUE, encoding = "UTF-8")
 source("dicelogic.R", local = TRUE)
 source("readoptjson.R", local = TRUE)
-source("rules.R", local = TRUE)
 .Language <- i18n$translation_language
 
 source("explorechances.R", local = TRUE)
