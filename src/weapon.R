@@ -135,6 +135,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       return(self$LastRoll)
   },
   
+
   Confirm = function() {
     if (is.na(self$LastRoll)) return(NA)
     if (!self$ConfirmationMissing) return(NA)
@@ -143,7 +144,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
 
     self$ConfirmRoll <- CombatRoll()
-    Result <- .SuccessLevel[VerifyCombatRoll(self$ConfirmRoll, Skill, self$Modifier)]
+    Result <- .SuccessLevel[VerifyCombatRoll(self$ConfirmRoll, Skill, self$LastModifier)]
     # Has previous result been confirmed?
     NewResult <- .SuccessLevel[VerifyConfirmation(names(self$LastResult), names(Result))]
     self$Confirmed <- (NewResult == self$LastResult)
