@@ -1,0 +1,197 @@
+{   
+    "Effects": [
+        {"id": "FMBL_1", "label": "Weapon destroyed", "descr": "The weapon is irreparably destroyed. If the weapon is indestructible this result must be treated like 'weapon lost'."},
+        {"id": "FMBL_2", "label": "Weapon heavily damaged", "descr": "The weapon cannot be used anymore until repaired. If the wepaon is indestructible this result must be treated like 'weapon lost'."},
+        {"id": "FMBL_3", "label": "Weapon damaged", "descr": "The weapon is damaged. All checks on ranged combat have a disadvantage of 4 until repaired. If the wepaon is indestructible this result must be treated like 'weapon lost'."},
+        {"id": "FMBL_4", "label": "Weapon lost", "descr": "The weapon fell to the ground."},
+
+        {"id": "FMBL_12",   "label": "Weapon stuck", "descr": "The weapon got stuck in a tree, the ground, or anything else. An action with a disadvatage of 1 on 'Feat of Strength' (dragging & pulling) is required."},
+
+        {"id": "FMBL_21", "label": "Shield destroyed", "descr": "The shield  is irreparably destroyed. If the shield is indestructible this result must be treated like 'shield lost'."},
+        {"id": "FMBL_22", "label": "Shield heavily damaged", "descr": "The shield cannot be used anymore until repaired. If the shield is indestructible this result must be treated like 'shield lost'."},
+        {"id": "FMBL_23", "label": "Shield damaged", "descr": "The shield is damaged. All checks on attack and parry get a disadvantage of 2 until repaired.  If the shield is indestructible this result must be treated like 'shield lost'."},
+        {"id": "FMBL_24", "label": "Shield lost", "descr": "The shield fell to the ground."},
+        {"id": "FMBL_25", "label": "Shield stuck", "descr": "The shield got stuck in a tree, the ground, or anything else. An action with a disadvatage of 1 on 'Feat of Strength' (dragging & pulling) is required."},
+
+        {"id": "FMBL_5", "label": "Hit of companion/bystander", "descr": "The projectile by accident hits a friend or a bystander. Is such a goal close by this result will be handled like 'self-imposed wound'. The weapon damage is determined including the weapon's bonus."},
+        {"id": "FMBL_6", "label": "Miss", "descr": "A spectacular miss hits an object (a shop sign has been shot down, a glass window broke etc.)."},
+        {"id": "FMBL_7", "label": "Pulled muscle", "descr": "The character has back pain and endures one level of 'pain' for the next 3 rounds."},
+        {"id": "FMBL_8", "label": "Slipped string/ Improper grip of weapon/ Jammed", "descr": "The hero needs 2 complete combat rounds to make it ready again."},
+        {"id": "FMBL_9", "label": "Too focused", "descr": "The hero is so focused on aiming at the target that they lose defense roles until the next action."},
+
+        {"id": "FMBL_10", "label": "Self-imposed wound", "descr": "The hero hurt themselves and suffers damage. The damage is determined including the weapon bonus."},
+        {"id": "FMBL_11", "label": "Self-imposed serious wound", "descr": "Serious self-injury. The damage shall be determined including the weapon bonus and doubled."},
+
+        {"id": "FMBL_13", "label": "Tumble", "descr": "The hero stumbles and falls unless a check on 'Body Control' (Balance) with a disadvantage of 2 succeeds. If not the hero suffers the state 'Prone'."},
+        {"id": "FMBL_14", "label": "Stumble", "descr": "The hero stumbles and the next action suffers a disadvantage of 2."},
+        {"id": "FMBL_15", "label": "Twisted foot", "descr": "The hero receives the condition 'Pain' for 3 combat rounds."},
+        {"id": "FMBL_16", "label": "Head bump", "descr": "The hero hit the head. One level of 'Stupor' for one hour."},
+
+        {"id": "FMBL_31", "label": "Swapped souls", "descr": "The mind of the wizard switches places with the nearest life form larger than a rat for 1d6 days."},
+        {"id": "FMBL_32", "label": "Minor spirit", "descr": "A minor spirit will persecute the wizard for 1d6 days."},
+
+        {"id": "FMBL_91", "label": "New traget", "descr": "The target of the action changes at the game masters discretion."},
+
+        {"id": "FMBL_34", "label": "Transformation", "descr": "The wizard is transformed into a small animal at the game masters discretion for 1d6 hours."},
+        {"id": "FMBL_35", "label": "Deflagration", "descr": "The total supply of arcane energy leaves the body and manifests itself as a rain of colourful sparkles, butterfly illusions and tiny rainbows. The lost energy regenerates regularly."},
+        {"id": "FMBL_36", "label": "Magic block", "descr": "For 1d6 days the wizard loses the ability to access his/her supply of arcane energy."},
+        {"id": "FMBL_37", "label": "Headache", "descr": "The wizard has a throbbing headache for 1d6 days. They suffer of 1 level of stupor during that time."},
+        {"id": "FMBL_38", "label": "Astral drain", "descr": "The available supply of leaves the body and moves to the nearest target with magical abilities. The target receives the total supply even if it exceeds the natural maximum. The lost energy regenerates regularly."},
+
+        {"id": "FMBL_92", "label": "Mute", "descr": "The hero loses the ability to speak."},
+
+        {"id": "FMBL_40", "label": "Colourful hair", "descr": "All hair inclusing a beard gets multi coloured. Re-growing hair returns in it's original colour."},
+        {"id": "FMBL_41", "label": "Warning", "descr": "An ethereal voice appears out of nothing and says 'Never do that again!'"},
+
+        {"id": "FMBL_51", "label": "Fire", "descr": "Flammable materials in a radius of 2d6 meters burst in flames (except for living beings and the clothes of the Blessed One)."},
+        {"id": "FMBL_52", "label": "Inversion", "descr": "The chant has the oppostite effect. Banish Light creates lights, a health blessing causes damage, etc."},
+
+        {"id": "FMBL_54", "label": "Visions und nightmares", "descr": "For 1d6 days the Blessed One has strange visions and nightmares during nights."},
+        {"id": "FMBL_55", "label": "Intimidated", "descr": "A glance through the spheres intimidates the Blessed One in a way that he receives 3 levels of the state fear."},
+        {"id": "FMBL_56", "label": "Karma block", "descr": "For 1d6 days the Blessed One loses the ability to access his/her supply of karma points."},
+        {"id": "FMBL_57", "label": "Rapture", "descr": "The Blessed One receives 4 levels of rapture for 1 day."},
+        {"id": "FMBL_58", "label": "Confusion", "descr": "The Blessed One is confused for one day and talks incomprehensible stuff he won't remember later. 3 levels confusion."},
+
+        {"id": "FMBL_60", "label": "Stigmatised", "descr": "The Blessed One carries a stigma for 1 day."},
+        {"id": "FMBL_61", "label": "Firmly rooted", "descr": "The Blessed One takes root in the ground and cannot move their feet for 1d6 minutes. During that time s/he has the state 'bound'."}
+    ],
+    "Tables": [
+    {
+        "Roll": "Attack",
+        "Type": "Melee",
+        "Url": "Opt_Nahkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_1"},
+        {"dr": 3, "ref": "FMBL_2"},
+        {"dr": 4, "ref": "FMBL_3"},
+        {"dr": 5, "ref": "FMBL_4"},
+        {"dr": 6, "ref": "FMBL_12"},
+        {"dr": 7, "ref": "FMBL_13"},
+        {"dr": 8, "ref": "FMBL_14"},
+        {"dr": 9, "ref": "FMBL_15"},
+        {"dr": 10, "ref": "FMBL_16"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Attack",
+        "Type": "Unarmed",
+        "Url": "Opt_Nahkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": [2, 7], "ref": "FMBL_13"},
+        {"dr": [3, 8], "ref": "FMBL_14"},
+        {"dr": [4, 9], "ref": "FMBL_15"},
+        {"dr": [5, 10], "ref": "FMBL_16"},
+        {"dr": [6, 11], "ref": "FMBL_10"},
+        {"dr": 12,      "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": ["Parry", "Dodge"],
+        "Type": "Melee",
+        "Url": "Opt_Verteidigung-Patzertabelle-oSchild.html",
+        "Effect": [
+            {"dr": 2, "ref": "FMBL_1"},
+            {"dr": 3, "ref": "FMBL_2"},
+            {"dr": 4, "ref": "FMBL_3"},
+            {"dr": 5, "ref": "FMBL_4"},
+            {"dr": 6, "ref": "FMBL_12"},
+            {"dr": 7, "ref": "FMBL_13"},
+            {"dr": 8, "ref": "FMBL_14"},
+            {"dr": 9, "ref": "FMBL_15"},
+            {"dr": 10, "ref": "FMBL_16"},
+            {"dr": 11, "ref": "FMBL_10"},
+            {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Parry",
+        "Type": "Shield",
+        "Url": "Opt_Verteidigung-Patzertabelle-Shield.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_21"},
+        {"dr": 3, "ref": "FMBL_22"},
+        {"dr": 4, "ref": "FMBL_23"},
+        {"dr": 5, "ref": "FMBL_24"},
+        {"dr": 6, "ref": "FMBL_25"},
+        {"dr": 7, "ref": "FMBL_13"},
+        {"dr": 8, "ref": "FMBL_14"},
+        {"dr": 9, "ref": "FMBL_15"},
+        {"dr": 10, "ref": "FMBL_16"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Dodge",
+        "Type": "Shield",
+        "Url": "Opt_Verteidigung-Patzertabelle-Shield.html",
+        "Effect": [
+        {"dr": [2, 7], "ref": "FMBL_13"},
+        {"dr": [3, 8], "ref": "FMBL_14"},
+        {"dr": [4, 9], "ref": "FMBL_15"},
+        {"dr": [5, 10], "ref": "FMBL_16"},
+        {"dr": [6, 11], "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}] 
+    },
+    {
+        "Roll": ["Parry", "Dodge"],
+        "Type": "Unarmed",
+        "Url": "Opt_Verteidigung-Patzertabelle-oSchild.html",
+        "Effect": [
+            {"dr": [2, 7], "ref": "FMBL_13"},
+            {"dr": [3, 8], "ref": "FMBL_14"},
+            {"dr": [4, 9], "ref": "FMBL_15"},
+            {"dr": [5, 10], "ref": "FMBL_16"},
+            {"dr": [6, 11], "ref": "FMBL_10"},
+            {"dr": 12, "ref": "FMBL_11"}] 
+    },
+    {
+        "Roll": "Attack",
+        "Type": "Ranged",
+        "Url": "Opt_Fernkampf-Patzertabelle.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_1"},
+        {"dr": 3, "ref": "FMBL_2"},
+        {"dr": 4, "ref": "FMBL_3"},
+        {"dr": 5, "ref": "FMBL_4"},
+        {"dr": 6, "ref": "FMBL_5"},
+        {"dr": 7, "ref": "FMBL_6"},
+        {"dr": 8, "ref": "FMBL_7"},
+        {"dr": 9, "ref": "FMBL_8"},
+        {"dr": 10, "ref": "FMBL_9"},
+        {"dr": 11, "ref": "FMBL_10"},
+        {"dr": 12, "ref": "FMBL_11"}]
+    },
+    {
+        "Roll": "Skill",
+        "Type": "Magic",
+        "Url": "Patzer_Zauber.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_31"},
+        {"dr": 3, "ref": "FMBL_32"},
+        {"dr": 4, "ref": "FMBL_91"},
+        {"dr": 5, "ref": "FMBL_34"},
+        {"dr": 6, "ref": "FMBL_35"},
+        {"dr": 7, "ref": "FMBL_36"},
+        {"dr": 8, "ref": "FMBL_37"},
+        {"dr": 9, "ref": "FMBL_38"},
+        {"dr": 10, "ref": "FMBL_92"},
+        {"dr": 11, "ref": "FMBL_40"},
+        {"dr": 12, "ref": "FMBL_41"}]
+    },
+    {
+        "Roll": "Skill",
+        "Type": "Blessed",
+        "Url": "Patzer_Liturgien.html",
+        "Effect": [
+        {"dr": 2, "ref": "FMBL_51"},
+        {"dr": 3, "ref": "FMBL_52"},
+        {"dr": 4, "ref": "FMBL_91"},
+        {"dr": 5, "ref": "FMBL_54"},
+        {"dr": 6, "ref": "FMBL_55"},
+        {"dr": 7, "ref": "FMBL_56"},
+        {"dr": 8, "ref": "FMBL_57"},
+        {"dr": 9, "ref": "FMBL_58"},
+        {"dr": 10, "ref": "FMBL_92"},
+        {"dr": 11, "ref": "FMBL_60"},
+        {"dr": 12, "ref": "FMBL_61"}]
+    }
+]}
