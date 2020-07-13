@@ -5,7 +5,7 @@ An interface to roll the dice based on the ["dark eye" rule system](https://ulis
 ## Features
 
 * Ability rolls
-* Skill rolls incl. routine checks
+* Skill rolls incl. routine checks for mundane, magical or blessed skills
 * Combat rolls
 * Import Optolith character sheets
 * Display of probabilities for different results
