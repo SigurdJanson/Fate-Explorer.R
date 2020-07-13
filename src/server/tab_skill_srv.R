@@ -68,6 +68,7 @@ observeEvent(
       SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
       # Update LastSkill to redraw the visible roll result
       SkillSource$LastSkill <- SkillSource$GetSkillIndex(ActiveSkillIdent)
+      LastSkillRoll$Roll <- NA
     }
     UpdateSkillResult(UpdateSkillResult()+1)
   }#handler
@@ -116,7 +117,7 @@ output$uiDoSkillRoutine <- renderUI({
 })
 
 # Skill role actions (View) -----
-BasicSkillSets <- CharacterSkills$new(SkillSet$new("Profane")) # A basic set for manual skill rolls
+BasicSkillSets <- CharacterSkills$new(SkillSet$new("Mundane")) # A basic set for manual skill rolls
 ActiveSkillIdent <- "ANY"
 ActiveSkillSets <- BasicSkillSets
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
