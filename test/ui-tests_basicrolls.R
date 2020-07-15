@@ -13,6 +13,8 @@ test_that("Tabs", {
   app$stop() # Shiny-App stoppen
 })
 
+
+
 # ABILITY TAB -------------
 ExtractAbilityRoll <- function(app) {
   output <- xml2::read_html( app$getValue(name = "AbilityRoll") )
@@ -24,66 +26,65 @@ ExtractAbilityRoll <- function(app) {
 
 
 test_that("Ability", {
-
-set.seed(TestSeed)
-ExpectedVal <- integer()
-for(i in 1:50) ExpectedVal <- c(ExpectedVal, sample.int(20L, 1L))
-ExpectedResult <- c("Gescheitert", rep("Erfolg", 3), rep("Meisterlich", 2), rep("Erfolg", 3), "Patzer")
-
-# Test basic random sequence
-app <- ShinyDriver$new(path = "../src", seed = TestSeed)
-for (i in 1:length(ExpectedVal)) {
-  app$setInputs(doAbilityRoll = "click")
-  app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+  set.seed(TestSeed)
+  ExpectedVal <- integer()
+  for(i in 1:50) ExpectedVal <- c(ExpectedVal, sample.int(20L, 1L))
+  ExpectedResult <- c("Gescheitert", rep("Erfolg", 3), rep("Meisterlich", 2), rep("Erfolg", 3), "Patzer")
   
-  Result <- ExtractAbilityRoll(app)
-  expect_identical(Result[["Value"]], ExpectedVal[i])
+  # Test basic random sequence
+  app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+  for (i in 1:length(ExpectedVal)) {
+    app$setInputs(doAbilityRoll = "click")
+    app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+    
+    Result <- ExtractAbilityRoll(app)
+    expect_identical(Result[["Value"]], ExpectedVal[i])
+    
+    KeyResult <- Result[["SuccessLevel"]]
+    if (i <= length(ExpectedResult) && TestSeed == 1233)
+      expect_identical(KeyResult, ExpectedResult[i])
+    else
+      succeed(message = "Result only defined for TestSeed of 1233")
+  }
   
-  KeyResult <- Result[["SuccessLevel"]]
-  if (i <= length(ExpectedResult) && TestSeed == 1233)
-    expect_identical(KeyResult, ExpectedResult[i])
-  else
-    succeed(message = "Result only defined for TestSeed of 1233")
-}
-
-#
-# Test reactivity to changes in slider
-LastValue <- Result[["Value"]]
-for (Ability in 1:20) {
+  #
+  # Test reactivity to changes in slider
+  LastValue <- Result[["Value"]]
+  for (Ability in 1:20) {
+    app$setValue("inpAbility", Ability)
+    app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+    
+    Result <- ExtractAbilityRoll(app)
+    expect_identical(Result[["Value"]], LastValue)
+    if (Ability < Result[["Value"]]) {
+      expect_identical(Result[["SuccessLevel"]], "Gescheitert")
+    } else {
+      expect_identical(Result[["SuccessLevel"]], "Erfolg")
+    }
+  }
+  
+  
+  #
+  # Test reactivity to changes of the modifier slider
+  Ability <- 10
   app$setValue("inpAbility", Ability)
   app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
   
-  Result <- ExtractAbilityRoll(app)
-  expect_identical(Result[["Value"]], LastValue)
-  if (Ability < Result[["Value"]]) {
-    expect_identical(Result[["SuccessLevel"]], "Gescheitert")
-  } else {
-    expect_identical(Result[["SuccessLevel"]], "Erfolg")
-  }
-}
-
-
-#
-# Test reactivity to changes of the modifier slider
-Ability <- 10
-app$setValue("inpAbility", Ability)
-app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
-
-for (m in c(-10, -5, -1, 0, 1, 5)) {
-  app$setValue("inpAbilityMod", m)
-  app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
-  
-  Result <- ExtractAbilityRoll(app)
-  expect_identical(Result[["Value"]], LastValue) # shall *not* change
-  if (Ability+m < Result[["Value"]]) {
-    expect_identical(Result[["SuccessLevel"]], "Gescheitert", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
-  } else {
-    expect_identical(Result[["SuccessLevel"]], "Erfolg", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
+  for (m in c(-10, -5, -1, 0, 1, 5)) {
+    app$setValue("inpAbilityMod", m)
+    app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+    
+    Result <- ExtractAbilityRoll(app)
+    expect_identical(Result[["Value"]], LastValue) # shall *not* change
+    if (Ability+m < Result[["Value"]]) {
+      expect_identical(Result[["SuccessLevel"]], "Gescheitert", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
+    } else {
+      expect_identical(Result[["SuccessLevel"]], "Erfolg", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
+    }
+    
   }
   
-}
-
-app$stop() # Shiny-App stoppen
+  app$stop() # Shiny-App stoppen
 })
 
 
@@ -92,13 +93,13 @@ app$stop() # Shiny-App stoppen
 ExtractSkillRoll <- function(app) {
   output <- xml2::read_html( app$getValue(name = "SkillRoll") )
   QLText <- html_text(html_node(output, ".ql"))
-  #print(QLText)
   LevelText <- html_text(html_node(output, ".keyresult"))
+  
   Roll_3d20 <- html_text(html_node(output, "table.table")) # .shiny-table.spacing-s > thead > tr > td
   Roll_3d20 <- unlist(strsplit(Roll_3d20, "\\n"))
   Roll_3d20 <- Roll_3d20[grep("\\d", Roll_3d20)]
-  #print(paste(Roll_3d20))
   Roll_3d20 <- as.integer(Roll_3d20)
+  
   if (length(Roll_3d20) == 8) {
     Ab <- Roll_3d20[1:3]; Sk <- Roll_3d20[4]
     AbRoll <- Roll_3d20[5:7]; SkRoll <- Roll_3d20[8]
@@ -156,7 +157,6 @@ test_that("Skills without Skill Check (default)", {
       }
     }
     app$stop() # Shiny-App stoppen
-    
-  }
+  }# for(SkillSources...)
   
 })
