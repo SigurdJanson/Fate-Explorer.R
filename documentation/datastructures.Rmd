@@ -10,22 +10,50 @@ knitr::opts_chunk$set(echo = TRUE)
 require(jsonlite)
 ```
 
-# Enumerations
-
-Enumerations are realised as named atomic vectors.
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
+```{r Source files, echo=FALSE}
 setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
 source(file.path("D:/Programmierung/R/DSADiceApp.git", "src/weapon.R"))
+source(file.path("D:/Programmierung/R/DSADiceApp.git", "src/rules.R"))
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+```
+
+# Enumerations
+
+Enumerations are realised as named atomic vectors. Functions like `ifelse()` or `as.integer()` may cause problems because the strip the attributes from the variables. If avoided, the labels will be preserved even after an assigment like `Scimitar <- .WeaponType["Melee"]` `r Scimitar <- .WeaponType["Melee"]`. One can access the label with `names(Scimitar)` which returns "`r names(Scimitar)`".
+
+Careful! At this point of development some functions use the numeric code and some use the text label. This should be resolved in the future.
+
+.WeaponType
+```{r Enum WeaponType, echo=FALSE}
 print(.WeaponType)
+```
+
+.CombatAction
+```{r Enum CombatAction, echo=FALSE}
 print(.CombatAction)
+```
+
+.SuccessLevel
+```{r Enum SuccessLevel, echo=FALSE}
 print(.SuccessLevel)
 ```
 
+.CloseCombatRange
+```{r Enum .CloseCombatRange, echo=FALSE}
+print(.CloseCombatRange)
+```
+
+.RangedCombatRange
+```{r Enum .RangedCombatRange, echo=FALSE}
+print(.RangedCombatRange)
+```
+
+.SkillType
+```{r Enum .SkillType, echo=FALSE}
+print(.SkillType)
+```
 
 
-CombatTechniques
 
 
 # Basic Tables {.tabset}
@@ -55,22 +83,38 @@ ab
 `GetSkills()`
 
 ```{r echo=FALSE}
-sk <- structure(list(attrID = c("TAL_1", "TAL_2", "TAL_3", "TAL_4", 
-"TAL_5", "TAL_6"), name = c("Fliegen", "Gaukeleien", "Klettern", 
-"Körperbeherrschung", "Kraftakt", "Reiten"), class = c("Körpertalente", 
-"Körpertalente", "Körpertalente", "Körpertalente", "Körpertalente", 
-"Körpertalente"), classID = c(1L, 1L, 1L, 1L, 1L, 1L), ab1 = c("ATTR_1", 
-"ATTR_1", "ATTR_1", "ATTR_6", "ATTR_7", "ATTR_4"), ab2 = c("ATTR_3", 
-"ATTR_4", "ATTR_6", "ATTR_6", "ATTR_8", "ATTR_6"), ab3 = c("ATTR_6", 
-"ATTR_5", "ATTR_8", "ATTR_7", "ATTR_8", "ATTR_8")), row.names = c(NA, 
-6L), class = "data.frame")
-sk
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+sk <- GetSkills("de")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+
+head(sk)
 ```
 
 * Type: <`r class(sk)`>
 * Identifiers are stored in first column `attrID` (language independent)
 * Available only in German at the moment
 * Loaded from "skills_[lang].json"
+
+
+
+## Spells
+
+```{r echo=FALSE}
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+sk <- GetSpells("de")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+head(sk)
+```
+
+
+## Chants
+
+```{r echo=FALSE}
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+sk <- GetChants("de")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+head(sk)
+```
 
 
 ## Weapons
@@ -142,12 +186,28 @@ wp
 
 ```{r echo=FALSE}
 setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
-ct <- read_json("./data/combattechs_de.json", simplifyVector = FALSE, flatten = TRUE)
-ct <- as.data.frame(ct, stringsAsFactors = FALSE)
+ct <-GetCombatTechniques("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 
-ct
+head(ct)
 ```
+
+## Fumbles
+
+```{r Fumbles Effects, echo=FALSE}
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+fb <- GetAllFumbleEffects("de")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
+
+head(fb$Effects)
+```
+
+```{r Fumbles Tables, echo=FALSE}
+head(fb$Tables)
+```
+
+
+
 
 
 
@@ -270,11 +330,14 @@ sk <- structure(list(attrID = c("TAL_1", "TAL_2", "TAL_3", "TAL_4",
     1, 0, 0, 3, 0, 0, 4, 1, 4, 3, 4, 0, 0, 2, 4, 3, 3, 0, 0, 
     2, 3, 2, 8, 4, 0, 0, 4, 0, 0, 3, 3, 0, 0, 7, 0, 12)), row.names = c(NA, 
 59L), class = "data.frame")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+sk <- GetSkills("de")
+setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 head(sk)
 ```
 
 * Type: <`r class(sk)`>
 * Skill idenfitfiers are stored in the first column `attrID`.
-  * Access id with `Character$Skill[["attrID"]]`
 * Ability identifiers are coded as `r paste("ATTR_", 1:8)`
 * Skill class is a numeric identifier
+
