@@ -5,10 +5,11 @@ library(rvest)
 
 TestSeed <- 1233
 
-
+# BASIC APP ----------------
 test_that("Tabs", {
   app <- ShinyDriver$new(path = "../src")
-  expect_equal(app$findWidget("uiTabset")$listTabs(), c("Sei", "Handle", "Kämpfe", "Setup", "Über..."))
+  expect_equal(app$findWidget("uiTabset")$listTabs(), 
+               c("Sei", "Handle", "Kämpfe", "Setup", "Über..."))
   app$stop() # Shiny-App stoppen
 })
 
@@ -39,7 +40,7 @@ for (i in 1:length(ExpectedVal)) {
   expect_identical(Result[["Value"]], ExpectedVal[i])
   
   KeyResult <- Result[["SuccessLevel"]]
-  if (i <= 10 && TestSeed == 1233)
+  if (i <= length(ExpectedResult) && TestSeed == 1233)
     expect_identical(KeyResult, ExpectedResult[i])
   else
     succeed(message = "Result only defined for TestSeed of 1233")
@@ -82,14 +83,80 @@ for (m in c(-10, -5, -1, 0, 1, 5)) {
   
 }
 
-
-
 app$stop() # Shiny-App stoppen
 })
 
 
 
 # SKILLS TAB -------------
-test_that("Skills", {
-  succeed(message = "not yet implemented")
+ExtractSkillRoll <- function(app) {
+  output <- xml2::read_html( app$getValue(name = "SkillRoll") )
+  QLText <- html_text(html_node(output, ".ql"))
+  #print(QLText)
+  LevelText <- html_text(html_node(output, ".keyresult"))
+  Roll_3d20 <- html_text(html_node(output, "table.table")) # .shiny-table.spacing-s > thead > tr > td
+  Roll_3d20 <- unlist(strsplit(Roll_3d20, "\\n"))
+  Roll_3d20 <- Roll_3d20[grep("\\d", Roll_3d20)]
+  #print(paste(Roll_3d20))
+  Roll_3d20 <- as.integer(Roll_3d20)
+  if (length(Roll_3d20) == 8) {
+    Ab <- Roll_3d20[1:3]; Sk <- Roll_3d20[4]
+    AbRoll <- Roll_3d20[5:7]; SkRoll <- Roll_3d20[8]
+  } else if (length(Roll_3d20) == 3) {
+    Ab <- NA; Sk <- NA
+    AbRoll <- Roll_3d20[1:3]; SkRoll <- NA
+  }
+  return( list(QL = as.integer(QLText), 
+               Roll = as.integer(AbRoll),
+               SuccessLevel = LevelText) )
+}
+
+test_that("Skills without Skill Check (default)", {
+  #
+  # Create testing sequence
+  set.seed(TestSeed)
+  ExpectedVal <- list()
+  for(i in 1:10) ExpectedVal <- c(ExpectedVal, list(sample.int(20L, 3L, replace = TRUE)))
+  # default values are 11/11/11 and 4 on the skill
+  ExpectedResult <- c("Erfolg", "Meisterlich", "Erfolg", "Patzer", rep("Gescheitert", 2), rep("Erfolg", 2), rep("Gescheitert", 2), "Erfolg")
+  ExpectedQuality <- as.integer(c(1, 2, 2, rep(0, 3), rep(1, 2), rep(0, 2)))
+  
+  #
+  #
+  for (SkillSource in c('NoSkill', 'ManualSkill')) {
+    app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+    # Goto 2. tab
+    ts <- app$findWidget("uiTabset")
+    ts$setValue("Handle")
+    expect_identical(ts$getValue(), "Handle")
+    
+    app$setValue("rdbSkillSource", SkillSource)
+    #set.seed(TestSeed)
+    
+    for (i in 1:length(ExpectedVal)) {
+      app$setInputs(doSkillRoll = "click")
+      app$waitForValue("SkillRoll", ignore = list(NULL, ""), iotype = "output")
+      
+      Result <- ExtractSkillRoll(app)
+      ##fail(paste(Result[["Roll"]], collapse = "/"))
+      expect_identical(Result[["Roll"]], ExpectedVal[[i]], 
+                       label = paste("Roll /", SkillSource))
+      
+      if (SkillSource == "ManualSkill") {
+        expect_identical(Result[["QL"]], ExpectedQuality[i], 
+                         label = paste("QL /", SkillSource)) # Skill required
+
+        # Only relevant for rolls against a skill value but this is a plain roll
+        KeyResult <- Result[["SuccessLevel"]]
+        if (i <= length(ExpectedResult) && TestSeed == 1233)
+          expect_identical(KeyResult, ExpectedResult[i], 
+                           label = paste("Success /", SkillSource))
+        else
+          succeed(message = "Result only defined for TestSeed of 1233")
+      }
+    }
+    app$stop() # Shiny-App stoppen
+    
+  }
+  
 })
