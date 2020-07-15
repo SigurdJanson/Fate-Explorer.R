@@ -45,6 +45,7 @@ for (i in 1:length(ExpectedVal)) {
     succeed(message = "Result only defined for TestSeed of 1233")
 }
 
+#
 # Test reactivity to changes in slider
 LastValue <- Result[["Value"]]
 for (Ability in 1:20) {
@@ -59,6 +60,29 @@ for (Ability in 1:20) {
     expect_identical(Result[["SuccessLevel"]], "Erfolg")
   }
 }
+
+
+#
+# Test reactivity to changes of the modifier slider
+Ability <- 10
+app$setValue("inpAbility", Ability)
+app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+
+for (m in c(-10, -5, -1, 0, 1, 5)) {
+  app$setValue("inpAbilityMod", m)
+  app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
+  
+  Result <- ExtractAbilityRoll(app)
+  expect_identical(Result[["Value"]], LastValue) # shall *not* change
+  if (Ability+m < Result[["Value"]]) {
+    expect_identical(Result[["SuccessLevel"]], "Gescheitert", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
+  } else {
+    expect_identical(Result[["SuccessLevel"]], "Erfolg", label = paste(m, LastValue, Result[["Value"]], Result[["SuccessLevel"]]))
+  }
+  
+}
+
+
 
 app$stop() # Shiny-App stoppen
 })
