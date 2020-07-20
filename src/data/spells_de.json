@@ -129,6 +129,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -139,6 +140,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -326,6 +328,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -474,6 +477,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -495,6 +499,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_7",
         "ab3": "ATTR_8",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -518,6 +523,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -607,6 +613,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -763,6 +770,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -784,6 +792,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -806,6 +815,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -849,6 +859,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "SPELL_12",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -859,6 +870,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_5",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_120",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -869,6 +881,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_253",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -890,6 +903,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -900,6 +914,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
+        "attrID": "SPELL_255",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -910,6 +925,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_256",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -942,6 +958,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_258",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -985,6 +1002,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -995,6 +1013,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1120,6 +1139,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1130,6 +1150,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_17",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1140,6 +1161,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
+        "attrID": "SPELL_126",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1184,6 +1206,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_76",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1339,6 +1362,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1349,6 +1373,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1474,6 +1499,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1584,6 +1610,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_24",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1606,6 +1633,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_139",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -1752,6 +1780,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "N/A",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2219,6 +2248,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_286",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2230,6 +2260,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_287",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2262,6 +2293,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_288",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2272,6 +2304,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_39",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2303,6 +2336,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_163",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2335,6 +2369,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_41",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2345,6 +2380,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_289",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2355,6 +2391,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_42",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2365,6 +2402,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_290",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2416,6 +2454,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
+        "attrID": "SPELL_85",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2427,6 +2466,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_164",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2468,6 +2508,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_292",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2479,6 +2520,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_166",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2500,6 +2542,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_293",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2511,6 +2554,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_294",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2522,6 +2566,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_295",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2544,6 +2589,7 @@
         "ab2": "ATTR_1",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_86",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2554,6 +2600,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_44",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2574,6 +2621,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_45",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2584,6 +2632,18 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
+        "attrID": "SPELL_296",
+        "class": "Magische Fertigkeiten",
+        "classID": 6
+    },
+    {
+        "url": "index.php/",
+        "name": "Weiches erstarre",
+        "spelltype": "spell",
+        "ab1": "ATTR_",
+        "ab2": "ATTR_",
+        "ab3": "ATTR_",
+        "attrID": "SPELL_297",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2616,6 +2676,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_300",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2636,6 +2697,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_301",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2656,6 +2718,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_169",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2666,6 +2729,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_302",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2676,6 +2740,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_303",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2687,6 +2752,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_483",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2708,6 +2774,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "ZK",
+        "attrID": "SPELL_87",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
