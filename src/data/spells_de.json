@@ -792,7 +792,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "attrID": "N/A",
+        "attrID": "SPELL_117",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -2611,6 +2611,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_168",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -3096,6 +3097,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_312",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3118,6 +3120,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_313",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3129,6 +3132,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_315",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3140,6 +3144,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_316",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3184,6 +3189,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_319",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3195,6 +3201,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_173",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3206,6 +3213,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_174",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3272,6 +3280,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_320",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3283,7 +3292,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "category": "Der Zauberer trennt seinen Geist von seinem Körper und kann sich auf diesem Wege mit einer GS von QS x 3 fortbewegen, feste Objekte halten den Geisterkörper jedoch auf. Er behält dabei Sicht, Gehör und Geruch, vermag jedoch nicht, mit seiner Umgebung zu interagieren, was auch das Wirken von Magie ausschließt. Ein Eindringen in Bereiche, in denen Magie im Allgemeinen sowie Zauber des Merkmals Sphären im Speziellen unterbunden oder zumindest erschwert werden, ist nur möglich, wenn die erreichten QS die QS der zu überwindenden Wirkung übersteigen. Während der Wirkungsdauer bemerkt der Zauberer nicht, was mit seinem bewusstlosen Körper geschieht, selbst wenn dieser Schaden erleidet. Stirbt der Köper, wird der Geist zu einer Gefesselten Seele. Gleiches geschieht, wenn der Geist nicht vor Ende der Wirkungsdauer in den Körper zurückkehrt, der daraufhin als leere Hülle verendet.",
+        "attrID": "SPELL_321",
+        "category": "Sphären",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -3305,6 +3315,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_175",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3316,7 +3327,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "category": "Blickt der Zauberer auf eine Wasserfläche, vermag er darin eine mit ihm befreundete Person seiner Wahl zu erkennen. Als befreundet zählen Familienmitglieder, andere Helden und weitere gute Freunde, nicht aber der nette Tavernenwirt, den man erst seit ein paar Tagen kennt. Der Zauberer sieht dabei lediglich den Körper der Person in Frontalsicht und kann daher nur dessen derzeitige Bewegungen, die getragene Kleidung und den körperlichen Zustand bestimmen. Den Hintergrund der Person sieht der Zauberer nicht. Ist die Person verstorben, sieht er stattdessen ihre Leiche oder ihr Grab. Ist die Person weiter als QS x 50 Meilen vom Zauberer entfernt, scheitert der Zauber automatisch. Gleiches geschieht, wenn die Person vor Magie im Allgemeinen oder Zaubern des Merkmals Hellsicht im Speziellen geschützt ist und die erreichten QS die QS der Schutzwirkung nicht übersteigen.",
+        "attrID": "SPELL_322",
+        "category": "Hellsicht",
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
@@ -3339,6 +3351,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_177",
         "category": "Einfluss",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3350,6 +3363,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_178",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3361,6 +3375,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_323",
         "category": "Sphären",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3372,6 +3387,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_171",
         "category": "Telekinese",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3394,6 +3410,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_324",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3416,6 +3433,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_325",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3449,6 +3467,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_179",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3461,6 +3480,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
+        "attrID": "SPELL_327",
         "category": "Dämonisch",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3472,6 +3492,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_328",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3505,6 +3526,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_329",
         "category": "Verwandlung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3517,6 +3539,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_330",
         "category": "Einfluss",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3528,6 +3551,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
+        "attrID": "SPELL_180",
         "category": "Zeit",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3539,6 +3563,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_297",
         "category": "Objekt",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3550,6 +3575,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_332",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3561,6 +3587,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
+        "attrID": "SPELL_182",
         "category": "Elementar",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3572,6 +3599,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "SPELL_183",
         "category": "Hellsicht",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3583,6 +3611,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
+        "attrID": "SPELL_51",
         "category": "Objekt",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3594,6 +3623,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "SPELL_335",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3605,6 +3635,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "SPELL_336",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3628,6 +3659,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "SPELL_338",
         "category": "Einfluss",
         "class": "Magische Fertigkeiten",
         "classID": 6
@@ -3639,6 +3671,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "SPELL_331",
         "category": "Heilung",
         "class": "Magische Fertigkeiten",
         "classID": 6
