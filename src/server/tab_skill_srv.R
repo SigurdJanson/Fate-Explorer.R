@@ -86,6 +86,7 @@ observeEvent(
     SkillSource$SetSkill(ActiveSkillIdent, 
                          Abilities = c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3), 
                          SkillValue = input$SkillValue)
+    SkillSource$VerifyLastRoll()
     UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
   },#handler
   ignoreInit = TRUE
@@ -97,6 +98,7 @@ observeEvent(eventExpr = input$SkillMod,
     req(ActiveSkillSets, LastSkillRoll$Roll)
     SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
     SkillSource$UpdateModifier(input$SkillMod)
+    SkillSource$VerifyLastRoll()
     UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
   },#handler
   ignoreInit = TRUE
