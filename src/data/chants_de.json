@@ -366,6 +366,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_6",
         "chanttype": "liturgy"
     },
     {
@@ -485,6 +486,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_9",
         "chanttype": "liturgy"
     },
     {
@@ -1002,6 +1004,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_18",
         "chanttype": "liturgy"
     },
     {
@@ -1011,6 +1014,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_19",
         "chanttype": "liturgy"
     },
     {
@@ -1020,6 +1024,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_96",
         "chanttype": "liturgy"
     },
     {
@@ -1368,6 +1373,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_27",
         "chanttype": "liturgy"
     },
     {
@@ -1377,6 +1383,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_28",
         "chanttype": "liturgy"
     },
     {
@@ -1699,6 +1706,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_34",
         "chanttype": "liturgy"
     },
     {
