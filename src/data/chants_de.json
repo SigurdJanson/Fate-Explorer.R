@@ -198,6 +198,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_53",
         "chanttype": "liturgy"
     },
     {
@@ -579,6 +580,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_73",
         "chanttype": "liturgy"
     },
     {
@@ -588,6 +590,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_10",
         "chanttype": "liturgy"
     },
     {
@@ -720,6 +723,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_13",
         "chanttype": "liturgy"
     },
     {
@@ -903,6 +907,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_16",
         "chanttype": "liturgy"
     },
     {
@@ -1243,6 +1248,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_24",
         "chanttype": "liturgy"
     },
     {
