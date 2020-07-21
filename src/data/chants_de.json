@@ -42,6 +42,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_2",
         "chanttype": "liturgy"
     },
     {
@@ -52,6 +53,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_44",
         "chanttype": "liturgy"
     },
     {
@@ -72,6 +74,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "ZK",
+        "attrID": "LITURGY_45",
         "chanttype": "liturgy"
     },
     {
@@ -628,6 +631,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_77",
         "chanttype": "liturgy"
     },
     {
@@ -637,6 +641,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_11",
         "chanttype": "liturgy"
     },
     {
@@ -655,6 +660,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_12",
         "chanttype": "liturgy"
     },
     {
@@ -684,6 +690,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_78",
         "chanttype": "liturgy"
     },
     {
@@ -948,6 +955,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_93",
         "chanttype": "liturgy"
     },
     {
@@ -1201,6 +1209,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_23",
         "chanttype": "liturgy"
     },
     {
@@ -1265,6 +1274,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_25",
         "chanttype": "liturgy"
     },
     {
@@ -1310,6 +1320,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_109",
         "chanttype": "liturgy"
     },
     {
@@ -1422,6 +1433,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_111",
         "chanttype": "liturgy"
     },
     {
