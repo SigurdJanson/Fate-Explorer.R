@@ -200,7 +200,7 @@ outputOptions(output, 'ShowSetupChants', suspendWhenHidden = FALSE)
 
 output$SetupChants <- renderTable({
   Result <- Character$Skills$Sets$Blessed$Skills
-  Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
+  Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID", "tradition"))]
   
   # Show names not codes
   NameMapping <- GetAbilities()#Language
