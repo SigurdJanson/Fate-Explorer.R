@@ -2638,17 +2638,6 @@
         "classID": 6
     },
     {
-        "url": "index.php/",
-        "name": "Weiches erstarre",
-        "spelltype": "spell",
-        "ab1": "ATTR_",
-        "ab2": "ATTR_",
-        "ab3": "ATTR_",
-        "attrID": "SPELL_297",
-        "class": "Magische Fertigkeiten",
-        "classID": 6
-    },
-    {
         "url": "index.php/wdr.html",
         "name": "Welle der Reinigung",
         "spelltype": "spell",
@@ -2813,9 +2802,6 @@
         "class": "Magische Fertigkeiten",
         "classID": 6
     },
-    
-
-
     {
         "url": "index.php/Rit_MagischerRaub.html",
         "name": "Magischer Raub",
@@ -3011,7 +2997,7 @@
         "classID": 6
     },
     {
-        "url": "index.php/",
+        "url": "index.php/edm.html",
         "name": "Erhabenheit des Marmors",
         "spelltype": "ritual",
         "ab1": "ATTR_1",
