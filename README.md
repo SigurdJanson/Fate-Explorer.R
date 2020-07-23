@@ -15,9 +15,9 @@ An interface to roll the dice based on the ["dark eye" rule system](https://ulis
 
 ## Screenshots
 
-[Image of the combat roll tab]: documentation/fe_screenshot_combat.jpg "Combat Screen"
+![Image of the combat roll tab]: documentation/fe_screenshot_combat.jpg "Combat Screen"
 
-[Image of the skill roll tab]: documentation/fe_screenshot_magic.jpg "Magic Screen"
+![Image of the skill roll tab]: documentation/fe_screenshot_magic.jpg "Magic Screen"
 
 
 ## Limitations at Current State of Development
