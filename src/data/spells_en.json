@@ -34,7 +34,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "Eagle Wing",
+        "name": "Eagle Wings",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -79,7 +79,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Alpgestalt)",
+        "name": "Nightmare Shape",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -113,7 +113,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Angst auslösen)",
+        "name": "Trigger Fear",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -301,7 +301,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Aufwecken)",
+        "name": "Awaken",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -312,7 +312,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Auge des Limbus)",
+        "name": "Eye of Limbo",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -389,7 +389,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Band und Fessel)",
+        "name": "Chains and Shackles",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
@@ -424,7 +424,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Blick aufs Wesen)",
+        "name": "Gaze into the Essence",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -652,7 +652,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Dämonenbann)",
+        "name": "Banish Property (Demons)",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -663,7 +663,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Dämonenschild)",
+        "name": "Demonic Shield",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
@@ -732,7 +732,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Einflussbann)",
+        "name": "Banish Property (Influence)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -743,7 +743,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Eisenrost)",
+        "name": "Iron Rust",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
@@ -776,7 +776,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Elementarbann)",
+        "name": "Banish Property (Elements)",
         "spelltype": "spell",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -787,7 +787,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Elfenstimme)",
+        "name": "Elven Voice",
         "spelltype": "spell",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -798,7 +798,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Erinnerung verlasse dich)",
+        "name": "Memory Begone",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -963,8 +963,8 @@
         "classID": 6
     },
     {
-        "url": "index.php/-.html",
-        "name": "Flim Flam",
+        "url": "index.php/glow-sphere.html",
+        "name": "Glow Sphere",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
@@ -1054,7 +1054,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Gedankenbilder)",
+        "name": "Mental Images",
         "spelltype": "spell",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -1065,7 +1065,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Gefunden)",
+        "name": "Found It",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -1156,7 +1156,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Haselbusch)",
+        "name": "Hazelbush",
         "spelltype": "spell",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -1167,7 +1167,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Heilungsbann)",
+        "name": "Banish Property (Healing)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
@@ -1178,7 +1178,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Hellsichtbann)",
+        "name": "Banish Property (Clairvoyance)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -1212,7 +1212,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Herzschlag ruhe)",
+        "name": "Stop Heartbeat",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -1390,7 +1390,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Höllenpein)",
+        "name": "Agony",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -1436,7 +1436,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Illusionsbann)",
+        "name": "Banish Property (Illusion)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -1516,7 +1516,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "Karnifilo",
+        "name": "Carnifilo",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -1627,7 +1627,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Kusch)",
+        "name": "Shoo!",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -1639,7 +1639,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Last des Alters)",
+        "name": "Burden of Old-Age",
         "spelltype": "spell",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -1674,7 +1674,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "Lungs of the Leviatan",
+        "name": "Leviathan Lung",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -1841,7 +1841,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Objektbann)",
+        "name": "Banish Property (Objects)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -2039,8 +2039,8 @@
         "classID": 6
     },
     {
-        "url": "index.php/-.html",
-        "name": "(Radau)",
+        "url": "index.php/fighting-stick.html",
+        "name": "Fighting Stick",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
@@ -2197,7 +2197,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Schmerzen lindern)",
+        "name": "Ease Pain",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2218,7 +2218,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Schwarz und Rot)",
+        "name": "Black and Red",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -2230,7 +2230,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Schwarzer Schrecken)",
+        "name": "Black Terror",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2354,7 +2354,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Sphärenbann)",
+        "name": "Banish Property (Spheres)",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2472,7 +2472,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Telekinesebann)",
+        "name": "Banish Property (Telekinesis)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -2483,7 +2483,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Temporalbann)",
+        "name": "Banish Property (--Temporalbann--)",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2514,7 +2514,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Tiergedanken)",
+        "name": "Animal Thoughts",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2572,7 +2572,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Verwandlungsbann)",
+        "name": "Banish Property (Transformation)",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
@@ -2606,7 +2606,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Vogelzwitschern)",
+        "name": "Bend Sound",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2616,8 +2616,8 @@
         "classID": 6
     },
     {
-        "url": "index.php/-.html",
-        "name": "(Wasseratem)",
+        "url": "index.php/breathe-water.html",
+        "name": "Breathe Water",
         "spelltype": "spell",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -2703,7 +2703,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Wolfstatze)",
+        "name": "Wolf Paw",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2793,7 +2793,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Ängste lindern)",
+        "name": "Ease Fears",
         "spelltype": "spell",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -2804,7 +2804,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Magischer Raub)",
+        "name": "Magical Deprivation",
         "spelltype": "ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
@@ -2962,7 +2962,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Widerwille)",
+        "name": "Aversion",
         "spelltype": "ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
@@ -3182,7 +3182,7 @@
     },
     {
         "url": "index.php/.html",
-        "name": "(Hagelschlag und Sturmgebrüll)",
+        "name": "Hailstorm and Roar of Thunder",
         "spelltype": "ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
@@ -3194,7 +3194,7 @@
     },
     {
         "url": "index.php/.html",
-        "name": "(Hartes schmelze)",
+        "name": "Mold Hard Object",
         "spelltype": "ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -3296,7 +3296,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Leidensbund)",
+        "name": "Bond of Suffering",
         "spelltype": "ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
@@ -3448,7 +3448,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Ruhe Körper)",
+        "name": "Rest Body",
         "spelltype": "ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
@@ -3532,7 +3532,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Unberührt von Satinav)",
+        "name": "Untouched by Satinav",
         "spelltype": "ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
@@ -3568,7 +3568,7 @@
     },
     {
         "url": "index.php/-.html",
-        "name": "(Wirbelform)",
+        "name": "Windshaping",
         "spelltype": "ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
