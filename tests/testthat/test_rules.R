@@ -2,17 +2,19 @@ library(testthat)
 library(jsonlite)
 library(shiny)
 
-setwd("..")
-source("./R/rules.R")
-setwd("./tests")
+.testdir <- getwd()
+setwd("../../R")
+.srcdir <- getwd()
+source("./rules.R")
+setwd(.testdir)
 
 
 
 # Functions ----
 test_that("CombatTechniques", {
-  setwd("../R")
+  setwd(.srcdir)
   CT <- GetCombatTechniques()
-  setwd("../tests")
+  setwd(.testdir)
   expect_s3_class(CT, "data.frame")
   expect_equal(CT[[1]], paste0("CT_", 1:21))
   expect_equal(nrow(CT), 21)
@@ -21,9 +23,9 @@ test_that("CombatTechniques", {
 
 
 test_that("Abilities", {
-  setwd("../R")
+  setwd(.srcdir)
   AB <- GetAbilities()
-  setwd("../tests")
+  setwd(.testdir)
   expect_s3_class(AB, "data.frame")
   expect_named(AB, c("attrID", "shortname", "name"))
   expect_equal(nrow(AB), 8)
@@ -31,9 +33,9 @@ test_that("Abilities", {
 })
 
 test_that("Skills", {
-  setwd("../R")
+  setwd(.srcdir)
   SK <- GetSkills()
-  setwd("../tests")
+  setwd(.testdir)
   expect_s3_class(SK, "data.frame")
   expect_named(SK, c("attrID", "name", "class", "classID", "ab1", "ab2", "ab3"))
   expect_equal(nrow(SK), 59)
@@ -44,7 +46,7 @@ test_that("Skills", {
 
 test_that("Weapons", {
   # PRECONDITIONS
-  expect_error(GetWeapons(Type = "Blabla"), "\"Melee\", \"Unarmed\", \"Ranged\", \"Any\"")
+  expect_error(GetWeapons(Type = "Blabla"), "'arg' sollte eines  von '“Melee”, “Unarmed”, “Ranged”, “Any”' sein")#".{25}\"Melee\", \"Unarmed\", \"Ranged\", \"Any\".*")
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
   
   # MELEE WEAPONS
@@ -52,9 +54,9 @@ test_that("Weapons", {
           "bonus", "at", "pa", "range", "weight", "price", "sf", 
           "combattechID", "primeattrID", "improvised", "url", "clsrng", 
           "armed", "templateID")
-  setwd("../R")
+  setwd(.srcdir)
   W <- GetWeapons()
-  setwd("../tests")
+  setwd(.testdir)
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 184)
   expect_equal(ncol(W), length(cn))
@@ -63,9 +65,9 @@ test_that("Weapons", {
   W <- GetWeapons("Waqqif") # Use name, "Melee" is default
   expect_equal(W$name, "Waqqif")
   expect_equal(W$templateID, "ITEMTPL_7")
-  setwd("../R")
+  setwd(.srcdir)
   W <- GetWeapons("Waqqif", "Any") # Use name
-  setwd("../tests")
+  setwd(.testdir)
   expect_equal(W$name, "Waqqif")
   expect_equal(W$templateID, "ITEMTPL_7")
 
@@ -85,9 +87,9 @@ test_that("Weapons", {
           "bonus", "ammo", "range", "weight", "price", "sf", 
           "combattechID", "improvised", "url", "clsrng", 
           "armed", "templateID", "primeattr", "primeattrID")
-  setwd("../R")
+  setwd(.srcdir)
   W <- GetWeapons(Type = "Ranged")
-  setwd("../tests")
+  setwd(.testdir)
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 52)
   expect_equal(ncol(W), length(cn))

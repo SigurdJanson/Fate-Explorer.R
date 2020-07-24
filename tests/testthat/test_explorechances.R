@@ -1,6 +1,10 @@
-setwd("..")
-source("./R/explorechances.R")
-setwd("./tests")
+
+.testdir <- getwd()
+setwd("../../R")
+.srcdir <- getwd()
+source("./explorechances.R")
+setwd(.testdir)
+
 
 
 test_that("dSumOfDice", {

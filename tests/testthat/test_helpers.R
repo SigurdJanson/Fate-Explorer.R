@@ -1,6 +1,7 @@
-setwd("..")
+.testdir <- getwd()
+setwd("../..")
 source("./R/helpers.R", encoding = "UTF-8")
-setwd("./tests")
+setwd(.testdir)
 
 # Helper Functions ----
 test_that("replace_umlauts", {

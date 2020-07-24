@@ -1,8 +1,11 @@
 require(jsonlite)
-setwd("../R")
-source("./dicelogic.R")
-source("./rules.R")
-setwd("../tests")
+
+.testdir <- getwd()
+setwd("../../R")
+.srcdir <- getwd()
+source("dicelogic.R")
+source("rules.R")
+setwd(.testdir)
 
 # General -----
 test_that("VerifyConfirmation", {
@@ -47,9 +50,9 @@ test_that("GetFumbleEffect", {
   expect_error(GetFumbleEffect(), "No roll given")
   expect_error(GetFumbleEffect(1.9), "Invalid fumble roll")
   expect_error(GetFumbleEffect(12.1), "Invalid fumble roll")
-  setwd("../R")
+  setwd(.srcdir)
   expect_silent(GetFumbleEffect(12, "S", "Magic"))
-  setwd("../tests")
+  setwd(.testdir)
   expect_error(GetFumbleEffect(12, "M")) #does not exist
   
   # 
