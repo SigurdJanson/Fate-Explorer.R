@@ -191,18 +191,18 @@ test_that("Combat Actions", {
   app <- ShinyDriver$new(path = "../../R", seed = TestSeed)
   for (CombatAction in c("Attack", "Parry", "Dodge")) {
     switch (CombatAction,
-            Attack = app$setInputs(doAttackThrow = "click"),
-            Parry = app$setInputs(doParryThrow = "click"),
+            Attack = app$setInputs(doAttackRoll = "click"),
+            Parry = app$setInputs(doParryRoll = "click"),
             Dodge = app$setInputs(doDodgeRoll = "click")
     )
     #app$setInputs(doSkillRoll = "click")
     # Action <- list("click")
-    # names(Action) <- "doAttackThrow"
+    # names(Action) <- "doAttackRoll"
     # do.call(app$setInputs, Action)
     #app$waitForValue("uiCombatRoll", ignore = list(NULL, ""), iotype = "output")
     
-    #expectUpdate(app, doAttackThrow = 1, output = "uiCombatRoll")
-    #expectUpdate(app, doParryThrow = 1, output = "uiCombatRoll")
+    #expectUpdate(app, doAttackRoll = 1, output = "uiCombatRoll")
+    #expectUpdate(app, doParryRoll = 1, output = "uiCombatRoll")
     #expectUpdate(app, doDodgeRoll = 1, output = "uiCombatRoll")
     
   }# for(SkillSources...)

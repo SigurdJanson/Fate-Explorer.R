@@ -49,11 +49,11 @@ observeEvent(input$cmbCombatSelectWeapon, {
   updateNumericInput(session, "inpDamageDieCount", value = ActiveWeapon$Damage$N)
   updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
   if(ActiveWeapon$CanParry()) {
-    shinyjs::enable("doParryThrow")
+    shinyjs::enable("doParryRoll")
     shinyjs::enable("inpParryValue")
   }
   else {
-    shinyjs::disable("doParryThrow")
+    shinyjs::disable("doParryRoll")
     shinyjs::disable("inpParryValue")
   }
 }, ignoreNULL = FALSE)
@@ -87,15 +87,15 @@ doCombatRollBase <- function(Action) {
   UpdateCombatResult( ActiveWeapon$Roll( Action, input$inpCombatMod ) )
 }
 
-observeEvent(input$doAttackThrow, { # Attack Roll
+observeEvent(input$doAttackRoll, { # Attack Roll
   doCombatRollBase("Attack")
 })
 
-observeEvent(input$doParryThrow, { # Parry Roll
+observeEvent(input$doParryRoll, { # Parry Roll
   doCombatRollBase("Parry")
 })
 
-observeEvent(input$doDodge, { # Dodge Roll
+observeEvent(input$doDodgeRoll, { # Dodge Roll
   doCombatRollBase("Dodge")
 })
 

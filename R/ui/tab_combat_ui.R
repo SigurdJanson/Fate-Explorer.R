@@ -38,11 +38,11 @@ sidebarLayout(
     sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L)
     ),
   mainPanel(
-    actionButton("doAttackThrow", i18n$t("Attack"), icon = gicon("battle-axe"),
+    actionButton("doAttackRoll", i18n$t("Attack"), icon = gicon("battle-axe"),
                  width = "32%", style = "font-size: 140%"),
-    actionButton("doParryThrow", i18n$t("Parry"), icon = gicon("shield"),
+    actionButton("doParryRoll", i18n$t("Parry"), icon = gicon("shield"),
                  width = "32%", style = "font-size: 140%"),
-    actionButton("doDodge", i18n$t("Dodge"), icon = gicon("dodge"),
+    actionButton("doDodgeRoll", i18n$t("Dodge"), icon = gicon("dodge"),
                  width = "32%", style = "font-size: 140%"),
 
     hr(),
