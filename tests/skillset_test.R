@@ -2,9 +2,9 @@
 library(testthat)
 library(jsonlite)
 library(shiny)
-setwd("../src")
+setwd("../R")
 source("./skillset.R")
-setwd("../test")
+setwd("../tests")
 
 # Skill import
 sk <- "\"talents\": {\"TAL_3\": 1, \"TAL_4\": 2, \"TAL_8\": 6, \"TAL_9\": 7,
@@ -22,9 +22,9 @@ ab <- structure(list(ATTR_1 = 12L, ATTR_2 = 11L, ATTR_3 = 13L, ATTR_4 = 14L,
 
   
 test_that("Empty Skill Set", {
-  setwd("../src")
+  setwd("../R")
   Set <- SkillSet$new(1)
-  setwd("../test")
+  setwd("../tests")
   expect_error(Set$CanRoutineCheck(), "Skill must be identified")
   
   # 
@@ -127,9 +127,9 @@ test_that("Empty Skill Set", {
 
 
 test_that("Profane Skill Set", {
-  setwd("../src")
+  setwd("../R")
   Set <- SkillSet$new(1L, sk, ab)
-  setwd("../test")
+  setwd("../tests")
   
   expect_silent(o <- Set$GetSkillIndex("TAL_1"))
   expect_identical(o, 1L)

@@ -185,7 +185,7 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "An
     }
   }
 }
-# setwd("./src")
+# setwd("./R")
 # W <- GetWeapons("Schwere Armbrust", "Any")
 # setwd("../")
 

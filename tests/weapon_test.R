@@ -1,18 +1,18 @@
 library(testthat)
 library(jsonlite)
-setwd("../src")
+setwd("../R")
 source("./weapon.R")
-setwd("../test")
+setwd("../tests")
 
 test_that("", {
-  setwd("../src")
+  setwd("../R")
   Name <- "Waqqif"
   ab <- structure(list(ATTR_1 = 12L, ATTR_2 = 11L, ATTR_3 = 13L, ATTR_4 = 14L, 
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
   ct <- list(CT_3 = 15, CT_9 = 15, CT_12 = 12, CT_14 = 13)
   W <- MeleeWeapon$new(Name, ab, ct)
-  setwd("../test")
+  setwd("../tests")
   
   expect_identical(W$Name, Name)
   expect_identical(W$Type, .WeaponType["Melee"])

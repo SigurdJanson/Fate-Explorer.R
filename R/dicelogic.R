@@ -58,7 +58,7 @@ GetFumbleEffect <- function(RollValue,
   
   return(as.list(Result)) # 
 }
-# setwd("./src")
+# setwd("./R")
 # GetFumbleEffect(3L, "Attack", "Unarmed")
 # GetFumbleEffect(2L, "Skill", "Magic")
 # x <- GetFumbleEffect(2L, "Dodge", "Melee")

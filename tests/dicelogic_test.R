@@ -1,8 +1,8 @@
 require(jsonlite)
-setwd("../src")
+setwd("../R")
 source("./dicelogic.R")
 source("./rules.R")
-setwd("../test")
+setwd("../tests")
 
 # General -----
 test_that("VerifyConfirmation", {
@@ -47,9 +47,9 @@ test_that("GetFumbleEffect", {
   expect_error(GetFumbleEffect(), "No roll given")
   expect_error(GetFumbleEffect(1.9), "Invalid fumble roll")
   expect_error(GetFumbleEffect(12.1), "Invalid fumble roll")
-  setwd("../src")
+  setwd("../R")
   expect_silent(GetFumbleEffect(12, "S", "Magic"))
-  setwd("../test")
+  setwd("../tests")
   expect_error(GetFumbleEffect(12, "M")) #does not exist
   
   # 
@@ -57,7 +57,7 @@ test_that("GetFumbleEffect", {
   expect_identical(o, list(id = "FMBL_31", 
                            label = "Seelentausch", 
                            descr = "Der Geist des Zauberers tauscht für 1W6 Tage den Körper mit dem nächsten Lebewesen in seiner Nähe, das größer ist als eine Ratte."))
-  o <- GetFumbleEffect(12L, "Skill", "Liturgical")
+  o <- GetFumbleEffect(12L, "Skill", "Blessed")
   expect_identical(o, list(id = "FMBL_61", 
                            label = "Verwurzelung", 
                            descr = "Der Geweihte verwurzelt mit dem Boden und kann seine Füße für 1W6 Minuten nicht bewegen. Er erhält währenddessen den Status Fixiert."))

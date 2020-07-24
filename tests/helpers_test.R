@@ -1,5 +1,5 @@
 setwd("..")
-source("./src/helpers.R", encoding = "UTF-8")
+source("./R/helpers.R", encoding = "UTF-8")
 setwd("./tests")
 
 # Helper Functions ----

@@ -3,14 +3,14 @@ library(jsonlite)
 library(shiny)
 
 setwd("..")
-source("./src/rules.R")
+source("./R/rules.R")
 setwd("./tests")
 
 
 
 # Functions ----
 test_that("CombatTechniques", {
-  setwd("../src")
+  setwd("../R")
   CT <- GetCombatTechniques()
   setwd("../tests")
   expect_s3_class(CT, "data.frame")
@@ -21,7 +21,7 @@ test_that("CombatTechniques", {
 
 
 test_that("Abilities", {
-  setwd("../src")
+  setwd("../R")
   AB <- GetAbilities()
   setwd("../tests")
   expect_s3_class(AB, "data.frame")
@@ -31,7 +31,7 @@ test_that("Abilities", {
 })
 
 test_that("Skills", {
-  setwd("../src")
+  setwd("../R")
   SK <- GetSkills()
   setwd("../tests")
   expect_s3_class(SK, "data.frame")
@@ -52,7 +52,7 @@ test_that("Weapons", {
           "bonus", "at", "pa", "range", "weight", "price", "sf", 
           "combattechID", "primeattrID", "improvised", "url", "clsrng", 
           "armed", "templateID")
-  setwd("../src")
+  setwd("../R")
   W <- GetWeapons()
   setwd("../tests")
   expect_s3_class(W, "data.frame")
@@ -63,7 +63,7 @@ test_that("Weapons", {
   W <- GetWeapons("Waqqif") # Use name, "Melee" is default
   expect_equal(W$name, "Waqqif")
   expect_equal(W$templateID, "ITEMTPL_7")
-  setwd("../src")
+  setwd("../R")
   W <- GetWeapons("Waqqif", "Any") # Use name
   setwd("../tests")
   expect_equal(W$name, "Waqqif")
@@ -85,7 +85,7 @@ test_that("Weapons", {
           "bonus", "ammo", "range", "weight", "price", "sf", 
           "combattechID", "improvised", "url", "clsrng", 
           "armed", "templateID", "primeattr", "primeattrID")
-  setwd("../src")
+  setwd("../R")
   W <- GetWeapons(Type = "Ranged")
   setwd("../tests")
   expect_s3_class(W, "data.frame")

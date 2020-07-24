@@ -1,5 +1,5 @@
 setwd("..")
-source("./src/explorechances.R")
+source("./R/explorechances.R")
 setwd("./tests")
 
 

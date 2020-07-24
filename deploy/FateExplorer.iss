@@ -41,7 +41,7 @@ Source: "D:\Programmierung\R\DSADiceApp.git\deploy\LaunchFateExplorer.vbs"; Dest
 Source: "D:\Programmierung\R\DSADiceApp.git\deploy\FateExplorer.R"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Programmierung\R\DSADiceApp.git\deploy\fe.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Programmierung\R\DSADiceApp.git\deploy\R-Portable\*"; DestDir: "{app}\R-Portable"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\Programmierung\R\DSADiceApp.git\src\*"; DestDir: "{app}\src"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Programmierung\R\DSADiceApp.git\src\*"; DestDir: "{app}\R"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

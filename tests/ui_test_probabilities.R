@@ -5,7 +5,7 @@ library(rvest)
 library(ggplot2)
 # Verify probabilites
 
-app <- ShinyDriver$new(path = "../src") #, seed = 1
+app <- ShinyDriver$new(path = "../R") #, seed = 1
 
 df <- data.frame(roll = 1:20, count = rep(0, 20))
 totalcount <- 5E3

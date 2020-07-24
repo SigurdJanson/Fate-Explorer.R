@@ -7,7 +7,7 @@ TestSeed <- 1233
 
 # BASIC APP ----------------
 test_that("Tabs", {
-  app <- ShinyDriver$new(path = "../src")
+  app <- ShinyDriver$new(path = "../R")
   expect_equal(app$findWidget("uiTabset")$listTabs(), 
                c("Sei", "Handle", "Kämpfe", "Setup", "Über..."))
   app$stop() # Shiny-App stoppen
@@ -32,7 +32,7 @@ test_that("Ability", {
   ExpectedResult <- c("Gescheitert", rep("Erfolg", 3), rep("Meisterlich", 2), rep("Erfolg", 3), "Patzer")
   
   # Test basic random sequence
-  app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+  app <- ShinyDriver$new(path = "../R", seed = TestSeed)
   for (i in 1:length(ExpectedVal)) {
     app$setInputs(doAbilityRoll = "click")
     app$waitForValue("AbilityRoll", ignore = list(NULL, ""), iotype = "output")
@@ -126,7 +126,7 @@ test_that("Plain Skill Rolls", {
   #
   #
   for (SkillSource in c('NoSkill', 'ManualSkill')) {
-    app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+    app <- ShinyDriver$new(path = "../R", seed = TestSeed)
     # Goto 2. tab
     ts <- app$findWidget("uiTabset")
     ts$setValue("Handle")
@@ -188,7 +188,7 @@ test_that("Combat Actions", {
   
   #
   #
-  app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+  app <- ShinyDriver$new(path = "../R", seed = TestSeed)
   for (CombatAction in c("Attack", "Parry", "Dodge")) {
     switch (CombatAction,
             Attack = app$setInputs(doAttackThrow = "click"),
@@ -199,7 +199,7 @@ test_that("Combat Actions", {
     # Action <- list("click")
     # names(Action) <- "doAttackThrow"
     # do.call(app$setInputs, Action)
-    app$waitForValue("uiCombatRoll", ignore = list(NULL, ""), iotype = "output")
+    #app$waitForValue("uiCombatRoll", ignore = list(NULL, ""), iotype = "output")
     
     #expectUpdate(app, doAttackThrow = 1, output = "uiCombatRoll")
     #expectUpdate(app, doParryThrow = 1, output = "uiCombatRoll")

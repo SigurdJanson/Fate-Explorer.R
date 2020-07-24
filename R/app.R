@@ -7,8 +7,8 @@ library(ggplot2)
 library(rvest)
 
 # Set language
-if (file.exists(file.path("src", "data", "lang.json"))) {
-  i18n <- Translator$new(translation_json_path = file.path("src", "data", "lang.json"))
+if (file.exists(file.path("R", "data", "lang.json"))) {
+  i18n <- Translator$new(translation_json_path = file.path("R", "data", "lang.json"))
 } else if (file.exists(file.path("data", "lang.json"))) {
   i18n <- Translator$new(translation_json_path = file.path("data", "lang.json"))
 } else stopApp("No translation file found")
