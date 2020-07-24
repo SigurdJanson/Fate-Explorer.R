@@ -15,7 +15,7 @@ test_that("Tabs", {
 
 
 
-# ABILITY TAB -------------
+# ABILITY TAB ##########################################################
 ExtractAbilityRoll <- function(app) {
   output <- xml2::read_html( app$getValue(name = "AbilityRoll") )
   ValText <- html_text(html_node(output, ".dr"))
@@ -89,7 +89,7 @@ test_that("Ability", {
 
 
 
-# SKILLS TAB -------------
+# SKILLS TAB ##########################################################
 ExtractSkillRoll <- function(app) {
   output <- xml2::read_html( app$getValue(name = "SkillRoll") )
   QLText <- html_text(html_node(output, ".ql"))
@@ -112,7 +112,8 @@ ExtractSkillRoll <- function(app) {
                SuccessLevel = LevelText) )
 }
 
-test_that("Skills without Skill Check (default)", {
+
+test_that("Plain Skill Rolls", {
   #
   # Create testing sequence
   set.seed(TestSeed)
@@ -131,15 +132,17 @@ test_that("Skills without Skill Check (default)", {
     ts$setValue("Handle")
     expect_identical(ts$getValue(), "Handle")
     
+    #
+    # Rolls with default values (Abilities == 11, 11, 11; Skill == 4; Mod == 0)
+    #
     app$setValue("rdbSkillSource", SkillSource)
-    #set.seed(TestSeed)
     
     for (i in 1:length(ExpectedVal)) {
       app$setInputs(doSkillRoll = "click")
       app$waitForValue("SkillRoll", ignore = list(NULL, ""), iotype = "output")
       
       Result <- ExtractSkillRoll(app)
-      ##fail(paste(Result[["Roll"]], collapse = "/"))
+      
       expect_identical(Result[["Roll"]], ExpectedVal[[i]], 
                        label = paste("Roll /", SkillSource))
       
@@ -156,7 +159,53 @@ test_that("Skills without Skill Check (default)", {
           succeed(message = "Result only defined for TestSeed of 1233")
       }
     }
+    
+    #
+    # Create a fake roll and change ability, skill value and modifier
+    #
+    # app$setValue("rdbSkillSource", "ManualSkill")
+    # 
+    # app$setValue("SkillTrait1", 1)
+    # app$setValue("SkillTrait2", 1)
+    # app$setValue("SkillTrait3", 1)
+    
     app$stop() # Shiny-App stoppen
   }# for(SkillSources...)
+  
+})
+
+
+# COMBAT TAB ##########################################################
+test_that("Combat Actions", {
+  #
+  # Create testing sequence
+  set.seed(TestSeed)
+  ExpectedVal <- list()
+  for(i in 1:10) ExpectedVal <- c(ExpectedVal, list(sample.int(20L, 3L, replace = TRUE)))
+  # default values are 11/11/11 and 4 on the skill
+  ###ExpectedResult <- c("Erfolg", "Meisterlich", "Erfolg", "Patzer", rep("Gescheitert", 2), rep("Erfolg", 2), rep("Gescheitert", 2), "Erfolg")
+  ###ExpectedQuality <- as.integer(c(1, 2, 2, rep(0, 3), rep(1, 2), rep(0, 2)))
+  
+  #
+  #
+  app <- ShinyDriver$new(path = "../src", seed = TestSeed)
+  for (CombatAction in c("Attack", "Parry", "Dodge")) {
+    switch (CombatAction,
+            Attack = app$setInputs(doAttackThrow = "click"),
+            Parry = app$setInputs(doParryThrow = "click"),
+            Dodge = app$setInputs(doDodgeThrow = "click")
+    )
+    #app$setInputs(doSkillRoll = "click")
+    # Action <- list("click")
+    # names(Action) <- "doAttackThrow"
+    # do.call(app$setInputs, Action)
+    app$waitForValue("uiCombatRoll", ignore = list(NULL, ""), iotype = "output")
+    
+    #expectUpdate(app, doAttackThrow = 1, output = "uiCombatRoll")
+    #expectUpdate(app, doParryThrow = 1, output = "uiCombatRoll")
+    #expectUpdate(app, doDodge = 1, output = "uiCombatRoll")
+    
+  }# for(SkillSources...)
+  app$stop() # Shiny-App stoppen
   
 })

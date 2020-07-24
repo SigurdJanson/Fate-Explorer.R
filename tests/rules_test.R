@@ -4,7 +4,7 @@ library(shiny)
 
 setwd("..")
 source("./src/rules.R")
-setwd("./test")
+setwd("./tests")
 
 
 
@@ -12,7 +12,7 @@ setwd("./test")
 test_that("CombatTechniques", {
   setwd("../src")
   CT <- GetCombatTechniques()
-  setwd("../test")
+  setwd("../tests")
   expect_s3_class(CT, "data.frame")
   expect_equal(CT[[1]], paste0("CT_", 1:21))
   expect_equal(nrow(CT), 21)
@@ -23,7 +23,7 @@ test_that("CombatTechniques", {
 test_that("Abilities", {
   setwd("../src")
   AB <- GetAbilities()
-  setwd("../test")
+  setwd("../tests")
   expect_s3_class(AB, "data.frame")
   expect_named(AB, c("attrID", "shortname", "name"))
   expect_equal(nrow(AB), 8)
@@ -33,7 +33,7 @@ test_that("Abilities", {
 test_that("Skills", {
   setwd("../src")
   SK <- GetSkills()
-  setwd("../test")
+  setwd("../tests")
   expect_s3_class(SK, "data.frame")
   expect_named(SK, c("attrID", "name", "class", "classID", "ab1", "ab2", "ab3"))
   expect_equal(nrow(SK), 59)
@@ -54,7 +54,7 @@ test_that("Weapons", {
           "armed", "templateID")
   setwd("../src")
   W <- GetWeapons()
-  setwd("../test")
+  setwd("../tests")
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 184)
   expect_equal(ncol(W), length(cn))
@@ -65,7 +65,7 @@ test_that("Weapons", {
   expect_equal(W$templateID, "ITEMTPL_7")
   setwd("../src")
   W <- GetWeapons("Waqqif", "Any") # Use name
-  setwd("../test")
+  setwd("../tests")
   expect_equal(W$name, "Waqqif")
   expect_equal(W$templateID, "ITEMTPL_7")
 
@@ -87,7 +87,7 @@ test_that("Weapons", {
           "armed", "templateID", "primeattr", "primeattrID")
   setwd("../src")
   W <- GetWeapons(Type = "Ranged")
-  setwd("../test")
+  setwd("../tests")
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 52)
   expect_equal(ncol(W), length(cn))

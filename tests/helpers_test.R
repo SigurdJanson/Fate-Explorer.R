@@ -1,6 +1,6 @@
 setwd("..")
 source("./src/helpers.R", encoding = "UTF-8")
-setwd("./test")
+setwd("./tests")
 
 # Helper Functions ----
 test_that("replace_umlauts", {

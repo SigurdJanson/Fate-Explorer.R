@@ -1,6 +1,6 @@
 setwd("..")
 source("./src/explorechances.R")
-setwd("./test")
+setwd("./tests")
 
 
 test_that("dSumOfDice", {
