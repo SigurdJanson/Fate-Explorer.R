@@ -1,11 +1,11 @@
 /* RenderRollKeyResult() */
-.col-critical {color: goldenrod;}
-.col-success {color: inherit;}
-.col-fail {color:inherit;}
-.col-fumble {color: #B22222;}
+.col-critical {color: #d5c348;}
+.col-success {color: #288F5F;}
+.col-fail {color:#881B1BAA;}
+.col-fumble {color: #881B1B;}
 
 .ico-success {
-  font-size: 75%;
+  font-size: 80%;
 }
 
 
@@ -13,7 +13,7 @@
     width: 100%;
     margin: 0;
     padding: 0 1rem;
-    border: 1px solid lightgray;
+    border: 1px solid #d0d0d0;
     border-radius:3px;
     height:18rem;
 }
@@ -69,13 +69,13 @@
 .tooltipped {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted rgb(51, 51, 51);
+    border-bottom: 1px dotted #333333;
   }
   
   .tooltipped .tooltiptext {
     visibility: hidden;
     width: 32rem;
-    background-color: rgb(51, 51, 51);
+    background-color: #333333;
     color: #fff;
     text-align: center;
     border-radius: 4px;
