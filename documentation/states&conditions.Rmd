@@ -1,0 +1,284 @@
+---
+title: "Analysis of States & Conditions"
+author: "Dr. Jan Seifert"
+date: "28 7 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(jsonlite)
+```
+
+# Conditions
+
+1. Conditions cumulate
+2. `Total <- max(sum(conditions), 5L)`
+3. A hero with a total of 8 levels in all conditions combined is "incapacitated" regardless of the levels of each condition.
+
+
+
+
+## Confusion (Verwirrung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Mildly confused | All checks | -1 |
+| II    | Confused | All checks | -2 |
+| III   | Very Confused | All checks | -3 |
+|       | | Complex actions (like spellcasting, liturgical chants, and the use of lore skills) are impossible | Denied |
+| IV    | Incapacitated | All checks | Denied |
+
+Requirements:
+
+* Reference to all checks
+* Reference to skills that involve complex actions
+* Ignore MOV
+
+
+## Fear (Furcht)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Uneasy   | All checks | -1 |
+| II    | Scared   | All checks | -2 |
+| III   | Panicked | All checks | -3 |
+| IV    | Catatonic and therefore incapacitated | All actions | Denied |
+
+
+Requirements:
+
+* Reference to all checks
+
+
+## Pain (Schmerz)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Slight pain     | All checks, MOV | -1 |
+| II    | Disturbing pain | All checks, MOV | -2 |
+| III   | Severe pain     | All checks, MOV | -3 |
+| IV    | Severe pain     | All checks, MOV | -3 |
+
+Requirements:
+
+* Reference to all checks
+* Ignore MOV
+
+
+## Stupor (Betäubung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Slightly drowsy | All checks | -1 |
+| II    | Lethargic | All checks | -2 |
+| III   | Very sluggish | All checks | -3 |
+| IV    | Incapacitated | All checks | Denied |
+
+Requirements:
+
+* Reference to all checks
+
+
+## Encumbrance (Belastung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Mildly encumbered | Skill checks | -1 |
+|       | | AT, Defense, INI, and MOV      | -1 |
+| II    | Encumbered  | Skill checks       | -2 |
+|       | | AT, Defense, INI, and MOV      | -2 |
+| III   | Very encumbered | Skill checks   | -3 |
+|       | | AT, Defense, INI, and MOV      | -3 |
+| IV    | Incapacitated | All actions  | Denied |
+
+Requirements:
+
+* Reference to all skill checks
+* Reference to all combat skills
+* Reference to inititive (INI)
+* Ignore MOV
+
+
+
+## Intoxicated (Berauscht)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Tipsy | Checks on carousing | -1 |
+| II    |  | Checks on carousing | -2 |
+| III   | Drunk | Checks on carousing | -3 |
+| IV    | Hero suffers one level of stupor. 4 levels of intoxication. Further levels remain. | All actions | Denied |
+
+
+Requirements:
+
+* Reference to specific skill
+* Connection to stupor
+
+
+## Paralysis (Paralyse)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Slightly paralysed  | All checks involving movement or speech | -1 |
+|       | | MOV      | -25% |
+| II    | Stiff  | All checks involving movement or speech | -2 |
+|       | | MOV      | -50% |
+| III   | Hardly able to move | All checks involving movement or speech   | -3 |
+|       | | MOV      | -75% |
+| IV    | Unable to move | All actions | Denied |
+
+Requirements:
+
+* Reference to a list of skills (for some skills, however, it may depend on the situation whether this condition applies or not)
+
+
+
+## "Overexertion" (Überanstrengung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     |  | All checks on knwoledge skills | -1 |
+| II    |  | All checks on knwoledge skills | -2 |
+| III   |  | All checks on knwoledge skills | -3 |
+| IV    |  | | Gain one level stupor. Remove one level overexertion |
+
+Requirements:
+
+* Reference to a list of skills or to the class of knowledge skills.
+* Connection to stupor
+
+
+
+## Rapture (Entrückung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Slight rapturous  | All skill and spell checks not agreeable to the Blessed One’s god | -1 |
+| II    | Rapturous  | All skill and spell checks agreeable to the Blessed One’s god | +1 |
+|       | | All other checks      | -2 |
+| III   | Divinely inspired | All skill and spell checks agreeable to the Blessed One’s god   | +2 |
+|       | | All other checks      | -3 |
+| IV    | Implement of the god | All skill and spell checks agreeable to the Blessed One’s god   | +3 |
+|       | | All other checks      | -4 |
+
+Requirements:
+
+* Deity
+* List of skills related to that deity
+* Two kinds of impact
+
+
+## Desire (Begehren)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | Slight desire | Willpower (Resist Seduction) against the desired person | -1 |
+| II    | | Willpower (Resist Seduction) against the desired person | -2 |
+| III   | | Willpower (Resist Seduction) against the desired person | -3 |
+| IV    | | Willpower (Resist Seduction) against the desired person | -4 |
+
+Requirements:
+
+* Reference to specific skill which - however - cannot always be applied. So ho to do it in the app?
+
+
+## Arousal (Erregung)
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | Slightly aroused | All checks on SAG incl. skill checks | -1 |
+| II    | Aroused | All checks on SAG incl. skill checks | -2 |
+| III   | Very aroused | All checks on SAG incl. skill checks | -3 |
+| IV    | Orgasm | Arousal returns to zero | - |
+
+* Reference to a list of skills
+* Reference to the ability of the skill check
+
+
+
+# Further Conditions
+
+* Animosität
+* Brazirakus heilige Wut
+* Dämonische Auszehrung
+* Eiskalte Einflüsterung
+* Loss of Sikaryan (Sikaryan-Verlust)
+* Theriak-Vorrat
+* Trance Trance)
+
+
+
+# States
+
+## Blind (blind)
+
+* Skill rolls at **discretion of game master**
+* Close combat: 
+  * AT/2
+  * Parry: criticals only (roll of 1 on 1D20)
+  * Dodge: criticals only (roll of 1 on 1D20)
+* Ranged combat:
+  * only criticals hit (roll of 1 on 1D20)
+  * Parry: criticals only (roll of 1 on 1D20)
+  * Dodge: denied
+* Magic: Blind characters must touch opponents
+* Chants:  Blind characters must touch opponents
+
+## Bloodlust ()
+
+* Close combat
+  * +4 bonus to attacks
+  * +2 bonus to damage
+  * PA denied
+  * Dodge denied
+* Ranged combat: denied
+* Special abilities: combat
+  * Only Forceful Blow.
+* Skills
+  * Feat of Strength +2
+  * Non-physical skills: denied except Intimidation
+  *
+* Conditions
+  * Ignore the effects of the condition Pain
+  * When bloodlust ends, the hero gains 2 levels of Stupor
+  
+
+## Bound ()
+
+* MOV: 0
+* Dodge -4
+
+## Burning
+
+(No penalties, damage only and skill checks are required to stop it)
+
+## Cramped
+
+## Deaf
+
+## Disease
+
+## Immobilized
+
+## Incapacitated
+
+## Invisible
+
+The state Invisible has consequences on others, not on the invisible hero.
+
+Combat situations
+* An opponent must be aware of the presence and approximate location of the invisible person: competitive skill check on Perception (Search) vs. Stealth (Sneak).
+* If the opponent is aware of a characters location they can fight as if they had the status Blind.
+
+## Mute
+
+* Spells: denied, unless the hero is an elf
+* Chants: denied
+
+## Poisoned
+
+No regeneration
+
+## Prone (liegend)
+
+* AT -4
+* PA -2
+* Dodge -2
+* MOV 1
+
+
+## Surprised
+
+## Unconscious
+
