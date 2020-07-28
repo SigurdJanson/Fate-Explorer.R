@@ -15,6 +15,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_42",
         "chanttype": "liturgy"
     },
     {
@@ -294,6 +295,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_59",
         "chanttype": "liturgy"
     },
     {
@@ -389,6 +391,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_7",
         "chanttype": "liturgy"
     },
     {
@@ -720,6 +723,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_80",
         "chanttype": "liturgy"
     },
     {
@@ -867,6 +871,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_91",
         "chanttype": "liturgy"
     },
     {
@@ -1491,6 +1496,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_114",
         "chanttype": "liturgy"
     },
     {
@@ -1621,6 +1627,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_121",
         "chanttype": "liturgy"
     },
     {
@@ -1678,6 +1685,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
+        "attrID": "LITURGY_123",
         "chanttype": "liturgy"
     },
     {
@@ -1707,6 +1715,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID":"LITURGY_124",
         "chanttype": "liturgy"
     },
     {
@@ -2267,6 +2276,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_148",
         "tradition": "Efferd (Wogen)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2445,6 +2455,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_156",
         "tradition": "Efferd (Wogen)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2600,6 +2611,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_161",
         "tradition": "Efferd (Wogen)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2645,6 +2657,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_163",
         "tradition": "Efferd (Wind)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
