@@ -33,6 +33,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_1",
         "chanttype": "liturgy"
     },
     {
@@ -170,6 +171,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "modagainst": "SK",
+        "attrID": "LITURGY_4",
         "chanttype": "liturgy"
     },
     {
@@ -180,6 +182,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_52",
         "chanttype": "liturgy"
     },
     {
@@ -620,6 +623,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_75",
         "chanttype": "liturgy"
     },
     {
@@ -817,6 +821,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_89",
         "chanttype": "liturgy"
     },
     {
@@ -882,6 +887,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_15",
         "chanttype": "liturgy"
     },
     {
@@ -1004,6 +1010,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_95",
         "chanttype": "liturgy"
     },
     {
@@ -1652,6 +1659,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "modagainst": "SK",
+        "attrID": "LITURGY_32",
         "chanttype": "liturgy"
     },
     {
@@ -2236,6 +2244,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_147",
         "tradition": "Praios (Ordnung)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
