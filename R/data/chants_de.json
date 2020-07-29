@@ -2000,7 +2000,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Angrosch (Erz), Ferkinaschamanen (Blut und Tier), Fjarningerschamanen (Eis und Härte), Trollzackerschamanen (Leiden und Stein)",
+        "tradition": ["Angrosch (Erz)", "Ferkinaschamanen (Blut und Tier)", "Fjarningerschamanen (Eis und Härte)", "Trollzackerschamanen (Leiden und Stein)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2102,7 +2102,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_139",
-        "tradition": "Boron (Traum), Hesinde (Wissen), Nandus (Erkenntnis)",
+        "tradition": ["Boron (Traum)", "Hesinde (Wissen)", "Nandus (Erkenntnis)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2126,7 +2126,7 @@
         "ab3": "ATTR_4",
         "modagainst": "SK",
         "attrID": "LITURGY_36",
-        "tradition": "allgemein, allgemein (Schamanenritus), Praios (Antimagie), Boron (Traum)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)", "Praios (Antimagie)", "Boron (Traum)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2148,7 +2148,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Levthan (Begierde), Rahja (Ekstase)",
+        "tradition": ["Levthan (Begierde)", "Rahja (Ekstase)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2160,7 +2160,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_141",
-        "tradition": "Firun (Kälte), Ifirn (Natur)",
+        "tradition": ["Firun (Kälte)", "Ifirn (Natur)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2172,7 +2172,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_142",
-        "tradition": "Peraine (Heilung und Landwirtschaft), Tsa (Wandel)",
+        "tradition": ["Peraine (Heilung und Landwirtschaft)", "Tsa (Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2286,7 +2286,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Ingerimm (Handwerk), Kor (Guter Kampf und Gutes Gold), Rondra (Schild und Sturm)",
+        "tradition": ["Ingerimm (Handwerk)", "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild und Sturm)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2331,7 +2331,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Firun (Jagd), Ifirn (Natur)",
+        "tradition": ["Firun (Jagd)", "Ifirn (Natur)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2343,7 +2343,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_150",
-        "tradition": "allgemein, allgemein (Schamanenritus)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2354,7 +2354,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "Boron (Traum), Peraine (Heilung)",
+        "tradition": ["Boron (Traum)", "Peraine (Heilung)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2365,7 +2365,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Boron (Traum), Marbo (Vision)",
+        "tradition": ["Boron (Traum)", "Marbo (Vision)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2409,7 +2409,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Angrosch (Erz und Flammen), Ingerimm (Handwerk und Feuer)",
+        "tradition": ["Angrosch (Erz und Flammen)", "Ingerimm (Handwerk und Feuer)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2432,7 +2432,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_153",
-        "tradition": "Hesinde (Wissen), Tsa (Freiheit)",
+        "tradition": ["Hesinde (Wissen)", "Tsa (Freiheit)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2466,7 +2466,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Namenloser, Rahja (Harmonie), Tsa (Wandel)",
+        "tradition": ["Namenloser", "Rahja (Harmonie)", "Tsa (Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2511,7 +2511,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "tradition": "Aves (Reise), Tsa (Freiheit)",
+        "tradition": ["Aves (Reise)", "Tsa (Freiheit)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2567,7 +2567,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_157",
-        "tradition": "Angrosch (Erz), Ingerimm (Handwerk)",
+        "tradition": ["Angrosch (Erz)", "Ingerimm (Handwerk)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2590,7 +2590,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
-        "tradition": "Praios (Antimagie), Boron (Traum)",
+        "tradition": ["Praios (Antimagie)", "Boron (Traum)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2601,7 +2601,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Rahja (Harmonie), Tsa (Wandel)",
+        "tradition": ["Rahja (Harmonie)", "Tsa (Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2670,7 +2670,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_39",
-        "tradition": "Efferd (Wind), Phex (Schatten)",
+        "tradition": ["Efferd (Wind)", "Phex (Schatten)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2705,7 +2705,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_40",
-        "tradition": "allgemein, allgemein (Schamanenritus)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2717,7 +2717,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_164",
-        "tradition": "allgemein, allgemein (Schamanenritus)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2774,7 +2774,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_168",
-        "tradition": "allgemein, allgemein (Schamanenritus)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3082,7 +3082,7 @@
         "ab3": "ATTR_4",
         "modagainst": "SK",
         "attrID": "LITURGY_182",
-        "tradition": "Boron (Traum), Marbo (Vision)",
+        "tradition": ["Boron (Traum)", "Marbo (Vision)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3128,7 +3128,7 @@
         "ab3": "ATTR_4",
         "modagainst": "SK",
         "attrID": "LITURGY_184",
-        "tradition": "Boron (Traum), Rahja (Harmonie), Travia (Heim)",
+        "tradition": ["Boron (Traum)", "Rahja (Harmonie)", "Travia (Heim)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
