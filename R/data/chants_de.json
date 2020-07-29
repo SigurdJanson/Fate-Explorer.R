@@ -382,6 +382,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_63",
         "chanttype": "liturgy"
     },
     {
@@ -438,6 +439,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_65",
         "chanttype": "liturgy"
     },
     {
@@ -468,6 +470,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_66",
         "chanttype": "liturgy"
     },
     {
@@ -533,6 +536,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_70",
         "chanttype": "liturgy"
     },
     {
@@ -806,6 +810,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_87",
         "chanttype": "liturgy"
     },
     {
@@ -1656,6 +1661,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "modagainst": "ZK",
+        "attrID": "LITURGY_122",
         "chanttype": "liturgy"
     },
     {
@@ -1895,6 +1901,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_135",
         "tradition": "Angrosch (Flammen), Ingerimm (Feuer)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2231,6 +2238,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_37",
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2544,6 +2552,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_157",
         "tradition": "Angrosch (Erz), Ingerimm (Handwerk)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2600,7 +2609,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Angrosch (Erz), Ingerimm (Handwerk)",
+        "attrID": "LITURGY_160",
+        "tradition": ["Angrosch (Erz)", "Ingerimm (Handwerk)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3146,7 +3156,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Ingerimm (Handwerk), Rondra (Schild), Travia (Heim)",
+        "attrID": "LITURGY_188",
+        "tradition": ["Ingerimm (Handwerk)", "Rondra (Schild)", "Travia (Heim)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3168,6 +3179,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_5",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_189",
+        "tradition": ["Ingerimm (Handwerk)", "Tsa (Freiheit und Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3179,7 +3192,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_190",
-        "tradition": "Boron (Tod), Firun (Kälte), Marbo (Vergänglichkeit), Nivesenschamanen (Winter), Peraine (Heilung)",
+        "tradition": ["Boron (Tod)", "Firun (Kälte)", "Marbo (Vergänglichkeit)", "Nivesenschamanen (Winter)", "Peraine (Heilung)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
