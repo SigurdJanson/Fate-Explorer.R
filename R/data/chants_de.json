@@ -25,6 +25,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_43",
+        "tradition": "Firun (Jagd)",
         "chanttype": "liturgy"
     },
     {
@@ -518,6 +520,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_69",
+        "tradition": "Firun (Kälte)",
         "chanttype": "liturgy"
     },
     {
@@ -1247,6 +1251,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_23",
+        "tradition": ["Boron (Traum)", "Firun (Jagd)", "Numinorukult (Reißender Strudel und Unendliche Tiefe)"],
         "chanttype": "liturgy"
     },
     {
@@ -1511,6 +1516,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_115",
         "chanttype": "liturgy"
     },
     {
@@ -1578,6 +1584,8 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_117",
+        "tradition": ["Aves (Reise)", "Ifirn (Natur)"],
         "chanttype": "liturgy"
     },
     {
@@ -1614,6 +1622,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_120",
+        "tradition": "Aves (Schicksal)",
         "chanttype": "liturgy"
     },
     {
@@ -2046,7 +2056,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Firun (Jagd und Kälte), Fjarningerschamanen (Eis und Härte)",
+        "attrID": "LITURGY_138",
+        "tradition": ["Firun (Jagd und Kälte)", "Fjarningerschamanen (Eis und Härte)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2148,6 +2159,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_141",
         "tradition": "Firun (Kälte), Ifirn (Natur)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2216,6 +2228,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_145",
         "tradition": "Aves (Reise)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2430,7 +2443,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Ferkinaschamanen (Tier), Fjarningerschamanen (Eis), Firun (Jagd), Gjalskerschamanen (Gemeinschaft und Wildheit), Mohaschamanen (Dschungel), Nivesenschamanen (Winter), Trollzackerschamanen (Leiden)",
+        "attrID": "LITURGY_154",
+        "tradition": ["Ferkinaschamanen (Tier)", "Fjarningerschamanen (Eis)", "Firun (Jagd)", "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2464,7 +2478,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_156",
-        "tradition": "Efferd (Wogen)",
+        "tradition": ["Aves (Schicksal)", "Efferd (Wogen)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2725,6 +2739,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_166",
         "tradition": "Aves (Reise und Schicksal)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2792,7 +2807,8 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Aves (Reise und Schicksal), Firun (Jagd), Travia (Freundschaft)",
+        "attrID": "LITURGY_170",
+        "tradition": ["Aves (Reise und Schicksal)", "Firun (Jagd)", "Travia (Freundschaft)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2883,7 +2899,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_175",
-        "tradition": "allgemein, allgemein (Schamanenritus)",
+        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2916,7 +2932,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_7",
-        "tradition": "Ferkinaschamanen (Blut), Nivesenschamanen (Winter), Trollzackerschamanen (Leiden)",
+        "tradition": ["Ferkinaschamanen (Blut)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -2927,6 +2943,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
+        "attrID": "LITURGY_177",
         "tradition": "Firun (Kälte)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2996,7 +3013,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_171",
-        "tradition": "Peraine (Landwirtschaft), Travia (Freundschaft)",
+        "tradition": ["Peraine (Landwirtschaft)", "Travia (Freundschaft)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
@@ -3087,6 +3104,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_183",
         "tradition": "Aves (Reise)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -3145,6 +3163,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_187",
         "tradition": "Aves (Schicksal)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -3226,7 +3245,8 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "Firun (Kälte), Ifirn (Hilfsbereitschaft), Nivesenschamanen (Winter), Travia (Heim)",
+        "attrID": "LITURGY_191",
+        "tradition": ["Firun (Kälte)", "Ifirn (Hilfsbereitschaft)", "Nivesenschamanen (Winter)", "Travia (Heim)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
     },
