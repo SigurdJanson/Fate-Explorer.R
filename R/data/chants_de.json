@@ -127,6 +127,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_48",
         "chanttype": "liturgy"
     },
     {
@@ -412,6 +413,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_64",
         "chanttype": "liturgy"
     },
     {
@@ -519,6 +521,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_68",
         "chanttype": "liturgy"
     },
     {
@@ -595,6 +598,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID". "LITURGY_72",
         "chanttype": "liturgy"
     },
     {
@@ -732,6 +736,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_79",
         "chanttype": "liturgy"
     },
     {
@@ -878,6 +883,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_90",
         "chanttype": "liturgy"
     },
     {
@@ -1111,6 +1117,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_98",
         "chanttype": "liturgy"
     },
     {
@@ -1234,6 +1241,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_104",
         "chanttype": "liturgy"
     },
     {
@@ -1244,6 +1252,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_105",
         "chanttype": "liturgy"
     },
     {
@@ -1896,6 +1905,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_131",
         "tradition": "Levthan( Begierde und Rausch), Rahja (Ekstase)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2180,6 +2190,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_140",
         "tradition": ["Levthan (Begierde)", "Rahja (Ekstase)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2352,6 +2363,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_146",
         "tradition": "Nandus (Bildung)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2787,6 +2799,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_167",
         "tradition": "Rahja (Ekstase und Harmonie)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
