@@ -156,6 +156,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_51",
         "chanttype": "liturgy"
     },
     {
@@ -312,6 +313,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_60",
         "chanttype": "liturgy"
     },
     {
@@ -631,6 +633,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_74",
         "chanttype": "liturgy"
     },
     {
@@ -771,11 +774,12 @@
     },
     {
         "url": "index.php/Lit_HerbeirufungHeerscharenRattenkindes.html",
-        "name": "Herbeirufung der Heerscharen des Rattenkindes",
+        "name": "Herbeirufung der Heerscharen des Rattenkindes (Ratten",
         "class":"Karmale Fähigkeiten","classID":7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_83",
         "chanttype": "liturgy"
     },
     {
@@ -785,6 +789,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_84",
         "chanttype": "liturgy"
     },
     {
@@ -794,6 +799,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_85",
         "chanttype": "liturgy"
     },
     {
@@ -803,6 +809,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_86",
         "chanttype": "liturgy"
     },
     {
@@ -1155,6 +1162,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_100",
         "chanttype": "liturgy"
     },
     {
@@ -1165,6 +1173,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_101",
         "chanttype": "liturgy"
     },
     {
@@ -1175,6 +1184,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_102",
         "chanttype": "liturgy"
     },
     {
@@ -1185,6 +1195,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_103",
         "chanttype": "liturgy"
     },
     {
@@ -1272,6 +1283,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "ZK",
+        "attrID": "LITURGY_107",
         "chanttype": "liturgy"
     },
     {
@@ -1337,6 +1349,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_108",
         "chanttype": "liturgy"
     },
     {
@@ -1442,6 +1455,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "modagainst": "ZK",
+        "attrID": "LITURGY_110",
         "chanttype": "liturgy"
     },
     {
@@ -1499,6 +1513,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_112",
         "chanttype": "liturgy"
     },
     {
@@ -1508,6 +1523,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_113",
         "chanttype": "liturgy"
     },
     {
@@ -1891,6 +1907,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_132",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -1902,6 +1919,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_133",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2481,6 +2499,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_155",
         "tradition": ["Namenloser", "Rahja (Harmonie)", "Tsa (Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2559,6 +2578,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_158",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2904,6 +2924,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_174",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2995,6 +3016,7 @@
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_179",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -3169,6 +3191,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "attrID": "LITURGY_186",
         "tradition": "Namenloser",
         "class": "Karmale Fähigkeiten",
         "classID": 7
