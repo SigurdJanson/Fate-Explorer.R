@@ -118,6 +118,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_47",
         "chanttype": "liturgy"
     },
     {
@@ -148,6 +149,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_50",
         "chanttype": "liturgy"
     },
     {
@@ -366,6 +368,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_62",
         "chanttype": "liturgy"
     },
     {
@@ -503,6 +506,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_67",
         "chanttype": "liturgy"
     },
     {
@@ -778,6 +782,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_82",
         "chanttype": "liturgy"
     },
     {
@@ -993,6 +998,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_92",
         "chanttype": "liturgy"
     },
     {
@@ -1153,6 +1159,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_99",
         "chanttype": "liturgy"
     },
     {
@@ -2071,6 +2078,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_137",
         "tradition": "Tsa (Freiheit und Wandel)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2358,6 +2366,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_144",
         "tradition": "Travia (Freundschaft und Heim)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2471,6 +2480,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_149",
         "tradition": "Tsa (Wandel)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2713,6 +2723,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_162",
         "tradition": "Travia (Heim)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2980,6 +2991,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_176",
         "tradition": "Travia (Heim)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -3026,6 +3038,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_178",
         "tradition": "Travia (Heim)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
