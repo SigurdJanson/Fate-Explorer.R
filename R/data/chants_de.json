@@ -825,6 +825,8 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_88",
+        "tradition": "Ifirn (Hilfsbereitschaft)",
         "chanttype": "liturgy"
     },
     {
@@ -1595,6 +1597,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_118",
         "chanttype": "liturgy"
     },
     {
@@ -1604,6 +1607,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_119",
         "chanttype": "liturgy"
     },
     {
@@ -2387,6 +2391,7 @@
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_152",
         "tradition": "Ifirn (Hilfsbereitschaft)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2875,6 +2880,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_173",
         "tradition": "Ifirn (Hilfsbereitschaft und Natur)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
