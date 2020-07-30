@@ -218,6 +218,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_54",
         "chanttype": "liturgy"
     },
     {
@@ -345,6 +346,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_5",
         "chanttype": "liturgy"
     },
     {
@@ -766,6 +768,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_81",
         "chanttype": "liturgy"
     },
     {
@@ -1271,6 +1274,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_7",
         "ab3": "ATTR_8",
+        "attrID": "LITURGY_106",
         "chanttype": "liturgy"
     },
     {
@@ -1503,6 +1507,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "modagainst": "SK",
+        "attrID": "LITURGY_30",
         "chanttype": "liturgy"
     },
     {
@@ -1591,6 +1596,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_116",
         "chanttype": "liturgy"
     },
     {
@@ -2625,6 +2631,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "attrID": "LITURGY_38",
         "tradition": "Rondra (Schild, Sturm)",
         "class": "Karmale Fähigkeiten",
         "classID": 7
@@ -2648,6 +2655,7 @@
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "attrID": "LITURGY_159",
         "tradition": ["Rahja (Harmonie)", "Tsa (Wandel)"],
         "class": "Karmale Fähigkeiten",
         "classID": 7
