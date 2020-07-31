@@ -2,3351 +2,4406 @@
     {
         "url": "index.php/lit_angriffslust.html",
         "name": "Angriffslust",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_41",
-        "tradition": "Kor (Gutes Gold)",
+        "tradition": [
+            "Kor (Gutes Gold)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Angriffswelle.html",
         "name": "Angriffswelle",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_42",
+        "tradition": [
+            "Efferd (Wogen)", "Numinoru (Reißender Strudel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Auge_des_Jägers.html",
         "name": "Auge des Jägers",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_43",
-        "tradition": "Firun (Jagd)",
+        "tradition": [
+            "Firun (Jagd)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_BannderDunkelheit.html",
         "name": "Bann der Dunkelheit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_1",
+        "tradition": [
+            "Praios (Ordnung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_BannderFurcht.html",
         "name": "Bann der Furcht",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_2",
+        "tradition": [
+            "Boron (Traum)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Bann_der_göttlichen_Gaben.html",
         "name": "Bann der göttlichen Gaben",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_44",
-        "chanttype": "liturgy"
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/Lit_BanndesLichts.html",
         "name": "Bann des Lichts",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "chanttype": "liturgy",
-        "attrID": "LITURGY_3"
+        "attrID": "LITURGY_3",
+        "tradition": [
+            "Boron (Tod und Traum)", "Phex (Schatten)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Bann_wider_Untote.html",
         "name": "Bann wider Untote",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "ZK",
         "attrID": "LITURGY_45",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/bannstrahl.html",
         "name": "Bannstrahl",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Praios (Antimagie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/bannzone.html",
         "name": "Bannzone",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/befehl_des_schamanen.html",
         "name": "Befehl des Schamanen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Befreiung_des_Geistes.html",
         "name": "Befreiung des Geistes",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_47",
+        "tradition": [
+            "Tsa (Freiheit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Begnadeter_Reiter.html",
         "name": "Begnadeter Reiter",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_48",
+        "tradition": [
+            "Rahja (Harmonie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/berauschen.html",
         "name": "Berauschen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Levthan (Rausch)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Bescheidenheit.html",
         "name": "Bescheidenheit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_50",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Travia (Freundschaft und Heim)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Beschwörung_der_gemeinen_Diener.html",
         "name": "Beschwörung der gemeinen Diener des Rattenkindes",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_51",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Besänftigung.html",
         "name": "Besänftigung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_49",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Swafnir (Tapferkeit)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/Lit_Blendstrahl.html",
         "name": "Blendstrahl",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "modagainst": "SK",
         "attrID": "LITURGY_4",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Praios (Antimagie und Ordnung)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Blendung.html",
         "name": "Blendung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_52",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Praios (Antimagie und Ordnung)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_BlickaufdenMeeresgrund.html",
         "name": "Blick auf den Meeresgrund",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Blick_des_Heilers.html",
         "name": "Blick des Heilers",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_53",
+        "tradition": [
+            "Peraine (Heilung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Blitzschlag.html",
         "name": "Blitzschlag",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_54",
+        "tradition": [
+            "Rondra (Sturm)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Blutiger_Zorn.html",
         "name": "Blutiger Zorn",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_55",
-        "tradition": ["Kor (Guter Kampf)", "Swafnir (Kraft)"],
-        "chanttype": "liturgy"
+        "tradition": [
+            "Kor (Guter Kampf)",
+            "Swafnir (Kraft)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/blutiges-siegel.html",
         "name": "Blutiges Siegel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Rondra (Sturm)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Blutzoll.html",
         "name": "Blutzoll",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_56",
+        "tradition": [
+            "Kor (Guter Kampf)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Bodenweihe.html",
         "name": "Bodenweihe",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "chanttype": "liturgy",
-        "attrID": "LITURGY_57"
+        "attrID": "LITURGY_57",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_BotschaftausderTiefe.html",
         "name": "Botschaft aus der Tiefe",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/brazoraghs-krieger.html",
         "name": "Brazoraghs Krieger",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
+        "tradition": {},
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/baerensuche.html",
         "name": "Bärenhaut",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Firun (Jagd und Kälte)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/buechersuche.html",
         "name": "Büchersuche",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "tradition": [
+            "Hesinde (Wissen)", "Nandus (Bildung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Delphinruf.html",
         "name": "Delphinruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_59",
+        "tradition": [
+            "Efferd (Wogen)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_DesEinenbezaubernderSphaerenklang.html",
         "name": "Des Einen bezaubernder Sphärenklang",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_60",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/doppelgaenger.html",
         "name": "Doppelgänger",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "modagainst": "ZK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Phex (Schatten)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/lit_Daemonenwall.html",
         "name": "Dämonenwall",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "chanttype": "liturgy",
-        "attrID": "LITURGY_58"
+        "attrID": "LITURGY_58",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Ehrenhaftigkeit.html",
         "name": "Ehrenhaftigkeit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_5",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Rondra (Schild und Sturm)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Ehrlicher_Vertrag.html",
         "name": "Ehrlicher Vertrag",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_61",
+        "tradition": [
+            "Kor (Gutes Gold)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Entfesselung.html",
         "name": "Entfesselung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_62",
+        "tradition": [
+            "Tsa (Freiheit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_entstelltes_antlitz.html",
         "name": "Entstelltes Antlitz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "ZK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Levthan (Begierde)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/Lit_Entzifferung.html",
         "name": "Entzifferung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_6",
+        "tradition": [
+            "Hesinde (Wissen)", "Nandus (Bildung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/erdbeben.html",
         "name": "Erdbeben",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_63",
+        "tradition": [
+            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Ermutigiung.html",
         "name": "Ermutigung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_7",
+        "tradition": [
+            "Rondra (Sturm)", "Efferd (Wind)", "Swafnir (Tapferkeit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Ernüchterung.html",
         "name": "Ernüchterung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_64",
+        "tradition": [
+            "Rahja (Harmonie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/l_ErregenderRausch.html",
         "name": "Erregender Rausch",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Levthan (Rausch)", "Rahja (Ekstase und Harmonie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Ertrinken.html",
         "name": "Ertrinken",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_erwachen.html",
         "name": "Erwachen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Boron (Schlaf)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Erzene_Opfergabe.html",
         "name": "Erzene Opfergabe",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_65",
+        "tradition": [
+            "Ingerimm (Handwerk)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_FallinsNichts.html",
         "name": "Fall ins Nichts",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
         "attrID": "LITURGY_8",
-        "chanttype": "liturgy",
-        "tradition": "Phex (Schatten)"
+        "tradition": [
+            "Phex (Schatten)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/l_FesselndesBand.html",
         "name": "Fesselndes Band",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "ZK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Levthan (Begierde und Rausch)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/lit_Feuerwall.html",
         "name": "Feuerwall",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_66",
+        "tradition": [
+            "Angrosch (Flammen)", "Ingerimm (Feuer)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_freundschaftliches_auftreten.html",
         "name": "Freundschaftliches Auftreten",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Ifirn (Hilfsbereitschaft)", "Travia (Freundschaft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Friedfertigkeit.html",
         "name": "Friedfertigkeit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_67",
+        "tradition": [
+            "Travia (Freundschaft)", "Tsa (Freiheit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_FriedvolleAura.html",
         "name": "Friedvolle Aura",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_9",
+        "tradition": [
+            "Hesinde (Magie und Wissen)", "Numinoru (Unendliche Tiefe)", "Peraine (Heilung und Landwirtschaft)", "Travia (Freundschaft und Heim)", "Tsa (Freiheit und Wandel)", "Rahja (Ekstase und Harmonie)", "Ifirn (Hilfsbereitschaft)", "Nandus (Bildung und Erkenntnis)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Friedvoller_Rausch.html",
         "name": "Friedvoller Rausch",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_68",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Rahja (Ekstase)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Froststurm.html",
         "name": "Froststurm",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_69",
-        "tradition": "Firun (Kälte)",
+        "tradition": [
+            "Firun (Kälte)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Furchtresistenz.html",
         "name": "Furchtresistenz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Gebieter_der_Flammen.html",
         "name": "Gebieter der Flammen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_70",
+        "tradition": [
+            "Angrosch (Flammen)", "Ingerimm (Feuer)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_gefuehlskaelte.html",
         "name": "Gefühlskälte",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Boron (Tod)", "Firun (Kälte)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Geisterblick.html",
         "name": "Geisterblick",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "chanttype": "liturgy",
-        "attrID": "LITURGY_71"
+        "attrID": "LITURGY_71",
+        "tradition": [
+            "Boron (Tod)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_geisterfalle.html",
         "name": "Geisterfalle",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein (Schamanenritus)", "Boron (Schlaf und Tod)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_geldwechsel.html",
         "name": "Geldwechsel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
+        "tradition": [
+            "Phex (Handel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Gesegneter_Rausch.html",
         "name": "Gesegneter Rausch",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "attrID". "LITURGY_72",
+        "attrID": "LITURGY_72",
+        "tradition": [
+            "Rahja (Ekstase)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Getreidewachstum.html",
         "name": "Getreidewachstum",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_73",
+        "tradition": [
+            "Peraine (Landwirtschaft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Giftbann.html",
         "name": "Giftbann",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_10",
+        "tradition": [
+            "Peraine (Heilung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_gnadenstoss.html",
         "name": "Gnadenstoß",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Marbo (Vergänglichkeit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Goldene_Hand.html",
         "name": "Goldene Hand",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_74",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Goldene_Rüstung.html",
         "name": "Goldene Rüstung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_75",
+        "tradition": [
+            "Praios (Antimagie und Ordnung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Göttliche_Klinge.html",
         "name": "Göttliche Klinge",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_76",
+        "tradition": [
+            "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild und Sturm)", "Swafnir (Kraft und Tapferkeit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Göttliche_Verständigung.html",
         "name": "Göttliche Verständigung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_77",
+        "tradition": [
+            "allgemein"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_GöttlicherFingerzeig.html",
         "name": "Göttlicher Fingerzeig",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_11",
+        "tradition": [
+            "allgemein"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_goettlicher_rausch.html",
         "name": "Göttlicher Rausch",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Levthan (Rausch)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_GöttlichesZeichen.html",
         "name": "Göttliches Zeichen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_12",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_hairuf.html",
         "name": "Hairuf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Fjarningerschamanen (Härte)", "Mohaschamanen (Sonne)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_hauch_des_elements.html",
         "name": "Hauch des Elements",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Heiliger_Befehl.html",
         "name": "Heiliger Befehl",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_78",
-        "chanttype": "liturgy"
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Heiliges_Liebesspiel.html",
         "name": "Heiliges Liebesspiel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_79",
+        "tradition": [
+            "Rahja (Ekstase und Harmonie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_HeilsameQuelle.html",
         "name": "Heilsame Quelle",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_80",
+        "tradition": [
+            "Efferd (Wogen)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Heilsegen.html",
         "name": "Heilsegen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_13",
+        "tradition": [
+            "Peraine (Heilung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Heldenkraft.html",
         "name": "Heldenkraft",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_81",
+        "tradition": [
+            "Rondra (Schild)", "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen Wildheit)", " Swafnir (Kraft und Tapferkeit)", "Trollzackerschamanen (Leiden)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Helfende_Hand.html",
         "name": "Helfende Hand",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_82",
+        "tradition": [
+            "Travia (Freundschaft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_HerbeirufungHeerscharenRattenkindes.html",
         "name": "Herbeirufung der Heerscharen des Rattenkindes (Ratten",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_83",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_schakale.html",
         "name": "Herbeirufung der Heerscharen des Rattenkindes (Schakale)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_84",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Herbeirufung_der_Heerscharen_des_Rattenkindes_vampirfledermäuse.html",
         "name": "Herbeirufung der Heerscharen des Rattenkindes (Vampirfledermäuse)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_85",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_Wolfsspinnen.html",
         "name": "Herbeirufung der Heerscharen des Rattenkindes (Wolfsspinnen)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_86",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/herbeirufung-von-tairachs-dienern-nebelkraehen.html",
         "name": "Herbeirufung von Tairachs Dienern (Nebelkrähen)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": {},
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Herr_der_Flammen.html",
         "name": "Herr der Flammen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_87",
+        "tradition": [
+            "Angrosch (Flammen)", "Ingerimm (Feuer)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Hilfreiche_Seele.html",
         "name": "Hilfreiche Seele",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_88",
-        "tradition": "Ifirn (Hilfsbereitschaft)",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Ifirn (Hilfsbereitschaft)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Innere_Ruhe.html",
         "name": "Innere Ruhe",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_89",
+        "tradition": [
+            "Praios (Ordnung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_jaguarruf.html",
         "name": "Jaguarruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Mohaschamanen (Dschungel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_kampfgeschick.html",
         "name": "Kampfgeschick",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Kor (Guter Kampf)", "Rondra (Sturm)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Klarer_Geist.html",
         "name": "Klarer Geist",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_90",
+        "tradition": [
+            "Nandus (Erkenntnis)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_kleidungschamaeleon.html",
         "name": "Kleidungschamäleon",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Tsa (Wandel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Kleine_Windhose.html",
         "name": "Kleine Windhose",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_91",
+        "tradition": [
+            "Efferd (Wind)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_KleinerBannwiderUntote.html",
         "name": "Kleiner Bann wider Untote",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_4",
-        "modagainst": "ZK",
+        "attrID": "LITURGY_14",
+        "tradition": [
+            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Marbo (Vergänglichkeit)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
+        ],
         "chanttype": "liturgy",
-        "attrID": "LITURGY_14"
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/Lit_KleinerBannstrahl.html",
         "name": "Kleiner Bannstrahl",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_15",
+        "tradition": [
+            "Praios (Antimagie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_kraftvoller_koerper.html",
         "name": "Kraftvoller Körper",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Levthan (Rausch)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_krankheiten_vorbeugen.html",
         "name": "Krankheiten vorbeugen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Peraine (Heilung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Krankheitsbann.html",
         "name": "Krankheitsbann",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_16",
+        "tradition": [
+            "Peraine (Heilung)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_kriegsfarben.html",
         "name": "Kriegsfarben",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_kaelteexplosion.html",
         "name": "Kälteexplosion",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Firun (Kälte)", "Ifirn (Natur)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Lautlos.html",
         "name": "Lautlos",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
         "attrID": "LITURGY_17",
-        "chanttype": "liturgy",
-        "tradition": ["Phex (Schatten)", "Firun (Jagd)"]
+        "tradition": [
+            "Phex (Schatten)",
+            "Firun (Jagd)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Lebensschutz.html",
         "name": "Lebensschutz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_92",
+        "tradition": [
+            "Tsa (Wandel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_levthanischer_liebhaber.html",
         "name": "Levthanischer Liebhaber",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Levthan (Begierde)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Liturgieschild.html",
         "name": "Liturgieschild",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_93",
+        "tradition": [
+            "allgemein"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_lust_erzeugen.html",
         "name": "Lust erzeugen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Levthan (Begierde oder Rausch)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_macht_des_levthan.html",
         "name": "Macht des Levthan",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Levthan (Begierde und Rausch)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_magieanalyse.html",
         "name": "Magieanalyse",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "tradition": [
+            "Hesinde (Magie)", "Nandus (Erkenntnis)", "Praios (Antimagie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Magiebann.html",
         "name": "Magiebann",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_95",
+        "tradition": [
+            "Praios (Antimagie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Magieschutz.html",
         "name": "Magieschutz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_18",
+        "tradition": [
+            "Praios (Antimagie)", "Hesinde (Magie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Magiesicht.html",
         "name": "Magiesicht",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_19",
+        "tradition": [
+            "Praios (Antimagie)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Gjalskerschamanen (Gemeinschaft)", "Hesinde (Magie)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)", "Nivesenschamanen (Wölfe)", "Trollzackerschamanen (Stein)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Magiespiegel.html",
         "name": "Magiespiegel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_96",
+        "tradition": [
+            "Hesinde (Magie)", "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Maske.html",
         "name": "Maske",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_97",
-        "chanttype": "liturgy",
-        "tradition":"Phex (Schatten)"
+        "tradition": [
+            "Phex (Schatten)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_mauereinsturz.html",
         "name": "Mauereinsturz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Tsa (Freiheit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_meeresungeheuer_vertreiben.html",
         "name": "Meeresungeheuer vertreiben",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Efferd (Wind und Wogen)", "Swafnir (Tapferkeit)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Mit_Dummheit_schlagen.html",
         "name": "Mit Dummheit schlagen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_98",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Nandus (Bildung)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/Lit_Mondsicht.html",
         "name": "Mondsicht",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_20",
-        "chanttype": "liturgy",
-        "tradition": ["Phex (Schatten)", "Aves (Schicksal)"]
+        "tradition": [
+            "Phex (Schatten)",
+            "Aves (Schicksal)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Mondsilberzunge.html",
         "name": "Mondsilberzunge",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_21",
-        "chanttype": "liturgy",
-        "tradition":"Phex (Handel)"
+        "tradition": [
+            "Phex (Handel)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Motivation.html",
         "name": "Motivation",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_99",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Tsa (Freiheit)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Mächtiger_Angriff.html",
         "name": "Mächtiger Angriff",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_94",
+        "tradition": [
+            "Kor (Guter Kampf)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_NamenloseKaelte.html",
         "name": "Namenlose Kälte",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_100",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_NamenloseRaserei.html",
         "name": "Namenlose Raserei",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_101",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/Lit_NamenloseZweifel.html",
         "name": "Namenlose Zweifel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_102",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/Lit_NamenlosesVergessen.html",
         "name": "Namenloses Vergessen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_103",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/nebelkraehenschwarm.html",
         "name": "Nebelkrähenschwarm",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
+        "tradition": [
+            "Tairach (Geisterwelt)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Numinorusfesseln.html",
         "name": "Numinorus Fesseln",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
+        "tradition": [
+            "Numinoru (Reißender Strudel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Objektsegen.html",
         "name": "Objektsegen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "chanttype": "liturgy",
-        "attrID": "LITURGY_22"
+        "attrID": "LITURGY_22",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Obsession.html",
         "name": "Obsession",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_104",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Rahja (Ekstase)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Offenlegung_des_Geistes.html",
         "name": "Offenlegung des Geistes",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_105",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Nandus (Erkenntnis)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/ogerruf.html",
         "name": "Ogerruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": {},
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Opfergang.html",
         "name": "Opfergang",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_7",
         "ab3": "ATTR_8",
         "attrID": "LITURGY_106",
+        "tradition": [
+            "Rondra (Schild)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_OrtderRuhe.html",
         "name": "Ort der Ruhe",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_23",
-        "tradition": ["Boron (Traum)", "Firun (Jagd)", "Numinorukult (Reißender Strudel und Unendliche Tiefe)"],
+        "tradition": [
+            "Boron (Traum)",
+            "Firun (Jagd)",
+            "Numinorukult (Reißender Strudel und Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Pech_und_Schwefel.html",
         "name": "Pech und Schwefel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "ZK",
         "attrID": "LITURGY_107",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/Lit_PechundSchwefelStrahl.html",
         "name": "Pech-und-Schwefel-Strahl",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Pflanzenwuchs.html",
         "name": "Pflanzenwuchs",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_24",
+        "tradition": [
+            "Peraine (Landwirtschaft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_polarbaerenruf.html",
         "name": "Polarbärenruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Fjarningerschamanen (Eis)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Quallenhaut.html",
         "name": "Quallenhaut",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
+        "tradition": [
+            "Numinoru (Reißender Strudel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Quallenruf.html",
         "name": "Quallenruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Rabenruf.html",
         "name": "Rabenruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_25",
+        "tradition": [
+            "Boron (Tod und Traum)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Rattenschwarm.html",
         "name": "Rattenschwarm",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_108",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_regenbogenbruecke.html",
         "name": "Regenbogenbrücke",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Tsa (Freiheit und Wandel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_reinigung_des_boesen.html",
         "name": "Reinigung des Bösen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Peraine (Landwirtschaft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_rinderruf.html",
         "name": "Rinderruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Ferkinaschamanen (Blut oder Tier)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Ruf_der_Heimat.html",
         "name": "Ruf der Heimat",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_109",
+        "tradition": [
+            "allgemein"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_schattenfessel.html",
         "name": "Schattenfessel",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Marbo (Vergänglichkeit und Vision)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Schiffsgespür.html",
         "name": "Schiffsgespür",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Schlaf.html",
         "name": "Schlaf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
+        "attrID": "LITURGY_26",
+        "tradition": [
+            "Boron (Traum)"
+        ],
         "chanttype": "liturgy",
-        "attrID": "LITURGY_26"
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_schlangenruf.html",
         "name": "Schlangenruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Mohaschamanen (Dschungel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Schlangenstab.html",
         "name": "Schlangenstab",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_27",
+        "tradition": [
+            "Hesinde (Magie)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Schlangenzunge.html",
         "name": "Schlangenzunge",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_28",
+        "tradition": [
+            "Hesinde (Magie und Wissen)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Schleichende_Fäulnis.html",
         "name": "Schleichende Fäulnis",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "modagainst": "ZK",
         "attrID": "LITURGY_110",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/schleichende-faeulnis-pflanzen.html",
         "name": "Schleichende Fäulnis (Pflanzen)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Schmerzresistenz.html",
         "name": "Schmerzresistenz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_29",
+        "tradition": [
+            "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild)", "Swafnir (Kraft)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_schonfrist.html",
         "name": "Schonfrist",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Hesinde (Magie und Wissen)", "Nandus (Bildung und Erkenntnis)", "Peraine (Heilung und Landwirtschaft)", "Travia (Freundschaft und Heim)", "Tsa (Freiheit und Wandel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_SchutzderWehrlosen.html",
         "name": "Schutz der Wehrlosen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_30",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Rondra (Schild)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Schutzsegen.html",
         "name": "Schutzsegen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_111",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Schwindende_Zauberkraft.html",
         "name": "Schwindende Zauberkraft",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_112",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Seelenschatten.html",
         "name": "Seelenschatten",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_113",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Seevogelsprache.html",
         "name": "Seevogelsprache",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_114",
+        "tradition": [
+            "Efferd (Wind)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Sicherer_Weg.html",
         "name": "Sicherer Weg",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_115",
+        "tradition": [
+            "Aves (Reise)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_sicht_in_der_dunkelheit.html",
         "name": "Sicht in der Dunkelheit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Marbo (Vergänglichkeit und Vision)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/steinhaut.html",
         "name": "Steinhaut",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Sternenglanz.html",
         "name": "Sternenglanz",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_31",
-        "chanttype": "liturgy",
-        "tradition":"Phex (Handel)"
+        "tradition": [
+            "Phex (Handel)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Sturmruf.html",
         "name": "Sturmruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_116",
+        "tradition": [
+            "Rondra (Sturm)", "Swafnir (Kraft und Tapferkeit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_talismanruf.html",
         "name": "Talismanruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_tierbeherrschung.html",
         "name": "Tierbeherschung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Levthan (Begierde)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Tiere_beruhigen.html",
         "name": "Tiere beruhigen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_117",
-        "tradition": ["Aves (Reise)", "Ifirn (Natur)"],
-        "chanttype": "liturgy"
+        "tradition": [
+            "Aves (Reise)",
+            "Ifirn (Natur)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_Tierleid_lindern.html",
         "name": "Tierleid lindern",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_118",
+        "tradition": [
+            "Ifirn (Natur)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Tiersprache.html",
         "name": "Tiersprache",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_119",
+        "tradition": [
+            "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Ifirn (Natur)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Wölfe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/trankfluch.html",
         "name": "Trankfluch",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Namenloser"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Treuer_Begleiter.html",
         "name": "Treuer Begleiter",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_120",
-        "tradition": "Aves (Schicksal)",
+        "tradition": [
+            "Aves (Schicksal)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Unsichtbareflut.html",
         "name": "Unsichtbare Flut",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Unterwasseratmung.html",
         "name": "Unterwasseratmung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_121",
+        "tradition": [
+            "Efferd (Wind und Wogen)", "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_untotenerhebung.html",
         "name": "Untotenerhebung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Ferkinaschamanen (Blut)", "Mohaschamanen (Dschungel)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_vampirische_kraefte.html",
         "name": "Vampirische Kräfte",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Marbo (Vergänglichkeit)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Versteinerung.html",
         "name": "Versteinerung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "modagainst": "ZK",
         "attrID": "LITURGY_122",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "ZK"
     },
     {
         "url": "index.php/Lit_Wahrheit.html",
         "name": "Wahrheit",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "modagainst": "SK",
         "attrID": "LITURGY_32",
-        "chanttype": "liturgy"
+        "tradition": [
+            "Praios (Ordnung)", "Gjalskerschamanen (Gemeinschaft)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)"
+        ],
+        "chanttype": "liturgy",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/lit_wand_wider_daemonen.html",
         "name": "Wand wider Dämonen",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Wasserlauf.html",
         "name": "Wasserlauf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
         "attrID": "LITURGY_123",
+        "tradition": [
+            "Efferd (Wogen)", "Numinoru (Unendliche Tiefe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_weihe_des_bodens.html",
         "name": "Weihe des Bodens",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Wieselflink.html",
         "name": "Wieselflink",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
         "attrID": "LITURGY_33",
-        "chanttype": "liturgy",
-        "tradition":"Phex (Schatten)"
+        "tradition": [
+            "Phex (Schatten)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Windhose.html",
         "name": "Windhose",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "attrID":"LITURGY_124",
+        "attrID": "LITURGY_124",
+        "tradition": [
+            "Efferd (Wind)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_Windruf.html",
         "name": "Windruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Efferd (Wind)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_wolfsruf.html",
         "name": "Wolfsruf",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
+        "tradition": [
+            "Nivesenschamanen (Wölfe)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/Lit_WundersameVerständigung.html",
         "name": "Wundersame Verständigung",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_34",
-        "chanttype": "liturgy",
-        "tradition": ["Phex (Handel)", "Hesinde (Wissen)"]
+        "tradition": [
+            "Phex (Handel)",
+            "Hesinde (Wissen)"
+        ],
+        "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_zwergenmacht.html",
         "name": "Zwergenmacht",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
+        "tradition": [
+            "Angrosch (Erz und Flammen)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit-Zähe_Haut.html",
         "name": "Zähe Haut",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_126",
+        "tradition": [
+            "Kor (Guter Kampf)"
+        ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/zer_Aufnahme_Initiation.html",
         "name": "Aufnahme (Initiation)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "chanttype": "ceremony",
-        "attrID": "LITURGY_128"
+        "attrID": "LITURGY_128",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Ächtung_Exkommunikation.html",
         "name": "Ächtung (Exkommunikation)",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "chanttype": "ceremony",
-        "attrID": "LITURGY_127"
+        "attrID": "LITURGY_127",
+        "tradition": [
+            "allgemein", "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Rabengestalt.html",
         "name": "Rabengestalt",
-        "class":"Karmale Fähigkeiten","classID":7,
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "chanttype": "ceremony",
-        "attrID": "LITURGY_169"
+        "attrID": "LITURGY_169",
+        "tradition": [
+            "Boron (Tod und Traum)", "Marbo (Vergänglichkeit und Vision)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Lit_Ackersegen.html",
         "name": "Ackersegen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_35",
-        "tradition": "Peraine (Landwirtschaft)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Peraine (Landwirtschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_arcanum_interdictum.html",
         "name": "Arcanum Interdictum",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Praios (Antimagie)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Praios (Antimagie)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Ausbrennen_Purgation.html",
         "name": "Ausbrennen (Purgation)",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_129",
-        "tradition": ["Hesinde (Magie)", "Ingerimm (Feuer)", "Kor (Guter Kampf und Gutes Gold)", "Namenloser", "Praios (Antimagie)", "Rondra (Schild und Sturm)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Hesinde (Magie)",
+            "Ingerimm (Feuer)",
+            "Kor (Guter Kampf und Gutes Gold)",
+            "Namenloser",
+            "Praios (Antimagie)",
+            "Rondra (Schild und Sturm)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Bannfluch_Anathema.html",
         "name": "Bannfluch (Anathema)",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_130",
-        "tradition": "allgemein",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Berauschender_Wein.html",
         "name": "Berauschender Wein",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_131",
-        "tradition": "Levthan( Begierde und Rausch), Rahja (Ekstase)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Levthan( Begierde und Rausch)", "Rahja (Ekstase)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Beschwörung_der_hohen_Diener.html",
         "name": "Beschwörung der hohen Diener des Rattenkindes",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_132",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Beschwörung_der_machtvollen_Diener.html",
         "name": "Beschwörung der machtvollen Diener des Rattenkindes",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_133",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Bild_für_die_Ewigkeit.html",
         "name": "Bild für die Ewigkeit",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_134",
-        "tradition": "Boron (Tod), Hesinde (Wissen), Nandus (Bildung)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Tod)", "Hesinde (Wissen)", "Nandus (Bildung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Blick_in_die_Flammen.html",
         "name": "Blick in die Flammen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_135",
-        "tradition": "Angrosch (Flammen), Ingerimm (Feuer)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Flammen)", "Ingerimm (Feuer)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zeremonie_DasLoeschenDesLichts.html",
         "name": "Das Löschen des Lichts",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Delphingestalt.html",
         "name": "Delphingestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Efferd (Wind und Wogen)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wind und Wogen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_der_erde.html",
         "name": "Diener der Erde",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Gjalskerschamanen (Gemeinschaft und Wildheit), Mohaschamanen (Dschungel und Sonne)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_der_flammen.html",
         "name": "Diener der Flammen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Angrosch (Flammen), Fjarningerschamanen (Eis und Härte), Nivesenschamanen (Winter und Wölfe)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Flammen)", "Fjarningerschamanen (Eis und Härte)", "Nivesenschamanen (Winter und Wölfe)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_der_kälte.html",
         "name": "Diener der Kälte",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Ferkinaschamanen (Blut und Tier), Fjarningerschamanen (Eis und Härte), Nivesenschamanen (Winter und Wölfe)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ferkinaschamanen (Blut und Tier)", "Fjarningerschamanen (Eis und Härte)", "Nivesenschamanen (Winter und Wölfe)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_der_wellen.html",
         "name": "Diener der Wellen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Gjalskerschamanen (Gemeinschaft und Wildheit), Mohaschamanen (Dschungel und Sonne), Trollzackerschamanen (Leiden und Stein)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)", "Trollzackerschamanen (Leiden und Stein)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_der_wolken.html",
         "name": "Diener der Wolken",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Ferkinaschamanen (Blut und Tier), Gjalskerschamanen (Gemeinschaft und Wildheit), Mohaschamanen (Dschungel und Sonne), Nivesenschamanen (Winter und Wölfe), Trollzackerschamanen (Leiden und Stein)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ferkinaschamanen (Blut und Tier)", "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)", "Nivesenschamanen (Winter und Wölfe)", "Trollzackerschamanen (Leiden und Stein)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_diener_des_erzes.html",
         "name": "Diener des Erzes",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": ["Angrosch (Erz)", "Ferkinaschamanen (Blut und Tier)", "Fjarningerschamanen (Eis und Härte)", "Trollzackerschamanen (Leiden und Stein)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz)",
+            "Ferkinaschamanen (Blut und Tier)",
+            "Fjarningerschamanen (Eis und Härte)",
+            "Trollzackerschamanen (Leiden und Stein)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Daemonenpakt_brechen.html",
         "name": "Dämonenpakt brechen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": "allgemein",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Eidechsengestalt.html",
         "name": "Eidechsengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_137",
-        "tradition": "Tsa (Freiheit und Wandel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Tsa (Freiheit und Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_eidechsenregeneration.html",
         "name": "Eidechsenregeneration",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "Tsa (Wandel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Tsa (Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/z_Einflüsterung.html",
         "name": "Einflüsterung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Levthan (Begierde)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Levthan (Begierde)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Eisbärgestalt.html",
         "name": "Eisbärgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_138",
-        "tradition": ["Firun (Jagd und Kälte)", "Fjarningerschamanen (Eis und Härte)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Jagd und Kälte)",
+            "Fjarningerschamanen (Eis und Härte)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_elsterngestalt.html",
         "name": "Elsterngestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Phex (Handel und Schatten)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Phex (Handel und Schatten)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_EmpfaengnisdesKorsmals.html",
         "name": "Empfängnis des Korsmals",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Kor*",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Kor*"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_erfolgreiche_pflanzensuche.html",
         "name": "Erfolgreiche Pflanzensuche",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Peraine (Heilung und Landwirtschaft)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Peraine (Heilung und Landwirtschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Erinnern.html",
         "name": "Erinnern",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_139",
-        "tradition": ["Boron (Traum)", "Hesinde (Wissen)", "Nandus (Erkenntnis)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Traum)",
+            "Hesinde (Wissen)",
+            "Nandus (Erkenntnis)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_erschaffung_von_nachtkindern.html",
         "name": "Erschaffung von Nachtkindern",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Marbo (Vergänglichkeit)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Marbo (Vergänglichkeit)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Exorzismus.html",
         "name": "Exorzismus",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_36",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)", "Praios (Antimagie)", "Boron (Traum)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)",
+            "Praios (Antimagie)",
+            "Boron (Traum)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_falkengestalt.html",
         "name": "Falkengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Praios (Antimagie und Ordnung)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Praios (Antimagie und Ordnung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Fest_der__Freude.html",
         "name": "Fest der Freude",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_140",
-        "tradition": ["Levthan (Begierde)", "Rahja (Ekstase)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Levthan (Begierde)",
+            "Rahja (Ekstase)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Frostschutz.html",
         "name": "Frostschutz",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_141",
-        "tradition": ["Firun (Kälte)", "Ifirn (Natur)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Kälte)",
+            "Ifirn (Natur)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Fruchtbarkeit.html",
         "name": "Fruchtbarkeit",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_142",
-        "tradition": ["Peraine (Heilung und Landwirtschaft)", "Tsa (Wandel)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Peraine (Heilung und Landwirtschaft)",
+            "Tsa (Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Fuchsgestalt.html",
         "name": "Fuchsgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_143",
-        "tradition": "Phex (Handel und Schatten)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Phex (Handel und Schatten)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_geistersprache.html",
         "name": "Geistersprache",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_geistheilung.html",
         "name": "Geistheilung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/z_Geschlechterwechsel.html",
         "name": "Geschlechterwechsel",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Rahja (Ekstase)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rahja (Ekstase)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Geschwinder_Schritt.html",
         "name": "Geschwinder Schritt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_145",
-        "tradition": "Aves (Reise)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Reise)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_gespräch_mit_den_toten.html",
         "name": "Gespräch mit den Toten",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Boron (Tod)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Tod)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Lit_GeweihterPanzer.html",
         "name": "Geweihter Panzer",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_37",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Kor (Gutes Gold)", "Rondra (Sturm)", "Swafnir (Tapferkeit)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/gnade-des-vergessens.html",
         "name": "Gnade des Vergessens",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": "Tairach (Geisterwelt)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Tairach (Geisterwelt)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Greifenruf.html",
         "name": "Greifenruf",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_147",
-        "tradition": "Praios (Ordnung)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Praios (Ordnung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_große_waffenweihe.html",
         "name": "Große Wafenweihe",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": ["Ingerimm (Handwerk)", "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild und Sturm)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ingerimm (Handwerk)",
+            "Kor (Guter Kampf und Gutes Gold)",
+            "Rondra (Schild und Sturm)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_GuterFang.html",
         "name": "Guter Fang",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_148",
-        "tradition": "Efferd (Wogen)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wogen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Gänsegestalt.html",
         "name": "Gänsegestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_144",
-        "tradition": "Travia (Freundschaft und Heim)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Travia (Freundschaft und Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Göttliche_Erkenntnis.html",
         "name": "Göttliche Erkenntnis",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_146",
-        "tradition": "Nandus (Bildung)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Nandus (Bildung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_goettliche_präzision.html",
         "name": "Göttliche Präzision",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": ["Firun (Jagd)", "Ifirn (Natur)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Jagd)",
+            "Ifirn (Natur)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Heiliger_Schwur.html",
         "name": "Heiliger Schwur",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_150",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_heilschlaf.html",
         "name": "Heilschlaf",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": ["Boron (Traum)", "Peraine (Heilung)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Traum)",
+            "Peraine (Heilung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_heilung_von_seelenkranken.html",
         "name": "Heilung von Seelenkranken",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": ["Boron (Traum)", "Marbo (Vision)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Traum)",
+            "Marbo (Vision)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Herr_der_Meere.html",
         "name": "Herr der Meere",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_151",
-        "tradition": "Swafnir (Kraft)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Swafnir (Kraft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Hilfe_in_der_Not.html",
         "name": "Hilfe in der Not",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_152",
-        "tradition": "Ifirn (Hilfsbereitschaft)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ifirn (Hilfsbereitschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_himmlische_schatzkammer.html",
         "name": "Himmlische Schatzkammer",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Phex (Handel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Phex (Handel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_hundegestalt.html",
         "name": "Hundegestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": ["Angrosch (Erz und Flammen)", "Ingerimm (Handwerk und Feuer)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz und Flammen)",
+            "Ingerimm (Handwerk und Feuer)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Häutung.html",
         "name": "Häutung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_149",
-        "tradition": "Tsa (Wandel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Tsa (Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Inspiration.html",
         "name": "Inspiration",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_153",
-        "tradition": ["Hesinde (Wissen)", "Tsa (Freiheit)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Hesinde (Wissen)",
+            "Tsa (Freiheit)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Jagdglück.html",
         "name": "Jagdglück",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_154",
-        "tradition": ["Ferkinaschamanen (Tier)", "Fjarningerschamanen (Eis)", "Firun (Jagd)", "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ferkinaschamanen (Tier)",
+            "Fjarningerschamanen (Eis)",
+            "Firun (Jagd)",
+            "Gjalskerschamanen (Gemeinschaft und Wildheit)",
+            "Mohaschamanen (Dschungel)",
+            "Nivesenschamanen (Winter)",
+            "Trollzackerschamanen (Leiden)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_jaguargestalt.html",
         "name": "Jaguargestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Mohaschamanen (Dschungel und Sonne)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Mohaschamanen (Dschungel und Sonne)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Jugendlichkeit.html",
         "name": "Jugendlichkeit",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_155",
-        "tradition": ["Namenloser", "Rahja (Harmonie)", "Tsa (Wandel)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser",
+            "Rahja (Harmonie)",
+            "Tsa (Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_KleineMoralstaerkung.html",
         "name": "Kleine Moralstärkung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_156",
-        "tradition": ["Aves (Schicksal)", "Efferd (Wogen)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Schicksal)",
+            "Efferd (Wogen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_kriegszustand.html",
         "name": "Kriegszustand",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Rondra (Schild und Sturm)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rondra (Schild und Sturm)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_lebenstausch.html",
         "name": "Lebenstausch",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Marbo (Vergänglichkeit und Vision)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Marbo (Vergänglichkeit und Vision)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_leichtfüssig.html",
         "name": "Leichtfüßig",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
-        "tradition": ["Aves (Reise)", "Tsa (Freiheit)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Reise)",
+            "Tsa (Freiheit)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_LeitendeStroemung.html",
         "name": "Leitende Strömung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Numinoru (Unendliche Tiefe)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Numinoru (Unendliche Tiefe)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/z_Liebestätowierung.html",
         "name": "Liebestätowierung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "tradition": "Rahja (Ekstase und Harmonie)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rahja (Ekstase und Harmonie)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Liturgieabsorption.html",
         "name": "Liturgieabsorption",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_158",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_luchsgestalt.html",
         "name": "Luchsgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Praios (Antimagie und Ordnung)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Praios (Antimagie und Ordnung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Läuterung_des_Erzes.html",
         "name": "Läuterung des Erzes",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_157",
-        "tradition": ["Angrosch (Erz)", "Ingerimm (Handwerk)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz)",
+            "Ingerimm (Handwerk)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Löwengestalt.html",
         "name": "Löwengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_38",
-        "tradition": "Rondra (Schild, Sturm)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rondra (Schild, Sturm)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_machtvoller_exorzismus.html",
         "name": "Machtvoller Exorzismus",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": ["Praios (Antimagie)", "Boron (Traum)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Praios (Antimagie)",
+            "Boron (Traum)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Makelloser_Leib.html",
         "name": "Makelloser Leib",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_159",
-        "tradition": ["Rahja (Harmonie)", "Tsa (Wandel)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rahja (Harmonie)",
+            "Tsa (Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_marbidenmacht.html",
         "name": "Marbidenmacht",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "tradition": "Marbo (Vergänglichkeit)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Marbo (Vergänglichkeit)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Metallerhitzung.html",
         "name": "Metallerhitzung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_160",
-        "tradition": ["Angrosch (Erz)", "Ingerimm (Handwerk)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz)",
+            "Ingerimm (Handwerk)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Moralstärkung.html",
         "name": "Moralstärkung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_161",
-        "tradition": "Efferd (Wogen)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wogen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_mungogestalt.html",
         "name": "Mungogestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Phex (Handel und Schatten)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Phex (Handel und Schatten)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Nahrungsreinigung.html",
         "name": "Nahrungsreinigung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_162",
-        "tradition": "Travia (Heim)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Nebelleib.html",
         "name": "Nebelleib",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_39",
-        "tradition": ["Efferd (Wind)", "Phex (Schatten)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wind)",
+            "Phex (Schatten)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Nebelschwaden.html",
         "name": "Nebelschwaden",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_163",
-        "tradition": "Efferd (Wind)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wind)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_NuminorusFluch.html",
         "name": "Numinorus Fluch",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "Numinoru (Reißender Strudel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Numinoru (Reißender Strudel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/Zer_Objektweihe.html",
         "name": "Objektweihe",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_40",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Ortsweihe_Sanctum.html",
         "name": "Ortsweihe (Sanctum)",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_164",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Panthergestalt.html",
         "name": "Panthergestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_165",
-        "tradition": "Kor (Guter Kampf und Gutes Gold)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Kor (Guter Kampf und Gutes Gold)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Paradiesvogelgestalt.html",
         "name": "Paradiesvogelgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_166",
-        "tradition": "Aves (Reise und Schicksal)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Reise und Schicksal)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Pferdegestalt.html",
         "name": "Pferdegestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_167",
-        "tradition": "Rahja (Ekstase und Harmonie)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rahja (Ekstase und Harmonie)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Pflanzenkraft.html",
         "name": "Pflanzenkraft",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Priesterweihe_Ordination.html",
         "name": "Priesterweihe (Ordination)",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_168",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_rat_der_ahnen.html",
         "name": "Rat der Ahnen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_regenkontrolle.html",
         "name": "Regenkontrolle",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Efferd (Wind)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Efferd (Wind)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Reisesegen.html",
         "name": "Reisesegen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_170",
-        "tradition": ["Aves (Reise und Schicksal)", "Firun (Jagd)", "Travia (Freundschaft)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Reise und Schicksal)",
+            "Firun (Jagd)",
+            "Travia (Freundschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/schaffenskraft.html",
         "name": "Schaffenskraft",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz)", "Ingerimm (Handwerk)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Schattenrochengestalt.html",
         "name": "Schattenrochengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Numinoru (Reißender Strudel und Unendliche Tiefe)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_schlangenfluch.html",
         "name": "Schlangenfluch",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": "Mohaschamanen (Dschungel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Mohaschamanen (Dschungel)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Schlangengestalt.html",
         "name": "Schlangengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_172",
-        "tradition": "Hesinde (Magie und Wissen)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Hesinde (Magie und Wissen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_schmetterlingsgestalt.html",
         "name": "Schmetterlingsgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Rahja (Harmonie und Ekstase)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Rahja (Harmonie und Ekstase)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Schwanengestalt.html",
         "name": "Schwanengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_173",
-        "tradition": "Ifirn (Hilfsbereitschaft und Natur)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ifirn (Hilfsbereitschaft und Natur)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Seelenbannung.html",
         "name": "Seelenbannung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_174",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Seelenprüfung.html",
         "name": "Seelenprüfung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_175",
-        "tradition": ["allgemein", "allgemein (Schamanenritus)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein",
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Seemonsterruf.html",
         "name": "Seemonsterruf",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
-        "tradition": "Numinoru (Reißender Strudel)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Numinoru (Reißender Strudel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Segnung_des_Heims.html",
         "name": "Segnung des Heims",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_176",
-        "tradition": "Travia (Heim)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_selbstopferung.html",
         "name": "Selbstopferung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_7",
-        "tradition": ["Ferkinaschamanen (Blut)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ferkinaschamanen (Blut)",
+            "Nivesenschamanen (Winter)",
+            "Trollzackerschamanen (Leiden)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Sicherer_Tritt.html",
         "name": "Sicherer Tritt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
         "attrID": "LITURGY_177",
-        "tradition": "Firun (Kälte)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Kälte)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_sippenbann.html",
         "name": "Sippenbann",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Speisung.html",
         "name": "Speisung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_178",
-        "tradition": "Travia (Heim)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Staub_und_Schimmel.html",
         "name": "Staub und Schimmel",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_179",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Storchengestalt.html",
         "name": "Storchengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_180",
-        "tradition": "Peraine (Heilung und Landwirtschaft)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Peraine (Heilung und Landwirtschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_staerkung_der_wildnis.html",
         "name": "Stärkung der Wildnis",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
-        "tradition": "Firun (Jagd)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Jagd)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Sättigung.html",
         "name": "Sättigung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_171",
-        "tradition": ["Peraine (Landwirtschaft)", "Travia (Freundschaft)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Peraine (Landwirtschaft)",
+            "Travia (Freundschaft)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_tabuzone.html",
         "name": "Tabuzone",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "allgemein (Schamanenritus)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein (Schamanenritus)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/tairachs-machtvolle-erhebung-von-untoten.html",
         "name": "Tairachs machtvolle Erhebung von Untoten",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
-        "tradition": "Tairach (Geisterwelt, Zauberei)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Tairach (Geisterwelt, Zauberei)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_talismanverankerung.html",
         "name": "Talismanverankerung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "allgemein",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_taubengestalt.html",
         "name": "Taubengestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Marbo (Vergänglichkeit und Vision)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Marbo (Vergänglichkeit und Vision)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Tempelweihe_Konsekration.html",
         "name": "Tempelweihe (Konsekration)",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_181",
-        "tradition": "allgemein",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "allgemein"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Traumbild.html",
         "name": "Traumbild",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_182",
-        "tradition": ["Boron (Traum)", "Marbo (Vision)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Traum)",
+            "Marbo (Vision)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_traumgesicht.html",
         "name": "Traumgesicht",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": {},
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Unbeschwerte_Wanderung.html",
         "name": "Unbeschwerte Wanderung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_183",
-        "tradition": "Aves (Reise)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Reise)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_untote_erschaffen.html",
         "name": "Untote erschaffen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": {},
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Verblassende_Erinnerung.html",
         "name": "Verblassende Erinnerung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_184",
-        "tradition": ["Boron (Traum)", "Rahja (Harmonie)", "Travia (Heim)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Traum)",
+            "Rahja (Harmonie)",
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Vergessen.html",
         "name": "Vergessen",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
         "attrID": "LITURGY_185",
-        "tradition": "Boron (Tod)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Tod)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_Waffenfluch.html",
         "name": "Waffenfluch",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_186",
-        "tradition": "Namenloser",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Namenloser"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Wegweiser.html",
         "name": "Wegweiser",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_187",
-        "tradition": "Aves (Schicksal)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Aves (Schicksal)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Weihe_des_Heims.html",
         "name": "Weihe des Heims",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_188",
-        "tradition": ["Ingerimm (Handwerk)", "Rondra (Schild)", "Travia (Heim)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ingerimm (Handwerk)",
+            "Rondra (Schild)",
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/z_Widdergestalt.html",
         "name": "Widdergestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Levthan (Begierde und Rausch)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Levthan (Begierde und Rausch)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Wiederherstellung.html",
         "name": "Wiederherstellung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_5",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_189",
-        "tradition": ["Ingerimm (Handwerk)", "Tsa (Freiheit und Wandel)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Ingerimm (Handwerk)",
+            "Tsa (Freiheit und Wandel)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Winterschlaf.html",
         "name": "Winterschlaf",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "attrID": "LITURGY_190",
-        "tradition": ["Boron (Tod)", "Firun (Kälte)", "Marbo (Vergänglichkeit)", "Nivesenschamanen (Winter)", "Peraine (Heilung)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Boron (Tod)",
+            "Firun (Kälte)",
+            "Marbo (Vergänglichkeit)",
+            "Nivesenschamanen (Winter)",
+            "Peraine (Heilung)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_wolfsfluch.html",
         "name": "Wolfsfluch",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
-        "modagainst": "SK",
-        "tradition": "Nivesenschamanen (Wölfe)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Nivesenschamanen (Wölfe)"
+        ],
+        "chanttype": "ceremony",
+        "modagainst": "SK"
     },
     {
         "url": "index.php/zer_wolfsgestalt.html",
         "name": "Wolfsgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
-        "tradition": "Nivesenschamanen (Mond und Wolf )",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Nivesenschamanen (Mond und Wolf )"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Zuflucht.html",
         "name": "Zuflucht",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "attrID": "LITURGY_191",
-        "tradition": ["Firun (Kälte)", "Ifirn (Hilfsbereitschaft)", "Nivesenschamanen (Winter)", "Travia (Heim)"],
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Firun (Kälte)",
+            "Ifirn (Hilfsbereitschaft)",
+            "Nivesenschamanen (Winter)",
+            "Travia (Heim)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_zwergische_verbrüderung.html",
         "name": "Zwergische Verbrüderung",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
-        "tradition": "Angrosch (Erz und Flammen)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Angrosch (Erz und Flammen)"
+        ],
+        "chanttype": "ceremony"
     },
     {
         "url": "index.php/zer_Zwergwalgestalt.html",
         "name": "Zwergwalgestalt",
-        "chanttype": "ceremony",
+        "class": "Karmale Fähigkeiten",
+        "classID": 7,
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "attrID": "LITURGY_192",
-        "tradition": "Swafnir (Kraft und Tapferkeit)",
-        "class": "Karmale Fähigkeiten",
-        "classID": 7
+        "tradition": [
+            "Swafnir (Kraft und Tapferkeit)"
+        ],
+        "chanttype": "ceremony"
     }
 ]
