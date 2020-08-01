@@ -94,7 +94,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_3",
         "tradition": [
-            "Boron (Tod und Traum)", "Phex (Schatten)"
+            "Boron (Tod, Traum)", "Phex (Schatten)"
         ],
         "chanttype": "liturgy"
     },
@@ -108,7 +108,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_45",
         "tradition": [
-            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
+            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
         ],
         "chanttype": "liturgy",
         "modagainst": "ZK"
@@ -205,7 +205,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_50",
         "tradition": [
-            "Travia (Freundschaft und Heim)"
+            "Travia (Freundschaft, Heim)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -249,7 +249,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_4",
         "tradition": [
-            "Praios (Antimagie und Ordnung)"
+            "Praios (Antimagie, Ordnung)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -264,7 +264,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_52",
         "tradition": [
-            "Praios (Antimagie und Ordnung)"
+            "Praios (Antimagie, Ordnung)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -400,7 +400,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "tradition": [
-            "Firun (Jagd und Kälte)"
+            "Firun (Jagd, Kälte)"
         ],
         "chanttype": "liturgy"
     },
@@ -483,7 +483,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_5",
         "tradition": [
-            "Rondra (Schild und Sturm)"
+            "Rondra (Schild, Sturm)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -554,7 +554,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_63",
         "tradition": [
-            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+            "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
         "chanttype": "liturgy"
     },
@@ -595,7 +595,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Levthan (Rausch)", "Rahja (Ekstase und Harmonie)"
+            "Levthan (Rausch)", "Rahja (Ekstase, Harmonie)"
         ],
         "chanttype": "liturgy"
     },
@@ -608,7 +608,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
         "tradition": [
-            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+            "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -663,7 +663,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Levthan (Begierde und Rausch)"
+            "Levthan (Begierde, Rausch)"
         ],
         "chanttype": "liturgy",
         "modagainst": "ZK"
@@ -719,7 +719,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_9",
         "tradition": [
-            "Hesinde (Magie und Wissen)", "Numinoru (Unendliche Tiefe)", "Peraine (Heilung und Landwirtschaft)", "Travia (Freundschaft und Heim)", "Tsa (Freiheit und Wandel)", "Rahja (Ekstase und Harmonie)", "Ifirn (Hilfsbereitschaft)", "Nandus (Bildung und Erkenntnis)"
+            "Hesinde (Magie, Wissen)", "Numinoru (Unendliche Tiefe)", "Peraine (Heilung, Landwirtschaft)", "Travia (Freundschaft, Heim)", "Tsa (Freiheit, Wandel)", "Rahja (Ekstase, Harmonie)", "Ifirn (Hilfsbereitschaft)", "Nandus (Bildung, Erkenntnis)"
         ],
         "chanttype": "liturgy"
     },
@@ -815,7 +815,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "allgemein (Schamanenritus)", "Boron (Schlaf und Tod)"
+            "allgemein (Schamanenritus)", "Boron (Schlaf, Tod)"
         ],
         "chanttype": "liturgy"
     },
@@ -911,7 +911,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_75",
         "tradition": [
-            "Praios (Antimagie und Ordnung)"
+            "Praios (Antimagie, Ordnung)"
         ],
         "chanttype": "liturgy"
     },
@@ -925,7 +925,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_76",
         "tradition": [
-            "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild und Sturm)", "Swafnir (Kraft und Tapferkeit)"
+            "Kor (Guter Kampf, Gutes Gold)", "Rondra (Schild, Sturm)", "Swafnir (Kraft, Tapferkeit)"
         ],
         "chanttype": "liturgy"
     },
@@ -1036,7 +1036,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_79",
         "tradition": [
-            "Rahja (Ekstase und Harmonie)"
+            "Rahja (Ekstase, Harmonie)"
         ],
         "chanttype": "liturgy"
     },
@@ -1078,7 +1078,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_81",
         "tradition": [
-            "Rondra (Schild)", "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen Wildheit)", " Swafnir (Kraft und Tapferkeit)", "Trollzackerschamanen (Leiden)"
+            "Rondra (Schild)", "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Swafnir (Kraft, Tapferkeit)", "Trollzackerschamanen (Leiden)"
         ],
         "chanttype": "liturgy"
     },
@@ -1283,7 +1283,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_14",
         "tradition": [
-            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Marbo (Vergänglichkeit)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
+            "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Marbo (Vergänglichkeit)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
         ],
         "chanttype": "liturgy",
         "modagainst": "ZK"
@@ -1433,7 +1433,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Levthan (Begierde oder Rausch)"
+            "Levthan (Begierde, Rausch)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -1447,7 +1447,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "tradition": [
-            "Levthan (Begierde und Rausch)"
+            "Levthan (Begierde, Rausch)"
         ],
         "chanttype": "liturgy"
     },
@@ -1502,7 +1502,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_19",
         "tradition": [
-            "Praios (Antimagie)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Gjalskerschamanen (Gemeinschaft)", "Hesinde (Magie)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)", "Nivesenschamanen (Wölfe)", "Trollzackerschamanen (Stein)"
+            "Praios (Antimagie)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Gjalskerschamanen (Gemeinschaft)", "Hesinde (Magie)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)", "Nivesenschamanen (Wölfe)", "Trollzackerschamanen (Stein)"
         ],
         "chanttype": "liturgy"
     },
@@ -1556,7 +1556,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Efferd (Wind und Wogen)", "Swafnir (Tapferkeit)"
+            "Efferd (Wind, Wogen)", "Swafnir (Tapferkeit)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -1800,13 +1800,13 @@
         "tradition": [
             "Boron (Traum)",
             "Firun (Jagd)",
-            "Numinorukult (Reißender Strudel und Unendliche Tiefe)"
+            "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
         "chanttype": "liturgy"
     },
     {
         "url": "index.php/lit_Pech_und_Schwefel.html",
-        "name": "Pech und Schwefel",
+        "name": "Pech, Schwefel",
         "class": "Karmale Fähigkeiten",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1881,7 +1881,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+            "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
         "chanttype": "liturgy"
     },
@@ -1895,7 +1895,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_25",
         "tradition": [
-            "Boron (Tod und Traum)"
+            "Boron (Tod, Traum)"
         ],
         "chanttype": "liturgy"
     },
@@ -1922,7 +1922,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Tsa (Freiheit und Wandel)"
+            "Tsa (Freiheit, Wandel)"
         ],
         "chanttype": "liturgy"
     },
@@ -1948,7 +1948,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Ferkinaschamanen (Blut oder Tier)"
+            "Ferkinaschamanen (Blut, Tier)"
         ],
         "chanttype": "liturgy"
     },
@@ -1975,7 +1975,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Marbo (Vergänglichkeit und Vision)"
+            "Marbo (Vergänglichkeit, Vision)"
         ],
         "chanttype": "liturgy"
     },
@@ -2044,7 +2044,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_28",
         "tradition": [
-            "Hesinde (Magie und Wissen)"
+            "Hesinde (Magie, Wissen)"
         ],
         "chanttype": "liturgy"
     },
@@ -2086,7 +2086,7 @@
         "ab3": "ATTR_7",
         "attrID": "LITURGY_29",
         "tradition": [
-            "Kor (Guter Kampf und Gutes Gold)", "Rondra (Schild)", "Swafnir (Kraft)"
+            "Kor (Guter Kampf, Gutes Gold)", "Rondra (Schild)", "Swafnir (Kraft)"
         ],
         "chanttype": "liturgy"
     },
@@ -2099,7 +2099,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Hesinde (Magie und Wissen)", "Nandus (Bildung und Erkenntnis)", "Peraine (Heilung und Landwirtschaft)", "Travia (Freundschaft und Heim)", "Tsa (Freiheit und Wandel)"
+            "Hesinde (Magie, Wissen)", "Nandus (Bildung, Erkenntnis)", "Peraine (Heilung, Landwirtschaft)", "Travia (Freundschaft, Heim)", "Tsa (Freiheit, Wandel)"
         ],
         "chanttype": "liturgy"
     },
@@ -2197,7 +2197,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Marbo (Vergänglichkeit und Vision)"
+            "Marbo (Vergänglichkeit, Vision)"
         ],
         "chanttype": "liturgy"
     },
@@ -2210,7 +2210,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "tradition": [
-            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+            "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
         "chanttype": "liturgy"
     },
@@ -2238,7 +2238,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_116",
         "tradition": [
-            "Rondra (Sturm)", "Swafnir (Kraft und Tapferkeit)"
+            "Rondra (Sturm)", "Swafnir (Kraft, Tapferkeit)"
         ],
         "chanttype": "liturgy"
     },
@@ -2309,7 +2309,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_119",
         "tradition": [
-            "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Ifirn (Natur)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Wölfe)"
+            "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Ifirn (Natur)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Wölfe)"
         ],
         "chanttype": "liturgy"
     },
@@ -2363,7 +2363,7 @@
         "ab3": "ATTR_7",
         "attrID": "LITURGY_121",
         "tradition": [
-            "Efferd (Wind und Wogen)", "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+            "Efferd (Wind, Wogen)", "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
         "chanttype": "liturgy"
     },
@@ -2403,7 +2403,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_122",
         "tradition": [
-            "Ingerimm (Feuer und Handwerk)", "Trollzackerschamanen (Stein)"
+            "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
         "chanttype": "liturgy",
         "modagainst": "ZK"
@@ -2541,7 +2541,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Angrosch (Erz und Flammen)"
+            "Angrosch (Erz, Flammen)"
         ],
         "chanttype": "liturgy"
     },
@@ -2597,7 +2597,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_169",
         "tradition": [
-            "Boron (Tod und Traum)", "Marbo (Vergänglichkeit und Vision)"
+            "Boron (Tod, Traum)", "Marbo (Vergänglichkeit, Vision)"
         ],
         "chanttype": "ceremony"
     },
@@ -2640,10 +2640,10 @@
         "tradition": [
             "Hesinde (Magie)",
             "Ingerimm (Feuer)",
-            "Kor (Guter Kampf und Gutes Gold)",
+            "Kor (Guter Kampf, Gutes Gold)",
             "Namenloser",
             "Praios (Antimagie)",
-            "Rondra (Schild und Sturm)"
+            "Rondra (Schild, Sturm)"
         ],
         "chanttype": "ceremony"
     },
@@ -2672,7 +2672,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_131",
         "tradition": [
-            "Levthan( Begierde und Rausch)", "Rahja (Ekstase)"
+            "Levthan (Begierde, Rausch)", "Rahja (Ekstase)"
         ],
         "chanttype": "ceremony"
     },
@@ -2754,7 +2754,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Efferd (Wind und Wogen)"
+            "Efferd (Wind, Wogen)"
         ],
         "chanttype": "ceremony"
     },
@@ -2767,7 +2767,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)"
+            "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)"
         ],
         "chanttype": "ceremony"
     },
@@ -2780,7 +2780,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Angrosch (Flammen)", "Fjarningerschamanen (Eis und Härte)", "Nivesenschamanen (Winter und Wölfe)"
+            "Angrosch (Flammen)", "Fjarningerschamanen (Eis, Härte)", "Nivesenschamanen (Winter, Wölfe)"
         ],
         "chanttype": "ceremony"
     },
@@ -2793,7 +2793,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Ferkinaschamanen (Blut und Tier)", "Fjarningerschamanen (Eis und Härte)", "Nivesenschamanen (Winter und Wölfe)"
+            "Ferkinaschamanen (Blut, Tier)", "Fjarningerschamanen (Eis, Härte)", "Nivesenschamanen (Winter, Wölfe)"
         ],
         "chanttype": "ceremony"
     },
@@ -2806,7 +2806,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)", "Trollzackerschamanen (Leiden und Stein)"
+            "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)", "Trollzackerschamanen (Leiden, Stein)"
         ],
         "chanttype": "ceremony"
     },
@@ -2819,7 +2819,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Ferkinaschamanen (Blut und Tier)", "Gjalskerschamanen (Gemeinschaft und Wildheit)", "Mohaschamanen (Dschungel und Sonne)", "Nivesenschamanen (Winter und Wölfe)", "Trollzackerschamanen (Leiden und Stein)"
+            "Ferkinaschamanen (Blut, Tier)", "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)", "Nivesenschamanen (Winter, Wölfe)", "Trollzackerschamanen (Leiden, Stein)"
         ],
         "chanttype": "ceremony"
     },
@@ -2833,9 +2833,9 @@
         "ab3": "ATTR_4",
         "tradition": [
             "Angrosch (Erz)",
-            "Ferkinaschamanen (Blut und Tier)",
-            "Fjarningerschamanen (Eis und Härte)",
-            "Trollzackerschamanen (Leiden und Stein)"
+            "Ferkinaschamanen (Blut, Tier)",
+            "Fjarningerschamanen (Eis, Härte)",
+            "Trollzackerschamanen (Leiden, Stein)"
         ],
         "chanttype": "ceremony"
     },
@@ -2863,7 +2863,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_137",
         "tradition": [
-            "Tsa (Freiheit und Wandel)"
+            "Tsa (Freiheit, Wandel)"
         ],
         "chanttype": "ceremony"
     },
@@ -2903,8 +2903,8 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_138",
         "tradition": [
-            "Firun (Jagd und Kälte)",
-            "Fjarningerschamanen (Eis und Härte)"
+            "Firun (Jagd, Kälte)",
+            "Fjarningerschamanen (Eis, Härte)"
         ],
         "chanttype": "ceremony"
     },
@@ -2917,7 +2917,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Phex (Handel und Schatten)"
+            "Phex (Handel, Schatten)"
         ],
         "chanttype": "ceremony"
     },
@@ -2930,7 +2930,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Kor*"
+            "Kor (Guter Kampf, Gutes Gold)"
         ],
         "chanttype": "ceremony"
     },
@@ -2943,7 +2943,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Peraine (Heilung und Landwirtschaft)"
+            "Peraine (Heilung, Landwirtschaft)"
         ],
         "chanttype": "ceremony"
     },
@@ -3003,7 +3003,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Praios (Antimagie und Ordnung)"
+            "Praios (Antimagie, Ordnung)"
         ],
         "chanttype": "ceremony"
     },
@@ -3047,7 +3047,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_142",
         "tradition": [
-            "Peraine (Heilung und Landwirtschaft)",
+            "Peraine (Heilung, Landwirtschaft)",
             "Tsa (Wandel)"
         ],
         "chanttype": "ceremony"
@@ -3062,7 +3062,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_143",
         "tradition": [
-            "Phex (Handel und Schatten)"
+            "Phex (Handel, Schatten)"
         ],
         "chanttype": "ceremony"
     },
@@ -3142,7 +3142,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_37",
         "tradition": [
-            "Angrosch (Erz)", "Ingerimm (Feuer und Handwerk)", "Kor (Gutes Gold)", "Rondra (Sturm)", "Swafnir (Tapferkeit)"
+            "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Kor (Gutes Gold)", "Rondra (Sturm)", "Swafnir (Tapferkeit)"
         ],
         "chanttype": "ceremony"
     },
@@ -3184,8 +3184,8 @@
         "ab3": "ATTR_4",
         "tradition": [
             "Ingerimm (Handwerk)",
-            "Kor (Guter Kampf und Gutes Gold)",
-            "Rondra (Schild und Sturm)"
+            "Kor (Guter Kampf, Gutes Gold)",
+            "Rondra (Schild, Sturm)"
         ],
         "chanttype": "ceremony"
     },
@@ -3213,7 +3213,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_144",
         "tradition": [
-            "Travia (Freundschaft und Heim)"
+            "Travia (Freundschaft, Heim)"
         ],
         "chanttype": "ceremony"
     },
@@ -3338,8 +3338,8 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Angrosch (Erz und Flammen)",
-            "Ingerimm (Handwerk und Feuer)"
+            "Angrosch (Erz, Flammen)",
+            "Ingerimm (Feuer, Handwerk)"
         ],
         "chanttype": "ceremony"
     },
@@ -3385,7 +3385,7 @@
             "Ferkinaschamanen (Tier)",
             "Fjarningerschamanen (Eis)",
             "Firun (Jagd)",
-            "Gjalskerschamanen (Gemeinschaft und Wildheit)",
+            "Gjalskerschamanen (Gemeinschaft, Wildheit)",
             "Mohaschamanen (Dschungel)",
             "Nivesenschamanen (Winter)",
             "Trollzackerschamanen (Leiden)"
@@ -3401,7 +3401,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Mohaschamanen (Dschungel und Sonne)"
+            "Mohaschamanen (Dschungel, Sonne)"
         ],
         "chanttype": "ceremony"
     },
@@ -3445,7 +3445,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Rondra (Schild und Sturm)"
+            "Rondra (Schild, Sturm)"
         ],
         "chanttype": "ceremony"
     },
@@ -3458,7 +3458,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Marbo (Vergänglichkeit und Vision)"
+            "Marbo (Vergänglichkeit, Vision)"
         ],
         "chanttype": "ceremony"
     },
@@ -3498,7 +3498,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
         "tradition": [
-            "Rahja (Ekstase und Harmonie)"
+            "Rahja (Ekstase, Harmonie)"
         ],
         "chanttype": "ceremony"
     },
@@ -3525,7 +3525,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Praios (Antimagie und Ordnung)"
+            "Praios (Antimagie, Ordnung)"
         ],
         "chanttype": "ceremony"
     },
@@ -3639,7 +3639,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Phex (Handel und Schatten)"
+            "Phex (Handel, Schatten)"
         ],
         "chanttype": "ceremony"
     },
@@ -3739,7 +3739,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_165",
         "tradition": [
-            "Kor (Guter Kampf und Gutes Gold)"
+            "Kor (Guter Kampf, Gutes Gold)"
         ],
         "chanttype": "ceremony"
     },
@@ -3753,7 +3753,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_166",
         "tradition": [
-            "Aves (Reise und Schicksal)"
+            "Aves (Reise, Schicksal)"
         ],
         "chanttype": "ceremony"
     },
@@ -3767,7 +3767,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_167",
         "tradition": [
-            "Rahja (Ekstase und Harmonie)"
+            "Rahja (Ekstase, Harmonie)"
         ],
         "chanttype": "ceremony"
     },
@@ -3835,7 +3835,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_170",
         "tradition": [
-            "Aves (Reise und Schicksal)",
+            "Aves (Reise, Schicksal)",
             "Firun (Jagd)",
             "Travia (Freundschaft)"
         ],
@@ -3863,7 +3863,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Numinoru (Reißender Strudel und Unendliche Tiefe)"
+            "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
         "chanttype": "ceremony"
     },
@@ -3891,7 +3891,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_172",
         "tradition": [
-            "Hesinde (Magie und Wissen)"
+            "Hesinde (Magie, Wissen)"
         ],
         "chanttype": "ceremony"
     },
@@ -3904,7 +3904,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Rahja (Harmonie und Ekstase)"
+            "Rahja (Ekstase, Harmonie)"
         ],
         "chanttype": "ceremony"
     },
@@ -3918,7 +3918,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_173",
         "tradition": [
-            "Ifirn (Hilfsbereitschaft und Natur)"
+            "Ifirn (Hilfsbereitschaft, Natur)"
         ],
         "chanttype": "ceremony"
     },
@@ -4060,7 +4060,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_180",
         "tradition": [
-            "Peraine (Heilung und Landwirtschaft)"
+            "Peraine (Heilung, Landwirtschaft)"
         ],
         "chanttype": "ceremony"
     },
@@ -4140,7 +4140,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Marbo (Vergänglichkeit und Vision)"
+            "Marbo (Vergänglichkeit, Vision)"
         ],
         "chanttype": "ceremony"
     },
@@ -4296,7 +4296,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Levthan (Begierde und Rausch)"
+            "Levthan (Begierde, Rausch)"
         ],
         "chanttype": "ceremony"
     },
@@ -4311,7 +4311,7 @@
         "attrID": "LITURGY_189",
         "tradition": [
             "Ingerimm (Handwerk)",
-            "Tsa (Freiheit und Wandel)"
+            "Tsa (Freiheit, Wandel)"
         ],
         "chanttype": "ceremony"
     },
@@ -4356,7 +4356,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Nivesenschamanen (Mond und Wolf )"
+            "Nivesenschamanen (Mond, Wölfe)"
         ],
         "chanttype": "ceremony"
     },
@@ -4386,7 +4386,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "Angrosch (Erz und Flammen)"
+            "Angrosch (Erz, Flammen)"
         ],
         "chanttype": "ceremony"
     },
@@ -4400,7 +4400,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_192",
         "tradition": [
-            "Swafnir (Kraft und Tapferkeit)"
+            "Swafnir (Kraft, Tapferkeit)"
         ],
         "chanttype": "ceremony"
     }
