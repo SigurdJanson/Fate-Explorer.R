@@ -1,7 +1,7 @@
 [
     {
         "url": "index.php/lit_angriffslust.html",
-        "name": "Angriffslust",
+        "name": "de:Angriffslust",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -15,7 +15,7 @@
     },
     {
         "url": "index.php/Lit_Angriffswelle.html",
-        "name": "Angriffswelle",
+        "name": "de:Angriffswelle",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -29,7 +29,7 @@
     },
     {
         "url": "index.php/lit_Auge_des_Jägers.html",
-        "name": "Auge des Jägers",
+        "name": "de:Auge des Jägers",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -57,7 +57,7 @@
     },
     {
         "url": "index.php/banish-fear.html",
-        "name": "Banish Fear",
+        "name": "de:Banish Fear",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -71,7 +71,7 @@
     },
     {
         "url": "index.php/lit_Bann_der_göttlichen_Gaben.html",
-        "name": "Bann der göttlichen Gaben",
+        "name": "de:Bann der göttlichen Gaben",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -100,7 +100,7 @@
     },
     {
         "url": "index.php/lit_Bann_wider_Untote.html",
-        "name": "Bann wider Untote",
+        "name": "de:Bann wider Untote",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -114,8 +114,8 @@
         "modagainst": "ZK"
     },
     {
-        "url": "index.php/bannstrahl.html",
-        "name": "Bannstrahl",
+        "url": "",
+        "name": "Banishing Ray",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -128,7 +128,7 @@
     },
     {
         "url": "index.php/bannzone.html",
-        "name": "Bannzone",
+        "name": "de:Bannzone",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -141,7 +141,7 @@
     },
     {
         "url": "index.php/befehl_des_schamanen.html",
-        "name": "Befehl des Schamanen",
+        "name": "de:Befehl des Schamanen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -155,7 +155,7 @@
     },
     {
         "url": "index.php/lit_Befreiung_des_Geistes.html",
-        "name": "Befreiung des Geistes",
+        "name": "de:Befreiung des Geistes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -169,7 +169,7 @@
     },
     {
         "url": "index.php/lit_Begnadeter_Reiter.html",
-        "name": "Begnadeter Reiter",
+        "name": "de:Begnadeter Reiter",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -183,7 +183,7 @@
     },
     {
         "url": "index.php/berauschen.html",
-        "name": "Berauschen",
+        "name": "de:Berauschen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -197,7 +197,7 @@
     },
     {
         "url": "index.php/lit_Bescheidenheit.html",
-        "name": "Bescheidenheit",
+        "name": "de:Bescheidenheit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -212,7 +212,7 @@
     },
     {
         "url": "index.php/lit_Beschwörung_der_gemeinen_Diener.html",
-        "name": "Beschwörung der gemeinen Diener des Rattenkindes",
+        "name": "de:Beschwörung der gemeinen Diener des Rattenkindes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -226,7 +226,7 @@
     },
     {
         "url": "index.php/lit_Besänftigung.html",
-        "name": "Besänftigung",
+        "name": "de:Besänftigung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -256,7 +256,7 @@
     },
     {
         "url": "index.php/lit_Blendung.html",
-        "name": "Blendung",
+        "name": "de:Blendung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -271,7 +271,7 @@
     },
     {
         "url": "index.php/lit_BlickaufdenMeeresgrund.html",
-        "name": "Blick auf den Meeresgrund",
+        "name": "de:Blick auf den Meeresgrund",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -284,7 +284,7 @@
     },
     {
         "url": "index.php/lit_Blick_des_Heilers.html",
-        "name": "Blick des Heilers",
+        "name": "de:Blick des Heilers",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -298,7 +298,7 @@
     },
     {
         "url": "index.php/lit_Blitzschlag.html",
-        "name": "Blitzschlag",
+        "name": "de:Blitzschlag",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -312,7 +312,7 @@
     },
     {
         "url": "index.php/lit_Blutiger_Zorn.html",
-        "name": "Blutiger Zorn",
+        "name": "de:Blutiger Zorn",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -327,7 +327,7 @@
     },
     {
         "url": "index.php/blutiges-siegel.html",
-        "name": "Blutiges Siegel",
+        "name": "de:Blutiges Siegel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -340,7 +340,7 @@
     },
     {
         "url": "index.php/lit_Blutzoll.html",
-        "name": "Blutzoll",
+        "name": "de:Blutzoll",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -354,7 +354,7 @@
     },
     {
         "url": "index.php/lit_Bodenweihe.html",
-        "name": "Bodenweihe",
+        "name": "de:Bodenweihe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -368,7 +368,7 @@
     },
     {
         "url": "index.php/lit_BotschaftausderTiefe.html",
-        "name": "Botschaft aus der Tiefe",
+        "name": "de:Botschaft aus der Tiefe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -381,7 +381,7 @@
     },
     {
         "url": "index.php/brazoraghs-krieger.html",
-        "name": "Brazoraghs Krieger",
+        "name": "de:Brazoraghs Krieger",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -394,7 +394,7 @@
     },
     {
         "url": "index.php/baerensuche.html",
-        "name": "Bärenhaut",
+        "name": "de:Bärenhaut",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -407,7 +407,7 @@
     },
     {
         "url": "index.php/buechersuche.html",
-        "name": "Büchersuche",
+        "name": "de:Büchersuche",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -420,7 +420,7 @@
     },
     {
         "url": "index.php/Lit_Delphinruf.html",
-        "name": "Delphinruf",
+        "name": "de:Delphinruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -434,7 +434,7 @@
     },
     {
         "url": "index.php/Lit_DesEinenbezaubernderSphaerenklang.html",
-        "name": "Des Einen bezaubernder Sphärenklang",
+        "name": "de:Des Einen bezaubernder Sphärenklang",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -448,7 +448,7 @@
     },
     {
         "url": "index.php/doppelgaenger.html",
-        "name": "Doppelgänger",
+        "name": "de:Doppelgänger",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -462,7 +462,7 @@
     },
     {
         "url": "index.php/lit_Daemonenwall.html",
-        "name": "Dämonenwall",
+        "name": "de:Dämonenwall",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -491,7 +491,7 @@
     },
     {
         "url": "index.php/lit_Ehrlicher_Vertrag.html",
-        "name": "Ehrlicher Vertrag",
+        "name": "de:Ehrlicher Vertrag",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -505,7 +505,7 @@
     },
     {
         "url": "index.php/lit_Entfesselung.html",
-        "name": "Entfesselung",
+        "name": "de:Entfesselung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -519,7 +519,7 @@
     },
     {
         "url": "index.php/lit_entstelltes_antlitz.html",
-        "name": "Entstelltes Antlitz",
+        "name": "de:Entstelltes Antlitz",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -547,7 +547,7 @@
     },
     {
         "url": "index.php/erdbeben.html",
-        "name": "Erdbeben",
+        "name": "de:Erdbeben",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -575,7 +575,7 @@
     },
     {
         "url": "index.php/lit_Ernüchterung.html",
-        "name": "Ernüchterung",
+        "name": "de:Ernüchterung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -589,7 +589,7 @@
     },
     {
         "url": "index.php/l_ErregenderRausch.html",
-        "name": "Erregender Rausch",
+        "name": "de:Erregender Rausch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -602,7 +602,7 @@
     },
     {
         "url": "index.php/lit_Ertrinken.html",
-        "name": "Ertrinken",
+        "name": "de:Ertrinken",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -616,7 +616,7 @@
     },
     {
         "url": "index.php/lit_erwachen.html",
-        "name": "Erwachen",
+        "name": "de:Erwachen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -629,7 +629,7 @@
     },
     {
         "url": "index.php/lit_Erzene_Opfergabe.html",
-        "name": "Erzene Opfergabe",
+        "name": "de:Erzene Opfergabe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -657,7 +657,7 @@
     },
     {
         "url": "index.php/l_FesselndesBand.html",
-        "name": "Fesselndes Band",
+        "name": "de:Fesselndes Band",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -671,7 +671,7 @@
     },
     {
         "url": "index.php/lit_Feuerwall.html",
-        "name": "Feuerwall",
+        "name": "de:Feuerwall",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -685,7 +685,7 @@
     },
     {
         "url": "index.php/lit_freundschaftliches_auftreten.html",
-        "name": "Freundschaftliches Auftreten",
+        "name": "de:Freundschaftliches Auftreten",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -698,7 +698,7 @@
     },
     {
         "url": "index.php/lit_Friedfertigkeit.html",
-        "name": "Friedfertigkeit",
+        "name": "de:Friedfertigkeit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -711,8 +711,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_FriedvolleAura.html",
-        "name": "Friedvolle Aura",
+        "url": "index.php/peaceful-aura.html",
+        "name": "Peaceful Aura",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -726,7 +726,7 @@
     },
     {
         "url": "index.php/lit_Friedvoller_Rausch.html",
-        "name": "Friedvoller Rausch",
+        "name": "de:Friedvoller Rausch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -741,7 +741,7 @@
     },
     {
         "url": "index.php/lit_Froststurm.html",
-        "name": "Froststurm",
+        "name": "de:Froststurm",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -755,7 +755,7 @@
     },
     {
         "url": "index.php/lit_Furchtresistenz.html",
-        "name": "Furchtresistenz",
+        "name": "de:Furchtresistenz",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -768,7 +768,7 @@
     },
     {
         "url": "index.php/lit_Gebieter_der_Flammen.html",
-        "name": "Gebieter der Flammen",
+        "name": "de:Gebieter der Flammen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -782,7 +782,7 @@
     },
     {
         "url": "index.php/lit_gefuehlskaelte.html",
-        "name": "Gefühlskälte",
+        "name": "de:Gefühlskälte",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -795,7 +795,7 @@
     },
     {
         "url": "index.php/lit_Geisterblick.html",
-        "name": "Geisterblick",
+        "name": "de:Geisterblick",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -809,7 +809,7 @@
     },
     {
         "url": "index.php/lit_geisterfalle.html",
-        "name": "Geisterfalle",
+        "name": "de:Geisterfalle",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -822,7 +822,7 @@
     },
     {
         "url": "index.php/lit_geldwechsel.html",
-        "name": "Geldwechsel",
+        "name": "de:Geldwechsel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -835,7 +835,7 @@
     },
     {
         "url": "index.php/lit_Gesegneter_Rausch.html",
-        "name": "Gesegneter Rausch",
+        "name": "de:Gesegneter Rausch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -849,7 +849,7 @@
     },
     {
         "url": "index.php/lit_Getreidewachstum.html",
-        "name": "Getreidewachstum",
+        "name": "de:Getreidewachstum",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -877,7 +877,7 @@
     },
     {
         "url": "index.php/lit_gnadenstoss.html",
-        "name": "Gnadenstoß",
+        "name": "de:Gnadenstoß",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -890,7 +890,7 @@
     },
     {
         "url": "index.php/lit_Goldene_Hand.html",
-        "name": "Goldene Hand",
+        "name": "de:Goldene Hand",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -904,7 +904,7 @@
     },
     {
         "url": "index.php/lit_Goldene_Rüstung.html",
-        "name": "Goldene Rüstung",
+        "name": "de:Goldene Rüstung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -918,7 +918,7 @@
     },
     {
         "url": "index.php/lit_Göttliche_Klinge.html",
-        "name": "Göttliche Klinge",
+        "name": "de:Göttliche Klinge",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -932,7 +932,7 @@
     },
     {
         "url": "index.php/lit_Göttliche_Verständigung.html",
-        "name": "Göttliche Verständigung",
+        "name": "de:Göttliche Verständigung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -960,7 +960,7 @@
     },
     {
         "url": "index.php/lit_goettlicher_rausch.html",
-        "name": "Göttlicher Rausch",
+        "name": "de:Göttlicher Rausch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -987,7 +987,7 @@
     },
     {
         "url": "index.php/lit_hairuf.html",
-        "name": "Hairuf",
+        "name": "de:Hairuf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1001,7 +1001,7 @@
     },
     {
         "url": "index.php/lit_hauch_des_elements.html",
-        "name": "Hauch des Elements",
+        "name": "de:Hauch des Elements",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1014,7 +1014,7 @@
     },
     {
         "url": "index.php/lit_Heiliger_Befehl.html",
-        "name": "Heiliger Befehl",
+        "name": "de:Heiliger Befehl",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1029,7 +1029,7 @@
     },
     {
         "url": "index.php/lit_Heiliges_Liebesspiel.html",
-        "name": "Heiliges Liebesspiel",
+        "name": "de:Heiliges Liebesspiel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1043,7 +1043,7 @@
     },
     {
         "url": "index.php/Lit_HeilsameQuelle.html",
-        "name": "Heilsame Quelle",
+        "name": "de:Heilsame Quelle",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1071,7 +1071,7 @@
     },
     {
         "url": "index.php/lit_Heldenkraft.html",
-        "name": "Heldenkraft",
+        "name": "de:Heldenkraft",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1085,7 +1085,7 @@
     },
     {
         "url": "index.php/lit_Helfende_Hand.html",
-        "name": "Helfende Hand",
+        "name": "de:Helfende Hand",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1099,7 +1099,7 @@
     },
     {
         "url": "index.php/Lit_HerbeirufungHeerscharenRattenkindes.html",
-        "name": "Herbeirufung der Heerscharen des Rattenkindes (Ratten",
+        "name": "de:Herbeirufung der Heerscharen des Rattenkindes (Ratten",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1113,7 +1113,7 @@
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_schakale.html",
-        "name": "Herbeirufung der Heerscharen des Rattenkindes (Schakale)",
+        "name": "de:Herbeirufung der Heerscharen des Rattenkindes (Schakale)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1127,7 +1127,7 @@
     },
     {
         "url": "index.php/Herbeirufung_der_Heerscharen_des_Rattenkindes_vampirfledermäuse.html",
-        "name": "Herbeirufung der Heerscharen des Rattenkindes (Vampirfledermäuse)",
+        "name": "de:Herbeirufung der Heerscharen des Rattenkindes (Vampirfledermäuse)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1141,7 +1141,7 @@
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_Wolfsspinnen.html",
-        "name": "Herbeirufung der Heerscharen des Rattenkindes (Wolfsspinnen)",
+        "name": "de:Herbeirufung der Heerscharen des Rattenkindes (Wolfsspinnen)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1155,7 +1155,7 @@
     },
     {
         "url": "index.php/herbeirufung-von-tairachs-dienern-nebelkraehen.html",
-        "name": "Herbeirufung von Tairachs Dienern (Nebelkrähen)",
+        "name": "de:Herbeirufung von Tairachs Dienern (Nebelkrähen)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1168,7 +1168,7 @@
     },
     {
         "url": "index.php/lit_Herr_der_Flammen.html",
-        "name": "Herr der Flammen",
+        "name": "de:Herr der Flammen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1182,7 +1182,7 @@
     },
     {
         "url": "index.php/lit_Hilfreiche_Seele.html",
-        "name": "Hilfreiche Seele",
+        "name": "de:Hilfreiche Seele",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1197,7 +1197,7 @@
     },
     {
         "url": "index.php/lit_Innere_Ruhe.html",
-        "name": "Innere Ruhe",
+        "name": "de:Innere Ruhe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1211,7 +1211,7 @@
     },
     {
         "url": "index.php/lit_jaguarruf.html",
-        "name": "Jaguarruf",
+        "name": "de:Jaguarruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1224,7 +1224,7 @@
     },
     {
         "url": "index.php/lit_kampfgeschick.html",
-        "name": "Kampfgeschick",
+        "name": "de:Kampfgeschick",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1237,7 +1237,7 @@
     },
     {
         "url": "index.php/lit_Klarer_Geist.html",
-        "name": "Klarer Geist",
+        "name": "de:Klarer Geist",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1251,7 +1251,7 @@
     },
     {
         "url": "index.php/lit_kleidungschamaeleon.html",
-        "name": "Kleidungschamäleon",
+        "name": "de:Kleidungschamäleon",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1264,7 +1264,7 @@
     },
     {
         "url": "index.php/lit_Kleine_Windhose.html",
-        "name": "Kleine Windhose",
+        "name": "de:Kleine Windhose",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1307,7 +1307,7 @@
     },
     {
         "url": "index.php/lit_kraftvoller_koerper.html",
-        "name": "Kraftvoller Körper",
+        "name": "de:Kraftvoller Körper",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1320,7 +1320,7 @@
     },
     {
         "url": "index.php/lit_krankheiten_vorbeugen.html",
-        "name": "Krankheiten vorbeugen",
+        "name": "de:Krankheiten vorbeugen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -1347,7 +1347,7 @@
     },
     {
         "url": "index.php/lit_kriegsfarben.html",
-        "name": "Kriegsfarben",
+        "name": "de:Kriegsfarben",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1360,7 +1360,7 @@
     },
     {
         "url": "index.php/lit_kaelteexplosion.html",
-        "name": "Kälteexplosion",
+        "name": "de:Kälteexplosion",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1372,8 +1372,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Lautlos.html",
-        "name": "Lautlos",
+        "url": "index.php/without-a-sound.html",
+        "name": "Without a Sound",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -1387,7 +1387,7 @@
     },
     {
         "url": "index.php/lit_Lebensschutz.html",
-        "name": "Lebensschutz",
+        "name": "de:Lebensschutz",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1401,7 +1401,7 @@
     },
     {
         "url": "index.php/lit_levthanischer_liebhaber.html",
-        "name": "Levthanischer Liebhaber",
+        "name": "de:Levthanischer Liebhaber",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1414,7 +1414,7 @@
     },
     {
         "url": "index.php/lit_Liturgieschild.html",
-        "name": "Liturgieschild",
+        "name": "de:Liturgieschild",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1428,7 +1428,7 @@
     },
     {
         "url": "index.php/lit_lust_erzeugen.html",
-        "name": "Lust erzeugen",
+        "name": "de:Lust erzeugen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1442,7 +1442,7 @@
     },
     {
         "url": "index.php/lit_macht_des_levthan.html",
-        "name": "Macht des Levthan",
+        "name": "de:Macht des Levthan",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1455,7 +1455,7 @@
     },
     {
         "url": "index.php/lit_magieanalyse.html",
-        "name": "Magieanalyse",
+        "name": "de:Magieanalyse",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1468,7 +1468,7 @@
     },
     {
         "url": "index.php/lit_Magiebann.html",
-        "name": "Magiebann",
+        "name": "de:Magiebann",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1481,8 +1481,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Magieschutz.html",
-        "name": "Magieschutz",
+        "url": "index.php/protection-from-magic.html",
+        "name": "Protection from Magic",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1495,8 +1495,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Magiesicht.html",
-        "name": "Magiesicht",
+        "url": "index.php/see-magic.html",
+        "name": "See Magic",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1510,7 +1510,7 @@
     },
     {
         "url": "index.php/lit_Magiespiegel.html",
-        "name": "Magiespiegel",
+        "name": "de:Magiespiegel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1524,7 +1524,7 @@
     },
     {
         "url": "index.php/lit_Maske.html",
-        "name": "Maske",
+        "name": "de:Maske",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1538,7 +1538,7 @@
     },
     {
         "url": "index.php/lit_mauereinsturz.html",
-        "name": "Mauereinsturz",
+        "name": "de:Mauereinsturz",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1551,7 +1551,7 @@
     },
     {
         "url": "index.php/lit_meeresungeheuer_vertreiben.html",
-        "name": "Meeresungeheuer vertreiben",
+        "name": "de:Meeresungeheuer vertreiben",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1565,7 +1565,7 @@
     },
     {
         "url": "index.php/lit_Mit_Dummheit_schlagen.html",
-        "name": "Mit Dummheit schlagen",
+        "name": "de:Mit Dummheit schlagen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1608,7 +1608,7 @@
     },
     {
         "url": "index.php/lit_Motivation.html",
-        "name": "Motivation",
+        "name": "de:Motivation",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1623,7 +1623,7 @@
     },
     {
         "url": "index.php/lit_Mächtiger_Angriff.html",
-        "name": "Mächtiger Angriff",
+        "name": "de:Mächtiger Angriff",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1637,7 +1637,7 @@
     },
     {
         "url": "index.php/Lit_NamenloseKaelte.html",
-        "name": "Namenlose Kälte",
+        "name": "de:Namenlose Kälte",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1651,7 +1651,7 @@
     },
     {
         "url": "index.php/Lit_NamenloseRaserei.html",
-        "name": "Namenlose Raserei",
+        "name": "de:Namenlose Raserei",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1666,7 +1666,7 @@
     },
     {
         "url": "index.php/Lit_NamenloseZweifel.html",
-        "name": "Namenlose Zweifel",
+        "name": "de:Namenlose Zweifel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1681,7 +1681,7 @@
     },
     {
         "url": "index.php/Lit_NamenlosesVergessen.html",
-        "name": "Namenloses Vergessen",
+        "name": "de:Namenloses Vergessen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1696,7 +1696,7 @@
     },
     {
         "url": "index.php/nebelkraehenschwarm.html",
-        "name": "Nebelkrähenschwarm",
+        "name": "de:Nebelkrähenschwarm",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1709,7 +1709,7 @@
     },
     {
         "url": "index.php/lit_Numinorusfesseln.html",
-        "name": "Numinorus Fesseln",
+        "name": "de:Numinorus Fesseln",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1736,7 +1736,7 @@
     },
     {
         "url": "index.php/lit_Obsession.html",
-        "name": "Obsession",
+        "name": "de:Obsession",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1751,7 +1751,7 @@
     },
     {
         "url": "index.php/lit_Offenlegung_des_Geistes.html",
-        "name": "Offenlegung des Geistes",
+        "name": "de:Offenlegung des Geistes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1766,7 +1766,7 @@
     },
     {
         "url": "index.php/ogerruf.html",
-        "name": "Ogerruf",
+        "name": "de:Ogerruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1779,7 +1779,7 @@
     },
     {
         "url": "index.php/lit_Opfergang.html",
-        "name": "Opfergang",
+        "name": "de:Opfergang",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1792,8 +1792,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_OrtderRuhe.html",
-        "name": "Ort der Ruhe",
+        "url": "index.php/place-of-calm.html",
+        "name": "Place of Calm",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1807,7 +1807,7 @@
     },
     {
         "url": "index.php/lit_Pech_und_Schwefel.html",
-        "name": "Pech, Schwefel",
+        "name": "de:Pech und Schwefel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1822,7 +1822,7 @@
     },
     {
         "url": "index.php/Lit_PechundSchwefelStrahl.html",
-        "name": "Pech-und-Schwefel-Strahl",
+        "name": "de:Pech-und-Schwefel-Strahl",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1834,8 +1834,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Pflanzenwuchs.html",
-        "name": "Pflanzenwuchs",
+        "url": "index.php/plant-growth.html",
+        "name": "Plant Growth",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1849,7 +1849,7 @@
     },
     {
         "url": "index.php/lit_polarbaerenruf.html",
-        "name": "Polarbärenruf",
+        "name": "de:Polarbärenruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1862,7 +1862,7 @@
     },
     {
         "url": "index.php/lit_Quallenhaut.html",
-        "name": "Quallenhaut",
+        "name": "de:Quallenhaut",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1875,7 +1875,7 @@
     },
     {
         "url": "index.php/lit_Quallenruf.html",
-        "name": "Quallenruf",
+        "name": "de:Quallenruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1887,8 +1887,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Rabenruf.html",
-        "name": "Rabenruf",
+        "url": "index.php/raven-call.html",
+        "name": "Raven Call",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1902,7 +1902,7 @@
     },
     {
         "url": "index.php/lit_Rattenschwarm.html",
-        "name": "Rattenschwarm",
+        "name": "de:Rattenschwarm",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1916,7 +1916,7 @@
     },
     {
         "url": "index.php/lit_regenbogenbruecke.html",
-        "name": "Regenbogenbrücke",
+        "name": "de:Regenbogenbrücke",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1929,7 +1929,7 @@
     },
     {
         "url": "index.php/lit_reinigung_des_boesen.html",
-        "name": "Reinigung des Bösen",
+        "name": "de:Reinigung des Bösen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1942,7 +1942,7 @@
     },
     {
         "url": "index.php/lit_rinderruf.html",
-        "name": "Rinderruf",
+        "name": "de:Rinderruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1955,7 +1955,7 @@
     },
     {
         "url": "index.php/lit_Ruf_der_Heimat.html",
-        "name": "Ruf der Heimat",
+        "name": "de:Ruf der Heimat",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1969,7 +1969,7 @@
     },
     {
         "url": "index.php/lit_schattenfessel.html",
-        "name": "Schattenfessel",
+        "name": "de:Schattenfessel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -1982,7 +1982,7 @@
     },
     {
         "url": "index.php/lit_Schiffsgespür.html",
-        "name": "Schiffsgespür",
+        "name": "de:Schiffsgespür",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1994,8 +1994,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Schlaf.html",
-        "name": "Schlaf",
+        "url": "index.php/sleep.html",
+        "name": "Sleep",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2010,7 +2010,7 @@
     },
     {
         "url": "index.php/lit_schlangenruf.html",
-        "name": "Schlangenruf",
+        "name": "de:Schlangenruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2022,8 +2022,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Schlangenstab.html",
-        "name": "Schlangenstab",
+        "url": "index.php/serpent-staff.html",
+        "name": "Serpent Staff",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2036,8 +2036,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Schlangenzunge.html",
-        "name": "Schlangenzunge",
+        "url": "index.php/serpent-tongue.html",
+        "name": "Serpent Tongue",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2051,7 +2051,7 @@
     },
     {
         "url": "index.php/lit_Schleichende_Fäulnis.html",
-        "name": "Schleichende Fäulnis",
+        "name": "de:Schleichende Fäulnis",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2066,7 +2066,7 @@
     },
     {
         "url": "index.php/schleichende-faeulnis-pflanzen.html",
-        "name": "Schleichende Fäulnis (Pflanzen)",
+        "name": "de:Schleichende Fäulnis (Pflanzen)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2078,8 +2078,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Schmerzresistenz.html",
-        "name": "Schmerzresistenz",
+        "url": "index.php/pain-tolerance.html",
+        "name": "Pain Tolerance",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2093,7 +2093,7 @@
     },
     {
         "url": "index.php/lit_schonfrist.html",
-        "name": "Schonfrist",
+        "name": "de:Schonfrist",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2105,8 +2105,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_SchutzderWehrlosen.html",
-        "name": "Schutz der Wehrlosen",
+        "url": "index.php/protect-the-defenseless.html",
+        "name": "Protect the Defenseless",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2121,7 +2121,7 @@
     },
     {
         "url": "index.php/lit_Schutzsegen.html",
-        "name": "Schutzsegen",
+        "name": "de:Schutzsegen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2135,7 +2135,7 @@
     },
     {
         "url": "index.php/Schwindende_Zauberkraft.html",
-        "name": "Schwindende Zauberkraft",
+        "name": "de:Schwindende Zauberkraft",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -2149,7 +2149,7 @@
     },
     {
         "url": "index.php/lit_Seelenschatten.html",
-        "name": "Seelenschatten",
+        "name": "de:Seelenschatten",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2163,7 +2163,7 @@
     },
     {
         "url": "index.php/Lit_Seevogelsprache.html",
-        "name": "Seevogelsprache",
+        "name": "de:Seevogelsprache",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2177,7 +2177,7 @@
     },
     {
         "url": "index.php/lit_Sicherer_Weg.html",
-        "name": "Sicherer Weg",
+        "name": "de:Sicherer Weg",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2191,7 +2191,7 @@
     },
     {
         "url": "index.php/lit_sicht_in_der_dunkelheit.html",
-        "name": "Sicht in der Dunkelheit",
+        "name": "de:Sicht in der Dunkelheit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2204,7 +2204,7 @@
     },
     {
         "url": "index.php/steinhaut.html",
-        "name": "Steinhaut",
+        "name": "de:Steinhaut",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -2216,8 +2216,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Sternenglanz.html",
-        "name": "Sternenglanz",
+        "url": "index.php/starshine.html",
+        "name": "Starshine",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2231,7 +2231,7 @@
     },
     {
         "url": "index.php/lit_Sturmruf.html",
-        "name": "Sturmruf",
+        "name": "de:Sturmruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2245,7 +2245,7 @@
     },
     {
         "url": "index.php/lit_talismanruf.html",
-        "name": "Talismanruf",
+        "name": "de:Talismanruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2258,7 +2258,7 @@
     },
     {
         "url": "index.php/lit_tierbeherrschung.html",
-        "name": "Tierbeherschung",
+        "name": "de:Tierbeherschung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2272,7 +2272,7 @@
     },
     {
         "url": "index.php/lit_Tiere_beruhigen.html",
-        "name": "Tiere beruhigen",
+        "name": "de:Tiere beruhigen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2287,7 +2287,7 @@
     },
     {
         "url": "index.php/lit_Tierleid_lindern.html",
-        "name": "Tierleid lindern",
+        "name": "de:Tierleid lindern",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2301,7 +2301,7 @@
     },
     {
         "url": "index.php/lit_Tiersprache.html",
-        "name": "Tiersprache",
+        "name": "de:Tiersprache",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2315,7 +2315,7 @@
     },
     {
         "url": "index.php/trankfluch.html",
-        "name": "Trankfluch",
+        "name": "de:Trankfluch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2328,7 +2328,7 @@
     },
     {
         "url": "index.php/lit_Treuer_Begleiter.html",
-        "name": "Treuer Begleiter",
+        "name": "de:Treuer Begleiter",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2342,7 +2342,7 @@
     },
     {
         "url": "index.php/lit_Unsichtbareflut.html",
-        "name": "Unsichtbare Flut",
+        "name": "de:Unsichtbare Flut",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2355,7 +2355,7 @@
     },
     {
         "url": "index.php/Lit_Unterwasseratmung.html",
-        "name": "Unterwasseratmung",
+        "name": "de:Unterwasseratmung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2369,7 +2369,7 @@
     },
     {
         "url": "index.php/lit_untotenerhebung.html",
-        "name": "Untotenerhebung",
+        "name": "de:Untotenerhebung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2382,7 +2382,7 @@
     },
     {
         "url": "index.php/lit_vampirische_kraefte.html",
-        "name": "Vampirische Kräfte",
+        "name": "de:Vampirische Kräfte",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2395,7 +2395,7 @@
     },
     {
         "url": "index.php/lit_Versteinerung.html",
-        "name": "Versteinerung",
+        "name": "de:Versteinerung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2409,8 +2409,8 @@
         "modagainst": "ZK"
     },
     {
-        "url": "index.php/Lit_Wahrheit.html",
-        "name": "Wahrheit",
+        "url": "index.php/truth.html",
+        "name": "Truth",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2425,7 +2425,7 @@
     },
     {
         "url": "index.php/lit_wand_wider_daemonen.html",
-        "name": "Wand wider Dämonen",
+        "name": "de:Wand wider Dämonen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2438,7 +2438,7 @@
     },
     {
         "url": "index.php/Lit_Wasserlauf.html",
-        "name": "Wasserlauf",
+        "name": "de:Wasserlauf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2452,7 +2452,7 @@
     },
     {
         "url": "index.php/lit_weihe_des_bodens.html",
-        "name": "Weihe des Bodens",
+        "name": "de:Weihe des Bodens",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2464,8 +2464,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_Wieselflink.html",
-        "name": "Wieselflink",
+        "url": "index.php/quicksilver.html",
+        "name": "Quicksilver",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -2479,7 +2479,7 @@
     },
     {
         "url": "index.php/lit_Windhose.html",
-        "name": "Windhose",
+        "name": "de:Windhose",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2493,7 +2493,7 @@
     },
     {
         "url": "index.php/Lit_Windruf.html",
-        "name": "Windruf",
+        "name": "de:Windruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2506,7 +2506,7 @@
     },
     {
         "url": "index.php/lit_wolfsruf.html",
-        "name": "Wolfsruf",
+        "name": "de:Wolfsruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2518,8 +2518,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/Lit_WundersameVerständigung.html",
-        "name": "Wundersame Verständigung",
+        "url": "index.php/wondrous-communication.html",
+        "name": "Wondrous Communication",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2533,7 +2533,7 @@
     },
     {
         "url": "index.php/lit_zwergenmacht.html",
-        "name": "Zwergenmacht",
+        "name": "de:Zwergenmacht",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2546,7 +2546,7 @@
     },
     {
         "url": "index.php/lit-Zähe_Haut.html",
-        "name": "Zähe Haut",
+        "name": "de:Zähe Haut",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2560,7 +2560,7 @@
     },
     {
         "url": "index.php/zer_Aufnahme_Initiation.html",
-        "name": "Aufnahme (Initiation)",
+        "name": "de:Aufnahme (Initiation)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2574,7 +2574,7 @@
     },
     {
         "url": "index.php/zer_Ächtung_Exkommunikation.html",
-        "name": "Ächtung (Exkommunikation)",
+        "name": "de:Ächtung (Exkommunikation)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2588,7 +2588,7 @@
     },
     {
         "url": "index.php/zer_Rabengestalt.html",
-        "name": "Rabengestalt",
+        "name": "de:Rabengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2602,7 +2602,7 @@
     },
     {
         "url": "index.php/Lit_Ackersegen.html",
-        "name": "Ackersegen",
+        "name": "de:Ackersegen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2615,7 +2615,7 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/zer_arcanum_interdictum.html",
+        "url": "",
         "name": "Arcanum Interdictum",
         "class": "Karmic skills",
         "classID": 7,
@@ -2629,7 +2629,7 @@
     },
     {
         "url": "index.php/zer_Ausbrennen_Purgation.html",
-        "name": "Ausbrennen (Purgation)",
+        "name": "de:Ausbrennen (Purgation)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2643,7 +2643,7 @@
     },
     {
         "url": "index.php/zer_Bannfluch_Anathema.html",
-        "name": "Bannfluch (Anathema)",
+        "name": "de:Bannfluch (Anathema)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2658,7 +2658,7 @@
     },
     {
         "url": "index.php/zer_Berauschender_Wein.html",
-        "name": "Berauschender Wein",
+        "name": "de:Berauschender Wein",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2672,7 +2672,7 @@
     },
     {
         "url": "index.php/zer_Beschwörung_der_hohen_Diener.html",
-        "name": "Beschwörung der hohen Diener des Rattenkindes",
+        "name": "de:Beschwörung der hohen Diener des Rattenkindes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2686,7 +2686,7 @@
     },
     {
         "url": "index.php/zer_Beschwörung_der_machtvollen_Diener.html",
-        "name": "Beschwörung der machtvollen Diener des Rattenkindes",
+        "name": "de:Beschwörung der machtvollen Diener des Rattenkindes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2700,7 +2700,7 @@
     },
     {
         "url": "index.php/zer_Bild_für_die_Ewigkeit.html",
-        "name": "Bild für die Ewigkeit",
+        "name": "de:Bild für die Ewigkeit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2714,7 +2714,7 @@
     },
     {
         "url": "index.php/zer_Blick_in_die_Flammen.html",
-        "name": "Blick in die Flammen",
+        "name": "de:Blick in die Flammen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2728,7 +2728,7 @@
     },
     {
         "url": "index.php/Zeremonie_DasLoeschenDesLichts.html",
-        "name": "Das Löschen des Lichts",
+        "name": "de:Das Löschen des Lichts",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2741,7 +2741,7 @@
     },
     {
         "url": "index.php/Zer_Delphingestalt.html",
-        "name": "Delphingestalt",
+        "name": "de:Delphingestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2754,7 +2754,7 @@
     },
     {
         "url": "index.php/zer_diener_der_erde.html",
-        "name": "Diener der Erde",
+        "name": "de:Diener der Erde",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2767,7 +2767,7 @@
     },
     {
         "url": "index.php/zer_diener_der_flammen.html",
-        "name": "Diener der Flammen",
+        "name": "de:Diener der Flammen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2780,7 +2780,7 @@
     },
     {
         "url": "index.php/zer_diener_der_kälte.html",
-        "name": "Diener der Kälte",
+        "name": "de:Diener der Kälte",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2793,7 +2793,7 @@
     },
     {
         "url": "index.php/zer_diener_der_wellen.html",
-        "name": "Diener der Wellen",
+        "name": "de:Diener der Wellen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2806,7 +2806,7 @@
     },
     {
         "url": "index.php/zer_diener_der_wolken.html",
-        "name": "Diener der Wolken",
+        "name": "de:Diener der Wolken",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2819,7 +2819,7 @@
     },
     {
         "url": "index.php/zer_diener_des_erzes.html",
-        "name": "Diener des Erzes",
+        "name": "de:Diener des Erzes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2832,7 +2832,7 @@
     },
     {
         "url": "index.php/zer_Daemonenpakt_brechen.html",
-        "name": "Dämonenpakt brechen",
+        "name": "de:Dämonenpakt brechen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2846,7 +2846,7 @@
     },
     {
         "url": "index.php/zer_Eidechsengestalt.html",
-        "name": "Eidechsengestalt",
+        "name": "de:Eidechsengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2860,7 +2860,7 @@
     },
     {
         "url": "index.php/zer_eidechsenregeneration.html",
-        "name": "Eidechsenregeneration",
+        "name": "de:Eidechsenregeneration",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -2873,7 +2873,7 @@
     },
     {
         "url": "index.php/z_Einflüsterung.html",
-        "name": "Einflüsterung",
+        "name": "de:Einflüsterung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2886,7 +2886,7 @@
     },
     {
         "url": "index.php/zer_Eisbärgestalt.html",
-        "name": "Eisbärgestalt",
+        "name": "de:Eisbärgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2900,7 +2900,7 @@
     },
     {
         "url": "index.php/zer_elsterngestalt.html",
-        "name": "Elsterngestalt",
+        "name": "de:Elsterngestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2913,7 +2913,7 @@
     },
     {
         "url": "index.php/Zer_EmpfaengnisdesKorsmals.html",
-        "name": "Empfängnis des Korsmals",
+        "name": "de:Empfängnis des Korsmals",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2926,7 +2926,7 @@
     },
     {
         "url": "index.php/zer_erfolgreiche_pflanzensuche.html",
-        "name": "Erfolgreiche Pflanzensuche",
+        "name": "de:Erfolgreiche Pflanzensuche",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -2939,7 +2939,7 @@
     },
     {
         "url": "index.php/zer_Erinnern.html",
-        "name": "Erinnern",
+        "name": "de:Erinnern",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2953,7 +2953,7 @@
     },
     {
         "url": "index.php/zer_erschaffung_von_nachtkindern.html",
-        "name": "Erschaffung von Nachtkindern",
+        "name": "de:Erschaffung von Nachtkindern",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2966,7 +2966,7 @@
     },
     {
         "url": "index.php/Zer_Exorzismus.html",
-        "name": "Exorzismus",
+        "name": "de:Exorzismus",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2981,7 +2981,7 @@
     },
     {
         "url": "index.php/zer_falkengestalt.html",
-        "name": "Falkengestalt",
+        "name": "de:Falkengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2994,7 +2994,7 @@
     },
     {
         "url": "index.php/zer_Fest_der__Freude.html",
-        "name": "Fest der Freude",
+        "name": "de:Fest der Freude",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3008,7 +3008,7 @@
     },
     {
         "url": "index.php/zer_Frostschutz.html",
-        "name": "Frostschutz",
+        "name": "de:Frostschutz",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3022,7 +3022,7 @@
     },
     {
         "url": "index.php/zer_Fruchtbarkeit.html",
-        "name": "Fruchtbarkeit",
+        "name": "de:Fruchtbarkeit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3036,7 +3036,7 @@
     },
     {
         "url": "index.php/zer_Fuchsgestalt.html",
-        "name": "Fuchsgestalt",
+        "name": "de:Fuchsgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3050,7 +3050,7 @@
     },
     {
         "url": "index.php/zer_geistersprache.html",
-        "name": "Geistersprache",
+        "name": "de:Geistersprache",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3063,7 +3063,7 @@
     },
     {
         "url": "index.php/zer_geistheilung.html",
-        "name": "Geistheilung",
+        "name": "de:Geistheilung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3076,7 +3076,7 @@
     },
     {
         "url": "index.php/z_Geschlechterwechsel.html",
-        "name": "Geschlechterwechsel",
+        "name": "de:Geschlechterwechsel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3089,7 +3089,7 @@
     },
     {
         "url": "index.php/zer_Geschwinder_Schritt.html",
-        "name": "Geschwinder Schritt",
+        "name": "de:Geschwinder Schritt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3103,7 +3103,7 @@
     },
     {
         "url": "index.php/zer_gespräch_mit_den_toten.html",
-        "name": "Gespräch mit den Toten",
+        "name": "de:Gespräch mit den Toten",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3116,7 +3116,7 @@
     },
     {
         "url": "index.php/Lit_GeweihterPanzer.html",
-        "name": "Geweihter Panzer",
+        "name": "de:Geweihter Panzer",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3130,7 +3130,7 @@
     },
     {
         "url": "index.php/gnade-des-vergessens.html",
-        "name": "Gnade des Vergessens",
+        "name": "de:Gnade des Vergessens",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3144,7 +3144,7 @@
     },
     {
         "url": "index.php/zer_Greifenruf.html",
-        "name": "Greifenruf",
+        "name": "de:Greifenruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3158,7 +3158,7 @@
     },
     {
         "url": "index.php/zer_große_waffenweihe.html",
-        "name": "Große Wafenweihe",
+        "name": "de:Große Wafenweihe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3171,7 +3171,7 @@
     },
     {
         "url": "index.php/Zer_GuterFang.html",
-        "name": "Guter Fang",
+        "name": "de:Guter Fang",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3185,7 +3185,7 @@
     },
     {
         "url": "index.php/zer_Gänsegestalt.html",
-        "name": "Gänsegestalt",
+        "name": "de:Gänsegestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3199,7 +3199,7 @@
     },
     {
         "url": "index.php/zer_Göttliche_Erkenntnis.html",
-        "name": "Göttliche Erkenntnis",
+        "name": "de:Göttliche Erkenntnis",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3213,7 +3213,7 @@
     },
     {
         "url": "index.php/zer_goettliche_präzision.html",
-        "name": "Göttliche Präzision",
+        "name": "de:Göttliche Präzision",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3226,7 +3226,7 @@
     },
     {
         "url": "index.php/zer_Heiliger_Schwur.html",
-        "name": "Heiliger Schwur",
+        "name": "de:Heiliger Schwur",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3240,7 +3240,7 @@
     },
     {
         "url": "index.php/zer_heilschlaf.html",
-        "name": "Heilschlaf",
+        "name": "de:Heilschlaf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3253,7 +3253,7 @@
     },
     {
         "url": "index.php/zer_heilung_von_seelenkranken.html",
-        "name": "Heilung von Seelenkranken",
+        "name": "de:Heilung von Seelenkranken",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3266,7 +3266,7 @@
     },
     {
         "url": "index.php/zer_Herr_der_Meere.html",
-        "name": "Herr der Meere",
+        "name": "de:Herr der Meere",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3280,7 +3280,7 @@
     },
     {
         "url": "index.php/zer_Hilfe_in_der_Not.html",
-        "name": "Hilfe in der Not",
+        "name": "de:Hilfe in der Not",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3294,7 +3294,7 @@
     },
     {
         "url": "index.php/zer_himmlische_schatzkammer.html",
-        "name": "Himmlische Schatzkammer",
+        "name": "de:Himmlische Schatzkammer",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3307,7 +3307,7 @@
     },
     {
         "url": "index.php/zer_hundegestalt.html",
-        "name": "Hundegestalt",
+        "name": "de:Hundegestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3320,7 +3320,7 @@
     },
     {
         "url": "index.php/zer_Häutung.html",
-        "name": "Häutung",
+        "name": "de:Häutung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3334,7 +3334,7 @@
     },
     {
         "url": "index.php/zer_Inspiration.html",
-        "name": "Inspiration",
+        "name": "de:Inspiration",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3348,7 +3348,7 @@
     },
     {
         "url": "index.php/zer_Jagdglück.html",
-        "name": "Jagdglück",
+        "name": "de:Jagdglück",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3362,7 +3362,7 @@
     },
     {
         "url": "index.php/zer_jaguargestalt.html",
-        "name": "Jaguargestalt",
+        "name": "de:Jaguargestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3375,7 +3375,7 @@
     },
     {
         "url": "index.php/zer_Jugendlichkeit.html",
-        "name": "Jugendlichkeit",
+        "name": "de:Jugendlichkeit",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3389,7 +3389,7 @@
     },
     {
         "url": "index.php/Zer_KleineMoralstaerkung.html",
-        "name": "Kleine Moralstärkung",
+        "name": "de:Kleine Moralstärkung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3403,7 +3403,7 @@
     },
     {
         "url": "index.php/zer_kriegszustand.html",
-        "name": "Kriegszustand",
+        "name": "de:Kriegszustand",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3416,7 +3416,7 @@
     },
     {
         "url": "index.php/zer_lebenstausch.html",
-        "name": "Lebenstausch",
+        "name": "de:Lebenstausch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3429,7 +3429,7 @@
     },
     {
         "url": "index.php/zer_leichtfüssig.html",
-        "name": "Leichtfüßig",
+        "name": "de:Leichtfüßig",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3442,7 +3442,7 @@
     },
     {
         "url": "index.php/zer_LeitendeStroemung.html",
-        "name": "Leitende Strömung",
+        "name": "de:Leitende Strömung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3455,7 +3455,7 @@
     },
     {
         "url": "index.php/z_Liebestätowierung.html",
-        "name": "Liebestätowierung",
+        "name": "de:Liebestätowierung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3468,7 +3468,7 @@
     },
     {
         "url": "index.php/zer_Liturgieabsorption.html",
-        "name": "Liturgieabsorption",
+        "name": "de:Liturgieabsorption",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3482,7 +3482,7 @@
     },
     {
         "url": "index.php/zer_luchsgestalt.html",
-        "name": "Luchsgestalt",
+        "name": "de:Luchsgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3495,7 +3495,7 @@
     },
     {
         "url": "index.php/zer_Läuterung_des_Erzes.html",
-        "name": "Läuterung des Erzes",
+        "name": "de:Läuterung des Erzes",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3509,7 +3509,7 @@
     },
     {
         "url": "index.php/Zer_Löwengestalt.html",
-        "name": "Löwengestalt",
+        "name": "de:Löwengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3523,7 +3523,7 @@
     },
     {
         "url": "index.php/zer_machtvoller_exorzismus.html",
-        "name": "Machtvoller Exorzismus",
+        "name": "de:Machtvoller Exorzismus",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3537,7 +3537,7 @@
     },
     {
         "url": "index.php/zer_Makelloser_Leib.html",
-        "name": "Makelloser Leib",
+        "name": "de:Makelloser Leib",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3551,7 +3551,7 @@
     },
     {
         "url": "index.php/zer_marbidenmacht.html",
-        "name": "Marbidenmacht",
+        "name": "de:Marbidenmacht",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3564,7 +3564,7 @@
     },
     {
         "url": "index.php/zer_Metallerhitzung.html",
-        "name": "Metallerhitzung",
+        "name": "de:Metallerhitzung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3578,7 +3578,7 @@
     },
     {
         "url": "index.php/zer_Moralstärkung.html",
-        "name": "Moralstärkung",
+        "name": "de:Moralstärkung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3592,7 +3592,7 @@
     },
     {
         "url": "index.php/zer_mungogestalt.html",
-        "name": "Mungogestalt",
+        "name": "de:Mungogestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3605,7 +3605,7 @@
     },
     {
         "url": "index.php/zer_Nahrungsreinigung.html",
-        "name": "Nahrungsreinigung",
+        "name": "de:Nahrungsreinigung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3619,7 +3619,7 @@
     },
     {
         "url": "index.php/Zer_Nebelleib.html",
-        "name": "Nebelleib",
+        "name": "de:Nebelleib",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3633,7 +3633,7 @@
     },
     {
         "url": "index.php/Zer_Nebelschwaden.html",
-        "name": "Nebelschwaden",
+        "name": "de:Nebelschwaden",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3647,7 +3647,7 @@
     },
     {
         "url": "index.php/zer_NuminorusFluch.html",
-        "name": "Numinorus Fluch",
+        "name": "de:Numinorus Fluch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3660,7 +3660,7 @@
     },
     {
         "url": "index.php/Zer_Objektweihe.html",
-        "name": "Objektweihe",
+        "name": "de:Objektweihe",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3674,7 +3674,7 @@
     },
     {
         "url": "index.php/zer_Ortsweihe_Sanctum.html",
-        "name": "Ortsweihe (Sanctum)",
+        "name": "de:Ortsweihe (Sanctum)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3688,7 +3688,7 @@
     },
     {
         "url": "index.php/zer_Panthergestalt.html",
-        "name": "Panthergestalt",
+        "name": "de:Panthergestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3702,7 +3702,7 @@
     },
     {
         "url": "index.php/zer_Paradiesvogelgestalt.html",
-        "name": "Paradiesvogelgestalt",
+        "name": "de:Paradiesvogelgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3716,7 +3716,7 @@
     },
     {
         "url": "index.php/zer_Pferdegestalt.html",
-        "name": "Pferdegestalt",
+        "name": "de:Pferdegestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3730,7 +3730,7 @@
     },
     {
         "url": "index.php/zer_Pflanzenkraft.html",
-        "name": "Pflanzenkraft",
+        "name": "de:Pflanzenkraft",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3743,7 +3743,7 @@
     },
     {
         "url": "index.php/zer_Priesterweihe_Ordination.html",
-        "name": "Priesterweihe (Ordination)",
+        "name": "de:Priesterweihe (Ordination)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3757,7 +3757,7 @@
     },
     {
         "url": "index.php/zer_rat_der_ahnen.html",
-        "name": "Rat der Ahnen",
+        "name": "de:Rat der Ahnen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3770,7 +3770,7 @@
     },
     {
         "url": "index.php/zer_regenkontrolle.html",
-        "name": "Regenkontrolle",
+        "name": "de:Regenkontrolle",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3783,7 +3783,7 @@
     },
     {
         "url": "index.php/zer_Reisesegen.html",
-        "name": "Reisesegen",
+        "name": "de:Reisesegen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3797,7 +3797,7 @@
     },
     {
         "url": "index.php/schaffenskraft.html",
-        "name": "Schaffenskraft",
+        "name": "de:Schaffenskraft",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3810,7 +3810,7 @@
     },
     {
         "url": "index.php/zer_Schattenrochengestalt.html",
-        "name": "Schattenrochengestalt",
+        "name": "de:Schattenrochengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3823,7 +3823,7 @@
     },
     {
         "url": "index.php/zer_schlangenfluch.html",
-        "name": "Schlangenfluch",
+        "name": "de:Schlangenfluch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3837,7 +3837,7 @@
     },
     {
         "url": "index.php/zer_Schlangengestalt.html",
-        "name": "Schlangengestalt",
+        "name": "de:Schlangengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3851,7 +3851,7 @@
     },
     {
         "url": "index.php/zer_schmetterlingsgestalt.html",
-        "name": "Schmetterlingsgestalt",
+        "name": "de:Schmetterlingsgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3864,7 +3864,7 @@
     },
     {
         "url": "index.php/zer_Schwanengestalt.html",
-        "name": "Schwanengestalt",
+        "name": "de:Schwanengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3878,7 +3878,7 @@
     },
     {
         "url": "index.php/zer_Seelenbannung.html",
-        "name": "Seelenbannung",
+        "name": "de:Seelenbannung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3893,7 +3893,7 @@
     },
     {
         "url": "index.php/zer_Seelenprüfung.html",
-        "name": "Seelenprüfung",
+        "name": "de:Seelenprüfung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3907,7 +3907,7 @@
     },
     {
         "url": "index.php/zer_Seemonsterruf.html",
-        "name": "Seemonsterruf",
+        "name": "de:Seemonsterruf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3920,7 +3920,7 @@
     },
     {
         "url": "index.php/zer_Segnung_des_Heims.html",
-        "name": "Segnung des Heims",
+        "name": "de:Segnung des Heims",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3934,7 +3934,7 @@
     },
     {
         "url": "index.php/zer_selbstopferung.html",
-        "name": "Selbstopferung",
+        "name": "de:Selbstopferung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3947,7 +3947,7 @@
     },
     {
         "url": "index.php/zer_Sicherer_Tritt.html",
-        "name": "Sicherer Tritt",
+        "name": "de:Sicherer Tritt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -3961,7 +3961,7 @@
     },
     {
         "url": "index.php/zer_sippenbann.html",
-        "name": "Sippenbann",
+        "name": "de:Sippenbann",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3975,7 +3975,7 @@
     },
     {
         "url": "index.php/zer_Speisung.html",
-        "name": "Speisung",
+        "name": "de:Speisung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3989,7 +3989,7 @@
     },
     {
         "url": "index.php/zer_Staub_und_Schimmel.html",
-        "name": "Staub und Schimmel",
+        "name": "de:Staub und Schimmel",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -4003,7 +4003,7 @@
     },
     {
         "url": "index.php/zer_Storchengestalt.html",
-        "name": "Storchengestalt",
+        "name": "de:Storchengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4017,7 +4017,7 @@
     },
     {
         "url": "index.php/zer_staerkung_der_wildnis.html",
-        "name": "Stärkung der Wildnis",
+        "name": "de:Stärkung der Wildnis",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4030,7 +4030,7 @@
     },
     {
         "url": "index.php/zer_Sättigung.html",
-        "name": "Sättigung",
+        "name": "de:Sättigung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4044,7 +4044,7 @@
     },
     {
         "url": "index.php/zer_tabuzone.html",
-        "name": "Tabuzone",
+        "name": "de:Tabuzone",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -4057,7 +4057,7 @@
     },
     {
         "url": "index.php/tairachs-machtvolle-erhebung-von-untoten.html",
-        "name": "Tairachs machtvolle Erhebung von Untoten",
+        "name": "de:Tairachs machtvolle Erhebung von Untoten",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4070,7 +4070,7 @@
     },
     {
         "url": "index.php/zer_talismanverankerung.html",
-        "name": "Talismanverankerung",
+        "name": "de:Talismanverankerung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -4083,7 +4083,7 @@
     },
     {
         "url": "index.php/zer_taubengestalt.html",
-        "name": "Taubengestalt",
+        "name": "de:Taubengestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4096,7 +4096,7 @@
     },
     {
         "url": "index.php/zer_Tempelweihe_Konsekration.html",
-        "name": "Tempelweihe (Konsekration)",
+        "name": "de:Tempelweihe (Konsekration)",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4110,7 +4110,7 @@
     },
     {
         "url": "index.php/zer_Traumbild.html",
-        "name": "Traumbild",
+        "name": "de:Traumbild",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -4125,7 +4125,7 @@
     },
     {
         "url": "index.php/zer_traumgesicht.html",
-        "name": "Traumgesicht",
+        "name": "de:Traumgesicht",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4139,7 +4139,7 @@
     },
     {
         "url": "index.php/zer_Unbeschwerte_Wanderung.html",
-        "name": "Unbeschwerte Wanderung",
+        "name": "de:Unbeschwerte Wanderung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4153,7 +4153,7 @@
     },
     {
         "url": "index.php/zer_untote_erschaffen.html",
-        "name": "Untote erschaffen",
+        "name": "de:Untote erschaffen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4166,7 +4166,7 @@
     },
     {
         "url": "index.php/zer_Verblassende_Erinnerung.html",
-        "name": "Verblassende Erinnerung",
+        "name": "de:Verblassende Erinnerung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4181,7 +4181,7 @@
     },
     {
         "url": "index.php/zer_Vergessen.html",
-        "name": "Vergessen",
+        "name": "de:Vergessen",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4196,7 +4196,7 @@
     },
     {
         "url": "index.php/zer_Waffenfluch.html",
-        "name": "Waffenfluch",
+        "name": "de:Waffenfluch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4210,7 +4210,7 @@
     },
     {
         "url": "index.php/zer_Wegweiser.html",
-        "name": "Wegweiser",
+        "name": "de:Wegweiser",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -4224,7 +4224,7 @@
     },
     {
         "url": "index.php/zer_Weihe_des_Heims.html",
-        "name": "Weihe des Heims",
+        "name": "de:Weihe des Heims",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4238,7 +4238,7 @@
     },
     {
         "url": "index.php/z_Widdergestalt.html",
-        "name": "Widdergestalt",
+        "name": "de:Widdergestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4251,7 +4251,7 @@
     },
     {
         "url": "index.php/zer_Wiederherstellung.html",
-        "name": "Wiederherstellung",
+        "name": "de:Wiederherstellung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4265,7 +4265,7 @@
     },
     {
         "url": "index.php/zer_Winterschlaf.html",
-        "name": "Winterschlaf",
+        "name": "de:Winterschlaf",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4279,7 +4279,7 @@
     },
     {
         "url": "index.php/zer_wolfsfluch.html",
-        "name": "Wolfsfluch",
+        "name": "de:Wolfsfluch",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4293,7 +4293,7 @@
     },
     {
         "url": "index.php/zer_wolfsgestalt.html",
-        "name": "Wolfsgestalt",
+        "name": "de:Wolfsgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4306,7 +4306,7 @@
     },
     {
         "url": "index.php/zer_Zuflucht.html",
-        "name": "Zuflucht",
+        "name": "de:Zuflucht",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_3",
@@ -4320,7 +4320,7 @@
     },
     {
         "url": "index.php/zer_zwergische_verbrüderung.html",
-        "name": "Zwergische Verbrüderung",
+        "name": "de:Zwergische Verbrüderung",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -4333,7 +4333,7 @@
     },
     {
         "url": "index.php/zer_Zwergwalgestalt.html",
-        "name": "Zwergwalgestalt",
+        "name": "de:Zwergwalgestalt",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
