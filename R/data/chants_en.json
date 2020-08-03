@@ -1,7 +1,7 @@
 [
     {
         "url": "index.php/lit_angriffslust.html",
-        "name": "de:Angriffslust",
+        "name": "Aggression",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -311,8 +311,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/lit_Blutiger_Zorn.html",
-        "name": "de:Blutiger Zorn",
+        "url": "",
+        "name": "Bloody Rage",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -490,8 +490,8 @@
         "modagainst": "SK"
     },
     {
-        "url": "index.php/lit_Ehrlicher_Vertrag.html",
-        "name": "de:Ehrlicher Vertrag",
+        "url": "",
+        "name": "Honest Contract",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -1622,8 +1622,8 @@
         "modagainst": "SK"
     },
     {
-        "url": "index.php/lit_Mächtiger_Angriff.html",
-        "name": "de:Mächtiger Angriff",
+        "url": "",
+        "name": "Powerful Attack",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2545,8 +2545,8 @@
         "chanttype": "liturgy"
     },
     {
-        "url": "index.php/lit-Zähe_Haut.html",
-        "name": "de:Zähe Haut",
+        "url": "",
+        "name": "Tough Skin",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2601,8 +2601,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Lit_Ackersegen.html",
-        "name": "de:Ackersegen",
+        "url": "index.php/field-blessing.html",
+        "name": "Field Blessing",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -2965,8 +2965,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Zer_Exorzismus.html",
-        "name": "de:Exorzismus",
+        "url": "index.php/exorcism.html",
+        "name": "Exorcism",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3115,8 +3115,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Lit_GeweihterPanzer.html",
-        "name": "de:Geweihter Panzer",
+        "url": "index.php/sacred-armor.html",
+        "name": "Sacred Armor",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3508,8 +3508,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Zer_Löwengestalt.html",
-        "name": "de:Löwengestalt",
+        "url": "index.php/lion-shape.html",
+        "name": "Lion Shape",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_1",
@@ -3618,8 +3618,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Zer_Nebelleib.html",
-        "name": "de:Nebelleib",
+        "url": "index.php/fog-body.html",
+        "name": "Fog Body",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
@@ -3659,8 +3659,8 @@
         "chanttype": "ceremony"
     },
     {
-        "url": "index.php/Zer_Objektweihe.html",
-        "name": "de:Objektweihe",
+        "url": "index.php/sanctify-object.html",
+        "name": "Sanctify Object",
         "class": "Karmic skills",
         "classID": 7,
         "ab1": "ATTR_2",
