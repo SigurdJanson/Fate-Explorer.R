@@ -106,6 +106,10 @@
     {"en": "English", "de": "English"},
     {"en": "Please note: this app can talk to you in English but it may not be able to read English Optolith files.", "de": "Auch wenn die App Englisch mit Euch spricht, kann sie vermutlich noch keine Englischen Optolith-Dateien verstehen."},
     {"en": "Browse...",  "de": "Durchsuche..."},
+    {"en": "No states detected",  "de": "Keine Status erkannt"},
+    {"en": "No conditions detected",  "de": "Keine Zustände erkannt"},
+    {"en": "States",  "de": "Status"},
+    {"en": "Conditions",  "de": "Zustände"},
 
     {"en": "About...", "de": "Über..."},
     {"en": "The Fate Explorer helps you play the Dark Eye table top games. ", 

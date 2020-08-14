@@ -20,6 +20,11 @@ sidebarLayout(
       tableOutput("SetupAttr")
     ),
     conditionalPanel(
+      condition = "output.ShowSetupStatesNConds",
+      hr(), h3(i18n$t("States"), i18n$t("and"), i18n$t("Conditions")),
+      htmlOutput("SetupStatesNConds")
+    ),
+    conditionalPanel(
       condition = "output.ShowSetupWeapons",
       hr(), h3(i18n$t("Weapons")),
       tableOutput("SetupWeapons")

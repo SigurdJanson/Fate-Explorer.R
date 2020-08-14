@@ -140,6 +140,20 @@ output$SetupAttr <- renderTable({
 
 
 
+# Panel "States & Conditions" ---------------------
+output$ShowSetupStatesNConds <- reactive({
+  return( !is.null(Character$Attr) )
+})
+outputOptions(output, 'ShowSetupStatesNConds', suspendWhenHidden = FALSE)
+
+output$SetupStatesNConds <- renderUI({
+  tags$ul(
+    tags$li(i18n$t("No states detected")),
+    tags$li(i18n$t("No conditions detected"))
+  )
+})
+
+
 # Skills Panels ---------------------
 output$ShowSetupSkills <- reactive({
   return( isTruthy(Character$Skills) && 
