@@ -186,7 +186,7 @@ output$WeaponDetails <- renderText({
       }
     }
     # Render result to HTML
-    Title <- "<p><strong>Weapon Details</strong></p>"
+    Title <- paste0("<p><strong>", i18n$t("Weapon Details"), "</strong></p>")
     Result <- paste0(Result, collapse="") # Collapse several strings into one
     Result <- paste0("<div style='color:gray;padding:0.5em;border: 1px solid lightgray'>", 
                      Title, Result, 
