@@ -42,7 +42,7 @@ observeEvent(input$cmbCombatSelectWeapon, {
     # Default
     ActiveWeapon <<- MeleeWeapon$new(Skill = list(Attack = 9L, Parry = 5L, 
                                                   Dodge = Character$Weapon[[1L]]$Skill$Dodge), 
-                                     Damage = list(N = 3L, DP = 4L, Bonus = 0L))
+                                     Damage = list(N = 1L, DP = 6L, Bonus = 0L))
   }
   # Update ui controls
   for(Action in names(.CombatAction)) {
