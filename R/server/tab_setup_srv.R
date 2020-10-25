@@ -6,6 +6,36 @@ Character <- reactiveValues(Name = NULL,
 RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
 
 
+#' IsLocalhost
+IsLocalhost <- function()
+{
+  return(session$clientData$url_hostname == "127.0.0.1")
+}
+
+
+#' LoadCharacterFile
+#' @param PathToFile Path to the file that shall be loaded
+LoadCharacterFile <- function(PathToFile)
+{
+###  # handle dependencies to components that display data of last character
+###  Language <- ifelse(length(i18n$get_translation_language()) == 0L, "en", i18n$get_translation_language())
+  tryCatch(
+    Data <- read_json(path = PathToFile),
+    error = function(e) stop(e)
+  )
+
+  RawCharacterFile(Data) # update raw data container
+  
+  Character$Name <- Data$name
+  Character$Attr <- GetAbilities_Opt(Data[["attr"]][["values"]])
+  Character$CombatSkills <- Data[["ct"]]
+  SetupCharacterWeapons(input$chbShowImprovWeapons)
+  SetupSkills()
+  
+  return(invisible(NULL))
+}
+
+
 #' SetupCharacterWeapons
 #' Global function to extract the list of weapons from Json
 #' @param AddImprov Shall improvised weapons be loaded as well? (`TRUE`/`FALSE`)
@@ -34,13 +64,6 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
 }
 
 
-#' Checkbox: show the option to harvest weapon details from Ulisses Wiki
-output$ShowHarvestWeaponDetails <- reactive({
-  return( session$clientData$url_hostname == "127.0.0.1" )
-})
-outputOptions(output, 'ShowHarvestWeaponDetails', suspendWhenHidden = FALSE)
-
-
 
 
 #' SetupSkills
@@ -50,7 +73,7 @@ outputOptions(output, 'ShowHarvestWeaponDetails', suspendWhenHidden = FALSE)
 SetupSkills <- function() {
   Data <- RawCharacterFile()[["talents"]]
   MundaneSkills <- SkillSet$new(1L, Data, Character$Attr)
-
+  
   # Add magic skills if hero has them
   Data <- RawCharacterFile()[["spells"]]
   if (isTruthy(Data) && length(Data) > 0) {
@@ -58,7 +81,7 @@ SetupSkills <- function() {
   } else {
     MagicSkills <- NULL
   }
-
+  
   Data <- RawCharacterFile()[["liturgies"]]
   if (isTruthy(Data) && length(Data) > 0) {
     BlessedSkills <- SkillSet$new(3L, Data, Character$Attr)
@@ -67,7 +90,7 @@ SetupSkills <- function() {
   }
   
   Character$Skills <- CharacterSkills$new(MundaneSkills, MagicSkills, BlessedSkills)
-
+  
   # Update dropdown list on Skills Tab
   UpdateSkillSourceRadioButton(session, IsCharacterLoaded = TRUE )
   
@@ -75,23 +98,47 @@ SetupSkills <- function() {
 }
 
 
+
+#' Run this on start up
+observe({
+  if (IsLocalhost())
+  {
+    isolate({
+      Files <- list.files(path = Sys.getenv("HOME"), pattern = "\\.json$")
+      if (isTruthy(Files))
+      {
+        FileIndex <- 1L
+        Success <- FALSE
+        while (FileIndex <= length(Files) && !Success) {
+          Success <- TRUE
+          print(Files[FileIndex])
+          tryCatch(
+            LoadCharacterFile(file.path(Sys.getenv("HOME"), Files[FileIndex])),
+            error = function(e) 
+            { 
+              Success <<- FALSE
+              FileIndex <<- FileIndex+1 
+            }
+          )
+        }
+        if (Success)
+          showNotification(paste(i18n$t("Character sheet"), Files[FileIndex], 
+                                 i18n$t("has been found and loaded")))
+      }
+    })#isolate
+  }
+}) 
+
+
+
+# SIDEBAR -------------------
+
 # Open new character file (.json)
 observeEvent(input$CharFile, {
   if (input$CharFile$type != "application/json") 
     RawCharacterFile(paste(i18n$t("Fate Explorer only understands Json files."), 
                                   input$CharFile$name, i18n$t("is not Json.")))
-  
-
-  # handle dependencies to components that display data of last character
-  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
-  Data <- read_json(path = input$CharFile$datapath)
-  RawCharacterFile(Data) # update raw data container
-
-  Character$Name    <- Data$name
-  Character$Attr    <- GetAbilities_Opt(Data[["attr"]][["values"]])
-  Character$CombatSkills <- Data[["ct"]]
-  SetupCharacterWeapons(input$chbShowImprovWeapons)
-  SetupSkills()
+  LoadCharacterFile(input$CharFile$datapath)
   
   # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update Combat value with weaponless brawling
@@ -104,6 +151,13 @@ observeEvent(input$chbShowImprovWeapons, {
   req(RawCharacterFile())
   SetupCharacterWeapons(input$chbShowImprovWeapons)
 }, ignoreNULL = TRUE, ignoreInit = TRUE)
+
+
+#' Checkbox: show the option to harvest weapon details from Ulisses Wiki
+output$ShowHarvestWeaponDetails <- reactive({
+  return( IsLocalhost() )
+})
+outputOptions(output, 'ShowHarvestWeaponDetails', suspendWhenHidden = FALSE)
 
 
 
