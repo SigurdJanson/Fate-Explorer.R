@@ -5,7 +5,7 @@ sidebarLayout(
       column(width=5,
            conditionalPanel(
                condition = "output.ShowSetupWeapons",  #see "tab_setup_srv"
-               checkboxInput("chbPredefinedWeapon", i18n$t("Use Weapon Character"), FALSE)
+               checkboxInput("chbPredefinedWeapon", i18n$t("Character Weapon"), FALSE)
       )),
       column(width = 7,
            conditionalPanel(
