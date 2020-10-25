@@ -297,7 +297,7 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
 #' weapons hit points.
 GetHitpointBonus <- function( Weapon, Abilities ) {
   # PRECONDITIONS
-  if (missing(Weapon)) return(0)
+  if (missing(Weapon)) return(0L)
   if (missing(Abilities) || !is.data.frame(Abilities)) 
     stop("Argument 'Abilities' is missing")
 
@@ -308,7 +308,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
   if (!anyNA(Primaries)) {
     Threshold  <- WeaponData[["threshold"]]
     AbIndex <- which(names(Abilities) %in% Primaries)
-    Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold)
+    Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold, na.rm = TRUE)
   } else Bonus <- 0L
   
   return(Bonus)
