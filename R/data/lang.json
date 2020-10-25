@@ -97,6 +97,7 @@
 
     {"en": "Choose Optolith File (json)", "de": "Wähle eine Optolith-Datei (json)"},
     {"en": "No character has been uploaded", "de": "Kein Character geladen"},
+    {"en": "Retrieve weapon details from ulisses wiki", "de": "Details zu Waffen vom Ulisses Wiki runterladen"},
     {"en": "No file selected", "de": "Keine Datei ausgewählt"},
     {"en": "Json File", "de": "Json Datei"},
     {"en": "Show improvised weapons", "de": "Improvisierte Waffen anzeigen"},

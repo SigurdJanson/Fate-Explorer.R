@@ -1,6 +1,6 @@
 # SETUP
 
-Character <- reactiveValues(Name = NA,
+Character <- reactiveValues(Name = NULL,
                             Attr = NULL, Skills = NULL, 
                             Weapons = NULL, CombatSkills = NULL)
 RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
@@ -32,6 +32,15 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
   
   invisible(NULL)
 }
+
+
+#' Checkbox: show the option to harvest weapon details from Ulisses Wiki
+output$ShowHarvestWeaponDetails <- reactive({
+  return( session$clientData$url_hostname == "127.0.0.1" )
+})
+outputOptions(output, 'ShowHarvestWeaponDetails', suspendWhenHidden = FALSE)
+
+
 
 
 #' SetupSkills

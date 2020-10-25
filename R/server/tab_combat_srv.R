@@ -168,7 +168,9 @@ output$uiCombatRoll <- renderText({
 # VIEW: Weapon details Panel ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
-  return( !is.null(Character$Weapons) && input$chbPredefinedWeapon )
+  return( input$chbHarvestWeaponDetails && 
+            !is.null(Character$Weapons) && 
+            input$chbPredefinedWeapon )
 })
 outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
 

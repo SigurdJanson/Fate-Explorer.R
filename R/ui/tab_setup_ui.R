@@ -10,7 +10,11 @@ sidebarLayout(
               placeholder = i18n$t("No file selected")),
     hr(),#,
     checkboxInput(inputId = "chbExploreChances", label = i18n$t("Explore roll probabilities")),
-    checkboxInput(inputId = "chbShowImprovWeapons", label = i18n$t("Show improvised weapons"))
+    checkboxInput(inputId = "chbShowImprovWeapons", label = i18n$t("Show improvised weapons")),
+    conditionalPanel(
+      condition = "output.ShowHarvestWeaponDetails",
+      checkboxInput(inputId = "chbHarvestWeaponDetails", label = i18n$t("Retrieve weapon details from ulisses wiki"))
+    ),
   ),
   mainPanel(
     h3(textOutput("CharacterName")),
