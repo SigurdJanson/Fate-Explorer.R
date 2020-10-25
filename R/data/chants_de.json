@@ -11,7 +11,7 @@
         "tradition": [
             "Kor (Gutes Gold)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Angriffswelle.html",
@@ -25,7 +25,7 @@
         "tradition": [
             "Efferd (Wogen)", "Numinoru (Reißender Strudel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Auge_des_Jägers.html",
@@ -39,7 +39,7 @@
         "tradition": [
             "Firun (Jagd)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_BannderDunkelheit.html",
@@ -53,7 +53,7 @@
         "tradition": [
             "Praios (Ordnung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_BannderFurcht.html",
@@ -67,7 +67,7 @@
         "tradition": [
             "Boron (Traum)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Bann_der_göttlichen_Gaben.html",
@@ -81,7 +81,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -96,7 +96,7 @@
         "tradition": [
             "Boron (Tod, Traum)", "Phex (Schatten)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Bann_wider_Untote.html",
@@ -110,7 +110,7 @@
         "tradition": [
             "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -124,7 +124,7 @@
         "tradition": [
             "Praios (Antimagie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/bannzone.html",
@@ -137,7 +137,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/befehl_des_schamanen.html",
@@ -150,7 +150,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -165,7 +165,7 @@
         "tradition": [
             "Tsa (Freiheit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Begnadeter_Reiter.html",
@@ -179,7 +179,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/berauschen.html",
@@ -192,7 +192,7 @@
         "tradition": [
             "Levthan (Rausch)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -207,7 +207,7 @@
         "tradition": [
             "Travia (Freundschaft, Heim)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -222,7 +222,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Besänftigung.html",
@@ -236,7 +236,7 @@
         "tradition": [
             "Swafnir (Tapferkeit)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -251,7 +251,7 @@
         "tradition": [
             "Praios (Antimagie, Ordnung)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -266,7 +266,7 @@
         "tradition": [
             "Praios (Antimagie, Ordnung)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -280,7 +280,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Blick_des_Heilers.html",
@@ -294,7 +294,7 @@
         "tradition": [
             "Peraine (Heilung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Blitzschlag.html",
@@ -308,7 +308,7 @@
         "tradition": [
             "Rondra (Sturm)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Blutiger_Zorn.html",
@@ -323,7 +323,7 @@
             "Kor (Guter Kampf)",
             "Swafnir (Kraft)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -337,7 +337,7 @@
         "tradition": [
             "Rondra (Sturm)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Blutzoll.html",
@@ -351,7 +351,7 @@
         "tradition": [
             "Kor (Guter Kampf)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Bodenweihe.html",
@@ -365,7 +365,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_BotschaftausderTiefe.html",
@@ -378,7 +378,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/brazoraghs-krieger.html",
@@ -389,7 +389,7 @@
         "ab2": "ATTR_1",
         "ab3": "ATTR_3",
         "tradition": {},
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/baerensuche.html",
@@ -402,7 +402,7 @@
         "tradition": [
             "Firun (Jagd, Kälte)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/buechersuche.html",
@@ -415,7 +415,7 @@
         "tradition": [
             "Hesinde (Wissen)", "Nandus (Bildung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Delphinruf.html",
@@ -429,7 +429,7 @@
         "tradition": [
             "Efferd (Wogen)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_DesEinenbezaubernderSphaerenklang.html",
@@ -443,7 +443,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/doppelgaenger.html",
@@ -456,7 +456,7 @@
         "tradition": [
             "Phex (Schatten)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -471,7 +471,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Ehrenhaftigkeit.html",
@@ -485,7 +485,7 @@
         "tradition": [
             "Rondra (Schild, Sturm)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -500,7 +500,7 @@
         "tradition": [
             "Kor (Gutes Gold)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Entfesselung.html",
@@ -514,7 +514,7 @@
         "tradition": [
             "Tsa (Freiheit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_entstelltes_antlitz.html",
@@ -527,7 +527,7 @@
         "tradition": [
             "Levthan (Begierde)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -542,7 +542,7 @@
         "tradition": [
             "Hesinde (Wissen)", "Nandus (Bildung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/erdbeben.html",
@@ -556,7 +556,7 @@
         "tradition": [
             "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Ermutigiung.html",
@@ -570,7 +570,7 @@
         "tradition": [
             "Rondra (Sturm)", "Efferd (Wind)", "Swafnir (Tapferkeit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Ernüchterung.html",
@@ -584,7 +584,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/l_ErregenderRausch.html",
@@ -597,7 +597,7 @@
         "tradition": [
             "Levthan (Rausch)", "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Ertrinken.html",
@@ -610,7 +610,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -624,7 +624,7 @@
         "tradition": [
             "Boron (Schlaf)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Erzene_Opfergabe.html",
@@ -638,7 +638,7 @@
         "tradition": [
             "Ingerimm (Handwerk)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_FallinsNichts.html",
@@ -652,7 +652,7 @@
         "tradition": [
             "Phex (Schatten)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/l_FesselndesBand.html",
@@ -665,7 +665,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -680,7 +680,7 @@
         "tradition": [
             "Angrosch (Flammen)", "Ingerimm (Feuer)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_freundschaftliches_auftreten.html",
@@ -693,7 +693,7 @@
         "tradition": [
             "Ifirn (Hilfsbereitschaft)", "Travia (Freundschaft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Friedfertigkeit.html",
@@ -707,7 +707,7 @@
         "tradition": [
             "Travia (Freundschaft)", "Tsa (Freiheit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_FriedvolleAura.html",
@@ -721,7 +721,7 @@
         "tradition": [
             "Hesinde (Magie, Wissen)", "Numinoru (Unendliche Tiefe)", "Peraine (Heilung, Landwirtschaft)", "Travia (Freundschaft, Heim)", "Tsa (Freiheit, Wandel)", "Rahja (Ekstase, Harmonie)", "Ifirn (Hilfsbereitschaft)", "Nandus (Bildung, Erkenntnis)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Friedvoller_Rausch.html",
@@ -735,7 +735,7 @@
         "tradition": [
             "Rahja (Ekstase)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -750,7 +750,7 @@
         "tradition": [
             "Firun (Kälte)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Furchtresistenz.html",
@@ -763,7 +763,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Gebieter_der_Flammen.html",
@@ -777,7 +777,7 @@
         "tradition": [
             "Angrosch (Flammen)", "Ingerimm (Feuer)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_gefuehlskaelte.html",
@@ -790,7 +790,7 @@
         "tradition": [
             "Boron (Tod)", "Firun (Kälte)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Geisterblick.html",
@@ -804,7 +804,7 @@
         "tradition": [
             "Boron (Tod)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_geisterfalle.html",
@@ -817,7 +817,7 @@
         "tradition": [
             "allgemein (Schamanenritus)", "Boron (Schlaf, Tod)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_geldwechsel.html",
@@ -830,7 +830,7 @@
         "tradition": [
             "Phex (Handel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Gesegneter_Rausch.html",
@@ -844,7 +844,7 @@
         "tradition": [
             "Rahja (Ekstase)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Getreidewachstum.html",
@@ -858,7 +858,7 @@
         "tradition": [
             "Peraine (Landwirtschaft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Giftbann.html",
@@ -872,7 +872,7 @@
         "tradition": [
             "Peraine (Heilung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_gnadenstoss.html",
@@ -885,7 +885,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Goldene_Hand.html",
@@ -899,7 +899,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Goldene_Rüstung.html",
@@ -913,7 +913,7 @@
         "tradition": [
             "Praios (Antimagie, Ordnung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Göttliche_Klinge.html",
@@ -927,7 +927,7 @@
         "tradition": [
             "Kor (Guter Kampf, Gutes Gold)", "Rondra (Schild, Sturm)", "Swafnir (Kraft, Tapferkeit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Göttliche_Verständigung.html",
@@ -941,7 +941,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_GöttlicherFingerzeig.html",
@@ -955,7 +955,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_goettlicher_rausch.html",
@@ -968,7 +968,7 @@
         "tradition": [
             "Levthan (Rausch)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_GöttlichesZeichen.html",
@@ -982,7 +982,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_hairuf.html",
@@ -995,7 +995,7 @@
         "tradition": [
             "Fjarningerschamanen (Härte)", "Mohaschamanen (Sonne)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1009,7 +1009,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Heiliger_Befehl.html",
@@ -1023,7 +1023,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1038,7 +1038,7 @@
         "tradition": [
             "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_HeilsameQuelle.html",
@@ -1052,7 +1052,7 @@
         "tradition": [
             "Efferd (Wogen)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Heilsegen.html",
@@ -1066,7 +1066,7 @@
         "tradition": [
             "Peraine (Heilung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Heldenkraft.html",
@@ -1080,7 +1080,7 @@
         "tradition": [
             "Rondra (Schild)", "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Swafnir (Kraft, Tapferkeit)", "Trollzackerschamanen (Leiden)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Helfende_Hand.html",
@@ -1094,7 +1094,7 @@
         "tradition": [
             "Travia (Freundschaft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_HerbeirufungHeerscharenRattenkindes.html",
@@ -1108,7 +1108,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_schakale.html",
@@ -1122,7 +1122,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Herbeirufung_der_Heerscharen_des_Rattenkindes_vampirfledermäuse.html",
@@ -1136,7 +1136,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Herbeirufung_der_Heerscharen_des_Rattenkindes_Wolfsspinnen.html",
@@ -1150,7 +1150,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/herbeirufung-von-tairachs-dienern-nebelkraehen.html",
@@ -1161,7 +1161,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": {},
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Herr_der_Flammen.html",
@@ -1175,7 +1175,7 @@
         "tradition": [
             "Angrosch (Flammen)", "Ingerimm (Feuer)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Hilfreiche_Seele.html",
@@ -1189,7 +1189,7 @@
         "tradition": [
             "Ifirn (Hilfsbereitschaft)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1204,7 +1204,7 @@
         "tradition": [
             "Praios (Ordnung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_jaguarruf.html",
@@ -1217,7 +1217,7 @@
         "tradition": [
             "Mohaschamanen (Dschungel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_kampfgeschick.html",
@@ -1230,7 +1230,7 @@
         "tradition": [
             "Kor (Guter Kampf)", "Rondra (Sturm)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Klarer_Geist.html",
@@ -1244,7 +1244,7 @@
         "tradition": [
             "Nandus (Erkenntnis)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_kleidungschamaeleon.html",
@@ -1257,7 +1257,7 @@
         "tradition": [
             "Tsa (Wandel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Kleine_Windhose.html",
@@ -1271,7 +1271,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_KleinerBannwiderUntote.html",
@@ -1285,7 +1285,7 @@
         "tradition": [
             "Boron (Tod)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Marbo (Vergänglichkeit)", "Mohaschamanen (Sonne)", "Nivesenschamanen (Winter)", "Trollzackerschamanen (Leiden)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -1300,7 +1300,7 @@
         "tradition": [
             "Praios (Antimagie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_kraftvoller_koerper.html",
@@ -1313,7 +1313,7 @@
         "tradition": [
             "Levthan (Rausch)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_krankheiten_vorbeugen.html",
@@ -1326,7 +1326,7 @@
         "tradition": [
             "Peraine (Heilung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Krankheitsbann.html",
@@ -1340,7 +1340,7 @@
         "tradition": [
             "Peraine (Heilung)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_kriegsfarben.html",
@@ -1353,7 +1353,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_kaelteexplosion.html",
@@ -1366,7 +1366,7 @@
         "tradition": [
             "Firun (Kälte)", "Ifirn (Natur)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Lautlos.html",
@@ -1381,7 +1381,7 @@
             "Phex (Schatten)",
             "Firun (Jagd)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Lebensschutz.html",
@@ -1395,7 +1395,7 @@
         "tradition": [
             "Tsa (Wandel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_levthanischer_liebhaber.html",
@@ -1408,7 +1408,7 @@
         "tradition": [
             "Levthan (Begierde)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Liturgieschild.html",
@@ -1422,7 +1422,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_lust_erzeugen.html",
@@ -1435,7 +1435,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1449,7 +1449,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_magieanalyse.html",
@@ -1462,7 +1462,7 @@
         "tradition": [
             "Hesinde (Magie)", "Nandus (Erkenntnis)", "Praios (Antimagie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Magiebann.html",
@@ -1476,7 +1476,7 @@
         "tradition": [
             "Praios (Antimagie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Magieschutz.html",
@@ -1490,7 +1490,7 @@
         "tradition": [
             "Praios (Antimagie)", "Hesinde (Magie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Magiesicht.html",
@@ -1504,7 +1504,7 @@
         "tradition": [
             "Praios (Antimagie)", "Ferkinaschamanen (Blut)", "Fjarningerschamanen (Eis)", "Gjalskerschamanen (Gemeinschaft)", "Hesinde (Magie)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)", "Nivesenschamanen (Wölfe)", "Trollzackerschamanen (Stein)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Magiespiegel.html",
@@ -1518,7 +1518,7 @@
         "tradition": [
             "Hesinde (Magie)", "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Maske.html",
@@ -1532,7 +1532,7 @@
         "tradition": [
             "Phex (Schatten)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_mauereinsturz.html",
@@ -1545,7 +1545,7 @@
         "tradition": [
             "Tsa (Freiheit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_meeresungeheuer_vertreiben.html",
@@ -1558,7 +1558,7 @@
         "tradition": [
             "Efferd (Wind, Wogen)", "Swafnir (Tapferkeit)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1573,7 +1573,7 @@
         "tradition": [
             "Nandus (Bildung)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1589,7 +1589,7 @@
             "Phex (Schatten)",
             "Aves (Schicksal)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Mondsilberzunge.html",
@@ -1603,7 +1603,7 @@
         "tradition": [
             "Phex (Handel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Motivation.html",
@@ -1617,7 +1617,7 @@
         "tradition": [
             "Tsa (Freiheit)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1632,7 +1632,7 @@
         "tradition": [
             "Kor (Guter Kampf)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_NamenloseKaelte.html",
@@ -1646,7 +1646,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_NamenloseRaserei.html",
@@ -1660,7 +1660,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1675,7 +1675,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1690,7 +1690,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1704,7 +1704,7 @@
         "tradition": [
             "Tairach (Geisterwelt)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Numinorusfesseln.html",
@@ -1717,7 +1717,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Objektsegen.html",
@@ -1731,7 +1731,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Obsession.html",
@@ -1745,7 +1745,7 @@
         "tradition": [
             "Rahja (Ekstase)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1760,7 +1760,7 @@
         "tradition": [
             "Nandus (Erkenntnis)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -1772,7 +1772,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": {},
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Opfergang.html",
@@ -1786,7 +1786,7 @@
         "tradition": [
             "Rondra (Schild)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_OrtderRuhe.html",
@@ -1802,7 +1802,7 @@
             "Firun (Jagd)",
             "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Pech_und_Schwefel.html",
@@ -1816,7 +1816,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -1830,7 +1830,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Pflanzenwuchs.html",
@@ -1844,7 +1844,7 @@
         "tradition": [
             "Peraine (Landwirtschaft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_polarbaerenruf.html",
@@ -1857,7 +1857,7 @@
         "tradition": [
             "Fjarningerschamanen (Eis)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Quallenhaut.html",
@@ -1870,7 +1870,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Quallenruf.html",
@@ -1883,7 +1883,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Rabenruf.html",
@@ -1897,7 +1897,7 @@
         "tradition": [
             "Boron (Tod, Traum)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Rattenschwarm.html",
@@ -1911,7 +1911,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_regenbogenbruecke.html",
@@ -1924,7 +1924,7 @@
         "tradition": [
             "Tsa (Freiheit, Wandel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_reinigung_des_boesen.html",
@@ -1937,7 +1937,7 @@
         "tradition": [
             "Peraine (Landwirtschaft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_rinderruf.html",
@@ -1950,7 +1950,7 @@
         "tradition": [
             "Ferkinaschamanen (Blut, Tier)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Ruf_der_Heimat.html",
@@ -1964,7 +1964,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_schattenfessel.html",
@@ -1977,7 +1977,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit, Vision)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Schiffsgespür.html",
@@ -1990,7 +1990,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Schlaf.html",
@@ -2004,7 +2004,7 @@
         "tradition": [
             "Boron (Traum)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -2018,7 +2018,7 @@
         "tradition": [
             "Mohaschamanen (Dschungel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Schlangenstab.html",
@@ -2032,7 +2032,7 @@
         "tradition": [
             "Hesinde (Magie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Schlangenzunge.html",
@@ -2046,7 +2046,7 @@
         "tradition": [
             "Hesinde (Magie, Wissen)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Schleichende_Fäulnis.html",
@@ -2060,7 +2060,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -2074,7 +2074,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Schmerzresistenz.html",
@@ -2088,7 +2088,7 @@
         "tradition": [
             "Kor (Guter Kampf, Gutes Gold)", "Rondra (Schild)", "Swafnir (Kraft)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_schonfrist.html",
@@ -2101,7 +2101,7 @@
         "tradition": [
             "Hesinde (Magie, Wissen)", "Nandus (Bildung, Erkenntnis)", "Peraine (Heilung, Landwirtschaft)", "Travia (Freundschaft, Heim)", "Tsa (Freiheit, Wandel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_SchutzderWehrlosen.html",
@@ -2115,7 +2115,7 @@
         "tradition": [
             "Rondra (Schild)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -2130,7 +2130,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Schwindende_Zauberkraft.html",
@@ -2144,7 +2144,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Seelenschatten.html",
@@ -2158,7 +2158,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Seevogelsprache.html",
@@ -2172,7 +2172,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Sicherer_Weg.html",
@@ -2186,7 +2186,7 @@
         "tradition": [
             "Aves (Reise)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_sicht_in_der_dunkelheit.html",
@@ -2199,7 +2199,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit, Vision)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/steinhaut.html",
@@ -2212,7 +2212,7 @@
         "tradition": [
             "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Sternenglanz.html",
@@ -2226,7 +2226,7 @@
         "tradition": [
             "Phex (Handel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Sturmruf.html",
@@ -2240,7 +2240,7 @@
         "tradition": [
             "Rondra (Sturm)", "Swafnir (Kraft, Tapferkeit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_talismanruf.html",
@@ -2253,7 +2253,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_tierbeherrschung.html",
@@ -2266,7 +2266,7 @@
         "tradition": [
             "Levthan (Begierde)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -2282,7 +2282,7 @@
             "Aves (Reise)",
             "Ifirn (Natur)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -2297,7 +2297,7 @@
         "tradition": [
             "Ifirn (Natur)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Tiersprache.html",
@@ -2311,7 +2311,7 @@
         "tradition": [
             "Ferkinaschamanen (Tier)", "Fjarningerschamanen (Härte)", "Gjalskerschamanen (Wildheit)", "Ifirn (Natur)", "Mohaschamanen (Dschungel)", "Nivesenschamanen (Wölfe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/trankfluch.html",
@@ -2324,7 +2324,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Treuer_Begleiter.html",
@@ -2338,7 +2338,7 @@
         "tradition": [
             "Aves (Schicksal)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Unsichtbareflut.html",
@@ -2351,7 +2351,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Unterwasseratmung.html",
@@ -2365,7 +2365,7 @@
         "tradition": [
             "Efferd (Wind, Wogen)", "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_untotenerhebung.html",
@@ -2378,7 +2378,7 @@
         "tradition": [
             "Ferkinaschamanen (Blut)", "Mohaschamanen (Dschungel)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_vampirische_kraefte.html",
@@ -2391,7 +2391,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Versteinerung.html",
@@ -2405,7 +2405,7 @@
         "tradition": [
             "Ingerimm (Feuer, Handwerk)", "Trollzackerschamanen (Stein)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "ZK"
     },
     {
@@ -2420,7 +2420,7 @@
         "tradition": [
             "Praios (Ordnung)", "Gjalskerschamanen (Gemeinschaft)", "Mohaschamanen (Sonne)", "Nandus (Erkenntnis)"
         ],
-        "chanttype": "liturgy",
+        "chanttype": "Liturgie",
         "modagainst": "SK"
     },
     {
@@ -2434,7 +2434,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Wasserlauf.html",
@@ -2448,7 +2448,7 @@
         "tradition": [
             "Efferd (Wogen)", "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_weihe_des_bodens.html",
@@ -2461,7 +2461,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Wieselflink.html",
@@ -2475,7 +2475,7 @@
         "tradition": [
             "Phex (Schatten)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_Windhose.html",
@@ -2489,7 +2489,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_Windruf.html",
@@ -2502,7 +2502,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_wolfsruf.html",
@@ -2515,7 +2515,7 @@
         "tradition": [
             "Nivesenschamanen (Wölfe)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/Lit_WundersameVerständigung.html",
@@ -2530,7 +2530,7 @@
             "Phex (Handel)",
             "Hesinde (Wissen)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit_zwergenmacht.html",
@@ -2543,7 +2543,7 @@
         "tradition": [
             "Angrosch (Erz, Flammen)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/lit-Zähe_Haut.html",
@@ -2557,7 +2557,7 @@
         "tradition": [
             "Kor (Guter Kampf)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/zer_Aufnahme_Initiation.html",
@@ -2571,7 +2571,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Ächtung_Exkommunikation.html",
@@ -2585,7 +2585,7 @@
         "tradition": [
             "allgemein", "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Rabengestalt.html",
@@ -2599,7 +2599,7 @@
         "tradition": [
             "Boron (Tod, Traum)", "Marbo (Vergänglichkeit, Vision)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Lit_Ackersegen.html",
@@ -2613,7 +2613,7 @@
         "tradition": [
             "Peraine (Landwirtschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_arcanum_interdictum.html",
@@ -2626,7 +2626,7 @@
         "tradition": [
             "Praios (Antimagie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Ausbrennen_Purgation.html",
@@ -2645,7 +2645,7 @@
             "Praios (Antimagie)",
             "Rondra (Schild, Sturm)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Bannfluch_Anathema.html",
@@ -2659,7 +2659,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -2674,7 +2674,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)", "Rahja (Ekstase)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Beschwörung_der_hohen_Diener.html",
@@ -2688,7 +2688,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Beschwörung_der_machtvollen_Diener.html",
@@ -2702,7 +2702,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Bild_für_die_Ewigkeit.html",
@@ -2716,7 +2716,7 @@
         "tradition": [
             "Boron (Tod)", "Hesinde (Wissen)", "Nandus (Bildung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Blick_in_die_Flammen.html",
@@ -2730,7 +2730,7 @@
         "tradition": [
             "Angrosch (Flammen)", "Ingerimm (Feuer)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zeremonie_DasLoeschenDesLichts.html",
@@ -2743,7 +2743,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Delphingestalt.html",
@@ -2756,7 +2756,7 @@
         "tradition": [
             "Efferd (Wind, Wogen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_der_erde.html",
@@ -2769,7 +2769,7 @@
         "tradition": [
             "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_der_flammen.html",
@@ -2782,7 +2782,7 @@
         "tradition": [
             "Angrosch (Flammen)", "Fjarningerschamanen (Eis, Härte)", "Nivesenschamanen (Winter, Wölfe)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_der_kälte.html",
@@ -2795,7 +2795,7 @@
         "tradition": [
             "Ferkinaschamanen (Blut, Tier)", "Fjarningerschamanen (Eis, Härte)", "Nivesenschamanen (Winter, Wölfe)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_der_wellen.html",
@@ -2808,7 +2808,7 @@
         "tradition": [
             "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)", "Trollzackerschamanen (Leiden, Stein)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_der_wolken.html",
@@ -2821,7 +2821,7 @@
         "tradition": [
             "Ferkinaschamanen (Blut, Tier)", "Gjalskerschamanen (Gemeinschaft, Wildheit)", "Mohaschamanen (Dschungel, Sonne)", "Nivesenschamanen (Winter, Wölfe)", "Trollzackerschamanen (Leiden, Stein)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_diener_des_erzes.html",
@@ -2837,7 +2837,7 @@
             "Fjarningerschamanen (Eis, Härte)",
             "Trollzackerschamanen (Leiden, Stein)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Daemonenpakt_brechen.html",
@@ -2850,7 +2850,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -2865,7 +2865,7 @@
         "tradition": [
             "Tsa (Freiheit, Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_eidechsenregeneration.html",
@@ -2878,7 +2878,7 @@
         "tradition": [
             "Tsa (Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/z_Einflüsterung.html",
@@ -2891,7 +2891,7 @@
         "tradition": [
             "Levthan (Begierde)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Eisbärgestalt.html",
@@ -2906,7 +2906,7 @@
             "Firun (Jagd, Kälte)",
             "Fjarningerschamanen (Eis, Härte)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_elsterngestalt.html",
@@ -2919,7 +2919,7 @@
         "tradition": [
             "Phex (Handel, Schatten)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_EmpfaengnisdesKorsmals.html",
@@ -2932,7 +2932,7 @@
         "tradition": [
             "Kor (Guter Kampf, Gutes Gold)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_erfolgreiche_pflanzensuche.html",
@@ -2945,7 +2945,7 @@
         "tradition": [
             "Peraine (Heilung, Landwirtschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Erinnern.html",
@@ -2961,7 +2961,7 @@
             "Hesinde (Wissen)",
             "Nandus (Erkenntnis)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_erschaffung_von_nachtkindern.html",
@@ -2974,7 +2974,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Exorzismus.html",
@@ -2991,7 +2991,7 @@
             "Praios (Antimagie)",
             "Boron (Traum)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -3005,7 +3005,7 @@
         "tradition": [
             "Praios (Antimagie, Ordnung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Fest_der__Freude.html",
@@ -3020,7 +3020,7 @@
             "Levthan (Begierde)",
             "Rahja (Ekstase)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Frostschutz.html",
@@ -3035,7 +3035,7 @@
             "Firun (Kälte)",
             "Ifirn (Natur)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Fruchtbarkeit.html",
@@ -3050,7 +3050,7 @@
             "Peraine (Heilung, Landwirtschaft)",
             "Tsa (Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Fuchsgestalt.html",
@@ -3064,7 +3064,7 @@
         "tradition": [
             "Phex (Handel, Schatten)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_geistersprache.html",
@@ -3077,7 +3077,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_geistheilung.html",
@@ -3090,7 +3090,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/z_Geschlechterwechsel.html",
@@ -3103,7 +3103,7 @@
         "tradition": [
             "Rahja (Ekstase)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Geschwinder_Schritt.html",
@@ -3117,7 +3117,7 @@
         "tradition": [
             "Aves (Reise)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_gespräch_mit_den_toten.html",
@@ -3130,7 +3130,7 @@
         "tradition": [
             "Boron (Tod)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Lit_GeweihterPanzer.html",
@@ -3144,7 +3144,7 @@
         "tradition": [
             "Angrosch (Erz)", "Ingerimm (Feuer, Handwerk)", "Kor (Gutes Gold)", "Rondra (Sturm)", "Swafnir (Tapferkeit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/gnade-des-vergessens.html",
@@ -3157,7 +3157,7 @@
         "tradition": [
             "Tairach (Geisterwelt)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -3172,7 +3172,7 @@
         "tradition": [
             "Praios (Ordnung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_große_waffenweihe.html",
@@ -3187,7 +3187,7 @@
             "Kor (Guter Kampf, Gutes Gold)",
             "Rondra (Schild, Sturm)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_GuterFang.html",
@@ -3201,7 +3201,7 @@
         "tradition": [
             "Efferd (Wogen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Gänsegestalt.html",
@@ -3215,7 +3215,7 @@
         "tradition": [
             "Travia (Freundschaft, Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Göttliche_Erkenntnis.html",
@@ -3229,7 +3229,7 @@
         "tradition": [
             "Nandus (Bildung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_goettliche_präzision.html",
@@ -3243,7 +3243,7 @@
             "Firun (Jagd)",
             "Ifirn (Natur)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Heiliger_Schwur.html",
@@ -3258,7 +3258,7 @@
             "allgemein",
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_heilschlaf.html",
@@ -3272,7 +3272,7 @@
             "Boron (Traum)",
             "Peraine (Heilung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_heilung_von_seelenkranken.html",
@@ -3286,7 +3286,7 @@
             "Boron (Traum)",
             "Marbo (Vision)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Herr_der_Meere.html",
@@ -3300,7 +3300,7 @@
         "tradition": [
             "Swafnir (Kraft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Hilfe_in_der_Not.html",
@@ -3314,7 +3314,7 @@
         "tradition": [
             "Ifirn (Hilfsbereitschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_himmlische_schatzkammer.html",
@@ -3327,7 +3327,7 @@
         "tradition": [
             "Phex (Handel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_hundegestalt.html",
@@ -3341,7 +3341,7 @@
             "Angrosch (Erz, Flammen)",
             "Ingerimm (Feuer, Handwerk)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Häutung.html",
@@ -3355,7 +3355,7 @@
         "tradition": [
             "Tsa (Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Inspiration.html",
@@ -3370,7 +3370,7 @@
             "Hesinde (Wissen)",
             "Tsa (Freiheit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Jagdglück.html",
@@ -3390,7 +3390,7 @@
             "Nivesenschamanen (Winter)",
             "Trollzackerschamanen (Leiden)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_jaguargestalt.html",
@@ -3403,7 +3403,7 @@
         "tradition": [
             "Mohaschamanen (Dschungel, Sonne)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Jugendlichkeit.html",
@@ -3419,7 +3419,7 @@
             "Rahja (Harmonie)",
             "Tsa (Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_KleineMoralstaerkung.html",
@@ -3434,7 +3434,7 @@
             "Aves (Schicksal)",
             "Efferd (Wogen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_kriegszustand.html",
@@ -3447,7 +3447,7 @@
         "tradition": [
             "Rondra (Schild, Sturm)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_lebenstausch.html",
@@ -3460,7 +3460,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit, Vision)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_leichtfüssig.html",
@@ -3474,7 +3474,7 @@
             "Aves (Reise)",
             "Tsa (Freiheit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_LeitendeStroemung.html",
@@ -3487,7 +3487,7 @@
         "tradition": [
             "Numinoru (Unendliche Tiefe)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/z_Liebestätowierung.html",
@@ -3500,7 +3500,7 @@
         "tradition": [
             "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Liturgieabsorption.html",
@@ -3514,7 +3514,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_luchsgestalt.html",
@@ -3527,7 +3527,7 @@
         "tradition": [
             "Praios (Antimagie, Ordnung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Läuterung_des_Erzes.html",
@@ -3542,7 +3542,7 @@
             "Angrosch (Erz)",
             "Ingerimm (Handwerk)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Löwengestalt.html",
@@ -3556,7 +3556,7 @@
         "tradition": [
             "Rondra (Schild, Sturm)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_machtvoller_exorzismus.html",
@@ -3570,7 +3570,7 @@
             "Praios (Antimagie)",
             "Boron (Traum)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -3586,7 +3586,7 @@
             "Rahja (Harmonie)",
             "Tsa (Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_marbidenmacht.html",
@@ -3599,7 +3599,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Metallerhitzung.html",
@@ -3614,7 +3614,7 @@
             "Angrosch (Erz)",
             "Ingerimm (Handwerk)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Moralstärkung.html",
@@ -3628,7 +3628,7 @@
         "tradition": [
             "Efferd (Wogen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_mungogestalt.html",
@@ -3641,7 +3641,7 @@
         "tradition": [
             "Phex (Handel, Schatten)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Nahrungsreinigung.html",
@@ -3655,7 +3655,7 @@
         "tradition": [
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Nebelleib.html",
@@ -3670,7 +3670,7 @@
             "Efferd (Wind)",
             "Phex (Schatten)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Nebelschwaden.html",
@@ -3684,7 +3684,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_NuminorusFluch.html",
@@ -3697,7 +3697,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/Zer_Objektweihe.html",
@@ -3712,7 +3712,7 @@
             "allgemein",
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Ortsweihe_Sanctum.html",
@@ -3727,7 +3727,7 @@
             "allgemein",
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Panthergestalt.html",
@@ -3741,7 +3741,7 @@
         "tradition": [
             "Kor (Guter Kampf, Gutes Gold)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Paradiesvogelgestalt.html",
@@ -3755,7 +3755,7 @@
         "tradition": [
             "Aves (Reise, Schicksal)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Pferdegestalt.html",
@@ -3769,7 +3769,7 @@
         "tradition": [
             "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Pflanzenkraft.html",
@@ -3782,7 +3782,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Priesterweihe_Ordination.html",
@@ -3797,7 +3797,7 @@
             "allgemein",
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_rat_der_ahnen.html",
@@ -3810,7 +3810,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_regenkontrolle.html",
@@ -3823,7 +3823,7 @@
         "tradition": [
             "Efferd (Wind)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Reisesegen.html",
@@ -3839,7 +3839,7 @@
             "Firun (Jagd)",
             "Travia (Freundschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/schaffenskraft.html",
@@ -3852,7 +3852,7 @@
         "tradition": [
             "Angrosch (Erz)", "Ingerimm (Handwerk)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Schattenrochengestalt.html",
@@ -3865,7 +3865,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel, Unendliche Tiefe)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_schlangenfluch.html",
@@ -3878,7 +3878,7 @@
         "tradition": [
             "Mohaschamanen (Dschungel)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -3893,7 +3893,7 @@
         "tradition": [
             "Hesinde (Magie, Wissen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_schmetterlingsgestalt.html",
@@ -3906,7 +3906,7 @@
         "tradition": [
             "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Schwanengestalt.html",
@@ -3920,7 +3920,7 @@
         "tradition": [
             "Ifirn (Hilfsbereitschaft, Natur)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Seelenbannung.html",
@@ -3934,7 +3934,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -3950,7 +3950,7 @@
             "allgemein",
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Seemonsterruf.html",
@@ -3963,7 +3963,7 @@
         "tradition": [
             "Numinoru (Reißender Strudel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Segnung_des_Heims.html",
@@ -3977,7 +3977,7 @@
         "tradition": [
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_selbstopferung.html",
@@ -3992,7 +3992,7 @@
             "Nivesenschamanen (Winter)",
             "Trollzackerschamanen (Leiden)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Sicherer_Tritt.html",
@@ -4006,7 +4006,7 @@
         "tradition": [
             "Firun (Kälte)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_sippenbann.html",
@@ -4019,7 +4019,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4034,7 +4034,7 @@
         "tradition": [
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Staub_und_Schimmel.html",
@@ -4048,7 +4048,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Storchengestalt.html",
@@ -4062,7 +4062,7 @@
         "tradition": [
             "Peraine (Heilung, Landwirtschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_staerkung_der_wildnis.html",
@@ -4075,7 +4075,7 @@
         "tradition": [
             "Firun (Jagd)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Sättigung.html",
@@ -4090,7 +4090,7 @@
             "Peraine (Landwirtschaft)",
             "Travia (Freundschaft)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_tabuzone.html",
@@ -4103,7 +4103,7 @@
         "tradition": [
             "allgemein (Schamanenritus)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/tairachs-machtvolle-erhebung-von-untoten.html",
@@ -4116,7 +4116,7 @@
         "tradition": [
             "Tairach (Geisterwelt, Zauberei)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_talismanverankerung.html",
@@ -4129,7 +4129,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_taubengestalt.html",
@@ -4142,7 +4142,7 @@
         "tradition": [
             "Marbo (Vergänglichkeit, Vision)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Tempelweihe_Konsekration.html",
@@ -4156,7 +4156,7 @@
         "tradition": [
             "allgemein"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Traumbild.html",
@@ -4171,7 +4171,7 @@
             "Boron (Traum)",
             "Marbo (Vision)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4183,7 +4183,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": {},
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4198,7 +4198,7 @@
         "tradition": [
             "Aves (Reise)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_untote_erschaffen.html",
@@ -4209,7 +4209,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": {},
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Verblassende_Erinnerung.html",
@@ -4225,7 +4225,7 @@
             "Rahja (Harmonie)",
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4240,7 +4240,7 @@
         "tradition": [
             "Boron (Tod)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4255,7 +4255,7 @@
         "tradition": [
             "Namenloser"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Wegweiser.html",
@@ -4269,7 +4269,7 @@
         "tradition": [
             "Aves (Schicksal)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Weihe_des_Heims.html",
@@ -4285,7 +4285,7 @@
             "Rondra (Schild)",
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/z_Widdergestalt.html",
@@ -4298,7 +4298,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Wiederherstellung.html",
@@ -4313,7 +4313,7 @@
             "Ingerimm (Handwerk)",
             "Tsa (Freiheit, Wandel)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Winterschlaf.html",
@@ -4331,7 +4331,7 @@
             "Nivesenschamanen (Winter)",
             "Peraine (Heilung)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_wolfsfluch.html",
@@ -4344,7 +4344,7 @@
         "tradition": [
             "Nivesenschamanen (Wölfe)"
         ],
-        "chanttype": "ceremony",
+        "chanttype": "Zeremonie",
         "modagainst": "SK"
     },
     {
@@ -4358,7 +4358,7 @@
         "tradition": [
             "Nivesenschamanen (Mond, Wölfe)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Zuflucht.html",
@@ -4375,7 +4375,7 @@
             "Nivesenschamanen (Winter)",
             "Travia (Heim)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_zwergische_verbrüderung.html",
@@ -4388,7 +4388,7 @@
         "tradition": [
             "Angrosch (Erz, Flammen)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/zer_Zwergwalgestalt.html",
@@ -4402,7 +4402,7 @@
         "tradition": [
             "Swafnir (Kraft, Tapferkeit)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/WdV-Lit_Empfaengnisverhuetung.html",
@@ -4416,7 +4416,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_ErregungKontrollieren.html",
@@ -4430,7 +4430,7 @@
         "tradition": [
             "Levthan (Begierde)", "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_GespiegelteGefuehle.html",
@@ -4444,7 +4444,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_GigantischeGeilheit.html",
@@ -4458,7 +4458,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_HandDerLust.html",
@@ -4472,7 +4472,7 @@
         "tradition": [
             "Levthan (Begierde, Rausch)", "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_HastigerHoehepunkt.html",
@@ -4486,7 +4486,7 @@
         "tradition": [
             "Levthan (Rausch)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_Krankheitsvorbeugung.html",
@@ -4500,7 +4500,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_VerstecktesBegehren.html",
@@ -4515,7 +4515,7 @@
         "tradition": [
             "Levthan (Begierde)"
         ],
-        "chanttype": "liturgy"
+        "chanttype": "Liturgie"
     },
     {
         "url": "index.php/WdV-Lit_HeiligerHoehepunkt.html",
@@ -4529,7 +4529,7 @@
         "tradition": [
             "Rahja (Ekstase, Harmonie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/WdV-Lit_KoerperRadschaUschtammar.html",
@@ -4543,7 +4543,7 @@
         "tradition": [
             "Rahja (Ekstase)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/WdV-Lit_Liebesschlaf.html",
@@ -4557,7 +4557,7 @@
         "tradition": [
             "Rahja (Harmonie)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     },
     {
         "url": "index.php/WdV-Lit_Lusttrank.html",
@@ -4571,6 +4571,6 @@
         "tradition": [
             "Levthan (Begierde, Rausch)"
         ],
-        "chanttype": "ceremony"
+        "chanttype": "Zeremonie"
     }
 ]

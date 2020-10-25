@@ -2,7 +2,7 @@
     {
         "url": "index.php/ZS_Ablativum.html",
         "name": "Ablativum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -13,7 +13,7 @@
     {
         "url": "index.php/ZS_Abvenenum.html",
         "name": "Abvenenum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -24,7 +24,7 @@
     {
         "url": "index.php/ZS_Adlerauge.html",
         "name": "Adlerauge",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -35,7 +35,7 @@
     {
         "url": "index.php/ZS_Adlerschwinge.html",
         "name": "Adlerschwinge",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -46,7 +46,7 @@
     {
         "url": "index.php/ZS_Aeolito.html",
         "name": "Aeolito",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -58,7 +58,7 @@
     {
         "url": "index.php/aa.html",
         "name": "Affenarme",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -69,7 +69,7 @@
     {
         "url": "index.php/ar.html",
         "name": "Affenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -80,7 +80,7 @@
     {
         "url": "index.php/ZS_Alpgestalt.html",
         "name": "Alpgestalt",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -92,7 +92,7 @@
     {
         "url": "index.php/ZS_Altisonus.html",
         "name": "Altisonus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -103,7 +103,7 @@
     {
         "url": "index.php/ZS_Analys.html",
         "name": "Analys Arkanstruktur",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -114,7 +114,7 @@
     {
         "url": "index.php/ZS_Angstausloesen.html",
         "name": "Angst auslösen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -125,7 +125,7 @@
     {
         "url": "index.php/ZS_Aquafaxius.html",
         "name": "Aquafaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -136,7 +136,7 @@
     {
         "url": "index.php/ZS_Aquasphaero.html",
         "name": "Aquasphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -147,7 +147,7 @@
     {
         "url": "index.php/an.html",
         "name": "Arachnea",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -158,7 +158,7 @@
     {
         "url": "index.php/ZS_Archofaxius.html",
         "name": "Archofaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -169,7 +169,7 @@
     {
         "url": "index.php/ZS_Archosphaero.html",
         "name": "Archosphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -180,7 +180,7 @@
     {
         "url": "index.php/ZS_Armatrutz.html",
         "name": "Armatrutz",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -191,7 +191,7 @@
     {
         "url": "index.php/ZS_AromatisIllusionis.html",
         "name": "Aromatis Illusionis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -202,7 +202,7 @@
     {
         "url": "index.php/ZS_Atemnot.html",
         "name": "Atemnot",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -214,7 +214,7 @@
     {
         "url": "index.php/ZS_AttributoCharisma.html",
         "name": "Attributo (Charisma)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -225,7 +225,7 @@
     {
         "url": "index.php/ZS_AttributoFingerfertigkeit.html",
         "name": "Attributo (Fingerfertigkeit)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -236,7 +236,7 @@
     {
         "url": "index.php/attge.html",
         "name": "Attributo (Gewandtheit)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -247,7 +247,7 @@
     {
         "url": "index.php/attributo-intuition.html",
         "name": "Attributo (Intuition)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
@@ -258,7 +258,7 @@
     {
         "url": "index.php/ZS_AttributoKlugheit.html",
         "name": "Attributo (Klugheit)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -269,7 +269,7 @@
     {
         "url": "index.php/ak.html",
         "name": "Attributo (Konstitution)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -280,7 +280,7 @@
     {
         "url": "index.php/ZS_Attributo_Körperkraft.html",
         "name": "Attributo (Körperkraft)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_8",
@@ -291,7 +291,7 @@
     {
         "url": "index.php/am.html",
         "name": "Attributo (Mut)",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -302,7 +302,7 @@
     {
         "url": "index.php/ZS_Aufwecken.html",
         "name": "Aufwecken",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -313,7 +313,7 @@
     {
         "url": "index.php/ZS_AugedesLimbus.html",
         "name": "Auge des Limbus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_8",
@@ -324,7 +324,7 @@
     {
         "url": "index.php/ZS_Aura_der_Erschoepfung.html",
         "name": "Aura der Erschöpfung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -335,7 +335,7 @@
     {
         "url": "index.php/ZS_Aureolus.html",
         "name": "Aureolus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -346,7 +346,7 @@
     {
         "url": "index.php/ZS_AurisIllusionis.html",
         "name": "Auris Illusionis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -357,7 +357,7 @@
     {
         "url": "index.php/avl.html",
         "name": "Avilea",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -368,7 +368,7 @@
     {
         "url": "index.php/ZS_Axxeleratus.html",
         "name": "Axxeleratus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -379,7 +379,7 @@
     {
         "url": "index.php/ZS_Balsam.html",
         "name": "Balsam Salabunde",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -390,7 +390,7 @@
     {
         "url": "index.php/ZS_BandundFessel.html",
         "name": "Band und Fessel",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
@@ -402,7 +402,7 @@
     {
         "url": "index.php/ZS_Bannbaladin.html",
         "name": "Bannbaladin",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -414,7 +414,7 @@
     {
         "url": "index.php/bl.html",
         "name": "Basaltleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -425,7 +425,7 @@
     {
         "url": "index.php/ZS_BlickaufsWesen.html",
         "name": "Blick aufs Wesen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -437,7 +437,7 @@
     {
         "url": "index.php/ZS_Blick_in_die_Gedanken.html",
         "name": "Blick in die Gedanken",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -449,7 +449,7 @@
     {
         "url": "index.php/ZS_Blindheit.html",
         "name": "Blindheit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -461,7 +461,7 @@
     {
         "url": "index.php/ZS_Blitz.html",
         "name": "Blitz dich find",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -473,7 +473,7 @@
     {
         "url": "index.php/ZS_Blitzball.html",
         "name": "Blitzball",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -484,7 +484,7 @@
     {
         "url": "index.php/brl.html",
         "name": "Brandungsleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -495,7 +495,7 @@
     {
         "url": "index.php/brazoraghs-hieb.html",
         "name": "Brazoraghs Hieb",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_7",
         "ab3": "ATTR_8",
@@ -506,7 +506,7 @@
     {
         "url": "index.php/bh.html",
         "name": "Brennender Hass",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -518,7 +518,7 @@
     {
         "url": "index.php/ZS_Boeser_Blick.html",
         "name": "Böser Blick",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -530,7 +530,7 @@
     {
         "url": "index.php/ZS_Chamaelioni.html",
         "name": "Chamaelioni",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -541,7 +541,7 @@
     {
         "url": "index.php/ZS_Claudibus.html",
         "name": "Claudibus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -552,7 +552,7 @@
     {
         "url": "index.php/ZS_Corpofesso.html",
         "name": "Corpofesso",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -564,7 +564,7 @@
     {
         "url": "index.php/ZS_Corpofrigo.html",
         "name": "Corpofrigo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -576,7 +576,7 @@
     {
         "url": "index.php/ZS_Debilitatio.html",
         "name": "Debilitatio",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -587,7 +587,7 @@
     {
         "url": "index.php/ZS_Desintegratus.html",
         "name": "Desintegratus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
@@ -598,7 +598,7 @@
     {
         "url": "index.php/ZS_Disruptivo.html",
         "name": "Disruptivo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -609,7 +609,7 @@
     {
         "url": "index.php/ZS_Dornenwand.html",
         "name": "Dornenwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -620,7 +620,7 @@
     {
         "url": "index.php/dl.html",
         "name": "Drachenleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -631,7 +631,7 @@
     {
         "url": "index.php/ZS_Dunkelheit.html",
         "name": "Dunkelheit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -642,7 +642,7 @@
     {
         "url": "index.php/ZS_Duplicatus.html",
         "name": "Duplicatus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -653,7 +653,7 @@
     {
         "url": "index.php/ZS_Daemonenbann.html",
         "name": "Dämonenbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -664,7 +664,7 @@
     {
         "url": "index.php/ZS_Daemonenschild.html",
         "name": "Dämonenschild",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -675,7 +675,7 @@
     {
         "url": "index.php/dv.html",
         "name": "Dämonisches Vergessen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -687,7 +687,7 @@
     {
         "url": "index.php/ZS_Ecliptifactus.html",
         "name": "Ecliptifactus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -698,7 +698,7 @@
     {
         "url": "index.php/el.html",
         "name": "Eichenleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -709,7 +709,7 @@
     {
         "url": "index.php/ed.html",
         "name": "Eigene Dummheit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -721,7 +721,7 @@
     {
         "url": "index.php/ZS_EigeneAengste.html",
         "name": "Eigene Ängste",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -733,7 +733,7 @@
     {
         "url": "index.php/ZS_Einflussbann.html",
         "name": "Einflussbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -744,7 +744,7 @@
     {
         "url": "index.php/ZS_Eisenrost.html",
         "name": "Eisenrost",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -755,7 +755,7 @@
     {
         "url": "index.php/eispf.html",
         "name": "Eispfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -766,7 +766,7 @@
     {
         "url": "index.php/ZS_Eiswand.html",
         "name": "Eiswand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -777,7 +777,7 @@
     {
         "url": "index.php/ZS_Elementarbann.html",
         "name": "Elementarbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -788,7 +788,7 @@
     {
         "url": "index.php/ZS_Elfenstimme.html",
         "name": "Elfenstimme",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -799,7 +799,7 @@
     {
         "url": "index.php/ZS_Erinnerungverlassedich.html",
         "name": "Erinnerung verlasse dich",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -811,7 +811,7 @@
     {
         "url": "index.php/ZS_Erschoepfungen_lindern.html",
         "name": "Erschöpfungen lindern",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -822,7 +822,7 @@
     {
         "url": "index.php/erzpf.html",
         "name": "Erzpfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -833,7 +833,7 @@
     {
         "url": "index.php/er.html",
         "name": "Eulenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -844,7 +844,7 @@
     {
         "url": "index.php/ZS_Exposami.html",
         "name": "Exposami",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -855,7 +855,7 @@
     {
         "url": "index.php/SZ_Falkenauge.html",
         "name": "Falkenauge",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -866,7 +866,7 @@
     {
         "url": "index.php/ZS_Favilludo.html",
         "name": "Favilludo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_5",
         "ab3": "ATTR_4",
@@ -877,7 +877,7 @@
     {
         "url": "index.php/fl.html",
         "name": "Federleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -888,7 +888,7 @@
     {
         "url": "index.php/fs.html",
         "name": "Feenstaub",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -899,7 +899,7 @@
     {
         "url": "index.php/ZS_Fesselfeld.html",
         "name": "Fesselfeld",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -910,7 +910,7 @@
     {
         "url": "index.php/feuerpf.html",
         "name": "Feuerpfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -921,7 +921,7 @@
     {
         "url": "index.php/ZS_Firnlauf.html",
         "name": "Firnlauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -932,7 +932,7 @@
     {
         "url": "index.php/ZS_Fischflosse.html",
         "name": "Fischflosse",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -943,7 +943,7 @@
     {
         "url": "index.php/flw.html",
         "name": "Flammenwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -954,7 +954,7 @@
     {
         "url": "index.php/flr.html",
         "name": "Fledermausruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -965,7 +965,7 @@
     {
         "url": "index.php/ZS_Flim_Flam.html",
         "name": "Flim Flam",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -976,7 +976,7 @@
     {
         "url": "index.php/ZS_Foramen.html",
         "name": "Foramen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -987,7 +987,7 @@
     {
         "url": "index.php/ZS_Fortifex.html",
         "name": "Fortifex",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -998,7 +998,7 @@
     {
         "url": "index.php/frigifaxius.html",
         "name": "Frigifaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1009,7 +1009,7 @@
     {
         "url": "index.php/ZS_Frigisphaero.html",
         "name": "Frigisphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -1020,7 +1020,7 @@
     {
         "url": "index.php/frostlb.html",
         "name": "Frostleib",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -1031,7 +1031,7 @@
     {
         "url": "index.php/ZS_Fulminictus.html",
         "name": "Fulminictus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1044,7 +1044,7 @@
     {
         "url": "index.php/ZS_Gardianium.html",
         "name": "Gardianum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1055,7 +1055,7 @@
     {
         "url": "index.php/ZS_Gedankenbilder.html",
         "name": "Gedankenbilder",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -1066,7 +1066,7 @@
     {
         "url": "index.php/ZS_Gefunden.html",
         "name": "Gefunden",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -1077,7 +1077,7 @@
     {
         "url": "index.php/ge.html",
         "name": "Geisteressenz",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1088,7 +1088,7 @@
     {
         "url": "index.php/gifth.html",
         "name": "Gifthaut",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1099,7 +1099,7 @@
     {
         "url": "index.php/gl.html",
         "name": "Glutlauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -1110,7 +1110,7 @@
     {
         "url": "index.php/ZS_GrosseGier.html",
         "name": "Große Gier",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1122,7 +1122,7 @@
     {
         "url": "index.php/ZS_GrosseVerwirrung.html",
         "name": "Große Verwirrung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1134,7 +1134,7 @@
     {
         "url": "index.php/ZS_Halluzination.html",
         "name": "Halluzination",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1146,7 +1146,7 @@
     {
         "url": "index.php/ZS_Harmlose_Gestalt.html",
         "name": "Harmlose Gestalt",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1157,7 +1157,7 @@
     {
         "url": "index.php/ZS_Haselbusch.html",
         "name": "Haselbusch",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1168,7 +1168,7 @@
     {
         "url": "index.php/ZS_Heilungsbann.html",
         "name": "Heilungsbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1179,7 +1179,7 @@
     {
         "url": "index.php/ZS_Hellsichtbann.html",
         "name": "Hellsichtbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1190,7 +1190,7 @@
     {
         "url": "index.php/ZS_Heptagramma.html",
         "name": "Heptagramma",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1201,7 +1201,7 @@
     {
         "url": "index.php/ZS_Herr_ueber_das_Tierreich.html",
         "name": "Herr über das Tierreich",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1213,7 +1213,7 @@
     {
         "url": "index.php/ZS_Herzschlagruhe.html",
         "name": "Herzschlag ruhe",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
@@ -1225,7 +1225,7 @@
     {
         "url": "index.php/ZS_Hexagramma.html",
         "name": "Hexagramma",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1236,7 +1236,7 @@
     {
         "url": "index.php/ZS_Hexengalle.html",
         "name": "Hexengalle",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1247,7 +1247,7 @@
     {
         "url": "index.php/ZS_Hexenholz.html",
         "name": "Hexenholz",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -1258,7 +1258,7 @@
     {
         "url": "index.php/ZS_Hexenknoten.html",
         "name": "Hexenknoten",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1269,7 +1269,7 @@
     {
         "url": "index.php/ZS_Hexenkrallen.html",
         "name": "Hexenkrallen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1280,7 +1280,7 @@
     {
         "url": "index.php/hs.html",
         "name": "Hexenspeichel",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1291,7 +1291,7 @@
     {
         "url": "index.php/hp.html",
         "name": "Hilfreiche Pfote",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1302,7 +1302,7 @@
     {
         "url": "index.php/hilfsw.html",
         "name": "Hilfreiche Schwinge",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1313,7 +1313,7 @@
     {
         "url": "index.php/ht.html",
         "name": "Hilfreiche Tatze",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1324,7 +1324,7 @@
     {
         "url": "index.php/hl.html",
         "name": "Himmelslauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -1335,7 +1335,7 @@
     {
         "url": "index.php/hr.html",
         "name": "Hornissenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -1346,7 +1346,7 @@
     {
         "url": "index.php/ZS_Horriphobus.html",
         "name": "Horriphobus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1358,7 +1358,7 @@
     {
         "url": "index.php/ZS_Humofaxius.html",
         "name": "Humofaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1369,7 +1369,7 @@
     {
         "url": "index.php/ZS_Humosphaero.html",
         "name": "Humosphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -1380,7 +1380,7 @@
     {
         "url": "index.php/hpf.html",
         "name": "Humuspfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1391,7 +1391,7 @@
     {
         "url": "index.php/ZS_Höllenpein.html",
         "name": "Höllenpein",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1403,7 +1403,7 @@
     {
         "url": "index.php/ZS_Ignifaxius.html",
         "name": "Ignifaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1414,7 +1414,7 @@
     {
         "url": "index.php/ZS_Ignisphaero.html",
         "name": "Ignisphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -1425,7 +1425,7 @@
     {
         "url": "index.php/ZS_Ignorantia.html",
         "name": "Ignorantia",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -1437,7 +1437,7 @@
     {
         "url": "index.php/ZS_Illusionsbann.html",
         "name": "Illusionsbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1448,7 +1448,7 @@
     {
         "url": "index.php/ZS_Imperavi.html",
         "name": "Imperavi",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1460,7 +1460,7 @@
     {
         "url": "index.php/ZS_Impersona.html",
         "name": "Impersona",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1471,7 +1471,7 @@
     {
         "url": "index.php/ZS_Incendio.html",
         "name": "Incendio",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -1483,7 +1483,7 @@
     {
         "url": "index.php/ZS_Invercano.html",
         "name": "Invercano",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -1494,7 +1494,7 @@
     {
         "url": "index.php/ZS_Invinculo.html",
         "name": "Invinculo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -1506,7 +1506,7 @@
     {
         "url": "index.php/ZS_Invominima.html",
         "name": "Invocatio Minima",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -1517,7 +1517,7 @@
     {
         "url": "index.php/ZS_Karnifilo.html",
         "name": "Karnifilo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1529,7 +1529,7 @@
     {
         "url": "index.php/ZS_Katzenaugen.html",
         "name": "Katzenaugen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1540,7 +1540,7 @@
     {
         "url": "index.php/kr.html",
         "name": "Katzenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -1551,7 +1551,7 @@
     {
         "url": "index.php/ZS_Klarum_Purum.html",
         "name": "Klarum Purum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1562,7 +1562,7 @@
     {
         "url": "index.php/ks.html",
         "name": "Krabbelnder Schrecken",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1573,7 +1573,7 @@
     {
         "url": "index.php/kraft-aus-schmerzen.html",
         "name": "Kraft aus Schmerzen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1584,7 +1584,7 @@
     {
         "url": "index.php/kdt.html",
         "name": "Kraft des Tieres",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1595,7 +1595,7 @@
     {
         "url": "index.php/krär.html",
         "name": "Krähenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -1606,7 +1606,7 @@
     {
         "url": "index.php/ZS_Krötensprung.html",
         "name": "Krötensprung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1617,7 +1617,7 @@
     {
         "url": "index.php/kn.html",
         "name": "Kulminatio",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1628,7 +1628,7 @@
     {
         "url": "index.php/ZS_Kusch.html",
         "name": "Kusch",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1640,7 +1640,7 @@
     {
         "url": "index.php/ZS_LastdesAlters.html",
         "name": "Last des Alters",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -1652,7 +1652,7 @@
     {
         "url": "index.php/lf.html",
         "name": "Levthans Feuer",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1664,7 +1664,7 @@
     {
         "url": "index.php/lpf.html",
         "name": "Luftpfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1675,7 +1675,7 @@
     {
         "url": "index.php/ZS_LungedesLeviatan.html",
         "name": "Lunge des Leviatan",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1686,7 +1686,7 @@
     {
         "url": "index.php/mde.html",
         "name": "Mal der Erschöpfung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1698,7 +1698,7 @@
     {
         "url": "index.php/mds.html",
         "name": "Mal der Schwäche",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1710,7 +1710,7 @@
     {
         "url": "index.php/ZS_Manifesto.html",
         "name": "Manifesto",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1721,7 +1721,7 @@
     {
         "url": "index.php/ZS_ManusIllusionis.html",
         "name": "Manus Illusionis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1732,7 +1732,7 @@
     {
         "url": "index.php/ZS_Manus_Miracula.html",
         "name": "Manus Miracula",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -1743,7 +1743,7 @@
     {
         "url": "index.php/ZS_Memorans.html",
         "name": "Memorans",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -1754,7 +1754,7 @@
     {
         "url": "index.php/ZS_Menetekel.html",
         "name": "Menetekel",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -1765,7 +1765,7 @@
     {
         "url": "index.php/ZS_Motoricus.html",
         "name": "Motoricus",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -1776,7 +1776,7 @@
     {
         "url": "index.php/ZS_Nebelform.html",
         "name": "Nebelform",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1787,7 +1787,7 @@
     {
         "url": "index.php/ZS_Nebelwand.html",
         "name": "Nebelwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1798,7 +1798,7 @@
     {
         "url": "index.php/ZS_Nuntiovolo.html",
         "name": "Nuntiovolo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1809,7 +1809,7 @@
     {
         "url": "index.php/ZS_Objectobscuro.html",
         "name": "Objectobscuro",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_7",
@@ -1820,7 +1820,7 @@
     {
         "url": "index.php/ZS_Objectofixo.html",
         "name": "Objectofixo",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -1831,7 +1831,7 @@
     {
         "url": "index.php/obv.html",
         "name": "Objectovoco",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1842,7 +1842,7 @@
     {
         "url": "index.php/ZS_Objektbann.html",
         "name": "Objektbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -1853,7 +1853,7 @@
     {
         "url": "index.php/ZS_OculusAstralis.html",
         "name": "Oculus Astralis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1864,7 +1864,7 @@
     {
         "url": "index.php/ZS_Oculus_llusionis.html",
         "name": "Oculus Illusionis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -1876,7 +1876,7 @@
     {
         "url": "index.php/ZS_Odem_Arcanum.html",
         "name": "Odem Arcanum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
@@ -1887,7 +1887,7 @@
     {
         "url": "index.php/ZS_Oktagramma.html",
         "name": "Oktagramma",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1897,7 +1897,7 @@
     {
         "url": "index.php/ZS_Orcanofaxius.html",
         "name": "Orcanofaxius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1908,7 +1908,7 @@
     {
         "url": "index.php/ZS_Orcanosphaero.html",
         "name": "Orcanosphaero",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -1919,7 +1919,7 @@
     {
         "url": "index.php/pd.html",
         "name": "Pandaemonium",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_8",
@@ -1930,7 +1930,7 @@
     {
         "url": "index.php/ZS_Panik_ueberkomme_euch.html",
         "name": "Panik überkomme euch",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1940,7 +1940,7 @@
     {
         "url": "index.php/paral.html",
         "name": "Paralysis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1952,7 +1952,7 @@
     {
         "url": "index.php/ZS_Penetrizzel.html",
         "name": "Penetrizzel",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -1963,7 +1963,7 @@
     {
         "url": "index.php/ZS_Pentagramma.html",
         "name": "Pentagramma",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -1974,7 +1974,7 @@
     {
         "url": "index.php/ZS_Pestilenz_erspueren.html",
         "name": "Pestilenz erspüren",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -1985,7 +1985,7 @@
     {
         "url": "index.php/po.html",
         "name": "Pestodem",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -1996,7 +1996,7 @@
     {
         "url": "index.php/ZS_Physiostabilis.html",
         "name": "Physiostabilis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2007,7 +2007,7 @@
     {
         "url": "index.php/ZS_Plumbumbarum.html",
         "name": "Plumbumbarum",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -2019,7 +2019,7 @@
     {
         "url": "index.php/ZS_Projectimago.html",
         "name": "Projectimago",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2030,7 +2030,7 @@
     {
         "url": "index.php/ZS_Psychostabilis.html",
         "name": "Psychostabilis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2041,7 +2041,7 @@
     {
         "url": "index.php/ZS_Radau.html",
         "name": "Radau",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -2052,7 +2052,7 @@
     {
         "url": "index.php/ZS_Reflectimago.html",
         "name": "Reflectimago",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2063,7 +2063,7 @@
     {
         "url": "index.php/ZS_Regeneratio.html",
         "name": "Regeneratio",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -2074,7 +2074,7 @@
     {
         "url": "index.php/rept.html",
         "name": "Reptilea",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2085,7 +2085,7 @@
     {
         "url": "index.php/ZS_Respondami.html",
         "name": "Respondami",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2097,7 +2097,7 @@
     {
         "url": "index.php/ZS_Salander.html",
         "name": "Salander",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2109,7 +2109,7 @@
     {
         "url": "index.php/sf.html",
         "name": "Sanfter Fall",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2120,7 +2120,7 @@
     {
         "url": "index.php/ZS_Sanftmut.html",
         "name": "Sanftmut",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2132,7 +2132,7 @@
     {
         "url": "index.php/ZS_Sapefacta.html",
         "name": "Sapefacta",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2143,7 +2143,7 @@
     {
         "url": "index.php/ZS_Satuarias_Herrlichkeit.html",
         "name": "Satuarias Herrlichkeit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2154,7 +2154,7 @@
     {
         "url": "index.php/ZS_Schimmernder_Schild.html",
         "name": "Schimmernder Schild",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2164,7 +2164,7 @@
     {
         "url": "index.php/ZS_Schlangenruf.html",
         "name": "Schlangenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -2175,7 +2175,7 @@
     {
         "url": "index.php/sa.html",
         "name": "Schlechte Ausstrahlung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2187,7 +2187,7 @@
     {
         "url": "index.php/sdu.html",
         "name": "Schleier der Unwissenheit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2198,7 +2198,7 @@
     {
         "url": "index.php/ZS_Schmerzenlindern.html",
         "name": "Schmerzen lindern",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2209,7 +2209,7 @@
     {
         "url": "index.php/ZS_Schuppenhaut.html",
         "name": "Schuppenhaut",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2219,7 +2219,7 @@
     {
         "url": "index.php/ZS_SchwarzundRot.html",
         "name": "Schwarz und Rot",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -2231,7 +2231,7 @@
     {
         "url": "index.php/ZS_SchwarzerSchrecken.html",
         "name": "Schwarzer Schrecken",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2243,7 +2243,7 @@
     {
         "url": "index.php/se.html",
         "name": "Seelentier erkennen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2255,7 +2255,7 @@
     {
         "url": "index.php/sz.html",
         "name": "Seidenzunge",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2267,7 +2267,7 @@
     {
         "url": "index.php/ZS_Sensattacco.html",
         "name": "Sensattacco",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2277,7 +2277,7 @@
     {
         "url": "index.php/ZS_Sensibar.html",
         "name": "Sensibar",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2289,7 +2289,7 @@
     {
         "url": "index.php/st.html",
         "name": "Serpentialis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -2300,7 +2300,7 @@
     {
         "url": "index.php/ZS_Silentium.html",
         "name": "Silentium",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -2311,7 +2311,7 @@
     {
         "url": "index.php/ZS_Sinesigil.html",
         "name": "Sinesigil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2321,7 +2321,7 @@
     {
         "url": "index.php/ZS_Skelettarius.html",
         "name": "Skelettarius",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2332,7 +2332,7 @@
     {
         "url": "index.php/ZS_Solidirid.html",
         "name": "Solidirid",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2343,7 +2343,7 @@
     {
         "url": "index.php/ZS_Somnigravis.html",
         "name": "Somnigravis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2355,7 +2355,7 @@
     {
         "url": "index.php/ZS_Sphaerenbann.html",
         "name": "Sphärenbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2365,7 +2365,7 @@
     {
         "url": "index.php/ZS_Spinnenlauf.html",
         "name": "Spinnenlauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2376,7 +2376,7 @@
     {
         "url": "index.php/sr.html",
         "name": "Spinnenruf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -2387,7 +2387,7 @@
     {
         "url": "index.php/ZS_Spurlos.html",
         "name": "Spurlos",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -2398,7 +2398,7 @@
     {
         "url": "index.php/standfest.html",
         "name": "Standfest",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2409,7 +2409,7 @@
     {
         "url": "index.php/sw.html",
         "name": "Steinwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2420,7 +2420,7 @@
     {
         "url": "index.php/ZS_Stillstand.html",
         "name": "Stillstand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2430,7 +2430,7 @@
     {
         "url": "index.php/ZS_Sturm_der_Verunsicherung.html",
         "name": "Sturm der Verunsicherung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2440,7 +2440,7 @@
     {
         "url": "index.php/ZS_Sturmwand.html",
         "name": "Sturmwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2450,7 +2450,7 @@
     {
         "url": "index.php/ZS_Sumus_Elixiere.html",
         "name": "Sumus Elixiere",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_3",
@@ -2461,7 +2461,7 @@
     {
         "url": "index.php/ZS_Taubheit.html",
         "name": "Taubheit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2473,7 +2473,7 @@
     {
         "url": "index.php/ZS_Telekinesebann.html",
         "name": "Telekinesebann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2484,7 +2484,7 @@
     {
         "url": "index.php/ZS_Temporalbann.html",
         "name": "Temporalbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2494,7 +2494,7 @@
     {
         "url": "index.php/ZS_Tempus_Stasis.html",
         "name": "Tempus Stasis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -2504,7 +2504,7 @@
     {
         "url": "index.php/tb.html",
         "name": "Tiere besprechen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2515,7 +2515,7 @@
     {
         "url": "index.php/ZS_Tiergedanken.html",
         "name": "Tiergedanken",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2527,7 +2527,7 @@
     {
         "url": "index.php/ZS_Transversalis.html",
         "name": "Transversalis",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -2538,7 +2538,7 @@
     {
         "url": "index.php/uef.html",
         "name": "Unentflammbarkeit",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2549,7 +2549,7 @@
     {
         "url": "index.php/ug.html",
         "name": "Ungeschickt",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2561,7 +2561,7 @@
     {
         "url": "index.php/vu.html",
         "name": "Verunsicherung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2573,7 +2573,7 @@
     {
         "url": "index.php/ZS_Verwandlungsbann.html",
         "name": "Verwandlungsbann",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2584,7 +2584,7 @@
     {
         "url": "index.php/ZS_Vipernblick.html",
         "name": "Vipernblick",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_1",
         "ab3": "ATTR_4",
@@ -2596,7 +2596,7 @@
     {
         "url": "index.php/ZS_Visibili.html",
         "name": "Visibili",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2607,7 +2607,7 @@
     {
         "url": "index.php/ZS_Vogelzwitschern.html",
         "name": "Vogelzwitschern",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2618,7 +2618,7 @@
     {
         "url": "index.php/ZS_Wasseratem.html",
         "name": "Wasseratem",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2629,7 +2629,7 @@
     {
         "url": "index.php/wpf.html",
         "name": "Wasserpfeil",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2640,7 +2640,7 @@
     {
         "url": "index.php/wdr.html",
         "name": "Welle der Reinigung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -2651,7 +2651,7 @@
     {
         "url": "index.php/wds.html",
         "name": "Welle des Schmerzes",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -2662,7 +2662,7 @@
     {
         "url": "index.php/wl.html",
         "name": "Wellenlauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -2673,7 +2673,7 @@
     {
         "url": "index.php/ZS_Wellenwand.html",
         "name": "Wellenwand",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2683,7 +2683,7 @@
     {
         "url": "index.php/wipl.html",
         "name": "Wipfellauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -2694,7 +2694,7 @@
     {
         "url": "index.php/ZS_Woge_der_Versteinerung.html",
         "name": "Woge der Versteinerung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -2704,7 +2704,7 @@
     {
         "url": "index.php/ZS_Wolfstatze.html",
         "name": "Wolfstatze",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2715,7 +2715,7 @@
     {
         "url": "index.php/wül.html",
         "name": "Wüstenlauf",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_6",
@@ -2726,7 +2726,7 @@
     {
         "url": "index.php/zh.html",
         "name": "Zauberpferd herbeirufen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2737,7 +2737,7 @@
     {
         "url": "index.php/zf.html",
         "name": "Zitterfinger",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2749,7 +2749,7 @@
     {
         "url": "index.php/ZS_Zorn_der_Elemente.html",
         "name": "Zorn der Elemente",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2759,7 +2759,7 @@
     {
         "url": "index.php/ZS_Zunge_betäuben.html",
         "name": "Zunge betäuben",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2771,7 +2771,7 @@
     {
         "url": "index.php/ZS_Zweifel_schueren.html",
         "name": "Zweifel schüren",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2782,7 +2782,7 @@
     {
         "url": "index.php/ZS_Zwingtanz.html",
         "name": "Zwingtanz",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -2794,7 +2794,7 @@
     {
         "url": "index.php/ZS_Ängste_lindern.html",
         "name": "Ängste lindern",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -2805,7 +2805,7 @@
     {
         "url": "index.php/Rit_MagischerRaub.html",
         "name": "Magischer Raub",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -2818,7 +2818,7 @@
     {
         "url": "index.php/db.html",
         "name": "Destructibo",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
@@ -2830,7 +2830,7 @@
     {
         "url": "index.php/cd.html",
         "name": "Custodosigil",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_5",
@@ -2842,7 +2842,7 @@
     {
         "url": "index.php/bf.html",
         "name": "Brandform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -2854,7 +2854,7 @@
     {
         "url": "index.php/Rit_Caldofrigo.html",
         "name": "Caldofrigo",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -2866,7 +2866,7 @@
     {
         "url": "index.php/bidv.html",
         "name": "Blick in die Vergangenheit",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -2878,7 +2878,7 @@
     {
         "url": "index.php/Rit_Arcanovi.html",
         "name": "Arcanovi",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2890,7 +2890,7 @@
     {
         "url": "index.php/anim.html",
         "name": "Animatio",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -2902,7 +2902,7 @@
     {
         "url": "index.php/ad.html",
         "name": "Adamantium",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2914,7 +2914,7 @@
     {
         "url": "index.php/Rit_Accuratum.html",
         "name": "Accuratum",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2926,7 +2926,7 @@
     {
         "url": "index.php/br.html",
         "name": "Bärenruhe",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -2938,7 +2938,7 @@
     {
         "url": "index.php/bdf.html",
         "name": "Band der Freundschaft",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_4",
@@ -2951,7 +2951,7 @@
     {
         "url": "index.php/wf.html",
         "name": "Wogenform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -2963,7 +2963,7 @@
     {
         "url": "index.php/Rit_Widerwille.html",
         "name": "Widerwille",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_6",
@@ -2975,7 +2975,7 @@
     {
         "url": "index.php/Rit_AufmerksamerWaechter.html",
         "name": "Aufmerksamer Wächter",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
@@ -2987,7 +2987,7 @@
     {
         "url": "index.php/ZS_Applicatus.html",
         "name": "Applicatus",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -2999,7 +2999,7 @@
     {
         "url": "index.php/edm.html",
         "name": "Erhabenheit des Marmors",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3011,7 +3011,7 @@
     {
         "url": "index.php/ZS_Blick_durch_fremde_Augen.html",
         "name": "Blick durch fremde Augen",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3023,7 +3023,7 @@
     {
         "url": "index.php/ZS_Chimaeroform.html",
         "name": "Chimaeroform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3034,7 +3034,7 @@
     {
         "url": "index.php/ZS_Chronoklassis.html",
         "name": "Chronoklassis",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3045,7 +3045,7 @@
     {
         "url": "index.php/ZS_Chrononautos.html",
         "name": "Chrononautos",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3056,7 +3056,7 @@
     {
         "url": "index.php/Rit_Dschinnenruf.html",
         "name": "Dschinnenruf",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3067,7 +3067,7 @@
     {
         "url": "index.php/Rit_Daemonenpakt_beenden.html",
         "name": "Dämonenpakt beenden",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3079,7 +3079,7 @@
     {
         "url": "index.php/emdn.html",
         "name": "Eins mit der Natur",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3091,7 +3091,7 @@
     {
         "url": "index.php/Rit_Diener.html",
         "name": "Elementarer Diener",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3102,7 +3102,7 @@
     {
         "url": "index.php/ergebenheit-der-wogen.html",
         "name": "Ergebenheit der Wogen",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3114,7 +3114,7 @@
     {
         "url": "index.php/ff.html",
         "name": "Felsenform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -3126,7 +3126,7 @@
     {
         "url": "index.php/fdw.html",
         "name": "Freiheit der Wolken",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3138,7 +3138,7 @@
     {
         "url": "index.php/Rit_Gefaeß_der_Jahre.html",
         "name": "Gefäß der Jahre",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_7",
@@ -3149,7 +3149,7 @@
     {
         "url": "index.php/gb.html",
         "name": "Geisterbeschwörung",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3160,7 +3160,7 @@
     {
         "url": "index.php/gr.html",
         "name": "Geisterruf",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3171,7 +3171,7 @@
     {
         "url": "index.php/gf.html",
         "name": "Gletscherform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -3183,7 +3183,7 @@
     {
         "url": "index.php/Rit_HagelschlagundSturmgebruell.html",
         "name": "Hagelschlag und Sturmgebrüll",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3195,7 +3195,7 @@
     {
         "url": "index.php/Rit_Hartesschmelze.html",
         "name": "Hartes schmelze",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3207,7 +3207,7 @@
     {
         "url": "index.php/rit_Immortalis_Lebenszeit.html",
         "name": "Immortalis Lebenszeit",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3218,7 +3218,7 @@
     {
         "url": "index.php/Rit_Infinitum_Immerdar.html",
         "name": "Infinitum Immerdar",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3229,7 +3229,7 @@
     {
         "url": "index.php/Rit_Invomaior.html",
         "name": "Invocatio Maior",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3240,7 +3240,7 @@
     {
         "url": "index.php/Rit_Invocatio_Maxima.html",
         "name": "Invocatio Maxima",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3251,7 +3251,7 @@
     {
         "url": "index.php/Rit_Invominor.html",
         "name": "Invocatio Minor",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3262,7 +3262,7 @@
     {
         "url": "index.php/Rit_Klarheit_des_Eises.html",
         "name": "Klarheit des Eises",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3274,7 +3274,7 @@
     {
         "url": "index.php/körperlose-reise.html",
         "name": "Körperlose Reise",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -3286,7 +3286,7 @@
     {
         "url": "index.php/Rit_Lawinenfall_und_Truemmerfeld.html",
         "name": "Lawinenfall und Trümmerfeld",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3297,7 +3297,7 @@
     {
         "url": "index.php/Rit_Leidensbund.html",
         "name": "Leidensbund",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3309,7 +3309,7 @@
     {
         "url": "index.php/ms.html",
         "name": "Madas Spiegel",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -3321,7 +3321,7 @@
     {
         "url": "index.php/Rit_Meister_der_Elemente.html",
         "name": "Meister der Elemente",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3332,7 +3332,7 @@
     {
         "url": "index.php/Rit_MemorabiaFalsifir.html",
         "name": "Memorabia Falsifir",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3345,7 +3345,7 @@
     {
         "url": "index.php/Rit_Movimento.html",
         "name": "Movimento",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3357,7 +3357,7 @@
     {
         "url": "index.php/np.html",
         "name": "Nekropathia",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -3369,7 +3369,7 @@
     {
         "url": "index.php/Rit_Nihilogravo.html",
         "name": "Nihilogravo",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3381,7 +3381,7 @@
     {
         "url": "index.php/Rit_OrvaiKurimsKriegstrommel.html",
         "name": "Orvai Kurims Kriegstrommel",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_5",
         "ab3": "ATTR_7",
@@ -3392,7 +3392,7 @@
     {
         "url": "index.php/pff.html",
         "name": "Pflanzenform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -3404,7 +3404,7 @@
     {
         "url": "index.php/Rit_Planastrale.html",
         "name": "Planastrale",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3415,7 +3415,7 @@
     {
         "url": "index.php/rdl.html",
         "name": "Reinheit der Lohe",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3427,7 +3427,7 @@
     {
         "url": "index.php/rdf.html",
         "name": "Ruf der Feenwesen",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3438,7 +3438,7 @@
     {
         "url": "index.php/Rit_RufdesBienenstocks.html",
         "name": "Ruf des Bienenstocks",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -3449,7 +3449,7 @@
     {
         "url": "index.php/Rit_RuheKoerper.html",
         "name": "Ruhe Körper",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3461,7 +3461,7 @@
     {
         "url": "index.php/swa.html",
         "name": "Seelenwanderung",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3474,7 +3474,7 @@
     {
         "url": "index.php/stw.html",
         "name": "Standhafter Wächter",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -3486,7 +3486,7 @@
     {
         "url": "index.php/Rit_Stein_wandle.html",
         "name": "Stein wandle",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -3497,7 +3497,7 @@
     {
         "url": "index.php/Rit_Totes_handle.html",
         "name": "Totes handle",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -3508,7 +3508,7 @@
     {
         "url": "index.php/trm.html",
         "name": "Transmutare",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_3",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3520,7 +3520,7 @@
     {
         "url": "index.php/Rit_Traumgestalt.html",
         "name": "Traumgestalt",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3533,7 +3533,7 @@
     {
         "url": "index.php/Rit_UnberuehrtvonSatinav.html",
         "name": "Unberührt von Satinav",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -3545,7 +3545,7 @@
     {
         "url": "index.php/we.html",
         "name": "Weiches erstarre",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_8",
@@ -3557,7 +3557,7 @@
     {
         "url": "index.php/wdb.html",
         "name": "Weisheit der Bäume",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3569,7 +3569,7 @@
     {
         "url": "index.php/Rit_Wirbelform.html",
         "name": "Wirbelform",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_5",
         "ab3": "ATTR_8",
@@ -3581,7 +3581,7 @@
     {
         "url": "index.php/Rit_Xenographus.html",
         "name": "Xenographus",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
@@ -3593,7 +3593,7 @@
     {
         "url": "index.php/Rit_Zauberklinge.html",
         "name": "Zauberklinge Geisterspeer",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_2",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -3605,7 +3605,7 @@
     {
         "url": "index.php/zn.html",
         "name": "Zaubernahrung",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
@@ -3617,7 +3617,7 @@
     {
         "url": "index.php/zs.html",
         "name": "Zauberschnurren",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3629,7 +3629,7 @@
     {
         "url": "index.php/zdn.html",
         "name": "Zauberwesen der Natur",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
@@ -3640,7 +3640,7 @@
     {
         "url": "index.php/zz.html",
         "name": "Zauberzwang",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_2",
         "ab3": "ATTR_4",
@@ -3653,7 +3653,7 @@
     {
         "url": "index.php/ük.html",
         "name": "Überlegener Krieger",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_6",
@@ -3665,7 +3665,7 @@
     {
         "url": "index.php/WdV-Zauber_BegehrenErzeugen.html",
         "name": "Begehren erzeugen",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3678,7 +3678,7 @@
     {
         "url": "index.php/WdV-Zauber_Brustformung.html",
         "name": "Brustformung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3690,7 +3690,7 @@
     {
         "url": "index.php/WdV-Zauber_ErregungSpueren.html",
         "name": "Erregung spüren",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_3",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3703,7 +3703,7 @@
     {
         "url": "index.php/WdV-Zauber_FeuchteErregung.html",
         "name": "Feuchte Erregung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3715,7 +3715,7 @@
     {
         "url": "index.php/WdV-Zauber_Penisformung.html",
         "name": "Penisformung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3727,7 +3727,7 @@
     {
         "url": "index.php/WdV-Zauber_SpielzeugLust.html",
         "name": "Spielzeug der Lust",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_5",
@@ -3739,7 +3739,7 @@
     {
         "url": "index.php/WdV-Zauber_Vaginaformung.html",
         "name": "Vaginaformung",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3751,7 +3751,7 @@
     {
         "url": "index.php/WdV-Zauber_VerlangenKontrollieren.html",
         "name": "Verlangen kontrollieren",
-        "spelltype": "spell",
+        "spelltype": "Spruch",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3763,7 +3763,7 @@
     {
         "url": "index.php/WdV-Zauber_AbneigungenVorliebenErzeugen.html",
         "name": "Abneigungen und Vorlieben erzeugen",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3776,7 +3776,7 @@
     {
         "url": "index.php/WdV-Zauber_BegierdeAusloesen.html",
         "name": "Begierde auslösen",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
@@ -3789,7 +3789,7 @@
     {
         "url": "index.php/WdV-Zauber_UebertragungLiebeskuenste.html",
         "name": "Übertragung der Liebeskünste",
-        "spelltype": "ritual",
+        "spelltype": "Ritual",
         "ab1": "ATTR_1",
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",

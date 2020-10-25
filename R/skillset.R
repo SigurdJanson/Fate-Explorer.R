@@ -359,7 +359,12 @@ SkillSet <- R6Class("SkillSet", public = list(
 ))
 
 
-# CharacterSkills -------------
+
+
+
+#
+#
+# CharacterSkills class -------------
 CharacterSkills <- R6Class("CharacterSkills", public = list(
   
   Sets = list(Mundane = NA, Magic = NA, Blessed = NA),
@@ -377,10 +382,11 @@ CharacterSkills <- R6Class("CharacterSkills", public = list(
     invisible(self)
   },
   
-  #' Determines and returns the skill set that contains the requested
-  #' skill (via `Ident`) or skill `Class`.
-  #' @return `Null` if the requested information is not available. 
-  #' Otherwise an R6 class `SkillSet`.
+  
+  #' Determines and returns the complete set of skills requested with the
+  #' skill identifier (via `Ident`) or skill `Class`.
+  #' @return R6 class `SkillSet`. 
+  #' `Null` if the requested information is not available. 
   GetSkillSet = function(Ident = NULL, Class = NULL) {
     SkillSource <- NULL
     for (s in self$Sets) {
@@ -395,7 +401,10 @@ CharacterSkills <- R6Class("CharacterSkills", public = list(
     return(SkillSource)
   },
   
-  
+
+  #' Provide the names of all available skills
+  #' @note Skill names are translated into active language
+  #' @return Vector of strings. Empty vector if nothing is found.
   GetSkillNames = function() {
     AllNames <- character()
     for (s in self$Sets) {
@@ -406,6 +415,11 @@ CharacterSkills <- R6Class("CharacterSkills", public = list(
     return(AllNames)
   },
   
+  
+  #' Provide the names of all available skill classes
+  #' (i.e. physical, social, nature, ...)
+  #' @note Class names are translated into active language
+  #' @return Vector of strings. Empty vector if nothing is found.
   GetSkillClasses = function() {
     AllClasses <- character()
     for (s in self$Sets) {
@@ -416,9 +430,13 @@ CharacterSkills <- R6Class("CharacterSkills", public = list(
     return(AllClasses)
   },
   
+  #' Check if a character has magical or blessed skills
+  #' @param Type list id taken from the `.SkillType` enum
+  #' @return `TRUE` if the character is capable of the type of skill
   HasTalent = function(Type = .SkillType) {
     if (! (Type %in% .SkillType)) stop("Unknown type of skill")
     return( any(names(self$Sets) == names(.SkillType[Type])) )
+    #TODO: check if 'any' is the right choice here or should it rather be 'all' or shall it be returned individually?
   }
   
 ))

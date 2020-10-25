@@ -1,6 +1,8 @@
 # SKILL TAB
 
 # Make necessary adjustments when users change the skill source
+# 1. determine which panel is open
+# 2. change content and status of widgets
 observeEvent(input$rdbSkillSource, {
   if (input$rdbSkillSource %in% c("NoSkill", "ManualSkill")) {
     ActiveSkillIdent <<- "ANY"
@@ -13,13 +15,20 @@ observeEvent(input$rdbSkillSource, {
       Value <- input$SkillValue
       SkillSource$SetSkill(ActiveSkillIdent, Abilities, Value)
     }
-  } else {
+    
+  } 
+  # if active panel is the "Character" update widget content
+  else { 
     ActiveSkillIdent <<- "TAL_1"
     ActiveSkillSets  <<- Character$Skills
     SelectedSkills <- ActiveSkillSets$GetSkillNames()
-    SkillClasses <- ActiveSkillSets$GetSkillClasses() # for dropdown list
+    
+    SkillClasses <- ActiveSkillSets$GetSkillClasses() # for filter drop-down list
+    names(SkillClasses) <- SkillClasses
+    SkillClasses <- c("", SkillClasses)
+    names(SkillClasses)[1] <- i18n$t("All Skills")
     updateSelectInput(session, "lbSkillClasses",
-                      choices = c('All Skills' = '', SkillClasses))
+                      choices = SkillClasses) # TODO: translate
     updateSelectInput(session, "lbCharSkills", choices = SelectedSkills,
                       selected = 1)
   }
@@ -55,7 +64,8 @@ observeEvent(
   }#handler
 )
 
-# React when user selects new skill
+
+# React when users select new skill
 observeEvent(
   eventExpr = input$lbCharSkills, 
   handlerExpr = {

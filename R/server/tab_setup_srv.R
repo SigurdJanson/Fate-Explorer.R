@@ -1,6 +1,6 @@
 # SETUP
 
-Character <- reactiveValues(Name = "No character has been uploaded",
+Character <- reactiveValues(Name = NA,
                             Attr = NULL, Skills = NULL, 
                             Weapons = NULL, CombatSkills = NULL)
 RawCharacterFile <- reactiveVal(NULL) # raw data container of json content
@@ -101,7 +101,7 @@ observeEvent(input$chbShowImprovWeapons, {
 # CHARACTER TITLE --------------------
 # Name of hero / character
 output$CharacterName <- renderPrint({
-  if(!is.na(Character$Name)) {
+  if(isTruthy(Character$Name)) {
     Result <- Character$Name
   } else Result <- i18n$t("No character has been uploaded")
   cat(Result)
@@ -131,7 +131,7 @@ outputOptions(output, 'ShowSetupAttr', suspendWhenHidden = FALSE)
 output$SetupAttr <- renderTable({
   Result <- Character$Attr
   # Show names not codes
-  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  Language <- ifelse(length(i18n$get_translation_language()) == 0L, "en", i18n$get_translation_language())
   NameMapping <- GetAbilities(Language)
   colnames(Result) <- NameMapping[match(names(Result), NameMapping[["attrID"]]), "shortname"]
   
@@ -166,7 +166,7 @@ output$SetupSkills <- renderTable({
   Result <- Result[-which(names(Result) == "attrID")]
   Result <- Result[-which(names(Result) == "classID")]
   # Show names not codes
-  Language <- ifelse(length(i18n$translation_language) == 0L, "en", i18n$translation_language)
+  Language <- ifelse(length(i18n$get_translation_language()) == 0L, "en", i18n$get_translation_language())
   NameMapping <- GetAbilities(Language)
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
@@ -190,8 +190,8 @@ output$SetupSpells <- renderTable({
   Result <- Character$Skills$Sets$Magic$Skills
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
 
-  # Show names not codes
-  NameMapping <- GetAbilities()#Language
+  # Show ability names not codes
+  NameMapping <- GetAbilities()
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
   }
