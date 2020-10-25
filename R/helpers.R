@@ -108,9 +108,9 @@ RenderFumbleRollEffect <- function( Effect ) {
 
 
 #' RenderRollKeyResult
-#' The outout of this function provides the html representation
+#' The output of this function provides the html representation
 #' to display a roll result in a format that can directly be used in `renderText`.
-#' @param KeyResult String indicating critical, succes, fail or fumble.
+#' @param KeyResult String indicating critical, success, fail or fumble.
 #' @param keyValue Value of the confirmation roll (numeric).
 #' @param FurtherValue An additional number or string that will be appended to `KeyResult`
 #' in brackets.

@@ -61,6 +61,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
         self$RawWeaponData <- GetWeapons(Weapon)
       else 
         self$RawWeaponData <- Weapon
+      
       self$Name      <- self$RawWeaponData[["name"]]
       self$Type      <- .WeaponType[1+ self$RawWeaponData[["armed"]] + !self$RawWeaponData[["clsrng"]] ]
       self$Technique <- self$RawWeaponData[["combattechID"]]
@@ -69,7 +70,6 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       self$CalcDamage(Abilities)
       self$Modifier  <- 0L
     }
-    
     invisible(self)
   },
   
@@ -83,25 +83,30 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
     self$Skill <- list(Attack = AtPaSkill$AT, 
                        Parry = AtPaSkill$PA, 
-                       Dodge = ceiling(CharAbs[["ATTR_6"]] / 2))
+                       Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
     return(invisible(self))
   },
 
+  
   #' CalcDamage
   #' Computes the hit point formula of the weapon. It takes the 
   #' character's abilities into account to get the bonus right.
   #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
   #' @param CharAbs The character's abilities
-  #' @return Invisible returns the weapons object
+  #' @return Invisible returns `self` 
   CalcDamage = function(CharAbs) {
     Die <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
-    AddedBonus <- GetHitpointBonus(self$Name, Abilities = CharAbs)
+    Bonus <- as.integer(self$RawWeaponData[["bonus"]])
+    if (!isTruthy(Bonus)) Bonus <- 0
+    Bonus <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
     self$Damage <- list(N = as.integer(Die[1]), 
                         DP = as.integer(Die[2]), 
-                        Bonus = as.integer(self$RawWeaponData[["bonus"]]) + AddedBonus)
+                        Bonus = Bonus)
+
     return(invisible(self))
   },
 
+  
   Attack = function(Modifier = 0L) self$Roll("Attack", Modifier), # wrapper
   Parry  = function(Modifier = 0L) self$Roll("Parry", Modifier), # wrapper
   Dodge  = function(Modifier = 0L) self$Roll("Dodge", Modifier), # wrapper
@@ -132,7 +137,9 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       self$LastDamage <- 0L
       if (self$LastAction == .CombatAction["Attack"])
         if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
+        {
           self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$DP, self$Damage$Bonus)
+        }
       
       self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
       self$ConfirmRoll <- NA
@@ -234,7 +241,7 @@ MeleeWeapon <- R6Class("MeleeWeapon",
         if (!(self$RawWeaponData[["clsrng"]])) # if ranged weapon
           stop("This class is for close combat only")
       }
-      
+
       invisible(self)
     },
     
@@ -243,27 +250,27 @@ MeleeWeapon <- R6Class("MeleeWeapon",
     #' Computes weapons skill for character
     #' @param CharAbs Data frame of character abilities
     #' @param CombatTecSkill A single value for the combat skill of the weapon's technique
-    #' @return `self`
+    #' @return Invisibly returns `self`
     CalcSkill = function(CharAbs, CombatTecSkill) {
-      AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
-      self$Skill <- list(Attack = AtPaSkill$AT, 
-                         Parry = AtPaSkill$PA, 
-                         Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
+      super$CalcSkill(CharAbs, CombatTecSkill)
       return(invisible(self))
     },
+
     
+    #' CalcDamage
+    #' Computes the hit point formula of the weapon. It takes the 
+    #' character's abilities into account to get the bonus right.
+    #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
+    #' @param CharAbs The character's abilities
+    #' @return Invisibly returns `self` 
     CalcDamage = function(CharAbs) {
-      Die <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
-      AddedBonus <- GetHitpointBonus(self$Name, Abilities = CharAbs)
-      self$Damage <- list(N = as.integer(Die[1]), 
-                          DP = as.integer(Die[2]), 
-                          Bonus = as.integer(self$RawWeaponData[["bonus"]]) + AddedBonus)
-      return(invisible(self))
+      return(invisible(super$CalcDamage(CharAbs)))
     },
     
+
+    #' Roll
     Roll = function(Action = "Attack", Modifier = 0L) {
-      super$Roll(Action, Modifier)
-      return(self$LastRoll)
+      return(super$Roll(Action, Modifier))
     }
 ))
 
@@ -310,11 +317,7 @@ RangedWeapon <- R6Class("RangedWeapon",
   },
   
   CalcDamage = function(CharAbs) {
-   Die <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
-   AddedBonus <- GetHitpointBonus(self$Name, Abilities = CharAbs)
-   self$Damage <- list(N = as.integer(Die[1]), 
-                       DP = as.integer(Die[2]), 
-                       Bonus = as.integer(self$RawWeaponData[["bonus"]]) + AddedBonus)
+   super$CalcDamage(CharAbs)
    return(invisible(self))
   },
   

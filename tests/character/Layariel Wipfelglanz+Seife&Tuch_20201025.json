@@ -1,0 +1,347 @@
+{
+    "clientVersion": "1.3.2",
+    "dateCreated": "2020-07-02T07:43:18.408Z",
+    "dateModified": "2020-07-02T08:13:31.570Z",
+    "id": "H_1593675798407",
+    "phase": 3,
+    "locale": "de-DE",
+    "name": "Layariel Wipfelglanz",
+    "ap": {
+        "total": 1100
+    },
+    "el": "EL_3",
+    "r": "R_2",
+    "rv": "RV_8",
+    "c": "C_19",
+    "p": "P_17",
+    "sex": "f",
+    "pers": {
+        "family": "Wipfelglanz-Sippe",
+        "placeofbirth": "-",
+        "dateofbirth": "-",
+        "haircolor": 8,
+        "eyecolor": 18,
+        "size": "186",
+        "weight": "80",
+        "socialstatus": 2
+    },
+    "attr": {
+        "values": [
+            {
+                "id": "ATTR_1",
+                "value": 11
+            },
+            {
+                "id": "ATTR_2",
+                "value": 10
+            },
+            {
+                "id": "ATTR_3",
+                "value": 15
+            },
+            {
+                "id": "ATTR_4",
+                "value": 13
+            },
+            {
+                "id": "ATTR_5",
+                "value": 14
+            },
+            {
+                "id": "ATTR_6",
+                "value": 15
+            },
+            {
+                "id": "ATTR_7",
+                "value": 11
+            },
+            {
+                "id": "ATTR_8",
+                "value": 11
+            }
+        ],
+        "attributeAdjustmentSelected": "ATTR_2",
+        "ae": 0,
+        "kp": 0,
+        "lp": 0,
+        "permanentAE": {
+            "lost": 0,
+            "redeemed": 0
+        },
+        "permanentKP": {
+            "lost": 0,
+            "redeemed": 0
+        },
+        "permanentLP": {
+            "lost": 0
+        }
+    },
+    "activatable": {
+        "ADV_52": [
+            {}
+        ],
+        "ADV_50": [
+            {}
+        ],
+        "ADV_2": [
+            {}
+        ],
+        "ADV_6": [
+            {
+                "tier": 1
+            }
+        ],
+        "ADV_8": [
+            {}
+        ],
+        "ADV_9": [
+            {}
+        ],
+        "ADV_14": [],
+        "ADV_16": [],
+        "ADV_4": [],
+        "ADV_18": [
+            {
+                "sid": 1
+            }
+        ],
+        "ADV_48": [
+            {}
+        ],
+        "DISADV_25": [],
+        "DISADV_51": [],
+        "DISADV_11": [],
+        "DISADV_7": [],
+        "DISADV_5": [],
+        "DISADV_12": [],
+        "DISADV_4": [],
+        "DISADV_1": [
+            {
+                "sid": 7,
+                "tier": 2
+            }
+        ],
+        "DISADV_22": [
+            {}
+        ],
+        "DISADV_31": [
+            {
+                "tier": 1
+            }
+        ],
+        "DISADV_33": [
+            {
+                "sid2": "Religion",
+                "sid": 8
+            }
+        ],
+        "DISADV_43": [
+            {}
+        ],
+        "DISADV_48": [
+            {
+                "sid": "TAL_31"
+            }
+        ],
+        "DISADV_46": [],
+        "SA_9": [
+            {
+                "sid2": 3,
+                "sid": "TAL_24"
+            }
+        ],
+        "SA_27": [],
+        "SA_29": [
+            {
+                "sid": 10,
+                "tier": 4
+            },
+            {
+                "sid": 8,
+                "tier": 1
+            }
+        ],
+        "SA_345": [
+            {}
+        ],
+        "SA_22": [
+            {
+                "sid": "Donnerbach"
+            }
+        ],
+        "SA_18": [
+            {}
+        ]
+    },
+    "talents": {
+        "TAL_51": 5,
+        "TAL_16": 1,
+        "TAL_44": 1,
+        "TAL_24": 10,
+        "TAL_26": 3,
+        "TAL_4": 10,
+        "TAL_56": 6,
+        "TAL_27": 5,
+        "TAL_28": 6,
+        "TAL_7": 4,
+        "TAL_9": 6,
+        "TAL_10": 8,
+        "TAL_29": 6,
+        "TAL_13": 5,
+        "TAL_30": 10,
+        "TAL_8": 2,
+        "TAL_23": 2,
+        "TAL_36": 2,
+        "TAL_53": 2
+    },
+    "ct": {
+        "CT_2": 12,
+        "CT_3": 9
+    },
+    "spells": {
+        "SPELL_3": 6,
+        "SPELL_14": 6,
+        "SPELL_30": 3,
+        "SPELL_39": 6,
+        "SPELL_44": 6,
+        "SPELL_45": 3,
+        "SPELL_64": 4,
+        "SPELL_5": 6,
+        "SPELL_349": 0,
+        "SPELL_62": 0,
+        "SPELL_12": 0,
+        "SPELL_42": 0,
+        "SPELL_301": 0
+    },
+    "cantrips": [
+        "CANTRIP_12",
+        "CANTRIP_50",
+        "CANTRIP_57",
+        "CANTRIP_70"
+    ],
+    "liturgies": {},
+    "blessings": [],
+    "belongings": {
+        "items": {
+            "ITEM_1": {
+                "id": "ITEM_1",
+                "name": "Dolch",
+                "gr": 1,
+                "isTemplateLocked": true,
+                "amount": 1,
+                "weight": 0.5,
+                "price": 45,
+                "at": 0,
+                "damageDiceNumber": 1,
+                "damageFlat": 1,
+                "length": 30,
+                "pa": 0,
+                "combatTechnique": "CT_3",
+                "damageDiceSides": 6,
+                "reach": 1,
+                "template": "ITEMTPL_2",
+                "primaryThreshold": {
+                    "threshold": 14
+                }
+            },
+            "ITEM_2": {
+                "id": "ITEM_2",
+                "name": "Elfenbogen",
+                "gr": 2,
+                "isTemplateLocked": true,
+                "amount": 1,
+                "weight": 0.5,
+                "price": 400,
+                "damageDiceNumber": 1,
+                "damageFlat": 5,
+                "length": 180,
+                "reloadTime": 1,
+                "ammunition": "ITEMTPL_75",
+                "combatTechnique": "CT_2",
+                "damageDiceSides": 6,
+                "template": "ITEMTPL_62",
+                "range": [
+                    50,
+                    100,
+                    200
+                ]
+            },
+            "ITEM_3": {
+                "id": "ITEM_3",
+                "name": "Elfendolch",
+                "gr": 1,
+                "isTemplateLocked": true,
+                "amount": 1,
+                "weight": 0.5,
+                "price": 100,
+                "at": 0,
+                "damageDiceNumber": 1,
+                "damageFlat": 1,
+                "length": 40,
+                "pa": 0,
+                "combatTechnique": "CT_3",
+                "damageDiceSides": 6,
+                "reach": 1,
+                "template": "ITEMTPL_716",
+                "primaryThreshold": {
+                    "threshold": 16
+                }
+            },
+            "ITEM_4": {
+                "id": "ITEM_4",
+                "name": "Köcher, für 20 Pfeile oder Bolzen",
+                "gr": 5,
+                "isTemplateLocked": true,
+                "amount": 1,
+                "weight": 0.75,
+                "price": 15,
+                "template": "ITEMTPL_90"
+            },
+            "ITEM_5": {
+                "id": "ITEM_5",
+                "name": "Normale Kleidung",
+                "gr": 4,
+                "isTemplateLocked": true,
+                "amount": 1,
+                "weight": 1,
+                "enc": 0,
+                "pro": 0,
+                "template": "ITEMTPL_78",
+                "armorType": 1
+            },
+            "ITEM_6": {
+                "id": "ITEM_6",
+                "name": "Pfeil",
+                "gr": 3,
+                "isTemplateLocked": true,
+                "amount": 20,
+                "price": 0.4,
+                "template": "ITEMTPL_75"
+            },
+            "ITEM_7": {
+                "id": "ITEM_6",
+                "name": "Seife mit Tuch",
+                "gr": 1,
+                "isTemplateLocked": false,
+                "amount": 1,
+                "price": 0.4,
+                "template": "ITEMTPL_441"
+            }
+        },
+        "armorZones": {},
+        "purse": {
+            "d": "",
+            "s": "2",
+            "h": "",
+            "k": ""
+        }
+    },
+    "rules": {
+        "higherParadeValues": 0,
+        "attributeValueLimit": false,
+        "enableAllRuleBooks": true,
+        "enabledRuleBooks": [],
+        "enableLanguageSpecializations": false
+    },
+    "pets": {}
+}

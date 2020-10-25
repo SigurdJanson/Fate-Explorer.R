@@ -150,6 +150,15 @@ test_that("DamageRoll", {
     }
   }
   
+  # Die with number of point other than 6
+  # 1W3 + Modifier
+  for (m in c(0, 1, 2, 4, 8, 12)) {  #Modifier
+    for (i in 1:25) {
+      o <- DamageRoll(D = 1L, DP = 3L, Mod = m)
+      expect_gte(o, 1+m)
+      expect_lte(o, 3+m)
+    }
+  }
 })
 
 

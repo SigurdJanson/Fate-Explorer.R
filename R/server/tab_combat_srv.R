@@ -28,26 +28,32 @@ observeEvent(input$chbPredefinedWeapon,{
 observeEvent(input$cmbCombatSelectWeapon, {
   # Select weapon
   if (input$chbPredefinedWeapon) {
+
     Weapon <- as.character(input$cmbCombatSelectWeapon)
     if(nchar(Weapon) > 0) {
       # Get weapon from character
       for (w in Character$Weapons) {
         if (w$Name == Weapon) {
-          ActiveWeapon <- w; break
+          ActiveWeapon <<- w; break
         }
       }
     }
   } else {
-    ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 9L, Parry = 5L, 
-                                                  Dodge = Character$Weapon[[1]]$Skill$Dodge), 
-                                    Damage = list(N = 1L, DP = 6L, Bonus = 0L))
+    # Default
+    ActiveWeapon <<- MeleeWeapon$new(Skill = list(Attack = 9L, Parry = 5L, 
+                                                  Dodge = Character$Weapon[[1L]]$Skill$Dodge), 
+                                     Damage = list(N = 3L, DP = 4L, Bonus = 0L))
   }
   # Update ui controls
   for(Action in names(.CombatAction)) {
-    updateNumericInput(session, paste0("inp", Action, "Value"), value = ActiveWeapon$Skill[[Action]])
+    updateNumericInput(session, paste0("inp", Action, "Value"), 
+                       value = ActiveWeapon$Skill[[Action]])
   }
-  updateNumericInput(session, "inpDamageDieCount", value = ActiveWeapon$Damage$N)
+  updateNumericInputIcon(session, "inpDamageDieCount", 
+                         value = ActiveWeapon$Damage$N, 
+                         icon = list(NULL, paste0("W", ActiveWeapon$Damage$DP)))
   updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
+  
   if(ActiveWeapon$CanParry()) {
     shinyjs::enable("doParryRoll")
     shinyjs::enable("inpParryValue")
@@ -121,10 +127,12 @@ output$uiCombatRoll <- renderText({
 
   # Render the result
   if (ActiveWeapon$LastAction == .CombatAction["Attack"])
-    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastDamage, 
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), 
+                                     ActiveWeapon$LastDamage, 
                                      ActiveWeapon$LastRoll, KeyUnit = "hp")
   else
-    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), ActiveWeapon$LastRoll, 
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), 
+                                     ActiveWeapon$LastRoll, 
                                      KeyUnit = "dr")
   
   Result <- tagList()
