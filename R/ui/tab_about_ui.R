@@ -32,7 +32,7 @@ fluidRow(
          i18n$t("all the heroes from"), 
          a("Wiki Aventurica", href="https://www.wiki-aventurica.de/", .noWS = "after"),
          " ", i18n$t("and"), " ",
-         a(i18n$t("Ulysses publishers"), href="https://ulisses-spiele.de/", .noWS = "after"), "."
+         a(i18n$t("Ulisses publishers"), href="https://ulisses-spiele.de/", .noWS = "after"), "."
          ),
   column(3, imageOutput("imgAboutBat"), imageOutput("imgAboutBarbarian"))
 ),

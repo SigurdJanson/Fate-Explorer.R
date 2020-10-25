@@ -96,7 +96,7 @@
     {"en": "Chances of", "de": "Chancen für"},
 
     {"en": "Choose Optolith File (json)", "de": "Wähle eine Optolith-Datei (json)"},
-    {"en": "No character has been uploaded", "de": "Kein Character geladen"},
+    {"en": "No character has been uploaded", "de": "Kein Charakter geladen"},
     {"en": "Retrieve weapon details from ulisses wiki", "de": "Details zu Waffen vom Ulisses Wiki runterladen"},
     {"en": "No file selected", "de": "Keine Datei ausgewählt"},
     {"en": "Json File", "de": "Json Datei"},
@@ -139,5 +139,5 @@
      {"en": "including everyone", "de": "einschließlich all denen,"},
      {"en": "who contributed to it", "de": "die dazu beigetragen haben"},
      {"en": "all the heroes from", "de": "all die Helden vom"},
-     {"en": "Ulysses publishers", "de": "der Ulysses Verlag"}
+     {"en": "Ulisses publishers", "de": "der Ulisses Verlag"}
 ]}
