@@ -14,6 +14,7 @@ source("./readoptjson.R")
 # BASE CLASS =====================================================
 
 ##' WeaponBase class (abstract base class for weapons)
+##' This class wraps basic functions.
 ##' @importFrom R6 R6Class
 ##' @export
 WeaponBase <- R6Class("WeaponBase", public = list(
@@ -86,6 +87,12 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     return(invisible(self))
   },
 
+  #' CalcDamage
+  #' Computes the hit point formula of the weapon. It takes the 
+  #' character's abilities into account to get the bonus right.
+  #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
+  #' @param CharAbs The character's abilities
+  #' @return Invisible returns the weapons object
   CalcDamage = function(CharAbs) {
     Die <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
     AddedBonus <- GetHitpointBonus(self$Name, Abilities = CharAbs)
@@ -136,6 +143,11 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   },
   
 
+  #' Confirm
+  #' Confirm the last critical/fumble roll
+  #' @return A value from the `.SuccessLevel` enum. `NA` if the last roll was not
+  #' a critical or fumble. Also `NA` when the weapon has not been used in this 
+  #' session, yet.
   Confirm = function() {
     if (is.na(self$LastRoll)) return(NA)
     if (!self$ConfirmationMissing) return(NA)
@@ -149,13 +161,18 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     NewResult <- .SuccessLevel[VerifyConfirmation(names(self$LastResult), names(Result))]
     self$Confirmed <- (NewResult == self$LastResult)
     self$LastResult <- NewResult
-    # Effects: criticals do double damage - Fumble do bad
+    # Effects: Criticals do double damage - Fumble do bad
     if (self$LastResult == .SuccessLevel["Critical"])
       self$LastDamage <- self$LastDamage * 2
 
     return(Result)
   },
   
+  
+  #' FumbleRoll
+  #' Rolls the consequences of a confirmed fumble roll.
+  #' @note This method merely wraps 
+  #' @seealso [GetFumbleEffect()] which this function wraps.
   FumbleRoll = function() {
     if (!isTruthy(self$LastFumbleEffect))
       if (self$LastResult == .SuccessLevel["Fumble"]) {
@@ -166,14 +183,25 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     return(self$LastFumbleEffect)
   },
   
+  
+  #' RollNeedsConfirmation
+  #' Is a confirmation roll required to complete the fighting roll?
+  #' @return `TRUE` if a confirmation roll is required. `FALSE` if
+  #' there is no last roll or the last roll is complete.
   RollNeedsConfirmation = function() {
     return(!is.na(self$LastRoll) && self$ConfirmationMissing)
   },
   
+  
+  #' GetHitPoints
+  #' Damage of the last roll
   GetHitPoints = function() {
     return(self$LastDamage)
   },
   
+  
+  #' CanParry
+  #' Does the weapon allow a parry roll?
   CanParry = function() {
     if (!is.na(self$Technique))
       Can <- IsParryWeapon(CombatTech = self$Technique) && 
