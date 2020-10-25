@@ -3,8 +3,8 @@ sidebarLayout(
   sidebarPanel(
     # Select source of ability values: manual or from character sheet
     conditionalPanel(condition = "output.ShowAbilitySoureSelection",
-             radioGroupButtons(inputId = "rdbAbilitySource",
-                               choiceNames = i18n$t(c("Manual", "Character Abilities")), 
+             radioGroupButtons(inputId = "rdbAbilitySource", label = i18n$t("Where do your values come from?"),
+                               choiceNames = i18n$t(c("Input", "Character")), 
                                choiceValues = c("ManualAbility", "CharAbility"), 
                                justified = TRUE)
     ),
