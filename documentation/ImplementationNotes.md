@@ -35,7 +35,18 @@ This way the enum can be used in several different ways:
 Be careful with functions in R that change attributes, most importantly `ifelse()`.
 
 
+## The Roll Sequence
 
+![The sequences of rolls in DSA 5](./DSA5_RollFlow.svg)
 
+A DSA 5 roll can have up to three stages:
+
+1. The **key roll** to determine whether a check is successful or not.
+   * A 1 indicates a critical success (two 1s in case of a skill check)
+   * A 20 is a botch (two 20s in case of a skill check)
+2. A botch or critical requires a **confirmation roll** (d20).
+3. A fumble roll (2d6) determines the consequences of an action.
+   * Rolls against mundane skills and ability checks do not require a fumble roll (consequences are at the game masters discretion).
+   * Melee and long-range weapons, blessed and magic skills all have tables to determine the consequences of the sum of 2d6.
 
 
