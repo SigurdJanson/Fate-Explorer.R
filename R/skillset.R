@@ -88,7 +88,7 @@ SkillSet <- R6Class("SkillSet", public = list(
     
     Mapping   <- GetAbilities() # get all abilities from db
     Abilities <- self$Skills[SkillIndex, paste0("ab", 1:3)]
-    if (all(startsWith(names(Abilities), "ATTR_")))
+    if (all(startsWith(unlist(Abilities), "ATTR_")))
       Labels    <- Mapping[match(Abilities, Mapping[["attrID"]]), "shortname"]
     else
       Labels <- NULL
