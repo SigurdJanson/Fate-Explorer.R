@@ -237,6 +237,7 @@ SkillSet <- R6Class("SkillSet", public = list(
   },
   
   
+  #' Roll
   #' Roll 3d20 for a skill check
   Roll = function(SkillIdent, Mod, Routine = FALSE) {
     SkillIndex <- self$GetSkillIndex(SkillIdent)
@@ -253,7 +254,25 @@ SkillSet <- R6Class("SkillSet", public = list(
   },
   
   
+  #' InvalidateRoll
+  #' Reset the last roll (e.g. when the user changed the skill
+  #' and the roll does not make sense anymore)
+  #' @return invisible self
+  InvalidateRoll = function() {
+    self$LastModifier <- NA
+    self$LastRoll <- NA
+    self$LastQL   <- NA
+    self$LastResult <- NA
+    self$LastRemainder <- NA
+    self$ConfirmationMissing <- NA
+    self$ConfirmRoll <- NA
+    self$LastFumbleEffect <- NA
+    
+    invisible(self)
+  },
+  
 
+  #' VerifyLastRoll
   #' Returns the success level (of `.SuccessLevel`) of the last roll
   VerifyLastRoll = function() {
     if (!isTruthy(self$LastRoll)) return(NA)

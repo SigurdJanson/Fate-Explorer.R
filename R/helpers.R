@@ -118,6 +118,8 @@ RenderFumbleRollEffect <- function( Effect ) {
 #' converted using `as.character()`.
 RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL, 
                                 KeyUnit = c("dr", "ql", "hp")) {
+  if (!isTruthy(KeyResult)) return("")
+  
   if (grepl("Fumble", KeyResult))
     SuccessIcon  <- "icon icon-fe-crowned-skull col-fumble ico-success"
   else if (grepl("Critical", KeyResult)) 
@@ -144,4 +146,5 @@ RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL,
                         class = ParClass, .noWS = c("before") ), 
                 tags$p(KeyResult, class = "keyresult"),
                 class = "roll-keyval")
+  return(Result)
 }

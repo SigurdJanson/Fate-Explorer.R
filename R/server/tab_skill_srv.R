@@ -78,9 +78,10 @@ observeEvent(
       SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
       # Update LastSkill to redraw the visible roll result
       SkillSource$LastSkill <- SkillSource$GetSkillIndex(ActiveSkillIdent)
+      SkillSource$InvalidateRoll()
       LastSkillRoll$Roll <- NA
     }
-    UpdateSkillResult(UpdateSkillResult()+1)
+    UpdateSkillResult(ifelse(isTruthy(UpdateSkillResult()), UpdateSkillResult()+1, 0))
   }#handler
 )
 
@@ -101,6 +102,7 @@ observeEvent(
   },#handler
   ignoreInit = TRUE
 )
+
 
 # React when users change the modifier
 observeEvent(eventExpr = input$SkillMod, 
@@ -128,8 +130,11 @@ output$uiDoSkillRoutine <- renderUI({
   }
 })
 
+
 # Skill role actions (View) -----
-BasicSkillSets <- CharacterSkills$new(SkillSet$new("Mundane")) # A basic set for manual skill rolls
+# A basic set for manual skill rolls
+# This is a dummy for rolls without character sheet
+BasicSkillSets <- CharacterSkills$new(SkillSet$new("Mundane"))
 ActiveSkillIdent <- "ANY"
 ActiveSkillSets <- BasicSkillSets
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
@@ -141,27 +146,27 @@ UpdateSkillResult <- reactiveVal()
 observeEvent(input$doSkillRoll, {
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = FALSE)
-  #### DEBUGGING
-  #SkillSource$LastRoll <- sample(c(20, 20, 1), 3)
-  #SkillSource$VerifyLastRoll()
-  #### DEBUGGING
   LastSkillRoll$Roll <- SkillSource$LastRoll
   LastSkillRoll$Routine <- FALSE
-  UpdateSkillResult(0)
+  UpdateSkillResult(sample.int(1000, 1))
 })
+
+
 # Initiate routine check
 observeEvent(input$doSkillRoutine, {
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = TRUE)
   LastSkillRoll$Roll <- NA
   LastSkillRoll$Routine <- SkillSource$LastRoll
-  UpdateSkillResult(0)
+  UpdateSkillResult(sample.int(1000, 1))
 })
+
 
 observeEvent(input$doSkillConfirm, { # Confirm Critical/Botch
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   UpdateSkillResult( SkillSource$Confirm()+100 )
 })
+
 
 observeEvent(input$doSkillFumble, { # Show fumble result
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
@@ -169,9 +174,10 @@ observeEvent(input$doSkillFumble, { # Show fumble result
 })
 
 
+
 # Display result of skill roll (View) ----
 output$SkillRoll <- renderText({
-  req(LastSkillRoll$Roll, UpdateSkillResult())
+  req(UpdateSkillResult())
   
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillIndex  <- SkillSource$GetSkillIndex(ActiveSkillIdent)
