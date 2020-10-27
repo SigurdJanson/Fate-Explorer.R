@@ -99,7 +99,7 @@ SetupSkills <- function() {
 
 
 
-#' Run this on start up
+#' Run this on start up to load a default file from the users home directory
 observe({
   if (IsLocalhost())
   {
@@ -111,7 +111,6 @@ observe({
         Success <- FALSE
         while (FileIndex <= length(Files) && !Success) {
           Success <- TRUE
-          print(Files[FileIndex])
           tryCatch(
             LoadCharacterFile(file.path(Sys.getenv("HOME"), Files[FileIndex])),
             error = function(e) 
