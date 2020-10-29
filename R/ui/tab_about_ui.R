@@ -13,7 +13,10 @@ fluidRow(
          i18n$t("The app is an ongoing project and I doubt it'll ever be finished. "),
          i18n$t("But it serves us well."),
          br(), br(),
-         "Fate Explorer", i18n$t(" has been created by"), " Jan Seifert",
+         "Fate Explorer", i18n$t(" has been created by"), " Jan Seifert.",
+         
+         i18n$t("This is release"), " 1.00 ", i18n$t("code named"), " Funky Dorky.",
+         
          hr(),
          h3(i18n$t("Honorable mentions")), br(), 
          i18n$t("This work would not have been possible without the support of"),
