@@ -131,12 +131,18 @@ output$uiDoSkillRoutine <- renderUI({
 })
 
 
-# Skill role actions (View) -----
+# Skill role actions (View) -------------------------------------------
+
 # A basic set for manual skill rolls
 # This is a dummy for rolls without character sheet
 BasicSkillSets <- CharacterSkills$new(SkillSet$new("Mundane"))
+
+# Identifies the currently selected skill
 ActiveSkillIdent <- "ANY"
+
+# The selected set of skills
 ActiveSkillSets <- BasicSkillSets
+
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
 # Trigger to recognize a new roll - value is unimportant
 UpdateSkillResult <- reactiveVal() 

@@ -62,6 +62,8 @@ SkillSet <- R6Class("SkillSet", public = list(
     
   #' GetAbilities
   #' Extract relevant abilities from data frame of with all character abilities
+  #' @param SkillIndex The numeric index that specifies the skill
+  #' @return An atomic vector with three abilities
   GetAbilities = function(SkillIndex) {
     if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
       stop("Invalid skill index")
@@ -70,6 +72,7 @@ SkillSet <- R6Class("SkillSet", public = list(
     return(unlist(Abilities))
   },
 
+  
   #' GetAbilityID
   #' Get the IDs of the abilities that a skill roll is rolled against
   GetAbilityID = function(SkillIndex) {
@@ -79,9 +82,10 @@ SkillSet <- R6Class("SkillSet", public = list(
     Abilities  <- self$Skills[SkillIndex, paste0("ab", 1:3)]
     return(unlist(Abilities))
   },
+
   
-  #' GetAbilities
-  #' Extract rlevant abilities from data frame of with all character abilities
+  #' GetAbilityLabels
+  #' Extract relevant abilities from data frame of with all character abilities
   GetAbilityLabels = function(SkillIndex) {
     if (!isTruthy(SkillIndex) || SkillIndex < 1 || SkillIndex > nrow(self$Skills))
       stop("Invalid skill index")
@@ -139,6 +143,11 @@ SkillSet <- R6Class("SkillSet", public = list(
   #' GetSkillValues
   #' Returns the effective numeric ability and skill value (after subtracting 
   #' modifiers)
+  #' @param SkillIdent Any identifier of a skill
+  #' @param Mod Skill modifier to roll against
+  #' @param NoSkill Do not return the skill value but ability values only
+  #' @return An atomic vector with three ability values. Plus a fourth skill 
+  #' value when `NoSkill` is `FALSE`.
   GetSkillValues = function(SkillIdent, Mod, NoSkill = FALSE) {
     SkillIndex <- self$GetSkillIndex(SkillIdent)
     

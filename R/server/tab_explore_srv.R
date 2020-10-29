@@ -6,6 +6,7 @@ output$imgSkillChances <- renderPlot({
   
   # Fetch values
   if (input$rdbSkillSource == "ManualSkill") {
+    # Fetch the values directly from the input controls
     TraitVals <- c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3)
     Chances   <- ChancesOfSkill( Abilities = TraitVals, 
                                  Skill = input$SkillValue, 
@@ -14,14 +15,17 @@ output$imgSkillChances <- renderPlot({
                        input$SkillValue)
 
   } else if (input$rdbSkillSource == "CharSkill") {
+    # Fetch the values from the active skill set
     req(input$lbCharSkills)
     Skill <- input$lbCharSkills
-    SkillIndex <- which(Character$Skills$name == Skill)
-    TraitVals <- unlist(Character$Skills[SkillIndex, paste0("ab", 1:3)]) # IDs
-    TraitVals <- unlist(Character$Attr[, TraitVals]) # Values
+    SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
+    SkillIndex  <- SkillSource$GetSkillIndex(ActiveSkillIdent) 
+    TraitVals   <- SkillSource$GetAbilities(SkillIndex)
+    SkillValue  <- SkillSource$GetSkillValues(SkillIndex, 0) # returns abilities AND skill
+    SkillValue  <- SkillValue[length(SkillValue)] # extract skill, omit abilities
     
-    Chances   <- ChancesOfSkill( Abilities = TraitVals, 
-                                 Skill = Character$Skills[SkillIndex, "value"], 
+    Chances   <- ChancesOfSkill( Abilities = TraitVals,
+                                 Skill = SkillValue,
                                  Modifier = input$SkillMod )
     PlotTitle <- Skill
   } else return()
