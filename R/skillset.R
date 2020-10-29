@@ -371,7 +371,7 @@ SkillSet <- R6Class("SkillSet", public = list(
       return(FALSE) # not applicable for mundane skills
     else {
       return(is.na(self$LastFumbleEffect) && 
-               self$LastResult == .SuccessLevel["Fumble"])
+               isTRUE(self$LastResult == .SuccessLevel["Fumble"]))
     }
   },
   

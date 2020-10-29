@@ -210,7 +210,7 @@ output$SkillRoll <- renderText({
   else
     RenderedKeyResult <- RenderRollKeyResult(names(SkillSource$LastResult), 
                                              SkillSource$LastQL, KeyUnit = "ql")
-  #browser()  
+  
   # Confirmation
   ConfirmResult <- tagList()
   if (SkillSource$RollNeedsConfirmation())
@@ -246,4 +246,3 @@ output$ShowExploreSkillChances <- reactive({
   return( input$chbExploreChances & input$rdbSkillSource !=  "NoSkill" )
 })
 outputOptions(output, 'ShowExploreSkillChances', suspendWhenHidden = FALSE)
-
