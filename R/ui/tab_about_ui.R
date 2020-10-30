@@ -8,7 +8,7 @@ fluidRow(
   column(3, imageOutput("imgAboutMagic"), imageOutput("imgAboutSkeletons")),
   column(6, i18n$t("The Fate Explorer helps you play the Dark Eye table top games. "), 
          i18n$t("Using you can roll your dice easier. "), 
-         i18n$t("Consecutive checks are done automatically."), i18n$t("and checked"), 
+         i18n$t("Consecutive checks are done automatically"), i18n$t("and checked."), 
          br(), br(), 
          i18n$t("The app is an ongoing project and I doubt it'll ever be finished. "),
          i18n$t("But it serves us well."),
