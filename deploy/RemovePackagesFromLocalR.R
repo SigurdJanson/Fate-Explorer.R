@@ -9,4 +9,4 @@ remove.packages(pkgs = c("rmarkdown", "markdown", "knitr"))
 
 # Various stuff that is not required
 remove.packages(pkgs = c("survival", "xfun", "isoband", "highr"))
-remove.packages(pkgs = c("curl", "praise", "rematch2"))
+remove.packages(pkgs = c("praise", "rematch2"))
