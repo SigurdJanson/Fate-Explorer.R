@@ -1,7 +1,7 @@
 ---
 title: "Analysis of States & Conditions"
 author: "Dr. Jan Seifert"
-date: "28 7 2020"
+date: "24-12-2020"
 output: html_document
 ---
 
@@ -10,10 +10,13 @@ knitr::opts_chunk$set(echo = TRUE)
 require(jsonlite)
 ```
 
+
 # Conditions
 
-1. Conditions cumulate
-2. `Total <- max(sum(conditions), 5L)`
+1. Conditions accumulate
+   * Effects of different conditions add up
+   * Levels of one condition add up when they are caused by different sources
+2. The total modifier of all conditions cannot exceed -5 `Total <- max(sum(conditions), -5L)`
 3. A hero with a total of 8 levels in all conditions combined is "incapacitated" regardless of the levels of each condition.
 
 
@@ -131,9 +134,9 @@ Requirements:
 ## "Overexertion" (Überanstrengung)
 | Level | Description | Modifier on          | Effect |
 |:-----:|:------------|:-----------------------|:------------|
-| I     |  | All checks on knwoledge skills | -1 |
-| II    |  | All checks on knwoledge skills | -2 |
-| III   |  | All checks on knwoledge skills | -3 |
+| I     |  | All checks on knowledge skills | -1 |
+| II    |  | All checks on knowledge skills | -2 |
+| III   |  | All checks on knowledge skills | -3 |
 | IV    |  | | Gain one level stupor. Remove one level overexertion |
 
 Requirements:
@@ -143,7 +146,28 @@ Requirements:
 
 
 
+## Demonic Consumption
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | I  | Regeneration LeP & AsP -1 | -1 |
+|       |    | All checks | -1 |
+|       |    | Pact check with the chosen archdemon | +1 |
+| II    | II | Regeneration LeP & AsP  | -50% |
+|       |    | All other checks        | -2 |
+|       |    | Pact check with the chosen archdemon | +2 |
+| III   | III | Regeneration LeP & AsP | Denied |
+|       |     | All other checks       | -3 |
+|       |    | Pact check with the chosen archdemon | +3 |
+| IV    | IV | Regeneration LeP & AsP | Denied |
+|       |    | All other checks | Denied |
+|       |    | Pact check with the chosen archdemon | +4 |
+
+
+
+
 ## Rapture (Entrückung)
+
 | Level | Description | Modifier on          | Effect |
 |:-----:|:------------|:-----------------------|:------------|
 | I     | Slight rapturous  | All skill and spell checks not agreeable to the Blessed One’s god | -1 |
@@ -187,17 +211,70 @@ Requirements:
 
 
 
-# Further Conditions
+## Hypothermia (Unterkühlung) 
 
-* Animosität
-* Brazirakus heilige Wut
-* Dämonische Auszehrung
+Hypothermia is a pure "carryover condition". That means, it has 
+no effect on the actions of the characters itself but it sets others conditions which do.
+
+The effects in the table are NOT additive (unlike the tables in the rule book).
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | | Paralysis, Confusion | +1 |
+| II    | | Paralysis | +1 |
+|       | | Confusion | +2 |
+| III   | | Paralysis, Confusion | +3 |
+| IV    | | Unconsciousness, apparent death, loss of 1D6 LP per minute | - |
+
+Source: [VR1](https://de.wiki-aventurica.de/wiki/Regelwerk), pp. 346
+
+
+## Hyperthermia (Unterkühlung) 
+
+Hyperthermia is a pure "carryover condition". That means, it has 
+no effect on the actions of the characters itself but it sets others conditions which do.
+
+The effects in the table are NOT additive (unlike the tables in the rule book).
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | | Stupor, Confusion | +1 |
+| II    | | Stupor    | +2 |
+|       | | Confusion | +1 |
+| III   | | Stupor    | +3 |
+|       | | Confusion | +2 |
+| IV    | | Stupor    | +4 |
+|       | | loss of 1D6 LP per minute | - |
+
+Source: [VR1](https://de.wiki-aventurica.de/wiki/Regelwerk), pp. 347
+
+
+
+## Further Conditions
+
+* Animosity (Animosität)
+* Brazirakus heilige Wut (Brazirakus' holy rage)
 * Eiskalte Einflüsterung
 * Loss of Sikaryan (Sikaryan-Verlust)
 * Theriak-Vorrat
-* Trance Trance)
+* Trance (Trance)
 
 
+## Approach
+
+Most conditions can be handled with two mechanisms:
+
+1. Modifier grid: 
+   * List of the modifiers for all skills, attributes, combat actions.
+   * Placeholders are allowed. 
+   * These will be applied when a check is required.
+1. Grid of consequences: 
+   * List of modifiers for conditions (incl. "this" condition) 
+   * Will be applied when the level of the condition is set.
+
+This works for all conditions except demonic consumption, rapture, desire and arousal; further conditions are also excluded.
+
+Also not counting effects on regeneration.
 
 # States
 
