@@ -107,14 +107,21 @@ ConditionBase <- R6Class("ConditionBase",
     GetLevel = function() {
       return(private$Level)
     },
+
+    GetLayoverIds = function() {
+      if (is.null(private$Layovers)) return(NULL)
+      
+      return(private$Layovers$conditionID)
+    },
     
     #' ConditionBase::ChangeLevel
     #' Set the level of the condition
     #' @param to a new level [0..4]
     #' @param by an increment/decrement (-4 to +4)
+    #' @param Others Other conditions that may be required for layover effects
     #' @note Use either `to` or `by` but not both
     #' @return `invisible(self)`
-    ChangeLevel = function(to = NULL, by = NULL) {
+    ChangeLevel = function(to = NULL, by = NULL, Others = NULL) {
       if (is.null(to) && is.null(by))
         stop("To change the condition at least one argument must be present (but both are NULL)")
       if (!is.null(to) && !is.null(by))
@@ -123,23 +130,42 @@ ConditionBase <- R6Class("ConditionBase",
         stop("Argument 'by' outside allowed range")
       if (is.null(by) && (to < 0L || to > +4L))
         stop("Argument 'by' outside allowed range")
+      if (!is.null(Others) && length(Others) == 0L) Others <- NULL
       
-      if (!is.null(private$Layovers)) {
-        # Remove layovers of current level #TODO
-      }
-      
-      if (!is.null(to))
-        private$Level <- to
-      else
-        private$Level <- private$Level + by
-      
-      if (private$Level < 0L) private$Level = 0L
-      if (private$Level > 4L) private$Level = 4L
-      
-      if (!is.null(private$Layovers)) {
-        # Add layovers of new level #TODO
-      }
+      # Save old level and determine the new one
+      OldLevel <- private$Level
 
+      if (!is.null(to))
+        NewLevel <- to
+      else
+        NewLevel <- private$Level + by
+      
+      if (NewLevel < 0L) NewLevel = 0L
+      if (NewLevel > 4L) NewLevel = 4L
+      
+      if (OldLevel != NewLevel) {
+        if (!is.null(private$Layovers)) {
+          if (is.null(Others)) stop("Cannot handle layovers because 'Others' conditions are missing")
+
+          for (lo in 1:nrow(private$Layovers)) {
+            OldValue <- ifelse(OldLevel == 0, 0L, private$Layovers[lo, paste0("level", OldLevel)])
+            NewValue <- ifelse(NewLevel == 0, 0L, private$Layovers[lo, paste0("level", NewLevel)]) 
+            # New layover - old layover
+            Delta <- NewValue - OldValue
+            if (Delta != 0L) {
+              # Find layover condition in this loop
+              Found <- sapply(Others, function(x) x$GetId() == private$Layovers[lo, "conditionID"])
+              Found <- which(Found) # get index
+              if (length(Found) == 0L) stop("Layover condition can not be found")
+              Found <- Others[[Found]] # get object
+              # change layover: by = delta
+              Found$ChangeLevel(by = Delta)
+            }
+          }
+        }
+      }
+      
+      private$Level <- NewLevel
       invisible(self)
     },
     

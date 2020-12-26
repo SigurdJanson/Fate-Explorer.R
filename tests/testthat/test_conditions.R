@@ -25,8 +25,8 @@ GetConditionTemplate <- function(Name, Id, Url) {
   )
   
   Encumbrance <- list(
-    name = "Belastung",
-    attrID = "COND_5",
+    name = Name,
+    attrID = Id,
     url = Url,
     modifiers = mods,
     layovers = NULL
@@ -35,9 +35,15 @@ GetConditionTemplate <- function(Name, Id, Url) {
   return(Encumbrance)
 }
 
+GetConditionTemplateJson <- function() {
+  JSON <- '{"Encumbrance":{"name":"Belastung","attrID":"COND_5","url":"index.php/Sta_Belastung.html","modifiers":[{"actionID":"TAL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"LITURGY_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"SPELL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AT","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"PA","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AW","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"INI","level1":-1,"level2":-2,"level3":-3,"level4":-99}],"layovers":{}}}'
+  data <- fromJSON(JSON, simplifyVector = TRUE)
+  return(data[[1]])
+}
+
 
 # Constructors -----
-test_that("Initialize properly", {
+test_that("Initialize from data structure", {
   TestName <- "Belastung"
   TestId <- "COND_5"
   TestUrl <- "www.somewhere.com"
@@ -50,6 +56,20 @@ test_that("Initialize properly", {
   expect_identical(cond$GetId(), TestId)
   expect_identical(cond$GetUrl(), TestUrl)
 })
+
+
+
+test_that("Initialize from JSON", {
+  expect_silent(
+    cond <- ConditionBase$new(GetConditionTemplateJson())
+  )
+  
+  expect_identical(cond$GetName(), "Belastung")
+  expect_identical(cond$GetId(), "COND_5")
+  expect_identical(cond$GetUrl(), "index.php/Sta_Belastung.html")
+})
+
+
 
 
 # Setting Levels -----
@@ -108,30 +128,141 @@ test_that("Setting levels: by", {
 
 
 # Get Modifiers -----
+
+# Test twice, once with data from generated list and 
+# once with data from parsed JSON
 test_that("Modifiers", {
+  TestName <- "Belastung"
+  TestId <- "COND_5"
+  TestUrl <- "www.somewhere.com"
+  TestConditions <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
+  TestConditions <- list(TestConditions, ConditionBase$new(GetConditionTemplateJson()))
+
+  for(cond in TestConditions) {
+    for (level in 0L:3L) {
+      cond$ChangeLevel(to = level)
+      
+      Skill <- paste0("TAL_", sample(1:59, 1))
+      expect_identical(cond$GetModifier(Skill), -level)
+      Chant <- paste0("LITURGY_", sample(1:192, 1))
+      expect_identical(cond$GetModifier(Chant), -level)
+      expect_identical(cond$GetModifier("UNKNOWN ACTION"), 0L)
+    }
+    
+    level <- 4L
+    cond$ChangeLevel(to = level)
+    Skill <- paste0("TAL_", sample(1:59, 1))
+    expect_identical(cond$GetModifier(Skill), -99L)
+    Chant <- paste0("LITURGY_", sample(1:192, 1))
+    expect_identical(cond$GetModifier(Chant), -99L)
+    expect_identical(cond$GetModifier("UNKNOWN ACTION"), 0L)
+  }
+})
+
+
+# Layovers -----
+test_that("No layovers", {
   TestName <- "Belastung"
   TestId <- "COND_5"
   TestUrl <- "www.somewhere.com"
   cond <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
   
-  for (level in 0L:3L) {
-    cond$ChangeLevel(to = level)
-    
-    Skill <- paste0("TAL_", sample(1:59, 1))
-    expect_identical(cond$GetModifier(Skill), -level)
-    Chant <- paste0("LITURGY_", sample(1:192, 1))
-    expect_identical(cond$GetModifier(Chant), -level)
-    expect_identical(cond$GetModifier("UNKNOWN ACTION"), 0L)
-  }
+  expect_null(cond$GetLayoverIds())
+})
+
+
+test_that("Layovers at level 2 and 4: upwards", {
+  TestName <- "Belastung"
+  TestId <- "COND_5"
+  TestUrl <- "www.somewhere.com"
+  Template <- GetConditionTemplate(TestName, TestId, TestUrl)
   
-  level <- 4L
-  cond$ChangeLevel(to = level)
-  Skill <- paste0("TAL_", sample(1:59, 1))
-  expect_identical(cond$GetModifier(Skill), -99L)
-  Chant <- paste0("LITURGY_", sample(1:192, 1))
-  expect_identical(cond$GetModifier(Chant), -99L)
-  expect_identical(cond$GetModifier("UNKNOWN ACTION"), 0L)
+  # Add layover condition: with a layover at level 2 and 4
+  lays <- data.frame(
+    conditionID = c("COND_9"),
+    level1      = c(0L),
+    level2	    = c(+1L),
+    level3      = c(0L),
+    level4      = c(+2L)
+  )
+  Template$layovers <- lays
   
+  # ... and create condition COND_5
+  cond5 <- ConditionBase$new(Template)
+  
+  # Create layover condition COND_9
+  TestName <- "Layover"
+  TestId <- "COND_9"
+  TestUrl <- "www.elsewhere.com"
+  cond9 <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
+  
+  # TEST!
+  # check if condition is aware of the layover
+  expect_identical(c("COND_9"), cond5$GetLayoverIds())
+  # level 0 is just level 0
+  expect_identical(0L, cond5$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 1, no layover
+  expect_identical(1L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 2, layover of +1
+  expect_identical(2L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
+  expect_identical(1L, cond9$GetLevel())
+  # level 3, layover is back to 0
+  expect_identical(3L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 4, layover of +2
+  expect_identical(4L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
+  expect_identical(2L, cond9$GetLevel())
+})
+
+
+test_that("Layovers at level 2 and 4: backwards", {
+  TestName <- "Belastung"
+  TestId <- "COND_5"
+  TestUrl <- "www.somewhere.com"
+  Template <- GetConditionTemplate(TestName, TestId, TestUrl)
+  
+  # Add layover condition: with a layover at level 2 and 4
+  lays <- data.frame(
+    conditionID = c("COND_9"),
+    level1      = c(0L),
+    level2	    = c(+1L),
+    level3      = c(0L),
+    level4      = c(+2L)
+  )
+  Template$layovers <- lays
+  
+  # ... and create condition COND_5
+  cond5 <- ConditionBase$new(Template)
+  
+  # Create layover condition COND_9
+  TestName <- "Layover"
+  TestId <- "COND_9"
+  TestUrl <- "www.elsewhere.com"
+  cond9 <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
+  
+  # TEST!
+  # check if condition is aware of the layover
+  expect_identical(c("COND_9"), cond5$GetLayoverIds())
+  # level 0 is just level 0
+  expect_identical(0L, cond5$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 4, layover of +2
+  expect_identical(4L, cond5$ChangeLevel(to = +4L, Others = list(cond9))$GetLevel())
+  expect_identical(2L, cond9$GetLevel())
+  # level 3, layover is back to 0
+  expect_identical(3L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 2, layover of +1
+  expect_identical(2L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
+  expect_identical(1L, cond9$GetLevel())
+  # level 1, no layover
+  expect_identical(1L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
+  # level 0 is just level 0
+  expect_identical(0L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
+  expect_identical(0L, cond9$GetLevel())
 })
 
 
