@@ -28,6 +28,7 @@ GetConditionTemplate <- function(Name, Id, Url) {
     name = Name,
     attrID = Id,
     url = Url,
+    levels = paste0("L-", 1:4),
     modifiers = mods,
     layovers = NULL
   )
@@ -55,10 +56,14 @@ test_that("Initialize from data structure", {
   expect_identical(cond$GetName(), TestName)
   expect_identical(cond$GetId(), TestId)
   expect_identical(cond$GetUrl(), TestUrl)
+  expect_identical(cond$GetLevel(), 0L)
+  expect_identical(cond$GetLevelName(), "-")
+  expect_identical(cond$GetLevelNames(), paste0("L-", 1:4))
 })
 
 
-
+# This test is needed especially to check if integers are read correctly 
+# and not imported as doubles
 test_that("Initialize from JSON", {
   expect_silent(
     cond <- ConditionBase$new(GetConditionTemplateJson())
@@ -105,11 +110,14 @@ test_that("Setting levels: to", {
 
   # Initialize all conditions at level 0
   expect_identical(cond$GetLevel(), 0L)
+  expect_identical(cond$GetLevelName(), "-")
   
   # explicitly specifying the `to` argument
   expect_identical(cond$ChangeLevel(to = 1L)$GetLevel(), 1L)
+  expect_identical(cond$GetLevelName(), "L-1")
   # Implicitely choosing `to`
   expect_identical(cond$ChangeLevel(2L)$GetLevel(), 2L)
+  expect_identical(cond$GetLevelName(), "L-2")
 })
 
 test_that("Setting levels: by", {

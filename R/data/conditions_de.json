@@ -3,6 +3,7 @@
         "name": "Verwirrung",
         "attrID": "COND_1",
         "url": "index.php/Sta_Verwirrung.html",
+        "levels": ["leicht verwirrt", "verwirrt,", "sehr verwirrt", "handlungsunfähig"],
         "modifiers": [
             {
                 "actionID": ["LITURGY_", "SPELL_", "TAL_31", "TAL_32", "TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", "TAL_40", "TAL_41", "TAL_42"],
@@ -25,6 +26,7 @@
         "name": "Furcht",
         "attrID": "COND_2",
         "url": "index.php/Sta_Furcht.html",
+        "levels": ["beunruhigt", "verängstigt", "panisch", "katatonisch"],
         "modifiers": [
             {
                 "actionID": "",
@@ -40,6 +42,7 @@
         "name": "Schmerz",
         "attrID": "COND_3",
         "url": "index.php/Sta_Schmerz.html",
+        "levels": ["leichte Schmerzen", "ablenkende Schmerzen", "starke Schmerzen", "handlungsunfähig"],
         "modifiers": [
             {
                 "actionID": "",
@@ -55,6 +58,7 @@
         "name": "Betäubung",
         "attrID": "COND_4",
         "url": "index.php/Sta_Bet%C3%A4ubung.html",
+        "levels": ["leicht angeschlagen", "angeschlagen", "schwer angeschlagen", "handlungsunfähig"],
         "modifiers": [
             {
                 "actionID": "",
@@ -70,6 +74,7 @@
         "name": "Belastung",
         "attrID": "COND_5",
         "url": "index.php/Sta_Belastung.html",
+        "levels": ["leicht belastet", "belastet", "schwer belastet", "handlungsunfähig"],
         "modifiers": [
             {
                 "actionID": "TAL_",
@@ -127,6 +132,7 @@
         "name": "Berauscht",
         "attrID": "COND_6",
         "url": "index.php/Sta_Berauscht.html",
+        "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [
             {
                 "actionID": "TAL_14 ",
@@ -157,6 +163,7 @@
         "name": "Paralyse",
         "attrID": "COND_7",
         "url": "index.php/Sta_Paralyse.html",
+        "levels": ["leicht versteift", "versteift", "kaum mehr bewegungsfähig", "bewegungsunfähig"],
         "modifiers": [
             {
             "actionID": ["LITURGY_", "SPELL_", 
@@ -177,6 +184,7 @@
         "name": "Überanstrengung",
         "attrID": "COND_8",
         "url": "index.php/Zustand_Ueberanstrengung.html",
+        "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [
             {
                 "actionID": ["TAL_31", "TAL_32", "TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", "TAL_40", "TAL_41", "TAL_42"],
@@ -200,6 +208,7 @@
         "name": "Unterkühlung",
         "attrID": "COND_21",
         "url": "index.php/Hitze_und_Kaelte.html",
+        "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [],
         "layovers": [
             {
@@ -222,6 +231,7 @@
         "name": "Überhitzung",
         "attrID": "COND_22",
         "url": "index.php/Hitze_und_Kaelte.html",
+        "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [],
         "layovers": [
             {

@@ -61,6 +61,7 @@ ConditionBase <- R6Class("ConditionBase",
     Id = "",
     Url = "",
     Level = 0L,
+    LevelNames = NULL,
     Modifiers = NULL,
     Layovers = NULL
   ), # private
@@ -74,6 +75,7 @@ ConditionBase <- R6Class("ConditionBase",
       private$Name <- Data[["name"]]
       private$Id <- Data[["attrID"]]
       private$Url <- Data[["url"]]
+      private$LevelNames <- Data[["levels"]]
       
       if (is.null(Data[["modifiers"]]) ||
           is.na(Data[["modifiers"]]) ||
@@ -107,7 +109,16 @@ ConditionBase <- R6Class("ConditionBase",
     GetLevel = function() {
       return(private$Level)
     },
-
+    GetLevelName = function() {
+      if (private$Level != 0)
+        return(private$LevelNames[private$Level])
+      else
+        return("-")
+    },
+    GetLevelNames = function() {
+      return(private$LevelNames)
+    },
+    
     GetLayoverIds = function() {
       if (is.null(private$Layovers)) return(NULL)
       
