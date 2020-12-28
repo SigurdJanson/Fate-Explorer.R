@@ -229,7 +229,7 @@ The effects in the table are NOT additive (unlike the tables in the rule book).
 Source: [VR1](https://de.wiki-aventurica.de/wiki/Regelwerk), pp. 346
 
 
-## Hyperthermia (Unterkühlung) 
+## Hyperthermia (Überhitzung) 
 
 Hyperthermia is a pure "carryover condition". That means, it has 
 no effect on the actions of the characters itself but it sets others conditions which do.

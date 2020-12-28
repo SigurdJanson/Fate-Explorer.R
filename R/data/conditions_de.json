@@ -1,1 +1,214 @@
-{"Encumbrance":{"name":"Belastung","attrID":"COND_5","url":"index.php/Sta_Belastung.html","modifiers":[{"actionID":"TAL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"LITURGY_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"SPELL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AT","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"PA","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AW","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"INI","level1":-1,"level2":-2,"level3":-3,"level4":-99}],"layovers":{}},"Intoxicated":{"name":"Berauscht","attrID":"COND_6","url":"index.php/Sta_Berauscht.html","modifiers":[{"actionID":"TAL_14 ","level1":-1,"level2":-2,"level3":-3,"level4":0}],"layovers":[{"conditionID":"COND_4","level1":0,"level2":0,"level3":0,"level4":1},{"conditionID":"COND_6","level1":0,"level2":0,"level3":0,"level4":-4}]}}
+{
+    "Confusion": {
+        "name": "Verwirrung",
+        "attrID": "COND_1",
+        "url": "index.php/Sta_Verwirrung.html",
+        "modifiers": [
+            {
+                "actionID": ["LITURGY_", "SPELL_", "TAL_31", "TAL_32", "TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", "TAL_40", "TAL_41", "TAL_42"],
+                "level1": -1,
+                "level2": -2,
+                "level3": -99,
+                "level4": -99
+            },
+            {
+                "actionID": "",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            }
+        ],
+        "layovers": {}
+    },
+    "Fear": {
+        "name": "Furcht",
+        "attrID": "COND_2",
+        "url": "index.php/Sta_Furcht.html",
+        "modifiers": [
+            {
+                "actionID": "",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            }
+        ],
+        "layovers": {}
+    },
+    "Pain": {
+        "name": "Schmerz",
+        "attrID": "COND_3",
+        "url": "index.php/Sta_Schmerz.html",
+        "modifiers": [
+            {
+                "actionID": "",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -3
+            }
+        ],
+        "layovers": {}
+    },
+    "Stupor": {
+        "name": "Betäubung",
+        "attrID": "COND_4",
+        "url": "index.php/Sta_Bet%C3%A4ubung.html",
+        "modifiers": [
+            {
+                "actionID": "",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -3
+            }
+        ],
+        "layovers": {}
+    },
+    "Encumbrance": {
+        "name": "Belastung",
+        "attrID": "COND_5",
+        "url": "index.php/Sta_Belastung.html",
+        "modifiers": [
+            {
+                "actionID": "TAL_",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "LITURGY_",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "SPELL_",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "AT",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "PA",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "AW",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            },
+            {
+                "actionID": "INI",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -99
+            }
+        ],
+        "layovers": {}
+    },
+    "Intoxicated": {
+        "name": "Berauscht",
+        "attrID": "COND_6",
+        "url": "index.php/Sta_Berauscht.html",
+        "modifiers": [
+            {
+                "actionID": "TAL_14 ",
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": 0
+            }
+        ],
+        "layovers": [
+            {
+                "conditionID": "COND_4",
+                "level1": 0,
+                "level2": 0,
+                "level3": 0,
+                "level4": 1
+            },
+            {
+                "conditionID": "COND_6",
+                "level1": 0,
+                "level2": 0,
+                "level3": 0,
+                "level4": -4
+            }
+        ]
+    },
+    "Paralysis": {
+        "name": "Paralyse",
+        "attrID": "COND_7",
+        "url": "index.php/Sta_Paralyse.html",
+        "modifiers": [],
+        "layovers": {}
+    },
+    "Overexertion": {
+        "name": "Überanstrengung",
+        "attrID": "COND_8",
+        "url": "index.php/Zustand_Ueberanstrengung.html",
+        "modifiers": [],
+        "layovers": {}
+    },
+    "Hypothermia": {
+        "name": "Unterkühlung",
+        "attrID": "COND_21",
+        "url": "index.php/Hitze_und_Kaelte.html",
+        "modifiers": [],
+        "layovers": [
+            {
+                "conditionID": "COND_7",
+                "level1": 1,
+                "level2": 1,
+                "level3": 3,
+                "level4": 4
+            },
+            {
+                "conditionID": "COND_1",
+                "level1": 1,
+                "level2": 2,
+                "level3": 3,
+                "level4": 4
+            }
+        ]
+    },
+    "Hyperthermia": {
+        "name": "Überhitzung",
+        "attrID": "COND_22",
+        "url": "index.php/Hitze_und_Kaelte.html",
+        "modifiers": [],
+        "layovers": [
+            {
+                "conditionID": "COND_4",
+                "level1": 1,
+                "level2": 2,
+                "level3": 3,
+                "level4": 4
+            },
+            {
+                "conditionID": "COND_1",
+                "level1": 1,
+                "level2": 1,
+                "level3": 2,
+                "level4": 2
+            }
+        ]
+    }
+}
