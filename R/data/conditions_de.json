@@ -157,15 +157,44 @@
         "name": "Paralyse",
         "attrID": "COND_7",
         "url": "index.php/Sta_Paralyse.html",
-        "modifiers": [],
+        "modifiers": [
+            {
+            "actionID": ["LITURGY_", "SPELL_", 
+                "TAL_1", "TAL_2", "TAL_3", "TAL_4", "TAL_5", "TAL_6", "TAL_7", 
+                "TAL_9", "TAL_11", "TAL_12", "TAL_13", "TAL_14", "TAL_15", "TAL_16", "TAL_17", "TAL_18", 
+                "TAL_21", "TAL_22", "TAL_24", "TAL_25", "TAL_26", 
+                "TAL_32", "TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", "TAL_40", "TAL_41", "TAL_42",
+                "TAL_43", "TAL_44", "TAL_45", "TAL_46", "TAL_47", "TAL_48", "TAL_49", "TAL_50", "TAL_51", "TAL_52", "TAL_53", "TAL_54", "TAL_55", "TAL_56", "TAL_57", "TAL_58", "TAL_59"],
+            "level1": -1,
+            "level2": -2,
+            "level3": -3,
+            "level4": -99
+            }
+        ],
         "layovers": {}
     },
     "Overexertion": {
         "name": "Überanstrengung",
         "attrID": "COND_8",
         "url": "index.php/Zustand_Ueberanstrengung.html",
-        "modifiers": [],
-        "layovers": {}
+        "modifiers": [
+            {
+                "actionID": ["TAL_31", "TAL_32", "TAL_33", "TAL_34", "TAL_35", "TAL_36", "TAL_37", "TAL_38", "TAL_39", "TAL_40", "TAL_41", "TAL_42"],
+                "level1": -1,
+                "level2": -2,
+                "level3": -3,
+                "level4": -3
+            }
+        ],
+        "layovers": [
+            {
+                "conditionID": "COND_4",
+                "level1": 0,
+                "level2": 0,
+                "level3": 0,
+                "level4": 1
+            }
+        ]
     },
     "Hypothermia": {
         "name": "Unterkühlung",
