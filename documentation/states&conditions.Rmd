@@ -1,7 +1,7 @@
 ---
 title: "Analysis of States & Conditions"
 author: "Dr. Jan Seifert"
-date: "24-12-2020"
+date: "30-12-2020"
 output: html_document
 ---
 
@@ -33,23 +33,24 @@ require(jsonlite)
 
 Requirements:
 
-* Reference to all checks
-* Reference to skills that involve complex actions
+* Reference to all checks (incl. combat and ability)
+* Reference to a list of skills (i.e. skills that involve complex actions)
+* Diverging effects on level III depending on the type of skill
 * Ignore MOV
 
 
 ## Fear (Furcht)
 | Level | Description | Modifier on          | Effect |
 |:-----:|:------------|:-----------------------|:------------|
-| I     | Uneasy   | All checks | -1 |
-| II    | Scared   | All checks | -2 |
-| III   | Panicked | All checks | -3 |
+| I     | Uneasy      | All checks | -1 |
+| II    | Scared      | All checks | -2 |
+| III   | Panicked    | All checks | -3 |
 | IV    | Catatonic and therefore incapacitated | All actions | Denied |
 
 
 Requirements:
 
-* Reference to all checks
+* Reference to all checks (incl. combat and ability)
 
 
 ## Pain (Schmerz)
@@ -62,7 +63,7 @@ Requirements:
 
 Requirements:
 
-* Reference to all checks
+* Reference to all checks (incl. combat and ability)
 * Ignore MOV
 
 
@@ -76,7 +77,7 @@ Requirements:
 
 Requirements:
 
-* Reference to all checks
+* Reference to all checks (incl. combat and ability)
 
 
 ## Encumbrance (Belastung)
@@ -94,7 +95,7 @@ Requirements:
 
 * Reference to all skill checks
 * Reference to all combat skills
-* Reference to inititive (INI)
+* Reference to initiative (INI)
 * Ignore MOV
 
 
@@ -103,21 +104,24 @@ Requirements:
 | Level | Description | Modifier on          | Effect |
 |:-----:|:------------|:-----------------------|:------------|
 | I     | Tipsy | Checks on carousing | -1 |
-| II    |  | Checks on carousing | -2 |
+| II    |       | Checks on carousing | -2 |
 | III   | Drunk | Checks on carousing | -3 |
-| IV    | Hero suffers one level of stupor. 4 levels of intoxication. Further levels remain. | All actions | Denied |
+| IV    |       | All actions         | Denied |
+|       |       | Condition "Stupor"  | +1 |
+|       |       | Intoxication (further levels above 4 remain) | -4 |
 
 
 Requirements:
 
-* Reference to specific skill
-* Connection to stupor
+* Reference to specific skill (Carousing)
+* Carry over level 4 to stupor
+* Carry over -4 levels to self
 
 
 ## Paralysis (Paralyse)
 | Level | Description | Modifier on          | Effect |
 |:-----:|:------------|:-----------------------|:------------|
-| I     | Slightly paralysed  | All checks involving movement or speech | -1 |
+| I     | Slightly paralyzed  | All checks involving movement or speech | -1 |
 |       | | MOV      | -25% |
 | II    | Stiff  | All checks involving movement or speech | -2 |
 |       | | MOV      | -50% |
@@ -137,77 +141,15 @@ Requirements:
 | I     |  | All checks on knowledge skills | -1 |
 | II    |  | All checks on knowledge skills | -2 |
 | III   |  | All checks on knowledge skills | -3 |
-| IV    |  | | Gain one level stupor. Remove one level overexertion |
+| IV    |  | Condition "Stupor"             | +1 |
+|       |  | Condition "Overexertion"       | -1 |
 
 Requirements:
 
 * Reference to a list of skills or to the class of knowledge skills.
-* Connection to stupor
+* Carry over level 4 to stupor
+* Carry over -1 levels to self
 
-
-
-## Demonic Consumption
-
-| Level | Description | Modifier on          | Effect |
-|:-----:|:------------|:-----------------------|:------------|
-| I     | I  | Regeneration LeP & AsP -1 | -1 |
-|       |    | All checks | -1 |
-|       |    | Pact check with the chosen archdemon | +1 |
-| II    | II | Regeneration LeP & AsP  | -50% |
-|       |    | All other checks        | -2 |
-|       |    | Pact check with the chosen archdemon | +2 |
-| III   | III | Regeneration LeP & AsP | Denied |
-|       |     | All other checks       | -3 |
-|       |    | Pact check with the chosen archdemon | +3 |
-| IV    | IV | Regeneration LeP & AsP | Denied |
-|       |    | All other checks | Denied |
-|       |    | Pact check with the chosen archdemon | +4 |
-
-
-
-
-## Rapture (Entrückung)
-
-| Level | Description | Modifier on          | Effect |
-|:-----:|:------------|:-----------------------|:------------|
-| I     | Slight rapturous  | All skill and spell checks not agreeable to the Blessed One’s god | -1 |
-| II    | Rapturous  | All skill and spell checks agreeable to the Blessed One’s god | +1 |
-|       | | All other checks      | -2 |
-| III   | Divinely inspired | All skill and spell checks agreeable to the Blessed One’s god   | +2 |
-|       | | All other checks      | -3 |
-| IV    | Implement of the god | All skill and spell checks agreeable to the Blessed One’s god   | +3 |
-|       | | All other checks      | -4 |
-
-Requirements:
-
-* Deity
-* List of skills related to that deity
-* Two kinds of impact
-
-
-## Desire (Begehren)
-| Level | Description | Modifier on          | Effect |
-|:-----:|:------------|:---------------------|:------------|
-| I     | Slight desire | Willpower (Resist Seduction) against the desired person | -1 |
-| II    | | Willpower (Resist Seduction) against the desired person | -2 |
-| III   | | Willpower (Resist Seduction) against the desired person | -3 |
-| IV    | | Willpower (Resist Seduction) against the desired person | -4 |
-
-Requirements:
-
-* Reference to specific skill which - however - cannot always be applied. So ho to do it in the app?
-
-
-## Arousal (Erregung)
-| Level | Description | Modifier on          | Effect |
-|:-----:|:------------|:---------------------|:------------|
-| I     | Slightly aroused | All checks on SAG incl. skill checks | -1 |
-| II    | Aroused | All checks on SAG incl. skill checks | -2 |
-| III   | Very aroused | All checks on SAG incl. skill checks | -3 |
-| IV    | Orgasm | Arousal returns to zero | - |
-
-* Reference to a list of skills
-* Reference to the ability of the skill check
 
 
 
@@ -250,14 +192,115 @@ Source: [VR1](https://de.wiki-aventurica.de/wiki/Regelwerk), pp. 347
 
 
 
+
+
 ## Further Conditions
+
+At the moment these conditions are not represented in Fate Explorer.
+
+### Rapture (Entrückung)
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | Slight rapturous  | All skill and spell checks not agreeable to the Blessed One’s god | -1 |
+| II    | Rapturous  | All skill and spell checks agreeable to the Blessed One’s god | +1 |
+|       | | All other checks      | -2 |
+| III   | Divinely inspired | All skill and spell checks agreeable to the Blessed One’s god   | +2 |
+|       | | All other checks      | -3 |
+| IV    | Implement of the god | All skill and spell checks agreeable to the Blessed One’s god   | +3 |
+|       | | All other checks      | -4 |
+
+Requirements:
+
+* Deity connected to character
+* List of skills related to that deity
+* Two different kinds of impact
+
+
+### Trance (Trance)
+
+Trance is a mild form of rapture. It can be caused by the use of ceremonial objects or special abilities.
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:-------|
+| I     | Characters feel close to their deity | No AsP regeneration in the next period. | -99 |
+| II    | | All checks, except chants and skill checks agreeable to the Blessed One's god | -2 |
+|       | | No AsP regeneration in the next period. | -99 |
+| III   | | All checks | -3 |
+|       | | No AsP regeneration in the next period. | -99 |
+| IV    | Incapacitated | All checks | -99 |
+|       | | | No AsP regeneration in the next period. | -99 |
+
+Requirements:
+
+* List of affected checks changes between levels
+* Effects on Asp regeneration
+* Reset on AsP regeneration as soon as regeneration has been denied once
+
+Source: [VR4](https://de.wiki-aventurica.de/wiki/Aventurisches_G%C3%B6tterwirken), p.11
+
+
+
+### Desire (Begehren)
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | Slight desire | Willpower (Resist Seduction) against the desired person | -1 |
+| II    | | Willpower (resist Seduction) against the desired person | -2 |
+| III   | | Willpower (resist Seduction) against the desired person | -3 |
+| IV    | | Willpower (resist Seduction) against the desired person | -4 |
+
+Requirements:
+
+* Reference to specific skill which - however - cannot always be applied. So ho to do it in the app?
+
+
+### Arousal (Erregung)
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:---------------------|:------------|
+| I     | Slightly aroused | All checks on SAG incl. skill checks | -1 |
+| II    | Aroused | All checks on SAG incl. skill checks | -2 |
+| III   | Very aroused | All checks on SAG incl. skill checks | -3 |
+| IV    | Orgasm | Arousal returns to zero | - |
+
+Requirements:
+
+* Reference to a list of skills
+* Reference to the ability of the skill check
+* Modifier for skill checks that is limited to a specific ability
+
+
+
+
+### Demonic Consumption
+
+| Level | Description | Modifier on          | Effect |
+|:-----:|:------------|:-----------------------|:------------|
+| I     | I  | Regeneration LeP & AsP -1 | -1 |
+|       |    | All checks | -1 |
+|       |    | Pact check with the chosen archdemon | +1 |
+| II    | II | Regeneration LeP & AsP  | -50% |
+|       |    | All other checks        | -2 |
+|       |    | Pact check with the chosen archdemon | +2 |
+| III   | III | Regeneration LeP & AsP | Denied |
+|       |     | All other checks       | -3 |
+|       |    | Pact check with the chosen archdemon | +3 |
+| IV    | IV | Regeneration LeP & AsP | Denied |
+|       |    | All other checks | Denied |
+|       |    | Pact check with the chosen archdemon | +4 |
+
+
+
+### Honourable Mention
+
+Very specific conditions that apply for only a very small group of characters or game setups.
 
 * Animosity (Animosität)
 * Brazirakus heilige Wut (Brazirakus' holy rage)
 * Eiskalte Einflüsterung
 * Loss of Sikaryan (Sikaryan-Verlust)
 * Theriak-Vorrat
-* Trance (Trance)
 
 
 ## Approach
@@ -266,7 +309,7 @@ Most conditions can be handled with two mechanisms:
 
 1. Modifier grid: 
    * List of the modifiers for all skills, attributes, combat actions.
-   * Placeholders are allowed. 
+   * Placeholders are allowed.
    * These will be applied when a check is required.
 1. Grid of consequences: 
    * List of modifiers for conditions (incl. "this" condition) 
@@ -275,6 +318,12 @@ Most conditions can be handled with two mechanisms:
 This works for all conditions except demonic consumption, rapture, desire and arousal; further conditions are also excluded.
 
 Also not counting effects on regeneration.
+
+
+
+
+
+<!-- ---------------- STATES ------------------- -->
 
 # States
 
@@ -292,7 +341,8 @@ Also not counting effects on regeneration.
 * Magic: Blind characters must touch opponents
 * Chants:  Blind characters must touch opponents
 
-## Bloodlust ()
+
+## Bloodlust (Blutrausch)
 
 * Close combat
   * +4 bonus to attacks
@@ -311,26 +361,42 @@ Also not counting effects on regeneration.
   * When bloodlust ends, the hero gains 2 levels of Stupor
   
 
-## Bound ()
+## Bound (Fixiert)
 
 * MOV: 0
 * Dodge -4
 
-## Burning
+
+## Burning (Brennend)
 
 (No penalties, damage only and skill checks are required to stop it)
 
-## Cramped
 
-## Deaf
+## Cramped (Eingeengt)
 
-## Disease
+Effects on close combat (Source: [VR1](https://de.wiki-aventurica.de/wiki/Regelwerk), pp. 36)
 
-## Immobilized
 
-## Incapacitated
+## Deaf (Taub)
 
-## Invisible
+
+
+## Disease (Krank)
+
+No regeneration; characters lose 1d3 LP if they don't regenerate
+
+
+## Immobilized (Fixiert)
+
+MOV 0, Dogde -4
+
+
+## Incapacitated (Handlungsunfähig)
+
+MOV 0, most skill checks aren't possible.
+
+
+## Invisible (Unsichtbar)
 
 The state Invisible has consequences on others, not on the invisible hero.
 
@@ -338,16 +404,19 @@ Combat situations
 * An opponent must be aware of the presence and approximate location of the invisible person: competitive skill check on Perception (Search) vs. Stealth (Sneak).
 * If the opponent is aware of a characters location they can fight as if they had the status Blind.
 
-## Mute
+
+## Mute (Stumm)
 
 * Spells: denied, unless the hero is an elf
 * Chants: denied
+
 
 ## Poisoned
 
 No regeneration
 
-## Prone (liegend)
+
+## Prone (Liegend)
 
 * AT -4
 * PA -2
@@ -355,7 +424,11 @@ No regeneration
 * MOV 1
 
 
-## Surprised
+## Surprised (Überrascht)
 
-## Unconscious
+One attack actions aganist the character cannot be defended.
+
+
+## Unconscious (Bewusstlos)
+
 
