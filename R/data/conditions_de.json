@@ -20,7 +20,7 @@
                 "level4": -99
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Fear": {
         "name": "Furcht",
@@ -36,7 +36,7 @@
                 "level4": -99
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Pain": {
         "name": "Schmerz",
@@ -52,7 +52,7 @@
                 "level4": -3
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Stupor": {
         "name": "Betäubung",
@@ -68,7 +68,7 @@
                 "level4": -3
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Encumbrance": {
         "name": "Belastung",
@@ -126,7 +126,7 @@
                 "level4": -99
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Intoxicated": {
         "name": "Berauscht",
@@ -142,7 +142,7 @@
                 "level4": 0
             }
         ],
-        "layovers": [
+        "carryovers": [
             {
                 "conditionID": "COND_4",
                 "level1": 0,
@@ -178,7 +178,7 @@
             "level4": -99
             }
         ],
-        "layovers": {}
+        "carryovers": {}
     },
     "Overexertion": {
         "name": "Überanstrengung",
@@ -194,7 +194,7 @@
                 "level4": -3
             }
         ],
-        "layovers": [
+        "carryovers": [
             {
                 "conditionID": "COND_4",
                 "level1": 0,
@@ -210,7 +210,7 @@
         "url": "index.php/Hitze_und_Kaelte.html",
         "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [],
-        "layovers": [
+        "carryovers": [
             {
                 "conditionID": "COND_7",
                 "level1": 1,
@@ -233,7 +233,7 @@
         "url": "index.php/Hitze_und_Kaelte.html",
         "levels": ["Stufe I", "Stufe II", "Stufe III", "Stufe IV"],
         "modifiers": [],
-        "layovers": [
+        "carryovers": [
             {
                 "conditionID": "COND_4",
                 "level1": 1,

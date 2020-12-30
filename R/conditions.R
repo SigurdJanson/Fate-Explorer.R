@@ -63,7 +63,7 @@ ConditionBase <- R6Class("ConditionBase",
     Level = 0L,
     LevelNames = NULL,
     Modifiers = NULL,
-    Layovers = NULL
+    Carryovers = NULL
   ), # private
   
   
@@ -84,12 +84,12 @@ ConditionBase <- R6Class("ConditionBase",
       else
         private$Modifiers <- Data[["modifiers"]]
 
-      if (is.null(Data[["layovers"]]) ||
-          is.na(Data[["layovers"]]) ||
-          length(Data[["layovers"]]) == 0)
-        private$Layovers <- NULL # make sure that it's NULL if empty
+      if (is.null(Data[["carryovers"]]) ||
+          is.na(Data[["carryovers"]]) ||
+          length(Data[["carryovers"]]) == 0)
+        private$Carryovers <- NULL # make sure that it's NULL if empty
       else
-        private$Layovers <- Data[["layovers"]]
+        private$Carryovers <- Data[["carryovers"]]
       
       invisible(self)
     },
@@ -119,17 +119,17 @@ ConditionBase <- R6Class("ConditionBase",
       return(private$LevelNames)
     },
     
-    GetLayoverIds = function() {
-      if (is.null(private$Layovers)) return(NULL)
+    GetCarryoverIds = function() {
+      if (is.null(private$Carryovers)) return(NULL)
       
-      return(private$Layovers$conditionID)
+      return(private$Carryovers$conditionID)
     },
     
     #' ConditionBase::ChangeLevel
     #' Set the level of the condition
     #' @param to a new level [0..4]
     #' @param by an increment/decrement (-4 to +4)
-    #' @param Others Other conditions that may be required for layover effects
+    #' @param Others Other conditions that may be required for carryover effects
     #' @note Use either `to` or `by` but not both
     #' @return `invisible(self)`
     ChangeLevel = function(to = NULL, by = NULL, Others = NULL) {
@@ -155,21 +155,21 @@ ConditionBase <- R6Class("ConditionBase",
       if (NewLevel > 4L) NewLevel = 4L
       
       if (OldLevel != NewLevel) {
-        if (!is.null(private$Layovers)) {
-          if (is.null(Others)) stop("Cannot handle layovers because 'Others' conditions are missing")
+        if (!is.null(private$Carryovers)) {
+          if (is.null(Others)) stop("Cannot handle carryovers because 'Others' conditions are missing")
 
-          for (lo in 1:nrow(private$Layovers)) {
-            OldValue <- ifelse(OldLevel == 0, 0L, private$Layovers[lo, paste0("level", OldLevel)])
-            NewValue <- ifelse(NewLevel == 0, 0L, private$Layovers[lo, paste0("level", NewLevel)]) 
-            # New layover - old layover
+          for (lo in 1:nrow(private$Carryovers)) {
+            OldValue <- ifelse(OldLevel == 0, 0L, private$Carryovers[lo, paste0("level", OldLevel)])
+            NewValue <- ifelse(NewLevel == 0, 0L, private$Carryovers[lo, paste0("level", NewLevel)]) 
+            # New carryover - old carryover
             Delta <- NewValue - OldValue
             if (Delta != 0L) {
-              # Find layover condition in this loop
-              Found <- sapply(Others, function(x) x$GetId() == private$Layovers[lo, "conditionID"])
+              # Find carryover condition in this loop
+              Found <- sapply(Others, function(x) x$GetId() == private$Carryovers[lo, "conditionID"])
               Found <- which(Found) # get index
-              if (length(Found) == 0L) stop("Layover condition can not be found")
+              if (length(Found) == 0L) stop("Carryover condition can not be found")
               Found <- Others[[Found]] # get object
-              # change layover: by = delta
+              # change carryover: by = delta
               Found$ChangeLevel(by = Delta)
             }
           }
