@@ -18,7 +18,7 @@ test_that("CombatTechniques", {
   expect_s3_class(CT, "data.frame")
   expect_equal(CT[[1]], paste0("CT_", 1:21))
   expect_equal(nrow(CT), 21)
-  expect_equal(ncol(CT), 5)
+  expect_equal(ncol(CT), 6)
 })
 
 
@@ -124,7 +124,7 @@ test_that("PrimaryWeaponAttribute", {
   expect_identical(o, e)
   
   o <- GetPrimaryWeaponAttribute("Turnierlanze")
-  e <- NA_character_
+  e <- "ATTR_8"
   expect_identical(o, e)
 })
 
