@@ -1,10 +1,10 @@
 require(jsonlite)
 
 .testdir <- getwd()
-setwd("../../R")
-.srcdir <- getwd()
-source("dicelogic.R")
-source("rules.R")
+  setwd("../../R")
+  .srcdir <- getwd()
+  source("dicelogic.R")
+  source("rules.R")
 setwd(.testdir)
 
 # General -----
