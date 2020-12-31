@@ -124,14 +124,14 @@ GetCombatTechniques <- function(lang = .Language) {
 
 #' GetWeapons
 #' Returns a list of weapons with DSA attributes as available in DSA5
-#' @param Which A string identifiyng a weapon or "All" which returns all 
-#' weapons of the given type (character).
+#' @param Which A string identifying a weapon or "All" which returns all 
+#' weapons of the given type (string).
 #' @param Type "Melee", "Unarmed", "Ranged" or "Any" (default is "Melee", 
-#' "Unarmed" is treated as "Melee"; character).
+#' "Unarmed" is treated as "Melee") (string).
 #' @details The search by weapon name ignores upper/lower case and 
 #' space characters.
-#' @note "All" for argument "which" cannot be combined with "Any" type.
-#' @return A list
+#' @note "All" for argument "which" cannot be combined with type "Any".
+#' @return A list; returns `NULL` is no item has been found
 GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "Any")) {
   # PRECONDITIONS
   Type <- match.arg(Type)
@@ -154,36 +154,50 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "An
   } 
   
   # Match the requested Weapon "Which"
+  if (Which == "All") {
+    if (Type == "Melee") return(.Melee)
+    if (Type == "Ranged") return(.Ranged)
+    # Not supported: if (Type == "Any") ...
+  }
+  
   if (Type %in% c("Melee", "Any")) {
-    if (Which == "All")
-      return(.Melee)
-    else {
-      Which <- gsub("[[:blank:]]", "", Which)
-      Select <- .Melee[ which(.Melee$templateID == Which), ]
-      if (length(unlist(Select)) == 0) {
-        NamedWhich <- tolower(Which)
-        Names      <- tolower(gsub("[[:blank:]]", "", .Melee$name))
-        Select <- .Melee[ which(Names == NamedWhich), ]
-      }
-      if (length(unlist(Select)) != 0 || Type == "Melee")
-        return(as.list(Select))
+    Which <- gsub("[[:blank:]]", "", Which) # remove any spaces
+    Select <- .Melee[ which(.Melee$templateID == Which), ]
+    if (length(unlist(Select)) == 0) { # if list is empty
+      NamedWhich <- tolower(Which)
+      Names      <- tolower(gsub("[[:blank:]]", "", .Melee$name))
+      Select     <- .Melee[ which(Names == NamedWhich), ]
     }
+    if (Type == "Melee")
+      if (length(unlist(Select)) == 0) 
+        return(NULL)
+      else
+        return(as.list(Select))
+    else
+      if (length(unlist(Select)) != 0)
+        return(as.list(Select))
   }
 
   if (Type %in% c("Ranged", "Any")) {
-    if (Which == "All")
-      return(.Ranged)
-    else {
-      Which <- gsub("[[:blank:]]", "", Which)
-      Select <- .Ranged[ which(.Ranged$templateID == Which), ]
-      if (length(unlist(Select)) == 0) {
-        NamedWhich <- tolower(Which)
-        Names      <- tolower(gsub("[[:blank:]]", "", .Ranged$name))
-        Select <- .Ranged[ which(Names == NamedWhich), ]
-      }
-      return(as.list(Select))
+    Which <- gsub("[[:blank:]]", "", Which) # remove any spaces
+    Select <- .Ranged[ which(.Ranged$templateID == Which), ]
+    if (length(unlist(Select)) == 0) { # if list is empty
+      NamedWhich <- tolower(Which)
+      Names      <- tolower(gsub("[[:blank:]]", "", .Ranged$name))
+      Select     <- .Ranged[ which(Names == NamedWhich), ]
     }
+    if (Type == "Ranged")
+      if (length(unlist(Select)) == 0) 
+        return(NULL)
+    else
+      return(as.list(Select))
+    else
+      if (length(unlist(Select)) != 0)
+        return(as.list(Select))
   }
+  
+  # If nothing has been found: return NULL
+  return(NULL)
 }
 # setwd("./R")
 # W <- GetWeapons("Schwere Armbrust", "Any")
@@ -201,7 +215,7 @@ IsRangedWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
   
   if (!missing(Weapon)) {
     DatabaseWeapon <- GetWeapons(Weapon, "Any")
-    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+    if (!is.null(DatabaseWeapon)) { # if not empty
       IsRanged <- !(DatabaseWeapon$clsrng)
     } else {
       IsRanged <- FALSE
@@ -226,7 +240,7 @@ IsParryWeapon <- function( Weapon = NULL, CombatTech = NULL ) {
   
   if (isTruthy(Weapon)) {
     DatabaseWeapon <- GetWeapons(Weapon, "Any")
-    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+    if (!is.null(DatabaseWeapon)) { # if not empty
       CombatTech <- DatabaseWeapon$combattechID
     }
   }
@@ -254,7 +268,7 @@ IsImprovisedWeapon <- function( Weapon = NULL ) {
   IsImprov <- FALSE
   if (!missing(Weapon)) {
     DatabaseWeapon <- GetWeapons(Weapon, "Any")
-    if (length(unlist(DatabaseWeapon)) > 0) { # if not empty
+    if (!is.null(DatabaseWeapon)) { # if not empty
       IsImprov <- DatabaseWeapon$improvised
     }
   }
@@ -276,7 +290,7 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
   # RUN
   W <- GetWeapons(Weapon, "Any") 
 
-  if (length(unlist(W)) > 0) { 
+  if (!is.null(W)) { 
     PrimeAttr <- W[["primeattrID"]] ##UPDATE for vectorisation: sapply(W, `[[`, "primeattrID")
     # Parse and translate
     if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"

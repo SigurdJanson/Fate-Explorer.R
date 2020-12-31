@@ -46,7 +46,7 @@ test_that("Skills", {
 
 test_that("Weapons", {
   # PRECONDITIONS
-  expect_error(GetWeapons(Type = "Blabla"), "'arg' sollte eines  von '“Melee”, “Unarmed”, “Ranged”, “Any”' sein")#".{25}\"Melee\", \"Unarmed\", \"Ranged\", \"Any\".*")
+  expect_error(GetWeapons(Type = "Blabla"), "'arg' sollte eines  von '“Melee”, “Unarmed”, “Ranged”, “Any”' sein")
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
   
   # MELEE WEAPONS
@@ -55,8 +55,9 @@ test_that("Weapons", {
           "combattechID", "primeattrID", "improvised", "url", "clsrng", 
           "armed", "templateID")
   setwd(.srcdir)
-  W <- GetWeapons()
+  W <- GetWeapons() # Force the function to load the data
   setwd(.testdir)
+
   expect_s3_class(W, "data.frame")
   expect_equal(nrow(W), 184)
   expect_equal(ncol(W), length(cn))
@@ -79,7 +80,7 @@ test_that("Weapons", {
   expect_equal(nrow(as.data.frame(W)), 0)
   
   
-  W <- GetWeapons("ITEMTPL_549") # Use optholit ID
+  W <- GetWeapons("ITEMTPL_549") # Use Optolith ID
   expect_equal(W$name, "Nostrisches Langschwert")
   
   # RANGED WEAPONS
@@ -101,8 +102,14 @@ test_that("Weapons", {
   expect_equal(W$name, "Fledermaus")
   expect_equal(W$templateID, NA_character_)
   
-  W <- GetWeapons("ITEMTPL_539", "Ranged") # Use optholit ID
+  W <- GetWeapons("ITEMTPL_539", "Ranged") # Use Optolith ID
   expect_equal(W$name, "Windhager Schleuder")
+  
+  # Weapon NOT FOUND
+  W <- GetWeapons("UNKNOWN WEAPON THAT DOES NOT EXIST") # Use wrong Optolith ID
+  expect_identical(W, NULL)
+  W <- GetWeapons("UNKNOWN WEAPON THAT DOES NOT EXIST", "Ranged") # Use wrong Optolith ID
+  expect_identical(W, NULL)
 })
 
 

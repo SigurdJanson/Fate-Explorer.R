@@ -18,7 +18,7 @@ GetAbilities_Opt <- function(Attr) {
 #' Takes the skills from an Optholit Json object and merges it with the information
 #' from the database to return a data frame with characters skill (excluding magical and
 #' religious skills).
-#' @param Skills Skills as extracted from Optholit Json
+#' @param Skills Skills as extracted from Optolith Json
 #' @param Language String indicating the requested language ("en" or "de")
 #' @return Data frame of character skills
 GetSkills_Opt <- function(Skills) {
@@ -34,6 +34,13 @@ GetSkills_Opt <- function(Skills) {
 
 
 
+#' GetSpells_Opt
+#' Takes the spells and rituals from an Optolith Json object and merges it 
+#' with the information  from the database to return a data frame with 
+#' character's spells.
+#' @param Spells Spells json as extracted from Optolith Json
+#' @param Language String indicating the requested language ("en" or "de")
+#' @return Data frame of character spells
 GetSpells_Opt <- function(Spells) {
   # Get data frame with skill definitions
   SpellList <- GetSpells()
@@ -51,6 +58,14 @@ GetSpells_Opt <- function(Spells) {
 }
 
 
+
+#' GetChants_Opt
+#' Takes the chants and liturgies from an Optolith Json object and merges it 
+#' with the information  from the database to return a data frame with 
+#' character's chants.
+#' @param Chants Chants json as extracted from Optolith Json
+#' @param Language String indicating the requested language ("en" or "de")
+#' @return Data frame of character chants
 GetChants_Opt <- function(Chants) {
   # Get data frame with skill definitions
   ChantList <- GetChants()
@@ -68,6 +83,7 @@ GetChants_Opt <- function(Chants) {
 }
 
 
+
 #' GetCombatSkill
 #' Compute combat skill based on DSA5 rules
 #' @details 
@@ -81,7 +97,7 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
   WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE) # trim
   Weapon     <- GetWeapons(Which = WeaponName, Type = "Any")
 
-  if (length(unlist(Weapon)) != 0L) { # Weapon found!
+  if (!is.null(Weapon)) { # Weapon found!
     Courage  <- Attr[["ATTR_1"]]
     PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
     if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
@@ -120,20 +136,20 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 
 
 
-
 #' GetWeapons_Opt
 #' Returns a data frame with the character's weapons.
-#' @param Belongings The complete list of items carried by a character as loaded from an
-#' Optholit character sheet.
+#' @param Belongings The complete list of items carried by a character as 
+#' loaded from an Optolith character sheet.
 #' @param CombatTechniques Characters combat skills per combat technique.
 #' @param Abilities Data frame with character abilities
-#' @param AddUnarmed Wether to include "unarmed" as pseudo weapon in the result 
+#' @param AddUnarmed Whether to include "unarmed" as pseudo weapon in the result 
 #' (default: TRUE; logical).
-#' @param AddImprov Wether to include improvised weapons in the result (default: TRUE; logical).
+#' @param AddImprov Whether to include improvised weapons in the result (default: TRUE; logical).
 #' @return Data frame with a column per weapon
 GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities, 
                            AddUnarmed = TRUE, AddImprov = FALSE) {
-
+  # Handle unarmed combat by adding it to the belongings. 
+  # That list will be parsed later and unarmed will be handled automatically
   if (AddUnarmed) {
     Weaponless <- list(list(name = "Waffenlos", template = "WEAPONLESS", 
                            combatTechnique = "CT_9", at = 0L, pa = 0L, 
@@ -141,6 +157,7 @@ GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities,
     Belongings <- c(Belongings, WEAPONLESS = Weaponless)
   }
 
+  # Parsing belongings
   Weapons <- NULL
   for (Item in Belongings) {
     DatabaseWeapon <- GetWeapons(Item$template, "Any")
