@@ -16,7 +16,7 @@ GetConditionTemplate <- function(Name, Id, Url) {
     level3   = rep(-3L, 7),
     level4   = rep(-99L, 7)
   )
-  lays <- data.frame(
+  carry <- data.frame(
     conditionID = NULL,
     level1      = NULL,
     level2	    = NULL,
@@ -30,14 +30,14 @@ GetConditionTemplate <- function(Name, Id, Url) {
     url = Url,
     levels = paste0("L-", 1:4),
     modifiers = mods,
-    layovers = NULL
+    carryovers = NULL
   )
   
   return(Encumbrance)
 }
 
 GetConditionTemplateJson <- function() {
-  JSON <- '{"Encumbrance":{"name":"Belastung","attrID":"COND_5","url":"index.php/Sta_Belastung.html","modifiers":[{"actionID":"TAL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"LITURGY_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"SPELL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AT","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"PA","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AW","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"INI","level1":-1,"level2":-2,"level3":-3,"level4":-99}],"layovers":{}}}'
+  JSON <- '{"Encumbrance":{"name":"Belastung","attrID":"COND_5","url":"index.php/Sta_Belastung.html","modifiers":[{"actionID":"TAL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"LITURGY_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"SPELL_","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AT","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"PA","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"AW","level1":-1,"level2":-2,"level3":-3,"level4":-99},{"actionID":"INI","level1":-1,"level2":-2,"level3":-3,"level4":-99}],"carryovers":{}}}'
   data <- fromJSON(JSON, simplifyVector = TRUE)
   return(data[[1]])
 }
@@ -192,23 +192,35 @@ test_that("ANY Modifiers as second qualifier", {
   TestId <- "COND_5"
   TestUrl <- "www.somewhere.com"
   Template <- GetConditionTemplate(TestName, TestId, TestUrl)
-  Template$modifiers[1, "actionID"] <- c("AT", "PA", "AW")
-  Template$modifiers <- rbind(Template$modifiers, list("", 1, 2, 3, 4))
+  Template$modifiers <- data.frame(
+    actionID = c("TAL_", "AT", ""),
+    level1   = rep(-1L, 3),
+    level2	 = rep(-2L, 3),
+    level3   = rep(-3L, 3),
+    level4   = c(rep(-4L, 2), -99L)
+  )
   cond <- ConditionBase$new(Template)
   
   # TEST - any string should work
   cond$ChangeLevel(to = 2)
   expect_identical(cond$GetModifier("AT"), -2L)
-  expect_identical(cond$GetModifier("PA"), -2L)
-  expect_identical(cond$GetModifier("AW"), -2L)
-  expect_identical(cond$GetModifier("UNKNOWN ACTION"), 2L)
-  expect_identical(cond$GetModifier("BULLSHIT"), 2L)
+  expect_identical(cond$GetModifier("TAL_42"), -2L)
+  expect_identical(cond$GetModifier("TAL_189"), -2L)
+  expect_identical(cond$GetModifier("UNKNOWN ACTION"), -2L)
+  expect_identical(cond$GetModifier("BULLSHIT"), -2L)
+
+  cond$ChangeLevel(to = 4)
+  expect_identical(cond$GetModifier("AT"), -4L)
+  expect_identical(cond$GetModifier("TAL_42"), -4L)
+  expect_identical(cond$GetModifier("TAL_189"), -4L)
+  expect_identical(cond$GetModifier("UNKNOWN ACTION"), -99L)
+  expect_identical(cond$GetModifier("BULLSHIT"), -99L)
 })
 
 
 
 # Carryovers -----
-test_that("No layovers", {
+test_that("No carryovers", {
   TestName <- "Belastung"
   TestId <- "COND_5"
   TestUrl <- "www.somewhere.com"
@@ -224,41 +236,41 @@ test_that("Carryovers at level 2 and 4: upwards", {
   TestUrl <- "www.somewhere.com"
   Template <- GetConditionTemplate(TestName, TestId, TestUrl)
   
-  # Add layover condition: with a layover at level 2 and 4
-  lays <- data.frame(
+  # Add carryover condition: with a carryover at level 2 and 4
+  carry <- data.frame(
     conditionID = c("COND_9"),
     level1      = c(0L),
     level2	    = c(+1L),
     level3      = c(0L),
     level4      = c(+2L)
   )
-  Template$layovers <- lays
+  Template$carryovers <- carry
   
   # ... and create condition COND_5
   cond5 <- ConditionBase$new(Template)
   
-  # Create layover condition COND_9
+  # Create carryover condition COND_9
   TestName <- "Carryover"
   TestId <- "COND_9"
   TestUrl <- "www.elsewhere.com"
   cond9 <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
   
   # TEST!
-  # check if condition is aware of the layover
+  # check if condition is aware of the carryover
   expect_identical(c("COND_9"), cond5$GetCarryoverIds())
   # level 0 is just level 0
   expect_identical(0L, cond5$GetLevel())
   expect_identical(0L, cond9$GetLevel())
-  # level 1, no layover
+  # level 1, no carryover
   expect_identical(1L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
   expect_identical(0L, cond9$GetLevel())
-  # level 2, layover of +1
+  # level 2, carryover of +1
   expect_identical(2L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
   expect_identical(1L, cond9$GetLevel())
-  # level 3, layover is back to 0
+  # level 3, carryover is back to 0
   expect_identical(3L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
   expect_identical(0L, cond9$GetLevel())
-  # level 4, layover of +2
+  # level 4, carryover of +2
   expect_identical(4L, cond5$ChangeLevel(by = 1L, Others = list(cond9))$GetLevel())
   expect_identical(2L, cond9$GetLevel())
 })
@@ -270,41 +282,41 @@ test_that("Carryovers at level 2 and 4: backwards", {
   TestUrl <- "www.somewhere.com"
   Template <- GetConditionTemplate(TestName, TestId, TestUrl)
   
-  # Add layover condition: with a layover at level 2 and 4
-  lays <- data.frame(
+  # Add carryover condition: with a carryover at level 2 and 4
+  carry <- data.frame(
     conditionID = c("COND_9"),
     level1      = c(0L),
     level2	    = c(+1L),
     level3      = c(0L),
     level4      = c(+2L)
   )
-  Template$layovers <- lays
+  Template$carryovers <- carry
   
   # ... and create condition COND_5
   cond5 <- ConditionBase$new(Template)
-  
-  # Create layover condition COND_9
+
+  # Create carryover condition COND_9
   TestName <- "Carryover"
   TestId <- "COND_9"
   TestUrl <- "www.elsewhere.com"
   cond9 <- ConditionBase$new(GetConditionTemplate(TestName, TestId, TestUrl))
   
   # TEST!
-  # check if condition is aware of the layover
+  # check if condition is aware of the carryover
   expect_identical(c("COND_9"), cond5$GetCarryoverIds())
   # level 0 is just level 0
   expect_identical(0L, cond5$GetLevel())
   expect_identical(0L, cond9$GetLevel())
-  # level 4, layover of +2
+  # level 4, carryover of +2
   expect_identical(4L, cond5$ChangeLevel(to = +4L, Others = list(cond9))$GetLevel())
   expect_identical(2L, cond9$GetLevel())
-  # level 3, layover is back to 0
+  # level 3, carryover is back to 0
   expect_identical(3L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
   expect_identical(0L, cond9$GetLevel())
-  # level 2, layover of +1
+  # level 2, carryover of +1
   expect_identical(2L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
   expect_identical(1L, cond9$GetLevel())
-  # level 1, no layover
+  # level 1, no carryover
   expect_identical(1L, cond5$ChangeLevel(by = -1L, Others = list(cond9))$GetLevel())
   expect_identical(0L, cond9$GetLevel())
   # level 0 is just level 0
