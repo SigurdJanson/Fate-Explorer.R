@@ -44,7 +44,7 @@ test_that("Skills", {
 
 
 
-test_that("Weapons", {
+test_that("Weapons from database", {
   # PRECONDITIONS
   expect_error(GetWeapons(Type = "Blabla"), "'arg' sollte eines  von '“Melee”, “Unarmed”, “Ranged”, “Any”' sein")
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
@@ -113,6 +113,10 @@ test_that("Weapons", {
 })
 
 
+test_that("Unique Weapons", {
+  
+})
+
 
 test_that("PrimaryWeaponAttribute", {
   o <- GetPrimaryWeaponAttribute("Waqqif")
@@ -159,7 +163,7 @@ test_that("PrimaryWeaponAttribute", {
   ab <- structure(list(ATTR_1 = 12L, ATTR_2 = 11L, ATTR_3 = 13L, ATTR_4 = 14L, 
                        ATTR_5 = 13L, ATTR_6 = 15L, ATTR_7 = 11L, ATTR_8 = 15L), 
                   class = "data.frame", row.names = c(NA, -1L))
-  o <- GetHitpointBonus("Barbarenschwert", ab) # thrshold: 15
+  o <- GetHitpointBonus("Barbarenschwert", ab) # threshold: 15
   e <- 0L
   expect_identical(o, e)
 })
