@@ -3,13 +3,13 @@
 
 #' GetAttributes_Opt
 #' Read character attributes/abilities as data frame.
-#' @param Attr An Optholit Json attribute node
+#' @param Attr An Optholit Json "attr" node (attributes)
 #' @return Data frame with attribute names as column names and values in
 #' first row.
-GetAbilities_Opt <- function(Attr) {
+GetAbilities_Opt <- function(AttrNode) {
   # Create data frame with attributes
-  Result <- data.frame(lapply(Attr, `[[`, 2))
-  colnames(Result) <- lapply(Attr, `[[`, 1)
+  Result <- data.frame(lapply(AttrNode, `[[`, 2))
+  colnames(Result) <- lapply(AttrNode, `[[`, 1)
   return(Result)
 }
 
@@ -18,8 +18,7 @@ GetAbilities_Opt <- function(Attr) {
 #' Takes the skills from an Optholit Json object and merges it with the information
 #' from the database to return a data frame with characters skill (excluding magical and
 #' religious skills).
-#' @param Skills Skills as extracted from Optolith Json
-#' @param Language String indicating the requested language ("en" or "de")
+#' @param Skills Skills as extracted from Optolith Json (i.e. a "talents" node)
 #' @return Data frame of character skills
 GetSkills_Opt <- function(Skills) {
   # Get data frame with skill definitions
@@ -39,7 +38,6 @@ GetSkills_Opt <- function(Skills) {
 #' with the information  from the database to return a data frame with 
 #' character's spells.
 #' @param Spells Spells json as extracted from Optolith Json
-#' @param Language String indicating the requested language ("en" or "de")
 #' @return Data frame of character spells
 GetSpells_Opt <- function(Spells) {
   # Get data frame with skill definitions
@@ -64,7 +62,6 @@ GetSpells_Opt <- function(Spells) {
 #' with the information  from the database to return a data frame with 
 #' character's chants.
 #' @param Chants Chants json as extracted from Optolith Json
-#' @param Language String indicating the requested language ("en" or "de")
 #' @return Data frame of character chants
 GetChants_Opt <- function(Chants) {
   # Get data frame with skill definitions
@@ -87,53 +84,155 @@ GetChants_Opt <- function(Chants) {
 #' GetCombatSkill
 #' Compute combat skill based on DSA5 rules
 #' @details 
-#' Base values for AT and PA depend on: courage, character skill, weapon modifiers, 
+#' Base values for AT and PA depend on: courage, character skill, weapon modifiers,
 #' and enhancements through the primary attribute.
-#' @param WeaponName String
+#' @param WeaponName String to identify a weapon. Preferably the ID but a 
+#' name can work, too.
 #' @param Attr A data frame containing the characters abilities
-#' @param Skill Skill value(s) of combat techniques.
+#' @param Skill Skill value(s) of combat techniques (data frame with 1 row).
+#' @param IsUniqueWeapon Weapon is unique so that data cannot be be taken 
+#' from the data base
+#' @param UniqueWeapon Data structure that describes the unique weapon as 
+#' taken from an Optolith Json file. Is ignored unless `IsUniqueWeapon` 
+#' is `TRUE`.
 #' @note Not vectorised
-GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
-  WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE) # trim
-  Weapon     <- GetWeapons(Which = WeaponName, Type = "Any")
-
-  if (!is.null(Weapon)) { # Weapon found!
-    Courage  <- Attr[["ATTR_1"]]
-    PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
-    if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
-      # choose max
-      PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
-    } else if (length(PrimeAttr) == 1L) {
-      PrimeAttr <- Attr[[PrimeAttr]]
-    } else PrimeAttr <- 0L # this way it has no effect later
-    
-    Technique <- Weapon[["combattechID"]]
-    Skill <- Skill[[Technique]]
-    if (is.null(Skill)) Skill <- 6L # default value
-    
-    if (Weapon[["clsrng"]]) { # close combat
-      ATSkill    <- Skill
-      PASkill    <- ceiling(Skill/2L)
-      ATSkillMod <- Weapon[["at"]]
-      PASkillMod <- Weapon[["pa"]]
-      ATAttrMod  <- max((Courage-8L) %/% 3L, 0L)
-      PAAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
-    } else { # ranged weapon
-      ATSkill    <- Skill
-      PASkill    <- 0L
-      ATSkillMod <- 0L
-      PASkillMod <- 0L
-      ATAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
-      PAAttrMod  <- 0L
-    }
-    CT <- list(AT = Skill + ATAttrMod + ATSkillMod,
-               PA = ceiling(Skill/2L) + PAAttrMod + PASkillMod)
-  } else CT <- list()
+GetCombatSkill <- function(WeaponName, Attr, Skill = NULL, 
+                           IsUniqueWeapon = FALSE, UniqueWeapon = NULL) {
   
-  return(CT)
+  # Determine the values needed to compute combat skills
+  if (!IsUniqueWeapon) { # default
+    # Get the weapon
+    WeaponName <- gsub(" ", "", WeaponName, fixed = TRUE) # remove all spaces
+    Weapon     <- GetWeapons(Which = WeaponName, Type = "Any")
+    # 
+    if (!is.null(Weapon)) { # Weapon found!
+      PrimeAttr <- GetPrimaryWeaponAttribute(WeaponName) # 
+      Technique <- Weapon[["combattechID"]]
+      IsRanged <- !Weapon[["clsrng"]]
+      
+    } else { 
+      stop(paste("Weapon", WeaponName,"not found"))
+    }
+    
+  # Unique weapon  
+  } else {
+    # Create a mock for the weapon with the least required values
+    Weapon <- list(at = UniqueWeapon[["at"]], pa = UniqueWeapon[["pa"]])
+    # 
+    PrimeAttr <- GetPrimaryWeaponAttributeByCombatTechnique(UniqueWeapon$combatTechnique)
+    Technique <- UniqueWeapon$combatTechnique
+    IsRanged  <- IsRangedWeapon(CombatTech = UniqueWeapon$combatTechnique)
+  }
+
+  # Get value for primary ability/attribute
+  if (length(PrimeAttr) > 1L) { # more than 1 primary attribute
+    # choose max
+    PrimeAttr <- max(unlist(Attr[, PrimeAttr]))
+  } else if (length(PrimeAttr) == 1L) {
+    PrimeAttr <- Attr[[PrimeAttr]]
+  } else PrimeAttr <- 0L # this way it has no effect later
+  # Ability "Courage"
+  Courage   <- Attr[["ATTR_1"]]
+
+  # Skill for given technique      
+  Skill <- Skill[[Technique]]
+  if (is.null(Skill)) Skill <- 6L # default value
+
+  # Compute skills based on PrimeAttr, Courage, Skill
+  if (!IsRanged) { # close combat
+    ATSkill    <- Skill
+    PASkill    <- ceiling(Skill/2L)
+    ATSkillMod <- Weapon[["at"]]
+    PASkillMod <- Weapon[["pa"]]
+    ATAttrMod  <- max((Courage-8L) %/% 3L, 0L)
+    PAAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
+  } else { # ranged weapon
+    ATSkill    <- Skill
+    PASkill    <- 0L
+    ATSkillMod <- 0L
+    PASkillMod <- 0L
+    ATAttrMod  <- max((PrimeAttr-8L) %/% 3L, 0L)
+    PAAttrMod  <- 0L
+  }
+  
+  CombatSkill <- list(AT = Skill + ATAttrMod + ATSkillMod,
+                      PA = ceiling(Skill/2L) + PAAttrMod + PASkillMod)
+  return(CombatSkill)
 }
 
 
+
+#' UniqueWeaponFromCharacter
+#' Creates a data structure for a weapon in compliance with the 
+#' weapons data base so that this weapon can be treated the 
+#' same way.
+#' @param Item An list with an item from the 'belongings' 
+#' data structure of a Optholit character file.
+#'
+#' @return A weapons data structure as list
+UniqueWeaponFromCharacter <- function(Item) {
+  if (is.null(Item)) stop("Need an item to parse")
+  if (length(Item) < 12) stop("Not sufficient data")
+  if (is.null(Item[["combatTechnique"]])) stop("Unique item is not a weapon")
+  
+  CT <- GetCombatTechniques()
+  CombatTechName  <- CT[which(CT$id == Item[["combatTechnique"]]), "name"]
+
+  Attr <- GetAbilities()
+  PrimaryAttrID <- Item[["primaryThreshold"]][["primary"]]
+  if (is.null(PrimaryAttrID)) # if character does not have the info, get it from character
+    PrimaryAttrID <- GetPrimaryWeaponAttributeByCombatTechnique(Item[["combatTechnique"]])
+  PrimaryAttr <- Attr[Attr$attrID %in% PrimaryAttrID, "shortname"]
+  SF          <- NA_integer_
+  
+  IsRanged <- IsRangedWeapon(CombatTech = Item$combatTechnique)
+  
+  if(!IsRanged) {
+    Range       <- switch(Item$reach, "kurz", "mittel", "lang") #TODO: L10N
+    
+    Weapon <- list(name = Item[["name"]], 
+                   combattech = CombatTechName, 
+                   primeattr  = PrimaryAttr, 
+                   threshold  = Item[["primaryThreshold"]]$threshold,
+                   damage     = paste0(Item$damageDiceNumber, "W", Item$damageDiceSides), 
+                   bonus      = Item[["damageFlat"]],
+                   at = Item[["at"]], pa = Item[["pa"]], 
+                   range      = Range, 
+                   weight     = Item[["weight"]],
+                   price      = Item[["price"]],
+                   sf = SF,
+                   combattechID = Item[["combatTechnique"]],
+                   primeattrID = PrimaryAttrID,
+                   improvised = ifelse(is.null(Item[["imp"]]), FALSE, as.logical(Item[["imp"]])),
+                   url = "",
+                   clsrng = TRUE,
+                   armed  = TRUE,
+                   templateID = Item[["template"]] 
+    )
+  } else {
+    Weapon <- list(name       = Item[["name"]], 
+                   combattech = CombatTechName, 
+                   primeattr  = PrimaryAttr, 
+                   damage     = paste0(Item$damageDiceNumber, "W", Item$damageDiceSides), 
+                   bonus      = Item[["damageFlat"]],
+                   at = Item[["at"]], pa = Item[["pa"]], 
+                   range      = Item[["range"]],
+                   loadtime   = Item[["reloadTime"]],
+                   ammo       = Item[["ammunition"]],
+                   weight     = Item[["weight"]],
+                   price      = Item[["price"]],
+                   sf = SF,
+                   combattechID = Item[["combatTechnique"]],
+                   primeattrID = PrimaryAttrID,
+                   improvised = ifelse(is.null(Item[["imp"]]), FALSE, as.logical(Item[["imp"]])),
+                   url = "",
+                   clsrng = FALSE,
+                   armed  = TRUE,
+                   templateID = Item[["template"]] 
+    )
+  }
+  return(Weapon)
+}
 
 
 #' GetWeapons_Opt
@@ -146,36 +245,58 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL) {
 #' (default: TRUE; logical).
 #' @param AddImprov Whether to include improvised weapons in the result (default: TRUE; logical).
 #' @return Data frame with a column per weapon
+#' @details Improvised weapons must be in the data base or unique items. 
 GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities, 
                            AddUnarmed = TRUE, AddImprov = FALSE) {
-  # Handle unarmed combat by adding it to the belongings. 
-  # That list will be parsed later and unarmed will be handled automatically
-  if (AddUnarmed) {
-    Weaponless <- list(list(name = "Waffenlos", template = "WEAPONLESS", 
-                           combatTechnique = "CT_9", at = 0L, pa = 0L, 
-                           damageDiceNumber = 1L, damageFlat = 0L))
-    Belongings <- c(Belongings, WEAPONLESS = Weaponless)
-  }
-
   # Parsing belongings
   Weapons <- NULL
   for (Item in Belongings) {
+    ItemIsUnique <- FALSE
     DatabaseWeapon <- GetWeapons(Item$template, "Any")
-    ItemIsWeapon <- length(unlist(DatabaseWeapon)) > 0
-    if (!AddImprov) ItemIsWeapon <- ItemIsWeapon & isFALSE(DatabaseWeapon$improvised)
 
+    # Item is a weapon if it is in the data base
+    ItemIsWeapon <- !is.null(DatabaseWeapon)
     if (ItemIsWeapon) {
-      Skill <- GetCombatSkill(Item$template, Abilities, CombatTechniques) 
-      if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
-      if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
-      Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 
-                          Item$damageDiceNumber, Item$damageFlat),
-                        Weapons )
-      colnames(Weapons)[1L] <- Item$name
+      # However: remove weapon if it is improvised and that is not requested
+      if (!AddImprov) ItemIsWeapon <- ItemIsWeapon & isFALSE(DatabaseWeapon$improvised)
+      ItemIsUnique <- FALSE
+    } else {
+      # If item isn't in data base it could be a unique weapon
+      ItemIsWeapon <- ItemIsWeapon | !is.null(Item$combatTechnique)
+      # Get new values directly from character sheet (not the data base)
+      if (ItemIsWeapon) {
+        ItemIsUnique <- TRUE
+        DatabaseWeapon <- UniqueWeaponFromCharacter(Item)
+      }
     }
+    # Only proceed adding this item when it is a weapon (or improvised)
+    if (!ItemIsWeapon) next
+    
+    Skill <- GetCombatSkill(Item$template, Abilities, CombatTechniques, 
+                            IsUniqueWeapon = ItemIsUnique, 
+                            UniqueWeapon = Item)
+    if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
+    if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
+    if (is.null(Item$template)) Item$template <- ""
+    Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 
+                        Item$damageDiceNumber, Item$damageFlat),
+                      Weapons )
+    colnames(Weapons)[1L] <- Item$name
   }# for
-  rownames(Weapons) <- c("Name", "templateID", "AT", "PA", "DamageDice", "DamageMod")
+
+  # Shall unarmed combat be added?
+  if (AddUnarmed) {
+    Skill <- GetCombatSkill("WEAPONLESS", Abilities, CombatTechniques)
+    Weapons <- cbind( c("Waffenlos", "WEAPONLESS", # Name, TemplateID
+                        Skill$AT, Skill$PA,        # AT, PA
+                        1L,  # damageDiceNumber
+                        0L), # damageFlat
+                      Weapons )
+    colnames(Weapons)[1L] <- "Waffenlos" # TODO: no L10N
+  }
   
+  # Add row names and return
+  rownames(Weapons) <- c("Name", "templateID", "AT", "PA", "DamageDice", "DamageMod")
   return(Weapons)
 }
 
