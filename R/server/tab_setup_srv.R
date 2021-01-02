@@ -208,6 +208,7 @@ output$ShowSetupStatesNConds <- reactive({
 })
 outputOptions(output, 'ShowSetupStatesNConds', suspendWhenHidden = FALSE)
 
+
 output$SetupStatesNConds <- renderUI({
   tags$ul(
     tags$li(i18n$t("No states detected")),
@@ -222,6 +223,7 @@ output$ShowSetupSkills <- reactive({
           Character$Skills$HasTalent(.SkillType["Mundane"]) )
 })
 outputOptions(output, 'ShowSetupSkills', suspendWhenHidden = FALSE)
+
 
 output$SetupSkills <- renderTable({
   Result <- Character$Skills$Sets$Mundane$Skills
@@ -247,6 +249,7 @@ output$ShowSetupSpells <- reactive({
           Character$Skills$HasTalent(.SkillType["Magic"]) )
 })
 outputOptions(output, 'ShowSetupSpells', suspendWhenHidden = FALSE)
+
 
 output$SetupSpells <- renderTable({
   Result <- Character$Skills$Sets$Magic$Skills
@@ -274,6 +277,7 @@ output$ShowSetupChants <- reactive({
 })
 outputOptions(output, 'ShowSetupChants', suspendWhenHidden = FALSE)
 
+
 output$SetupChants <- renderTable({
   Result <- Character$Skills$Sets$Blessed$Skills
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID", "tradition"))]
@@ -290,6 +294,8 @@ output$SetupChants <- renderTable({
   
   return(Result)
 }, rownames = FALSE, na = "-", digits = 0L, hover = TRUE)
+
+
 
 
 # Combat Panel ------------------------

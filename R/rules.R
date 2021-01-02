@@ -338,7 +338,7 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
     stop("Argument 'Abilities' is missing")
 
   # RUN
-  WeaponData <- GetWeapons( Weapon, "Melee" ) #only melee has a bonus
+  WeaponData <- GetWeapons( Weapon, "Melee" ) # only melee has a bonus
   Primaries  <- GetPrimaryWeaponAttribute( Weapon )
 
   if (!anyNA(Primaries)) {
