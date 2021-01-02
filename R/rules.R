@@ -134,6 +134,7 @@ GetCombatTechniques <- function(lang = .Language) {
 #' @return A list; returns `NULL` is no item has been found
 GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "Any")) {
   # PRECONDITIONS
+  if (is.null(Which) || is.na(Which)) return(NULL)
   Type <- match.arg(Type)
   if (Type == "Any" && Which == "All") 
     stop("Invalid combination of arguments. 'all' weapons not allowed with type 'any'")
@@ -285,10 +286,10 @@ IsImprovisedWeapon <- function( Weapon = NULL ) {
 #' has no primary ability.
 GetPrimaryWeaponAttribute <- function( Weapon ) {
   # PRECONDITIONS
-  if(missing(Weapon)) stop("A weapon is required.")
+  if(missing(Weapon)) stop("A weapon is required")
 
   # RUN
-  W <- GetWeapons(Weapon, "Any") 
+  W <- GetWeapons(Weapon, "Any")
 
   if (!is.null(W)) { 
     PrimeAttr <- W[["primeattrID"]] ##UPDATE for vectorisation: sapply(W, `[[`, "primeattrID")
@@ -301,6 +302,27 @@ GetPrimaryWeaponAttribute <- function( Weapon ) {
   return(PrimeAttr)
 }
 
+
+GetPrimaryWeaponAttributeByCombatTechnique <- function( CombatTec ) {
+  # PRECONDITIONS
+  if(missing(CombatTec)) stop("A combat technique is required")
+  
+  # RUN
+  # Get list of all combat techniques and isolate the needed one
+  AllCTs <- GetCombatTechniques()
+  CombatTec <- AllCTs[which(AllCTs$id == CombatTec), ]
+  #print(CombatTec)
+
+  if (!is.null(CombatTec)) { 
+    PrimeAttr <- CombatTec[["primeattrID"]] ##UPDATE for vectorisation: sapply(W, `[[`, "primeattrID")
+    # Parse and translate
+    if(length(PrimeAttr) > 0 && !is.na(PrimeAttr)) { # two attributes are separated by "/"
+      PrimeAttr <- unlist(strsplit(PrimeAttr, "/"))
+    }
+  } else PrimeAttr <- character(0)
+  
+  return(PrimeAttr)
+}
 
 
 #' GetHitpointBonus

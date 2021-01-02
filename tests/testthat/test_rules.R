@@ -44,11 +44,13 @@ test_that("Skills", {
 
 
 
-test_that("Weapons from database", {
+test_that("GetWeapons(): PRECONDITIONS", {
   # PRECONDITIONS
   expect_error(GetWeapons(Type = "Blabla"), "'arg' sollte eines  von '“Melee”, “Unarmed”, “Ranged”, “Any”' sein")
   expect_error(GetWeapons(Which = "All", Type = "Any"), "Invalid combination of arguments.")
-  
+})
+
+test_that("Weapons from database", {
   # MELEE WEAPONS
   cn <- c("name", "combattech", "primeattr", "threshold", "damage",
           "bonus", "at", "pa", "range", "weight", "price", "sf", 
@@ -113,10 +115,6 @@ test_that("Weapons from database", {
 })
 
 
-test_that("Unique Weapons", {
-  
-})
-
 
 test_that("PrimaryWeaponAttribute", {
   o <- GetPrimaryWeaponAttribute("Waqqif")
@@ -168,6 +166,32 @@ test_that("PrimaryWeaponAttribute", {
   expect_identical(o, e)
 })
 
+
+test_that("GetPrimaryWeaponAttributeByCombatTechnique()", {
+  # PRECONDITION
+  expect_error(GetPrimaryWeaponAttributeByCombatTechnique())
+  
+  # Normal techniques
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_1")
+  expect_identical(o, "ATTR_5")
+
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_10")
+  expect_identical(o, "ATTR_8")
+
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_21")
+  expect_identical(o, "ATTR_8")
+
+  # Two primary attributes in techique
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_9")
+  expect_identical(o, c("ATTR_6", "ATTR_8"))
+  
+  # Combat technique does not exist
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_0")
+  expect_identical(o, character())
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_22")
+  expect_identical(o, character())
+  
+})
 
 
 test_that("IsRangedWeapon", {
