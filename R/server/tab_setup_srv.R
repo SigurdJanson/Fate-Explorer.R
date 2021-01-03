@@ -46,17 +46,19 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
                             Character$Attr, AddUnarmed = TRUE, AddImprov = AddImprov)
   Character$Weapons <- NULL
   WeaponNames <- NULL
-  for (w in Weapons["templateID", ]) {
-    if ( IsRangedWeapon(w) )
-      ActiveWeapon <- RangedWeapon$new(w, Character$Attr, Character$CombatSkills)
-    else
-      ActiveWeapon <- MeleeWeapon$new(w, Character$Attr, Character$CombatSkills)
+  if (isTruthy(Weapons[["Melee"]]))
+    for (r in 1:nrow(Weapons[["Melee"]])) {
+      ActiveWeapon <- MeleeWeapon$new(Weapons[["Melee"]][r,],   Character$Attr, Character$CombatSkills)
+      Character$Weapons <- c(Character$Weapons, ActiveWeapon)
+      WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
+    }
+  if (isTruthy(Weapons[["Ranged"]]))
+    for (r in 1:nrow(Weapons[["Ranged"]])) {
+      ActiveWeapon <- RangedWeapon$new(Weapons[["Ranged"]][r,], Character$Attr, Character$CombatSkills)
+      Character$Weapons <- c(Character$Weapons, ActiveWeapon)
+      WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
+    }
 
-    Character$Weapons <- c(Character$Weapons, ActiveWeapon)
-    WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
-    #TODO: Correct for encumbrance: TODO (EEC = Effective Encumbrance)
-  }
-  
   # Update dropdown list on Combat Tab
   updateSelectInput(session, "cmbCombatSelectWeapon", choices = WeaponNames, selected = 1)
   

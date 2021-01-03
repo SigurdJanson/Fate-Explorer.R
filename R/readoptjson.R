@@ -14,6 +14,7 @@ GetAbilities_Opt <- function(AttrNode) {
 }
 
 
+
 #' GetSkills_Opt
 #' Takes the skills from an Optholit Json object and merges it with the information
 #' from the database to return a data frame with characters skill (excluding magical and
@@ -169,7 +170,8 @@ GetCombatSkill <- function(WeaponName, Attr, Skill = NULL,
 #' @param Item An list with an item from the 'belongings' 
 #' data structure of a Optholit character file.
 #'
-#' @return A weapons data structure as list
+#' @return A weapons data structure as list (equivalent to a weapon's 
+#' database entry)
 UniqueWeaponFromCharacter <- function(Item) {
   if (is.null(Item)) stop("Need an item to parse")
   if (length(Item) < 12) stop("Not sufficient data")
@@ -184,11 +186,15 @@ UniqueWeaponFromCharacter <- function(Item) {
     PrimaryAttrID <- GetPrimaryWeaponAttributeByCombatTechnique(Item[["combatTechnique"]])
   PrimaryAttr <- Attr[Attr$attrID %in% PrimaryAttrID, "shortname"]
   SF          <- NA_integer_
+  if (length(PrimaryAttrID) > 1) {
+    PrimaryAttrID <- paste0(c(PrimaryAttrID), collapse = "/")
+    PrimaryAttr <- paste0(c(PrimaryAttr), collapse = "/")
+  }
   
   IsRanged <- IsRangedWeapon(CombatTech = Item$combatTechnique)
   
   if(!IsRanged) {
-    Range       <- switch(Item$reach, "kurz", "mittel", "lang") #TODO: L10N
+    Range       <- switch(Item$reach, "kurz", "mittel", "lang") # TODO: L10N
     
     Weapon <- list(name = Item[["name"]], 
                    combattech = CombatTechName, 
@@ -231,6 +237,10 @@ UniqueWeaponFromCharacter <- function(Item) {
                    templateID = Item[["template"]] 
     )
   }
+
+  # Corrections
+  if (is.null(Weapon[["templateID"]])) Weapon[["templateID"]] <- ""
+  
   return(Weapon)
 }
 
@@ -249,55 +259,73 @@ UniqueWeaponFromCharacter <- function(Item) {
 GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities, 
                            AddUnarmed = TRUE, AddImprov = FALSE) {
   # Parsing belongings
-  Weapons <- NULL
-  for (Item in Belongings) {
-    ItemIsUnique <- FALSE
-    DatabaseWeapon <- GetWeapons(Item$template, "Any")
+  Melee <- data.frame()
+  Ranged <- data.frame()
 
-    # Item is a weapon if it is in the data base
-    ItemIsWeapon <- !is.null(DatabaseWeapon)
-    if (ItemIsWeapon) {
-      # However: remove weapon if it is improvised and that is not requested
-      if (!AddImprov) ItemIsWeapon <- ItemIsWeapon & isFALSE(DatabaseWeapon$improvised)
-      ItemIsUnique <- FALSE
-    } else {
-      # If item isn't in data base it could be a unique weapon
-      ItemIsWeapon <- ItemIsWeapon | !is.null(Item$combatTechnique)
-      # Get new values directly from character sheet (not the data base)
-      if (ItemIsWeapon) {
-        ItemIsUnique <- TRUE
-        DatabaseWeapon <- UniqueWeaponFromCharacter(Item)
-      }
-    }
-    # Only proceed adding this item when it is a weapon (or improvised)
-    if (!ItemIsWeapon) next
+  for (Item in Belongings) {
+    if (Item[["isTemplateLocked"]]) # values should come from DB is template is locked
+      DatabaseWeapon <- GetWeapons(Item$template, "Any")
     
+    ItemIsUnique <- !Item[["isTemplateLocked"]] || is.null(DatabaseWeapon)
+    if (ItemIsUnique) {
+      if (is.null(Item$combatTechnique)) next # Item isn't a weapon
+      DatabaseWeapon <- UniqueWeaponFromCharacter(Item)
+      if (is.null(DatabaseWeapon)) next # Item isn't a weapon
+    }
+        
+    # However: ignore item if it is improvised and that is not requested
+    if (!AddImprov && isTRUE(DatabaseWeapon$improvised)) next
+
+    # Add Weapon
     Skill <- GetCombatSkill(Item$template, Abilities, CombatTechniques, 
                             IsUniqueWeapon = ItemIsUnique, 
                             UniqueWeapon = Item)
     if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
     if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
     if (is.null(Item$template)) Item$template <- ""
-    Weapons <- cbind( c(Item$name, Item$template, Skill$AT, Skill$PA, 
-                        Item$damageDiceNumber, Item$damageFlat),
-                      Weapons )
-    colnames(Weapons)[1L] <- Item$name
+    DamageDice <- unlist(strsplit(DatabaseWeapon[["damage"]], split = "W"))
+    DamageDiceSides <- as.integer(DamageDice[2])
+    
+    DatabaseWeapon[["damageDiceNumber"]] <- Item$damageDiceNumber
+    DatabaseWeapon[["damageDiceSides"]]  <- DamageDiceSides
+    DatabaseWeapon[["damageFlat"]]       <- Item$damageFlat
+    DatabaseWeapon[["AT.Skill"]]         <- Skill$AT
+    DatabaseWeapon[["PA.Skill"]]         <- Skill$PA
+      
+    if (DatabaseWeapon[["clsrng"]]) {
+      Melee <- rbind( data.frame(DatabaseWeapon), Melee )
+      rownames(Melee)[1L] <- Item[["name"]]
+    } else {
+      Ranged <- rbind( data.frame(DatabaseWeapon), Ranged )
+      rownames(Ranged)[1L] <- Item[["name"]]
+    }
   }# for
 
   # Shall unarmed combat be added?
   if (AddUnarmed) {
+    DatabaseWeapon <- GetWeapons("WEAPONLESS", "Unarmed")
     Skill <- GetCombatSkill("WEAPONLESS", Abilities, CombatTechniques)
-    Weapons <- cbind( c("Waffenlos", "WEAPONLESS", # Name, TemplateID
-                        Skill$AT, Skill$PA,        # AT, PA
-                        1L,  # damageDiceNumber
-                        0L), # damageFlat
-                      Weapons )
-    colnames(Weapons)[1L] <- "Waffenlos" # TODO: no L10N
+    DamageDice <- unlist(strsplit(DatabaseWeapon[["damage"]], split = "W"))
+    DamageDiceNumber <- as.integer(DamageDice[1])
+    DamageDiceSides  <- as.integer(DamageDice[2])
+    
+    DatabaseWeapon[["damageDiceNumber"]] <- DamageDiceNumber
+    DatabaseWeapon[["damageDiceSides"]]  <- DamageDiceSides
+    DatabaseWeapon[["damageFlat"]]       <- DatabaseWeapon$bonus
+    DatabaseWeapon[["AT.Skill"]]         <- Skill$AT
+    DatabaseWeapon[["PA.Skill"]]         <- Skill$PA
+
+    Melee <- rbind( data.frame(DatabaseWeapon), Melee )
+    rownames(Melee)[1L] <- DatabaseWeapon[["name"]]
   }
   
   # Add row names and return
-  rownames(Weapons) <- c("Name", "templateID", "AT", "PA", "DamageDice", "DamageMod")
-  return(Weapons)
+  if(nrow(Melee) == 0) Melee <- NULL
+  if(nrow(Ranged) == 0) Ranged <- NULL
+  if (is.null(Melee) && is.null(Ranged))
+    return(NULL)
+  else
+    return(list(Melee = Melee, Ranged = Ranged))
 }
 
 

@@ -61,7 +61,7 @@ test_that("UniqueWeaponFromJson: Without template", {
   expect_identical(o$range, "kurz")
   expect_identical(o$clsrng, TRUE)
   expect_identical(o$improvised, FALSE)
-  expect_null(o$templateID)
+  expect_identical(o$templateID, "")
   
 
   # UNIQUE ITEM WITH TEMPLATE & UNIQUE PRIMARY ABILITY: Schneiderschere ==
@@ -73,8 +73,8 @@ test_that("UniqueWeaponFromJson: Without template", {
   
   expect_identical(o$name, Item$name)
   expect_identical(o$combattech, "Dolche")
-  expect_identical(o$primeattrID, list("ATTR_6", "ATTR_8"))
-  expect_identical(o$primeattr, c("GE", "KK"))
+  expect_identical(o$primeattrID, ("ATTR_6/ATTR_8"))
+  expect_identical(o$primeattr, ("GE/KK"))
   expect_identical(o$threshold, 16L)
   expect_identical(o$damage, "1W6")
   expect_identical(o$bonus, 1L)
@@ -90,8 +90,8 @@ test_that("UniqueWeaponFromJson: Without template", {
   
   expect_identical(o$name, Item$name)
   expect_identical(o$combattech, "Dolche")
-  expect_identical(o$primeattrID, list("ATTR_6", "ATTR_8"))
-  expect_identical(o$primeattr, c("GE", "KK"))
+  expect_identical(o$primeattrID, ("ATTR_6/ATTR_8"))
+  expect_identical(o$primeattr, ("GE/KK"))
   expect_identical(o$threshold, 16L)
   expect_identical(o$damage, "1W6")
   expect_identical(o$bonus, 1L)
@@ -173,14 +173,55 @@ test_that("GetWeapons_Opt: With unique weapons", {
                             AddUnarmed = FALSE, AddImprov = FALSE)
   setwd(.testdir)
   
-
-  expect_identical(ncol(Weapons), 7L)
-  expect_identical(sort(colnames(Weapons)), 
-                   sort(c("Dolch", "Elfenbogen", "Elfendolch", 
-                     "Feuerdolch (Unique 1)", 
-                     "Winddolch (Unique 2)",
-                     "Schneiderschere, scharf", 
-                     "Schneiderschere, stumpf")))
+  expect_identical(nrow(Weapons$Melee), 5L)
+  expect_identical(sort(rownames(Weapons$Melee)), 
+                   sort(c("Dolch", "Elfendolch", 
+                          "Feuerdolch (Unique 1)", 
+                          "Winddolch (Unique 2)",
+                          "Schneiderschere, stumpf")))
+  expect_identical(nrow(Weapons$Ranged), 1L)
+  expect_identical(sort(rownames(Weapons$Ranged)), 
+                   sort(c("Elfenbogen")))
+  
+  #
+  # Including improvised Weapons
+  setwd(.srcdir)
+  Weapons <- GetWeapons_Opt(Belongings, CombatSkills, Abilities, 
+                            AddUnarmed = FALSE, AddImprov = TRUE)
+  setwd(.testdir)
+  
+  #-print(is.data.frame(Weapons))
+  expect_identical(nrow(Weapons$Melee), 6L)
+  expect_identical(sort(rownames(Weapons$Melee)), 
+                   sort(c("Dolch", "Elfendolch", 
+                          "Feuerdolch (Unique 1)", 
+                          "Winddolch (Unique 2)",
+                          "Schneiderschere, scharf", 
+                          "Schneiderschere, stumpf")))
+  expect_identical(nrow(Weapons$Ranged), 1L)
+  expect_identical(sort(rownames(Weapons$Ranged)), 
+                   sort(c("Elfenbogen")))
+  
+  
+  #
+  # Including unarmed AND improvised Weapons
+  setwd(.srcdir)
+  Weapons <- GetWeapons_Opt(Belongings, CombatSkills, Abilities, 
+                            AddUnarmed = TRUE, AddImprov = TRUE)
+  setwd(.testdir)
+  
+#-print(is.data.frame(Weapons))
+  expect_identical(nrow(Weapons$Melee), 7L)
+  expect_identical(sort(rownames(Weapons$Melee)), 
+                   sort(c("Dolch", "Elfendolch", 
+                          "Feuerdolch (Unique 1)", 
+                          "Winddolch (Unique 2)",
+                          "Schneiderschere, scharf", 
+                          "Schneiderschere, stumpf",
+                          "Waffenlos")))
+  expect_identical(nrow(Weapons$Ranged), 1L)
+  expect_identical(sort(rownames(Weapons$Ranged)), 
+                   sort(c("Elfenbogen")))
 })
 
 
@@ -197,21 +238,38 @@ test_that("GetWeapons_Opt: NO unique weapons", {
   setwd(.testdir)
   
   ExpectedWeapons <- c("Waqqif", "Speer", "Magierstab, kurz")
-  expect_identical(ncol(Weapons), length(ExpectedWeapons))
-  expect_identical(sort(colnames(Weapons)), 
+  expect_identical(nrow(Weapons$Melee), length(ExpectedWeapons))
+  expect_identical(sort(rownames(Weapons$Melee)), 
                    sort(ExpectedWeapons))
+  expect_null(Weapons$Ranged)
   
   #
-  # Adding improvised Weapons
+  # Including improvised Weapons
   setwd(.srcdir)
   Weapons <- GetWeapons_Opt(Belongings, CombatSkills, Abilities, 
                             AddUnarmed = FALSE, AddImprov = TRUE)
   setwd(.testdir)
 
   ExpectedWeapons <- c("Waqqif", "Speer", "Magierstab, kurz", "Federmesser")
-  expect_identical(ncol(Weapons), length(ExpectedWeapons))
-  expect_identical(sort(colnames(Weapons)), 
+  expect_identical(nrow(Weapons$Melee), length(ExpectedWeapons))
+  expect_identical(sort(rownames(Weapons$Melee)), 
                    sort(ExpectedWeapons))
+  expect_null(Weapons$Ranged)
+  
+  
+  #
+  # Including unarmed AND improvised Weapons
+  setwd(.srcdir)
+  Weapons <- GetWeapons_Opt(Belongings, CombatSkills, Abilities, 
+                            AddUnarmed = TRUE, AddImprov = TRUE)
+  setwd(.testdir)
+  
+  ExpectedWeapons <- c("Waffenlos", "Waqqif", "Speer", "Magierstab, kurz", "Federmesser")
+  expect_identical(nrow(Weapons$Melee), length(ExpectedWeapons))
+  expect_identical(sort(rownames(Weapons$Melee)), 
+                   sort(ExpectedWeapons))
+  expect_null(Weapons$Ranged)
+  
 })
 
 

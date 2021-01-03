@@ -41,7 +41,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   
   
   #' Constructor
-  #' @param Weapon name of the weapon (character)
+  #' @param Weapon name of the weapon (character) or a list containing the data
   #' @param Abilities Character abilities (data frame)
   #' @param CombatTecSkills Named list of combat tech skills 
   #' (names are the `combattechID`)
@@ -57,7 +57,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       self$Damage <- args[["Damage"]]
       self$Modifier  <- 0L
     } else {
-      if (is.character(Weapon)) 
+      if (is.character(Weapon)) # `Weapon` is a name or ID
         self$RawWeaponData <- GetWeapons(Weapon)
       else 
         self$RawWeaponData <- Weapon
@@ -80,10 +80,17 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   #' @param CombatTecSkill A single value for the combat skill of the weapon's technique
   #' @return `self`
   CalcSkill = function(CharAbs, CombatTecSkill) {
-    AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
-    self$Skill <- list(Attack = AtPaSkill$AT, 
-                       Parry = AtPaSkill$PA, 
-                       Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
+    # if RawWeaponData has not been enriched by character data, yet, do so ...
+    if (is.null(self$RawWeaponData[["AT.Skill"]]) || is.null(self$RawWeaponData[["PA.Skill"]])) {
+      AtPaSkill <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
+      self$RawWeaponData[["AT.Skill"]] <- AtPaSkill$AT
+      self$RawWeaponData[["PA.Skill"]] <- AtPaSkill$PA
+    }
+    ##TODO: DodgeSkill <- GetDodgeSkill()
+
+    self$Skill <- list(Attack = self$RawWeaponData[["AT.Skill"]], 
+                       Parry  = self$RawWeaponData[["PA.Skill"]], 
+                       Dodge  = ceiling(CharAbs[["ATTR_6"]] / 2L))
     return(invisible(self))
   },
 
@@ -95,13 +102,21 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   #' @param CharAbs The character's abilities
   #' @return Invisible returns `self` 
   CalcDamage = function(CharAbs) {
-    Die <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
-    Bonus <- as.integer(self$RawWeaponData[["bonus"]])
-    if (!isTruthy(Bonus)) Bonus <- 0
-    Bonus <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
-    self$Damage <- list(N = as.integer(Die[1]), 
-                        DP = as.integer(Die[2]), 
-                        Bonus = Bonus)
+    # if RawWeaponData has not been enriched by character data, yet, do so ...
+    if (is.null(self$RawWeaponData[["damageDiceNumber"]]) || 
+        is.null(self$RawWeaponData[["damageDiceSides"]])  ||
+        is.null(self$RawWeaponData[["damageFlat"]])) {
+      DamageDice <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
+      self$RawWeaponData[["damageDiceNumber"]] <- as.integer(DamageDice[1])
+      self$RawWeaponData[["damageDiceSides"]]  <- as.integer(DamageDice[2])
+      Bonus <- as.integer(self$RawWeaponData[["bonus"]])
+      if (!isTruthy(Bonus)) Bonus <- 0
+      self$RawWeaponData[["damageFlat"]] <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
+    }
+    
+    self$Damage <- list(N = self$RawWeaponData[["damageDiceNumber"]], 
+                        DP = self$RawWeaponData[["damageDiceSides"]], 
+                        Bonus = self$RawWeaponData[["damageFlat"]])
 
     return(invisible(self))
   },

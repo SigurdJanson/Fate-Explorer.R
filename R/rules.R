@@ -136,6 +136,7 @@ GetWeapons <- function(Which = "All", Type = c("Melee", "Unarmed", "Ranged", "An
   # PRECONDITIONS
   if (is.null(Which) || is.na(Which)) return(NULL)
   Type <- match.arg(Type)
+
   if (Type == "Any" && Which == "All") 
     stop("Invalid combination of arguments. 'all' weapons not allowed with type 'any'")
   if (Type == "Unarmed") Type <- "Melee"
