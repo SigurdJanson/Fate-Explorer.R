@@ -6,11 +6,19 @@ ui <- shinyUI(fluidPage(
   shinyjs::useShinyjs(),
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "fatexplorer.css"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "rolloutput.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "rolloutput.css"),
+    tags$link(rel = "stylesheet", type = "text/css", href = "waiting.css")
   ),
-  navbarPage(title = p(gicon("logo-fateexplorer", class = "fe-logo"), "Fate Explorer"),
+  theme = "bootstrap.css",
+  navbarPage(title = div(
+               img(src="FateExplorer_Blood_Logo.svg", style="margin-top: -14px;", height = 50)
+             ),
              windowTitle = "Fate Explorer", id ="uiTabset",
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
+             
+             #header = div(
+             #         source(file.path("ui", "header_ui.R"), local = TRUE)$value
+             #),
              
              tabPanel(i18n$t("Be"),
                       source(file.path("ui", "tab_ability_ui.R"), local = TRUE)$value
