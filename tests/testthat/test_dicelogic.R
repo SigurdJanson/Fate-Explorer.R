@@ -162,6 +162,34 @@ test_that("DamageRoll", {
 })
 
 
+test_that("InitiativeRoll", {
+  # Use INI directly
+  for (m in c(0, 1, 2, 4, 8, 12)) {  #Modifier
+    for (i in 1:20) {
+      o <- InitiativeRoll(i, Mod = m)
+      expect_gte(o, 1+i+m)
+      expect_lte(o, 6+i+m)
+    }
+  }
+  
+  # Courage + Agility + Modifier
+  for (m in c(0, 1, 2, 4, 8, 12)) {  #Modifier
+    for (c in 1:20) {
+      for (a in 1:20) {
+        Abilities <- data.frame(ATTR_1 = c,  ATTR_2 = 10, ATTR_3 = 10, ATTR_4 = 10,
+                                ATTR_5 = 10, ATTR_6 = a,  ATTR_7 = 10, ATTR_8 = 10)
+        Abilities[1, "ATTR_1"] <- c
+        Abilities[1, "ATTR_6"] <- a
+        
+        o <- InitiativeRoll(Ability = Abilities, Mod = m)
+        INI <- round((c+a)/2)
+        expect_gte(o, INI+m+1)
+        expect_lte(o, INI+m+6)
+      }
+    }
+  }
+})
+
 
 test_that("FumbleRoll", {
   for(i in 1:100) {

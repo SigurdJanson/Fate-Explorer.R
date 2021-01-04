@@ -119,7 +119,7 @@ CombatRoll <- function() {
 #' DamageRoll
 #' A damage roll uses 1 or more d6 depending on the weapon.
 #' @param D6 Number of d6 - depends on weapon.
-#' @param Mod Additional modifier - depends on weapon.
+#' @param Mod Additional modifier - depends on weapon, states & conditions, ....
 #' @return nD + m, i.e. a random number between n+m and (n*6)+m
 DamageRoll <- function(D = 1L, DP = 6L, Mod = 0L) {
   return(sum(sample.int(DP, D, replace = TRUE)) + Mod)
@@ -149,6 +149,29 @@ VerifyCombatRoll <- function(Roll, Skill, Penalty = 0L) {
   return(Success)
 }
 #VerifyCombatRoll(2, 9)
+
+
+
+#' InitiativeRoll
+#' Returns an initiative roll to determine the order in which characters 
+#' (PCs and NPCs act).
+#' @param INI Initiative value
+#' @param Ability a data frame with ID as column names and ability values in first row
+#' @param Additional modifier - depends on states, conditions, special abilities, ...
+#'
+#' @return The initiative value
+#' @source initiative values are described in VR1 Core Rules, p. 57; the roll is 
+#' described in VR1 Core Rules, p. 226/7
+InitiativeRoll <- function(INI, Ability = NULL, Mod = 0L) {
+  if (missing(INI))
+    if (is.data.frame(Ability))
+      INI <- round((Ability[["ATTR_1"]] + Ability[["ATTR_6"]]) / 2L)
+    else
+      stop("Neither initiative value nor ability values are given")
+
+  Roll <- sample.int(6L, 1L)
+  return(INI + Roll + Mod)
+}
 
 
 # SKILL ------------------------------
