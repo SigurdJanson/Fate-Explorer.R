@@ -117,11 +117,13 @@ observeEvent(input$doInitiativeRoll, { # Initiative Roll
   UpdateCombatResult(NULL)
   
   InitiativeRollResult(NULL)
-  updateActionButton(session, inputId = "doInitiativeRoll", 
-                     RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), inProgress = TRUE))
-  RollInProgress("doInitiativeRoll", TRUE)
-  Roll <- InitiativeRoll(50)
-  InitiativeRollResult(Roll)
+  #updateActionButton(session, inputId = "doInitiativeRoll", 
+  #                   RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), inProgress = TRUE))
+  if (isTruthy(Character$Attr)) { #-TODO: this test should not be necessary in the long run
+    RollInProgress("doInitiativeRoll", TRUE)
+    Roll <- InitiativeRoll(Ability = Character$Attr, Mod = input$inpCombatMod)
+    InitiativeRollResult(Roll)
+  }
 })
 
 observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
