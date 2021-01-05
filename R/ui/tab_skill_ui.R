@@ -33,7 +33,7 @@ sidebarLayout(
   ),
 
   mainPanel(
-    actionButton("doSkillRoll", i18n$t("Now!"), icon = gicon("fist"), 
+    actionButton("doSkillRoll", span(i18n$t("Now!"), id="lbldoSkillRoll"), icon = gicon("fist"), 
                  width = "49%", style = "font-size: 140%"),
     htmlOutput("uiDoSkillRoutine", inline = TRUE), #Button for routine checks
     hr(),

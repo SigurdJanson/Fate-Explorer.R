@@ -1,5 +1,10 @@
 # COMBAT TAB
 
+#' Combat tab supports combat and initiative rolls
+#' But it shall only show either of those two results. That is why
+#' any roll must invalidate the other (i.e. set it to `NULL`)
+
+
 # Values of last combat roll
 ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
@@ -92,6 +97,7 @@ observeEvent(input$inpDamage, {
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
   InitiativeRollResult(NULL)
+  RollInProgress(paste0("do", Action, "Roll"), TRUE)
   UpdateCombatResult( ActiveWeapon$Roll( Action, input$inpCombatMod ) )
 }
 
@@ -113,8 +119,7 @@ observeEvent(input$doInitiativeRoll, { # Initiative Roll
   InitiativeRollResult(NULL)
   updateActionButton(session, inputId = "doInitiativeRoll", 
                      RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), inProgress = TRUE))
-  shinyjs::addClass(id = "lbldoInitiativeRoll", class = "loading dots")
-  shinyjs::disable("doInitiativeRoll")
+  RollInProgress("doInitiativeRoll", TRUE)
   Roll <- InitiativeRoll(50)
   InitiativeRollResult(Roll)
 })
@@ -169,6 +174,12 @@ output$uiCombatRoll <- renderText({
       }
     }
   }
+  
+  # Finally restore the buttons
+  Sys.sleep(0.3)
+  shinyjs::delay(700, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
+
+  # Return the results
   if (length(Result) > 0) # two panels
     return(as.character( div(KeyResult, 
                              div(Result, class = "shiny-html-output shiny-bound-output"), 
@@ -180,22 +191,15 @@ output$uiCombatRoll <- renderText({
 
 
 # VIEW: Initiative Roll ---------- ----------
-# output$ShowInitiativeRoll <- reactive({
-#   return( isTruthy(InitiativeRollResult) )
-# })
-# outputOptions(output, 'ShowInitiativeRoll', suspendWhenHidden = FALSE)
-
-
 output$uiInitiativeRoll <- renderText({
   req(InitiativeRollResult(), TRUE)
 
-  Sys.sleep(0.3)
-  Roll <- InitiativeRollResult()
+  # Finally restore the buttons
+  Sys.sleep(0.3) # artificially delay the result for increased tension
+  shinyjs::delay(700, RollInProgress("doInitiativeRoll", FALSE))
   
-  shinyjs::enable("doInitiativeRoll")
-  shinyjs::removeClass(id = "lbldoInitiativeRoll", class = "loading dots")
-  #ButtonLabel <- RollButtonLabel(doInitiativeRoll, i18n$t("Initiative"))
-    #-as.character(span(paste0(i18n$t("Initiative"), " (", Roll, ")"), id = "lblInitiativeButton"))
+  # Update button and result display
+  Roll <- InitiativeRollResult()
   updateActionButton(session, inputId = "doInitiativeRoll", 
                      label = RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), Roll))
   

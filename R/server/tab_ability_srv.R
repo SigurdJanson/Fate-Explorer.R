@@ -48,6 +48,7 @@ observeEvent(input$inpAbility, {
 observeEvent(input$doAbilityRoll, {
   isolate(LastAbilityConfirmationRoll(NULL)) # is invalid after re-roll
   LastAbilityRoll(AbilityRoll())
+  RollInProgress("doAbilityRoll", TRUE)
 }, ignoreInit = TRUE)
 
 
@@ -83,6 +84,10 @@ output$AbilityRoll <- renderText({
   if (!is.null(ConfirmationStr)) # add confirmation <div/>
     Result <- div(Result, div( ConfirmationStr ),
                   class = "shiny-html-output shiny-bound-output roll")
+  
+  # Finally restore the buttons
+  Sys.sleep(0.3) # artificially delay the result for increased tension
+  shinyjs::delay(700, RollInProgress("doAbilityRoll", FALSE))
   
   return(paste((Result), collapse=""))
 })

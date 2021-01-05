@@ -29,7 +29,7 @@ replace_umlauts <- function(x) {
 #' @details 
 #' * If a roll `Result` is given the button label will be "Label (Result)" 
 #' * If `inProgress` is TRUE the class will be set to "loading" to show the animation
-#' @return
+#' @return a string that can be used as label
 RollButtonLabel <- function(buttonId, Label, Result = NULL, inProgress = FALSE) {
   labelId <- paste0("lbl", buttonId)
   if (!is.null(Result))
@@ -42,6 +42,24 @@ RollButtonLabel <- function(buttonId, Label, Result = NULL, inProgress = FALSE) 
   return( as.character(span(Label, id = labelId, class = spanClass)) )
 }
 
+
+#' RollInProgress
+#' Set/Unset the stati of a button that indicates when a roll check is in progress.
+#' @param buttonId an `inputId`
+#' @param inProgress `TRUE`/`FALSE`
+#' @return invisible(NULL)
+RollInProgress <- function(buttonId, inProgress) {
+  if (inProgress) {
+    shinyjs::addClass(id = paste0("lbl", buttonId), class = "loading dots")
+    shinyjs::disable(buttonId)
+  }
+  else {
+    shinyjs::removeClass(id = paste0("lbl", buttonId), class = "loading dots")
+    shinyjs::enable(buttonId)
+  }
+  
+  return( invisible(NULL) )
+}
 
 
 

@@ -28,7 +28,7 @@ sidebarLayout(
     sliderInput("inpAbilityMod", i18n$t("Modifier"), min = -10L, max = 10L, value = 0L, step = 1L)
   ),
   mainPanel(
-    actionButton("doAbilityRoll", i18n$t("Ability"), icon = gicon("body-swapping"), 
+    actionButton("doAbilityRoll", span(i18n$t("Ability"), id="lbldoAbilityRoll"), icon = gicon("body-swapping"), 
                width = "100%", style = "font-size: 140%"),
     hr(),
     htmlOutput("AbilityRoll")

@@ -124,7 +124,7 @@ output$uiDoSkillRoutine <- renderUI({
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   RoutineCheck <- SkillSource$CanRoutineCheck(ActiveSkillIdent, input$SkillMod)
   if (RoutineCheck) {
-    actionButton("doSkillRoutine", i18n$t("Routine Check"), 
+    actionButton("doSkillRoutine", span(i18n$t("Routine Check"), id="lbldoSkillRoutine"), 
                  icon = gicon("boot-prints"), 
                  width = "49%", style = "font-size: 140%")
   }
@@ -145,7 +145,7 @@ ActiveSkillSets <- BasicSkillSets
 
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
 # Trigger to recognize a new roll - value is unimportant
-UpdateSkillResult <- reactiveVal() 
+UpdateSkillResult <- reactiveVal(NULL) 
 
 
 # Initiate skill roll
@@ -154,7 +154,9 @@ observeEvent(input$doSkillRoll, {
   SkillSource$Roll(ActiveSkillIdent, input$SkillMod, Routine = FALSE)
   LastSkillRoll$Roll <- SkillSource$LastRoll
   LastSkillRoll$Routine <- FALSE
-  UpdateSkillResult(sample.int(1000, 1))
+  UpdateSkillResult(ifelse(is.null(UpdateSkillResult()), 0, UpdateSkillResult()+1))
+  
+  RollInProgress("doSkillRoll", TRUE)
 })
 
 
@@ -165,6 +167,8 @@ observeEvent(input$doSkillRoutine, {
   LastSkillRoll$Roll <- NA
   LastSkillRoll$Routine <- SkillSource$LastRoll
   UpdateSkillResult(sample.int(1000, 1))
+  
+  RollInProgress("doSkillRoutine", TRUE)
 })
 
 
@@ -230,11 +234,19 @@ output$SkillRoll <- renderText({
     }
   }
   
+  # Put result together
   Result <- div(
     RenderedKeyResult,
     div(tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"), 
         ConfirmResult), 
     class = "shiny-html-output shiny-bound-output roll")
+  
+  # Finally restore the buttons
+  Sys.sleep(0.3) # artificially delay the result for increased tension
+  shinyjs::delay(700, {
+    RollInProgress("doSkillRoll", FALSE)
+    RollInProgress("doSkillRoutine", FALSE)
+  })
   
   return(paste((Result), collapse=""))
 })

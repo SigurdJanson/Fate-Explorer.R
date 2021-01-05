@@ -38,15 +38,15 @@ sidebarLayout(
     sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L)
     ),
   mainPanel(
-    actionButton("doAttackRoll", i18n$t("Attack"), icon = gicon("battle-axe"),
+    actionButton("doAttackRoll", span(i18n$t("Attack"), id="lbldoAttackRoll"), icon = gicon("battle-axe"),
                  width = "24%", style = "font-size: 140%"),
     span("\u00A0\u00A0"),
-    actionButton("doParryRoll", i18n$t("Parry"), icon = gicon("shield"),
+    actionButton("doParryRoll", span(i18n$t("Parry"), id="lbldoParryRoll"), icon = gicon("shield"),
                  width = "24%", style = "font-size: 140%"),
-    actionButton("doDodgeRoll", i18n$t("Dodge"), icon = gicon("dodge"),
+    actionButton("doDodgeRoll", span(i18n$t("Dodge"), id="lbldoDodgeRoll"), icon = gicon("dodge"),
                  width = "24%", style = "font-size: 140%"),
     span("\u00A0\u00A0"),
-    actionButton("doInitiativeRoll", label = span(i18n$t("Initiative"), id = "lbldoInitiativeRoll"), 
+    actionButton("doInitiativeRoll", span(i18n$t("Initiative"), id="lbldoInitiativeRoll"), 
                  icon = gicon("initiative"),
                  width = "24%", style = "font-size: 140%"),
     
