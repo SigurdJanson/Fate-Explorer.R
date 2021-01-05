@@ -1,0 +1,34 @@
+/*  
+    source: https://maxbeier.github.io/text-spinners/
+*/
+
+.loading {
+    display: inline-block;
+    overflow: hidden;
+    height: 1.3em;
+    margin-top: -0.3em;
+    line-height: 1.5em;
+    vertical-align: text-bottom;
+    box-sizing: border-box;
+}
+
+.loading.dots::after {
+    text-rendering: geometricPrecision;
+    content: "⠋\A⠙\A⠹\A⠸\A⠼\A⠴\A⠦\A⠧\A⠇\A⠏";
+    animation: spin10 1s steps(10) infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(10);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: spin10;
+}
+
+.loading::after {
+    display: inline-table;
+    white-space: pre;
+    text-align: left;
+}
+@keyframes spin10 { to { transform: translateY(-15.0em); } }

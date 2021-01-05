@@ -4,7 +4,8 @@
 ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
 # necessary trigger to recognize a new roll - value is unimportant
-UpdateCombatResult <- reactiveVal() 
+UpdateCombatResult <- reactiveVal()
+InitiativeRollResult <- reactiveVal(NULL)
 
 
 
@@ -90,6 +91,7 @@ observeEvent(input$inpDamage, {
   
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
+  InitiativeRollResult(NULL)
   UpdateCombatResult( ActiveWeapon$Roll( Action, input$inpCombatMod ) )
 }
 
@@ -105,6 +107,19 @@ observeEvent(input$doDodgeRoll, { # Dodge Roll
   doCombatRollBase("Dodge")
 })
 
+observeEvent(input$doInitiativeRoll, { # Initiative Roll
+  UpdateCombatResult(NULL)
+  
+  InitiativeRollResult(NULL)
+  updateActionButton(session, 
+                     inputId = "doInitiativeRoll", 
+                     as.character(span(i18n$t("Initiative"), id = "lblInitiativeButton")))
+  shinyjs::addClass(id = "lblInitiativeButton", class = "loading dots")
+  shinyjs::disable("doInitiativeRoll")
+  Roll <- InitiativeRoll(50)
+  InitiativeRollResult(Roll)
+})
+
 observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
   UpdateCombatResult( ActiveWeapon$Confirm()+100 )
 })
@@ -117,7 +132,7 @@ observeEvent(input$doCombatFumble, { # Show fumble result
 
 # UI COMBAT ROLL -----------------------
 output$uiCombatRoll <- renderText({
-  req(UpdateCombatResult())
+  req(UpdateCombatResult(), TRUE)
 
   if (isTruthy(ActiveWeapon$ConfirmRoll))
     ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),
@@ -165,7 +180,33 @@ output$uiCombatRoll <- renderText({
 
 
 
-# VIEW: Weapon details Panel ----------
+# VIEW: Initiative Roll ---------- ----------
+# output$ShowInitiativeRoll <- reactive({
+#   return( isTruthy(InitiativeRollResult) )
+# })
+# outputOptions(output, 'ShowInitiativeRoll', suspendWhenHidden = FALSE)
+
+
+output$uiInitiativeRoll <- renderText({
+  req(InitiativeRollResult(), TRUE)
+
+  Sys.sleep(0.3)
+  Roll <- InitiativeRollResult()
+  
+  shinyjs::enable("doInitiativeRoll")
+  shinyjs::removeClass(id = "lblInitiativeButton", class = "loading dots")
+  ButtonLabel <- as.character(span(paste0(i18n$t("Initiative"), " (", Roll, ")"), id = "lblInitiativeButton"))
+  updateActionButton(session, 
+                     inputId = "doInitiativeRoll", 
+                     label = ButtonLabel)
+  
+  Result <- RenderRollKeyResult("Initiative", Roll, KeyUnit = "dr")
+  return(as.character(Result))
+})
+
+
+
+# VIEW: Weapon details Panel ---------- ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
   return( input$chbHarvestWeaponDetails && 
@@ -207,7 +248,8 @@ output$WeaponDetails <- renderText({
 })
 
 
-# View: Exploration Panel ----
+
+# VIEW: Exploration Panel ---------- ----------
 output$ShowExploreFightingChances <- reactive({
   return( input$chbExploreChances )
 })

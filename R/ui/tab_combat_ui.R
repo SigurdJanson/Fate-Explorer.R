@@ -39,14 +39,19 @@ sidebarLayout(
     ),
   mainPanel(
     actionButton("doAttackRoll", i18n$t("Attack"), icon = gicon("battle-axe"),
-                 width = "32%", style = "font-size: 140%"),
+                 width = "24%", style = "font-size: 140%"),
+    span("\u00A0\u00A0"),
     actionButton("doParryRoll", i18n$t("Parry"), icon = gicon("shield"),
-                 width = "32%", style = "font-size: 140%"),
+                 width = "24%", style = "font-size: 140%"),
     actionButton("doDodgeRoll", i18n$t("Dodge"), icon = gicon("dodge"),
-                 width = "32%", style = "font-size: 140%"),
-
+                 width = "24%", style = "font-size: 140%"),
+    span("\u00A0\u00A0"),
+    actionButton("doInitiativeRoll", label = span(i18n$t("Initiative"), id = "lblInitiativeButton"), icon = gicon("initiative"),
+                 width = "24%", style = "font-size: 140%"),
+    
     hr(),
     htmlOutput("uiCombatRoll"),
+    htmlOutput("uiInitiativeRoll"),
     
     conditionalPanel(
       condition = "output.ShowWeaponDetails",
