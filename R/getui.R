@@ -11,7 +11,7 @@ ui <- shinyUI(fluidPage(
   ),
   theme = "bootstrap.css",
   navbarPage(title = div(
-               img(src="FateExplorer_Blood_Logo.svg", style="margin-top: -14px;", height = 50)
+               img(src="FateExplorer_Text_Logo.svg", style="margin-top: -14px;", height = 50)
              ),
              windowTitle = "Fate Explorer", id ="uiTabset",
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,

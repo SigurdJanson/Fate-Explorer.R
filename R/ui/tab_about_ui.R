@@ -2,7 +2,7 @@
 
 fluidPage(
   fluidRow(
-    column(12, h1(gicon("logo-fateexplorer", class = "fe-logo"), "Fate Explorer", align = "center"))
+    column(12, h1(img(src="FateExplorer_Blood_Logo.svg", alt="Logo", width="45%"), align = "center"))
   ),
 fluidRow(
   column(3, imageOutput("imgAboutMagic"), imageOutput("imgAboutSkeletons")),
@@ -15,7 +15,7 @@ fluidRow(
          br(), br(),
          "Fate Explorer", i18n$t(" has been created by"), " Jan Seifert.",
          
-         i18n$t("This is release"), " 1.00 ", i18n$t("code named"), " Funky Dorky.",
+         i18n$t("This is release"), " 2 ", i18n$t("code named"), " Aves's Boot Heel.",
          
          hr(),
          h3(i18n$t("Honorable mentions")), br(), 
