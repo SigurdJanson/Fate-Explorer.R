@@ -20,6 +20,31 @@ replace_umlauts <- function(x) {
 
 # VIEW -----------
 
+#' RollButtonLabel
+#' Creates an appropriate button label fpr roll check buttons
+#' @param buttonId The `inputId` of the button
+#' @param Label The label (string)
+#' @param Result A roll check result
+#' @param inProgress 
+#' @details 
+#' * If a roll `Result` is given the button label will be "Label (Result)" 
+#' * If `inProgress` is TRUE the class will be set to "loading" to show the animation
+#' @return
+RollButtonLabel <- function(buttonId, Label, Result = NULL, inProgress = FALSE) {
+  labelId <- paste0("lbl", buttonId)
+  if (!is.null(Result))
+    Label   <- paste0(Label, " (", Result, ")")
+  if (inProgress)
+    spanClass <- "loading dots"
+  else 
+    spanClass <- ""
+  
+  return( as.character(span(Label, id = labelId, class = spanClass)) )
+}
+
+
+
+
 #' gicon
 #' Renders an icon from an icon font.
 #' @param name Name of icon according to icon lib (i.e. without prefixes like the
@@ -114,6 +139,7 @@ RenderFumbleRollEffect <- function( Effect ) {
 #' @param keyValue Value of the confirmation roll (numeric).
 #' @param FurtherValue An additional number or string that will be appended to `KeyResult`
 #' in brackets.
+#' @param KeyUnit dr = die roll, ql = quality level of skill checks, hp = hit points.
 #' @return The result from these functions is a tag object, which can be 
 #' converted using `as.character()`.
 RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL, 

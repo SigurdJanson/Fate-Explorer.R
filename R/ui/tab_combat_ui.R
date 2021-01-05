@@ -46,7 +46,8 @@ sidebarLayout(
     actionButton("doDodgeRoll", i18n$t("Dodge"), icon = gicon("dodge"),
                  width = "24%", style = "font-size: 140%"),
     span("\u00A0\u00A0"),
-    actionButton("doInitiativeRoll", label = span(i18n$t("Initiative"), id = "lblInitiativeButton"), icon = gicon("initiative"),
+    actionButton("doInitiativeRoll", label = span(i18n$t("Initiative"), id = "lbldoInitiativeRoll"), 
+                 icon = gicon("initiative"),
                  width = "24%", style = "font-size: 140%"),
     
     hr(),

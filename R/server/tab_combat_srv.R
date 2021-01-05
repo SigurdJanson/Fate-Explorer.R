@@ -111,10 +111,9 @@ observeEvent(input$doInitiativeRoll, { # Initiative Roll
   UpdateCombatResult(NULL)
   
   InitiativeRollResult(NULL)
-  updateActionButton(session, 
-                     inputId = "doInitiativeRoll", 
-                     as.character(span(i18n$t("Initiative"), id = "lblInitiativeButton")))
-  shinyjs::addClass(id = "lblInitiativeButton", class = "loading dots")
+  updateActionButton(session, inputId = "doInitiativeRoll", 
+                     RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), inProgress = TRUE))
+  shinyjs::addClass(id = "lbldoInitiativeRoll", class = "loading dots")
   shinyjs::disable("doInitiativeRoll")
   Roll <- InitiativeRoll(50)
   InitiativeRollResult(Roll)
@@ -194,11 +193,11 @@ output$uiInitiativeRoll <- renderText({
   Roll <- InitiativeRollResult()
   
   shinyjs::enable("doInitiativeRoll")
-  shinyjs::removeClass(id = "lblInitiativeButton", class = "loading dots")
-  ButtonLabel <- as.character(span(paste0(i18n$t("Initiative"), " (", Roll, ")"), id = "lblInitiativeButton"))
-  updateActionButton(session, 
-                     inputId = "doInitiativeRoll", 
-                     label = ButtonLabel)
+  shinyjs::removeClass(id = "lbldoInitiativeRoll", class = "loading dots")
+  #ButtonLabel <- RollButtonLabel(doInitiativeRoll, i18n$t("Initiative"))
+    #-as.character(span(paste0(i18n$t("Initiative"), " (", Roll, ")"), id = "lblInitiativeButton"))
+  updateActionButton(session, inputId = "doInitiativeRoll", 
+                     label = RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), Roll))
   
   Result <- RenderRollKeyResult("Initiative", Roll, KeyUnit = "dr")
   return(as.character(Result))
