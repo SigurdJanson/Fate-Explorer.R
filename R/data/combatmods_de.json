@@ -40,7 +40,35 @@
         {"at": "long", "pa": "medium", "mod": 0},
         {"at": "long", "pa": "long", "mod": 0}
     ],
-    "CloseCombatRange": [{}],
+
+    "CloseCombatRange": [{
+        "Conditions": {"Opponent.CloseCombatRange": "Short"},
+        "Criterion": "Hero.Weapon.CloseCombatRange",
+        "Modifiers": {
+            "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
+            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
+            "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        }
+    },
+    {
+        "Conditions": {"Opponent.CloseCombatRange": "Medium"},
+        "Criterion": "Hero.Weapon.CloseCombatRange",
+        "Modifiers": {
+            "Short":  {"at": {"op": "+", "arg":  -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": 0}},
+            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
+            "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        }
+    },
+    {
+        "Conditions": {"Opponent.CloseCombatRange": "Long"},
+        "Criterion": "Hero.Weapon.CloseCombatRange",
+        "Modifiers": {
+            "Short":  {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": 0}},
+            "Medium": {"at": {"op": "+", "arg":  -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": 0}},
+            "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        }
+    }],
+
     "CrampedSpace": [{
         "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.Weapon.WeaponType": "Melee"},
         "Criterion": "Hero.Weapon.CloseCombatRange",
