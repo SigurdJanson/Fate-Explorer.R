@@ -15,38 +15,91 @@
         {"id": "run", "mod": -4, "speed": 5}
     ],
     "speedunit": "yards/action",
-    "visibility": [
-        {"id": "level0", "mod": 0, "label": "Klare Sicht", "example": "Tageslicht, Dämmerung"},
-        {"id": "level1", "mod": -2, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
-        {"id": "level2", "mod": -4, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
-        {"id": "level3", "mod": -6, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
-        {"id": "level4", "mod": -20, "label": "Ziel unsichtbar", "example": "dichter Rauch, völlige Dunkelheit"}
-    ],
 
-/* CLOSE COMBAT */
-    "TargetSize": [{
-        "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed als 2. alternative Bedingungen (ODER, kein UND???*/
-        "Criterion": "Opponent.TargetSize",
-        "Modifiers": {
-            "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-            "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-            "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-            "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
-        }
-    },
-    {
-        "Conditions": {"Hero.Weapon.WeaponType": "Shield"},
-        "Criterion": "Opponent.TargetSize",
-        "Modifiers": {
-            "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-            "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-            "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-            "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
-        }
-    }],
+/* MIXED CLOSE & RANGED COMBAT */
+"TargetSize": [{
+    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed als 2. alternative Bedingungen (ODER, kein UND???*/
+    "Criterion": "Opponent.TargetSize",
+    "Modifiers": {
+        "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": "Shield"},
+    "Criterion": "Opponent.TargetSize",
+    "Modifiers": {
+        "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": "Ranged"},
+    "Criterion": "Opponent.TargetSize",
+    "Modifiers": {
+        "Tiny":   {"at": {"op": "+", "arg":  -8}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"at": {"op": "+", "arg":   0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"at": {"op": "+", "arg":   4}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"at": {"op": "+", "arg":   8}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+    }
+}],
 
+"Visibility": [{
+    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed & Shield als 2. alternative Bedingungen (ODER, kein UND???*/
+    "Criterion": "Opponent.Visibility",
+    "Modifiers": {
+        "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
+        "Impaired":   {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
+        "ShapesOnly": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
+        "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "*", "arg": -3}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        "NoVision":   {"at": {"op": "/", "arg":  2}, "pa": {"op": "^", "arg":  0}, "do": {"op": "^", "arg":  0}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": "Ranged"},
+    "Criterion": "Opponent.Visibility",
+    "Modifiers": { /* Dodge modifiers are taken from close combat */
+        "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
+        "Impaired":   {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
+        "ShapesOnly": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
+        "Barely":     {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        "NoVision":   {"at": {"op": "^", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "^", "arg":  0}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+    }
+}],
+
+"UnderWater": [{
+    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /* Shield, Unarmed */
+    "Criterion": "Hero.Weapon.Water",
+    "Modifiers": { /* These levels are not explicitly part of the rules */
+        "Dry":       {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
+        "KneeDeep":  {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
+        "WaistDeep": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
+        "ChestDeep": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "NeckDeep":  {"at": {"op": "+", "arg": -5}, "pa": {"op": "+", "arg": -5}, "do": {"op": "+", "arg": -5}, "label": "", "example": ""},
+        "Submerged": {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": -6}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": "Ranged"},
+    "Criterion": "Hero.Weapon.Water",
+    "Modifiers": { /* These levels are not explicitly part of the rules */
+        "Dry":       {"at": {"op": "+", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
+        "KneeDeep":  {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
+        "WaistDeep": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
+        "ChestDeep": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "NeckDeep":  {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "Submerged": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
+    }
+}],
+
+/* CLOSE COMBAT ONLY */
     "CloseCombatRange": [{
         "Conditions": {"Opponent.CloseCombatRange": "Short"},
         "Criterion": "Hero.Weapon.CloseCombatRange",
@@ -94,37 +147,25 @@
         }
     }],
 
-    "Visibility": [{
-        "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed & Shield als 2. alternative Bedingungen (ODER, kein UND???*/
-        "Criterion": "Opponent.TargetSize",
-        "Modifiers": {
-            "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "example": "Klare Sicht"},
-            "Impaired":   {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "example": "leichtes Blattwerk, Morgendunst"},
-            "ShapesOnly": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "example": "Nebel, Mondlicht"},
-            "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "*", "arg": -3}, "do": {"op": "+", "arg": -3}, "example": "Ziel schemenhaft erkennbar"},
-            "NoVision":   {"at": {"op": "/", "arg":  2}, "pa": {"op": "^", "arg":  0}, "do": {"op": "^", "arg":  0}, "example": "Ziel unsichtbar"}
-        }
-    },
-    {   /* TODO */
-        "Conditions": {"Hero.Weapon.WeaponType": "Ranged"},
-        "Criterion": "Opponent.TargetSize",
-        "Modifiers": {
-            "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-            "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-            "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-            "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
-        }
-    }],
 
-    "UnderWater": [{
-        "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /* Shield, Unarmed */
-        "Criterion": "Hero.Weapon.Water",
-        "Modifiers": {
-            "KneeDeep":  {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}},
-            "WaistDeep": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}},
-            "ChestHigh": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": -4}},
-            "Submerged": {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": -6}, "do": {"op": "+", "arg": -6}}
-        }
-    }]
+/* RANGED COMBAT ONLY */
+"Movement": [{
+    "Conditions": {"Hero.Weapon.WeaponType": "Ranged", "MeansOfMovement": "OnFoot"},
+    "Criterion": "Opponent.Movement",
+    "Modifiers": {
+        "Stationary":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Slow":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Fast": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": "Ranged", "MeansOfMovement": "Mounted"},
+    "Criterion": "Opponent.MountedMovement",
+    "Modifiers": {
+        "Standing": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
+        "Walk":     {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
+        "Trot":     {"at": {"op": "^", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
+        "Gallop":   {"at": {"op": "+", "arg": -8}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
+    }
+}]
 }
