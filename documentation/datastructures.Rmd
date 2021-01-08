@@ -11,17 +11,26 @@ require(jsonlite)
 ```
 
 ```{r Source files, echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
-source(file.path("D:/Programmierung/R/DSADiceApp.git", "src/weapon.R"))
-source(file.path("D:/Programmierung/R/DSADiceApp.git", "src/rules.R"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
+source(file.path("D:/Programmierung/R/DSA Fate Explorer", "R/weapon.R"))
+source(file.path("D:/Programmierung/R/DSA Fate Explorer", "R/rules.R"))
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 ```
 
-# Enumerations
+```{r Helpers, echo=FALSE}
+vecprint <- function(x) {
+  paste0("\u0060", paste(names(x), x, sep = "=", collapse = ", "), "\u0060")
+}
+```
 
-Enumerations are realised as named atomic vectors. Functions like `ifelse()` or `as.integer()` may cause problems because the strip the attributes from the variables. If avoided, the labels will be preserved even after an assigment like `Scimitar <- .WeaponType["Melee"]` `r Scimitar <- .WeaponType["Melee"]`. One can access the label with `names(Scimitar)` which returns "`r names(Scimitar)`".
+
+# Enumerations  {.tabset}
+
+Enumerations are realized as named atomic vectors. Functions like `ifelse()` or `as.integer()` may cause problems because the strip the attributes from the variables. If avoided, the labels will be preserved even after an assignment like `Scimitar <- .WeaponType["Melee"]` `r Scimitar <- .WeaponType["Melee"]`. One can access the label with `names(Scimitar)` which returns "`r names(Scimitar)`".
 
 Careful! At this point of development some functions use the numeric code and some use the text label. This should be resolved in the future.
+
+## General
 
 .WeaponType
 ```{r Enum WeaponType, echo=FALSE}
@@ -53,10 +62,43 @@ print(.RangedCombatRange)
 print(.SkillType)
 ```
 
+## Enums for Combat Modifiers
+.Visibility
+```{r Enum .Visibility, echo=FALSE}
+print(.Visibility)
+```
+.MeansOfMovement
+```{r Enum .MeansOfMovement, echo=FALSE}
+print(.MeansOfMovement)
+```
+.Movement
+```{r Enum .Movement, echo=FALSE}
+print(.Movement)
+```
+.MountedMovement
+```{r Enum .MountedMovement, echo=FALSE}
+print(.MountedMovement)
+```
+.EvasiveMovement
+```{r Enum .EvasiveMovement, echo=FALSE}
+print(.EvasiveMovement)
+```
+.TargetDistance
+```{r Enum .TargetDistance, echo=FALSE}
+print(.TargetDistance)
+```
+.TargetSize
+```{r Enum .Ski.TargetSizellType, echo=FALSE}
+print(.TargetSize)
+```
+.CrampedSpace
+```{r Enum .CrampedSpace, echo=FALSE}
+print(.CrampedSpace)
+```
 
 
 
-# Basic Tables {.tabset}
+# Master Data Tables {.tabset}
 
 ## Abilities
 
@@ -83,7 +125,7 @@ ab
 `GetSkills()`
 
 ```{r echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 sk <- GetSkills("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 
@@ -100,7 +142,7 @@ head(sk)
 ## Spells
 
 ```{r echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 sk <- GetSpells("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 head(sk)
@@ -110,7 +152,7 @@ head(sk)
 ## Chants
 
 ```{r echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 sk <- GetChants("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 head(sk)
@@ -185,7 +227,7 @@ wp
 ## Combat Techniques
 
 ```{r echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 ct <-GetCombatTechniques("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 
@@ -195,7 +237,7 @@ head(ct)
 ## Fumbles
 
 ```{r Fumbles Effects, echo=FALSE}
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 fb <- GetAllFumbleEffects("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 
@@ -330,14 +372,66 @@ sk <- structure(list(attrID = c("TAL_1", "TAL_2", "TAL_3", "TAL_4",
     1, 0, 0, 3, 0, 0, 4, 1, 4, 3, 4, 0, 0, 2, 4, 3, 3, 0, 0, 
     2, 3, 2, 8, 4, 0, 0, 4, 0, 0, 3, 3, 0, 0, 7, 0, 12)), row.names = c(NA, 
 59L), class = "data.frame")
-setwd(file.path(rprojroot::find_rstudio_root_file(), "src"))
+setwd(file.path(rprojroot::find_rstudio_root_file(), "R"))
 sk <- GetSkills("de")
 setwd(file.path(rprojroot::find_rstudio_root_file(), "documentation"))
 head(sk)
 ```
 
 * Type: <`r class(sk)`>
-* Skill idenfitfiers are stored in the first column `attrID`.
+* Skill identifiers are stored in the first column `attrID`.
 * Ability identifiers are coded as `r paste("ATTR_", 1:8)`
 * Skill class is a numeric identifier
+
+
+
+
+# Data Structures {.tabset}
+
+## Combat Environment
+
+Data structure (`list`) as used by `GetCombatModifier()` (in Rules.R).
+
+* Hero
+  * Weapon
+    * `.WeaponType`
+    * Range: either `.CloseCombatRange` or `.RangedCombatRange` depending on weapon type
+  * `OnFoot` TRUE/FALSE
+  * `Mounted` TRUE/FALSE
+  * Movement
+    * if `OnFoot` is `TRUE`: `.Movement = ` `r vecprint(.Movement)`
+    * if `Mounted` is `TRUE`: `.MountedMovement = ` `r vecprint(.MountedMovement)`
+* Opponent
+  * WeaponsRange: either `.CloseCombatRange` or `.RangedCombatRange`
+  * Size `.TargetSize = ` `r vecprint(.TargetSize)`
+  * Movement `.Movement =` `r vecprint(.Movement)`
+  * `Zigzagging` TRUE/FALSE
+  * Distance `.TargetDistance = ` `r vecprint(.TargetDistance)`
+* Environment
+  * Visibility `r vecprint(.Visibility)`
+  * Cramped TRUE/FALSE
+
+```{r eval=FALSE, echo=TRUE}
+CombatEnv <- list(
+  Hero = list(
+    Weapon = list(
+      WeaponType       = .WeaponType["Melee"],
+      CloseCombatRange = .CloseCombatRange["Medium"]
+    ),
+    MeansOfMovement = .MeansOfMovement["OnFoot"],
+    Movement = .Movement["Slow"] # ignored in close combat
+  ),
+  Opponent = list( # Ogre fighting with a tooth pick
+    CloseCombatRange = .CloseCombatRange["Short"],
+    TargetSize       = .TargetSize["Large"], 
+    Movement         = .Movement["Slow"], # ignored in close combat
+    EvasiveMovement  = .EvasiveMovement["None"], # ignored in close combat
+    TargetDistance   = .TargetDistance["Close"]  # ignored in close combat
+  ),
+  Environment = list(
+    Visibility   = .Visibility["Clearly"], 
+    CrampedSpace = .CrampedSpace["Cramped"]
+  )
+)```
+
 

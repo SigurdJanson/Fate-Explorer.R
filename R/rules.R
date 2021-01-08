@@ -10,6 +10,17 @@
 .RangedCombatRange <- c(Close = 1L, Medium = 2L, Far = 3L)
 .SkillType    <- c(Mundane = 1L, Magic = 2L, Blessed = 3L)
 
+## relevant enums for combat modifiers
+.Visibility      <- c(Clearly = 1L, Impaired = 2L, ShapesOnly = 3L, Barely = 4L, NoVision = 5L)
+.MeansOfMovement <- c(OnFoot = 1L, Mounted = 2L)
+.Movement        <- c(Stationary = 1L, Slow = 2L, Fast = 3L)
+.MountedMovement <- c(Standing = 1L, Walk = 2L, Trot = 3L, Gallop = 4L)
+.EvasiveMovement <- c(None = 1L, Zigzagging = 2L)
+.TargetDistance  <- c(Close = 1L, Medium = 2L, Far = 3L)
+.TargetSize      <- c(Tiny = 1L, Small = 2L, Medium = 3L, Large = 4L, Huge = 5L)
+.CrampedSpace    <- c(Free = 1L, Cramped = 2L)
+
+
 # Data objects ----
 .Attribs <- NULL
 .Skills  <- NULL
@@ -352,3 +363,54 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
 }
 #GetHitpointBonus("Barbarenschwert", ab)
 
+
+#' .GetCloseCombatMod
+#' @param CombatEnv a data structure containing the details about the
+#' two opponents and the environment
+#' @details 
+#' Hero: .CloseCombatRange
+#' Opponent: .CloseCombatRange, .TargetSize
+#' Environment: Visibility, Cramped
+#' @return c(AT = )
+.GetCloseCombatMod <- function(CombatEnv) {
+  WeaponType <- .WeaponType[ CombatEnv[["Hero"]][["Weapon"]][["WeaponType"]] ]
+  
+  Mod <- c(AT = 0, PA = 0, DO = 0)
+
+  # Cramped TRUE/FALSE
+  Criterion <- CombatEnv[["Environment"]][["Cramped"]]
+  if(Criterion && WeaponType != .WeaponType["Unarmed"]) {
+    if (WeaponType == .WeaponType["Shield"])
+      TempMod <- switch(CombatEnv[["Hero"]][["Weapon"]][["Range"]], 
+                        c(-2, -2, 0), 
+                        c(-4, -3, 0), 
+                        c(-6, -4, 0))
+    else
+      TempMod <- switch(CombatEnv[["Hero"]][["Weapon"]][["Range"]], 
+                        rep(0, 3), 
+                        c(-4, -4, 0), 
+                        c(-8, -8, 0))
+    Mod <- Mod + TempMod
+  }
+
+  # Visibility
+  Criterion <- .Visibility[ CombatEnv[["Environment"]][["Visibility"]] ]
+  if(Criterion > .Visibility["Clearly"]) {
+    TempMod <- rep(Criterion, 3)
+  }
+}
+
+
+#' Hero: .RangedCombatRange, Movement
+#' Opponent: .TargetSize, Movement, Zigzagging, Distance
+#' Environment: Visibility
+.GetRangedCombatMod <- function(CombatEnv) {
+  
+}
+
+GetCombatModifier <- function(CombatEnv) {
+  if(CombatEnv[["Hero"]][["Weapon"]][["WeaponType"]] == .WeaponType["Ranged"])
+    Result <- .GetRangedCombatMod(CombatEnv)
+  else
+    Result <- .GetCloseCombatMod(CombatEnv)
+}

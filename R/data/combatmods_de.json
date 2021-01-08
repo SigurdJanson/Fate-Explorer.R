@@ -4,17 +4,17 @@
         "HPMod": [ {"close": 1}, {"medium": 0}, {"far": -1} ]
     },
     "size": [
-        {"id": "tiny", "mod": -8, "example": "Ratte, Kröte, Spatz"},
-        {"id": "small", "mod": -4, "example": "Rehkitz, Schaf, Ziege"},
-        {"id": "medium", "mod": 0, "example": "Mensch, Zwerg, Esel"},
-        {"id": "large", "mod": 4, "example": "Oger, Troll, Rind"},
-        {"id": "huge", "mod": 8, "example": "Drache, Riese, Elefant"}
+        {"id": "Tiny", "mod": -8, "example": "Ratte, Kröte, Spatz"},
+        {"id": "Small", "mod": -4, "example": "Rehkitz, Schaf, Ziege"},
+        {"id": "Medium", "mod": 0, "example": "Mensch, Zwerg, Esel"},
+        {"id": "Large", "mod": 4, "example": "Oger, Troll, Rind"},
+        {"id": "Huge", "mod": 8, "example": "Drache, Riese, Elefant"}
     ],
     "targetspeed": [
-        {"id": "still", "mod": 2, "speed": 0},
-        {"id": "slow", "mod": 0, "speed": 4},
-        {"id": "fast", "mod": -2, "speed": 5},
-        {"id": "zigzag", "mod": -4, "speed": 2}
+        {"id": "Stationary", "mod": 2, "speed": 0},
+        {"id": "Slow", "mod": 0, "speed": 4},
+        {"id": "Fast", "mod": -2, "speed": 5},
+        {"id": "Zigzag", "mod": -4, "speed": 2}
     ],
     "attackerspeed": [
         {"id": "still", "mod": 0, "speed": 0},
@@ -40,9 +40,23 @@
         {"at": "long", "pa": "medium", "mod": 0},
         {"at": "long", "pa": "long", "mod": 0}
     ],
-    "crampedspace": [
-        {"reach": "short", "at": 0, "pa": 0},
-        {"reach": "medium", "at": -4, "pa": -4},
-        {"reach": "long", "at": -8, "pa": -8}
-    ]
+    "CloseCombatRange": [{}],
+    "CrampedSpace": [{
+        "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.Weapon.WeaponType": "Melee"},
+        "Criterion": "Hero.Weapon.CloseCombatRange",
+        "Modifiers": {
+            "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0},  "do": {"op": "+", "arg": 0}},
+            "Medium": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": 0}},
+            "Long":   {"at": {"op": "+", "arg": -8}, "pa": {"op": "+", "arg": -8}, "do": {"op": "+", "arg": 0}}
+        }
+    },
+    {
+        "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.Weapon.WeaponType": "Shield"}, 
+        "Criterion": "Hero.Weapon.CloseCombatRange",
+        "Modifiers": {
+            "Short":  {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": 0}},
+            "Medium": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -3}, "do": {"op": "+", "arg": 0}},
+            "Long":   {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": 0}}
+        }
+    }]
 }
