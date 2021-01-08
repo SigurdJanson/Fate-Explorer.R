@@ -3,13 +3,6 @@
         "SkillMod": [ {"close": 2}, {"medium": 0}, {"far": -2} ],
         "HPMod": [ {"close": 1}, {"medium": 0}, {"far": -1} ]
     },
-    "size": [
-        {"id": "Tiny", "mod": -8, "example": "Ratte, Kröte, Spatz"},
-        {"id": "Small", "mod": -4, "example": "Rehkitz, Schaf, Ziege"},
-        {"id": "Medium", "mod": 0, "example": "Mensch, Zwerg, Esel"},
-        {"id": "Large", "mod": 4, "example": "Oger, Troll, Rind"},
-        {"id": "Huge", "mod": 8, "example": "Drache, Riese, Elefant"}
-    ],
     "targetspeed": [
         {"id": "Stationary", "mod": 2, "speed": 0},
         {"id": "Slow", "mod": 0, "speed": 4},
@@ -29,17 +22,36 @@
         {"id": "level3", "mod": -6, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
         {"id": "level4", "mod": -20, "label": "Ziel unsichtbar", "example": "dichter Rauch, völlige Dunkelheit"}
     ],
-    "reach": [
-        {"at": "short", "pa": "short", "mod": 0},
-        {"at": "short", "pa": "medium", "mod": -2},
-        {"at": "short", "pa": "long", "mod": -4},
-        {"at": "medium", "pa": "short", "mod": 0},
-        {"at": "medium", "pa": "medium", "mod": 0},
-        {"at": "medium", "pa": "long", "mod": -2},
-        {"at": "long", "pa": "short", "mod": 0},
-        {"at": "long", "pa": "medium", "mod": 0},
-        {"at": "long", "pa": "long", "mod": 0}
+    "size": [
+        {"id": "Tiny", "mod": -8, "example": "Ratte, Kröte, Spatz"},
+        {"id": "Small", "mod": -4, "example": "Rehkitz, Schaf, Ziege"},
+        {"id": "Medium", "mod": 0, "example": "Mensch, Zwerg, Esel"},
+        {"id": "Large", "mod": 4, "example": "Oger, Troll, Rind"},
+        {"id": "Huge", "mod": 8, "example": "Drache, Riese, Elefant"}
     ],
+
+    "TargetSize": [{
+        "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed als 2. alternative Bedingungen (ODER, kein UND???*/
+        "Criterion": "Opponent.TargetSize",
+        "Modifiers": {
+            "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+            "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+            "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+            "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        }
+    },
+    {
+        "Conditions": {"Hero.Weapon.WeaponType": "Shield"},
+        "Criterion": "Opponent.TargetSize",
+        "Modifiers": {
+            "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+            "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+            "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+            "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+            "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        }
+    }],
 
     "CloseCombatRange": [{
         "Conditions": {"Opponent.CloseCombatRange": "Short"},
