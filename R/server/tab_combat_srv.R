@@ -98,7 +98,8 @@ observeEvent(input$inpDamage, {
 doCombatRollBase <- function(Action) {
   InitiativeRollResult(NULL)
   RollInProgress(paste0("do", Action, "Roll"), TRUE)
-  UpdateCombatResult( ActiveWeapon$Roll( Action, input$inpCombatMod ) )
+  ActiveWeapon$Roll( Action, input$inpCombatMod )
+  UpdateCombatResult(format(Sys.time(), "%s %OS4"))
 }
 
 observeEvent(input$doAttackRoll, { # Attack Roll
@@ -116,9 +117,8 @@ observeEvent(input$doDodgeRoll, { # Dodge Roll
 observeEvent(input$doInitiativeRoll, { # Initiative Roll
   UpdateCombatResult(NULL)
   
-  InitiativeRollResult(NULL)
-  #updateActionButton(session, inputId = "doInitiativeRoll", 
-  #                   RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), inProgress = TRUE))
+  InitiativeRollResult(NULL) # make sure the roll is recognized
+
   if (isTruthy(Character$Attr)) { #-TODO: this test should not be necessary in the long run
     RollInProgress("doInitiativeRoll", TRUE)
     Roll <- InitiativeRoll(Ability = Character$Attr, Mod = input$inpCombatMod)
