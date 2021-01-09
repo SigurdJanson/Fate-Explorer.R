@@ -10,7 +10,7 @@
     "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed als 2. alternative Bedingungen (ODER, kein UND???*/
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
-        "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
         "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
         "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
         "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
@@ -21,10 +21,10 @@
     "Conditions": {"Hero.Weapon.WeaponType": "Shield"},
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
-        "Tiny":   {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
         "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
         "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
         "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 },
@@ -170,7 +170,7 @@
         "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
         "Impaired":   {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
         "ShapesOnly": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
-        "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "*", "arg": -3}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "+", "arg": -3}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
         "NoVision":   {"at": {"op": "/", "arg":  2}, "pa": {"op": "^", "arg":  0}, "do": {"op": "^", "arg":  0}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
     }
 },

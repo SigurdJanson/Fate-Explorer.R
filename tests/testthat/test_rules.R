@@ -329,38 +329,50 @@ test_that(".GetEnum", {
       CombatEnv$Opponent$RangedCombatRange <- sample(.RangedCombatRange, 1)
       CombatEnv$Opponent$Movement        <- sample(.Movement, 1)
       CombatEnv$Opponent$EvasiveMovement <- sample(.EvasiveMovement, 1)
-      CombatEnv$Opponent$TargetDistance  <- sample(.TargetDistance, 1)
+      #CombatEnv$Opponent$TargetDistance  <- sample(.TargetDistance, 1)
     }
   }
-  
+  if (Type == .WeaponType["Unarmed"]) {
+  }
+  if (Type == .WeaponType["Shield"]) {
+  }
   if (Type == .WeaponType["Ranged"]) {
     if (WithObsoletes) # ignored in ranged combat
-      CombatEnv$Hero$Weapon$CloseCombatRange <- .CloseCombatRange["Short"]
-    CombatEnv$Hero$RangedCombatRange <- .RangedCombatRange["Close"]
-    CombatEnv$Hero$MeansOfMovement <- .MeansOfMovement["OnFoot"]
-    CombatEnv$Hero$Movement        <- .Movement["Stationary"] # depends on `Means...`
+      CombatEnv$Hero$Weapon$CloseCombatRange <- sample(.CloseCombatRange, 1)
+    CombatEnv$Hero$RangedCombatRange <- .RangedCombatRange["Medium"]
+    CombatEnv$Hero$MeansOfMovement   <- .MeansOfMovement["OnFoot"]
+    CombatEnv$Hero$Movement          <- .Movement["Stationary"] # depends on `Means...`
 
     if (WithObsoletes) # ignored in ranged combat
       CombatEnv$Opponent$CloseCombatRange <- sample(.CloseCombatRange, 1)
-    CombatEnv$Opponent$RangedCombatRange <- .RangedCombatRange["Close"]
     CombatEnv$Opponent$Movement          <- .Movement["Slow"]
     CombatEnv$Opponent$EvasiveMovement   <- .EvasiveMovement["None"]
-    CombatEnv$Opponent$TargetDistance    <- .TargetDistance["Medium"]
+    #CombatEnv$Opponent$TargetDistance    <- .TargetDistance["Medium"]
   }
   
   CombatEnv$Opponent$TargetSize      <- .TargetSize["Medium"]
 
   CombatEnv$Environment$Visibility   <- .Visibility["Clear"]
-  CombatEnv$Environment$CrampedSpace <- .CrampedSpace["Cramped"]
+  CombatEnv$Environment$CrampedSpace <- .CrampedSpace["Free"]
   CombatEnv$Environment$UnderWater   <- .UnderWater["Dry"]
+  
+  # handle args
+  Args <- list(...)
+  if (length(Args) > 0)
+    for (a in 1:length(Args)) {
+      #print(paste0("CombatEnv$", names(Args[a])))
+      eval(str2expression(paste0("CombatEnv$", names(Args[a]), "<- Args[[a]]")))
+    }
   
   return(CombatEnv)
 }
 
 
 
-test_that("ModifyCheck", {
+test_that("ModifyCheck: Neutral Enviroment has no effect on roll check", {
   Check        <- c(at = 10, pa = 10, do = 10)
+
+  # Melee, no obsoletes
   BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE)
   setwd(.srcdir)
   o <- ModifyCheck(Check, BattleGround)
@@ -371,10 +383,99 @@ test_that("ModifyCheck", {
   BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], TRUE)
   o <- ModifyCheck(Check, BattleGround)
   expect_identical(o, Check)
+
   
-  # Ranged, including obsoletes
+  # # Unarmed, no obsoletes
+  # BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Unarmed"], FALSE)
+  # o <- ModifyCheck(Check, BattleGround)
+  # expect_identical(o, Check)
+  # 
+  # # Unarmed, including obsoletes
+  # BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Unarmed"], TRUE)
+  # o <- ModifyCheck(Check, BattleGround)
+  # expect_identical(o, Check)
+
+    
+  # Ranged, no obsoletes
   BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Ranged"], FALSE)
   o <- ModifyCheck(Check, BattleGround)
   expect_identical(o, Check)
   
+  # Ranged, including obsoletes
+  BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Ranged"], TRUE)
+  o <- ModifyCheck(Check, BattleGround)
+  expect_identical(o, Check)
+})
+test_that("ModifyCheck: Variations of Melee Combat", {
+  Check        <- c(at = 10, pa = 10, do = 10)
+  
+  # TARGET SIZE
+  for (val in .TargetSize) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], WithObsoletes = FALSE,
+                                                 `Opponent$TargetSize` = .TargetSize[val])
+    setwd(.srcdir)
+    o <- ModifyCheck(Check, BattleGround)
+    setwd(.testdir)
+    e <- switch(val, Check - c(4, 0, 0), Check, Check, Check * c(1, 0, 1), Check * c(1, 0, 1))
+    expect_identical(o, e, label = names(.TargetSize[val]))
+  }
+  
+  # VISIBILITY  
+  for (val in .Visibility) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
+                                                 `Environment$Visibility` = .Visibility[val])
+    e <- switch(val, Check, Check-1, Check-2, Check-3, c(Check["at"] * 0.5 , pa = 1, do = 1))
+    o <- ModifyCheck(Check, BattleGround)
+    expect_identical(o, e, label = names(.Visibility[val]))
+  }
+  
+  # CRAMPED SPACE  
+  for (val in .CrampedSpace) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
+                                                 `Environment$CrampedSpace` = .CrampedSpace[val])
+    o <- ModifyCheck(Check, BattleGround)
+    e <- switch(val, Check, Check, Check - c(4, 4, 0), Check - c(8, 8, 0))
+    expect_identical(o, e, label = names(.CrampedSpace[val]))
+  }
+  
+  # COMBAT RANGE - Weapon length
+  for (val in .CloseCombatRange) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
+                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Opponent$CloseCombatRange` = .CloseCombatRange["Short"])
+    o <- ModifyCheck(Check, BattleGround)
+    e <- switch(val, Check, Check, Check)
+    expect_identical(o, e, label = names(.CloseCombatRange[val]))
+  }
+  for (val in .CloseCombatRange) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
+                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Opponent$CloseCombatRange` = .CloseCombatRange["Medium"])
+    o <- ModifyCheck(Check, BattleGround)
+    e <- switch(val, Check - c(2, 0, 0), Check, Check)
+    expect_identical(o, e, label = names(.CloseCombatRange[val]))
+  }
+  for (val in .CloseCombatRange) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
+                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Opponent$CloseCombatRange` = .CloseCombatRange["Long"])
+    o <- ModifyCheck(Check, BattleGround)
+    e <- switch(val, Check - c(4, 0, 0), Check - c(2, 0, 0), Check)
+    expect_identical(o, e, label = names(.CloseCombatRange[val]))
+  }
+})
+
+test_that("ModifyCheck: A combination of Melee Combat", {
+  Check        <- c(at = 10, pa = 10, do = 10)
+  
+  # TARGET SIZE
+  for (val in .TargetSize) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], WithObsoletes = FALSE,
+                                                 `Opponent$TargetSize` = .TargetSize[val])
+    setwd(.srcdir)
+    o <- ModifyCheck(Check, BattleGround)
+    setwd(.testdir)
+    e <- switch(val, Check - c(4, 0, 0), Check, Check, Check * c(1, 0, 1), Check * c(1, 0, 1))
+    expect_identical(o, e, label = names(.TargetSize[val]))
+  }
 })

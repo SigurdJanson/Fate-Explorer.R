@@ -16,7 +16,7 @@
 .Movement        <- c(Stationary = 1L, Slow = 2L, Fast = 3L)
 .MountedMovement <- c(Standing = 1L, Walk = 2L, Trot = 3L, Gallop = 4L)
 .EvasiveMovement <- c(None = 1L, Zigzagging = 2L)
-.TargetDistance  <- c(Close = 1L, Medium = 2L, Far = 3L)
+#.TargetDistance  <- c(Close = 1L, Medium = 2L, Far = 3L)
 .TargetSize      <- c(Tiny = 1L, Small = 2L, Medium = 3L, Large = 4L, Huge = 5L)
 .CrampedSpace    <- c(Free = 1L, Cramped = 2L)
 .UnderWater      <- c(Dry = 1L, KneeDeep = 2L, WaistDeep = 3L, ChestDeep = 4L, NeckDeep = 5L, Submerged = 6L)
@@ -408,12 +408,9 @@ GetCombatModifiers <- function(lang = .Language) {
 
 #' ModifyCheck
 #'
-#' @param CheckValues 
+#' @param CheckValues An integer vector
 #' @param Environment 
-#'
-#' @return
-#' @export
-#'
+#' @return The modified values of `CheckValue`
 #' @examples
 ModifyCheck <- function(CheckValues, Environment) {
   EnvFlat <- unlist(Environment)

@@ -83,10 +83,10 @@ print(.MountedMovement)
 ```{r Enum .EvasiveMovement, echo=FALSE}
 print(.EvasiveMovement)
 ```
-.TargetDistance
-```{r Enum .TargetDistance, echo=FALSE}
-print(.TargetDistance)
-```
+#.TargetDistance
+#```{r Enum .TargetDistance, echo=FALSE}
+#print(.TargetDistance)
+#```
 .TargetSize
 ```{r Enum .Ski.TargetSizellType, echo=FALSE}
 print(.TargetSize)
@@ -407,8 +407,8 @@ represent one of the enumeration (see Rules.R). The names must correspond with t
     * `.RangedCombatRange = ` `r vecprint(.RangedCombatRange)`
   * TargetSize `.TargetSize = ` `r vecprint(.TargetSize)`
   * Movement `.Movement =` `r vecprint(.Movement)`
-  * Evasive movements `r vecprint(.EvasiveMovement)`
-  * TargetDistance `EvasiveMovement =` `.TargetDistance = ` `r vecprint(.TargetDistance)`
+  * Evasive movements `.EvasiveMovement = ` `r vecprint(.EvasiveMovement)`
+  * ????? TODO: CHECK ????TargetDistance `.TargetDistance = ` `r vecprint(.TargetDistance)`
 * Environment
   * Visibility `r vecprint(.Visibility)`
   * CrampedSpace `r vecprint(.CrampedSpace)`
@@ -430,7 +430,7 @@ CombatEnv <- list(
     TargetSize       = .TargetSize["Large"], 
     Movement         = .Movement["Slow"], # ignored in close combat
     EvasiveMovement  = .EvasiveMovement["None"], # ignored in close combat
-    TargetDistance   = .TargetDistance["Close"]  # ignored in close combat
+    #TargetDistance   = .TargetDistance["Close"]  # ignored in close combat
   ),
   Environment = list(
     Visibility   = .Visibility["Clearly"], 
