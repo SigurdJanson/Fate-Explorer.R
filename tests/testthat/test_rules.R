@@ -10,7 +10,7 @@ setwd(.testdir)
 
 
 
-# Functions ----
+# Data Base Access Functions ----
 test_that("CombatTechniques", {
   setwd(.srcdir)
   CT <- GetCombatTechniques()
@@ -43,6 +43,10 @@ test_that("Skills", {
 })
 
 
+
+
+# Combat Functions ----
+## TODO: GetCombatTechniques()
 
 test_that("GetWeapons(): PRECONDITIONS", {
   # PRECONDITIONS
@@ -130,8 +134,35 @@ test_that("PrimaryWeaponAttribute", {
   expect_identical(o, e)
 })
 
+test_that("GetPrimaryWeaponAttributeByCombatTechnique()", {
+  # PRECONDITION
+  expect_error(GetPrimaryWeaponAttributeByCombatTechnique())
+  
+  # Normal techniques
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_1")
+  expect_identical(o, "ATTR_5")
+  
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_10")
+  expect_identical(o, "ATTR_8")
+  
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_21")
+  expect_identical(o, "ATTR_8")
+  
+  # Two primary attributes in techique
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_9")
+  expect_identical(o, c("ATTR_6", "ATTR_8"))
+  
+  # Combat technique does not exist
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_0")
+  expect_identical(o, character())
+  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_22")
+  expect_identical(o, character())
+  
+})
 
-test_that("PrimaryWeaponAttribute", {
+
+
+test_that("GetHitpointBonus", {
   ab <- structure(list(ATTR_1 = 12L, ATTR_2 = 11L, ATTR_3 = 13L, ATTR_4 = 14L, 
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
@@ -166,32 +197,6 @@ test_that("PrimaryWeaponAttribute", {
   expect_identical(o, e)
 })
 
-
-test_that("GetPrimaryWeaponAttributeByCombatTechnique()", {
-  # PRECONDITION
-  expect_error(GetPrimaryWeaponAttributeByCombatTechnique())
-  
-  # Normal techniques
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_1")
-  expect_identical(o, "ATTR_5")
-
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_10")
-  expect_identical(o, "ATTR_8")
-
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_21")
-  expect_identical(o, "ATTR_8")
-
-  # Two primary attributes in techique
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_9")
-  expect_identical(o, c("ATTR_6", "ATTR_8"))
-  
-  # Combat technique does not exist
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_0")
-  expect_identical(o, character())
-  o <- GetPrimaryWeaponAttributeByCombatTechnique("CT_22")
-  expect_identical(o, character())
-  
-})
 
 
 test_that("IsRangedWeapon", {
@@ -267,4 +272,109 @@ test_that("IsParryWeapon", {
                      rep(FALSE, 3), TRUE, FALSE))
   expect_identical(IsParryWeapon(CombatTech = "CT_17"), FALSE) # spit fire
   expect_identical(IsParryWeapon(CombatTech = "CT_12"), TRUE) # sword
+})
+
+
+
+test_that(".GetEnum", {
+  o <- .GetEnum("Hero.Weapon.CloseCombatRange.Medium")
+  e <- expression(.CloseCombatRange)
+  expect_identical(o, e)
+  
+  o <- eval(.GetEnum("Hero.Weapon.CloseCombatRange.Medium"))
+  e <- .CloseCombatRange
+  expect_identical(o, e)
+  
+  # This string is malformed according to specs. This is just for testing
+  # purposes.
+  o <- eval(.GetEnum("Opponent.MeansOfMovement", +1))
+  e <- .MeansOfMovement
+  expect_identical(o, e)
+  
+  # 
+  expect_error(.GetEnum("Opponent.MeansOfMovement", +2)) # no elements behind last one
+  expect_error(.GetEnum("Opponent.MeansOfMovement", -1)) # no elements before first one
+})
+
+
+
+.GetTestingCombatEnvironment <- function(Type, WithObsoletes = FALSE, ...) {
+  # Create template
+  CombatEnv <- list(
+    Hero = list(
+      Weapon = list(
+        WeaponType = Type
+      )
+    ),
+    Opponent = list(
+      TargetSize   = .TargetSize["Medium"]
+    ),
+    Environment = list(
+      Visibility   = .Visibility["Impaired"], 
+      CrampedSpace = .CrampedSpace["Cramped"],
+      UnderWater   = .UnderWater["Dry"]
+    )
+  )
+  
+  if (Type == .WeaponType["Melee"]) {
+    CombatEnv$Hero$Weapon$CloseCombatRange <- .CloseCombatRange["Short"]
+    if (WithObsoletes) { # ignored in close combat
+      CombatEnv$Hero$RangedCombatRange <- sample(.RangedCombatRange, 1)
+      CombatEnv$Hero$MeansOfMovement   <- sample(.MeansOfMovement, 1)
+      CombatEnv$Hero$Movement          <- sample(.Movement, 1)
+    }
+    
+    CombatEnv$Opponent$CloseCombatRange <- .CloseCombatRange["Short"]
+    if (WithObsoletes) { # ignored in ranged combat
+      CombatEnv$Opponent$RangedCombatRange <- sample(.RangedCombatRange, 1)
+      CombatEnv$Opponent$Movement        <- sample(.Movement, 1)
+      CombatEnv$Opponent$EvasiveMovement <- sample(.EvasiveMovement, 1)
+      CombatEnv$Opponent$TargetDistance  <- sample(.TargetDistance, 1)
+    }
+  }
+  
+  if (Type == .WeaponType["Ranged"]) {
+    if (WithObsoletes) # ignored in ranged combat
+      CombatEnv$Hero$Weapon$CloseCombatRange <- .CloseCombatRange["Short"]
+    CombatEnv$Hero$RangedCombatRange <- .RangedCombatRange["Close"]
+    CombatEnv$Hero$MeansOfMovement <- .MeansOfMovement["OnFoot"]
+    CombatEnv$Hero$Movement        <- .Movement["Stationary"] # depends on `Means...`
+
+    if (WithObsoletes) # ignored in ranged combat
+      CombatEnv$Opponent$CloseCombatRange <- sample(.CloseCombatRange, 1)
+    CombatEnv$Opponent$RangedCombatRange <- .RangedCombatRange["Close"]
+    CombatEnv$Opponent$Movement          <- .Movement["Slow"]
+    CombatEnv$Opponent$EvasiveMovement   <- .EvasiveMovement["None"]
+    CombatEnv$Opponent$TargetDistance    <- .TargetDistance["Medium"]
+  }
+  
+  CombatEnv$Opponent$TargetSize      <- .TargetSize["Medium"]
+
+  CombatEnv$Environment$Visibility   <- .Visibility["Clear"]
+  CombatEnv$Environment$CrampedSpace <- .CrampedSpace["Cramped"]
+  CombatEnv$Environment$UnderWater   <- .UnderWater["Dry"]
+  
+  return(CombatEnv)
+}
+
+
+
+test_that("ModifyCheck", {
+  Check        <- c(at = 10, pa = 10, do = 10)
+  BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE)
+  setwd(.srcdir)
+  o <- ModifyCheck(Check, BattleGround)
+  setwd(.testdir)
+  expect_identical(o, Check)
+  
+  # Melee, including obsoletes
+  BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], TRUE)
+  o <- ModifyCheck(Check, BattleGround)
+  expect_identical(o, Check)
+  
+  # Ranged, including obsoletes
+  BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Ranged"], FALSE)
+  o <- ModifyCheck(Check, BattleGround)
+  expect_identical(o, Check)
+  
 })

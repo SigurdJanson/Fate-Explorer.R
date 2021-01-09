@@ -390,26 +390,30 @@ head(sk)
 
 ## Combat Environment
 
-Data structure (`list`) as used by `GetCombatModifier()` (in Rules.R).
+Data structure (`list`) as used by `GetCombatModifier()` (in Rules.R). Each leaf element **shall** 
+represent one of the enumeration (see Rules.R). The names must correspond with the name of the enumeration.
 
 * Hero
   * Weapon
     * `.WeaponType`
     * Range: either `.CloseCombatRange` or `.RangedCombatRange` depending on weapon type
-  * `OnFoot` TRUE/FALSE
-  * `Mounted` TRUE/FALSE
-  * Movement
-    * if `OnFoot` is `TRUE`: `.Movement = ` `r vecprint(.Movement)`
-    * if `Mounted` is `TRUE`: `.MountedMovement = ` `r vecprint(.MountedMovement)`
+  * MeansOfMovement `r vecprint(.MeansOfMovement)`
+  * Movement: either one of these two depending on means of movement
+    * Movement `.Movement = ` `r vecprint(.Movement)`
+    * MountedMovement `.MountedMovement = ` `r vecprint(.MountedMovement)`
 * Opponent
-  * WeaponsRange: either `.CloseCombatRange` or `.RangedCombatRange`
-  * Size `.TargetSize = ` `r vecprint(.TargetSize)`
+  * Weapons range: either `CloseCombatRange` or `RangedCombatRange`
+    * `.CloseCombatRange = ` `r vecprint(.CloseCombatRange)` - this stands for the reach of melee weapons as well as the size of shields.
+    * `.RangedCombatRange = ` `r vecprint(.RangedCombatRange)`
+  * TargetSize `.TargetSize = ` `r vecprint(.TargetSize)`
   * Movement `.Movement =` `r vecprint(.Movement)`
-  * `Zigzagging` TRUE/FALSE
-  * Distance `.TargetDistance = ` `r vecprint(.TargetDistance)`
+  * Evasive movements `r vecprint(.EvasiveMovement)`
+  * TargetDistance `EvasiveMovement =` `.TargetDistance = ` `r vecprint(.TargetDistance)`
 * Environment
   * Visibility `r vecprint(.Visibility)`
-  * Cramped TRUE/FALSE
+  * CrampedSpace `r vecprint(.CrampedSpace)`
+  * UnderWater `r vecprint(.UnderWater)`
+
 
 ```{r eval=FALSE, echo=TRUE}
 CombatEnv <- list(
@@ -431,7 +435,9 @@ CombatEnv <- list(
   Environment = list(
     Visibility   = .Visibility["Clearly"], 
     CrampedSpace = .CrampedSpace["Cramped"]
+    UnderWater   = .UnderWater["Submerged"]
   )
-)```
+)
+```
 
 

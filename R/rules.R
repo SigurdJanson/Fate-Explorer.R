@@ -19,6 +19,7 @@
 .TargetDistance  <- c(Close = 1L, Medium = 2L, Far = 3L)
 .TargetSize      <- c(Tiny = 1L, Small = 2L, Medium = 3L, Large = 4L, Huge = 5L)
 .CrampedSpace    <- c(Free = 1L, Cramped = 2L)
+.UnderWater      <- c(Dry = 1L, KneeDeep = 2L, WaistDeep = 3L, ChestDeep = 4L, NeckDeep = 5L, Submerged = 6L)
 
 
 # Data objects ----
@@ -30,11 +31,12 @@
 .Melee   <- NULL
 .Ranged  <- NULL
 .FumbleEffects <- NULL
+.CombatMods <- NULL
 
 .Language <- "de"
 
 
-# Functions ----
+# Data Base Access Functions ----
 #' 
 #' Required for language changes
 ReloadRules <- function(lang = .Language) {
@@ -119,6 +121,9 @@ GetAllFumbleEffects <- function(lang = .Language) {
   return(.FumbleEffects)
 }
 
+
+
+# Combat Functions ----
 
 #' GetCombatTechniques
 #' Get the list of combat techniques available in DSA5
@@ -364,53 +369,95 @@ GetHitpointBonus <- function( Weapon, Abilities ) {
 #GetHitpointBonus("Barbarenschwert", ab)
 
 
-#' .GetCloseCombatMod
-#' @param CombatEnv a data structure containing the details about the
-#' two opponents and the environment
-#' @details 
-#' Hero: .CloseCombatRange
-#' Opponent: .CloseCombatRange, .TargetSize
-#' Environment: Visibility, Cramped
-#' @return c(AT = )
-.GetCloseCombatMod <- function(CombatEnv) {
-  WeaponType <- .WeaponType[ CombatEnv[["Hero"]][["Weapon"]][["WeaponType"]] ]
-  
-  Mod <- c(AT = 0, PA = 0, DO = 0)
 
-  # Cramped TRUE/FALSE
-  Criterion <- CombatEnv[["Environment"]][["Cramped"]]
-  if(Criterion && WeaponType != .WeaponType["Unarmed"]) {
-    if (WeaponType == .WeaponType["Shield"])
-      TempMod <- switch(CombatEnv[["Hero"]][["Weapon"]][["Range"]], 
-                        c(-2, -2, 0), 
-                        c(-4, -3, 0), 
-                        c(-6, -4, 0))
-    else
-      TempMod <- switch(CombatEnv[["Hero"]][["Weapon"]][["Range"]], 
-                        rep(0, 3), 
-                        c(-4, -4, 0), 
-                        c(-8, -8, 0))
-    Mod <- Mod + TempMod
+#' GetCombatModifiers
+#' Read data structure of combat modifiers
+#' @param lang Requested language to translate labels ("en", "de").
+#' @return the data structure
+GetCombatModifiers <- function(lang = .Language) {
+  if (is.null(.CombatMods)) {
+    
+    JsonFile <- file.path("data", paste0("combatmods_", lang, ".json"))
+    .CombatMods <<- read_json(JsonFile, simplifyVector = FALSE)
   }
-
-  # Visibility
-  Criterion <- .Visibility[ CombatEnv[["Environment"]][["Visibility"]] ]
-  if(Criterion > .Visibility["Clearly"]) {
-    TempMod <- rep(Criterion, 3)
-  }
+  return(.CombatMods)
 }
 
 
-#' Hero: .RangedCombatRange, Movement
-#' Opponent: .TargetSize, Movement, Zigzagging, Distance
-#' Environment: Visibility
-.GetRangedCombatMod <- function(CombatEnv) {
-  
+
+#' .GetEnum
+#' Helper function to extract a Fate Explorer enum from a string
+#' @param Pointer 
+#'
+#' @example eval(GetEnum("Hero.Weapon.CloseCombatRange.Medium"))
+#' # Evaluates to `.CloseCombatRange`
+.GetEnum <- function(Pointer, IndexCorrect = 0L) {
+  # get the *name* of the required enum
+  ## split pointer in it's parts and get (length-1)th element
+  Index <- nchar(gsub("[^.]", "", Pointer))
+  EnumName <- unlist(strsplit(Pointer, "[.]"))[Index+IndexCorrect]
+  EnumName <- paste0(".", EnumName)
+  ## check if it exists
+  if (!exists(EnumName))
+    stop(paste("Enumeration", EnumName, "from Combat Mods file cannot be found (", Pointer, ")"))
+  ## 
+  Enum <- str2expression(EnumName)
+  return(Enum)
 }
 
-GetCombatModifier <- function(CombatEnv) {
-  if(CombatEnv[["Hero"]][["Weapon"]][["WeaponType"]] == .WeaponType["Ranged"])
-    Result <- .GetRangedCombatMod(CombatEnv)
-  else
-    Result <- .GetCloseCombatMod(CombatEnv)
+
+#' ModifyCheck
+#'
+#' @param CheckValues 
+#' @param Environment 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+ModifyCheck <- function(CheckValues, Environment) {
+  EnvFlat <- unlist(Environment)
+  
+  Topics <- GetCombatModifiers()
+  for (Topic in Topics) {
+    for (Variation in Topic) {
+      # Check the conditions of the Topic
+      Conditions <- Variation[["Conditions"]]
+      ConditionsMet <- TRUE
+      for (cnd in 1:length(Conditions)) { # {"Environment.Cramped": true, "Hero.Weapon.WeaponType": "Melee"}
+        # Compare Expected (from DB) with Observed (from CombatEnv)
+        # Use the pointers (like Hero.Weapon.WeaponType.Melee) to do it
+        Expected <- paste(names(Conditions[cnd]), Conditions[[cnd]], sep=".")
+        Observed <- startsWith(names(EnvFlat), names(Conditions[cnd]))
+        Observed <- names(EnvFlat)[Observed]
+        
+        if (!identical(Observed, Expected)) {
+          ConditionsMet <- FALSE
+          break
+        }
+      }
+      if (!ConditionsMet) next
+      
+      # Apply the modifiers
+      Modifiers <- Variation[["Modifiers"]]
+      ## 
+      CriterionName <- Variation[["Criterion"]] # returns a "Pointer" like 'Opponent.TargetSize.Large'
+      CriterionName <- startsWith(names(EnvFlat), CriterionName)
+      CriterionName <- names(EnvFlat)[CriterionName]
+      if (length(CriterionName) == 0) { print(paste("Skipped:", Variation[["Criterion"]])); break; }
+      # get the *value* of the enum (i.e. a call like `.Movement["Slow"]` )
+      Criterion <- do.call("[", alist(eval(.GetEnum(CriterionName)), EnvFlat[CriterionName]))
+      
+      Modifiers <- Modifiers[[names(Criterion)]]
+      for (Action in names(CheckValues)) {
+        if (is.null(Modifiers[[Action]])) next
+        # executes an expression like `"+"(CheckValue, -2)`
+        CheckValues[Action] <- do.call(Modifiers[[Action]][["op"]], 
+                                       alist(CheckValues[Action], 
+                                             Modifiers[[Action]][["arg"]]))
+      }
+      
+    }
+  }
+  return(CheckValues)
 }
