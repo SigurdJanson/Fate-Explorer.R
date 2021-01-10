@@ -479,3 +479,17 @@ test_that("ModifyCheck: A combination of Melee Combat", {
     expect_identical(o, e, label = names(.TargetSize[val]))
   }
 })
+test_that("ModifyCheck: Shield", {
+  Check        <- c(at = 10, pa = 10, do = 10)
+  
+  # TARGET SIZE
+  for (val in .CloseCombatRange) {
+    BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Shield"], WithObsoletes = FALSE,
+                                                 `Opponent$CloseCombatRange` = .CloseCombatRange[val])
+    setwd(.srcdir)
+    o <- ModifyCheck(Check, BattleGround)
+    setwd(.testdir)
+    e <- switch(val, Check, Check - c(2, 0, 0), Check - c(4, 0, 0))
+    expect_identical(o, e, label = names(.CloseCombatRange[val]))
+  }
+})

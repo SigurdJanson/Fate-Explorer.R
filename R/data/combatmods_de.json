@@ -76,7 +76,7 @@
     }
 },*/
 {
-    "Conditions": {"Opponent.CloseCombatRange": "Medium", "Hero.Weapon.WeaponType": ["Melee", "Unarmed"]},
+    "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed"], "Opponent.CloseCombatRange": "Medium"},
     "Criterion": "Hero.Weapon.CloseCombatRange",
     "Modifiers": {
         "Short":  {"at": {"op": "+", "arg":  -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
@@ -85,12 +85,21 @@
     }
 },
 {
-    "Conditions": {"Opponent.CloseCombatRange": "Long", "Hero.Weapon.WeaponType": ["Melee", "Unarmed"]},
+    "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed"], "Opponent.CloseCombatRange": "Long"},
     "Criterion": "Hero.Weapon.CloseCombatRange",
     "Modifiers": {
         "Short":  {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
         "Medium": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
         "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+    }
+},
+{
+    "Conditions": {"Hero.Weapon.WeaponType": ["Shield"]},
+    "Criterion": "Opponent.CloseCombatRange",
+    "Modifiers": {
+        "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
+        "Medium": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
+        "Long":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
     }
 }],
 
