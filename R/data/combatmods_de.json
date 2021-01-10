@@ -7,7 +7,7 @@
 {
 /* MIXED CLOSE & RANGED COMBAT */
 "TargetSize": [{
-    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed als 2. alternative Bedingungen (ODER, kein UND???*/
+    "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed"]},
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
         "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
@@ -41,7 +41,7 @@
 }],
 
 "UnderWater": [{
-    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /* Shield, Unarmed */
+    "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed", "Shield"]},
     "Criterion": "Environment.UnderWater",
     "Modifiers": { /* These levels are not explicitly part of the rules */
         "Dry":       {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
@@ -76,7 +76,7 @@
     }
 },*/
 {
-    "Conditions": {"Opponent.CloseCombatRange": "Medium"},
+    "Conditions": {"Opponent.CloseCombatRange": "Medium", "Hero.Weapon.WeaponType": ["Melee", "Unarmed"]},
     "Criterion": "Hero.Weapon.CloseCombatRange",
     "Modifiers": {
         "Short":  {"at": {"op": "+", "arg":  -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
@@ -85,7 +85,7 @@
     }
 },
 {
-    "Conditions": {"Opponent.CloseCombatRange": "Long"},
+    "Conditions": {"Opponent.CloseCombatRange": "Long", "Hero.Weapon.WeaponType": ["Melee", "Unarmed"]},
     "Criterion": "Hero.Weapon.CloseCombatRange",
     "Modifiers": {
         "Short":  {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
@@ -94,7 +94,7 @@
     }
 }],
 
-"CrampedSpace": [{
+"CrampedSpace": [{ /* Unarmed is not in the conditions because Unarmed implies a short reach */
     "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.Weapon.WeaponType": "Melee"},
     "Criterion": "Hero.Weapon.CloseCombatRange",
     "Modifiers": {
@@ -153,7 +153,7 @@
         "Fast":       {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
     }
 },
-{   /* Using EvasiveMovement also as criterion to increase performance */
+{   /* Using EvasiveMovement also as criterion merely to increase performance */
     "Conditions": {"Hero.Weapon.WeaponType": "Ranged", "Opponent.EvasiveMovement": "Zigzagging"},
     "Criterion": "Opponent.EvasiveMovement",
     "Modifiers": {
@@ -162,9 +162,9 @@
     }
 }],
 
-/* ISSUES THAT NEED TO COME LAST BECAUSE OF THE ^ OPERATOR */
+/* ISSUES THAT NEED TO COME LAST BECAUSE OF THE '^' OPERATOR */
 "Visibility": [{
-    "Conditions": {"Hero.Weapon.WeaponType": "Melee"}, /*Hier auch Unarmed & Shield als 2. alternative Bedingungen (ODER, kein UND???*/
+    "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed", "Shield"]},
     "Criterion": "Environment.Visibility",
     "Modifiers": {
         "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},

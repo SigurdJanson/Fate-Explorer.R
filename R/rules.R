@@ -428,7 +428,7 @@ ModifyCheck <- function(CheckValues, Environment) {
         Observed <- startsWith(names(EnvFlat), names(Conditions[cnd]))
         Observed <- names(EnvFlat)[Observed]
         
-        if (!identical(Observed, Expected)) {
+        if (length(Observed) == 0 || !(Observed %in% Expected) ) {
           ConditionsMet <- FALSE
           break
         }
