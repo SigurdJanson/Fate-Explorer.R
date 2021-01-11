@@ -149,7 +149,7 @@
     "Modifiers": {
         "Standing": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
         "Walk":     {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Trot":     {"at": {"op": "^", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
+        "Trot":     {"at": {"op": "min", "arg":  1}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
         "Gallop":   {"at": {"op": "+", "arg": -8}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
     }
 },
@@ -171,7 +171,7 @@
     }
 }],
 
-/* ISSUES THAT NEED TO COME LAST BECAUSE OF THE '^' OPERATOR */
+/* ISSUES THAT NEED TO COME LAST BECAUSE OF THE 'min' OPERATOR */
 "Visibility": [{
     "Conditions": {"Hero.Weapon.WeaponType": ["Melee", "Unarmed", "Shield"]},
     "Criterion": "Environment.Visibility",
@@ -180,7 +180,7 @@
         "Impaired":   {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
         "ShapesOnly": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
         "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "+", "arg": -3}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
-        "NoVision":   {"at": {"op": "%./%", "arg":  2}, "pa": {"op": "^", "arg":  0}, "do": {"op": "^", "arg":  0}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+        "NoVision":   {"at": {"op": "%./%", "arg":  2}, "pa": {"op": "min", "arg":  1}, "do": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
     }
 },
 {
@@ -191,7 +191,7 @@
         "Impaired":   {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
         "ShapesOnly": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
         "Barely":     {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
-        "NoVision":   {"at": {"op": "^", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "^", "arg":  0}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+        "NoVision":   {"at": {"op": "min", "arg":  1}, "pa": {"op": "+", "arg": 0}, "do": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
     }
 }]
 }
