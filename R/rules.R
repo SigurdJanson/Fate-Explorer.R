@@ -406,6 +406,16 @@ GetCombatModifiers <- function(lang = .Language) {
 }
 
 
+#' `%./%`
+#' Specialized integer division `x1 / x2` that rounds correctly to the 
+#' nearest value.
+#' @param x1,x2 numerator and denominator (integer)
+#' @return integer
+#' @source https://stackoverflow.com/questions/36377244/make-int-round-off-to-nearest-value/36377365
+`%./%` <- function(x1, x2) {
+  return( x1 %/% x2 + (x1 %% x2) %/% (x2 %/% 2L + x2 %% 2L) )
+}
+
 #' ModifyCheck
 #'
 #' @param CheckValues An integer vector

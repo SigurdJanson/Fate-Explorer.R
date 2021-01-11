@@ -296,7 +296,11 @@ test_that(".GetEnum", {
   expect_error(.GetEnum("Opponent.MeansOfMovement", -1)) # no elements before first one
 })
 
-
+test_that("%./%", {
+  expect_identical(1L:100L %./% 2L, rep(1L:50L, each = 2))
+  expect_identical(0, 0)
+  expect_identical(-1:-100 %./% 2L, c(0L, rep(-1L:-49L, each = 2), -50L))
+})
 
 .GetTestingCombatEnvironment <- function(Type, WithObsoletes = FALSE, ...) {
   # Create template
@@ -408,6 +412,7 @@ test_that("ModifyCheck: Neutral Enviroment has no effect on roll check", {
 })
 test_that("ModifyCheck: Variations of Melee Combat", {
   Check        <- c(at = 10L, pa = 10L, do = 10L)
+  ATHalf       <- 5L
   
   # TARGET SIZE
   for (val in .TargetSize) {
@@ -424,7 +429,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
   for (val in .Visibility) {
     BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
                                                  `Environment$Visibility` = .Visibility[val])
-    e <- switch(val, Check, Check-1L, Check-2L, Check-3L, c(at = as.integer(round(Check["at"] * 0.5)) , pa = 1L, do = 1L))
+    e <- switch(val, Check, Check-1L, Check-2L, Check-3L, c(at = ATHalf, pa = 1L, do = 1L))
     o <- ModifyCheck(Check, BattleGround)
     expect_identical(o, e, label = names(.Visibility[val]))
   }
