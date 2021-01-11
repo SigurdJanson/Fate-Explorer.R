@@ -456,5 +456,6 @@ ModifyCheck <- function(CheckValues, Environment) {
       
     }
   }
+  CheckValues <- as.integer(round(CheckValues))
   return(CheckValues)
 }

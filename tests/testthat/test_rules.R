@@ -493,3 +493,14 @@ test_that("ModifyCheck: Shield", {
     expect_identical(o, e, label = names(.CloseCombatRange[val]))
   }
 })
+test_that("ModifyCheck: Vision - test if values are properly rounded", {
+  # When there is no vision AT = AT /2 ----> 9 / 2 shall not be 4.5 but 5
+  Check        <- c(at = 9, pa = 10, do = 10)
+  BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], WithObsoletes = FALSE,
+                                               `Environment$Visibility` = .Visibility["NoVision"])
+  setwd(.srcdir)
+  o <- ModifyCheck(Check, BattleGround)
+  setwd(.testdir)
+  e <- c(9, 1, 1)
+  expect_identical(o, e, label = names(.Visibility["NoVision"]))
+})
