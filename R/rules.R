@@ -451,7 +451,10 @@ ModifyCheck <- function(CheckValues, Environment) {
       CriterionName <- Variation[["Criterion"]] # returns a "Pointer" like 'Opponent.TargetSize.Large'
       CriterionName <- startsWith(names(EnvFlat), CriterionName)
       CriterionName <- names(EnvFlat)[CriterionName]
-      if (length(CriterionName) == 0) { print(paste("Skipped:", Variation[["Criterion"]])); break; }
+      if (length(CriterionName) == 0) { 
+        #print(paste("Skipped:", Variation[["Criterion"]])); 
+        break
+      }
       # get the *value* of the enum (i.e. a call like `.Movement["Slow"]` )
       Criterion <- do.call("[", alist(eval(.GetEnum(CriterionName)), EnvFlat[CriterionName]))
       
@@ -468,5 +471,6 @@ ModifyCheck <- function(CheckValues, Environment) {
   }
   CheckValues <- round(CheckValues)
   mode(CheckValues) <- "integer" #CheckValues<- as.integer(round(CheckValues))
+  CheckValues <- pmax(CheckValues, 0L)
   return(CheckValues)
 }

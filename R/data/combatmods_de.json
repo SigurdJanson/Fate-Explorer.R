@@ -3,6 +3,10 @@
 *       --- 1-n combinations of conditions
 *       --- The criterion that allows to select the correct set of modifiers
 *       --- A list with 2-n sets of modifiers
+*  - Operators:
+*    -- +/- (self-explanatory)
+*    -- min(x, 1) this check can only be successfull with a lucky punch/shot/roll of a 1
+*    -- x - 9E6 makes the check impossible. You can't do it under any circumstances, like a parry action against an ogre with a tooth pick.
 */
 {
 /* MIXED CLOSE & RANGED COMBAT */
@@ -13,8 +17,8 @@
         "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
         "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
         "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 },
 {
@@ -25,7 +29,7 @@
         "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
         "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
         "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 },
 {
@@ -35,8 +39,8 @@
         "Tiny":   {"at": {"op": "+", "arg":  -8}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
         "Small":  {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
         "Medium": {"at": {"op": "+", "arg":   0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":   4}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":   8}, "pa": {"op": "*", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Large":  {"at": {"op": "+", "arg":   4}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"at": {"op": "+", "arg":   8}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 }],
 
@@ -57,11 +61,11 @@
     "Criterion": "Environment.UnderWater",
     "Modifiers": { /* These levels are not explicitly part of the rules */
         "Dry":       {"at": {"op": "+", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
-        "KneeDeep":  {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
-        "WaistDeep": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
-        "ChestDeep": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
-        "NeckDeep":  {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
-        "Submerged": {"at": {"op": "*", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
+        "KneeDeep":  {"at": {"op": "+", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
+        "WaistDeep": {"at": {"op": "-", "arg": 2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
+        "ChestDeep": {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "NeckDeep":  {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "Submerged": {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
     }
 }],
 
