@@ -2,9 +2,9 @@ library(shiny)
 library(shinyWidgets)
 
 # Modal module UI
-dlgCombatModsModuleUI <- function(id) {
+dlgCombatModsModuleUI <- function(id, i18n) {
     ns <- NS(id)
-    actionButton(ns("btnCombatMods"), "Combat Modifiers")
+    actionButton(ns("btnCombatMods"), i18n$t("Combat Modifiers"))
 }
 
 
@@ -32,15 +32,15 @@ dlgCombatModsModuleServer <- function(id, i18n) {
                     fluidRow(
                         column(4,
                                h4(i18n$t("Hero")),
-                               selectInput(ns("cmbHeroWeapon"), "Selected Weapon", HeroWeapons),
+                               selectInput(ns("cmbHeroWeapon"), i18n$t("Selected Weapon"), HeroWeapons),
                                textOutput(ns("txtHeroWeaponRanges"), inline = FALSE),
                                hr(),
                                selectInput(
-                                   ns("cmbHeroMeansOfMovement"), "Movement", 
+                                   ns("cmbHeroMeansOfMovement"), i18n$t("Movement"), 
                                    i18n$t(names(.MeansOfMovement))),
                                sliderTextInput(
                                    ns("rdbHeroMovement"), label = NULL, 
-                                   choices = c("Stationary", "Slow", "Fast"), grid = FALSE, force_edges = TRUE
+                                   choices = i18n$t(names(.Movement)), grid = FALSE, force_edges = TRUE
                                    ),
                                wellPanel(
                                    h4(i18n$t("Values")),
@@ -65,7 +65,7 @@ dlgCombatModsModuleServer <- function(id, i18n) {
                                sliderTextInput(
                                    ns("rdbOpponentMovement"), label = i18n$t("Movement"),
                                    choices = i18n$t(names(.Movement)), grid = TRUE, force_edges = TRUE),
-                               checkboxGroupInput("chbOpponentEvasive", NULL, choices = "Evasive Maneuvers")
+                               checkboxGroupInput("chbOpponentEvasive", NULL, choices = i18n$t("Evasive Maneuvers"))
                         ),
                         column(4,
                                h4(i18n$t("Environment")),

@@ -39,7 +39,7 @@ sidebarLayout(
                              gicon("plus-circle"), i18n$t("Advantage"))
         ),
         sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L),
-      ), column(width = 4, dlgCombatModsModuleUI("btnCombatMods"))
+      ), column(width = 4, dlgCombatModsModuleUI("btnCombatMods", i18n))
     )
   ),
   mainPanel(
