@@ -25,7 +25,10 @@ source("explorechances.R", local = TRUE)
 source("weapon.R", local = TRUE, encoding = "UTF-8")
 source("skillset.R", local = TRUE, encoding = "UTF-8")
 
-# RUN
+# SHINY
+source("moduleCombatMods.R", local = TRUE)
 source("getui.R", local = TRUE)
 source("getserver.R", local = TRUE)
+
+# RUN
 shinyApp(ui = ui, server = server)

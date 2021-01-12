@@ -29,14 +29,19 @@ sidebarLayout(
     hr(),
     sliderInput("inpDodgeValue", i18n$t("Dodge"),  min = 1L, max = 10L, value = 5L, step = 1L),
     hr(),
-    div(style="float:right",
-        conditionalPanel(condition = "input.inpCombatMod < 0", 
-                         gicon("minus-circle"), i18n$t("Impediment")),
-        conditionalPanel(condition = "input.inpCombatMod > 0", 
-                         gicon("plus-circle"), i18n$t("Advantage"))
-    ),
-    sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L)
-    ),
+    fluidRow( # Modifiers -----
+      column(
+        width = 8,
+        div(style="float:right",
+            conditionalPanel(condition = "input.inpCombatMod < 0", 
+                             gicon("minus-circle"), i18n$t("Impediment")),
+            conditionalPanel(condition = "input.inpCombatMod > 0", 
+                             gicon("plus-circle"), i18n$t("Advantage"))
+        ),
+        sliderInput("inpCombatMod", i18n$t("Modifier"),  min = -10L, max = 10L, step = 1L, value = 0L),
+      ), column(width = 4, dlgCombatModsModuleUI("btnCombatMods"))
+    )
+  ),
   mainPanel(
     fluidPage(
       column(3, 
