@@ -81,7 +81,7 @@ dlgCombatModsModuleServer <- function(id, i18n) {
                         ),
                         
                     ),
-                    footer = modalButton(i18n$t("Close")), fade = TRUE, size = "l"
+                    footer = modalButton(i18n$t("btnClose")), fade = TRUE, size = "l"
                 )
             }
             
@@ -96,7 +96,7 @@ dlgCombatModsModuleServer <- function(id, i18n) {
             
             output$outCombatModifiers <- renderTable({
                 req(input$cmbHeroWeapon)
-                df <- data.frame(F = c("AT", "PA", "DO"), FW = 1:3, EFW = 3:1)
+                df <- data.frame(F = i18n$t(c("AT", "PA", "DO")), FW = 1:3, EFW = 3:1)
                 df
             }, spacing = "s", width = "100%")
             
