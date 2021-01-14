@@ -43,22 +43,8 @@ sidebarLayout(
     )
   ),
   mainPanel(
-    fluidPage(
-      column(3, 
-             actionButton("doAttackRoll", span(i18n$t("Attack"), id="lbldoAttackRoll"), icon = gicon("battle-axe"),
-                          width = "100%", style = "font-size: 140%"),
-      ), column(5, offset=1,
-             actionButton("doParryRoll", span(i18n$t("Parry"), id="lbldoParryRoll"), icon = gicon("shield"),
-                          width = "49%", style = "font-size: 140%"),#
-             actionButton("doDodgeRoll", span(i18n$t("Dodge"), id="lbldoDodgeRoll"), icon = gicon("dodge"),
-                          width = "49%", style = "font-size: 140%"),#width = "24%", 
-      ), column(2, offset=1,
-             actionButton("doInitiativeRoll", span(i18n$t("Initiative"), id="lbldoInitiativeRoll"), 
-                          icon = gicon("initiative"),
-                          width = "100%", style = "font-size: 140%")
-      )
-    ),
-    
+    uiOutput("uiCombatRollButtons"),
+
     hr(),
     htmlOutput("uiCombatRoll"),
     htmlOutput("uiInitiativeRoll"),

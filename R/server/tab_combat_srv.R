@@ -119,11 +119,9 @@ observeEvent(input$doInitiativeRoll, { # Initiative Roll
   
   InitiativeRollResult(NULL) # make sure the roll is recognized
 
-  if (isTruthy(Character$Attr)) { #-TODO: this test should not be necessary in the long run
-    RollInProgress("doInitiativeRoll", TRUE)
-    Roll <- InitiativeRoll(Ability = Character$Attr, Mod = input$inpCombatMod)
-    InitiativeRollResult(Roll)
-  }
+  RollInProgress("doInitiativeRoll", TRUE)
+  Roll <- InitiativeRoll(Ability = Character$Attr, Mod = input$inpCombatMod)
+  InitiativeRollResult(Roll)
 })
 
 observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
@@ -136,7 +134,44 @@ observeEvent(input$doCombatFumble, { # Show fumble result
 
 
 
-# UI COMBAT ROLL -----------------------
+# UI: COMBAT ROLL BUTTONS ---------------
+output$uiCombatRollButtons <- renderUI({
+  if (isTruthy(Character$Attr)) {
+    ColumnInitiative <- column(3L, style="padding-right:1%",
+                               actionButton("doInitiativeRoll", 
+                                            span(i18n$t("Initiative"), id="lbldoInitiativeRoll"), 
+                                            icon = gicon("initiative"),
+                                            width = "98%", style = "font-size: 140%"))
+    AvailableWidth <- 12L / 4L * 3L
+  } else {
+    ColumnInitiative <- NULL
+    AvailableWidth <- 12L
+  }
+
+  ColumnAttack <- column(AvailableWidth %/% 3, 
+                         actionButton("doAttackRoll", 
+                                      span(i18n$t("Attack"), id="lbldoAttackRoll"), 
+                                      icon = gicon("battle-axe"),
+                                      width = "98%", 
+                                      style = "font-size: 140%"))
+  ColumnDefense <- column(2 * AvailableWidth %/% 3, style="padding-right:1%",
+                          actionButton("doParryRoll", 
+                                       span(i18n$t("Parry"), id="lbldoParryRoll"), icon = gicon("shield"),
+                                       width = "49%", style = "font-size: 140%"),#
+                          actionButton("doDodgeRoll", 
+                                       span(i18n$t("Dodge"), id="lbldoDodgeRoll"), icon = gicon("dodge"),
+                                       width = "49%", style = "font-size: 140%"),)
+  
+  Output <- fluidPage(fluidRow(
+    ColumnAttack, ColumnDefense, ColumnInitiative
+  ))
+
+  return(Output)
+})
+
+
+
+# OUTPUT: COMBAT ROLL -----------------------
 output$uiCombatRoll <- renderText({
   req(UpdateCombatResult(), TRUE)
 
@@ -192,7 +227,7 @@ output$uiCombatRoll <- renderText({
 
 
 
-# VIEW: Initiative Roll ---------- ----------
+# OUTPUT: Initiative Roll ---------- ----------
 output$uiInitiativeRoll <- renderText({
   req(InitiativeRollResult(), TRUE)
 
@@ -211,7 +246,7 @@ output$uiInitiativeRoll <- renderText({
 
 
 
-# VIEW: Weapon details Panel ---------- ----------
+# OUTPUT: Weapon details Panel ---------- ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
   return( input$chbHarvestWeaponDetails && 
@@ -254,7 +289,7 @@ output$WeaponDetails <- renderText({
 
 
 
-# VIEW: Exploration Panel ---------- ----------
+# OUTPUT: Exploration Panel ---------- ----------
 output$ShowExploreFightingChances <- reactive({
   return( input$chbExploreChances )
 })
