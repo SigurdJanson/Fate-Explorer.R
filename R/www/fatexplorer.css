@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fatexplorer';
-  src: url('./fatexplorer.eot?77414517');
-  src: url('./fatexplorer.eot?77414517#iefix') format('embedded-opentype'),
-       url('./fatexplorer.woff2?77414517') format('woff2'),
-       url('./fatexplorer.woff?77414517') format('woff'),
-       url('./fatexplorer.ttf?77414517') format('truetype'),
-       url('./fatexplorer.svg?77414517#fatexplorer') format('svg');
+  src: url('./fatexplorer.eot?8603266');
+  src: url('./fatexplorer.eot?8603266#iefix') format('embedded-opentype'),
+       url('./fatexplorer.woff2?8603266') format('woff2'),
+       url('./fatexplorer.woff?8603266') format('woff'),
+       url('./fatexplorer.ttf?8603266') format('truetype'),
+       url('./fatexplorer.svg?8603266#fatexplorer') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fatexplorer';
-    src: url('../font/fatexplorer.svg?77414517#fatexplorer') format('svg');
+    src: url('../font/fatexplorer.svg?8603266#fatexplorer') format('svg');
   }
 }
 */
@@ -24,7 +24,7 @@
   font-family: "fatexplorer";
   font-style: normal;
   font-weight: normal;
-  /*speak: never;*/
+  speak: never;
  
   display: inline-block;
   text-decoration: inherit;
@@ -55,15 +55,14 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-fe-blade-clash:before { content: '\e800'; } /* '' */
-.icon-fe-blade-drag:before { content: '\e801'; } /* '' */
-.icon-fe-blade-lightning:before { content: '\e802'; } /* '' */
-.icon-fe-body:before { content: '\e803'; } /* '' */
-.icon-fe-body-pierced:before { content: '\e804'; } /* '' */
-.icon-fe-body-split:before { content: '\e805'; } /* '' */
-.icon-fe-body-swapping:before { content: '\e806'; } /* '' */
-.icon-fe-boot-prints:before { content: '\e807'; } /* '' */
-.icon-fe-broken-axe:before { content: '\e808'; } /* '' */
+.icon-fe-blade-drag:before { content: '\e800'; } /* '' */
+.icon-fe-blade-lightning:before { content: '\e801'; } /* '' */
+.icon-fe-body:before { content: '\e802'; } /* '' */
+.icon-fe-body-split:before { content: '\e804'; } /* '' */
+.icon-fe-body-swapping:before { content: '\e805'; } /* '' */
+.icon-fe-boot-prints:before { content: '\e806'; } /* '' */
+.icon-fe-broken-axe:before { content: '\e807'; } /* '' */
+.icon-fe-conditions:before { content: '\e808'; } /* '' */
 .icon-fe-crossed-sabres:before { content: '\e809'; } /* '' */
 .icon-fe-crowned-skull:before { content: '\e80a'; } /* '' */
 .icon-fe-crystal-wand:before { content: '\e80b'; } /* '' */
@@ -84,45 +83,55 @@
 .icon-fe-deity-ingerimm:before { content: '\e81a'; } /* '' */
 .icon-fe-deity-peraine:before { content: '\e81b'; } /* '' */
 .icon-fe-deity-phex:before { content: '\e81c'; } /* '' */
-.icon-fe-deity-praios:before { content: '\e81d'; } /* '' */
-.icon-fe-deity-rahja:before { content: '\e81e'; } /* '' */
-.icon-fe-deity-rondra:before { content: '\e81f'; } /* '' */
-.icon-fe-deity-travia:before { content: '\e820'; } /* '' */
-.icon-fe-deity-tsa:before { content: '\e821'; } /* '' */
-.icon-fe-dodge:before { content: '\e822'; } /* '' */
-.icon-fe-dodge-whirlwind:before { content: '\e823'; } /* '' */
-.icon-fe-energy-arrow:before { content: '\e824'; } /* '' */
-.icon-fe-evil-book:before { content: '\e825'; } /* '' */
-.icon-fe-fist:before { content: '\e826'; } /* '' */
-.icon-fe-laurel-crown:before { content: '\e827'; } /* '' */
-.icon-fe-laurels:before { content: '\e828'; } /* '' */
-.icon-fe-minus-circle:before { content: '\e82a'; } /* '' */
-.icon-fe-pawprint:before { content: '\e82b'; } /* '' */
-.icon-fe-plus-circle:before { content: '\e82c'; } /* '' */
-.icon-fe-pointy-sword:before { content: '\e82d'; } /* '' */
-.icon-fe-roll-d6:before { content: '\e82e'; } /* '' */
-.icon-fe-secret-book:before { content: '\e82f'; } /* '' */
-.icon-fe-shield:before { content: '\e830'; } /* '' */
-.icon-fe-shield-crown:before { content: '\e831'; } /* '' */
-.icon-fe-shield-disabled:before { content: '\e832'; } /* '' */
-.icon-fe-shield-griffin:before { content: '\e833'; } /* '' */
-.icon-fe-shield-reflect:before { content: '\e834'; } /* '' */
-.icon-fe-shield-skull:before { content: '\e835'; } /* '' */
-.icon-fe-shield-surrounded:before { content: '\e836'; } /* '' */
-.icon-fe-skills:before { content: '\e837'; } /* '' */
-.icon-fe-slicing-arrow:before { content: '\e838'; } /* '' */
-.icon-fe-spectre:before { content: '\e839'; } /* '' */
-.icon-fe-spinning-blades:before { content: '\e83a'; } /* '' */
-.icon-fe-sword-break:before { content: '\e83b'; } /* '' */
-.icon-fe-swords-emblem:before { content: '\e83c'; } /* '' */
-.icon-fe-thunder-skull:before { content: '\e83d'; } /* '' */
-.icon-fe-thunder-struck:before { content: '\e83e'; } /* '' */
-.icon-fe-whirlwind:before { content: '\e83f'; } /* '' */
-.icon-fe-winged-arrow:before { content: '\e840'; } /* '' */
-.icon-fe-anvil-impact:before { content: '\e841'; } /* '' */
-.icon-fe-arrow-flights:before { content: '\e842'; } /* '' */
-.icon-fe-axe-sword:before { content: '\e843'; } /* '' */
-.icon-fe-battered-axe:before { content: '\e844'; } /* '' */
-.icon-fe-battle-axe:before { content: '\e845'; } /* '' */
-.icon-fe-blade-break:before { content: '\e846'; } /* '' */
-.icon-fe-logo-fateexplorer:before { content: '\e847'; } /* '' */
+.icon-fe-deity-praios-2:before { content: '\e81d'; } /* '' */
+.icon-fe-deity-praios:before { content: '\e81e'; } /* '' */
+.icon-fe-deity-rahja:before { content: '\e81f'; } /* '' */
+.icon-fe-deity-rondra:before { content: '\e820'; } /* '' */
+.icon-fe-deity-travia:before { content: '\e821'; } /* '' */
+.icon-fe-deity-tsa:before { content: '\e822'; } /* '' */
+.icon-fe-dieface1:before { content: '\e823'; } /* '' */
+.icon-fe-dieface2:before { content: '\e824'; } /* '' */
+.icon-fe-dieface3:before { content: '\e825'; } /* '' */
+.icon-fe-dieface4:before { content: '\e826'; } /* '' */
+.icon-fe-dieface5:before { content: '\e827'; } /* '' */
+.icon-fe-dieface6:before { content: '\e828'; } /* '' */
+.icon-fe-dodge:before { content: '\e829'; } /* '' */
+.icon-fe-dodge-whirlwind:before { content: '\e82a'; } /* '' */
+.icon-fe-energy-arrow:before { content: '\e82b'; } /* '' */
+.icon-fe-evil-book:before { content: '\e82c'; } /* '' */
+.icon-fe-fist:before { content: '\e82d'; } /* '' */
+.icon-fe-fist_smash:before { content: '\e82e'; } /* '' */
+.icon-fe-laurel-crown:before { content: '\e82f'; } /* '' */
+.icon-fe-laurels:before { content: '\e830'; } /* '' */
+.icon-fe-minus-circle:before { content: '\e832'; } /* '' */
+.icon-fe-pawprint:before { content: '\e833'; } /* '' */
+.icon-fe-plus-circle:before { content: '\e834'; } /* '' */
+.icon-fe-pointy-sword:before { content: '\e835'; } /* '' */
+.icon-fe-roll-d6:before { content: '\e836'; } /* '' */
+.icon-fe-secret-book:before { content: '\e837'; } /* '' */
+.icon-fe-shield:before { content: '\e838'; } /* '' */
+.icon-fe-shield-crown:before { content: '\e839'; } /* '' */
+.icon-fe-shield-disabled:before { content: '\e83a'; } /* '' */
+.icon-fe-shield-griffin:before { content: '\e83b'; } /* '' */
+.icon-fe-shield-reflect:before { content: '\e83c'; } /* '' */
+.icon-fe-shield-skull:before { content: '\e83d'; } /* '' */
+.icon-fe-shield-surrounded:before { content: '\e83e'; } /* '' */
+.icon-fe-skills:before { content: '\e83f'; } /* '' */
+.icon-fe-slicing-arrow:before { content: '\e840'; } /* '' */
+.icon-fe-spectre:before { content: '\e841'; } /* '' */
+.icon-fe-spinning-blades:before { content: '\e842'; } /* '' */
+.icon-fe-sword-break:before { content: '\e843'; } /* '' */
+.icon-fe-swords-emblem:before { content: '\e844'; } /* '' */
+.icon-fe-thunder-skull:before { content: '\e845'; } /* '' */
+.icon-fe-thunder-struck:before { content: '\e846'; } /* '' */
+.icon-fe-whirlwind:before { content: '\e847'; } /* '' */
+.icon-fe-winged-arrow:before { content: '\e848'; } /* '' */
+.icon-fe-anvil-impact:before { content: '\e84a'; } /* '' */
+.icon-fe-arrow-flights:before { content: '\e84b'; } /* '' */
+.icon-fe-axe-sword:before { content: '\e84c'; } /* '' */
+.icon-fe-battered-axe:before { content: '\e84d'; } /* '' */
+.icon-fe-battle-axe:before { content: '\e84e'; } /* '' */
+.icon-fe-blade-break:before { content: '\e84f'; } /* '' */
+.icon-fe-blade-clash:before { content: '\e850'; } /* '' */
+.icon-fe-body-pierced:before { content: '\e852'; } /* '' */
+.icon-fe-abacus:before { content: '\e853'; } /* '' */
