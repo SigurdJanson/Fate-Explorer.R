@@ -54,8 +54,8 @@
     {"cd": "Chants", "en": "Chants", "de": "Gebete"},
     {"cd": "Property", "en": "Property", "de": "Merkmal"},
 
+    {"cd": "Combat", "en": "Combat", "de": "Kampf"},
     {"cd": "Initiative", "en": "Initiative", "de": "Initiative"},
-
     {"cd": "Attack", "en": "Attack", "de": "Attackieren"},
     {"cd": "Parry", "en": "Parry", "de": "Parieren"},
     {"cd": "Dodge", "en": "Dodge", "de": "Ausweichen"},

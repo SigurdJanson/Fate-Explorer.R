@@ -4,7 +4,7 @@ library(shinyWidgets)
 # Modal module UI
 dlgCombatModsModuleUI <- function(id, i18n) {
     ns <- NS(id)
-    actionButton(ns("btnCombatMods"), i18n$t("Combat Modifiers"))
+    actionButton(ns("btnCombatMods"), i18n$t("Combat"), icon = gicon("abacus"))
 }
 
 
