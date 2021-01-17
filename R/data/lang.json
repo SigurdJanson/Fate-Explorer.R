@@ -80,8 +80,8 @@
     {"cd": "Slow", "en": "Slow", "de": "Langsam"}, 
     {"cd": "Fast", "en": "Fast", "de": "Schnell"},
     {"cd": "Mounted", "en": "Mounted", "de": "Beritten"},
-    {"cd": "Standing", "en": "Standing", "de": ""}, 
-    {"cd": "Walk", "en": "Walk", "de": ""}, 
+    {"cd": "Standing", "en": "Stand", "de": "Steht"}, 
+    {"cd": "Walk", "en": "Walk", "de": "Schritt"}, 
     {"cd": "Trot", "en": "Trot", "de": "Trott"}, 
     {"cd": "Gallop", "en": "Gallop", "de": "Gallop"},
 
