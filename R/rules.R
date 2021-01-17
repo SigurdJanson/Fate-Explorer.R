@@ -388,7 +388,7 @@ GetCombatModifiers <- function(lang = .Language) {
 #' .GetEnum
 #' Helper function to extract a Fate Explorer enum from a string
 #' @param Pointer 
-#'
+#' @note Used by `ModifyCheck`
 #' @example eval(GetEnum("Hero.Weapon.CloseCombatRange.Medium"))
 #' # Evaluates to `.CloseCombatRange`
 .GetEnum <- function(Pointer, IndexCorrect = 0L) {
@@ -410,6 +410,7 @@ GetCombatModifiers <- function(lang = .Language) {
 #' Specialized integer division `x1 / x2` that rounds correctly to the 
 #' nearest value.
 #' @param x1,x2 numerator and denominator (integer)
+#' @note Used by `ModifyCheck`
 #' @return integer
 #' @source https://stackoverflow.com/questions/36377244/make-int-round-off-to-nearest-value/36377365
 `%./%` <- function(x1, x2) {

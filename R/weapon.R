@@ -20,7 +20,7 @@ source("./readoptjson.R")
 WeaponBase <- R6Class("WeaponBase", public = list(
 
   Name = "",
-  Type = NA,      # Weaponless, Melee, Ranged
+  Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
   Technique = NA, # Combat technique
   Range = NA,     # interpretation differs based on `Type`
   Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge this is actually not dependent on the active weapon

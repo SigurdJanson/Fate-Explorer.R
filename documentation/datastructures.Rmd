@@ -408,7 +408,6 @@ represent one of the enumeration (see Rules.R). The names must correspond with t
   * TargetSize `.TargetSize = ` `r vecprint(.TargetSize)`
   * Movement `.Movement =` `r vecprint(.Movement)`
   * Evasive movements `.EvasiveMovement = ` `r vecprint(.EvasiveMovement)`
-  * ????? TODO: CHECK ????TargetDistance `.TargetDistance = ` `r vecprint(.TargetDistance)`
 * Environment
   * Visibility `r vecprint(.Visibility)`
   * CrampedSpace `r vecprint(.CrampedSpace)`
