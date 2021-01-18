@@ -16,7 +16,7 @@ Support to create new languages is welcome.
 
 
 ## Enums
-Fate Explorer uses a number of enums. Since there is no native implementation of enums in R FE uses named atomic vectors to achieve a similar goal. 
+Fate Explorer uses a number of "enums". Since there is no native implementation of enums in R, FE uses named atomic vectors to achieve a similar goal. 
 
 The most important enums can be found in 'Rules.R'. Example
 ```
