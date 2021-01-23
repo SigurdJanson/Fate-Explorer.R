@@ -425,16 +425,16 @@ GetCombatModifiers <- function(lang = .Language) {
 #' @examples
 ModifyCheck <- function(CheckValues, Environment) {
   EnvFlat <- unlist(Environment)
-  
+
   Topics <- GetCombatModifiers()
   for (Topic in Topics) {
     for (Variation in Topic) {
       # Check the conditions of the Topic
       Conditions <- Variation[["Conditions"]]
       ConditionsMet <- TRUE
-      for (cnd in 1:length(Conditions)) { # {"Environment.Cramped": true, "Hero.Weapon.WeaponType": "Melee"}
+      for (cnd in 1:length(Conditions)) { # {"Environment.Cramped": true, "Hero.WeaponType": "Melee"}
         # Compare Expected (from DB) with Observed (from CombatEnv)
-        # Use the pointers (like Hero.Weapon.WeaponType.Melee) to do it
+        # Use the pointers (like Hero.WeaponType.Melee) to do it
         Expected <- paste(names(Conditions[cnd]), Conditions[[cnd]], sep=".")
         Observed <- startsWith(names(EnvFlat), names(Conditions[cnd]))
         Observed <- names(EnvFlat)[Observed]
@@ -470,6 +470,7 @@ ModifyCheck <- function(CheckValues, Environment) {
       
     }
   }
+
   CheckValues <- round(CheckValues)
   mode(CheckValues) <- "integer" #CheckValues<- as.integer(round(CheckValues))
   CheckValues <- pmax(CheckValues, 0L)

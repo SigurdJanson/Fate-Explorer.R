@@ -390,13 +390,12 @@ head(sk)
 
 ## Combat Environment
 
-Data structure (`list`) as used by `GetCombatModifier()` (in Rules.R). Each leaf element **shall** 
+Data structure (nested `list`) as used by `GetCombatModifier()` (in Rules.R). Each leaf element **shall** 
 represent one of the enumeration (see Rules.R). The names must correspond with the name of the enumeration.
 
 * Hero
-  * Weapon
-    * `.WeaponType`
-    * Range: either `.CloseCombatRange` or `.RangedCombatRange` depending on weapon type
+  * `.WeaponType`
+  * Range: either `.CloseCombatRange` or `.RangedCombatRange` depending on weapon type
   * MeansOfMovement `r vecprint(.MeansOfMovement)`
   * Movement: either one of these two depending on means of movement
     * Movement `.Movement = ` `r vecprint(.Movement)`
@@ -417,10 +416,8 @@ represent one of the enumeration (see Rules.R). The names must correspond with t
 ```{r eval=FALSE, echo=TRUE}
 CombatEnv <- list(
   Hero = list(
-    Weapon = list(
-      WeaponType       = .WeaponType["Melee"],
-      CloseCombatRange = .CloseCombatRange["Medium"]
-    ),
+    WeaponType       = .WeaponType["Melee"],
+    CloseCombatRange = .CloseCombatRange["Medium"],
     MeansOfMovement = .MeansOfMovement["OnFoot"],
     Movement = .Movement["Slow"] # ignored in close combat
   ),

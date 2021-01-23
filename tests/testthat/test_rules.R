@@ -306,9 +306,7 @@ test_that("%./%", {
   # Create template
   CombatEnv <- list(
     Hero = list(
-      Weapon = list(
-        WeaponType = Type
-      )
+      WeaponType = Type
     ),
     Opponent = list(
       TargetSize   = .TargetSize["Medium"]
@@ -321,7 +319,7 @@ test_that("%./%", {
   )
   
   if (Type == .WeaponType["Melee"]) {
-    CombatEnv$Hero$Weapon$CloseCombatRange <- .CloseCombatRange["Short"]
+    CombatEnv$Hero$CloseCombatRange <- .CloseCombatRange["Short"]
     if (WithObsoletes) { # ignored in close combat
       CombatEnv$Hero$RangedCombatRange <- sample(.RangedCombatRange, 1)
       CombatEnv$Hero$MeansOfMovement   <- sample(.MeansOfMovement, 1)
@@ -342,7 +340,7 @@ test_that("%./%", {
   }
   if (Type == .WeaponType["Ranged"]) {
     if (WithObsoletes) # ignored in ranged combat
-      CombatEnv$Hero$Weapon$CloseCombatRange <- sample(.CloseCombatRange, 1)
+      CombatEnv$Hero$CloseCombatRange <- sample(.CloseCombatRange, 1)
     CombatEnv$Hero$RangedCombatRange <- .RangedCombatRange["Medium"]
     CombatEnv$Hero$MeansOfMovement   <- .MeansOfMovement["OnFoot"]
     CombatEnv$Hero$Movement          <- .Movement["Stationary"] # depends on `Means...`
@@ -446,7 +444,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
   # COMBAT RANGE - Weapon length
   for (val in .CloseCombatRange) {
     BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
-                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Hero$CloseCombatRange` = .CloseCombatRange[val],
                                                  `Opponent$CloseCombatRange` = .CloseCombatRange["Short"])
     o <- ModifyCheck(Check, BattleGround)
     e <- switch(val, Check, Check, Check)
@@ -454,7 +452,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
   }
   for (val in .CloseCombatRange) {
     BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
-                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Hero$CloseCombatRange` = .CloseCombatRange[val],
                                                  `Opponent$CloseCombatRange` = .CloseCombatRange["Medium"])
     o <- ModifyCheck(Check, BattleGround)
     e <- switch(val, Check - c(2L, 0L, 0L), Check, Check)
@@ -462,7 +460,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
   }
   for (val in .CloseCombatRange) {
     BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
-                                                 `Hero$Weapon$CloseCombatRange` = .CloseCombatRange[val],
+                                                 `Hero$CloseCombatRange` = .CloseCombatRange[val],
                                                  `Opponent$CloseCombatRange` = .CloseCombatRange["Long"])
     o <- ModifyCheck(Check, BattleGround)
     e <- switch(val, Check - c(4L, 0L, 0L), Check - c(2L, 0L, 0L), Check)
