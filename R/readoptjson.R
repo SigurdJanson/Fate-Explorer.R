@@ -280,19 +280,18 @@ GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities,
     Skill <- GetCombatSkill(Item$template, Abilities, CombatTechniques, 
                             IsUniqueWeapon = ItemIsUnique, 
                             UniqueWeapon = Item)
-    if (is.null(Item$damageDiceNumber)) Item$damageDiceNumber <- DatabaseWeapon$damage
-    if (is.null(Item$damageFlat)) Item$damageFlat <- DatabaseWeapon$bonus
     if (is.null(Item$template)) Item$template <- ""
     DamageDice <- unlist(strsplit(DatabaseWeapon[["damage"]], split = "W"))
-    DamageDiceSides <- as.integer(DamageDice[2])
-    
-    DatabaseWeapon[["damageDiceNumber"]] <- Item$damageDiceNumber
+    DamageDiceNumber <- as.integer(DamageDice[1])
+    DamageDiceSides  <- as.integer(DamageDice[2])
+browser()
+    DatabaseWeapon[["damageDiceNumber"]] <- DamageDiceNumber
     DatabaseWeapon[["damageDiceSides"]]  <- DamageDiceSides
-    DatabaseWeapon[["damageFlat"]]       <- Item$damageFlat
+    DatabaseWeapon[["damageFlat"]]       <- DatabaseWeapon$bonus
     DatabaseWeapon[["AT.Skill"]]         <- Skill$AT
     DatabaseWeapon[["PA.Skill"]]         <- Skill$PA
       
-    if (DatabaseWeapon[["clsrng"]]) {
+    if (DatabaseWeapon[["clsrng"]]) { # close combat
       Melee <- rbind( data.frame(DatabaseWeapon), Melee )
       rownames(Melee)[1L] <- Item[["name"]]
     } else {
