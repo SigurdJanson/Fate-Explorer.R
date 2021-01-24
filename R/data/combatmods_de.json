@@ -14,33 +14,33 @@
     "Conditions": {"Hero.WeaponType": ["Melee", "Unarmed"]},
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
-        "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-        "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Tiny":   {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "-", "arg": 9E6}, "Dodge": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "-", "arg": 9E6}, "Dodge": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": "Shield"},
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
-        "Tiny":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-        "Small":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Tiny":   {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "-", "arg": 9E6}, "Dodge": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": "Ranged"},
     "Criterion": "Opponent.TargetSize",
     "Modifiers": {
-        "Tiny":   {"at": {"op": "+", "arg":  -8}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
-        "Small":  {"at": {"op": "+", "arg":  -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
-        "Medium": {"at": {"op": "+", "arg":   0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
-        "Large":  {"at": {"op": "+", "arg":   4}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
-        "Huge":   {"at": {"op": "+", "arg":   8}, "pa": {"op": "-", "arg": 9E6}, "do": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
+        "Tiny":   {"Attack": {"op": "+", "arg":  -8}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Ratte, Kröte, Spatz"},
+        "Small":  {"Attack": {"op": "+", "arg":  -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Rehkitz, Schaf, Ziege"},
+        "Medium": {"Attack": {"op": "+", "arg":   0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Mensch, Zwerg, Esel"},
+        "Large":  {"Attack": {"op": "+", "arg":   4}, "Parry": {"op": "-", "arg": 9E6}, "Dodge": {"op": "+", "arg": 0}, "example": "Oger, Troll, Rind"},
+        "Huge":   {"Attack": {"op": "+", "arg":   8}, "Parry": {"op": "-", "arg": 9E6}, "Dodge": {"op": "+", "arg": 0}, "example": "Drache, Riese, Elefant"}
     }
 }],
 
@@ -48,24 +48,24 @@
     "Conditions": {"Hero.WeaponType": ["Melee", "Unarmed", "Shield"]},
     "Criterion": "Environment.UnderWater",
     "Modifiers": { /* These levels are not explicitly part of the rules */
-        "Dry":       {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
-        "KneeDeep":  {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
-        "WaistDeep": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
-        "ChestDeep": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
-        "NeckDeep":  {"at": {"op": "+", "arg": -5}, "pa": {"op": "+", "arg": -5}, "do": {"op": "+", "arg": -5}, "label": "", "example": ""},
-        "Submerged": {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": -6}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
+        "Dry":       {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg":  0}, "Dodge": {"op": "+", "arg":  0}, "label": "", "example": ""},
+        "KneeDeep":  {"Attack": {"op": "+", "arg": -1}, "Parry": {"op": "+", "arg": -1}, "Dodge": {"op": "+", "arg": -1}, "label": "", "example": ""},
+        "WaistDeep": {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": -2}, "Dodge": {"op": "+", "arg": -2}, "label": "", "example": ""},
+        "ChestDeep": {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": -4}, "Dodge": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "NeckDeep":  {"Attack": {"op": "+", "arg": -5}, "Parry": {"op": "+", "arg": -5}, "Dodge": {"op": "+", "arg": -5}, "label": "", "example": ""},
+        "Submerged": {"Attack": {"op": "+", "arg": -6}, "Parry": {"op": "+", "arg": -6}, "Dodge": {"op": "+", "arg": -6}, "label": "", "example": ""}
     }
 },
 {   /* TODO: CHECK */
     "Conditions": {"Hero.WeaponType": "Ranged"},
     "Criterion": "Environment.UnderWater",
     "Modifiers": { /* These levels are not explicitly part of the rules */
-        "Dry":       {"at": {"op": "+", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg":  0}, "label": "", "example": ""},
-        "KneeDeep":  {"at": {"op": "+", "arg": 0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "", "example": ""},
-        "WaistDeep": {"at": {"op": "-", "arg": 2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "", "example": ""},
-        "ChestDeep": {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
-        "NeckDeep":  {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -4}, "label": "", "example": ""},
-        "Submerged": {"at": {"op": "-", "arg": 9E6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -6}, "label": "", "example": ""}
+        "Dry":       {"Attack": {"op": "+", "arg": 0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg":  0}, "label": "", "example": ""},
+        "KneeDeep":  {"Attack": {"op": "+", "arg": 0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -1}, "label": "", "example": ""},
+        "WaistDeep": {"Attack": {"op": "-", "arg": 2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -2}, "label": "", "example": ""},
+        "ChestDeep": {"Attack": {"op": "-", "arg": 9E6}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "NeckDeep":  {"Attack": {"op": "-", "arg": 9E6}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -4}, "label": "", "example": ""},
+        "Submerged": {"Attack": {"op": "-", "arg": 9E6}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -6}, "label": "", "example": ""}
     }
 }],
 
@@ -74,36 +74,36 @@
     "Conditions": {"Opponent.CloseCombatRange": "Short"},
     "Criterion": "Hero.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }
 },*/
 {
     "Conditions": {"Hero.WeaponType": ["Melee", "Unarmed"], "Opponent.CloseCombatRange": "Medium"},
     "Criterion": "Hero.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg":  -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg":  -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": ["Melee", "Unarmed"], "Opponent.CloseCombatRange": "Long"},
     "Criterion": "Hero.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": ["Shield"]},
     "Criterion": "Opponent.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }
 }],
 
@@ -111,18 +111,18 @@
     "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.WeaponType": "Melee"},
     "Criterion": "Hero.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0},  "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg": -8}, "pa": {"op": "+", "arg": -8}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0},  "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": -4}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg": -8}, "Parry": {"op": "+", "arg": -8}, "Dodge": {"op": "+", "arg": 0}}
     }
 },
 {
     "Conditions": {"Environment.CrampedSpace": "Cramped", "Hero.WeaponType": "Shield"}, 
     "Criterion": "Hero.CloseCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": -3}, "do": {"op": "+", "arg": 0}},
-        "Long":   {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": -4}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": -2}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": -3}, "Dodge": {"op": "+", "arg": 0}},
+        "Long":   {"Attack": {"op": "+", "arg": -6}, "Parry": {"op": "+", "arg": -4}, "Dodge": {"op": "+", "arg": 0}}
     }
 }],
 
@@ -132,9 +132,9 @@
     "Conditions": {"Hero.WeaponType": "Ranged"},
     "Criterion": "Hero.RangedCombatRange",
     "Modifiers": {
-        "Short":  {"at": {"op": "+", "arg":  2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Medium": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}},
-        "Far":    {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}}
+        "Short":  {"Attack": {"op": "+", "arg":  2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Far":    {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }
 }],
 
@@ -142,36 +142,36 @@
     "Conditions": {"Hero.WeaponType": "Ranged", "Hero.MeansOfMovement": "OnFoot"},
     "Criterion": "Hero.Movement",
     "Modifiers": {
-        "Stationary": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Slow":       {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Fast":       {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
+        "Stationary": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Slow":       {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Fast":       {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": "Ranged", "Hero.MeansOfMovement": "Mounted"},
     "Criterion": "Hero.MountedMovement",
     "Modifiers": {
-        "Standing": {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Walk":     {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Trot":     {"at": {"op": "min", "arg":  1}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Gallop":   {"at": {"op": "+", "arg": -8}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
+        "Standing": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Walk":     {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Trot":     {"Attack": {"op": "min", "arg":  1}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Gallop":   {"Attack": {"op": "+", "arg": -8}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": "Ranged"},
     "Criterion": "Opponent.Movement",
     "Modifiers": {
-        "Stationary": {"at": {"op": "+", "arg":  2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Slow":       {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Fast":       {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""}
+        "Stationary": {"Attack": {"op": "+", "arg":  2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Slow":       {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Fast":       {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""}
     }
 },
 {   /* Using EvasiveMovement also as criterion merely to increase performance */
     "Conditions": {"Hero.WeaponType": "Ranged", "Opponent.EvasiveMovement": "Zigzagging"},
     "Criterion": "Opponent.EvasiveMovement",
     "Modifiers": {
-        "None":       {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": ""},
-        "Zigzagging": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": 0}, "example": "Ziel schlägt Haken"}
+        "None":       {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Zigzagging": {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": "Ziel schlägt Haken"}
     }
 }],
 
@@ -180,22 +180,22 @@
     "Conditions": {"Hero.WeaponType": ["Melee", "Unarmed", "Shield"]},
     "Criterion": "Environment.Visibility",
     "Modifiers": {
-        "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg":  0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
-        "Impaired":   {"at": {"op": "+", "arg": -1}, "pa": {"op": "+", "arg": -1}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
-        "ShapesOnly": {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": -2}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
-        "Barely":     {"at": {"op": "+", "arg": -3}, "pa": {"op": "+", "arg": -3}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
-        "NoVision":   {"at": {"op": "%./%", "arg":  2}, "pa": {"op": "min", "arg":  1}, "do": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+        "Clearly":    {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg":  0}, "Dodge": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
+        "Impaired":   {"Attack": {"op": "+", "arg": -1}, "Parry": {"op": "+", "arg": -1}, "Dodge": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
+        "ShapesOnly": {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": -2}, "Dodge": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
+        "Barely":     {"Attack": {"op": "+", "arg": -3}, "Parry": {"op": "+", "arg": -3}, "Dodge": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        "NoVision":   {"Attack": {"op": "%./%", "arg":  2}, "Parry": {"op": "min", "arg":  1}, "Dodge": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
     }
 },
 {
     "Conditions": {"Hero.WeaponType": "Ranged"},
     "Criterion": "Environment.Visibility",
     "Modifiers": { /* Dodge modifiers are taken from close combat */
-        "Clearly":    {"at": {"op": "+", "arg":  0}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
-        "Impaired":   {"at": {"op": "+", "arg": -2}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
-        "ShapesOnly": {"at": {"op": "+", "arg": -4}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
-        "Barely":     {"at": {"op": "+", "arg": -6}, "pa": {"op": "+", "arg": 0}, "do": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
-        "NoVision":   {"at": {"op": "min", "arg":  1}, "pa": {"op": "+", "arg": 0}, "do": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
+        "Clearly":    {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg":  0}, "label": "Klare Sicht", "example": ""},
+        "Impaired":   {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -1}, "label": "Leichte Störung der Sicht", "example": "Leichtes Blattwerk, Morgendunst"},
+        "ShapesOnly": {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -2}, "label": "Ziel als Silhouette erkennbar", "example": "Nebel, Mondlicht"},
+        "Barely":     {"Attack": {"op": "+", "arg": -6}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": -3}, "label": "Ziel schemenhaft erkennbar", "example": "Starker Nebel, Sternenlicht"},
+        "NoVision":   {"Attack": {"op": "min", "arg":  1}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "min", "arg":  1}, "label": "Ziel unsichtbar", "example": "Dichter Rauch, völlige Dunkelheit"}
     }
 }]
 }

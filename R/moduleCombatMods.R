@@ -34,7 +34,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                     CombatSkills <- rep(0, 3)
                 }
             })
-            names(CombatSkills) <- c("at", "pa", "do")
+            names(CombatSkills) <- names(.CombatAction)
 
             
             ModalDlgFunction <- function() {
