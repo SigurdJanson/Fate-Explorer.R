@@ -1,7 +1,6 @@
 # DSA 5 Rules
 
 
-
 # Enumerations ----
 .WeaponType   <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L, Shield = 3L)
 .CombatAction <- c(Attack = 1L, Parry = 2L, Dodge = 3L)

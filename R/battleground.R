@@ -9,7 +9,7 @@ initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
   CombatEnv <- list(
     Hero = list(), Opponent = list(), Environment = list()
   )
-#browser()
+
   # Hero Section: build hero sub-list
   CombatEnv[["Hero"]]$WeaponType <- .WeaponType[Type]
 
@@ -46,45 +46,3 @@ initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
   return(CombatEnv)
 }
 
-# 
-# ##' BattleGround class (abstract base class for weapons)
-# ##' R6 class to handle a battle ground, i.e. the combat environment that 
-# ##' contains variables to describe opponent and surroundings.
-# ##' @importFrom R6 R6Class
-# ##' @export
-# BattleGround <- R6Class(
-#   "BattleGround",
-#   private = list(
-#     .opponent.size = NA,
-#     .opponent.weapon.range  = NA, # .CloseCombatRange / .RangedCombatRange
-#     .opponent.distance = NA, # 
-#     .opponent.movement = NA, # .Movement / .MountedMovement
-#     .opponent.evasive  = NA, # TRUE / FALSE
-#     
-#     .environment.vision = NA, # .Visibility
-#     .environment.space  = NA, # .CrampedSpace
-#     .environment.water  = NA  # .UnderWater
-#   ),
-#   active = list(
-#     age = function(value) {
-#       if (missing(value)) {
-#         private$.age
-#       } else {
-#         stop("`$age` is read only", call. = FALSE)
-#       }
-#     },
-#     name = function(value) {
-#       if (missing(value)) {
-#         private$.name
-#       } else {
-#         stopifnot(is.character(value), length(value) == 1)
-#         private$.name <- value
-#         self
-#       }
-#     }
-#   ),
-#   public = list(
-#   
-#   )
-# )
-#   

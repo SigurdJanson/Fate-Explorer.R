@@ -133,7 +133,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             
 
             #' Handle dependencies between means of movement and levels of movement.
-            observe({#TODO: change to reactiveEvent
+            observeEvent(input$cmbHeroMeansOfMovement, {#TODO: change to reactiveEvent
                 #TODO: risky not to use codes/ids but the translated string
                 Condition <- input$cmbHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"])) 
                 if (isTRUE(Condition))

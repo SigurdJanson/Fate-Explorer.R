@@ -284,7 +284,7 @@ GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities,
     DamageDice <- unlist(strsplit(DatabaseWeapon[["damage"]], split = "W"))
     DamageDiceNumber <- as.integer(DamageDice[1])
     DamageDiceSides  <- as.integer(DamageDice[2])
-browser()
+
     DatabaseWeapon[["damageDiceNumber"]] <- DamageDiceNumber
     DatabaseWeapon[["damageDiceSides"]]  <- DamageDiceSides
     DatabaseWeapon[["damageFlat"]]       <- DatabaseWeapon$bonus

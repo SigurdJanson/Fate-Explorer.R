@@ -100,7 +100,7 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   #' character's abilities into account to get the bonus right.
   #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
   #' @param CharAbs The character's abilities
-  #' @return Invisible returns `self` 
+  #' @return Invisible returns `self`
   CalcDamage = function(CharAbs) {
     # if RawWeaponData has not been enriched by character data, yet, do so ...
     if (is.null(self$RawWeaponData[["damageDiceNumber"]]) || 
