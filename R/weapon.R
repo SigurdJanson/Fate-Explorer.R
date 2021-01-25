@@ -17,15 +17,26 @@ source("./readoptjson.R")
 ##' This class wraps basic functions.
 ##' @importFrom R6 R6Class
 ##' @export
-WeaponBase <- R6Class("WeaponBase", public = list(
+WeaponBase <- R6Class(
+  "WeaponBase", 
+  active = list(
+    Name = function(value) {
+      if (missing(value)) {
+        return(private$.Name)
+      } else {
+        private$.Name <- value
+        private$OnValueChange()
+      }
+    }
+  ),
+  public = list(
 
-  Name = "",
   Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
   Technique = NA, # Combat technique
   Range = NA,     # interpretation differs based on `Type`
   Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge this is actually not dependent on the active weapon
   Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
-  Modifier = 0L,  # default modifier because of special abilities
+  Modifier = 0L,  # permanent default modifier because of special abilities
   
   RawWeaponData = NULL,
   
@@ -38,7 +49,6 @@ WeaponBase <- R6Class("WeaponBase", public = list(
   ConfirmRoll  = NA, 
   Confirmed    = NA,
   LastFumbleEffect = NA, # EffectOfFumble: consequence of 2d6
-  
   
   #' Constructor
   #' @param Weapon name of the weapon (character) or a list containing the data
@@ -71,6 +81,23 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       self$Modifier  <- 0L
     }
     invisible(self)
+  },
+  
+  # CALLBACK SECTION
+  RegisterOnValueChange = function(Callback) {
+    if (mode(Callback) != "function") 
+      stop(sprintf("Cannot register object of type '%s' as callback"), typeof(Callback))
+    
+    #if (!(Callback %in% private$ValueChangeCallbacks)) # avoid duplicates
+    if (!(any(sapply(private$ValueChangeCallbacks, identical, Callback))))
+      private$ValueChangeCallbacks <- c(private$ValueChangeCallbacks, Callback)
+  },
+  UnregisterOnValueChange = function(Callback) {
+    if (mode(Callback) != "function")
+      stop(sprintf("Cannot register object of type %s as callback"), typeof(Callback))
+    
+    # Use `setdiff` because duplicates should not exist
+    private$ValueChangeCallbacks <- setdiff(private$ValueChangeCallbacks, c(Callback))
   },
   
   
@@ -134,34 +161,37 @@ WeaponBase <- R6Class("WeaponBase", public = list(
       else
         stop("Unknown combat action")
     }
-    else if (is.character(Action))
-      if (Action %in% names(.CombatAction))
+    else {
+      if (is.character(Action) && Action %in% names(.CombatAction))
         self$LastAction <- .CombatAction[Action]
       else
         stop("Unknown combat action")
-      else stop("Unknown combat action")
-      
-      # RUN
-      Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
-      
-      self$LastRoll <- CombatRoll()
-      self$LastModifier <- self$Modifier + Modifier
-      Verification  <- VerifyCombatRoll(self$LastRoll, Skill, self$LastModifier) # interim variable
-      self$LastResult  <- .SuccessLevel[Verification]
-      
-      self$LastDamage <- 0L
-      if (self$LastAction == .CombatAction["Attack"])
-        if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
-        {
-          self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$DP, self$Damage$Bonus)
-        }
-      
-      self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
-      self$ConfirmRoll <- NA
-      self$Confirmed   <- NA
-      self$LastFumbleEffect <- NA
-      
-      return(self$LastRoll)
+    }
+    
+    # RUN
+    if (length(Modifier) == length(.CombatAction)) # if actions have different modifiers ...
+      Modifier <- Modifier[.CombatAction[Action]]  # ... select the right one
+    self$LastModifier <- self$Modifier + Modifier
+    
+    Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
+    
+    self$LastRoll <- CombatRoll()
+    Verification  <- VerifyCombatRoll(self$LastRoll, Skill, self$LastModifier) # interim variable
+    self$LastResult  <- .SuccessLevel[Verification]
+    
+    self$LastDamage <- 0L
+    if (self$LastAction == .CombatAction["Attack"])
+      if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
+      {
+        self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$DP, self$Damage$Bonus)
+      }
+    
+    self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
+    self$ConfirmRoll <- NA
+    self$Confirmed   <- NA
+    self$LastFumbleEffect <- NA
+    
+    return(self$LastRoll)
   },
   
 
@@ -231,6 +261,18 @@ WeaponBase <- R6Class("WeaponBase", public = list(
     else
       Can <- self$Skill$Parry > 0
     return(Can)
+  }
+), # public
+
+private = list(
+  .Name = "",
+  # Callbacks to notify other changes in the weapon
+  ValueChangeCallbacks = NULL,
+  
+  OnValueChange = function() {
+    if (length(private$ValueChangeCallbacks) > 0)
+      for (f in private$ValueChangeCallbacks)
+        do.call(f, alist(self))
   }
 ))
 
