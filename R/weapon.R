@@ -27,19 +27,64 @@ WeaponBase <- R6Class(
         private$.Name <- value
         private$OnValueChange()
       }
+    },
+    
+    Type = function(value) {
+      if (missing(value)) {
+        return(private$.Type)
+      } else {
+        private$.Type <- value
+        private$OnValueChange()
+      }
+    },
+    
+    Technique = function(value) {
+      if (missing(value)) {
+        return(private$.Technique)
+      } else {
+        private$.Technique <- value
+        private$OnValueChange()
+      }
+    },
+    
+    Range = function(value) {
+      if (missing(value)) {
+        return(private$.Range)
+      } else {
+        private$.Range <- value
+        private$OnValueChange()
+      }
+    },
+    
+    Skill = function(value) {
+      if (missing(value)) {
+        return(private$.Skill)
+      } else {
+        private$.Skill <- value
+        private$OnValueChange()
+      }
+    },
+    
+    Damage = function(value) {
+      if (missing(value)) {
+        return(private$.Damage)
+      } else {
+        private$.Damage <- value
+        private$OnValueChange()
+      }
+    },
+    
+    Modifier = function(value) {
+      if (missing(value)) {
+        return(private$.Modifier)
+      } else {
+        private$.Modifier <- value
+        private$OnValueChange()
+      }
     }
   ),
   public = list(
 
-  Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
-  Technique = NA, # Combat technique
-  Range = NA,     # interpretation differs based on `Type`
-  Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge this is actually not dependent on the active weapon
-  Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
-  Modifier = 0L,  # permanent default modifier because of special abilities
-  
-  RawWeaponData = NULL,
-  
   LastRoll     = NA, # die roll
   LastAction   = NA, # Parry or Attack
   LastModifier = NA, # additional situation dependent modifier
@@ -68,14 +113,14 @@ WeaponBase <- R6Class(
       self$Modifier  <- 0L
     } else {
       if (is.character(Weapon)) # `Weapon` is a name or ID
-        self$RawWeaponData <- GetWeapons(Weapon)
+        private$RawWeaponData <- GetWeapons(Weapon)
       else 
-        self$RawWeaponData <- Weapon
+        private$RawWeaponData <- Weapon
       
-      self$Name      <- self$RawWeaponData[["name"]]
-      self$Type      <- .WeaponType[1+ self$RawWeaponData[["armed"]] + !self$RawWeaponData[["clsrng"]] ]
-      self$Technique <- self$RawWeaponData[["combattechID"]]
-      self$Range     <- self$RawWeaponData[["range"]]
+      self$Name      <- private$RawWeaponData[["name"]]
+      self$Type      <- .WeaponType[1+ private$RawWeaponData[["armed"]] + !private$RawWeaponData[["clsrng"]] ]
+      self$Technique <- private$RawWeaponData[["combattechID"]]
+      self$Range     <- private$RawWeaponData[["range"]]
       self$CalcSkill(Abilities, CombatTecSkills)
       self$CalcDamage(Abilities)
       self$Modifier  <- 0L
@@ -108,15 +153,15 @@ WeaponBase <- R6Class(
   #' @return `self`
   CalcSkill = function(CharAbs, CombatTecSkill) {
     # if RawWeaponData has not been enriched by character data, yet, do so ...
-    if (is.null(self$RawWeaponData[["AT.Skill"]]) || is.null(self$RawWeaponData[["PA.Skill"]])) {
+    if (is.null(private$RawWeaponData[["AT.Skill"]]) || is.null(private$RawWeaponData[["PA.Skill"]])) {
       AtPaSkill <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
-      self$RawWeaponData[["AT.Skill"]] <- AtPaSkill$AT
-      self$RawWeaponData[["PA.Skill"]] <- AtPaSkill$PA
+      private$RawWeaponData[["AT.Skill"]] <- AtPaSkill$AT
+      private$RawWeaponData[["PA.Skill"]] <- AtPaSkill$PA
     }
     ##TODO: DodgeSkill <- GetDodgeSkill()
 
-    self$Skill <- list(Attack = self$RawWeaponData[["AT.Skill"]], 
-                       Parry  = self$RawWeaponData[["PA.Skill"]], 
+    self$Skill <- list(Attack = private$RawWeaponData[["AT.Skill"]], 
+                       Parry  = private$RawWeaponData[["PA.Skill"]], 
                        Dodge  = ceiling(CharAbs[["ATTR_6"]] / 2L))
     return(invisible(self))
   },
@@ -130,20 +175,20 @@ WeaponBase <- R6Class(
   #' @return Invisible returns `self`
   CalcDamage = function(CharAbs) {
     # if RawWeaponData has not been enriched by character data, yet, do so ...
-    if (is.null(self$RawWeaponData[["damageDiceNumber"]]) || 
-        is.null(self$RawWeaponData[["damageDiceSides"]])  ||
-        is.null(self$RawWeaponData[["damageFlat"]])) {
-      DamageDice <- unlist(strsplit(self$RawWeaponData[["damage"]], split = "W"))
-      self$RawWeaponData[["damageDiceNumber"]] <- as.integer(DamageDice[1])
-      self$RawWeaponData[["damageDiceSides"]]  <- as.integer(DamageDice[2])
-      Bonus <- as.integer(self$RawWeaponData[["bonus"]])
+    if (is.null(private$RawWeaponData[["damageDiceNumber"]]) || 
+        is.null(private$RawWeaponData[["damageDiceSides"]])  ||
+        is.null(private$RawWeaponData[["damageFlat"]])) {
+      DamageDice <- unlist(strsplit(private$RawWeaponData[["damage"]], split = "W"))
+      private$RawWeaponData[["damageDiceNumber"]] <- as.integer(DamageDice[1])
+      private$RawWeaponData[["damageDiceSides"]]  <- as.integer(DamageDice[2])
+      Bonus <- as.integer(private$RawWeaponData[["bonus"]])
       if (!isTruthy(Bonus)) Bonus <- 0
-      self$RawWeaponData[["damageFlat"]] <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
+      private$RawWeaponData[["damageFlat"]] <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
     }
     
-    self$Damage <- list(N = self$RawWeaponData[["damageDiceNumber"]], 
-                        DP = self$RawWeaponData[["damageDiceSides"]], 
-                        Bonus = self$RawWeaponData[["damageFlat"]])
+    self$Damage <- list(N = private$RawWeaponData[["damageDiceNumber"]], 
+                        DP = private$RawWeaponData[["damageDiceSides"]], 
+                        Bonus = private$RawWeaponData[["damageFlat"]])
 
     return(invisible(self))
   },
@@ -266,6 +311,14 @@ WeaponBase <- R6Class(
 
 private = list(
   .Name = "",
+  .Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
+  .Technique = NA, # Combat technique
+  .Range = NA,     # interpretation differs based on `Type`, either close combat reach or ranged combat range
+  .Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge does actually not depend on the active weapon
+  .Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
+  .Modifier = 0L,  # permanent default modifier because of special abilities
+  RawWeaponData = NULL,
+
   # Callbacks to notify other changes in the weapon
   ValueChangeCallbacks = NULL,
   
@@ -295,7 +348,7 @@ MeleeWeapon <- R6Class("MeleeWeapon",
       super$initialize(Weapon, Abilities, CombatTecSkills, ...)
       
       if (!missing(Weapon)) {
-        if (!(self$RawWeaponData[["clsrng"]])) # if ranged weapon
+        if (!(private$RawWeaponData[["clsrng"]])) # if ranged weapon
           stop("This class is for close combat only")
       }
 
@@ -352,7 +405,7 @@ RangedWeapon <- R6Class("RangedWeapon",
    super$initialize(Weapon, Abilities, CombatTecSkills, ...)
    
     if (!missing(Weapon)) {
-      if (self$RawWeaponData[["clsrng"]]) # if ranged weapon
+      if (private$RawWeaponData[["clsrng"]]) # if ranged weapon
         stop("This class is for close combat only")
     }
    
