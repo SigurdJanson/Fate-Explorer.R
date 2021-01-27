@@ -214,10 +214,11 @@ WeaponBase <- R6Class(
     }
     
     # RUN
+    #--browser()
     if (length(Modifier) == length(.CombatAction)) # if actions have different modifiers ...
       Modifier <- Modifier[.CombatAction[Action]]  # ... select the right one
-    self$LastModifier <- self$Modifier + Modifier
-    
+    self$LastModifier <- private$.Modifier + Modifier
+
     Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
     
     self$LastRoll <- CombatRoll()
@@ -228,7 +229,7 @@ WeaponBase <- R6Class(
     if (self$LastAction == .CombatAction["Attack"])
       if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
       {
-        self$LastDamage <- DamageRoll(self$Damage$N, self$Damage$DP, self$Damage$Bonus)
+        self$LastDamage <- DamageRoll(private$.Damage$N, private$.Damage$DP, private$.Damage$Bonus)
       }
     
     self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
@@ -275,7 +276,7 @@ WeaponBase <- R6Class(
       if (self$LastResult == .SuccessLevel["Fumble"]) {
         self$LastFumbleEffect <- GetFumbleEffect(FumbleRoll(),
                                                  names(self$LastAction),
-                                                 names(self$Type))
+                                                 names(private$.Type))
       }
     return(self$LastFumbleEffect)
   },
@@ -286,7 +287,7 @@ WeaponBase <- R6Class(
   #' @return `TRUE` if a confirmation roll is required. `FALSE` if
   #' there is no last roll or the last roll is complete.
   RollNeedsConfirmation = function() {
-    return(!is.na(self$LastRoll) && self$ConfirmationMissing)
+    return(!is.na(self$LastRoll) & self$ConfirmationMissing)
   },
   
   
@@ -300,11 +301,11 @@ WeaponBase <- R6Class(
   #' CanParry
   #' Does the weapon allow a parry roll?
   CanParry = function() {
-    if (!is.na(self$Technique))
-      Can <- IsParryWeapon(CombatTech = self$Technique) && 
-             self$Skill$Parry > 0
+    if (!is.na(private$.Technique))
+      Can <- IsParryWeapon(CombatTech = private$.Technique) &
+             private$.Skill$Parry > 0
     else
-      Can <- self$Skill$Parry > 0
+      Can <- private$.Skill$Parry > 0
     return(Can)
   }
 ), # public
@@ -312,7 +313,7 @@ WeaponBase <- R6Class(
 private = list(
   .Name = "",
   .Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
-  .Technique = NA, # Combat technique
+  .Technique = NA, # .ComTecs # Combat technique
   .Range = NA,     # interpretation differs based on `Type`, either close combat reach or ranged combat range
   .Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge does actually not depend on the active weapon
   .Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
@@ -445,7 +446,7 @@ RangedWeapon <- R6Class("RangedWeapon",
 #                      ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L),
 #                 class = "data.frame", row.names = c(NA, -1L))
 # ct <- list(CT_3 = 15, CT_9 = 15, CT_12 = 12, CT_14 = 13)
-# setwd("./R") #for testing purposes
+# #setwd("./R") #for testing purposes
 #  W <- WeaponBase$new("Waffenlos", ab, ct) #"Waqqif"
-#  print(W$Roll("Attack"))
-# setwd("../") #for testing purposes
+#  print(W$Roll("Attack", .CombatAction))
+# #setwd("../") #for testing purposes
