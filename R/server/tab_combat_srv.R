@@ -15,8 +15,8 @@ InitiativeRollResult <- reactiveVal(NULL)
 
 
 # Get effective combat values
-observe({
-  for (a in names(.CombatAction)) {
+UpdateEffectiveCombatValues <- function(Actions) {
+  for (a in Actions) {
     EffectiveValue <- unname(ActiveWeapon$Skill[[a]] + CombatModifier()[a] + input$inpCombatMod)
     EffectiveValue <- max(EffectiveValue, 0L)
     # Find the right icon
@@ -33,7 +33,7 @@ observe({
                              value = EffectiveValue, icon = Icon)
     )
   }
-})
+}
 
 
 # VALUES -------------------------------
@@ -95,16 +95,22 @@ observeEvent(input$cmbCombatSelectWeapon, {
 
 # Weapon skill slider: react to changes
 observeEvent(input$inpAttackValue, {
-  if (isTruthy(input$inpAttackValue))
+  if (isTruthy(input$inpAttackValue)) {
     ActiveWeapon$Skill[["Attack"]] <- input$inpAttackValue
+    UpdateEffectiveCombatValues("Attack")
+  }
 })
 observeEvent(input$inpParryValue, {
-  if (isTruthy(input$inpParryValue))
+  if (isTruthy(input$inpParryValue)) {
     ActiveWeapon$Skill[["Parry"]] <- input$inpParryValue
+    UpdateEffectiveCombatValues("Parry")
+  }
 })
 observeEvent(input$inpDodgeValue, {
-  if (isTruthy(input$inpDodgeValue))
+  if (isTruthy(input$inpDodgeValue)) {
     ActiveWeapon$Skill[["Dodge"]] <- input$inpDodgeValue
+    UpdateEffectiveCombatValues("Dodge")
+  }
 })
 observeEvent(input$inpDamageDieCount, {
   if (isTruthy(input$inpDamageDieCount))
@@ -114,7 +120,10 @@ observeEvent(input$inpDamage, {
   if (isTruthy(input$inpDamage))
     ActiveWeapon$Damage[["Bonus"]] <- input$inpDamage
 })
-
+observeEvent(input$inpCombatMod, {
+  if (isTruthy(input$inpCombatMod))
+    UpdateEffectiveCombatValues(names(.CombatAction))
+})
   
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
