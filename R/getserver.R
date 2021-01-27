@@ -9,9 +9,11 @@ server <- shinyServer(function(input, output, session) {
   
   # Modules
   # - Dialog for combat modifiers
-  dlgCombatModsModuleServer("btnCombatMods", i18n, 
-                            reactive(ActiveWeapon$Name), reactive(ActiveWeapon$Type), 
-                            reactive(ActiveWeapon$Range), reactive(ActiveWeapon$Skill))
+  CombatModifier <- dlgCombatModsModuleServer(
+    "btnCombatMods", i18n, 
+    reactive(ActiveWeapon$Name), reactive(ActiveWeapon$Type), 
+    reactive(ActiveWeapon$Range), reactive(ActiveWeapon$Skill)
+  )
 
   session$onSessionEnded(stopApp)
 })

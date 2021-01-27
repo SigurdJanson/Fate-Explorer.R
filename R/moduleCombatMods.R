@@ -26,7 +26,6 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
         function(input, output, session) { # Shiny module server function
             ns <- session$ns
 
-            ###browser()
             isolate({
                 if (isTruthy(WeaponSkills())) {
                     CombatSkills <- unlist(WeaponSkills())
@@ -104,7 +103,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 )
             }
             
-            Modified <- reactive({
+            EffectiveValues <- reactive({
                 #TODO: risky not to use codes/ids but the translated string
 
                 if (isTRUE(WeaponType() != names(.WeaponType["Ranged"])))
@@ -127,8 +126,12 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                     Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
                 )
                 #browser()
-                Mods <- ModifyCheck(CombatSkills, Environment)
-                return(Mods)
+                ESV <- ModifyCheck(CombatSkills, Environment) # Effective skill value
+                return(ESV)
+            })
+            
+            Modifiers <- reactive({
+                return(EffectiveValues() - CombatSkills)
             })
             
 
@@ -160,10 +163,10 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
             
             output$outCombatModifiers <- renderTable({
-                #req(input$cmbHeroWeapon, Modified())
+                req(EffectiveValues())
                 df <- data.frame(F = i18n$t(c("AT", "PA", "DO")),
                                  FW = CombatSkills, 
-                                 EFW = Modified())
+                                 EFW = EffectiveValues())
                 df
             }, spacing = "s", width = "100%")
             
@@ -173,9 +176,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 input$btnCombatMods, ignoreNULL = TRUE, showModal(ModalDlgFunction())
             )
 
-            return(Modified)
+            return(reactive(Modifiers()))
         } #server function
     )#moduleServer
 }
-
-

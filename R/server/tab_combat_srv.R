@@ -8,10 +8,32 @@
 # Values of last combat roll
 ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = list(N = 1L, DP = 6L, Bonus = 0L))
+
 # necessary trigger to recognize a new roll - value is unimportant
 UpdateCombatResult <- reactiveVal()
 InitiativeRollResult <- reactiveVal(NULL)
 
+
+# Get effective combat values
+observe({
+  for (a in names(.CombatAction)) {
+    EffectiveValue <- unname(ActiveWeapon$Skill[[a]] + CombatModifier()[a] + input$inpCombatMod)
+    EffectiveValue <- max(EffectiveValue, 0L)
+    # Find the right icon
+    Comparison <- input[[paste0("inp", a, "Value")]] - EffectiveValue
+    Comparison <- sign(Comparison) +2L # map (-1:1) to  (1:3) 
+    if (isTruthy(Comparison))
+      Icon <- switch(letters[Comparison], a = gicon("plus-circle"),
+                     b = list("-"), c = gicon("minus-circle"))
+    else
+      Icon <- list("-")
+    
+    isolate(
+      updateNumericInputIcon(session, paste0("inp", a, "Mod"), 
+                             value = EffectiveValue, icon = Icon)
+    )
+  }
+})
 
 
 # VALUES -------------------------------
@@ -98,7 +120,7 @@ observeEvent(input$inpDamage, {
 doCombatRollBase <- function(Action) {
   InitiativeRollResult(NULL)
   RollInProgress(paste0("do", Action, "Roll"), TRUE)
-  ActiveWeapon$Roll( Action, input$inpCombatMod )
+  ActiveWeapon$Roll( Action, input$inpCombatMod +  CombatModifier()[Action] )
   UpdateCombatResult(format(Sys.time(), "%s %OS4"))
 }
 
@@ -131,7 +153,6 @@ observeEvent(input$doCombatConfirm, { # Confirm Critical/Botch
 observeEvent(input$doCombatFumble, { # Show fumble result
   UpdateCombatResult( ActiveWeapon$FumbleRoll() )
 })
-
 
 
 # UI: COMBAT ROLL BUTTONS ---------------
@@ -177,7 +198,7 @@ output$uiCombatRoll <- renderText({
 
   if (isTruthy(ActiveWeapon$ConfirmRoll))
     ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),
-                                              ActiveWeapon$ConfirmRoll, i18n) 
+                                              ActiveWeapon$ConfirmRoll, i18n)
   else 
     ConfirmationStr <- NULL
 
@@ -213,8 +234,8 @@ output$uiCombatRoll <- renderText({
   }
   
   # Finally restore the buttons
-  Sys.sleep(0.3)
-  shinyjs::delay(700, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
+  Sys.sleep(0.1)
+  shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
 
   # Return the results
   if (length(Result) > 0) # two panels
