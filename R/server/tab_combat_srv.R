@@ -8,7 +8,7 @@
 # Values of last combat roll
 UpdateCombatModsModulePayload <- function(Weapon) {
   if (!missing(Weapon)) {
-    #browser()
+#-browser()
     CombatModsModulePayload$Name  <<- Weapon$Name
     CombatModsModulePayload$Type  <<- Weapon$Type
     CombatModsModulePayload$Range <<- Weapon$Range
@@ -92,12 +92,12 @@ observeEvent(input$cmbCombatSelectWeapon, {
   # Update ui controls
   for(Action in names(.CombatAction)) {
     updateNumericInput(session, paste0("inp", Action, "Value"), 
-                       value = ActiveWeapon$Skill[Action])
+                       value = unname(ActiveWeapon$Skill[Action]))
   }
   updateNumericInputIcon(session, "inpDamageDieCount", 
-                         value = ActiveWeapon$Damage["N"], 
+                         value = unname(ActiveWeapon$Damage["N"]), 
                          icon = list(NULL, paste0("W", ActiveWeapon$Damage["DP"])))
-  updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage["Bonus"])
+  updateNumericInput(session, "inpDamage", value = unname(ActiveWeapon$Damage["Bonus"]))
   
   # Update module payload
   UpdateCombatModsModulePayload()
