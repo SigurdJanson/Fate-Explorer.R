@@ -391,6 +391,7 @@ GetCombatModifiers <- function(lang = .Language) {
 #' @example eval(GetEnum("Hero.Weapon.CloseCombatRange.Medium"))
 #' # Evaluates to `.CloseCombatRange`
 .GetEnum <- function(Pointer, IndexCorrect = 0L) {
+  if (is.null(Pointer)) return(NULL)
   # get the *name* of the required enum
   ## split pointer in it's parts and get (length-1)th element
   Index <- nchar(gsub("[^.]", "", Pointer))
@@ -413,6 +414,7 @@ GetCombatModifiers <- function(lang = .Language) {
 #' @return integer
 #' @source https://stackoverflow.com/questions/36377244/make-int-round-off-to-nearest-value/36377365
 `%./%` <- function(x1, x2) {
+  if (!is.numeric(x1) || !is.numeric(x2)) stop("Only numeric arguments allowed")
   return( x1 %/% x2 + (x1 %% x2) %/% (x2 %/% 2L + x2 %% 2L) )
 }
 
@@ -423,6 +425,11 @@ GetCombatModifiers <- function(lang = .Language) {
 #' @return The modified values of `CheckValue`
 #' @examples
 ModifyCheck <- function(CheckValues, Environment) {
+  if (!is.integer(CheckValues)) 
+    stop("Argument 'CheckValues' must be an integer vector")
+  if (is.null(Environment) || !is.list(Environment))
+    stop("Argument 'Environment' is not a valid list")
+  
   EnvFlat <- unlist(Environment)
 
   Topics <- GetCombatModifiers()
@@ -471,7 +478,7 @@ ModifyCheck <- function(CheckValues, Environment) {
   }
 
   CheckValues <- round(CheckValues)
-  mode(CheckValues) <- "integer" #CheckValues<- as.integer(round(CheckValues))
+  mode(CheckValues) <- "integer"
   CheckValues <- pmax(CheckValues, 0L)
   return(CheckValues)
 }
