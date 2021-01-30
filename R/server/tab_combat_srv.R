@@ -6,18 +6,30 @@
 
 
 # Values of last combat roll
-ActiveWeapon <- MeleeWeapon$new(Skill  = list(Attack = 10L, Parry = 10L, Dodge = 10L), 
-                                Damage = list(N = 1L, DP = 6L, Bonus = 0L))
+UpdateCombatModsModulePayload <- function(Weapon) {
+  if (!missing(Weapon)) {
+    #browser()
+    CombatModsModulePayload$Name  <<- Weapon$Name
+    CombatModsModulePayload$Type  <<- Weapon$Type
+    CombatModsModulePayload$Range <<- Weapon$Range
+    CombatModsModulePayload$Skill <<- Weapon$Skill
+  }
+}
+
+ActiveWeapon <- MeleeWeapon$new(Skill  = c(Attack = 10L, Parry = 10L, Dodge = 10L), 
+                                Damage = c(N = 1L, DP = 6L, Bonus = 0L))
+ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
 
 # necessary trigger to recognize a new roll - value is unimportant
 UpdateCombatResult <- reactiveVal()
 InitiativeRollResult <- reactiveVal(NULL)
 
 
+
 # Get effective combat values
 UpdateEffectiveCombatValues <- function(Actions) {
   for (a in Actions) {
-    EffectiveValue <- unname(ActiveWeapon$Skill[[a]] + CombatModifier()[a] + input$inpCombatMod)
+    EffectiveValue <- unname(ActiveWeapon$Skill[a] + CombatModifier()[a] + input$inpCombatMod)
     EffectiveValue <- max(EffectiveValue, 0L)
     # Find the right icon
     Comparison <- input[[paste0("inp", a, "Value")]] - EffectiveValue
@@ -34,6 +46,10 @@ UpdateEffectiveCombatValues <- function(Actions) {
     )
   }
 }
+
+observeEvent(CombatModifier(), {UpdateEffectiveCombatValues(names(.CombatAction))})
+
+
 
 
 # VALUES -------------------------------
@@ -68,19 +84,23 @@ observeEvent(input$cmbCombatSelectWeapon, {
     }
   } else {
     # Default
-    ActiveWeapon <<- MeleeWeapon$new(Skill = list(Attack = 9L, Parry = 5L, 
-                                                  Dodge = Character$Weapon[[1L]]$Skill$Dodge), 
-                                     Damage = list(N = 1L, DP = 6L, Bonus = 0L))
+    ActiveWeapon <<- MeleeWeapon$new(Skill = c(Attack = 9L, Parry = 5L, ######## Weapon(s) ????
+                                                  Dodge = Character$Weapons[[1L]]$Skill$Dodge), 
+                                     Damage = c(N = 1L, DP = 6L, Bonus = 0L))
+    ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
   }
   # Update ui controls
   for(Action in names(.CombatAction)) {
     updateNumericInput(session, paste0("inp", Action, "Value"), 
-                       value = ActiveWeapon$Skill[[Action]])
+                       value = ActiveWeapon$Skill[Action])
   }
   updateNumericInputIcon(session, "inpDamageDieCount", 
-                         value = ActiveWeapon$Damage$N, 
-                         icon = list(NULL, paste0("W", ActiveWeapon$Damage$DP)))
-  updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage$Bonus)
+                         value = ActiveWeapon$Damage["N"], 
+                         icon = list(NULL, paste0("W", ActiveWeapon$Damage["DP"])))
+  updateNumericInput(session, "inpDamage", value = ActiveWeapon$Damage["Bonus"])
+  
+  # Update module payload
+  UpdateCombatModsModulePayload()
   
   if(ActiveWeapon$CanParry()) {
     shinyjs::enable("doParryRoll")
@@ -96,29 +116,32 @@ observeEvent(input$cmbCombatSelectWeapon, {
 # Weapon skill slider: react to changes
 observeEvent(input$inpAttackValue, {
   if (isTruthy(input$inpAttackValue)) {
-    ActiveWeapon$Skill[["Attack"]] <- input$inpAttackValue
+    ActiveWeapon$Skill["Attack"] <- input$inpAttackValue
     UpdateEffectiveCombatValues("Attack")
+    UpdateCombatModsModulePayload()
   }
 })
 observeEvent(input$inpParryValue, {
   if (isTruthy(input$inpParryValue)) {
-    ActiveWeapon$Skill[["Parry"]] <- input$inpParryValue
+    ActiveWeapon$Skill["Parry"] <- input$inpParryValue
     UpdateEffectiveCombatValues("Parry")
+    UpdateCombatModsModulePayload()
   }
 })
 observeEvent(input$inpDodgeValue, {
   if (isTruthy(input$inpDodgeValue)) {
-    ActiveWeapon$Skill[["Dodge"]] <- input$inpDodgeValue
+    ActiveWeapon$Skill["Dodge"] <- input$inpDodgeValue
     UpdateEffectiveCombatValues("Dodge")
+    UpdateCombatModsModulePayload()
   }
 })
 observeEvent(input$inpDamageDieCount, {
   if (isTruthy(input$inpDamageDieCount))
-    ActiveWeapon$Damage[["N"]] <- input$inpDamageDieCount
+    ActiveWeapon$Damage["N"] <- input$inpDamageDieCount
 })
 observeEvent(input$inpDamage, {
   if (isTruthy(input$inpDamage))
-    ActiveWeapon$Damage[["Bonus"]] <- input$inpDamage
+    ActiveWeapon$Damage["Bonus"] <- input$inpDamage
 })
 observeEvent(input$inpCombatMod, {
   if (isTruthy(input$inpCombatMod))

@@ -7,13 +7,16 @@ server <- shinyServer(function(input, output, session) {
   source(file.path("server", "tab_explore_srv.R"), local = TRUE)$value
   source(file.path("server", "tab_about_srv.R"), local = TRUE)$value
   
-  # Modules
+  # Modules --------
   # - Dialog for combat modifiers
+  CombatModsModulePayload <- reactiveValues(Name = ActiveWeapon$Name, Type = ActiveWeapon$Type,
+                                            Range = ActiveWeapon$Range, Skill = ActiveWeapon$Skill)
   CombatModifier <- dlgCombatModsModuleServer(
-    "btnCombatMods", i18n, 
-    reactive(ActiveWeapon$Name), reactive(ActiveWeapon$Type), 
-    reactive(ActiveWeapon$Range), reactive(ActiveWeapon$Skill)
+    "btnCombatMods", i18n,
+    CombatModsModulePayload$Name,  CombatModsModulePayload$Type,
+    CombatModsModulePayload$Range, reactive(CombatModsModulePayload$Skill)
   )
 
+  # ----------------
   session$onSessionEnded(stopApp)
 })

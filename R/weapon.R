@@ -229,7 +229,7 @@ WeaponBase <- R6Class(
     if (self$LastAction == .CombatAction["Attack"])
       if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
       {
-        self$LastDamage <- DamageRoll(private$.Damage$N, private$.Damage$DP, private$.Damage$Bonus)
+        self$LastDamage <- DamageRoll(private$.Damage["N"], private$.Damage["DP"], private$.Damage["Bonus"])
       }
     
     self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
@@ -303,9 +303,9 @@ WeaponBase <- R6Class(
   CanParry = function() {
     if (!is.na(private$.Technique))
       Can <- IsParryWeapon(CombatTech = private$.Technique) &
-             private$.Skill$Parry > 0
+             private$.Skill["Parry"] > 0
     else
-      Can <- private$.Skill$Parry > 0
+      Can <- private$.Skill["Parry"] > 0
     return(Can)
   }
 ), # public
@@ -315,8 +315,8 @@ private = list(
   .Type = NA,      # .WeaponType # Weaponless, Melee, Ranged, Shield
   .Technique = NA, # .ComTecs # Combat technique
   .Range = NA,     # interpretation differs based on `Type`, either close combat reach or ranged combat range
-  .Skill  = list(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge does actually not depend on the active weapon
-  .Damage = list(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
+  .Skill  = c(Attack = 0L, Parry = 0L, Dodge = 0L), # dodge does actually not depend on the active weapon
+  .Damage = c(N = 1L, DP = 6L, Bonus = 0L), # [n]d[dp] + [bonus]
   .Modifier = 0L,  # permanent default modifier because of special abilities
   RawWeaponData = NULL,
 

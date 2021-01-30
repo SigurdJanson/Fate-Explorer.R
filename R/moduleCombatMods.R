@@ -26,18 +26,20 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
         function(input, output, session) { # Shiny module server function
             ns <- session$ns
 
-            isolate({
-                if (isTruthy(WeaponSkills())) {
-                    CombatSkills <- unlist(WeaponSkills())
-                } else {
-                    CombatSkills <- rep(0, 3)
-                }
-            })
-            names(CombatSkills) <- names(.CombatAction)
+            # CombatSkills <- 11:9L
+            # 
+            # observe({
+            #     if (isTruthy(WeaponSkills())) {
+            #         CombatSkills <- WeaponSkills()
+            #     } else {
+            #         CombatSkills <- rep(0L, 3L)
+            #     }
+            #     names(CombatSkills) <- names(.CombatAction)
+            # })
 
             
             ModalDlgFunction <- function() {
-                if (isTRUE(WeaponType() != names(.WeaponType["Ranged"])))
+                if (isTRUE(WeaponType != names(.WeaponType["Ranged"])))
                     WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
                 else
                     WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
@@ -104,17 +106,17 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }
             
             EffectiveValues <- reactive({
+                req(input$cmbHeroMeansOfMovement, input$rdbOpponentWeapon, input$cmbCombatEnvVision)
                 #TODO: risky not to use codes/ids but the translated string
-
-                if (isTRUE(WeaponType() != names(.WeaponType["Ranged"])))
+            #browser()
+                if (isTRUE(WeaponType != names(.WeaponType["Ranged"])))
                     WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
                 else
                     WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
 
-                #-browser()
                 Environment <- initCombatEnvironment(
-                    Type  = ifelse(isTruthy(WeaponType()),  WeaponType(),  names(.WeaponType["Melee"])), 
-                    Range = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])), 
+                    Type  = ifelse(isTruthy(WeaponType),  WeaponType,  names(.WeaponType["Melee"])), 
+                    Range = ifelse(isTruthy(WeaponRange), WeaponRange, names(.CloseCombatRange["Short"])), 
                     HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$cmbHeroMeansOfMovement),
                     HeroSpeed  = which(i18n$t(names(.Movement))         == input$rdbHeroMovement),
                     EnemyRange = which(WeaponsRangeChoices              == input$rdbOpponentWeapon),
@@ -125,13 +127,15 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                     ElbowRoom  = input$cmbCombatEnvCramped,
                     Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
                 )
-                #browser()
-                ESV <- ModifyCheck(CombatSkills, Environment) # Effective skill value
+
+                
+                ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 return(ESV)
             })
             
             Modifiers <- reactive({
-                return(EffectiveValues() - CombatSkills)
+                #if (length(EffectiveValues() == length(WeaponSkills())) == length(.CombatAction))
+                return(EffectiveValues() - isolate(WeaponSkills()))
             })
             
 
@@ -151,21 +155,22 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             
             #' Display the name of the weapon if it has one
             output$txtHeroWeapon <- renderText({
-                ifelse(isTruthy(WeaponName()), WeaponName(), "-----")
+                ifelse(isTruthy(WeaponName), WeaponName, "-----")
             })
 
             #' Display weapons range 
             #' (singe value for close combat and 3 values for ranged)
             output$txtHeroWeaponRanges <- renderText({
-                req(WeaponRange())
-                paste(WeaponRange(), collapse = " / ")
+                req(WeaponRange)
+                paste(WeaponRange, collapse = " / ")
             })
 
             
             output$outCombatModifiers <- renderTable({
-                req(EffectiveValues())
+                req(EffectiveValues(), WeaponSkills())
+
                 df <- data.frame(F = i18n$t(c("AT", "PA", "DO")),
-                                 FW = CombatSkills, 
+                                 FW = WeaponSkills(), 
                                  EFW = EffectiveValues())
                 df
             }, spacing = "s", width = "100%")

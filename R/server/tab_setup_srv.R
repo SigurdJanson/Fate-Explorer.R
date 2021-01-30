@@ -49,12 +49,16 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
   if (isTruthy(Weapons[["Melee"]]))
     for (r in 1:nrow(Weapons[["Melee"]])) {
       ActiveWeapon <- MeleeWeapon$new(Weapons[["Melee"]][r,],   Character$Attr, Character$CombatSkills)
+      ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
+      
       Character$Weapons <- c(Character$Weapons, ActiveWeapon)
       WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
     }
   if (isTruthy(Weapons[["Ranged"]]))
     for (r in 1:nrow(Weapons[["Ranged"]])) {
       ActiveWeapon <- RangedWeapon$new(Weapons[["Ranged"]][r,], Character$Attr, Character$CombatSkills)
+      ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
+      
       Character$Weapons <- c(Character$Weapons, ActiveWeapon)
       WeaponNames <- c(WeaponNames, ActiveWeapon$Name)
     }
