@@ -387,17 +387,6 @@ test_that("ModifyCheck: Neutral Enviroment has no effect on roll check", {
   expect_identical(o, Check)
 
   
-  # # Unarmed, no obsoletes
-  # BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Unarmed"], FALSE)
-  # o <- ModifyCheck(Check, BattleGround)
-  # expect_identical(o, Check)
-  # 
-  # # Unarmed, including obsoletes
-  # BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Unarmed"], TRUE)
-  # o <- ModifyCheck(Check, BattleGround)
-  # expect_identical(o, Check)
-
-    
   # Ranged, no obsoletes
   BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Ranged"], FALSE)
   o <- ModifyCheck(Check, BattleGround)
@@ -409,7 +398,7 @@ test_that("ModifyCheck: Neutral Enviroment has no effect on roll check", {
   expect_identical(o, Check)
 })
 test_that("ModifyCheck: Variations of Melee Combat", {
-  Check        <- c(at = 10L, pa = 10L, do = 10L)
+  Check        <- c(Attack = 10L, Parry = 10L, Dodge = 10L)
   ATHalf       <- 5L
   
   # TARGET SIZE
@@ -427,7 +416,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
   for (val in .Visibility) {
     BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], FALSE,
                                                  `Environment$Visibility` = .Visibility[val])
-    e <- switch(val, Check, Check-1L, Check-2L, Check-3L, c(at = ATHalf, pa = 1L, do = 1L))
+    e <- switch(val, Check, Check-1L, Check-2L, Check-3L, c(Attack = ATHalf, Parry = 1L, Dodge = 1L))
     o <- ModifyCheck(Check, BattleGround)
     expect_identical(o, e, label = names(.Visibility[val]))
   }
@@ -469,7 +458,7 @@ test_that("ModifyCheck: Variations of Melee Combat", {
 })
 
 test_that("ModifyCheck: A combination of Melee Combat", {
-  Check        <- c(at = 10L, pa = 10L, do = 10L)
+  Check        <- c(Attack = 10L, Parry = 10L, Dodge = 10L)
   
   # TARGET SIZE
   for (val in .TargetSize) {
@@ -483,7 +472,7 @@ test_that("ModifyCheck: A combination of Melee Combat", {
   }
 })
 test_that("ModifyCheck: Shield", {
-  Check        <- c(at = 10L, pa = 10L, do = 10L)
+  Check        <- c(Attack = 10L, Parry = 10L, Dodge = 10L)
   
   # TARGET SIZE
   for (val in .CloseCombatRange) {
@@ -498,12 +487,12 @@ test_that("ModifyCheck: Shield", {
 })
 test_that("ModifyCheck: Vision - test if values are properly rounded", {
   # When there is no vision AT = AT /2 ----> 9 / 2 shall not be 4.5 but 5
-  Check        <- c(at = 9L, pa = 10L, do = 10L)
+  Check        <- c(Attack = 9L, Parry = 10L, Dodge = 10L)
   BattleGround <- .GetTestingCombatEnvironment(.WeaponType["Melee"], WithObsoletes = FALSE,
                                                `Environment$Visibility` = .Visibility["NoVision"])
   setwd(.srcdir)
   o <- ModifyCheck(Check, BattleGround)
   setwd(.testdir)
-  e <- c(at = 5L, pa = 1L, do = 1L)
+  e <- c(Attack = 5L, Parry = 1L, Dodge = 1L)
   expect_identical(o, e, label = names(.Visibility["NoVision"]))
 })
