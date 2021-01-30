@@ -106,30 +106,34 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }
             
             EffectiveValues <- reactive({
-                req(input$cmbHeroMeansOfMovement, input$rdbOpponentWeapon, input$cmbCombatEnvVision)
-                #TODO: risky not to use codes/ids but the translated string
-            #browser()
-                if (isTRUE(WeaponType != names(.WeaponType["Ranged"])))
-                    WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
-                else
-                    WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
-
-                Environment <- initCombatEnvironment(
-                    Type  = ifelse(isTruthy(WeaponType),  WeaponType,  names(.WeaponType["Melee"])), 
-                    Range = ifelse(isTruthy(WeaponRange), WeaponRange, names(.CloseCombatRange["Short"])), 
-                    HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$cmbHeroMeansOfMovement),
-                    HeroSpeed  = which(i18n$t(names(.Movement))         == input$rdbHeroMovement),
-                    EnemyRange = which(WeaponsRangeChoices              == input$rdbOpponentWeapon),
-                    EnemySize  = which(i18n$t(names(.TargetSize))       == input$rdbOpponentSize),
-                    EnemySpeed = which(i18n$t(names(.Movement))         == input$rdbOpponentMovement),
-                    Evasive    = input$chbOpponentEvasive,
-                    Visibility = which(i18n$t(names(.Visibility))       == input$cmbCombatEnvVision),
-                    ElbowRoom  = input$cmbCombatEnvCramped,
-                    Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
-                )
-
+                if (isTruthy(input$cmbHeroMeansOfMovement) &&
+                    isTruthy(input$rdbOpponentWeapon) &&
+                    isTruthy(input$cmbCombatEnvVision)) {
+                    
+                    if (isTRUE(WeaponType != names(.WeaponType["Ranged"])))
+                        WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
+                    else
+                        WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
+                    
+                    #TODO: risky not to use codes/ids but the translated string
+                    Environment <- initCombatEnvironment(
+                        Type  = ifelse(isTruthy(WeaponType),  WeaponType,  names(.WeaponType["Melee"])), 
+                        Range = ifelse(isTruthy(WeaponRange), WeaponRange, names(.CloseCombatRange["Short"])), 
+                        HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$cmbHeroMeansOfMovement),
+                        HeroSpeed  = which(i18n$t(names(.Movement))         == input$rdbHeroMovement),
+                        EnemyRange = which(WeaponsRangeChoices              == input$rdbOpponentWeapon),
+                        EnemySize  = which(i18n$t(names(.TargetSize))       == input$rdbOpponentSize),
+                        EnemySpeed = which(i18n$t(names(.Movement))         == input$rdbOpponentMovement),
+                        Evasive    = input$chbOpponentEvasive,
+                        Visibility = which(i18n$t(names(.Visibility))       == input$cmbCombatEnvVision),
+                        ElbowRoom  = input$cmbCombatEnvCramped,
+                        Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
+                    )
+                    ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
+                } else {
+                    ESV <- WeaponSkills()
+                }
                 
-                ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 return(ESV)
             })
             
