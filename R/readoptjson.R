@@ -194,12 +194,15 @@ UniqueWeaponFromCharacter <- function(Item) {
   IsRanged <- IsRangedWeapon(CombatTech = Item$combatTechnique)
   
   if(!IsRanged) {
-    Range       <- switch(Item$reach, "kurz", "mittel", "lang") # TODO: L10N
-    
+    Range     <- switch(Item$reach, "kurz", "mittel", "lang") # TODO: L10N
+    Threshold <- ifelse(is.null(Item[["primaryThreshold"]]$threshold), 
+                        Item[["damageBonus"]]$threshold, 
+                        Item[["primaryThreshold"]]$threshold)
+
     Weapon <- list(name = Item[["name"]], 
                    combattech = CombatTechName, 
                    primeattr  = PrimaryAttr, 
-                   threshold  = Item[["primaryThreshold"]]$threshold,
+                   threshold  = Threshold,
                    damage     = paste0(Item$damageDiceNumber, "W", Item$damageDiceSides), 
                    bonus      = Item[["damageFlat"]],
                    at = Item[["at"]], pa = Item[["pa"]], 
@@ -215,7 +218,7 @@ UniqueWeaponFromCharacter <- function(Item) {
                    armed  = TRUE,
                    templateID = Item[["template"]] 
     )
-  } else {
+  } else { 
     Weapon <- list(name       = Item[["name"]], 
                    combattech = CombatTechName, 
                    primeattr  = PrimaryAttr, 
