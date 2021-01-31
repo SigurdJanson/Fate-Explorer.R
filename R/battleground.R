@@ -41,7 +41,7 @@ initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
   Visibility <- ifelse(is.null(Visibility), .Visibility["Clearly"], Visibility) #default
   CombatEnv[["Environment"]]$Visibility   = .Visibility[Visibility]
   
-  ElbowRoom <- ifelse(is.null(ElbowRoom), .CrampedSpace["Free"], .CrampedSpace["Cramped"]) #default
+  ElbowRoom <- ifelse(is.null(ElbowRoom), .CrampedSpace["Free"], ElbowRoom) #default
   CombatEnv[["Environment"]]$CrampedSpace = .CrampedSpace[ElbowRoom]
   
   Underwater <- ifelse(is.null(Underwater), .UnderWater["Dry"], Underwater) #default

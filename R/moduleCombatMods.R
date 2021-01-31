@@ -99,7 +99,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             #' Enable / Disable the UI controls depnding on weapon type
             observeEvent(input$btnCombatMods, { #WeaponType(),
                 ##WeaponType()
-#browser()
+#-browser()
                 if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
                     ToDisable <- c("cmbCombatEnvCramped", "rdbOpponentWeapon")
                     ToEnable <- c("cmbHeroMeansOfMovement", "rdbHeroMovement",
@@ -112,8 +112,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                    "rdbOpponentDistance", "rdbOpponentMovement",
                                    "chbOpponentEvasive")
                 }
-                for (i in ToEnable) enable(i)
-                for (i in ToDisable) disable(i)
+                for (i in ToEnable) shinyjs::enable(i)
+                for (i in ToDisable) shinyjs::disable(i)
             })
             
             
@@ -151,6 +151,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         ElbowRoom  = Cramped,
                         Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
                     )
+        #browser()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 } else {
                     ESV <- WeaponSkills()
