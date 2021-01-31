@@ -6,6 +6,10 @@ source("./rules.R")
 initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
                                   EnemyRange, EnemySize, EnemySpeed, Evasive,
                                   Visibility, ElbowRoom, Underwater) {
+  # PRECONDITIONS
+  if (isFALSE(Type %in% .WeaponType)) 
+    stop("Weapon type is the most important criterion of a weapon and cannot be omitted")
+  
   CombatEnv <- list(
     Hero = list(), Opponent = list(), Environment = list()
   )
@@ -50,17 +54,16 @@ initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
 
 
 defaultCombatEnvironment <- function(WeaponType = .WeaponType["Melee"]) {
-  if (is.null(WeaponType)) WeaponType <- .WeaponType["Melee"]
+  if (isFALSE(WeaponType %in% .WeaponType)) stop("Unknown weapon type")
 
-  if (WeaponType == .WeaponType["Ranged"]) 
+  if (WeaponType == .WeaponType["Ranged"]) {
     Range <- c(0, 0, 0) 
-  else 
-    Range <- .CloseCombatRange["Short"]
-
-  if (WeaponType == .WeaponType["Ranged"]) 
     EnemyRange <- .RangedCombatRange["Medium"]
-  else 
+  }
+  else {
+    Range <- .CloseCombatRange["Short"]
     EnemyRange <- Range
+  }
   
   return(
     initCombatEnvironment(

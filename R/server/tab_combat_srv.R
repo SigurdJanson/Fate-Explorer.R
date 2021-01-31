@@ -18,6 +18,7 @@ UpdateCombatModsModulePayload <- function(Weapon) {
 
 ActiveWeapon <- MeleeWeapon$new(Skill  = c(Attack = 10L, Parry = 10L, Dodge = 10L), 
                                 Damage = c(N = 1L, DP = 6L, Bonus = 0L))
+ActiveWeapon$Type <- .WeaponType["Melee"]
 ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
 
 # necessary trigger to recognize a new roll - value is unimportant
@@ -78,17 +79,20 @@ observeEvent(input$cmbCombatSelectWeapon, {
       # Get weapon from character
       for (w in Character$Weapons) {
         if (w$Name == Weapon) {
-          ActiveWeapon <<- w; break
+          ActiveWeapon <<- w; 
+          UpdateCombatModsModulePayload(ActiveWeapon)
+          break
         }
       }
     }
   } else {
     # Default
     # - Check first if character is loaded
-    Dodge <- ifelse(isTruthy(Character$Weapons[[1L]]$Skill$Dodge), Character$Weapons[[1L]]$Skill$Dodge, 6L)
+    Dodge <- ifelse(isTruthy(Character$Weapons[[1L]]$Skill["Dodge"]), Character$Weapons[[1L]]$Skill["Dodge"], 6L)
     ActiveWeapon <<- MeleeWeapon$new(
       Skill = c(Attack = 9L, Parry = 5L, Dodge = Dodge),
       Damage = c(N = 1L, DP = 6L, Bonus = 0L))
+    ActiveWeapon$Type <- .WeaponType["Melee"]
     ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
   }
   # Update ui controls

@@ -147,7 +147,7 @@ observeEvent(input$CharFile, {
   
   # THIS SECTION IS A BIT OUT OF PLACE HERE
   # Update Combat value with weaponless brawling
-  updateSliderInput(session, "inpDodgeValue", value = Character$Weapons[[1]]$Skill$Dodge)
+  updateSliderInput(session, "inpDodgeValue", value = Character$Weapons[[1]]$Skill["Dodge"])
 }, ignoreNULL = TRUE, ignoreInit = TRUE) # If new JSON file
 
 
@@ -258,7 +258,7 @@ outputOptions(output, 'ShowSetupSpells', suspendWhenHidden = FALSE)
 
 
 output$SetupSpells <- renderTable({
-  Result <- Character$Skills$Sets$Magic$Skills
+  Result <- req(Character$Skills$Sets$Magic$Skills)
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID"))]
 
   # Show ability names not codes
@@ -266,6 +266,7 @@ output$SetupSpells <- renderTable({
   for (ablty in paste0("ab", 1:3)) {
     Result[[ablty]] <- NameMapping[match(Result[[ablty]], NameMapping[["attrID"]]), "shortname"]
   }
+
   # Column names
   colnames(Result) <- c(i18n$t("Skill"), i18n$t("Spell"), paste(i18n$t("SC"), 1:3), 
                         i18n$t("Modifier"), i18n$t("Property"), i18n$t("SR"),
@@ -285,7 +286,7 @@ outputOptions(output, 'ShowSetupChants', suspendWhenHidden = FALSE)
 
 
 output$SetupChants <- renderTable({
-  Result <- Character$Skills$Sets$Blessed$Skills
+  Result <- req(Character$Skills$Sets$Blessed$Skills)
   Result <- Result[-which(names(Result) %in% c("url", "attrID", "class", "classID", "tradition"))]
   
   # Show names not codes
@@ -311,8 +312,8 @@ output$SetupWeapons <- renderTable({
                    stringsAsFactors = FALSE)
   for (W in Character$Weapons) {
     WT <- rbind(WT, list(W$Name, i18n$t(names(W$Type)),
-                         as.integer(W$Skill$Attack), as.integer(W$Skill$Parry),
-                         sprintf(i18n$t("%dd%d+%d"), W$Damage$N, W$Damage$DP, W$Damage$Bonus)),
+                         unname(W$Skill["Attack"]), unname(W$Skill["Parry"]),
+                         sprintf(i18n$t("%dd%d+%d"), W$Damage["N"], W$Damage["DP"], W$Damage["Bonus"])),
                 stringsAsFactors = FALSE)
   }
   names(WT) <- i18n$t(c("Name", "Type", "AT", "PA", "Hit points"))

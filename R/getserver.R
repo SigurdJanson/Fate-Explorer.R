@@ -13,8 +13,8 @@ server <- shinyServer(function(input, output, session) {
                                             Range = ActiveWeapon$Range, Skill = ActiveWeapon$Skill)
   CombatModifier <- dlgCombatModsModuleServer(
     "btnCombatMods", i18n,
-    CombatModsModulePayload$Name,  CombatModsModulePayload$Type,
-    CombatModsModulePayload$Range, reactive(CombatModsModulePayload$Skill)
+    reactive(CombatModsModulePayload$Name),  reactive(CombatModsModulePayload$Type),
+    reactive(CombatModsModulePayload$Range), reactive(CombatModsModulePayload$Skill)
   )
 
   # ----------------

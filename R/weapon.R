@@ -33,8 +33,10 @@ WeaponBase <- R6Class(
       if (missing(value)) {
         return(private$.Type)
       } else {
-        private$.Type <- value
-        private$OnValueChange()
+        if (value %in% .WeaponType || value %in% names(.WeaponType)) {
+          private$.Type <- .WeaponType[value]
+          private$OnValueChange()
+        } else stop("Unknown weapon type")
       }
     },
     

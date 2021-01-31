@@ -2,7 +2,7 @@
 
 
 # Enumerations ----
-.WeaponType   <- c(Unarmed = 0L, Melee = 1L, Ranged = 2L, Shield = 3L)
+.WeaponType   <- c(Unarmed = 1L, Melee = 2L, Ranged = 3L, Shield = 4L)
 .CombatAction <- c(Attack = 1L, Parry = 2L, Dodge = 3L)
 .SuccessLevel <- c(Fumble = 1L, Fail = 2L, Success = 3L, Critical = 4L)
 .CloseCombatRange  <- c(Short = 1L, Medium = 2L, Long = 3L)

@@ -1,6 +1,7 @@
 {"languages":["cd", "en", "de"], /* 'cd' is not a language but stands for "code" */
 "translation":[
     {"cd": "", "en": "", "de": ""},
+    {"cd": "/", "en": "/", "de": "/"},
     {"cd": "Be", "en": "Be", "de": "Sei"},
     {"cd": "Act", "en": "Act", "de": "Handle"},
     {"cd": "Fight", "en": "Fight", "de": "Kämpfe"},
@@ -68,6 +69,10 @@
     {"cd": "Dice 4 Damage", "en": "Dice 4 Damage", "de": "Anzahl Würfel"},
     {"cd": "Hit points", "en": "Hit points", "de": "Trefferpunkte"},
     {"cd": "%dd%d+%d", "en": "%dd%d+%d", "de": "%dW%d+%d"},
+    {"cd": "Mode", "en": "Mode", "de": "Modus"},
+    {"cd": "Range", "en": "Range", "de": "Reichweite"},
+    {"cd": "Ranged Combat", "en": "Ranged Combat", "de": "Fernkampf"},
+    {"cd": "Close Combat", "en": "Close Combat", "de": "Nahkampf"},
 
     {"cd": "Combat Modifiers", "en": "Combat Modifiers", "de": "Kampfmodikatoren"},
     {"cd": "Hero", "en": "Hero", "de": "Held"},
@@ -125,6 +130,7 @@
 
     {"cd": "Character Weapon", "en": "Character Weapon", "de": "Heldenwaffe"},
     {"cd": "Weapons", "en": "Weapons", "de": "Waffen"},
+    {"cd": "Weapon", "en": "Weapon", "de": "Waffe"},
     {"cd": "Select your weapon", "en": "Select your weapon", "de": "Wähle Deine Waffe"},
     {"cd": "See what happens...", "en": "See what happens...", "de": "Schau was passiert..."},
     {"cd": "Critical confirmed", "en": "Critical confirmed", "de": "Meisterliche bestätigt"},
