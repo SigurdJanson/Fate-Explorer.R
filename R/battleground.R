@@ -57,11 +57,13 @@ defaultCombatEnvironment <- function(WeaponType = .WeaponType["Melee"]) {
   if (isFALSE(WeaponType %in% .WeaponType)) stop("Unknown weapon type")
 
   if (WeaponType == .WeaponType["Ranged"]) {
-    Range <- c(0, 0, 0) 
+    Range <- c(0, 0, 0)
+    HeroSpeed <- .Movement["Slow"]
     EnemyRange <- .RangedCombatRange["Medium"]
   }
   else {
     Range <- .CloseCombatRange["Short"]
+    HeroSpeed <- .Movement["Stationary"]
     EnemyRange <- Range
   }
   
@@ -70,7 +72,7 @@ defaultCombatEnvironment <- function(WeaponType = .WeaponType["Melee"]) {
       Type  = WeaponType, 
       Range = Range, 
       HeroMoves  = .MeansOfMovement["OnFoot"], 
-      HeroSpeed  = .Movement["Stationary"],
+      HeroSpeed  = HeroSpeed,
       EnemyRange = EnemyRange,
       EnemySize  = .TargetSize["Medium"], 
       EnemySpeed = .Movement["Slow"],

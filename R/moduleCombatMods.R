@@ -75,7 +75,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                sliderTextInput(
                                    ns("rdbOpponentMovement"), label = i18n$t("Movement"),
                                    choices = i18n$t(names(.Movement)), grid = TRUE, force_edges = TRUE),
-                               checkboxGroupInput("chbOpponentEvasive", NULL, choices = i18n$t("Evasive Maneuvers"))
+                               checkboxGroupInput(ns("chbOpponentEvasive"), NULL, choices = i18n$t("Evasive Maneuvers"))
                         ),
                         column(4,
                                h4(i18n$t("Environment")),
@@ -97,7 +97,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }
             
             #' Enable / Disable the UI controls depnding on weapon type
-            observeEvent(input$btnCombatMods, { #WeaponType(),
+            observeEvent(WeaponType(), { #
                 ##WeaponType()
 #-browser()
                 if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
@@ -151,7 +151,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         ElbowRoom  = Cramped,
                         Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
                     )
-        #browser()
+        #-browser()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 } else {
                     ESV <- WeaponSkills()
