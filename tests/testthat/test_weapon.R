@@ -16,6 +16,8 @@ test_that("Waqqif, Close Combat", {
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
   ct <- list(CT_3 = 15, CT_9 = 15, CT_12 = 12, CT_14 = 13)
+  Damage <- c(N = 1L, DP = 6L, Bonus = 2L)
+  
   setwd(.srcdir)
   W <- MeleeWeapon$new(Name, ab, ct)
   setwd(.testdir)
@@ -23,12 +25,13 @@ test_that("Waqqif, Close Combat", {
   expect_identical(W$Name, Name)
   expect_identical(W$Type, .WeaponType["Melee"])
   expect_identical(W$Technique, "CT_3")
-  #-# Distance
-  expect_identical(W$Skill, list(Attack = 16, Parry = 9, Dodge = 8))
-  expect_identical(W$Damage$N, 1L)
-  expect_identical(W$Damage$DP, 6L)
-  expect_identical(W$Damage$Bonus, 2L+2L) # Base value 2 + [ATTR_6 (GE) > 14]
 
+  expect_identical(W$Skill, c(Attack = 16L, Parry = 9L, Dodge = 8L))
+  expect_identical(W$Damage["N"], Damage["N"])
+  expect_identical(W$Damage["DP"], Damage["DP"])
+  expect_identical(W$Damage["Bonus"], Damage["Bonus"]+2L) # Base value 2 + [ATTR_6 (GE) > 14]
+  
+  
   # Rolling
   for(A in names(.CombatAction))
     for(i in 1:100) {
@@ -93,6 +96,7 @@ test_that("Unarmed", {
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
   ct <- list(CT_3 = 15, CT_9 = 15, CT_12 = 12, CT_14 = 13)
+  Damage <- c(N = 1L, DP = 6L, Bonus = 0L)
   
   # WAFFENLOS
   Name <- "Waffenlos"
@@ -103,9 +107,9 @@ test_that("Unarmed", {
   expect_identical(W$Name, Name)
   expect_identical(W$Type, .WeaponType["Unarmed"])
   expect_identical(W$Technique, "CT_9")
-  expect_identical(W$Damage$N, 1L)
-  expect_identical(W$Damage$DP, 6L)
-  expect_identical(W$Damage$Bonus, 0L+2L) # Base value 0 + [ATTR_6 (GE) > 14]
+  expect_identical(W$Damage["N"], Damage["N"])
+  expect_identical(W$Damage["DP"], Damage["DP"])
+  expect_identical(W$Damage["Bonus"], Damage["Bonus"]+2L) # Base value 0 + [ATTR_6 (GE) > 14]
 })
 
 
@@ -116,8 +120,9 @@ test_that("Ranged Combat", {
                        ATTR_5 = 13L, ATTR_6 = 16L, ATTR_7 = 11L, ATTR_8 = 11L), 
                   class = "data.frame", row.names = c(NA, -1L))
   ct <- list(CT_3 = 15, CT_9 = 15, CT_11 = 14, CT_12 = 12, CT_14 = 13)
+  Damage <- c(N = 1L, DP = 6L, Bonus = 0L)
   
-  # WAFFENLOS
+  # SCHLEUDER
   Name <- "Schleuder"
   setwd(.srcdir)
   W <- RangedWeapon$new(Name, ab, ct)
@@ -126,10 +131,10 @@ test_that("Ranged Combat", {
   expect_identical(W$Name, Name)
   expect_identical(W$Type, .WeaponType["Ranged"])
   expect_identical(W$Technique, "CT_11")
-  expect_identical(W$Damage$N, 1L)
-  expect_identical(W$Damage$DP, 6L)
-  expect_identical(W$Damage$Bonus, 0L+2L) # Base value 0 + [ATTR_6 (GE) > 14]
-
+  expect_identical(W$Damage["N"], Damage["N"])
+  expect_identical(W$Damage["DP"], Damage["DP"])
+  expect_identical(W$Damage["Bonus"], Damage["Bonus"]+2L) # Base value 0 + [ATTR_6 (GE) > 14]
+  
   for(A in names(.CombatAction))
     for(i in 1:50) {
       if (A %in% names(.CombatAction[c("Attack", "Dodge")]))
@@ -171,7 +176,7 @@ test_that("Manipulated Weapon Features", {
   setwd(.testdir)
 
   # Fake weapon with 1d3 
-  W$Damage$DP <- 3L
+  W$Damage["DP"] <- 3L
   for(i in 1:30) {
     W$Roll("Attack")
     expect_identical(W$LastAction, .CombatAction["Attack"])

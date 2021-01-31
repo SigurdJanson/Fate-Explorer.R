@@ -60,7 +60,8 @@ WeaponBase <- R6Class(
       if (missing(value)) {
         return(private$.Skill)
       } else {
-        private$.Skill <- value
+        private$.Skill <- as.integer(value)
+        names(private$.Skill) <- names(.CombatAction)
         private$OnValueChange()
       }
     },
@@ -69,7 +70,8 @@ WeaponBase <- R6Class(
       if (missing(value)) {
         return(private$.Damage)
       } else {
-        private$.Damage <- value
+        private$.Damage <- as.integer(value)
+        names(private$.Damage) <- c("N", "DP", "Bonus")
         private$OnValueChange()
       }
     },
@@ -104,26 +106,26 @@ WeaponBase <- R6Class(
   initialize = function(Weapon = NULL, Abilities = NULL, CombatTecSkills = NULL, ...) {
     if (missing(Weapon)) {
       args <- list(...)
-      self$Name <- NA
-      self$Type <- NA
-      self$Technique <- NA
-      self$Range     <- NA
-      self$Skill  <- args[["Skill"]]
-      self$Damage <- args[["Damage"]]
-      self$Modifier  <- 0L
+      private$.Name <- NA
+      private$.Type <- NA
+      private$.Technique <- NA
+      private$.Range  <- NA
+      self$Skill  <- unlist(args[["Skill"]])
+      self$Damage <- unlist(args[["Damage"]])
+      private$.Modifier <- 0L
     } else {
       if (is.character(Weapon)) # `Weapon` is a name or ID
         private$RawWeaponData <- GetWeapons(Weapon)
       else 
         private$RawWeaponData <- Weapon
       
-      self$Name      <- private$RawWeaponData[["name"]]
-      self$Type      <- .WeaponType[1+ private$RawWeaponData[["armed"]] + !private$RawWeaponData[["clsrng"]] ]
-      self$Technique <- private$RawWeaponData[["combattechID"]]
-      self$Range     <- private$RawWeaponData[["range"]]
+      private$.Name      <- private$RawWeaponData[["name"]]
+      private$.Type      <- .WeaponType[1+ private$RawWeaponData[["armed"]] + !private$RawWeaponData[["clsrng"]] ]
+      private$.Technique <- private$RawWeaponData[["combattechID"]]
+      private$.Range     <- private$RawWeaponData[["range"]]
       self$CalcSkill(Abilities, CombatTecSkills)
       self$CalcDamage(Abilities)
-      self$Modifier  <- 0L
+      private$.Modifier  <- 0L
     }
     invisible(self)
   },
@@ -160,9 +162,9 @@ WeaponBase <- R6Class(
     }
     ##TODO: DodgeSkill <- GetDodgeSkill()
 
-    self$Skill <- list(Attack = private$RawWeaponData[["AT.Skill"]], 
-                       Parry  = private$RawWeaponData[["PA.Skill"]], 
-                       Dodge  = ceiling(CharAbs[["ATTR_6"]] / 2L))
+    self$Skill <- c(Attack = private$RawWeaponData[["AT.Skill"]], 
+                    Parry  = private$RawWeaponData[["PA.Skill"]], 
+                    Dodge  = ceiling(CharAbs[["ATTR_6"]] / 2L))
     return(invisible(self))
   },
 
@@ -186,9 +188,9 @@ WeaponBase <- R6Class(
       private$RawWeaponData[["damageFlat"]] <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
     }
     
-    self$Damage <- list(N = private$RawWeaponData[["damageDiceNumber"]], 
-                        DP = private$RawWeaponData[["damageDiceSides"]], 
-                        Bonus = private$RawWeaponData[["damageFlat"]])
+    self$Damage <- c(N = private$RawWeaponData[["damageDiceNumber"]], 
+                     DP = private$RawWeaponData[["damageDiceSides"]], 
+                     Bonus = private$RawWeaponData[["damageFlat"]])
 
     return(invisible(self))
   },
@@ -214,16 +216,15 @@ WeaponBase <- R6Class(
     }
     
     # RUN
-    #--browser()
     if (length(Modifier) == length(.CombatAction)) # if actions have different modifiers ...
       Modifier <- Modifier[.CombatAction[Action]]  # ... select the right one
     self$LastModifier <- private$.Modifier + Modifier
 
-    Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
+    Skill <- private$.Skill[[ names(.CombatAction)[self$LastAction] ]]
     
     self$LastRoll <- CombatRoll()
     Verification  <- VerifyCombatRoll(self$LastRoll, Skill, self$LastModifier) # interim variable
-    self$LastResult  <- .SuccessLevel[Verification]
+    self$LastResult <- .SuccessLevel[Verification]
     
     self$LastDamage <- 0L
     if (self$LastAction == .CombatAction["Attack"])
@@ -251,7 +252,7 @@ WeaponBase <- R6Class(
     if (!self$ConfirmationMissing) return(NA)
       
     self$ConfirmationMissing <- FALSE
-    Skill <- self$Skill[[ names(.CombatAction)[self$LastAction] ]]
+    Skill <- private$.Skill[[ names(.CombatAction)[self$LastAction] ]]
 
     self$ConfirmRoll <- CombatRoll()
     Result <- .SuccessLevel[VerifyCombatRoll(self$ConfirmRoll, Skill, self$LastModifier)]
@@ -421,9 +422,9 @@ RangedWeapon <- R6Class("RangedWeapon",
   #' @return `self`
   CalcSkill = function(CharAbs, CombatTecSkill) {
    AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
-   self$Skill <- list(Attack = AtPaSkill$AT, 
-                      Parry = 0, 
-                      Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
+   self$Skill <- c(Attack = AtPaSkill$AT, 
+                   Parry = 0L, 
+                   Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
    return(invisible(self))
   },
   
