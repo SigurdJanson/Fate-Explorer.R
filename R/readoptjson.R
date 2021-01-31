@@ -194,11 +194,11 @@ UniqueWeaponFromCharacter <- function(Item) {
   IsRanged <- IsRangedWeapon(CombatTech = Item$combatTechnique)
   
   if(!IsRanged) {
-    Range     <- switch(Item$reach, "kurz", "mittel", "lang") # TODO: L10N
+    Range     <- switch(Item$reach, .CloseCombatRange[1], .CloseCombatRange[2], .CloseCombatRange[3])
     Threshold <- ifelse(is.null(Item[["primaryThreshold"]]$threshold), 
                         Item[["damageBonus"]]$threshold, 
                         Item[["primaryThreshold"]]$threshold)
-
+#-browser()
     Weapon <- list(name = Item[["name"]], 
                    combattech = CombatTechName, 
                    primeattr  = PrimaryAttr, 
@@ -268,7 +268,7 @@ GetWeapons_Opt <- function(Belongings, CombatTechniques, Abilities,
   for (Item in Belongings) {
     if (Item[["isTemplateLocked"]]) # values should come from DB is template is locked
       DatabaseWeapon <- GetWeapons(Item$template, "Any")
-    
+
     ItemIsUnique <- !Item[["isTemplateLocked"]] || is.null(DatabaseWeapon)
     if (ItemIsUnique) {
       if (is.null(Item$combatTechnique)) next # Item isn't a weapon

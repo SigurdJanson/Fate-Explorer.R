@@ -41,7 +41,7 @@ initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
   Visibility <- ifelse(is.null(Visibility), .Visibility["Clearly"], Visibility) #default
   CombatEnv[["Environment"]]$Visibility   = .Visibility[Visibility]
   
-  ElbowRoom <- ifelse(is.null(ElbowRoom), .CrampedSpace["Free"], ElbowRoom) #default
+  ElbowRoom <- ifelse(is.null(ElbowRoom), .CrampedSpace["Free"], .CrampedSpace["Cramped"]) #default
   CombatEnv[["Environment"]]$CrampedSpace = .CrampedSpace[ElbowRoom]
   
   Underwater <- ifelse(is.null(Underwater), .UnderWater["Dry"], Underwater) #default
@@ -72,11 +72,11 @@ defaultCombatEnvironment <- function(WeaponType = .WeaponType["Melee"]) {
       HeroMoves  = .MeansOfMovement["OnFoot"], 
       HeroSpeed  = .Movement["Stationary"],
       EnemyRange = EnemyRange,
-      EnemySize = .TargetSize["Medium"], 
+      EnemySize  = .TargetSize["Medium"], 
       EnemySpeed = .Movement["Slow"],
-      Evasive = .EvasiveMovement["None"],
+      Evasive    = .EvasiveMovement["None"],
       Visibility = .Visibility["Clearly"],
-      ElbowRoom = .CrampedSpace["Free"], 
+      ElbowRoom  = .CrampedSpace["Free"], 
       Underwater = .UnderWater["Dry"])
   )
 }

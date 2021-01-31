@@ -48,7 +48,7 @@ SetupCharacterWeapons <- function(AddImprov = FALSE) {
   WeaponNames <- NULL
   if (isTruthy(Weapons[["Melee"]]))
     for (r in 1:nrow(Weapons[["Melee"]])) {
-      ActiveWeapon <- MeleeWeapon$new(Weapons[["Melee"]][r,],   Character$Attr, Character$CombatSkills)
+      ActiveWeapon <- MeleeWeapon$new(Weapons[["Melee"]][r,], Character$Attr, Character$CombatSkills)
       ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
       
       Character$Weapons <- c(Character$Weapons, ActiveWeapon)
