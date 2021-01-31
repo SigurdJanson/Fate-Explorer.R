@@ -84,9 +84,11 @@ observeEvent(input$cmbCombatSelectWeapon, {
     }
   } else {
     # Default
-    ActiveWeapon <<- MeleeWeapon$new(Skill = c(Attack = 9L, Parry = 5L, ######## Weapon(s) ????
-                                                  Dodge = Character$Weapons[[1L]]$Skill$Dodge), 
-                                     Damage = c(N = 1L, DP = 6L, Bonus = 0L))
+    # - Check first if character is loaded
+    Dodge <- ifelse(isTruthy(Character$Weapons[[1L]]$Skill$Dodge), Character$Weapons[[1L]]$Skill$Dodge, 6L)
+    ActiveWeapon <<- MeleeWeapon$new(
+      Skill = c(Attack = 9L, Parry = 5L, Dodge = Dodge),
+      Damage = c(N = 1L, DP = 6L, Bonus = 0L))
     ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
   }
   # Update ui controls
