@@ -5,11 +5,6 @@ source("./dicelogic.R")
 source("./rules.R")
 source("./readoptjson.R")
 
-# Open tasks
-# - Ranged: use range to modify values
-# - Ranged: Use target size
-# - Make use of permanent modifier
-
 
 # BASE CLASS =====================================================
 
@@ -20,6 +15,7 @@ source("./readoptjson.R")
 WeaponBase <- R6Class(
   "WeaponBase", 
   active = list(
+    #' Weapon name (string, property)
     Name = function(value) {
       if (missing(value)) {
         return(private$.Name)
@@ -29,6 +25,7 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Weapon type (.WeaponType, property)
     Type = function(value) {
       if (missing(value)) {
         return(private$.Type)
@@ -40,6 +37,7 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Combat technique of the weapon (`.ComTecs` Id, property)
     Technique = function(value) {
       if (missing(value)) {
         return(private$.Technique)
@@ -49,6 +47,7 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Range of the weapon (`.CloseCombatRange`, property)
     Range = function(value) {
       if (missing(value)) {
         return(private$.Range)
@@ -58,6 +57,7 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Combat skill (property))
     Skill = function(value) {
       if (missing(value)) {
         return(private$.Skill)
@@ -68,6 +68,7 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Weapon damage, i.e. hit points (`[N]d[DP]+[Bonus]`, property)
     Damage = function(value) {
       if (missing(value)) {
         return(private$.Damage)
@@ -78,11 +79,12 @@ WeaponBase <- R6Class(
       }
     },
     
+    #' Permanent weapons modifier (integer, property)
     Modifier = function(value) {
       if (missing(value)) {
         return(private$.Modifier)
       } else {
-        private$.Modifier <- value
+        private$.Modifier <- as.integer(value)
         private$OnValueChange()
       }
     }
