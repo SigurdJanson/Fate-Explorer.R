@@ -352,8 +352,6 @@ test_that("%./%", {
     #CombatEnv$Opponent$TargetDistance    <- .TargetDistance["Medium"]
   }
   
-  CombatEnv$Opponent$TargetSize      <- .TargetSize["Medium"]
-
   CombatEnv$Environment$Visibility   <- .Visibility["Clear"]
   CombatEnv$Environment$CrampedSpace <- .CrampedSpace["Free"]
   CombatEnv$Environment$UnderWater   <- .UnderWater["Dry"]
