@@ -10,6 +10,23 @@ setwd("../../R")
 setwd(.testdir)
 
 
+test_that("Init class", {
+  Check        <- c(at = 9L, pa = 10L, do = 10L)
+
+  for (w in names(.WeaponType)) {
+    BattleGround <- CombatEnvironment$new(.WeaponType)
+    setwd(.srcdir)
+    o <- ModifyCheck(Check, BattleGround$GetCombatEnvironment(w))
+    setwd(.testdir)
+    expect_s3_class(o, "list")
+
+    #expect_identical(o, Check, label = w)
+  }
+})
+
+
+
+
 # test_that("", {
 #   # When there is no vision AT = AT /2 ----> 9 / 2 shall not be 4.5 but 5
 #   Check        <- c(at = 9L, pa = 10L, do = 10L)
@@ -23,16 +40,16 @@ setwd(.testdir)
 # })
 
 
-test_that("defaultCombatEnvironment", {
-  # A default environment is one without modifiers
-  Check        <- c(Attack = 9L, Parry = 8L, Dodge = 7L)
-  for (w in names(.WeaponType)) {
-    BattleGround <- defaultCombatEnvironment(w)
-      setwd(.srcdir)
-    o <- ModifyCheck(Check, BattleGround)
-      setwd(.testdir)
-    expect_identical(o, Check, label = w)
-  }
-})
+# test_that("defaultCombatEnvironment", {
+#   # A default environment is one without modifiers
+#   Check        <- c(Attack = 9L, Parry = 8L, Dodge = 7L)
+#   for (w in names(.WeaponType)) {
+#     BattleGround <- defaultCombatEnvironment(w)
+#       setwd(.srcdir)
+#     o <- ModifyCheck(Check, BattleGround)
+#       setwd(.testdir)
+#     expect_identical(o, Check, label = w)
+#   }
+# })
 
 
