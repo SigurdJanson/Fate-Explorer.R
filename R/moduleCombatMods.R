@@ -3,7 +3,9 @@ library(shinyWidgets)
 
 source("./battleground.R")
 
-# Modal module UI
+#' Module UI definition of the Combat Modifiers Dialog
+#' @param id Module identifier
+#' @param i18n shiny.i18n Translator object
 dlgCombatModsModuleUI <- function(id, i18n) {
     ns <- NS(id)
     actionButton(ns("btnCombatMods"), i18n$t("Combat"), icon = gicon("abacus"))
@@ -16,9 +18,13 @@ dlgCombatModsModuleUI <- function(id, i18n) {
 #' modifiers by specifying environment and opponent.
 #' @param id An ID string that identifies the module and, thus,  corresponds with 
 #' the ID used to call the module's UI function.
-#' @param i18n a shiny.i18n translation object
-#' @param Weapon An R6 WeaponBase class
-#' @return
+#' @param i18n a shiny.i18n Translator object
+#' @param WeaponName Name of the current weapon (string).
+#' @param WeaponType Weapon type (`.WeaponType`).
+#' @param WeaponRange Range of weapon (either `.CloseCombatRange` or `.RangedCombatRange`).
+#' @param WeaponSkills Base values of combat skills (`.CombatAction`)
+#' @return A vector of the format `.CombatAction`. Each value has to be subtracted from 
+#' the base value to get the effective skill value.
 dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRange, WeaponSkills) {
     moduleServer(
         id,
@@ -96,9 +102,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 )
             }
             
-            #' Enable / Disable the UI controls depnding on weapon type
+            #' Enable / Disable the UI controls depending on weapon type
             observeEvent(WeaponType(), { #
-                ##WeaponType()
 #-browser()
                 if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
                     ToDisable <- c("cmbCombatEnvCramped", "rdbOpponentWeapon")
@@ -125,24 +130,31 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 if (isTruthy(WeaponType()) &&
                     isTruthy(input$cmbHeroMeansOfMovement) &&
                     isTruthy(input$rdbOpponentWeapon) &&
+                    isTruthy(input$rdbOpponentSize) &&
                     isTruthy(input$cmbCombatEnvVision)) {
-    #-browser()
+    
                     # Convert to numeric index
                     Evasive <- .EvasiveMovement[as.integer(isTruthy(input$chbOpponentEvasive)) + 1]
                     Cramped <- .CrampedSpace[as.integer(isTruthy(input$cmbCombatEnvCramped)) + 1]
                     
                     # Which options are valid? Close or ranged combat?
-                    if (isTRUE(WeaponType() == names(.WeaponType["Ranged"])))
+                    if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
                         WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
-                    else
+                        if (input$cmbHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"])))
+                            Movement <- .Movement
+                        else
+                            Movement <- .MountedMovement
+                    } else {
                         WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
-
+                        Movement <- .Movement
+                    }
+    #-browser()
                     #TODO: risky not to use codes/ids but the translated string
                     Environment <- initCombatEnvironment(
                         Type  = ifelse(isTruthy(WeaponType()),  WeaponType(),  names(.WeaponType["Melee"])), 
                         Range = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])), 
                         HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$cmbHeroMeansOfMovement),
-                        HeroSpeed  = which(i18n$t(names(.Movement))         == input$rdbHeroMovement),
+                        HeroSpeed  = which(i18n$t(names(Movement))          == input$rdbHeroMovement),
                         EnemyRange = which(WeaponsRangeChoices              == input$rdbOpponentWeapon),
                         EnemySize  = which(i18n$t(names(.TargetSize))       == input$rdbOpponentSize),
                         EnemySpeed = which(i18n$t(names(.Movement))         == input$rdbOpponentMovement),
