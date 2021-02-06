@@ -9,22 +9,67 @@ setwd("../../R")
   source("./battleground.R")
 setwd(.testdir)
 
-
+# This test uses the fact that a Combat Environent in it's default configuration
+# shall not affect the combat abilities.
 test_that("Init class", {
   Check        <- c(at = 9L, pa = 10L, do = 10L)
 
   for (w in names(.WeaponType)) {
-    BattleGround <- CombatEnvironment$new(.WeaponType)
-    setwd(.srcdir)
-    o <- ModifyCheck(Check, BattleGround$GetCombatEnvironment(w))
-    setwd(.testdir)
-    expect_s3_class(o, "list")
+    BattleGround <- CombatEnvironment$new(.WeaponType[w])
+    expect_type(BattleGround, "environment")
+    expect_s3_class(BattleGround, "R6")
 
-    #expect_identical(o, Check, label = w)
+    setwd(.srcdir)###
+
+    CombatEnv <- BattleGround$GetCombatEnvironment(w)
+    expect_type(CombatEnv, "list")
+
+    # Content: check only values that are universal across weapon types
+    expect_identical(CombatEnv$Hero$WeaponType, .WeaponType[w])
+    expect_identical(CombatEnv$Opponent$TargetSize, .TargetSize["Medium"])
+    expect_identical(CombatEnv$Environment$Visibility, .Visibility["Clearly"])
+    expect_identical(CombatEnv$Environment$UnderWater, .UnderWater["Dry"])
+
+
+    # `Check` shall be unchanged
+    o <- ModifyCheck(Check, CombatEnv)
+    expect_identical(o, Check, info = w)
+
+    setwd(.testdir)###
   }
 })
 
 
+
+test_that("Init class", {
+  for (w in names(.WeaponType)) {
+    BattleGround <- CombatEnvironment$new(.WeaponType[w])
+
+    setwd(.srcdir)###
+    CombatEnv <- BattleGround$GetCombatEnvironment(w)
+    setwd(.testdir)###
+
+    if (w == "Ranged") {
+      expect_identical(CombatEnv$Hero$MeansOfMovement, .MeansOfMovement["OnFoot"], label = w)
+      expect_identical(CombatEnv$Hero$Movement, .Movement["Stationary"], label = w)
+      expect_identical(CombatEnv$Opponent$Movement, .Movement["Slow"], label = w)
+      expect_identical(CombatEnv$Opponent$Distance, .TargetDistance["Medium"], label = w)
+
+      expect_null(CombatEnv$Hero$CloseCombatRange)
+      expect_null(CombatEnv$Opponent$CloseCombatRange)
+      expect_null(CombatEnv$Environment$CrampedSpace)
+    } else if (w == "Melee") {
+      expect_null(CombatEnv$Hero$MeansOfMovement)
+      expect_null(CombatEnv$Hero$Movement)
+      expect_null(CombatEnv$Opponent$Movement)
+      expect_null(CombatEnv$Opponent$Distance)
+
+      expect_identical(CombatEnv$Hero$CloseCombatRange, .CloseCombatRange["Short"], label = w)
+      expect_identical(CombatEnv$Opponent$CloseCombatRange, .CloseCombatRange["Short"], label = w)
+      expect_identical(CombatEnv$Environment$CrampedSpace, .CrampedSpace["Free"], label = w)
+    }
+  }
+})
 
 
 # test_that("", {
