@@ -16,7 +16,7 @@ UpdateCombatModsModulePayload <- function(Weapon) {
   }
 }
 
-ActiveWeapon <- MeleeWeapon$new(Skill  = c(Attack = 10L, Parry = 10L, Dodge = 10L), 
+ActiveWeapon <- MeleeWeapon$new(Skill  = c(Attack = 10L, Parry = 10L, Dodge = 10L),
                                 Damage = c(N = 1L, DP = 6L, Bonus = 0L))
 ActiveWeapon$Type <- .WeaponType["Melee"]
 ActiveWeapon$RegisterOnValueChange(UpdateCombatModsModulePayload)
@@ -29,20 +29,21 @@ InitiativeRollResult <- reactiveVal(NULL)
 
 # Get effective combat values
 UpdateEffectiveCombatValues <- function(Actions) {
+  req(CombatModifier())
   for (a in Actions) {
     EffectiveValue <- unname(ActiveWeapon$Skill[a] + CombatModifier()[a] + input$inpCombatMod)
     EffectiveValue <- max(EffectiveValue, 0L)
     # Find the right icon
     Comparison <- input[[paste0("inp", a, "Value")]] - EffectiveValue
-    Comparison <- sign(Comparison) +2L # map (-1:1) to  (1:3) 
+    Comparison <- sign(Comparison) +2L # map (-1:1) to  (1:3)
     if (isTruthy(Comparison))
       Icon <- switch(letters[Comparison], a = gicon("plus-circle"),
                      b = list("-"), c = gicon("minus-circle"))
     else
       Icon <- list("-")
-    
+
     isolate(
-      updateNumericInputIcon(session, paste0("inp", a, "Mod"), 
+      updateNumericInputIcon(session, paste0("inp", a, "Mod"),
                              value = EffectiveValue, icon = Icon)
     )
   }
@@ -79,7 +80,7 @@ observeEvent(input$cmbCombatSelectWeapon, {
       # Get weapon from character
       for (w in Character$Weapons) {
         if (w$Name == Weapon) {
-          ActiveWeapon <<- w; 
+          ActiveWeapon <<- w;
           UpdateCombatModsModulePayload(ActiveWeapon)
           break
         }
@@ -97,17 +98,17 @@ observeEvent(input$cmbCombatSelectWeapon, {
   }
   # Update ui controls
   for(Action in names(.CombatAction)) {
-    updateNumericInput(session, paste0("inp", Action, "Value"), 
+    updateNumericInput(session, paste0("inp", Action, "Value"),
                        value = unname(ActiveWeapon$Skill[Action]))
   }
-  updateNumericInputIcon(session, "inpDamageDieCount", 
-                         value = unname(ActiveWeapon$Damage["N"]), 
+  updateNumericInputIcon(session, "inpDamageDieCount",
+                         value = unname(ActiveWeapon$Damage["N"]),
                          icon = list(NULL, paste0("W", ActiveWeapon$Damage["DP"])))
   updateNumericInput(session, "inpDamage", value = unname(ActiveWeapon$Damage["Bonus"]))
-  
+
   # Update module payload
   UpdateCombatModsModulePayload()
-  
+
   if(ActiveWeapon$CanParry()) {
     shinyjs::enable("doParryRoll")
     shinyjs::enable("inpParryValue")
@@ -153,7 +154,7 @@ observeEvent(input$inpCombatMod, {
   if (isTruthy(input$inpCombatMod))
     UpdateEffectiveCombatValues(names(.CombatAction))
 })
-  
+
 # ACTIONS -------------------------------
 doCombatRollBase <- function(Action) {
   InitiativeRollResult(NULL)
@@ -176,7 +177,7 @@ observeEvent(input$doDodgeRoll, { # Dodge Roll
 
 observeEvent(input$doInitiativeRoll, { # Initiative Roll
   UpdateCombatResult(NULL)
-  
+
   InitiativeRollResult(NULL) # make sure the roll is recognized
 
   RollInProgress("doInitiativeRoll", TRUE)
@@ -197,8 +198,8 @@ observeEvent(input$doCombatFumble, { # Show fumble result
 output$uiCombatRollButtons <- renderUI({
   if (isTruthy(Character$Attr)) {
     ColumnInitiative <- column(3L, style="padding-right:1%",
-                               actionButton("doInitiativeRoll", 
-                                            span(i18n$t("Initiative"), id="lbldoInitiativeRoll"), 
+                               actionButton("doInitiativeRoll",
+                                            span(i18n$t("Initiative"), id="lbldoInitiativeRoll"),
                                             icon = gicon("initiative"),
                                             width = "98%", style = "font-size: 140%"))
     AvailableWidth <- 12L / 4L * 3L
@@ -207,20 +208,20 @@ output$uiCombatRollButtons <- renderUI({
     AvailableWidth <- 12L
   }
 
-  ColumnAttack <- column(AvailableWidth %/% 3, 
-                         actionButton("doAttackRoll", 
-                                      span(i18n$t("Attack"), id="lbldoAttackRoll"), 
+  ColumnAttack <- column(AvailableWidth %/% 3,
+                         actionButton("doAttackRoll",
+                                      span(i18n$t("Attack"), id="lbldoAttackRoll"),
                                       icon = gicon("battle-axe"),
-                                      width = "98%", 
+                                      width = "98%",
                                       style = "font-size: 140%"))
   ColumnDefense <- column(2 * AvailableWidth %/% 3, style="padding-right:1%",
-                          actionButton("doParryRoll", 
+                          actionButton("doParryRoll",
                                        span(i18n$t("Parry"), id="lbldoParryRoll"), icon = gicon("shield"),
                                        width = "49%", style = "font-size: 140%"),#
-                          actionButton("doDodgeRoll", 
+                          actionButton("doDodgeRoll",
                                        span(i18n$t("Dodge"), id="lbldoDodgeRoll"), icon = gicon("dodge"),
                                        width = "49%", style = "font-size: 140%"),)
-  
+
   Output <- fluidPage(fluidRow(
     ColumnAttack, ColumnDefense, ColumnInitiative
   ))
@@ -237,19 +238,19 @@ output$uiCombatRoll <- renderText({
   if (isTruthy(ActiveWeapon$ConfirmRoll))
     ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),
                                               ActiveWeapon$ConfirmRoll, i18n)
-  else 
+  else
     ConfirmationStr <- NULL
 
   # Render the result
   if (ActiveWeapon$LastAction == .CombatAction["Attack"])
-    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), 
-                                     ActiveWeapon$LastDamage, 
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult),
+                                     ActiveWeapon$LastDamage,
                                      ActiveWeapon$LastRoll, KeyUnit = "hp")
   else
-    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult), 
-                                     ActiveWeapon$LastRoll, 
+    KeyResult <- RenderRollKeyResult(names(ActiveWeapon$LastResult),
+                                     ActiveWeapon$LastRoll,
                                      KeyUnit = "dr")
-  
+
   Result <- tagList()
 
   # Confirmation
@@ -270,15 +271,15 @@ output$uiCombatRoll <- renderText({
       }
     }
   }
-  
+
   # Finally restore the buttons
   Sys.sleep(0.1)
   shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
 
   # Return the results
   if (length(Result) > 0) # two panels
-    return(as.character( div(KeyResult, 
-                             div(Result, class = "shiny-html-output shiny-bound-output"), 
+    return(as.character( div(KeyResult,
+                             div(Result, class = "shiny-html-output shiny-bound-output"),
                              class = "roll") ))
   else # key result panel, only
     return(as.character(KeyResult))
@@ -293,12 +294,12 @@ output$uiInitiativeRoll <- renderText({
   # Finally restore the buttons
   Sys.sleep(0.3) # artificially delay the result for increased tension
   shinyjs::delay(700, RollInProgress("doInitiativeRoll", FALSE))
-  
+
   # Update button and result display
   Roll <- InitiativeRollResult()
-  updateActionButton(session, inputId = "doInitiativeRoll", 
+  updateActionButton(session, inputId = "doInitiativeRoll",
                      label = RollButtonLabel("doInitiativeRoll", i18n$t("Initiative"), Roll))
-  
+
   Result <- RenderRollKeyResult("Initiative", Roll, KeyUnit = "dr")
   return(as.character(Result))
 })
@@ -308,8 +309,8 @@ output$uiInitiativeRoll <- renderText({
 # OUTPUT: Weapon details Panel ---------- ----------
 # (harvest Ulisses Wiki)
 output$ShowWeaponDetails <- reactive({
-  return( input$chbHarvestWeaponDetails && 
-            !is.null(Character$Weapons) && 
+  return( input$chbHarvestWeaponDetails &&
+            !is.null(Character$Weapons) &&
             input$chbPredefinedWeapon )
 })
 outputOptions(output, 'ShowWeaponDetails', suspendWhenHidden = FALSE)
@@ -319,7 +320,7 @@ output$WeaponDetails <- renderText({
   Result <- ""
   if (input$chbPredefinedWeapon) {
     Weapon <- as.character(input$cmbCombatSelectWeapon)
-    
+
     WeaponData <- GetWeapons(Weapon, "Any")
     URL <- WeaponData[["url"]]
 
@@ -338,11 +339,11 @@ output$WeaponDetails <- renderText({
     # Render result to HTML
     Title <- paste0("<p><strong>", i18n$t("Weapon Details"), "</strong></p>")
     Result <- paste0(Result, collapse="") # Collapse several strings into one
-    Result <- paste0("<div style='color:gray;padding:0.5em;border: 1px solid lightgray'>", 
-                     Title, Result, 
+    Result <- paste0("<div style='color:gray;padding:0.5em;border: 1px solid lightgray'>",
+                     Title, Result,
                      "</div")
   }
-  
+
   return(Result)
 })
 

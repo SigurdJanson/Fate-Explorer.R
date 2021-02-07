@@ -394,7 +394,7 @@ GetCombatModifiers <- function(lang = .Language) {
   if (is.null(Pointer)) return(NULL)
   # get the *name* of the required enum
   ## split pointer in it's parts and get (length-1)th element
-  Index <- nchar(gsub("[^.]", "", Pointer))
+  Index <- nchar(gsub("[^.]", "", Pointer)) #
   EnumName <- unlist(strsplit(Pointer, "[.]"))[Index+IndexCorrect]
   EnumName <- paste0(".", EnumName)
   ## check if it exists
@@ -431,7 +431,7 @@ ModifyCheck <- function(CheckValues, Environment) {
     stop("Argument 'Environment' is not a valid list")
 
   EnvFlat <- unlist(Environment)
-
+#-browser()
   Topics <- GetCombatModifiers()
   for (Topic in Topics) {
     for (Variation in Topic) {
