@@ -149,11 +149,11 @@
 },
 {
     "Conditions": {"Hero.WeaponType": "Ranged", "Hero.MeansOfMovement": "Mounted"},
-    "Criterion": "Hero.MountedMovement",
+    "Criterion": "Hero.Movement",
     "Modifiers": {
         "Standing": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
         "Walk":     {"Attack": {"op": "+", "arg": -4}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
-        "Trot":     {"Attack": {"op": "min", "arg":  1}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
+        "Trot":     {"Attack": {"op": "min", "arg": 1}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""},
         "Gallop":   {"Attack": {"op": "+", "arg": -8}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}, "example": ""}
     }
 },
