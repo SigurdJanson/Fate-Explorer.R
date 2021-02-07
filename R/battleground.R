@@ -145,31 +145,31 @@ CombatEnvironment <- R6Class(
         if (any(is.na(CloseCombatRange)) ||
             CloseCombatRange %in% .CloseCombatRange ||
             CloseCombatRange %in% names(.CloseCombatRange)) {
-          private$.Opponent.CloseCombatRange <- CloseCombatRange
+          private$.Opponent.CloseCombatRange <- .CloseCombatRange[CloseCombatRange]
         }
       }
       if (!missing(Size)) {
         if (any(is.na(Size)) ||
             Size %in% .TargetSize || Size %in% names(.TargetSize)) {
-          private$.Opponent.Size <- Size
+          private$.Opponent.Size <- .TargetSize[Size]
         }
       }
       if (!missing(Distance)) {
         if (any(is.na(Distance)) ||
             Size %in% .TargetDistance || Size %in% names(.TargetDistance)) {
-          private$.Opponent.Distance <- Distance
+          private$.Opponent.Distance <- .TargetDistance[Distance]
         }
       }
       if (!missing(Movement)) {
         if (any(is.na(Movement)) ||
             Movement %in% .Movement || Movement %in% names(.Movement)) {
-          private$.Opponent.Movement <- Movement
+          private$.Opponent.Movement <- .Movement[Movement]
         }
       }
       if (!missing(Evasive)) {
         if (any(is.na(Evasive)) ||
             Evasive %in% .EvasiveMovement || Evasive %in% names(.EvasiveMovement)) {
-          private$.Opponent.EvasiveMovement <- Evasive
+          private$.Opponent.EvasiveMovement <- .EvasiveMovement[Evasive]
         }
       }
       return(invisible(self))
@@ -193,8 +193,9 @@ CombatEnvironment <- R6Class(
     },
 
 
-    GetCombatEnvironment = function(weaponType) {
-      self$WeaponType <- weaponType
+    GetCombatEnvironment = function(weaponType = self$WeaponType) {
+      if (weaponType %in% .WeaponType)
+        self$WeaponType <- .WeaponType[weaponType]
 
       CombatEnv <- list(
         Hero = list(
