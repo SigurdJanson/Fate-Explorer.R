@@ -35,11 +35,11 @@ CombatEnvironment <- R6Class(
       if (missing(value)) {
         return(private$.Environment.Visibility)
       } else {
+        if (is.null(value) || is.na(value)) value <- .Visibility["Clearly"]  # default
+
         isValid <- value %in% .Visibility | value %in% names(.Visibility)
-        if (!isValid && (is.integer(value) || is.character(value)))
+        if (isFALSE(isValid))
           stop(sprintf("Visibility of '%s' is unknown", str(value)))
-        else
-          value <- .Visibility["Clearly"]  # default
 
         private$.Environment.Visibility <- .Visibility[value]
       }
@@ -49,11 +49,11 @@ CombatEnvironment <- R6Class(
       if (missing(value)) {
         return(private$.Environment.CrampedSpace)
       } else {
+        if (is.null(value) || is.na(value)) value <- .CrampedSpace["Free"]  # default
+
         isValid <- value %in% .CrampedSpace | value %in% names(.CrampedSpace)
-        if (!isValid && (is.integer(value) || is.character(value)))
+        if (isFALSE(isValid))
           stop(sprintf("Cramped space of '%s' is unknown", str(value)))
-        else
-          value <- .CrampedSpace["Free"]  # default
 
         private$.Environment.CrampedSpace <- .CrampedSpace[value]
       }
@@ -63,11 +63,11 @@ CombatEnvironment <- R6Class(
       if (missing(value)) {
         return(private$.Environment.UnderWater)
       } else {
+        if (is.null(value) || is.na(value)) value <- .UnderWater["Dry"]
+
         isValid <- value %in% .UnderWater | value %in% names(.UnderWater)
-        if (!isValid && (is.integer(value) || is.character(value)))
+        if (isFALSE(isValid))
           stop(sprintf("Under water condition of '%s' is unknown", str(value)))
-        else
-          value <- .UnderWater["Dry"]  # default
 
         private$.Environment.UnderWater <- .UnderWater[value]
       }
@@ -115,6 +115,7 @@ CombatEnvironment <- R6Class(
     initCombatEnvironment = function(Type, Range, HeroMoves, HeroSpeed,
                                       EnemyRange, EnemySize, EnemyDistance, EnemySpeed, Evasive,
                                       Visibility, ElbowRoom, Underwater) {
+#-browser()
       # PRECONDITIONS
       if (isFALSE(Type %in% .WeaponType))
         stop("Weapon type is the most important criterion of a weapon and cannot be omitted")
@@ -182,9 +183,9 @@ CombatEnvironment <- R6Class(
       else
         stop("Unknown means of movement")
 
-      if (.MeansOfMovement[Means] == .MeansOfMovement["OnFoot"])
+      if (isTRUE(.MeansOfMovement[Means] == .MeansOfMovement["OnFoot"]))
         private$.Hero.Movement <- .Movement[Speed]
-      else if (.MeansOfMovement[Means] == .MeansOfMovement["Mounted"])
+      else if (isTRUE(.MeansOfMovement[Means] == .MeansOfMovement["Mounted"]))
         private$.Hero.Movement <- .MountedMovement[Speed]
       else
         stop("Unhandled means of movement")
