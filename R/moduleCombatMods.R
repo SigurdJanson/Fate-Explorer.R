@@ -104,7 +104,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             } # UI
 
             #' Enable / Disable the UI controls depending on weapon type
-            observeEvent(WeaponType(), { #
+            observe({ #Event(WeaponType(), { #
 #-browser()
                 if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
                     ToDisable <- c("cbCombatEnvCramped", "rdbOpponentWeapon")
@@ -137,17 +137,14 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
             #'
             EffectiveValues <- reactive({
-                req(CombatEnv())
-    #browser()
-                # truthy <- vapply(names(input),
-                #                  function(x) { if (startsWith(x, ns(""))) isTruthy(input[[x]]) else TRUE },
-                #                  logical(1))
-                if (isTruthy(WeaponType()) &&
-                    isTruthy(input$cmbHeroMeansOfMovement) &&
-                    isTruthy(input$rdbOpponentWeapon) &&
-                    isTruthy(input$rdbOpponentSize) &&
-                    isTruthy(input$cmbCombatEnvVision)) {
+                # Check if all widgets in this module are valid (except check boxes)
+                WidgValid <- vapply(names(input),
+                                    function(x) { if (!any(startsWith(x, c("cb", "btn")))) isTruthy(input[[x]]) else TRUE },
+                                    logical(1))
+                WidgValid <- length(WidgValid) > 1 & allTruthy(WidgValid, WeaponType(), CombatEnv())
 
+    #-browser()
+                if (WidgValid) {
                     # Convert to numeric index to enum
                     Evasive <- .EvasiveMovement[as.integer(isTruthy(input$cbOpponentEvasive)) + 1]
                     Cramped <- .CrampedSpace[as.integer(isTruthy(input$cbCombatEnvCramped)) + 1]
@@ -163,10 +160,10 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
                         Movement <- .Movement
                     }
-    #-browser()
+
                     #TODO: risky not to use codes/ids but the translated string
                     CombatEnv()$initCombatEnvironment(
-                        Type  = ifelse(isTruthy(WeaponType()),  WeaponType(),  names(.WeaponType["Melee"])),
+                        Type  = .WeaponType[ifelse(isTruthy(WeaponType()),  WeaponType(),  .WeaponType["Melee"])],
                         Range = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])),
                         HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$cmbHeroMeansOfMovement),
                         HeroSpeed  = which(i18n$t(names(Movement))          == input$rdbHeroMovement),
@@ -176,12 +173,12 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Evasive    = Evasive,
                         Visibility = which(i18n$t(names(.Visibility))       == input$cmbCombatEnvVision),
                         ElbowRoom  = Cramped,
-                        Underwater = which(i18n$t(names(.UnderWater))       == input$cmbCombatEnvWater)
+                        Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input$cmbCombatEnvWater)]
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
-        #-browser()
+       #- browser()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
-                } else {
+                } else { # if no Combat Environment can be constructed
                     ESV <- WeaponSkills()
                 }
 
