@@ -12,10 +12,26 @@ replace_umlauts <- function(x) {
   UMLAUTS <- "ÄÖÜ"
   x <- gsub(pattern = paste0("([", UMLAUTS, "])"), replacement = "\\1E", x)
   x <- gsub(pattern = paste0("([", umlauts, "])"), replacement = "\\1e", x)
-  Replacement <- "AOUaou" 
+  Replacement <- "AOUaou"
   x <- chartr(old = paste0(UMLAUTS, umlauts), new = Replacement, x)
   return(x)
 }
+
+
+allTruthy <- function(...) {
+  Args <- list(...)
+  Result <- vapply(Args, isTruthy, FUN.VALUE = logical(1L))
+  if (!all(Result)) return(FALSE)
+  if (all(length(Args) == 1L)) return(TRUE)
+
+  Result <- logical()
+  for (a in Args) {
+    PartialResult <- vapply(a, isTruthy, FUN.VALUE = logical(1L))
+    Result <- c(Result, all(PartialResult))
+  }
+  return(all(Result))
+}
+
 
 
 # VIEW -----------
@@ -25,9 +41,9 @@ replace_umlauts <- function(x) {
 #' @param buttonId The `inputId` of the button
 #' @param Label The label (string)
 #' @param Result A roll check result
-#' @param inProgress 
-#' @details 
-#' * If a roll `Result` is given the button label will be "Label (Result)" 
+#' @param inProgress
+#' @details
+#' * If a roll `Result` is given the button label will be "Label (Result)"
 #' * If `inProgress` is TRUE the class will be set to "loading" to show the animation
 #' @return a string that can be used as label
 RollButtonLabel <- function(buttonId, Label, Result = NULL, inProgress = FALSE) {
@@ -36,9 +52,9 @@ RollButtonLabel <- function(buttonId, Label, Result = NULL, inProgress = FALSE) 
     Label   <- paste0(Label, " (", Result, ")")
   if (inProgress)
     spanClass <- "loading dots"
-  else 
+  else
     spanClass <- ""
-  
+
   return( as.character(span(Label, id = labelId, class = spanClass)) )
 }
 
@@ -57,7 +73,7 @@ RollInProgress <- function(buttonId, inProgress) {
     shinyjs::removeClass(id = paste0("lbl", buttonId), class = "loading dots")
     shinyjs::enable(buttonId)
   }
-  
+
   return( invisible(NULL) )
 }
 
@@ -77,7 +93,7 @@ gicon <- function (name, class = NULL, lib = "fe") {
   prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon", gameicon = "game-icon", fe = "icon-fe")
   prefix <- prefixes[[lib]]
   if (is.null(prefix)) {
-    stop("Unknown font library '", lib, "' specified. Must be one of ", 
+    stop("Unknown font library '", lib, "' specified. Must be one of ",
          paste0("\"", names(prefixes), "\"", collapse = ", "))
   }
   # set class name to get the icon
@@ -89,14 +105,14 @@ gicon <- function (name, class = NULL, lib = "fe") {
     }
     iconClass <- paste0(prefix_class, " ", prefix, "-", name)
   }
-  if (!is.null(class)) 
+  if (!is.null(class))
     iconClass <- paste(iconClass, class)
 
   iconTag <- tags$i(class = iconClass)
   if (lib == "font-awesome") {
-    htmlDependencies(iconTag) <- htmlDependency("font-awesome", "5.3.1", 
-                                                "www/shared/fontawesome", package = "shiny", 
-                                                stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))  
+    htmlDependencies(iconTag) <- htmlDependency("font-awesome", "5.3.1",
+                                                "www/shared/fontawesome", package = "shiny",
+                                                stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))
   }
   htmltools::browsable(iconTag)
 }
@@ -131,7 +147,7 @@ RenderRollConfirmation <- function( RollResult, RollValue = NA, i18n = NULL ) {
   if (isTruthy(RollValue)) {
     Message <- paste0(Message, " (", paste0(RollValue, collapse = " / "), ")")
   }
-  
+
   return(p(Message))
 }
 
@@ -158,15 +174,15 @@ RenderFumbleRollEffect <- function( Effect ) {
 #' @param FurtherValue An additional number or string that will be appended to `KeyResult`
 #' in brackets.
 #' @param KeyUnit dr = die roll, ql = quality level of skill checks, hp = hit points.
-#' @return The result from these functions is a tag object, which can be 
+#' @return The result from these functions is a tag object, which can be
 #' converted using `as.character()`.
-RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL, 
+RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL,
                                 KeyUnit = c("dr", "ql", "hp")) {
   if (!isTruthy(KeyResult)) return("")
-  
+
   if (grepl("Fumble", KeyResult))
     SuccessIcon  <- "icon icon-fe-crowned-skull col-fumble ico-success"
-  else if (grepl("Critical", KeyResult)) 
+  else if (grepl("Critical", KeyResult))
     SuccessIcon  <- "icon-fe icon-fe-laurel-crown col-critical ico-success"
   else if (grepl("Success", KeyResult))
     SuccessIcon  <- "icon-fe icon-fe-laurels col-success ico-success"
@@ -176,18 +192,18 @@ RenderRollKeyResult <- function(KeyResult, KeyValue, FurtherValue = NULL,
 
   if (isTruthy(FurtherValue))
     KeyResult <- paste0(i18n$t(KeyResult), " (", FurtherValue, ")")
-  else 
+  else
     KeyResult <- i18n$t(KeyResult)
-  
+
   if (!missing(KeyUnit))
     KeyUnit <- match.arg(KeyUnit)
   else
     KeyUnit <- "dr"
   ParClass <- "keyval"
-  
-  Result <- div(tags$p( tags$i(class = SuccessIcon, .noWS = c("after")), 
-                        span(format(KeyValue, width = 2, justify = "right"), class = KeyUnit), 
-                        class = ParClass, .noWS = c("before") ), 
+
+  Result <- div(tags$p( tags$i(class = SuccessIcon, .noWS = c("after")),
+                        span(format(KeyValue, width = 2, justify = "right"), class = KeyUnit),
+                        class = ParClass, .noWS = c("before") ),
                 tags$p(KeyResult, class = "keyresult"),
                 class = "roll-keyval")
   return(Result)
