@@ -31,6 +31,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
         function(input, output, session) { # Shiny module server function
             ns <- session$ns
+            .CombatEnv <- NULL # Variable to hold the current combat environment
 
 
             ModalDlgFunction <- function() {
@@ -53,7 +54,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                selectInput(
                                    ns("selHeroMeansOfMovement"), i18n$t("Movement"),
                                    choices = i18n$t(names(.MeansOfMovement)),
-                                   selected = i18n$t(names(Defaults$Hero$MeansOfMovement))),
+                                   selected = i18n$t(names(Defaults$Hero$MeansOfMovement))), # CombatEnv()$MeansOfMovement
                                sliderTextInput(
                                    ns("selHeroMovement"), label = NULL, grid = TRUE, force_edges = TRUE,
                                    choices = "-", # reactive value
@@ -103,11 +104,10 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 )
             } # UI
 
+
+            #' HandleDisabled
             #' Enable / Disable the UI controls depending on weapon type
-            ###observe({ #Event(WeaponType(), { #
             HandleDisabled <- function() {
-    browser()
-                ToEnable <- names(input)
                 if (isTRUE(.WeaponType[WeaponType()] == .WeaponType["Ranged"])) {
                     ToDisable <- c("selOpponentWeapon", "cbCombatEnvCramped")
                 } else {
@@ -115,22 +115,29 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                    "selOpponentDistance", "selOpponentMovement",
                                    "cbOpponentEvasive")
                 }
-                ToEnable <- ToEnable[!(ToEnable %in% ToDisable)] # enable everything except `ToDisable`
+                ToEnable <- names(input)
+                ToEnable <- ToEnable[!(names(input) %in% ToDisable)] # enable everything except `ToDisable`
                 for (i in ToEnable) shinyjs::enable(i)
                 for (i in ToDisable) shinyjs::disable(i)
+
+                return(invisible(NULL))
             }
-            ##})
 
 
             #'
             CombatEnv <- reactive({
-                if (isTruthy(WeaponType()))
-                    env <- CombatEnvironment$new(WeaponType())
-                else
-                    env <- CombatEnvironment$new(.WeaponType["Melee"])
+       #- browser()
+                if (!isTruthy(.CombatEnv)) {
+                    if (isTruthy(WeaponType()))
+                        .CombatEnv <- CombatEnvironment$new(WeaponType())
+                    else
+                        .CombatEnv <- CombatEnvironment$new(.WeaponType["Melee"])
+                } else {
+                    .CombatEnv$WeaponType <- WeaponType()
+                }
                 if (isTruthy(WeaponRange()))
-                    env$CombatRange <- WeaponRange()
-                return(env)
+                    .CombatEnv$CombatRange <- WeaponRange()
+                return(.CombatEnv)
             })
 
 
@@ -186,7 +193,10 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             })
 
             Modifiers <- reactive({
-                return(EffectiveValues() - isolate(WeaponSkills()))
+                if(isTruthy(EffectiveValues()) && isTruthy(WeaponSkills()))
+                    return(EffectiveValues() - isolate(WeaponSkills()))
+                else
+                    return(NULL)
             })
 
 
