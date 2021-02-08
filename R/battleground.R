@@ -25,7 +25,7 @@ CombatEnvironment <- R6Class(
         return(private$.Hero.CombatRange)
       } else {
         if (private$.WeaponType == .WeaponType["Ranged"])
-          private$.Hero.CombatRange <- .RangedCombatRange[value]
+          private$.Hero.CombatRange <- value #.RangedCombatRange[value]
         else
           private$.Hero.CombatRange <- .CloseCombatRange[value]
       }
@@ -76,38 +76,30 @@ CombatEnvironment <- R6Class(
 
   ),
   public = list(
+    Defaults = data.frame(
+      WeaponType = unname( .WeaponType ), # c(Unarmed = 1L, Melee = 2L, Ranged = 3L, Shield = 4L)
+      Hero.CombatRange     = unname( c(rep(.CloseCombatRange["Short"], 2L), NA_integer_, .CloseCombatRange["Short"]) ),
+      Hero.MeansOfMovement = unname( rep(.MeansOfMovement["OnFoot"], 4L) ),
+      Hero.Movement        = unname( rep(.Movement["Stationary"],    4L) ),
+      Opponent.CloseCombatRange = unname( c(rep(.CloseCombatRange["Short"], 2L), NA_integer_, .CloseCombatRange["Short"]) ),
+      Opponent.Size     = unname( rep(.TargetSize["Medium"], 4L) ),
+      Opponent.Distance = unname( c(rep(NA_integer_, 2L), .TargetDistance["Medium"], NA_integer_) ),
+      Opponent.Movement = unname( c(rep(.Movement["Stationary"], 2L), .Movement["Slow"], .Movement["Stationary"]) ),
+      Opponent.EvasiveMovement = unname( rep(.EvasiveMovement["None"], 4L) ),
+
+      Environment.Visibility   = unname( rep(.Visibility["Clearly"], 4L) ),
+      Environment.CrampedSpace = unname( rep(.CrampedSpace["Free"], 4L) ),
+      Environment.UnderWater   = unname( rep(.UnderWater["Dry"], 4L) )
+    ),
+
     #' Constructor
     #' @param WeaponType A `.WeaponType` enum value
     #' @return `self`
     initialize = function(WeaponType) {
       if (isFALSE(WeaponType %in% .WeaponType)) stop("Unknown weapon type")
 
-      if (WeaponType == .WeaponType["Ranged"]) {
-        Range <- c(0, 0, 0)
-        HeroSpeed  <- .Movement["Stationary"]
-        EnemyRange <- .RangedCombatRange["Medium"]
-      }
-      else {
-        Range <- .CloseCombatRange["Short"]
-        HeroSpeed  <- .Movement["Stationary"]
-        EnemyRange <- Range
-      }
-
-      return(invisible(
-        self$initCombatEnvironment(
-          Type  = WeaponType,
-          Range = Range,
-          HeroMoves  = .MeansOfMovement["OnFoot"],
-          HeroSpeed  = HeroSpeed,
-          EnemyRange = EnemyRange,
-          EnemySize  = .TargetSize["Medium"],
-          EnemyDistance = .TargetDistance["Medium"],
-          EnemySpeed = .Movement["Slow"],
-          Evasive    = .EvasiveMovement["None"],
-          Visibility = .Visibility["Clearly"],
-          ElbowRoom  = .CrampedSpace["Free"],
-          Underwater = .UnderWater["Dry"])
-      ))
+      self$resetToDefault(WeaponType)
+      return(invisible(self))
     },
 
 
@@ -134,6 +126,52 @@ CombatEnvironment <- R6Class(
       return(invisible(self))
     },
 
+
+    resetToDefault = function(weaponType) {
+      if (isFALSE(weaponType %in% .WeaponType)) stop("Unknown weapon type")
+
+      invisible(
+        self$initCombatEnvironment(
+          Type  = weaponType,
+          Range = self$Defaults[weaponType, "Hero.CombatRange"],
+          HeroMoves     = self$Defaults[weaponType, "Hero.MeansOfMovement"],
+          HeroSpeed     = self$Defaults[weaponType, "Hero.Movement"],
+          EnemyRange    = self$Defaults[weaponType, "Opponent.CloseCombatRange"],
+          EnemySize     = self$Defaults[weaponType, "Opponent.Size"],
+          EnemyDistance = self$Defaults[weaponType, "Opponent.Distance"],
+          EnemySpeed    = self$Defaults[weaponType, "Opponent.Movement"],
+          Evasive       = self$Defaults[weaponType, "Opponent.EvasiveMovement"],
+          Visibility    = self$Defaults[weaponType, "Environment.Visibility"],
+          ElbowRoom     = self$Defaults[weaponType, "Environment.CrampedSpace"],
+          Underwater    = self$Defaults[weaponType, "Environment.UnderWater"]
+        ))
+    },
+
+
+    getValue = function(groupId = "", valueId) {
+      Names <- names(private)
+      Found <- endsWith(Names, valueId)
+      Found <- Names[Found]
+      if (length(Found) > 1) {
+        Found <- paste("", groupId, valueId, sep = ".")
+      }
+      return(private[[Found]])
+    },
+
+    getDefault = function(groupId = "", valueId) {
+  #browser()
+      Names <- names(self$Defaults)
+      Found <- endsWith(Names, valueId)
+      Found <- Names[Found]
+      if (length(Found) > 1) {
+        Found <- paste(groupId, valueId, sep = ".")
+      }
+      Row    <- .WeaponType[self$Defaults$WeaponType] == .WeaponType[private$.WeaponType]
+      Column <- names(self$Defaults) == Found
+      Result <- self$Defaults[Row, Column]
+      if (isFALSE(nrow(Result) > 0 && ncol(Result) > 0)) Result <- NA
+      return(Result)
+    },
 
     #' @title SetOpponent
     #' @param CloseCombatRange A `.CloseCombatRange` enum
@@ -193,7 +231,6 @@ CombatEnvironment <- R6Class(
       return(invisible(self))
     },
 
-
     GetCombatEnvironment = function(weaponType = self$WeaponType) {
       if (weaponType %in% .WeaponType)
         self$WeaponType <- .WeaponType[weaponType]
@@ -243,7 +280,7 @@ CombatEnvironment <- R6Class(
   ),
   private = list(
     .WeaponType = NA,     # .WeaponType
-    .Hero.CombatRange = NA,    # .CloseCombatRange / .RangedCombatRange
+    .Hero.CombatRange = NA,     # .CloseCombatRange / .RangedCombatRange
     .Hero.MeansOfMovement = NA, # .MeansOfMovement
     .Hero.Movement = NA,        # .Movement / .MountedMoevement
     .Opponent.CloseCombatRange = NA, # .CloseCombatRange
@@ -257,9 +294,23 @@ CombatEnvironment <- R6Class(
   )
 )
 
-#  ce <- CombatEnvironment$new(.WeaponType["Ranged"])
+# ce <- CombatEnvironment$new(.WeaponType["Ranged"])
+# print(ce$getValue("", "CombatRange"))
+# print(ce$getValue("Hero", "CombatRange"))
+# print(ce$getValue("", "Visibility"))
+# print(ce$getValue("Environment", "Visibility"))
+#
+# print(ce$getDefault("", "CombatRange"))
+# print(ce$getDefault("Hero", "CombatRange"))
+# print(ce$getDefault("", "Visibility"))
+# print(ce$getDefault("Environment", "Visibility"))
+#
+# ce <- CombatEnvironment$new(.WeaponType["Melee"])
+# print(ce$getDefault("Hero", "CombatRange"))
+
+
 # x <- ce$GetCombatEnvironment(.WeaponType["Ranged"])
-# View(x)
+#View(x)
 
 # initCombatEnvironment <- function(Type, Range, HeroMoves, HeroSpeed,
 #                                   EnemyRange, EnemySize, EnemySpeed, Evasive,
@@ -309,34 +360,4 @@ CombatEnvironment <- R6Class(
 #   CombatEnv[["Environment"]]$UnderWater   = .UnderWater[Underwater]
 #
 #   return(CombatEnv)
-# }
-#
-# defaultCombatEnvironment <- function(WeaponType = .WeaponType["Melee"]) {
-#   if (isFALSE(WeaponType %in% .WeaponType)) stop("Unknown weapon type")
-#
-#   if (WeaponType == .WeaponType["Ranged"]) {
-#     Range <- c(0, 0, 0)
-#     HeroSpeed <- .Movement["Slow"]
-#     EnemyRange <- .RangedCombatRange["Medium"]
-#   }
-#   else {
-#     Range <- .CloseCombatRange["Short"]
-#     HeroSpeed <- .Movement["Stationary"]
-#     EnemyRange <- Range
-#   }
-#
-#   return(
-#     initCombatEnvironment(
-#       Type  = WeaponType,
-#       Range = Range,
-#       HeroMoves  = .MeansOfMovement["OnFoot"],
-#       HeroSpeed  = HeroSpeed,
-#       EnemyRange = EnemyRange,
-#       EnemySize  = .TargetSize["Medium"],
-#       EnemySpeed = .Movement["Slow"],
-#       Evasive    = .EvasiveMovement["None"],
-#       Visibility = .Visibility["Clearly"],
-#       ElbowRoom  = .CrampedSpace["Free"],
-#       Underwater = .UnderWater["Dry"])
-#   )
 # }
