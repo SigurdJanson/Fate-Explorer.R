@@ -86,7 +86,6 @@ CombatEnvironment <- R6Class(
       Opponent.Distance = unname( c(rep(NA_integer_, 2L), .TargetDistance["Medium"], NA_integer_) ),
       Opponent.Movement = unname( c(rep(.Movement["Stationary"], 2L), .Movement["Slow"], .Movement["Stationary"]) ),
       Opponent.EvasiveMovement = unname( rep(.EvasiveMovement["None"], 4L) ),
-
       Environment.Visibility   = unname( rep(.Visibility["Clearly"], 4L) ),
       Environment.CrampedSpace = unname( rep(.CrampedSpace["Free"], 4L) ),
       Environment.UnderWater   = unname( rep(.UnderWater["Dry"], 4L) )
