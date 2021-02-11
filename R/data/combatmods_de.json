@@ -128,11 +128,11 @@
 
 
 /* RANGED COMBAT ONLY */
-"RangedCombatRange": [{
+"Distance": [{
     "Conditions": {"Hero.WeaponType": "Ranged"},
-    "Criterion": "Hero.RangedCombatRange",
+    "Criterion": "Opponent.TargetDistance",
     "Modifiers": {
-        "Short":  {"Attack": {"op": "+", "arg":  2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
+        "Close":  {"Attack": {"op": "+", "arg":  2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
         "Medium": {"Attack": {"op": "+", "arg":  0}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}},
         "Far":    {"Attack": {"op": "+", "arg": -2}, "Parry": {"op": "+", "arg": 0}, "Dodge": {"op": "+", "arg": 0}}
     }

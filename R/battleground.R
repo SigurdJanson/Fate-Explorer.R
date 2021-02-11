@@ -78,17 +78,17 @@ CombatEnvironment <- R6Class(
   public = list(
     Defaults = list(
       WeaponType = .WeaponType, # c(Unarmed = 1L, Melee = 2L, Ranged = 3L, Shield = 4L)
-      Hero.CombatRange     = c(rep(.CloseCombatRange["Short"], 2L), NA_integer_, .CloseCombatRange["Short"]),
-      Hero.MeansOfMovement = rep(.MeansOfMovement["OnFoot"], 4L),
-      Hero.Movement        = rep(.Movement["Stationary"],    4L),
+      Hero.CloseCombatRange = rep(.CloseCombatRange["Short"], 4L),
+      Hero.MeansOfMovement  = rep(.MeansOfMovement["OnFoot"], 4L),
+      Hero.Movement         = rep(.Movement["Stationary"],    4L),
       Opponent.CloseCombatRange = rep(.CloseCombatRange["Short"], 4L),
-      Opponent.Size     = rep(.TargetSize["Medium"], 4L),
-      Opponent.Distance = c(rep(.TargetDistance["Close"], 2L), .TargetDistance["Medium"], .TargetDistance["Close"]),
-      Opponent.Movement = c(rep(.Movement["Stationary"], 2L), .Movement["Slow"], .Movement["Stationary"]),
-      Opponent.EvasiveMovement = rep(.EvasiveMovement["None"], 4L),
-      Environment.Visibility   = rep(.Visibility["Clearly"], 4L),
-      Environment.CrampedSpace = rep(.CrampedSpace["Free"], 4L),
-      Environment.UnderWater   = rep(.UnderWater["Dry"], 4L)
+      Opponent.TargetSize       = rep(.TargetSize["Medium"], 4L),
+      Opponent.TargetDistance   = c(rep(.TargetDistance["Close"], 2L), .TargetDistance["Medium"], .TargetDistance["Close"]),
+      Opponent.Movement     = c(rep(.Movement["Stationary"], 2L), .Movement["Slow"], .Movement["Stationary"]),
+      Opponent.EvasiveMovement  = rep(.EvasiveMovement["None"], 4L),
+      Environment.Visibility    = rep(.Visibility["Clearly"], 4L),
+      Environment.CrampedSpace  = rep(.CrampedSpace["Free"], 4L),
+      Environment.UnderWater    = rep(.UnderWater["Dry"], 4L)
     ),
 
     #' Constructor
@@ -136,8 +136,8 @@ CombatEnvironment <- R6Class(
           HeroMoves     = self$Defaults[["Hero.MeansOfMovement"]][weaponType],
           HeroSpeed     = self$Defaults[["Hero.Movement"]][weaponType],
           EnemyRange    = self$Defaults[["Opponent.CloseCombatRange"]][weaponType],
-          EnemySize     = self$Defaults[["Opponent.Size"]][weaponType],
-          EnemyDistance = self$Defaults[["Opponent.Distance"]][weaponType],
+          EnemySize     = self$Defaults[["Opponent.TargetSize"]][weaponType],
+          EnemyDistance = self$Defaults[["Opponent.TargetDistance"]][weaponType],
           EnemySpeed    = self$Defaults[["Opponent.Movement"]][weaponType],
           Evasive       = self$Defaults[["Opponent.EvasiveMovement"]][weaponType],
           Visibility    = self$Defaults[["Environment.Visibility"]][weaponType],
@@ -167,7 +167,7 @@ CombatEnvironment <- R6Class(
       }
       Row    <- .WeaponType[self$Defaults$WeaponType] == .WeaponType[private$.WeaponType]
       Column <- names(self$Defaults) == Found
-      Result <- unlist(self$Defaults[Column])[Row]
+      Result <- self$Defaults[[which(Column)]][Row]
       if (isFALSE(nrow(Result) > 0 && ncol(Result) > 0)) Result <- NA
       return(Result)
     },
@@ -189,13 +189,13 @@ CombatEnvironment <- R6Class(
       if (!missing(Size)) {
         if (any(is.na(Size)) ||
             Size %in% .TargetSize || Size %in% names(.TargetSize)) {
-          private$.Opponent.Size <- .TargetSize[Size]
+          private$.Opponent.TargetSize <- .TargetSize[Size]
         }
       }
       if (!missing(Distance)) {
         if (any(is.na(Distance)) ||
-            Size %in% .TargetDistance || Size %in% names(.TargetDistance)) {
-          private$.Opponent.Distance <- .TargetDistance[Distance]
+            Distance %in% .TargetDistance || Distance %in% names(.TargetDistance)) {
+          private$.Opponent.TargetDistance <- .TargetDistance[Distance]
         }
       }
       if (!missing(Movement)) {
@@ -230,22 +230,37 @@ CombatEnvironment <- R6Class(
       return(invisible(self))
     },
 
-    GetCombatEnvironment = function(weaponType = self$WeaponType) {
+    GetDefaultCombatEnvironment = function(weaponType = self$WeaponType) {
       if (weaponType %in% .WeaponType)
         self$WeaponType <- .WeaponType[weaponType]
 
+      Values <- lapply(self$Defaults, `[`, .WeaponType[private$.WeaponType])
+
+      Names <- names(Values)
+      Names <- strsplit(Names, ".", fixed = TRUE)
+      Names <- sapply(Names, function(x) x[[length(x)]])
+      names(Values) <- Names
+
       CombatEnv <- list(
-        Hero = list(
-          WeaponType = private$.WeaponType
-        ),
-        Opponent = list(
-          TargetSize   = private$.Opponent.Size
-        ),
-        Environment = list(
-          Visibility   = private$.Environment.Visibility,
-          UnderWater   = private$.Environment.UnderWater
-        )
+        Hero = Values[c("WeaponType", "CloseCombatRange", "MeansOfMovement", "Movement")],
+        Opponent = Values[c("CloseCombatRange", "TargetSize", "TargetDistance", "Movement", "EvasiveMovement")],
+        Environment = Values[c("Visibility", "CrampedSpace", "UnderWater")]
       )
+
+      return(CombatEnv)
+    },
+
+
+    GetCombatEnvironment = function(weaponType = self$WeaponType) {
+      if (weaponType %in% .WeaponType)
+        self$WeaponType <- .WeaponType[weaponType]
+      # Fill all values with defaults
+      CombatEnv <- self$GetDefaultCombatEnvironment(self$WeaponType)
+
+      CombatEnv[["Hero"]]$WeaponType     <- private$.WeaponType
+      CombatEnv[["Opponent"]]$TargetSize <- private$.Opponent.TargetSize
+      CombatEnv[["Environment"]]$Visibility <- private$.Environment.Visibility
+      CombatEnv[["Environment"]]$UnderWater <- private$.Environment.UnderWater
 
       if (private$.WeaponType == .WeaponType["Melee"]) {
         CombatEnv[["Hero"]]$CloseCombatRange     <- private$.Hero.CombatRange
@@ -269,7 +284,7 @@ CombatEnvironment <- R6Class(
         CombatEnv[["Hero"]]$MeansOfMovement   <- private$.Hero.MeansOfMovement
         CombatEnv[["Hero"]]$Movement          <- private$.Hero.Movement
 
-        CombatEnv[["Opponent"]]$Distance        <- private$.Opponent.Distance
+        CombatEnv[["Opponent"]]$TargetDistance  <- private$.Opponent.TargetDistance
         CombatEnv[["Opponent"]]$Movement        <- private$.Opponent.Movement
         CombatEnv[["Opponent"]]$EvasiveMovement <- private$.Opponent.EvasiveMovement
       }
@@ -283,8 +298,8 @@ CombatEnvironment <- R6Class(
     .Hero.MeansOfMovement = NA, # .MeansOfMovement
     .Hero.Movement = NA,        # .Movement / .MountedMoevement
     .Opponent.CloseCombatRange = NA, # .CloseCombatRange
-    .Opponent.Size = NA,             # .TargetSize
-    .Opponent.Distance = NA,         # .TargetDistance
+    .Opponent.TargetSize = NA,       # .TargetSize
+    .Opponent.TargetDistance = NA,   # .TargetDistance
     .Opponent.Movement = NA,         # .Movement
     .Opponent.EvasiveMovement = NA,  # .EvasiveMovement
     .Environment.Visibility = NA,    # .Visibility
@@ -293,14 +308,14 @@ CombatEnvironment <- R6Class(
   )
 )
 
-# ce <- CombatEnvironment$new(.WeaponType["Ranged"])
+# ce <- CombatEnvironment$new(.WeaponType["Melee"])
 # print(ce$getValue("", "CombatRange"))
 # print(ce$getValue("Hero", "CombatRange"))
 # print(ce$getValue("", "Visibility"))
 # print(ce$getValue("Environment", "Visibility"))
 #
 # print(ce$getDefault("", "CombatRange"))
-# print(ce$getDefault("Hero", "CombatRange"))
+# print(ce$getDefault("Opponent", "Distance"))
 # print(ce$getDefault("", "Visibility"))
 # print(ce$getDefault("Environment", "Visibility"))
 #

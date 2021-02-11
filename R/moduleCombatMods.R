@@ -36,10 +36,10 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
             ModalDlgFunction <- function() {
 #browser(expr = WeaponName() == "Waffenlos")
-                if (isTRUE(WeaponType() == names(.WeaponType["Ranged"])))
-                    WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
-                else
-                    WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
+                # if (isTRUE(WeaponType() == names(.WeaponType["Ranged"])))
+                #     WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
+                # else
+                #     WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
 
                 Defaults <- CombatEnv()$GetCombatEnvironment(WeaponType())
 
@@ -53,12 +53,14 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                hr(),
                                selectInput(
                                    ns("selHeroMeansOfMovement"), i18n$t("Movement"),
-                                   choices = i18n$t(names(.MeansOfMovement)),
-                                   selected = i18n$t(names(Defaults$Hero$MeansOfMovement))), # CombatEnv()$MeansOfMovement
+                                   choices  = i18n$t(names(.MeansOfMovement)),
+                                   selected = i18n$t(names(Defaults$Hero$MeansOfMovement))
+                               ), # CombatEnv()$getValue(valueId = "MeansOfMovement")
                                sliderTextInput(
                                    ns("selHeroMovement"), label = NULL, grid = TRUE, force_edges = TRUE,
-                                   choices = "-", # reactive value
-                                   ),
+                                   choices = "-",
+                                   selected = NULL # i18n$t(names(Defaults$Hero$Movement))
+                               ),
                                wellPanel(
                                    h4(i18n$t("Values")),
                                    tableOutput(ns("outCombatModifiers"))
@@ -68,36 +70,42 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                h4(i18n$t("Opponent")),
                                sliderTextInput(
                                    ns("selOpponentWeapon"), label = i18n$t("Weapon Reach"),
-                                   choices = WeaponsRangeChoices, grid = TRUE, force_edges = TRUE),
+                                   grid = TRUE, force_edges = TRUE,
+                                   choices = i18n$t(names(.CloseCombatRange)),
+                                   select  = i18n$t(names(Defaults$Opponent$CloseCombatRange))),
                                sliderTextInput(
                                    ns("selOpponentSize"), label = i18n$t("Opponent Size"),
                                    grid = TRUE, force_edges = TRUE,
-                                   choices = i18n$t(names(.TargetSize)),
+                                   choices  = i18n$t(names(.TargetSize)),
                                    selected = i18n$t(names(Defaults$Opponent$TargetSize))
                                ),
                                sliderTextInput(
                                    ns("selOpponentDistance"), label = i18n$t("Distance"),
-                                   choices = i18n$t(names(.RangedCombatRange)),
-                                   grid = TRUE, force_edges = TRUE),
+                                   grid = TRUE, force_edges = TRUE,
+                                   choices  = i18n$t(names(.TargetDistance)),
+                                   selected = i18n$t(names(Defaults$Opponent$TargetDistance))),
                                #-textOutput("txOpponentDONOTKNOWWHATTHISISYET", inline = FALSE),
                                sliderTextInput(
                                    ns("selOpponentMovement"), label = i18n$t("Movement"),
-                                   choices = i18n$t(names(.Movement)), grid = TRUE, force_edges = TRUE),
+                                   grid = TRUE, force_edges = TRUE,
+                                   choices  = i18n$t(names(.Movement)),
+                                   selected = i18n$t(names(Defaults$Opponent$Movement))),
                                checkboxGroupInput(ns("cbOpponentEvasive"), NULL, choices = i18n$t("Evasive Maneuvers"))
                         ),
                         column(4,
                                h4(i18n$t("Environment")),
                                selectInput(
                                    ns("selCombatEnvVision"), i18n$t("Visibility"),
-                                   i18n$t(names(.Visibility))
+                                   choices  = i18n$t(names(.Visibility)),
+                                   selected = i18n$t(names(Defaults$Environment$Visibility))
                                ),
                                checkboxGroupInput(ns("cbCombatEnvCramped"), NULL, choices = i18n$t("Cramped")),
                                selectInput(
                                    ns("selCombatEnvWater"), i18n$t("Water Depth"),
-                                   i18n$t(names(.UnderWater))
+                                   choices  = i18n$t(names(.UnderWater)),
+                                   selected = i18n$t(names(Defaults$Environment$UnderWater))
                               )
-                        ),
-
+                        )
                     ),
                     footer = modalButton(i18n$t("btnClose")), fade = TRUE, size = "l",
                     easyClose = TRUE
@@ -143,13 +151,15 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
             #'
             EffectiveValues <- reactive({
+#-browser()
                 # Check if all widgets in this module are valid (except check boxes)
+                # Also exclude the button that is used to call the modal dialog
                 WidgValid <- vapply(names(input),
                                     function(x) { if (startsWith(x, "sel")) isTruthy(input[[x]]) else TRUE },
                                     logical(1))
                 WidgValid <- length(WidgValid) > 1 & allTruthy(WidgValid, WeaponType(), CombatEnv())
 
-    #-browser()
+#-browser()
                 if (WidgValid) {
                     # Convert to numeric index to enum
                     Evasive <- .EvasiveMovement[as.integer(isTruthy(input$cbOpponentEvasive)) + 1]
@@ -157,13 +167,13 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
                     # Which options are valid? Close or ranged combat?
                     if (isTRUE(WeaponType() == names(.WeaponType["Ranged"]))) {
-                        WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
+                        #WeaponsRangeChoices <- i18n$t(names(.RangedCombatRange))
                         if (input$selHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"])))
                             Movement <- .Movement
                         else
                             Movement <- .MountedMovement
                     } else {
-                        WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
+                        #WeaponsRangeChoices <- i18n$t(names(.CloseCombatRange))
                         Movement <- .Movement
                     }
 
@@ -173,7 +183,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Range = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])),
                         HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input$selHeroMeansOfMovement),
                         HeroSpeed  = which(i18n$t(names(Movement))          == input$selHeroMovement),
-                        EnemyRange = which(WeaponsRangeChoices              == input$selOpponentWeapon),
+                        EnemyRange = which(i18n$t(names(.CloseCombatRange)) == input$selOpponentWeapon),
                         EnemySize  = which(i18n$t(names(.TargetSize))       == input$selOpponentSize),
                         EnemyDistance = which(i18n$t(names(.TargetDistance))== input$selOpponentDistance),
                         EnemySpeed = which(i18n$t(names(.Movement))         == input$selOpponentMovement),
@@ -183,7 +193,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input$selCombatEnvWater)]
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
-       #- browser()
+
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 } else { # if no Combat Environment can be constructed
                     ESV <- WeaponSkills()

@@ -405,6 +405,7 @@ represent one of the enumeration (see Rules.R). The names must correspond with t
     * `.CloseCombatRange = ` `r vecprint(.CloseCombatRange)` - this stands for the reach of melee weapons as well as the size of shields.
     * `.RangedCombatRange = ` `r vecprint(.RangedCombatRange)`
   * TargetSize `.TargetSize = ` `r vecprint(.TargetSize)`
+  * Distance `.TargetDistance = ` `r vecprint(.TargetDistance)`
   * Movement `.Movement =` `r vecprint(.Movement)`
   * Evasive movements `.EvasiveMovement = ` `r vecprint(.EvasiveMovement)`
 * Environment
@@ -418,15 +419,15 @@ CombatEnv <- list(
   Hero = list(
     WeaponType       = .WeaponType["Melee"],
     CloseCombatRange = .CloseCombatRange["Medium"],
-    MeansOfMovement = .MeansOfMovement["OnFoot"],
+    MeansOfMovement  = .MeansOfMovement["OnFoot"],
     Movement = .Movement["Slow"] # ignored in close combat
   ),
   Opponent = list( # Ogre fighting with a tooth pick
     CloseCombatRange = .CloseCombatRange["Short"],
     TargetSize       = .TargetSize["Large"], 
+    Distance         = .TargetDistance["Close"],  # ignored in close combat
     Movement         = .Movement["Slow"], # ignored in close combat
-    EvasiveMovement  = .EvasiveMovement["None"], # ignored in close combat
-    #TargetDistance   = .TargetDistance["Close"]  # ignored in close combat
+    EvasiveMovement  = .EvasiveMovement["None"] # ignored in close combat
   ),
   Environment = list(
     Visibility   = .Visibility["Clearly"], 
