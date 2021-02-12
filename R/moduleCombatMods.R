@@ -131,6 +131,21 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 return(invisible(NULL))
             }
 
+            #'
+            #'
+            UpdateHeroMovement <- function() {
+                #TODO: risky not to use codes/ids but the translated strings
+                Condition <- input$selHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"]))
+
+                if (isTRUE(Condition))
+                    Items <- .Movement
+                else if (isFALSE(Condition))
+                    Items <- .MountedMovement
+                else
+                    Items <- "N/A"
+                updateSliderTextInput(session, "selHeroMovement", choices = i18n$t(names(Items)))
+            }
+
 
             #'
             CombatEnv <- reactive({
@@ -212,15 +227,15 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
             #' Handle dependencies between means of movement and levels of movement.
             observeEvent(input$selHeroMeansOfMovement, {
-                #TODO: risky not to use codes/ids but the translated string
-                Condition <- input$selHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"]))
-                if (isTRUE(Condition))
-                    Items <- .Movement
-                else if (isFALSE(Condition))
-                    Items <- .MountedMovement
-                else
-                    Items <- "N/A"
-                updateSliderTextInput(session, "selHeroMovement", choices = i18n$t(names(Items)))
+                UpdateHeroMovement()
+                # Condition <- input$selHeroMeansOfMovement == i18n$t(names(.MeansOfMovement["OnFoot"]))
+                # if (isTRUE(Condition))
+                #     Items <- .Movement
+                # else if (isFALSE(Condition))
+                #     Items <- .MountedMovement
+                # else
+                #     Items <- "N/A"
+                # updateSliderTextInput(session, "selHeroMovement", choices = i18n$t(names(Items)))
             })
 
 
@@ -271,6 +286,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 {
                     showModal(ModalDlgFunction())
                     HandleDisabled()
+                    UpdateHeroMovement()
                 }
             )
 
