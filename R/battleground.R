@@ -25,7 +25,7 @@ CombatEnvironment <- R6Class(
         return(private$.Hero.CombatRange)
       } else {
         if (private$.WeaponType == .WeaponType["Ranged"])
-          private$.Hero.CombatRange <- value #.RangedCombatRange[value]
+          private$.Hero.CombatRange <- .RangedCombatRange[value]
         else
           private$.Hero.CombatRange <- .CloseCombatRange[value]
       }
@@ -280,7 +280,7 @@ CombatEnvironment <- R6Class(
       }
 
       if (private$.WeaponType == .WeaponType["Ranged"]) {
-        CombatEnv[["Hero"]]$RangedCombatRange <- private$.Hero.CombatRange
+        #CombatEnv[["Hero"]]$RangedCombatRange <- private$.Hero.CombatRange
         CombatEnv[["Hero"]]$MeansOfMovement   <- private$.Hero.MeansOfMovement
         CombatEnv[["Hero"]]$Movement          <- private$.Hero.Movement
 

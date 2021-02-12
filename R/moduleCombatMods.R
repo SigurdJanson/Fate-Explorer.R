@@ -193,7 +193,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input$selCombatEnvWater)]
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
-
+#browser()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
                 } else { # if no Combat Environment can be constructed
                     ESV <- WeaponSkills()
