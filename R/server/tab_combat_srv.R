@@ -120,27 +120,27 @@ observeEvent(input$cmbCombatSelectWeapon, {
 }, ignoreNULL = FALSE)
 
 
-# Weapon skill slider: react to changes
-observeEvent(input$inpAttackValue, {
-  if (isTruthy(input$inpAttackValue)) {
-    ActiveWeapon$Skill["Attack"] <- input$inpAttackValue
-    UpdateEffectiveCombatValues("Attack")
+# Weapon skill values: react to changes
+changedCombatSkill <- function(Action) {
+  WidgetId <- paste0("inp", Action, "Value")
+  if (isTruthy(input[[WidgetId]])) {
+    #shinyjs::enable(paste0("do", Action, "Roll"))
+    ActiveWeapon$Skill[Action] <- input[[WidgetId]]
+    UpdateEffectiveCombatValues(Action)
     UpdateCombatModsModulePayload()
+  } else {
+    # This will be reverted as soon as `output$uiCombatRoll` runs.
+    #shinyjs::disable(paste0("do", Action, "Roll"))
   }
+}
+observeEvent(input$inpAttackValue, {
+  changedCombatSkill("Attack")
 })
 observeEvent(input$inpParryValue, {
-  if (isTruthy(input$inpParryValue)) {
-    ActiveWeapon$Skill["Parry"] <- input$inpParryValue
-    UpdateEffectiveCombatValues("Parry")
-    UpdateCombatModsModulePayload()
-  }
+  changedCombatSkill("Parry")
 })
 observeEvent(input$inpDodgeValue, {
-  if (isTruthy(input$inpDodgeValue)) {
-    ActiveWeapon$Skill["Dodge"] <- input$inpDodgeValue
-    UpdateEffectiveCombatValues("Dodge")
-    UpdateCombatModsModulePayload()
-  }
+  changedCombatSkill("Dodge")
 })
 observeEvent(input$inpDamageDieCount, {
   if (isTruthy(input$inpDamageDieCount))
@@ -237,6 +237,11 @@ output$uiCombatRoll <- renderText({
   # Restore the buttons
   if (!isTruthy(ActiveWeapon$ConfirmRoll))
     shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
+
+  shiny::validate(
+    need(input[[paste0("inp", names(ActiveWeapon$LastAction), "Value")]],
+         sprintf(i18n$t("No skill for '%s' is set"), i18n$t(names(ActiveWeapon$LastAction))))
+  )
 
   if (isTruthy(ActiveWeapon$ConfirmRoll))
     ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),

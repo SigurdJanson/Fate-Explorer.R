@@ -73,6 +73,7 @@
     {"cd": "Range", "en": "Range", "de": "Reichweite"},
     {"cd": "Ranged Combat", "en": "Ranged Combat", "de": "Fernkampf"},
     {"cd": "Close Combat", "en": "Close Combat", "de": "Nahkampf"},
+    {"cd": "No skill for '%s' is set", "en": "No skill for '%s' is set", "de": "Fehlende Fertigkeit für '%s'"},
 
     {"cd": "Combat Modifiers", "en": "Combat Modifiers", "de": "Kampfmodikatoren"},
     {"cd": "Hero", "en": "Hero", "de": "Held"},
