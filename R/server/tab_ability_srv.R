@@ -60,12 +60,15 @@ observeEvent(input$doAbilityConfirmationRoll, {
 
 # Display result of skill roll
 output$AbilityRoll <- renderText({
-  
   Value <- req(LastAbilityRoll(), cancelOutput = TRUE)
+
+  # Restore the buttons
+  Sys.sleep(0.05)
+  shinyjs::delay(700, RollInProgress("doAbilityRoll", FALSE))
+
   Confirmation <- LastAbilityConfirmationRoll()
-  
-  SuccessStr <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
-  
+  SuccessStr   <- VerifyAbilityRoll(Value, input$inpAbility, input$inpAbilityMod)
+
   # Critical or Fumble waiting for confirmation
   if (SuccessStr == "Critical" || SuccessStr == "Fumble") {
     if (!is.null(Confirmation)) {
@@ -79,16 +82,12 @@ output$AbilityRoll <- renderText({
   } else {
     ConfirmationStr <- NULL
   }
-  
+
   Result <- RenderRollKeyResult(SuccessStr, Value)
   if (!is.null(ConfirmationStr)) # add confirmation <div/>
     Result <- div(Result, div( ConfirmationStr ),
                   class = "shiny-html-output shiny-bound-output roll")
-  
-  # Finally restore the buttons
-  Sys.sleep(0.3) # artificially delay the result for increased tension
-  shinyjs::delay(700, RollInProgress("doAbilityRoll", FALSE))
-  
+
   return(paste((Result), collapse=""))
 })
 

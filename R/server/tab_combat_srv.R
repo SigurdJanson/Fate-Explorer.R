@@ -234,7 +234,9 @@ output$uiCombatRollButtons <- renderUI({
 # OUTPUT: COMBAT ROLL -----------------------
 output$uiCombatRoll <- renderText({
   req(UpdateCombatResult(), TRUE)
+
   # Restore the buttons
+  Sys.sleep(0.05)
   if (!isTruthy(ActiveWeapon$ConfirmRoll))
     shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
 
@@ -353,7 +355,7 @@ output$WeaponDetails <- renderText({
 
 
 
-# OUTPUT: Exploration Panel ---------- ----------
+# OUTPUT: Exploration Panel --------------------
 output$ShowExploreFightingChances <- reactive({
   return( input$chbExploreChances )
 })

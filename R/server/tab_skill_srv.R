@@ -15,14 +15,14 @@ observeEvent(input$rdbSkillSource, {
       Value <- input$SkillValue
       SkillSource$SetSkill(ActiveSkillIdent, Abilities, Value)
     }
-    
-  } 
+
+  }
   # if active panel is the "Character" update widget content
-  else { 
+  else {
     ActiveSkillIdent <<- "TAL_1"
     ActiveSkillSets  <<- Character$Skills
     SelectedSkills <- ActiveSkillSets$GetSkillNames()
-    
+
     SkillClasses <- ActiveSkillSets$GetSkillClasses() # for filter drop-down list
     names(SkillClasses) <- SkillClasses
     SkillClasses <- c("", SkillClasses)
@@ -39,13 +39,13 @@ observeEvent(input$rdbSkillSource, {
 
 # Apply group filter for list of character skills
 observeEvent(
-  eventExpr = input$lbSkillClasses, 
+  eventExpr = input$lbSkillClasses,
   handlerExpr = {
     # React to changes of the skill groups: filter the skills
     if (exists("Character") && !is.null(Character$Skills)) {
       Filter <- input$lbSkillClasses
       SelectedItem <- input$lbCharSkills # to restore currently selected item after filter
-    
+
       if (isTruthy(Filter)) {
         SkillSource <- ActiveSkillSets$GetSkillSet(Class = Filter)
         SelectedSkills <- which(SkillSource$Skills[["class"]] == input$lbSkillClasses)
@@ -54,9 +54,9 @@ observeEvent(
         # No filter set
         SelectedSkills <- ActiveSkillSets$GetSkillNames()
       }
-  
+
       # if SelectedItem is not part of current selection:
-      if (!isTruthy(SelectedItem) || !(SelectedItem %in% SelectedSkills)) 
+      if (!isTruthy(SelectedItem) || !(SelectedItem %in% SelectedSkills))
         Filter <- SelectedSkills[1]
       updateSelectInput(session, "lbCharSkills", choices = SelectedSkills,
                         selected = SelectedItem)
@@ -67,7 +67,7 @@ observeEvent(
 
 # React when users select new skill
 observeEvent(
-  eventExpr = input$lbCharSkills, 
+  eventExpr = input$lbCharSkills,
   handlerExpr = {
     req(input$rdbSkillSource)
     if (input$rdbSkillSource %in% c("ManualSkill", "NoSkill")) {
@@ -89,13 +89,13 @@ observeEvent(
 # React when users change any of the SkillTrait and SkillValue-Sliders
 observeEvent(
   eventExpr = {
-    req(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3, 
+    req(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3,
         input$SkillValue)
   }, handlerExpr = {
     req(ActiveSkillSets)
     SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
-    SkillSource$SetSkill(ActiveSkillIdent, 
-                         Abilities = c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3), 
+    SkillSource$SetSkill(ActiveSkillIdent,
+                         Abilities = c(input$SkillTrait1, input$SkillTrait2, input$SkillTrait3),
                          SkillValue = input$SkillValue)
     SkillSource$VerifyLastRoll()
     UpdateSkillResult(UpdateSkillResult()+1) # Force update of result and routine button
@@ -105,7 +105,7 @@ observeEvent(
 
 
 # React when users change the modifier
-observeEvent(eventExpr = input$SkillMod, 
+observeEvent(eventExpr = input$SkillMod,
   handlerExpr = {
     req(ActiveSkillSets, LastSkillRoll$Roll)
     SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
@@ -124,8 +124,8 @@ output$uiDoSkillRoutine <- renderUI({
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   RoutineCheck <- SkillSource$CanRoutineCheck(ActiveSkillIdent, input$SkillMod)
   if (RoutineCheck) {
-    actionButton("doSkillRoutine", span(i18n$t("Routine Check"), id="lbldoSkillRoutine"), 
-                 icon = gicon("boot-prints"), 
+    actionButton("doSkillRoutine", span(i18n$t("Routine Check"), id="lbldoSkillRoutine"),
+                 icon = gicon("boot-prints"),
                  width = "49%", style = "font-size: 140%")
   }
 })
@@ -145,7 +145,7 @@ ActiveSkillSets <- BasicSkillSets
 
 LastSkillRoll <- reactiveValues(Roll = NA, Routine = FALSE)
 # Trigger to recognize a new roll - value is unimportant
-UpdateSkillResult <- reactiveVal(NULL) 
+UpdateSkillResult <- reactiveVal(NULL)
 
 
 # Initiate skill roll
@@ -155,7 +155,7 @@ observeEvent(input$doSkillRoll, {
   LastSkillRoll$Roll <- SkillSource$LastRoll
   LastSkillRoll$Routine <- FALSE
   UpdateSkillResult(ifelse(is.null(UpdateSkillResult()), 0, UpdateSkillResult()+1))
-  
+
   RollInProgress("doSkillRoll", TRUE)
 })
 
@@ -167,7 +167,7 @@ observeEvent(input$doSkillRoutine, {
   LastSkillRoll$Roll <- NA
   LastSkillRoll$Routine <- SkillSource$LastRoll
   UpdateSkillResult(sample.int(1000, 1))
-  
+
   RollInProgress("doSkillRoutine", TRUE)
 })
 
@@ -188,66 +188,68 @@ observeEvent(input$doSkillFumble, { # Show fumble result
 # Display result of skill roll (View) ----
 output$SkillRoll <- renderText({
   req(UpdateSkillResult())
-  
+
+
+  # Restore the buttons
+  Sys.sleep(0.05)
+  shinyjs::delay(500, {
+    RollInProgress("doSkillRoll", FALSE)
+    RollInProgress("doSkillRoutine", FALSE)
+  })
+
+
   SkillSource <- ActiveSkillSets$GetSkillSet(Ident = ActiveSkillIdent)
   SkillIndex  <- SkillSource$GetSkillIndex(ActiveSkillIdent)
 
   EffectiveCharVal <- SkillSource$GetSkillValues(SkillIndex, input$SkillMod)
   Labels  <- SkillSource$GetAbilityLabels(SkillIndex)
   RollVal <- SkillSource$GetLastScore()
-  if (anyNA(RollVal)) # routine check 
+  if (anyNA(RollVal)) # routine check
     RollVal <- rep("-", 4)
   else # die roll
     if (input$rdbSkillSource != "NoSkill")
       RollVal <- c(RollVal, SkillSource$LastRemainder)
-  
+
   # Rendering
   # * roll result in reverse order
   Rows <- list(tags$tr( tags$td(i18n$t("Roll")), lapply(RollVal, tags$td) ))
   if (!is.null(EffectiveCharVal))
     Rows <- list(tags$tr( tags$td(i18n$t("Value")), lapply(EffectiveCharVal, tags$td) ), Rows)
-  if (!is.null(Labels)) 
+  if (!is.null(Labels))
     Rows <- list(tags$th( lapply(Labels, tags$td)), tags$td(), Rows)
   # * final rendering
   if (input$rdbSkillSource == "NoSkill")
     RenderedKeyResult <- ""
   else
-    RenderedKeyResult <- RenderRollKeyResult(names(SkillSource$LastResult), 
+    RenderedKeyResult <- RenderRollKeyResult(names(SkillSource$LastResult),
                                              SkillSource$LastQL, KeyUnit = "ql")
-  
+
   # Confirmation
   ConfirmResult <- tagList()
   if (SkillSource$RollNeedsConfirmation())
-    ConfirmResult <- tagAppendChild(ConfirmResult, 
+    ConfirmResult <- tagAppendChild(ConfirmResult,
                                     RenderConfirmationRequest("doSkillConfirm", SkillSource$LastResult))
   else {
     if (isTruthy(SkillSource$ConfirmRoll))
-      ConfirmResult <- tagAppendChild(ConfirmResult, 
+      ConfirmResult <- tagAppendChild(ConfirmResult,
                                       RenderRollConfirmation(names(SkillSource$LastResult),
-                                                             SkillSource$ConfirmRoll, 
+                                                             SkillSource$ConfirmRoll,
                                                              i18n))
     if (SkillSource$NeedFumbleRoll()) {# show link button to perform the roll
-      ConfirmResult <- tagAppendChild(ConfirmResult, 
+      ConfirmResult <- tagAppendChild(ConfirmResult,
                                       RenderFumbleRollRequest("doSkillFumble"))
     } else if (isTruthy(SkillSource$LastFumbleEffect)) { # show result of fumble roll
       ConfirmResult <- tagAppendChild(ConfirmResult, RenderFumbleRollEffect(SkillSource$LastFumbleEffect))
     }
   }
-  
+
   # Put result together
   Result <- div(
     RenderedKeyResult,
-    div(tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"), 
-        ConfirmResult), 
+    div(tags$table(Rows, class = "table shiny-table table- spacing-s", style = "width:auto"),
+        ConfirmResult),
     class = "shiny-html-output shiny-bound-output roll")
-  
-  # Finally restore the buttons
-  Sys.sleep(0.3) # artificially delay the result for increased tension
-  shinyjs::delay(700, {
-    RollInProgress("doSkillRoll", FALSE)
-    RollInProgress("doSkillRoutine", FALSE)
-  })
-  
+
   return(paste((Result), collapse=""))
 })
 
