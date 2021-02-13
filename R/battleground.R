@@ -238,7 +238,7 @@ CombatEnvironment <- R6Class(
 
       Names <- names(Values)
       Names <- strsplit(Names, ".", fixed = TRUE)
-      Names <- sapply(Names, function(x) x[[length(x)]])
+      Names <- sapply(Names, function(x) x[[length(x)]]) #TODO try ..., tail, n = 1L
       names(Values) <- Names
 
       CombatEnv <- list(

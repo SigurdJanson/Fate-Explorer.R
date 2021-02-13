@@ -212,5 +212,6 @@
      {"cd": "Ulisses publishers", "en": "Ulisses publishers", "de": "der Ulisses Verlag"},
 
      {"cd": "Values", "en": "Values", "de": "Werte"},
-     {"cd": "btnClose", "en": "Close", "de": "Schließen"}
+     {"cd": "btnClose", "en": "Close", "de": "Schließen"},
+     {"cd": "btnReset", "en": "Reset", "de": "Zurücksetzen"}
 ]}
