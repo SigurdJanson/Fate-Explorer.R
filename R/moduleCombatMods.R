@@ -29,7 +29,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
     moduleServer(
         id,
 
-        function(input, output, session) { # Shiny module server function
+        #' Shiny module server function
+        function(input, output, session) {
             ns <- session$ns
             .CombatEnv <- NULL # Variable to hold the current combat environment
 
@@ -133,8 +134,9 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                 return(invisible(NULL))
             }
 
-            #'
-            #'
+            #' UpdateHeroMovement
+            #' Handles the dependency between the two settings "hero: means of movement" (on foot or riding)
+            #' and "movement" speed.
             UpdateHeroMovement <- function() {
                 #TODO: risky not to use codes/ids but the translated strings
                 Condition <- input[["sel.Hero.MeansOfMovement"]] == i18n$t(names(.MeansOfMovement["OnFoot"]))
@@ -149,41 +151,32 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }
 
 
-            #'
-            #'
+            #' UpdateAll
+            #' Populate all widgets in the modal dialog with the values from the combat environment.
             UpdateAll <- function() {
                 Widgets <- names(input)
                 Parts   <- strsplit(Widgets, ".", fixed = TRUE)
                 for (w in 1:length(Widgets)) {
                     Len <- length(Parts[[w]])
                     if (!startsWith(Widgets[w], "btn")) { # exclude buttons
-                      #NewValue <- CombatEnv()$getValue(Parts[[w]][Len-1], Parts[[w]][Len])
                       # the new value
                       if (Parts[[w]][1] == "sel")
-                        NewValue <- CombatEnv()$getValue(Parts[[w]][Len-1], Parts[[w]][Len])
+                          NewValue <- CombatEnv()$getValue(Parts[[w]][Len-1], Parts[[w]][Len])
                       else if (Parts[[w]][1] == "cb")
-                        NewValue <- as.logical(CombatEnv()$getValue(Parts[[w]][Len-1], Parts[[w]][Len])-1)
-#-browser()           # Use names "value" and "selected" because Shiny and ShinyWidgets do not use a consistent naming patterns
+                          NewValue <- as.logical(CombatEnv()$getValue(Parts[[w]][Len-1], Parts[[w]][Len])-1)
+                      # Send message to widget for value update
+                      # Use names "value" and "selected" because Shiny and ShinyWidgets do not use a consistent naming patterns
                       message <- list(value = i18n$t(names(NewValue)), selected = i18n$t(names(NewValue)))
                       session$sendInputMessage(Widgets[w], message)
                     }
                 }
-                # Widgets <- names(input)
-                # for (w in Widgets) {
-                #     message <- ValuesFromBL[w]
-                #     if (!is.null(message)) {
-                #         #message <- message[!sapply(message, is.null)]
-                #         names(message) <- "value" #ifelse(w == "dd_1", "selected", "value")
-                #         session$sendInputMessage(w, message)
-                #     }
-                # }
             }
 
 
-            #'
-            #'
+            #' Reactive: CombatEnv
+            #' Returns the current combat environment or creates a new one if it has not
+            #' been initialised, yet.
             CombatEnv <- reactive({
-       #- browser()
                 if (!isTruthy(.CombatEnv)) {
                     if (isTruthy(WeaponType()))
                         .CombatEnv <<- CombatEnvironment$new(WeaponType())
@@ -199,10 +192,9 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             })
 
 
-            #'
-            #'
+            #' Reactive: EffectiveValues
+            #' Returns the effective skill values depending on the given combat environment.
             EffectiveValues <- reactive({
-#-browser()
                 # Check if all widgets in this module are valid (except check boxes)
                 # Also exclude the button that is used to call the modal dialog
                 WidgValid <- vapply(names(input),
@@ -210,7 +202,6 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                                     logical(1))
                 WidgValid <- length(WidgValid) > 1 & allTruthy(WidgValid, WeaponType(), CombatEnv())
 
-#-browser()
                 if (WidgValid) {
                     # Convert to numeric index to enum
                     Evasive <- .EvasiveMovement[as.integer(isTruthy(input[["cb.Opponent.EvasiveMovement"]])) + 1]
@@ -242,8 +233,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input[["sel.Environment.UnderWater"]])]
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
-#browser()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
+
                 } else { # if no Combat Environment can be constructed
                     ESV <- WeaponSkills()
                 }
@@ -252,8 +243,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             })
 
 
-            #'
-            #'
+            #' Reactive: modifiers
+            #' Gets the modifier as difference between actual and effective skill values
             Modifiers <- reactive({
                 if(isTruthy(EffectiveValues()) && isTruthy(WeaponSkills()))
                     return(EffectiveValues() - isolate(WeaponSkills()))
@@ -262,17 +253,17 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             })
 
 
-            #'
+            #' Observer
             #' Handle dependencies between means of movement and levels of movement.
             observeEvent(input[["sel.Hero.MeansOfMovement"]], {
                 UpdateHeroMovement()
             })
 
 
-            #'
+            #' Observer
             #' Reset the environment on user's request
             observeEvent(input$btnResetValue, {
-#-browser()
+
                 if (!isTruthy(.CombatEnv)) {
                     if (isTruthy(WeaponType()))
                         .CombatEnv <<- CombatEnvironment$new(WeaponType())
@@ -287,7 +278,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }, ignoreNULL = TRUE)
 
 
-            #'
+            #' Output
             #' Display basic weapon characteristics: Name, Type, Reach/Range
             output$outWeaponDetails <- renderTable({
                 if (isTruthy(WeaponName()))
@@ -316,7 +307,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             }, colnames = FALSE, spacing = "s", width = "100%", hline.after = NULL)
 
 
-            #'
+            #' Output
             #' Display the result after modifying the values
             output$outCombatModifiers <- renderTable({
                 req(EffectiveValues(), WeaponSkills())
@@ -329,7 +320,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
 
 
-            #'
+            #' Observer
             #' Show modal dialog on start up
             observeEvent(
                 input$btnCombatMods, ignoreNULL = TRUE,
