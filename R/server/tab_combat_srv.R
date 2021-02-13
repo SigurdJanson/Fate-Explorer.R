@@ -234,6 +234,9 @@ output$uiCombatRollButtons <- renderUI({
 # OUTPUT: COMBAT ROLL -----------------------
 output$uiCombatRoll <- renderText({
   req(UpdateCombatResult(), TRUE)
+  # Restore the buttons
+  if (!isTruthy(ActiveWeapon$ConfirmRoll))
+    shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
 
   if (isTruthy(ActiveWeapon$ConfirmRoll))
     ConfirmationStr <- RenderRollConfirmation(names(ActiveWeapon$LastResult),
@@ -271,10 +274,6 @@ output$uiCombatRoll <- renderText({
       }
     }
   }
-
-  # Finally restore the buttons
-  Sys.sleep(0.1)
-  shinyjs::delay(500, RollInProgress(paste0("do", names(.CombatAction)[ActiveWeapon$LastAction], "Roll"), FALSE))
 
   # Return the results
   if (length(Result) > 0) # two panels
