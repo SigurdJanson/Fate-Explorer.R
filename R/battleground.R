@@ -271,7 +271,7 @@ CombatEnvironment <- R6Class(
     #' @param weaponType (`.WeaponType` enum)
     #' @return A named list with the default combat environment
     GetDefaultCombatEnvironment = function(weaponType = self$WeaponType) {
-      if (weaponType %in% .WeaponType || weapontype %in% names(.WeaponType))
+      if (weaponType %in% .WeaponType || weaponType %in% names(.WeaponType))
         self$WeaponType <- .WeaponType[weaponType]
 
       # Extract list

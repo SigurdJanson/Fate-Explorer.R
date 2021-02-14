@@ -9,7 +9,10 @@ setwd("../../R")
   source("./battleground.R")
 setwd(.testdir)
 
-# This test uses the fact that a Combat Environent in it's default configuration
+
+# Initialised with Defaults ---------------
+
+# This test uses the fact that a Combat Environment in it's default configuration
 # shall not affect the combat abilities.
 test_that("Init class", {
   Check        <- c(at = 9L, pa = 10L, do = 10L)
@@ -41,7 +44,7 @@ test_that("Init class", {
 
 
 
-test_that("Init class", {
+test_that("Init class: GetCombatEnvironment", {
   for (w in names(.WeaponType)) {
     BattleGround <- CombatEnvironment$new(.WeaponType[w])
 
@@ -71,6 +74,31 @@ test_that("Init class", {
   }
 })
 
+
+
+test_that("Init class: GetCombatEnvironment = GetDefaultCombatEnvironment", {
+  for (w in names(.WeaponType)) {
+    BattleGround <- CombatEnvironment$new(.WeaponType[w])
+
+    setwd(.srcdir)###
+    CombatEnv  <- BattleGround$GetCombatEnvironment(w)
+    DefaultEnv <- BattleGround$GetDefaultCombatEnvironment(w)
+    setwd(.testdir)###
+
+    CombatEnvStr  <- capture.output(str(CombatEnv))
+    DefaultEnvStr <- capture.output(str(DefaultEnv))
+
+    expect_identical(CombatEnvStr, DefaultEnvStr)
+  }
+})
+
+
+# Properties ---------------
+test_that("Active Property: WeaponType", {
+  for (w in names(.WeaponType)) {
+    BattleGround <- CombatEnvironment$new(.WeaponType[w])
+  }
+})
 
 # test_that("", {
 #   # When there is no vision AT = AT /2 ----> 9 / 2 shall not be 4.5 but 5
