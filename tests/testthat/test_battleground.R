@@ -53,20 +53,20 @@ test_that("Init class", {
       expect_identical(CombatEnv$Hero$MeansOfMovement, .MeansOfMovement["OnFoot"], label = w)
       expect_identical(CombatEnv$Hero$Movement, .Movement["Stationary"], label = w)
       expect_identical(CombatEnv$Opponent$Movement, .Movement["Slow"], label = w)
-      expect_identical(CombatEnv$Opponent$Distance, .TargetDistance["Medium"], label = w)
-
-      expect_null(CombatEnv$Hero$CloseCombatRange)
-      expect_null(CombatEnv$Opponent$CloseCombatRange)
-      expect_null(CombatEnv$Environment$CrampedSpace)
-    } else if (w == "Melee") {
-      expect_null(CombatEnv$Hero$MeansOfMovement)
-      expect_null(CombatEnv$Hero$Movement)
-      expect_null(CombatEnv$Opponent$Movement)
-      expect_null(CombatEnv$Opponent$Distance)
-
+      expect_identical(CombatEnv$Opponent$TargetDistance, .TargetDistance["Medium"], label = w)
+      # obsolete because close combat but there nevertheless
       expect_identical(CombatEnv$Hero$CloseCombatRange, .CloseCombatRange["Short"], label = w)
       expect_identical(CombatEnv$Opponent$CloseCombatRange, .CloseCombatRange["Short"], label = w)
       expect_identical(CombatEnv$Environment$CrampedSpace, .CrampedSpace["Free"], label = w)
+    }  else if (w == "Melee") {
+      expect_identical(CombatEnv$Hero$CloseCombatRange, .CloseCombatRange["Short"], label = w)
+      expect_identical(CombatEnv$Opponent$CloseCombatRange, .CloseCombatRange["Short"], label = w)
+      expect_identical(CombatEnv$Environment$CrampedSpace, .CrampedSpace["Free"], label = w)
+      # obsolete because ranged combat but there nevertheless
+      expect_identical(CombatEnv$Hero$MeansOfMovement, .MeansOfMovement["OnFoot"], label = w)
+      expect_identical(CombatEnv$Hero$Movement, .Movement["Stationary"], label = w)
+      expect_identical(CombatEnv$Opponent$Movement, .Movement["Stationary"], label = w)
+      expect_identical(CombatEnv$Opponent$TargetDistance, .TargetDistance["Close"], label = w)
     }
   }
 })
