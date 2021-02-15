@@ -75,7 +75,8 @@ test_that("Init class: GetCombatEnvironment", {
 })
 
 
-
+# Directly after initialization the combat environment of the object shall
+# be identical to the default generated environment.
 test_that("Init class: GetCombatEnvironment = GetDefaultCombatEnvironment", {
   for (w in names(.WeaponType)) {
     BattleGround <- CombatEnvironment$new(.WeaponType[w])
@@ -95,10 +96,86 @@ test_that("Init class: GetCombatEnvironment = GetDefaultCombatEnvironment", {
 
 # Properties ---------------
 test_that("Active Property: WeaponType", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
   for (w in names(.WeaponType)) {
-    BattleGround <- CombatEnvironment$new(.WeaponType[w])
+    BattleGround$WeaponType <- .WeaponType[w]
+    expect_identical(BattleGround$WeaponType, .WeaponType[w])
   }
 })
+
+test_that("Active Property: (Close)CombatRange", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+  for (cr in names(.CloseCombatRange)) {
+    BattleGround$CombatRange <- .CloseCombatRange[cr]
+    expect_identical(BattleGround$CombatRange, .CloseCombatRange[cr])
+  }
+})
+
+test_that("Active Property: Visibility", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+  for (v in names(.Visibility)) {
+    BattleGround$Visibility <- .Visibility[v]
+    expect_identical(BattleGround$Visibility, .Visibility[v])
+  }
+})
+
+test_that("Active Property: CrampedSpace", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+  for (cs in names(.CrampedSpace)) {
+    BattleGround$CrampedSpace <- .CrampedSpace[cs]
+    expect_identical(BattleGround$CrampedSpace, .CrampedSpace[cs])
+  }
+})
+
+test_that("Active Property: UnderWater", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+  for (u in names(.UnderWater)) {
+    BattleGround$UnderWater <- .UnderWater[u]
+    expect_identical(BattleGround$UnderWater, .UnderWater[u])
+  }
+  # Invalid input
+  expect_error(BattleGround$UnderWater <- 99)
+  # Input is NA or NULL resets to default
+  BattleGround$UnderWater <- NA
+  expect_identical(BattleGround$UnderWater, BattleGround$getDefault(groupId = "Environment", "UnderWater"))
+  BattleGround$UnderWater <- sample(.UnderWater, 1L)
+  BattleGround$UnderWater <- NULL
+  expect_identical(BattleGround$UnderWater, BattleGround$getDefault(groupId = "Environment", "UnderWater"))
+})
+
+
+# getValue / getDefault ----------------
+test_that("getValue", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+
+  o <- BattleGround$getValue(valueId = "UnderWater") #
+  expect_identical(o, .UnderWater["Dry"])
+
+  BattleGround$UnderWater <- tail(.UnderWater, 1L)
+  o <- BattleGround$getValue(valueId = "UnderWater") #
+  expect_identical(o, tail(.UnderWater, 1L))
+})
+
+
+test_that("getDefault", {
+  BattleGround <- CombatEnvironment$new(.WeaponType["Unarmed"])
+
+  o <- BattleGround$getDefault(valueId = "UnderWater") #
+  expect_identical(o, .UnderWater["Dry"])
+
+  o <- BattleGround$getDefault(valueId = "This valueId does not exist ... I am sure of it") #
+  expect_true(is.na(o))
+
+  # Edge cases
+  # "UnderWater" is unambiguous so this works
+  o <- BattleGround$getDefault(groupId = "This does not match anything I know", valueId = "UnderWater") #
+  expect_false(is.na(o))
+  # "CloseCombatRange" is NOT unambiguous so this returns NA
+  o <- BattleGround$getDefault(groupId = "This does not match anything I know", valueId = "CloseCombatRange") #
+  expect_true(is.na(o))
+})
+
+
 
 # test_that("", {
 #   # When there is no vision AT = AT /2 ----> 9 / 2 shall not be 4.5 but 5

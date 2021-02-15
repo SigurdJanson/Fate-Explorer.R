@@ -67,7 +67,8 @@ CombatEnvironment <- R6Class(
       if (missing(value)) {
         return(private$.Environment.UnderWater)
       } else {
-        if (is.null(value) || is.na(value)) value <- .UnderWater["Dry"]
+        if (is.null(value) || is.na(value))
+          value <- .UnderWater["Dry"]
 
         isValid <- value %in% .UnderWater | value %in% names(.UnderWater)
         if (isFALSE(isValid))
@@ -185,7 +186,7 @@ CombatEnvironment <- R6Class(
     #' @return The requested value
     #' @examples
     #' getDefault(valueId = "TargetDistance")
-    #' getDefault(valueId = "CloseCombatRange", "Hero") # group required
+    #' getDefault(valueId = "CloseCombatRange", "groupId = Hero") # group required
     getDefault = function(groupId = "", valueId) {
   #browser()
       Names <- names(self$Defaults)
@@ -193,11 +194,16 @@ CombatEnvironment <- R6Class(
       Found <- Names[Found]
       if (length(Found) > 1) {
         Found <- paste(groupId, valueId, sep = ".")
-      }
-      Row    <- .WeaponType[self$Defaults$WeaponType] == .WeaponType[private$.Hero.WeaponType]
-      Column <- names(self$Defaults) == Found
-      Result <- self$Defaults[[which(Column)]][Row]
-      if (isFALSE(nrow(Result) > 0 && ncol(Result) > 0)) Result <- NA
+      } else if (length(Found) < 1)
+        return(NA)
+      Row    <- .WeaponType[self$Defaults$Hero.WeaponType] == .WeaponType[private$.Hero.WeaponType]
+      Column <- which( names(self$Defaults) == Found )
+
+      if (length(Column) != 1) return(NA)
+
+      Result <- self$Defaults[[Column]][Row]
+      if (isTRUE(is.na(Result) || !is.numeric(Result))) return(NA)
+
       return(Result)
     },
 
@@ -360,6 +366,7 @@ CombatEnvironment <- R6Class(
 )
 
 # ce <- CombatEnvironment$new(.WeaponType["Melee"])
+# ce$getDefault(valueId = "This valueId does not exist ... I am sure of it")
 # print(ce$getValue("", "CombatRange"))
 # print(ce$getValue("Hero", "CombatRange"))
 # print(ce$getValue("", "Visibility"))
