@@ -111,6 +111,14 @@ test_that("Active Property: (Close)CombatRange", {
   }
 })
 
+test_that("Active Property: TargetSize", {
+  BattleGround <- CombatEnvironment$new(.WeaponType[1])
+  for (ts in names(.TargetSize)) {
+    BattleGround$TargetSize <- .TargetSize[ts]
+    expect_identical(BattleGround$TargetSize, .TargetSize[ts])
+  }
+})
+
 test_that("Active Property: Visibility", {
   BattleGround <- CombatEnvironment$new(.WeaponType[1])
   for (v in names(.Visibility)) {
@@ -154,6 +162,14 @@ test_that("getValue", {
   BattleGround$UnderWater <- tail(.UnderWater, 1L)
   o <- BattleGround$getValue(valueId = "UnderWater") #
   expect_identical(o, tail(.UnderWater, 1L))
+
+  o <- BattleGround$getValue(valueId = "TargetSize") #
+  expect_identical(o, .TargetSize["Medium"])
+
+  BattleGround$TargetSize <- head(.TargetSize, 1L)
+  o <- BattleGround$getValue(valueId = "TargetSize") #
+  expect_identical(o, head(.TargetSize, 1L))
+
 })
 
 
@@ -162,6 +178,9 @@ test_that("getDefault", {
 
   o <- BattleGround$getDefault(valueId = "UnderWater") #
   expect_identical(o, .UnderWater["Dry"])
+  # Default other than 1L
+  o <- BattleGround$getValue(valueId = "TargetSize") #
+  expect_identical(o, .TargetSize["Medium"])
 
   o <- BattleGround$getDefault(valueId = "This valueId does not exist ... I am sure of it") #
   expect_true(is.na(o))

@@ -28,7 +28,17 @@ CombatEnvironment <- R6Class(
       if (missing(value)) {
         return(private$.Hero.CloseCombatRange)
       } else {
-          private$.Hero.CloseCombatRange <- .CloseCombatRange[value]
+        private$.Hero.CloseCombatRange <- .CloseCombatRange[value]
+      }
+    },
+
+    #' @field TargetSize Gets/sets the size of the opponent
+    #' (enum of .TargetSize)
+    TargetSize = function(value) {
+      if (missing(value)) {
+        return(private$.Opponent.TargetSize)
+      } else {
+        private$.Opponent.TargetSize <- .TargetSize[value]
       }
     },
 
