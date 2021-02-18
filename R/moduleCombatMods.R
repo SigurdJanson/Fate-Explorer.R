@@ -219,8 +219,8 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
 
                     #TODO: risky not to use codes/ids but the translated string
                     CombatEnv()$initCombatEnvironment(
-                        Type  = .WeaponType[ifelse(isTruthy(WeaponType()),  WeaponType(),  .WeaponType["Melee"])],
-                        Range = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])),
+                        weaponType = .WeaponType[ifelse(isTruthy(WeaponType()),  WeaponType(),  .WeaponType["Melee"])],
+                        closeRange = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])),
                         HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input[["sel.Hero.MeansOfMovement"]]),
                         HeroSpeed  = which(i18n$t(names(Movement))          == input[["sel.Hero.Movement"]]),
                         EnemyRange = which(i18n$t(names(.CloseCombatRange)) == input[["sel.Opponent.CloseCombatRange"]]),
@@ -229,7 +229,7 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         EnemySpeed = which(i18n$t(names(.Movement))         == input[["sel.Opponent.Movement"]]),
                         Evasive    = Evasive,
                         Visibility = which(i18n$t(names(.Visibility))       == input[["sel.Environment.Visibility"]]),
-                        ElbowRoom  = Cramped,
+                        crampedSpace = Cramped,
                         Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input[["sel.Environment.UnderWater"]])]
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
