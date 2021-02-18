@@ -14,7 +14,7 @@ if (file.exists(file.path("R", "data", "lang.json"))) {
 } else stopApp("No translation file found")
 i18n$set_translation_language("de")
 
-# 
+#
 source("rules.R", local = TRUE)
 source("helpers.R", local = TRUE, encoding = "UTF-8")
 source("dicelogic.R", local = TRUE)

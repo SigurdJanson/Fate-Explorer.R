@@ -109,7 +109,7 @@ CombatEnvironment <- R6Class(
     ),
 
     #' Constructor
-    #' @details Create a new combat environment and initialise with default values
+    #' @details Create a new combat environment and initialize with default values
     #' @param WeaponType A `.WeaponType` enum value
     #' @return `invisible(self)`
     initialize = function(WeaponType) {
