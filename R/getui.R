@@ -15,28 +15,28 @@ ui <- shinyUI(fluidPage(
              ),
              windowTitle = "Fate Explorer", id ="uiTabset",
              position = c("static-top"), inverse = TRUE, collapsible = TRUE,
-             
+
              #header = div(
              #         source(file.path("ui", "header_ui.R"), local = TRUE)$value
              #),
-             
+
              tabPanel(i18n$t("Be"),
-                      source(file.path("ui", "tab_ability_ui.R"), local = TRUE)$value
+               source(file.path("ui", "tab_ability_ui.R"), local = TRUE)$value
              ),
-             
+
              tabPanel(i18n$t("Act"),
                source(file.path("ui", "tab_skill_ui.R"), local = TRUE)$value
              ),
-             
+
              tabPanel(i18n$t("Fight"),
                source(file.path("ui", "tab_combat_ui.R"), local = TRUE)$value
              ),
 
-             tabPanel(i18n$t("Setup"), 
+             tabPanel(i18n$t("Setup"),
                source(file.path("ui", "tab_setup_ui.R"), local = TRUE)$value
              ),
-             
-             tabPanel(i18n$t("About..."), 
+
+             tabPanel(i18n$t("About..."),
                source(file.path("ui", "tab_about_ui.R"), local = TRUE)$value
              )
   )
