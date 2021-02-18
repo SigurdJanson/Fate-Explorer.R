@@ -195,6 +195,11 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
             #' Reactive: EffectiveValues
             #' Returns the effective skill values depending on the given combat environment.
             EffectiveValues <- reactive({
+                GetInputVal <- function(InputId, Enum) {
+                    #TODO: risky not to use codes/ids but the translated string
+                    Enum[which(i18n$t(names(Enum)) == input[[InputId]])]
+                }
+
                 # Check if all widgets in this module are valid (except check boxes)
                 # Also exclude the button that is used to call the modal dialog
                 WidgValid <- vapply(names(input),
@@ -217,20 +222,19 @@ dlgCombatModsModuleServer <- function(id, i18n, WeaponName, WeaponType, WeaponRa
                         Movement <- .Movement
                     }
 
-                    #TODO: risky not to use codes/ids but the translated string
                     CombatEnv()$initCombatEnvironment(
                         weaponType = .WeaponType[ifelse(isTruthy(WeaponType()),  WeaponType(),  .WeaponType["Melee"])],
                         closeRange = ifelse(isTruthy(WeaponRange()), WeaponRange(), names(.CloseCombatRange["Short"])),
-                        HeroMoves  = which(i18n$t(names(.MeansOfMovement))  == input[["sel.Hero.MeansOfMovement"]]),
-                        HeroSpeed  = which(i18n$t(names(Movement))          == input[["sel.Hero.Movement"]]),
-                        EnemyRange = which(i18n$t(names(.CloseCombatRange)) == input[["sel.Opponent.CloseCombatRange"]]),
-                        EnemySize  = which(i18n$t(names(.TargetSize))       == input[["sel.Opponent.Size"]]),
-                        EnemyDistance = which(i18n$t(names(.TargetDistance))== input[["sel.Opponent.TargetDistance"]]),
-                        EnemySpeed = which(i18n$t(names(.Movement))         == input[["sel.Opponent.Movement"]]),
+                        HeroMoves  = GetInputVal("sel.Hero.MeansOfMovement", .MeansOfMovement),
+                        HeroSpeed  = GetInputVal("sel.Hero.Movement", Movement),
+                        EnemyRange = GetInputVal("sel.Opponent.CloseCombatRange", .CloseCombatRange),
+                        EnemySize  = GetInputVal("sel.Opponent.Size", .TargetSize),
+                        EnemyDistance = GetInputVal("sel.Opponent.TargetDistance", .TargetDistance),
+                        EnemySpeed = GetInputVal("sel.Opponent.Movement", .Movement),
                         Evasive    = Evasive,
-                        Visibility = which(i18n$t(names(.Visibility))       == input[["sel.Environment.Visibility"]]),
+                        Visibility = GetInputVal("sel.Environment.Visibility", .Visibility),
                         crampedSpace = Cramped,
-                        Underwater = .UnderWater[which(i18n$t(names(.UnderWater)) == input[["sel.Environment.UnderWater"]])]
+                        Underwater = GetInputVal("sel.Environment.UnderWater", .UnderWater)
                     )
                     Environment <- CombatEnv()$GetCombatEnvironment()
                     ESV <- ModifyCheck(WeaponSkills(), Environment) # Effective skill value
