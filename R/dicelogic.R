@@ -1,5 +1,5 @@
 source("./rules.R")
-# 
+#
 
 #' VerifyConfirmation
 #' Ascertain whether a confirmation roll was successful based on the result strings
@@ -15,7 +15,7 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
     Result <- Result[(PositiveCheck*2 + PositiveConfirm) +1]
     return(Result)
   } else { # if not a critical/fumble this function does not add information
-    return(RollResult) 
+    return(RollResult)
   }
 }
 
@@ -26,12 +26,12 @@ VerifyConfirmation <- function( RollResult, ConfirmationResult ) {
 #' on the action.
 #' @param RollValue The dice roll with 2d6 (2-12, integer).
 #' @param RollType String that identifies the action ("Skill", "Attack", "Parry", "Dodge")
-#' @param SubType String that further identifies the roll 
-#' (one of `names(.WeaponType)` for combat actions or 
+#' @param SubType String that further identifies the roll
+#' (one of `names(.WeaponType)` for combat actions or
 #' c("Magic", "Liturgical") for skill rolls)
 #' @return A list with the `id`, a `label` and a detailed description (`descr`)
 #' of the fumble.
-GetFumbleEffect <- function(RollValue, 
+GetFumbleEffect <- function(RollValue,
                             RollType = c("Skill", "Attack", "Parry", "Dodge"),
                             SubType = c(names(.WeaponType), "Magic", "Blessed") ) {
   # PRECONDITIONS
@@ -39,7 +39,7 @@ GetFumbleEffect <- function(RollValue,
   if(RollValue < 2L || RollValue > 12L) stop("Invalid fumble roll")
   RollType <- match.arg(RollType)
   SubType  <- match.arg(SubType)
-  
+
   Data <- GetAllFumbleEffects()
   # Determine correct table
   Index <- sapply(sapply(Data[["Tables"]][["Roll"]], `%in%`, RollType), any)
@@ -50,13 +50,13 @@ GetFumbleEffect <- function(RollValue,
   # Extract fumble ID
   Index <- sapply(sapply(EffectTable[["dr"]], `%in%`, RollValue), any)
   ID <- EffectTable[["ref"]][ Index ]
-  
+
   # Look up fumble ID and return the result
   ListOfEffects <- Data[["Effects"]]
   Index <- ListOfEffects[["id"]] == ID
   Result <- ListOfEffects[Index, ] # return complete row as result
-  
-  return(as.list(Result)) # 
+
+  return(as.list(Result)) #
 }
 # setwd("./R")
 # GetFumbleEffect(3L, "Attack", "Unarmed")
@@ -93,7 +93,7 @@ VerifyAbilityRoll <- function(Roll, Ability, Modifier = 0L) {
   if (missing(Roll) || is.null(Roll)) return(NA)
   if (Roll < 1L || Roll > 20L) stop("Invalid roll")
   if(Ability < 0L) stop("Invalid ability")
-  
+
   # RUN
   if (Roll == 20L)
     Success <- "Fumble"
@@ -101,7 +101,7 @@ VerifyAbilityRoll <- function(Roll, Ability, Modifier = 0L) {
     Success <- "Critical"
   else
     Success <- ifelse(Roll <= Ability+Modifier, "Success", "Fail")
-  
+
   return(Success)
 }
 
@@ -139,13 +139,13 @@ VerifyCombatRoll <- function(Roll, Skill, Penalty = 0L) {
   if(Skill < 0L) stop("Invalid skill")
 
   # RUN
-  if (Roll == 20L) 
+  if (Roll == 20L)
     Success <- "Fumble"
   else if (Roll == 1L)
     Success <- "Critical"
   else
     Success <- ifelse(Roll <= Skill+Penalty, "Success", "Fail")
-  
+
   return(Success)
 }
 #VerifyCombatRoll(2, 9)
@@ -153,14 +153,14 @@ VerifyCombatRoll <- function(Roll, Skill, Penalty = 0L) {
 
 
 #' InitiativeRoll
-#' Returns an initiative roll to determine the order in which characters 
+#' Returns an initiative roll to determine the order in which characters
 #' (PCs and NPCs act).
 #' @param INI Initiative value
 #' @param Ability a data frame with ID as column names and ability values in first row
 #' @param Additional modifier - depends on states, conditions, special abilities, ...
 #'
 #' @return The initiative value
-#' @source initiative values are described in VR1 Core Rules, p. 57; the roll is 
+#' @source initiative values are described in VR1 Core Rules, p. 57; the roll is
 #' described in VR1 Core Rules, p. 226/7
 InitiativeRoll <- function(INI, Ability = NULL, Mod = 0L) {
   if (missing(INI))
@@ -204,7 +204,7 @@ SkillRollQuality <- function(Remainder) {
 VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = 0L) {
   if (length(Roll) != 3L) stop("Skill roll shall have exactly three values")
   if (length(Abilities) != 3L) stop("Skill roll requires 3 abilities to roll against")
-  
+
   if (sum(Roll == 20L) >= 2L) {
     Success <- "Fumble"
     Remainder <- 0L
@@ -222,7 +222,7 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
     Success <- ifelse(Remainder >= 0, "Success", "Fail")
     QL <- SkillRollQuality(Remainder)
   }
-  
+
   return(list(Message = Success, QL = QL, Remainder = Remainder))
 }
 
@@ -233,28 +233,30 @@ VerifySkillRoll <- function(Roll, Abilities = c(10L, 10L, 10L), Skill = 0L, Modi
 #' @param Skill A single skill value (integer)
 #' @param Abilities A vector with exactly three ability values (integer)
 #' @param Mod A check modifier
-#' @details 
-#' `(-Mod+4)*3-2`with `Mod <- c(-3:3)` returns the values in table 
+#' @details
+#' `(-Mod+4)*3-2`with `Mod <- c(-3:3)` returns the values in table
 #' of [routine check requirements](https://ulisses-regelwiki.de/index.php/GR_Routineprobe.html).
+#'
+#' If `Mod` is `NA` then a routine check only depends on ability values.
 #' @source Basic rules, german edition Seite 184/185.
-#' @return TRUE/ FALSE. If `Mod`is `NA` then a 
+#' @return TRUE/ FALSE
 CanRoutineSkillCheck <- function(Abilities = c(10L, 10L, 10L), Skill = 0L, Modifier = NA) {
   if (length(Abilities) != 3) stop("Three abilities make a skill check")
   if (length(Skill) != 1) stop("Exactly one skill value is needed for skill check")
-  
-  if (is.na(Modifier)) 
+
+  if (is.na(Modifier))
     SufficientSkill <- TRUE
   else
-    SufficientSkill <- Skill >= (-Modifier+4)*3-2
-  
-  SufficientAbility <- all(Abilities >= 13)
+    SufficientSkill <- (Skill > 0L) && (Skill >= (-Modifier + 4L)*3L-2L)
+
+  SufficientAbility <- all(Abilities >= 13L)
   #
   return( SufficientAbility & SufficientSkill )
 }
 
 
 #' VerifyRoutineSkillCheck
-#' Verify the result of a routine skill check. 
+#' Verify the result of a routine skill check.
 #' @param Skill A list with all the skill data
 #' @param Abilities A data frame containing the ability values
 #' @param Mod A check modifier
