@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Fate Explorer"
-#define MyAppVersion "1.0 Funky Dorky"
+#define MyAppVersion "2 Aves' Boot Heel"
 #define MyAppPublisher "Praise Beauty Productions"
 #define MyAppExeName "LaunchFateExplorer.vbs"
 #define MainDirName "FateExplorer"
