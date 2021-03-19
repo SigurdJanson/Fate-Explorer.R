@@ -1228,7 +1228,7 @@
         "templateID": "ITEMTPL_56"
     },
     {
-        "name": "Druidendolch",
+        "name": "Druid Dagger",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 15,
@@ -1243,13 +1243,13 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_3",
         "improvised": false,
-        "url": "index.php/druidendolch-aus-vulkanglas.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_474"
     },
     {
-        "name": "Eberfänger",
+        "name": "Boar-catcher",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -1264,13 +1264,13 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_3",
         "improvised": false,
-        "url": "index.php/eberfaenger.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_475"
     },
     {
-        "name": "Deichgabel",
+        "name": "Dike Fork",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -1285,13 +1285,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/deichgabel-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_476"
     },
     {
-        "name": "Turnierlanze",
+        "name": "Tournament Lance",
         "combattech": "Lanzen",
         "damage": "1W6",
         "bonus": 8,
@@ -1301,13 +1301,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_7",
         "improvised": false,
-        "url": "index.php/turnierlanze.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_385"
     },
     {
-        "name": "Hirschfänger",
+        "name": "Stag-Catcher",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 14,
@@ -1322,13 +1322,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_12",
         "improvised": false,
-        "url": "index.php/RK_Hirschfaenger.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_477"
     },
     {
-        "name": "Turnierschwert",
+        "name": "Tournament Sword",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -1343,13 +1343,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_12",
         "improvised": false,
-        "url": "index.php/turnierschwert.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_390"
     },
     {
-        "name": "Kriegsflegel",
+        "name": "War Flail",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1364,13 +1364,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": false,
-        "url": "index.php/kriegsflegel-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_392"
     },
     {
-        "name": "Saufeder",
+        "name": "Boar Spear",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1385,13 +1385,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": false,
-        "url": "index.php/saufeder-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_478"
     },
     {
-        "name": "Sense",
+        "name": "Scythe",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -1406,13 +1406,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": true,
-        "url": "index.php/sense-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_394"
     },
     {
-        "name": "Sturmsense",
+        "name": "War Scythe",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -1427,13 +1427,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": false,
-        "url": "index.php/sturmsense-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_395"
     },
     {
-        "name": "Holzfälleraxt",
+        "name": "Woodcutter’s Axe",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -1448,13 +1448,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": true,
-        "url": "index.php/holzfaelleraxt-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_158"
     },
     {
-        "name": "Stakaxt",
+        "name": "Punt Axe",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -1469,7 +1469,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": true,
-        "url": "index.php/stakaxt-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_480"
@@ -1490,13 +1490,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_16",
         "improvised": false,
-        "url": "index.php/andergaster-nostrianer-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_482"
     },
     {
-        "name": "Turnierzweihänder",
+        "name": "Tournament Great Sword",
         "combattech": "Two-Handed Swords",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -1511,13 +1511,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_16",
         "improvised": false,
-        "url": "index.php/turnierzweihaender-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_396"
     },
     {
-        "name": "Eichhafener",
+        "name": "Oakhavener",
         "combattech": "Two-Handed Swords",
         "primeattr": "STR",
         "threshold": 14,
@@ -1532,7 +1532,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_16",
         "improvised": false,
-        "url": "index.php/eichhafener-harmlyner-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_546"
@@ -1553,7 +1553,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_16",
         "improvised": false,
-        "url": "index.php/eichhafener-harmlyner-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_547"
@@ -1574,13 +1574,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_16",
         "improvised": false,
-        "url": "index.php/andergaster-nostrianer-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_481"
     },
     {
-        "name": "Andergaster Langschwert",
+        "name": "Andergastan Long Sword",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1595,13 +1595,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_12",
         "improvised": false,
-        "url": "index.php/andergaster-langschwert.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_548"
     },
     {
-        "name": "Nostrisches Langschwert",
+        "name": "Nostrian Long Sword",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1616,13 +1616,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_12",
         "improvised": false,
-        "url": "index.php/nostrisches-langschwert.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_549"
     },
     {
-        "name": "StreitaxtderStreitendenKönigreiche",
+        "name": "Battle-axe (Warring Kingdoms variant)",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1637,13 +1637,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/streitaxt-der-streitenden-koenigreiche.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_550"
     },
     {
-        "name": "StreitkolbenderStreitendenKönigreiche",
+        "name": "Mace (Warring Kingdoms variant)",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1658,13 +1658,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/streitkolben-der-streitenden-koenigreiche.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_551"
     },
     {
-        "name": "Turnierschild",
+        "name": "Tournament Shield",
         "combattech": "Shields",
         "primeattr": "STR",
         "threshold": 16,
@@ -1678,12 +1678,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_10",
         "improvised": false,
-        "url": "index.php/turnierschild.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "DruidendolchausFeuerstein",
+        "name": "Druid Dagger (Flint)",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 15,
@@ -1698,12 +1698,12 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_3",
         "improvised": false,
-        "url": "index.php/druidendolch-aus-feuerstein.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Magierstab,lang(aussteineiche)",
+        "name": "Mage’s Staff Made from Stone Oak Wood",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -1718,7 +1718,7 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": false,
-        "url": "index.php/magierstab-lang-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
@@ -1763,7 +1763,7 @@
         "armed": true
     },
     {
-        "name": "Fackel",
+        "name": "Torch",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -1782,7 +1782,7 @@
         "templateID": "ITEMTPL_182"
     },
     {
-        "name": "Nudelholz",
+        "name": "Rolling Pin",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1797,12 +1797,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/nudel-teigholz-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Teigholz",
+        "name": "Rod-Style Rolling Pin",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1817,7 +1817,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/nudel-teigholz-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
@@ -2442,7 +2442,7 @@
         "templateID": "ITEMTPL_459"
     },
     {
-        "name": "Besen",
+        "name": "Broom",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -2456,13 +2456,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/besen-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_146"
     },
     {
-        "name": "Bratpfanne",
+        "name": "Frying Pan",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -2482,7 +2482,7 @@
         "armed": true
     },
     {
-        "name": "Bratpfanne,heiß",
+        "name": "Frying Pan, hot",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -2502,7 +2502,7 @@
         "armed": true
     },
     {
-        "name": "Flasche",
+        "name": "Bottle",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 16,
@@ -2516,12 +2516,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/flasche-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Flasche,gesplittert",
+        "name": "Bottle, broken",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 16,
@@ -2540,7 +2540,7 @@
         "armed": true
     },
     {
-        "name": "Stuhl",
+        "name": "Chair",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -2554,12 +2554,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/stuhl-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Stuhlbein",
+        "name": "Chair leg",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2573,12 +2573,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/stuhlbein-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Tisch",
+        "name": "Table",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 17,
@@ -2597,7 +2597,7 @@
         "armed": true
     },
     {
-        "name": "Bratspieß",
+        "name": "Spit",
         "combattech": "Impact Weapons",
         "primeattr": "AGI/STR",
         "threshold": 14,
@@ -2612,13 +2612,13 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/bratspiess-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_147"
     },
     {
-        "name": "Brecheisen",
+        "name": "Crowbar",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2633,13 +2633,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/brecheisen-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_221"
     },
     {
-        "name": "SeifemitTuch",
+        "name": "Soap with cloth",
         "combattech": "Kettenwaffen",
         "primeattr": "STR",
         "threshold": 14,
@@ -2658,7 +2658,7 @@
         "templateID": "ITEMTPL_441"
     },
     {
-        "name": "Wurfhaken mit Kletterseil",
+        "name": "Grappling Hook with Rope",
         "combattech": "Kettenwaffen",
         "primeattr": "STR",
         "threshold": 14,
@@ -2671,13 +2671,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_6",
         "improvised": true,
-        "url": "index.php/wurfhaken-mit-kletterseil-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_442"
     },
     {
-        "name": "Brechstange",
+        "name": "Pry bar",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2692,13 +2692,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": true,
-        "url": "index.php/brechstange-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_408"
     },
     {
-        "name": "Spaten",
+        "name": "Spade",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2712,13 +2712,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": true,
-        "url": "index.php/spaten-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_174"
     },
     {
-        "name": "Spitzhacke",
+        "name": "pickaxe",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2733,7 +2733,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": true,
-        "url": "index.php/spitzhacke-2h-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_175"
