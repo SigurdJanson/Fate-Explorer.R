@@ -347,24 +347,24 @@ GetPrimaryWeaponAttributeByCombatTechnique <- function( CombatTec ) {
 #' @param Abilities A data frame with the ability values
 #' @return A numeric value indicating the extra bonus that must be added to the
 #' weapons hit points.
-GetHitpointBonus <- function( Weapon, Abilities ) {
-  # PRECONDITIONS
-  if (missing(Weapon)) return(0L)
-  if (missing(Abilities) || !is.data.frame(Abilities))
-    stop("Argument 'Abilities' is missing")
-
-  # RUN
-  WeaponData <- GetWeapons( Weapon, "Melee" ) # only melee has a bonus
-  Primaries  <- GetPrimaryWeaponAttribute( Weapon )
-
-  if (!anyNA(Primaries)) {
-    Threshold  <- WeaponData[["threshold"]]
-    AbIndex <- which(names(Abilities) %in% Primaries)
-    Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold, na.rm = TRUE)
-  } else Bonus <- 0L
-
-  return(Bonus)
-}
+# GetHitpointBonus <- function( Weapon, Abilities ) {
+#   # PRECONDITIONS
+#   if (missing(Weapon)) return(0L)
+#   if (missing(Abilities) || !is.data.frame(Abilities))
+#     stop("Argument 'Abilities' is missing")
+#
+#   # RUN
+#   WeaponData <- GetWeapons( Weapon, "Melee" ) # only melee has a bonus
+#   Primaries  <- GetPrimaryWeaponAttribute( Weapon )
+#
+#   if (!anyNA(Primaries)) {
+#     Threshold  <- WeaponData[["threshold"]]
+#     AbIndex <- which(names(Abilities) %in% Primaries)
+#     Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold, na.rm = TRUE)
+#   } else Bonus <- 0L
+#
+#   return(Bonus)
+# }
 #GetHitpointBonus("Barbarenschwert", ab)
 
 

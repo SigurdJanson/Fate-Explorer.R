@@ -13,7 +13,7 @@ source("./readoptjson.R")
 ##' @importFrom R6 R6Class
 ##' @export
 WeaponBase <- R6Class(
-  "WeaponBase", 
+  "WeaponBase",
   active = list(
     #' Weapon name (string, property)
     Name = function(value) {
@@ -24,7 +24,7 @@ WeaponBase <- R6Class(
         private$OnValueChange()
       }
     },
-    
+
     #' Weapon type (.WeaponType, property)
     Type = function(value) {
       if (missing(value)) {
@@ -36,7 +36,7 @@ WeaponBase <- R6Class(
         } else stop("Unknown weapon type")
       }
     },
-    
+
     #' Combat technique of the weapon (`.ComTecs` Id, property)
     Technique = function(value) {
       if (missing(value)) {
@@ -46,7 +46,7 @@ WeaponBase <- R6Class(
         private$OnValueChange()
       }
     },
-    
+
     #' Range of the weapon (`.CloseCombatRange`, property)
     Range = function(value) {
       if (missing(value)) {
@@ -56,7 +56,7 @@ WeaponBase <- R6Class(
         private$OnValueChange()
       }
     },
-    
+
     #' Combat skill (property))
     Skill = function(value) {
       if (missing(value)) {
@@ -67,7 +67,7 @@ WeaponBase <- R6Class(
         private$OnValueChange()
       }
     },
-    
+
     #' Weapon damage, i.e. hit points (`[N]d[DP]+[Bonus]`, property)
     Damage = function(value) {
       if (missing(value)) {
@@ -78,7 +78,7 @@ WeaponBase <- R6Class(
         private$OnValueChange()
       }
     },
-    
+
     #' Permanent weapons modifier (integer, property)
     Modifier = function(value) {
       if (missing(value)) {
@@ -96,15 +96,15 @@ WeaponBase <- R6Class(
   LastModifier = NA, # additional situation dependent modifier
   LastResult   = NA, # Critical, Success, Fail, Botch
   LastDamage   = NA, # Hit points
-  ConfirmationMissing = NA, # T/F - does last roll wait for confirmation? 
-  ConfirmRoll  = NA, 
+  ConfirmationMissing = NA, # T/F - does last roll wait for confirmation?
+  ConfirmRoll  = NA,
   Confirmed    = NA,
   LastFumbleEffect = NA, # EffectOfFumble: consequence of 2d6
-  
+
   #' Constructor
   #' @param Weapon name of the weapon (character) or a list containing the data
   #' @param Abilities Character abilities (data frame)
-  #' @param CombatTecSkills Named list of combat tech skills 
+  #' @param CombatTecSkills Named list of combat tech skills
   #' (names are the `combattechID`)
   #' @return `self`
   initialize = function(Weapon = NULL, Abilities = NULL, CombatTecSkills = NULL, ...) {
@@ -120,9 +120,9 @@ WeaponBase <- R6Class(
     } else {
       if (is.character(Weapon)) # `Weapon` is a name or ID
         private$RawWeaponData <- GetWeapons(Weapon)
-      else 
+      else
         private$RawWeaponData <- Weapon
-      
+
       private$.Name      <- private$RawWeaponData[["name"]]
       private$.Type      <- .WeaponType[1+ private$RawWeaponData[["armed"]] + !private$RawWeaponData[["clsrng"]] ]
       private$.Technique <- private$RawWeaponData[["combattechID"]]
@@ -133,12 +133,12 @@ WeaponBase <- R6Class(
     }
     invisible(self)
   },
-  
+
   # CALLBACK SECTION
   RegisterOnValueChange = function(Callback) {
-    if (mode(Callback) != "function") 
+    if (mode(Callback) != "function")
       stop(sprintf("Cannot register object of type '%s' as callback"), typeof(Callback))
-    
+
     #if (!(Callback %in% private$ValueChangeCallbacks)) # avoid duplicates
     if (!(any(sapply(private$ValueChangeCallbacks, identical, Callback))))
       private$ValueChangeCallbacks <- c(private$ValueChangeCallbacks, Callback)
@@ -146,12 +146,12 @@ WeaponBase <- R6Class(
   UnregisterOnValueChange = function(Callback) {
     if (mode(Callback) != "function")
       stop(sprintf("Cannot register object of type %s as callback"), typeof(Callback))
-    
+
     # Use `setdiff` because duplicates should not exist
     private$ValueChangeCallbacks <- setdiff(private$ValueChangeCallbacks, c(Callback))
   },
-  
-  
+
+
   #' CalcSkill
   #' Computes weapons skill for character
   #' @param CharAbs Data frame of character abilities
@@ -166,22 +166,22 @@ WeaponBase <- R6Class(
     }
     ##TODO: DodgeSkill <- GetDodgeSkill()
 
-    self$Skill <- c(Attack = private$RawWeaponData[["AT.Skill"]], 
-                    Parry  = private$RawWeaponData[["PA.Skill"]], 
+    self$Skill <- c(Attack = private$RawWeaponData[["AT.Skill"]],
+                    Parry  = private$RawWeaponData[["PA.Skill"]],
                     Dodge  = ceiling(CharAbs[["ATTR_6"]] / 2L))
     return(invisible(self))
   },
 
-  
+
   #' CalcDamage
-  #' Computes the hit point formula of the weapon. It takes the 
+  #' Computes the hit point formula of the weapon. It takes the
   #' character's abilities into account to get the bonus right.
   #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
   #' @param CharAbs The character's abilities
   #' @return Invisible returns `self`
   CalcDamage = function(CharAbs) {
     # if RawWeaponData has not been enriched by character data, yet, do so ...
-    if (is.null(private$RawWeaponData[["damageDiceNumber"]]) || 
+    if (is.null(private$RawWeaponData[["damageDiceNumber"]]) ||
         is.null(private$RawWeaponData[["damageDiceSides"]])  ||
         is.null(private$RawWeaponData[["damageFlat"]])) {
       DamageDice <- unlist(strsplit(private$RawWeaponData[["damage"]], split = "W"))
@@ -189,17 +189,45 @@ WeaponBase <- R6Class(
       private$RawWeaponData[["damageDiceSides"]]  <- as.integer(DamageDice[2])
       Bonus <- as.integer(private$RawWeaponData[["bonus"]])
       if (!isTruthy(Bonus)) Bonus <- 0
-      private$RawWeaponData[["damageFlat"]] <- Bonus + GetHitpointBonus(self$Name, Abilities = CharAbs)
+      private$RawWeaponData[["damageFlat"]] <- Bonus
     }
-    
-    self$Damage <- c(N = private$RawWeaponData[["damageDiceNumber"]], 
-                     DP = private$RawWeaponData[["damageDiceSides"]], 
-                     Bonus = private$RawWeaponData[["damageFlat"]])
+
+    self$Damage <- c(N = private$RawWeaponData[["damageDiceNumber"]],
+                     DP = private$RawWeaponData[["damageDiceSides"]],
+                     Bonus = private$RawWeaponData[["damageFlat"]] +
+                       self$CalcHitpointBonus(CharAbs))
 
     return(invisible(self))
   },
 
-  
+  #' CalcHitpointBonus
+  #' Get possible hit point bonus depending on character's abilities.
+  #' @param Abilities A data frame with the ability values
+  #' @return A numeric value indicating the extra bonus that must be added to the
+  #' weapons hit points.
+  CalcHitpointBonus = function(Abilities) {
+    # PRECONDITIONS
+    if (!isTruthy(self$Name)) return(0L)
+    if (missing(Abilities) || !is.data.frame(Abilities))
+      stop("Argument 'Abilities' is missing")
+    if (is.null(names(Abilities))) stop("'Abilities' is not named")
+
+    # RUN
+    Threshold  <- private$RawWeaponData[["threshold"]]
+    if (is.null(Threshold)) return(0L)
+    Primaries  <- GetPrimaryWeaponAttribute( self$Name )
+    if (!isTruthy(Primaries))
+      Primaries <- GetPrimaryWeaponAttributeByCombatTechnique(private$.Technique)
+
+    if (!anyNA(Primaries)) {
+      AbIndex <- which(names(Abilities) %in% Primaries)
+      Bonus <- max(0L, unlist(Abilities[, AbIndex])-Threshold, na.rm = TRUE)
+    } else Bonus <- 0L
+
+    return(Bonus)
+  },
+
+
   Attack = function(Modifier = 0L) self$Roll("Attack", Modifier), # wrapper
   Parry  = function(Modifier = 0L) self$Roll("Parry", Modifier), # wrapper
   Dodge  = function(Modifier = 0L) self$Roll("Dodge", Modifier), # wrapper
@@ -218,43 +246,43 @@ WeaponBase <- R6Class(
       else
         stop("Unknown combat action")
     }
-    
+
     # RUN
     if (length(Modifier) == length(.CombatAction)) # if actions have different modifiers ...
       Modifier <- Modifier[.CombatAction[Action]]  # ... select the right one
     self$LastModifier <- private$.Modifier + Modifier
 
     Skill <- private$.Skill[[ names(.CombatAction)[self$LastAction] ]]
-    
+
     self$LastRoll <- CombatRoll()
     Verification  <- VerifyCombatRoll(self$LastRoll, Skill, self$LastModifier) # interim variable
     self$LastResult <- .SuccessLevel[Verification]
-    
+
     self$LastDamage <- 0L
     if (self$LastAction == .CombatAction["Attack"])
       if (self$LastResult %in% .SuccessLevel[c("Success", "Critical")])
       {
         self$LastDamage <- DamageRoll(private$.Damage["N"], private$.Damage["DP"], private$.Damage["Bonus"])
       }
-    
+
     self$ConfirmationMissing <- self$LastResult %in% .SuccessLevel[c("Fumble", "Critical")]
     self$ConfirmRoll <- NA
     self$Confirmed   <- NA
     self$LastFumbleEffect <- NA
-    
+
     return(self$LastRoll)
   },
-  
+
 
   #' Confirm
   #' Confirm the last critical/fumble roll
   #' @return A value from the `.SuccessLevel` enum. `NA` if the last roll was not
-  #' a critical or fumble. Also `NA` when the weapon has not been used in this 
+  #' a critical or fumble. Also `NA` when the weapon has not been used in this
   #' session, yet.
   Confirm = function() {
     if (is.na(self$LastRoll)) return(NA)
     if (!self$ConfirmationMissing) return(NA)
-      
+
     self$ConfirmationMissing <- FALSE
     Skill <- private$.Skill[[ names(.CombatAction)[self$LastAction] ]]
 
@@ -270,11 +298,11 @@ WeaponBase <- R6Class(
 
     return(Result)
   },
-  
-  
+
+
   #' FumbleRoll
   #' Rolls the consequences of a confirmed fumble roll.
-  #' @note This method merely wraps 
+  #' @note This method merely wraps
   #' @seealso [GetFumbleEffect()] which this function wraps.
   FumbleRoll = function() {
     if (!isTruthy(self$LastFumbleEffect))
@@ -285,8 +313,8 @@ WeaponBase <- R6Class(
       }
     return(self$LastFumbleEffect)
   },
-  
-  
+
+
   #' RollNeedsConfirmation
   #' Is a confirmation roll required to complete the fighting roll?
   #' @return `TRUE` if a confirmation roll is required. `FALSE` if
@@ -294,15 +322,15 @@ WeaponBase <- R6Class(
   RollNeedsConfirmation = function() {
     return(!is.na(self$LastRoll) & self$ConfirmationMissing)
   },
-  
-  
+
+
   #' GetHitPoints
   #' Damage of the last roll
   GetHitPoints = function() {
     return(self$LastDamage)
   },
-  
-  
+
+
   #' CanParry
   #' Does the weapon allow a parry roll?
   CanParry = function() {
@@ -327,7 +355,7 @@ private = list(
 
   # Callbacks to notify other changes in the weapon
   ValueChangeCallbacks = NULL,
-  
+
   OnValueChange = function() {
     if (length(private$ValueChangeCallbacks) > 0)
       for (f in private$ValueChangeCallbacks)
@@ -341,8 +369,8 @@ private = list(
 ##' MeleeWeapon class
 ##' @importFrom R6 R6Class
 ##' @export
-MeleeWeapon <- R6Class("MeleeWeapon", 
-  inherit = WeaponBase, 
+MeleeWeapon <- R6Class("MeleeWeapon",
+  inherit = WeaponBase,
   public = list(
 
     #' Constructor
@@ -352,7 +380,7 @@ MeleeWeapon <- R6Class("MeleeWeapon",
     #' @return `self`
     initialize = function(Weapon, Abilities, CombatTecSkills, ...) {
       super$initialize(Weapon, Abilities, CombatTecSkills, ...)
-      
+
       if (!missing(Weapon)) {
         if (!(private$RawWeaponData[["clsrng"]])) # if ranged weapon
           stop("This class is for close combat only")
@@ -360,8 +388,8 @@ MeleeWeapon <- R6Class("MeleeWeapon",
 
       invisible(self)
     },
-    
-    
+
+
     #' CalcSkill
     #' Computes weapons skill for character
     #' @param CharAbs Data frame of character abilities
@@ -372,17 +400,17 @@ MeleeWeapon <- R6Class("MeleeWeapon",
       return(invisible(self))
     },
 
-    
+
     #' CalcDamage
-    #' Computes the hit point formula of the weapon. It takes the 
+    #' Computes the hit point formula of the weapon. It takes the
     #' character's abilities into account to get the bonus right.
     #' @details The damage is determined by three components: [N]d[DP] + [Bonus]
     #' @param CharAbs The character's abilities
-    #' @return Invisibly returns `self` 
+    #' @return Invisibly returns `self`
     CalcDamage = function(CharAbs) {
       return(invisible(super$CalcDamage(CharAbs)))
     },
-    
+
 
     #' Roll
     Roll = function(Action = "Attack", Modifier = 0L) {
@@ -397,10 +425,10 @@ MeleeWeapon <- R6Class("MeleeWeapon",
 ##' RangedWeapon class
 ##' @importFrom R6 R6Class
 ##' @export
-RangedWeapon <- R6Class("RangedWeapon", 
-  inherit = WeaponBase, 
+RangedWeapon <- R6Class("RangedWeapon",
+  inherit = WeaponBase,
   public = list(
-  
+
   #' Constructor
   #' @param Weapon name of the weapon (character)
   #' @param Abilities Character abilities (data frame)
@@ -409,16 +437,16 @@ RangedWeapon <- R6Class("RangedWeapon",
   initialize = function(Weapon, Abilities, CombatTecSkills, ...) {
    if (is.character(Weapon)) Weapon <- GetWeapons(Weapon, "Ranged")
    super$initialize(Weapon, Abilities, CombatTecSkills, ...)
-   
+
     if (!missing(Weapon)) {
       if (private$RawWeaponData[["clsrng"]]) # if ranged weapon
         stop("This class is for close combat only")
     }
-   
+
    invisible(self)
   },
-  
-  
+
+
   #' CalcSkill
   #' Computes weapons skill for character
   #' @param CharAbs Data frame of character abilities
@@ -426,22 +454,22 @@ RangedWeapon <- R6Class("RangedWeapon",
   #' @return `self`
   CalcSkill = function(CharAbs, CombatTecSkill) {
    AtPaSkill  <- GetCombatSkill(self$Name, CharAbs, Skill = CombatTecSkill)
-   self$Skill <- c(Attack = AtPaSkill$AT, 
-                   Parry = 0L, 
+   self$Skill <- c(Attack = AtPaSkill$AT,
+                   Parry = 0L,
                    Dodge = ceiling(CharAbs[["ATTR_6"]] / 2L))
    return(invisible(self))
   },
-  
+
   CalcDamage = function(CharAbs) {
    super$CalcDamage(CharAbs)
    return(invisible(self))
   },
-  
+
   Roll = function(Action = "Attack", Modifier = 0L) {
     # PRECONDITIONS
     if(Action == "Parry" || Action == .CombatAction["Parry"])
       stop("Ranged weapons cannot be used to parry attacks")
-    
+
     super$Roll(Action, Modifier)
     return(self$LastRoll)
   }

@@ -198,7 +198,6 @@ CombatEnvironment <- R6Class(
     #' getDefault(valueId = "TargetDistance")
     #' getDefault(valueId = "CloseCombatRange", "groupId = Hero") # group required
     getDefault = function(groupId = "", valueId) {
-  #browser()
       Names <- names(self$Defaults)
       Found <- endsWith(Names, valueId)
       Found <- Names[Found]
