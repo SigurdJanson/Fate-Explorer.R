@@ -334,7 +334,7 @@ WeaponBase <- R6Class(
   #' CanParry
   #' Does the weapon allow a parry roll?
   CanParry = function() {
-    if (!is.na(private$.Technique))
+    if (isTruthy(private$.Technique))
       Can <- IsParryWeapon(CombatTech = private$.Technique) &
              private$.Skill["Parry"] > 0
     else
