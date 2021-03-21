@@ -37,7 +37,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_43",
         "tradition": [
-            "Firun (Jagd)"
+            "Firun (Hunting)"
         ],
         "chanttype": "liturgy"
     },
@@ -177,7 +177,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_48",
         "tradition": [
-            "Rahja (Harmonie)"
+            "Rahja (Harmony)"
         ],
         "chanttype": "liturgy"
     },
@@ -234,7 +234,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_49",
         "tradition": [
-            "Swafnir (Tapferkeit)"
+            "Swafnir (Courage)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -320,7 +320,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_55",
         "tradition": [
-            "c(\"Kor (Guter Kampf)\", \"Swafnir (Kraft)\")"
+            "c(\"Kor (Guter Kampf)\", \"Swafnir (Strength)\")"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -401,7 +401,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_7",
         "tradition": [
-            "Firun (Jagd, Kälte)"
+            "Firun (Hunting, Kälte)"
         ],
         "chanttype": "liturgy"
     },
@@ -569,7 +569,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_7",
         "tradition": [
-            "c(\"Rondra (Storm)\", \"Efferd (Wind)\", \"Swafnir (Tapferkeit)\")"
+            "c(\"Rondra (Storm)\", \"Efferd (Wind)\", \"Swafnir (Courage)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -583,7 +583,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_64",
         "tradition": [
-            "Rahja (Harmonie)"
+            "Rahja (Harmony)"
         ],
         "chanttype": "liturgy"
     },
@@ -596,7 +596,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "c(\"Levthan (Rausch)\", \"Rahja (Ekstase, Harmonie)\")"
+            "c(\"Levthan (Rausch)\", \"Rahja (Frenzy, Harmony)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -720,7 +720,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_9",
         "tradition": [
-            "c(\"Hesinde (Magic, Knowledge)\", \"Numinoru (Unendliche Tiefe)\", \"Peraine (Healing, Agriculture)\", \"Travia (Freundschaft, Heim)\", \"Tsa (Freiheit, Wandel)\", \"Rahja (Ekstase, Harmonie)\", \"Ifirn (Hilfsbereitschaft)\", \"Nandus (Bildung, Erkenntnis)\")"
+            "c(\"Hesinde (Magic, Knowledge)\", \"Numinoru (Unendliche Tiefe)\", \"Peraine (Healing, Agriculture)\", \"Travia (Freundschaft, Heim)\", \"Tsa (Freiheit, Wandel)\", \"Rahja (Frenzy, Harmony)\", \"Ifirn (Hilfsbereitschaft)\", \"Nandus (Bildung, Erkenntnis)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -734,7 +734,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_68",
         "tradition": [
-            "Rahja (Ekstase)"
+            "Rahja (Frenzy)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -843,7 +843,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_72",
         "tradition": [
-            "Rahja (Ekstase)"
+            "Rahja (Frenzy)"
         ],
         "chanttype": "liturgy"
     },
@@ -926,7 +926,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_76",
         "tradition": [
-            "c(\"Kor (Guter Kampf, Gutes Gold)\", \"Rondra (Shield, Storm)\", \"Swafnir (Kraft, Tapferkeit)\")"
+            "c(\"Kor (Guter Kampf, Gutes Gold)\", \"Rondra (Shield, Storm)\", \"Swafnir (Strength, Courage)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -1037,7 +1037,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_79",
         "tradition": [
-            "Rahja (Ekstase, Harmonie)"
+            "Rahja (Frenzy, Harmony)"
         ],
         "chanttype": "liturgy"
     },
@@ -1079,7 +1079,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_81",
         "tradition": [
-            "c(\"Rondra (Shield)\", \"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Härte)\", \"Gjalskerschamanen (Wildheit)\", \"Swafnir (Kraft, Tapferkeit)\", \"Trollzackerschamanen (Leiden)\")"
+            "c(\"Rondra (Shield)\", \"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Härte)\", \"Gjalskerschamanen (Wildheit)\", \"Swafnir (Strength, Courage)\", \"Trollzackerschamanen (Leiden)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -1367,7 +1367,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "c(\"Firun (Kälte)\", \"Ifirn (Natur)\")"
+            "c(\"Firun (Kälte)\", \"Ifirn (Nature)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -1381,7 +1381,7 @@
         "ab3": "ATTR_6",
         "attrID": "LITURGY_17",
         "tradition": [
-            "c(\"Phex (Shadow)\", \"Firun (Jagd)\")"
+            "c(\"Phex (Shadow)\", \"Firun (Hunting)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -1558,7 +1558,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_4",
         "tradition": [
-            "c(\"Efferd (Wind, Wogen)\", \"Swafnir (Tapferkeit)\")"
+            "c(\"Efferd (Wind, Wogen)\", \"Swafnir (Courage)\")"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -1744,7 +1744,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_104",
         "tradition": [
-            "Rahja (Ekstase)"
+            "Rahja (Frenzy)"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -1801,7 +1801,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_23",
         "tradition": [
-            "c(\"Boron (Dream)\", \"Firun (Jagd)\", \"Numinoru (Reißender Strudel, Unendliche Tiefe)\")"
+            "c(\"Boron (Dream)\", \"Firun (Hunting)\", \"Numinoru (Reißender Strudel, Unendliche Tiefe)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -2087,7 +2087,7 @@
         "ab3": "ATTR_7",
         "attrID": "LITURGY_29",
         "tradition": [
-            "c(\"Kor (Guter Kampf, Gutes Gold)\", \"Rondra (Shield)\", \"Swafnir (Kraft)\")"
+            "c(\"Kor (Guter Kampf, Gutes Gold)\", \"Rondra (Shield)\", \"Swafnir (Strength)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -2239,7 +2239,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_116",
         "tradition": [
-            "c(\"Rondra (Storm)\", \"Swafnir (Kraft, Tapferkeit)\")"
+            "c(\"Rondra (Storm)\", \"Swafnir (Strength, Courage)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -2280,7 +2280,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_117",
         "tradition": [
-            "c(\"Aves (Reise)\", \"Ifirn (Natur)\")"
+            "c(\"Aves (Reise)\", \"Ifirn (Nature)\")"
         ],
         "chanttype": "liturgy",
         "modagainst": "SK"
@@ -2295,7 +2295,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_118",
         "tradition": [
-            "Ifirn (Natur)"
+            "Ifirn (Nature)"
         ],
         "chanttype": "liturgy"
     },
@@ -2309,7 +2309,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_119",
         "tradition": [
-            "c(\"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Härte)\", \"Gjalskerschamanen (Wildheit)\", \"Ifirn (Natur)\", \"Mohaschamanen (Jungle)\", \"Nivesenschamanen (Wolves)\")"
+            "c(\"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Härte)\", \"Gjalskerschamanen (Wildheit)\", \"Ifirn (Nature)\", \"Mohaschamanen (Jungle)\", \"Nivesenschamanen (Wolves)\")"
         ],
         "chanttype": "liturgy"
     },
@@ -2666,7 +2666,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_131",
         "tradition": [
-            "c(\"Levthan (Begierde, Rausch)\", \"Rahja (Ekstase)\")"
+            "c(\"Levthan (Begierde, Rausch)\", \"Rahja (Frenzy)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -2894,7 +2894,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_138",
         "tradition": [
-            "c(\"Firun (Jagd, Kälte)\", \"Fjarningerschamanen (Ice, Härte)\")"
+            "c(\"Firun (Hunting, Kälte)\", \"Fjarningerschamanen (Ice, Härte)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3002,7 +3002,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_140",
         "tradition": [
-            "c(\"Levthan (Begierde)\", \"Rahja (Ekstase)\")"
+            "c(\"Levthan (Begierde)\", \"Rahja (Frenzy)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3016,7 +3016,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_141",
         "tradition": [
-            "c(\"Firun (Kälte)\", \"Ifirn (Natur)\")"
+            "c(\"Firun (Kälte)\", \"Ifirn (Nature)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3083,7 +3083,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Rahja (Ekstase)"
+            "Rahja (Frenzy)"
         ],
         "chanttype": "ceremony"
     },
@@ -3124,7 +3124,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_37",
         "tradition": [
-            "c(\"Angrosch (Erz)\", \"Ingerimm (Fire, Handwerk)\", \"Kor (Gutes Gold)\", \"Rondra (Storm)\", \"Swafnir (Tapferkeit)\")"
+            "c(\"Angrosch (Erz)\", \"Ingerimm (Fire, Handwerk)\", \"Kor (Gutes Gold)\", \"Rondra (Storm)\", \"Swafnir (Courage)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3220,7 +3220,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "c(\"Firun (Jagd)\", \"Ifirn (Natur)\")"
+            "c(\"Firun (Hunting)\", \"Ifirn (Nature)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3274,7 +3274,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_151",
         "tradition": [
-            "Swafnir (Kraft)"
+            "Swafnir (Strength)"
         ],
         "chanttype": "ceremony"
     },
@@ -3356,7 +3356,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_154",
         "tradition": [
-            "c(\"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Ice)\", \"Firun (Jagd)\", \"Gjalskerschamanen (Gemeinschaft, Wildheit)\", \"Mohaschamanen (Jungle)\", \"Nivesenschamanen (Winter)\", \"Trollzackerschamanen (Leiden)\")"
+            "c(\"Ferkinaschamanen (Animal)\", \"Fjarningerschamanen (Ice)\", \"Firun (Hunting)\", \"Gjalskerschamanen (Gemeinschaft, Wildheit)\", \"Mohaschamanen (Jungle)\", \"Nivesenschamanen (Winter)\", \"Trollzackerschamanen (Leiden)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3383,7 +3383,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_155",
         "tradition": [
-            "c(\"Nameless One\", \"Rahja (Harmonie)\", \"Tsa (Wandel)\")"
+            "c(\"Nameless One\", \"Rahja (Harmony)\", \"Tsa (Wandel)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3462,7 +3462,7 @@
         "ab2": "ATTR_4",
         "ab3": "ATTR_5",
         "tradition": [
-            "Rahja (Ekstase, Harmonie)"
+            "Rahja (Frenzy, Harmony)"
         ],
         "chanttype": "ceremony"
     },
@@ -3545,7 +3545,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_159",
         "tradition": [
-            "c(\"Rahja (Harmonie)\", \"Tsa (Wandel)\")"
+            "c(\"Rahja (Harmony)\", \"Tsa (Wandel)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3724,7 +3724,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_167",
         "tradition": [
-            "Rahja (Ekstase, Harmonie)"
+            "Rahja (Frenzy, Harmony)"
         ],
         "chanttype": "ceremony"
     },
@@ -3791,7 +3791,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_170",
         "tradition": [
-            "c(\"Aves (Reise, Schicksal)\", \"Firun (Jagd)\", \"Travia (Freundschaft)\")"
+            "c(\"Aves (Reise, Schicksal)\", \"Firun (Hunting)\", \"Travia (Freundschaft)\")"
         ],
         "chanttype": "ceremony"
     },
@@ -3858,7 +3858,7 @@
         "ab2": "ATTR_2",
         "ab3": "ATTR_3",
         "tradition": [
-            "Rahja (Ekstase, Harmonie)"
+            "Rahja (Frenzy, Harmony)"
         ],
         "chanttype": "ceremony"
     },
@@ -3872,7 +3872,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_173",
         "tradition": [
-            "Ifirn (Hilfsbereitschaft, Natur)"
+            "Ifirn (Hilfsbereitschaft, Nature)"
         ],
         "chanttype": "ceremony"
     },
@@ -4024,7 +4024,7 @@
         "ab2": "ATTR_3",
         "ab3": "ATTR_7",
         "tradition": [
-            "Firun (Jagd)"
+            "Firun (Hunting)"
         ],
         "chanttype": "ceremony"
     },
@@ -4174,7 +4174,7 @@
         "ab3": "ATTR_4",
         "attrID": "LITURGY_184",
         "tradition": [
-            "c(\"Boron (Dream)\", \"Rahja (Harmonie)\", \"Travia (Heim)\")"
+            "c(\"Boron (Dream)\", \"Rahja (Harmony)\", \"Travia (Heim)\")"
         ],
         "chanttype": "ceremony",
         "modagainst": "SK"
@@ -4341,7 +4341,7 @@
         "ab3": "ATTR_3",
         "attrID": "LITURGY_192",
         "tradition": [
-            "Swafnir (Kraft, Tapferkeit)"
+            "Swafnir (Strength, Courage)"
         ],
         "chanttype": "ceremony"
     }
