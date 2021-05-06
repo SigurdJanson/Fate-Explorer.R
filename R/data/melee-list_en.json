@@ -1144,7 +1144,7 @@
         "templateID": "ITEMTPL_52"
     },
     {
-        "name": "Barbarenstreitaxt",
+        "name": "-Barbarenstreitaxt",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -1723,7 +1723,7 @@
         "armed": true
     },
     {
-        "name": "Beil",
+        "name": "-Beil",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1743,7 +1743,7 @@
         "armed": true
     },
     {
-        "name": "Handaxt",
+        "name": "-Handaxt",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1822,7 +1822,7 @@
         "armed": true
     },
     {
-        "name": "Schmiedehammer",
+        "name": "-Schmiedehammer",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -1843,7 +1843,7 @@
         "templateID": "ITEMTPL_383"
     },
     {
-        "name": "Sichel",
+        "name": "-Sichel",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 15,
@@ -1864,7 +1864,7 @@
         "templateID": "ITEMTPL_384"
     },
     {
-        "name": "Fuhrmannspeitsche",
+        "name": "-Fuhrmannspeitsche",
         "combattech": "Peitschen",
         "primeattr": "FF",
         "threshold": 16,
@@ -1883,7 +1883,7 @@
         "templateID": "ITEMTPL_386"
     },
     {
-        "name": "Breitschwert",
+        "name": "-Breitschwert",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 14,
@@ -1944,7 +1944,7 @@
         "armed": true
     },
     {
-        "name": "Dreschflegel",
+        "name": "-Dreschflegel",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1965,7 +1965,7 @@
         "templateID": "ITEMTPL_149"
     },
     {
-        "name": "Hirtenstab",
+        "name": "-Hirtenstab",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -1986,7 +1986,7 @@
         "templateID": "ITEMTPL_391"
     },
     {
-        "name": "Kriegsflegel",
+        "name": "-Kriegsflegel",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2027,7 +2027,7 @@
         "templateID": "ITEMTPL_393"
     },
     {
-        "name": "Sense",
+        "name": "-Sense",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -2047,7 +2047,7 @@
         "armed": true
     },
     {
-        "name": "Sturmsense",
+        "name": "-Sturmsense",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -2067,7 +2067,7 @@
         "armed": true
     },
     {
-        "name": "Amazonensäbel",
+        "name": "-Amazonensäbel",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2088,7 +2088,7 @@
         "templateID": "ITEMTPL_454"
     },
     {
-        "name": "Faustschild",
+        "name": "-Faustschild",
         "combattech": "Shields",
         "primeattr": "STR",
         "threshold": 16,
@@ -2108,7 +2108,7 @@
         "templateID": "ITEMTPL_453"
     },
     {
-        "name": "Glefe",
+        "name": "-Glefe",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2129,7 +2129,7 @@
         "templateID": "ITEMTPL_456"
     },
     {
-        "name": "Hakendolch",
+        "name": "-Hakendolch",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -2150,7 +2150,7 @@
         "templateID": "ITEMTPL_443"
     },
     {
-        "name": "Jagdmesser",
+        "name": "-Jagdmesser",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -2171,7 +2171,7 @@
         "templateID": "ITEMTPL_444"
     },
     {
-        "name": "Jagdspieß",
+        "name": "-Jagdspieß",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2234,7 +2234,7 @@
         "templateID": "ITEMTPL_446"
     },
     {
-        "name": "Nachtwind",
+        "name": "Nightwind",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2255,7 +2255,7 @@
         "templateID": "ITEMTPL_455"
     },
     {
-        "name": "Ochsenherde",
+        "name": "Oxherd",
         "combattech": "Kettenwaffen",
         "primeattr": "STR",
         "threshold": 14,
@@ -2269,13 +2269,13 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_6",
         "improvised": false,
-        "url": "index.php/ochsenherde-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_449"
     },
     {
-        "name": "Ogerfänger",
+        "name": "-Ogerfänger",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -2296,7 +2296,7 @@
         "templateID": "ITEMTPL_447"
     },
     {
-        "name": "Ogerschelle",
+        "name": "-Ogerschelle",
         "combattech": "Kettenwaffen",
         "primeattr": "STR",
         "threshold": 14,
@@ -2316,7 +2316,7 @@
         "templateID": "ITEMTPL_450"
     },
     {
-        "name": "Orchidee",
+        "name": "-Orchidee",
         "combattech": "Brawling",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2337,7 +2337,7 @@
         "templateID": "ITEMTPL_451"
     },
     {
-        "name": "Panzerarm",
+        "name": "-Panzerarm",
         "combattech": "Brawling",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2358,7 +2358,7 @@
         "templateID": "ITEMTPL_452"
     },
     {
-        "name": "Richtschwert",
+        "name": "-Richtschwert",
         "combattech": "Swords",
         "primeattr": "STR",
         "threshold": 14,
@@ -2379,7 +2379,7 @@
         "templateID": "ITEMTPL_460"
     },
     {
-        "name": "Schnitter",
+        "name": "-Schnitter",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2400,7 +2400,7 @@
         "templateID": "ITEMTPL_458"
     },
     {
-        "name": "Stockdegen",
+        "name": "-Stockdegen",
         "combattech": "Fencing",
         "primeattr": "AGI",
         "threshold": 15,
@@ -2421,7 +2421,7 @@
         "templateID": "ITEMTPL_448"
     },
     {
-        "name": "WarunkerHammer",
+        "name": "-WarunkerHammer",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2718,7 +2718,7 @@
         "templateID": "ITEMTPL_174"
     },
     {
-        "name": "pickaxe",
+        "name": "Pickaxe",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2739,7 +2739,7 @@
         "templateID": "ITEMTPL_175"
     },
     {
-        "name": "Shakagra-Giftdolch",
+        "name": "Shakagra Poison Dagger",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -2754,12 +2754,12 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_3",
         "improvised": false,
-        "url": "index.php/shakagra-giftdolch.html",
+        "url": "--index.php/shakagra-giftdolch.html",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Shakagra-Hammer",
+        "name": "Shakagra Hammer",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2774,12 +2774,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/shakagra-hammer.html",
+        "url": "--index.php/shakagra-hammer.html",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Shakagra-Buckler",
+        "name": "Shakagra Buckler",
         "combattech": "Shields",
         "primeattr": "STR",
         "threshold": 15,
@@ -2818,7 +2818,7 @@
         "armed": true
     },
     {
-        "name": "Shakagra-Krummsäbel",
+        "name": "Shakagra Scimitar",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2838,7 +2838,7 @@
         "armed": true
     },
     {
-        "name": "Shakagra-Schwert",
+        "name": "Shakagra Sword",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2858,7 +2858,7 @@
         "armed": true
     },
     {
-        "name": "Shakagra-Kriegshammer",
+        "name": "Shakagra War Hammer",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2878,7 +2878,7 @@
         "armed": true
     },
     {
-        "name": "Bannschwert,klein",
+        "name": "Spell-sword, small",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -2898,7 +2898,7 @@
         "armed": true
     },
     {
-        "name": "Bannschwert,mittel",
+        "name": "Spell-sword, medium",
         "combattech": "Swords",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -2918,7 +2918,7 @@
         "armed": true
     },
     {
-        "name": "Bannschwert,groß",
+        "name": "Spell-sword, large",
         "combattech": "Two-Handed Swords",
         "primeattr": "STR",
         "threshold": 14,
@@ -2938,7 +2938,7 @@
         "armed": true
     },
     {
-        "name": "Zauberkugel",
+        "name": "Magical Orb",
         "combattech": "Two-Handed Impact Weapons",
         "primeattr": "STR",
         "threshold": 13,
@@ -2953,12 +2953,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_15",
         "improvised": false,
-        "url": "index.php/zauberkugel-6550.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Zauberstecken,kurz",
+        "name": "Magic Wand, short",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2973,12 +2973,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/zauberstecken-kurz.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Zauberstecken,mittel",
+        "name": "Magic Wand, medium",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -2993,12 +2993,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/zauberstecken-mittel.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Zauberstecken,lang",
+        "name": "Magic Wand, long",
         "combattech": "Polearms",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -3013,12 +3013,12 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_13",
         "improvised": false,
-        "url": "index.php/zauberstecken-lang-2h.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Laute",
+        "name": "Lute",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3033,12 +3033,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/laute-und-aehnliche-instrumente-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Flöte",
+        "name": "Flute",
         "combattech": "Impact Weapons",
         "primeattr": "AGI",
         "threshold": 14,
@@ -3137,7 +3137,7 @@
         "armed": true
     },
     {
-        "name": "Fleischerbeil",
+        "name": "Cleaver",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3158,7 +3158,7 @@
         "templateID": "ITEMTPL_584"
     },
     {
-        "name": "Knochenkeule",
+        "name": "Bone Club",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3173,7 +3173,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/knochenkeule.html",
+        "url": "--index.php/knochenkeule.html",
         "clsrng": true,
         "armed": true
     },
@@ -3239,7 +3239,7 @@
         "templateID": "ITEMTPL_639"
     },
     {
-        "name": "Charib’Yzz-Dolch",
+        "name": "Charib’Yzz Dagger",
         "combattech": "Daggers",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -3259,7 +3259,7 @@
         "armed": true
     },
     {
-        "name": "Schneiderschere",
+        "name": "Tailor's Shears",
         "combattech": "Daggers",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -3274,12 +3274,12 @@
         "primeattrID": "ATTR_6/ATTR_8",
         "combattechID": "CT_3",
         "improvised": true,
-        "url": "index.php/schneiderschere-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Federmesser",
+        "name": "Penknife",
         "combattech": "Daggers",
         "primeattr": "AGI/STR",
         "threshold": 16,
@@ -3321,7 +3321,7 @@
         "templateID": "ITEMTPL_716"
     },
     {
-        "name": "Langdolch",
+        "name": "Long Dagger",
         "combattech": "Daggers",
         "primeattr": "AGI",
         "threshold": 14,
@@ -3336,7 +3336,7 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_3",
         "improvised": false,
-        "url": "index.php/langdolch.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
@@ -3402,7 +3402,7 @@
         "armed": true
     },
     {
-        "name": "Schere",
+        "name": "Scissors",
         "combattech": "Daggers",
         "primeattr": "AGI/STR",
         "threshold": 15,
@@ -3444,7 +3444,7 @@
         "templateID": "ITEMTPL_525"
     },
     {
-        "name": "Schlachtermesser",
+        "name": "Butcher's Knife",
         "combattech": "Daggers",
         "primeattr": "",
         "threshold": 99,
@@ -3459,7 +3459,7 @@
         "primeattrID": "",
         "combattechID": "CT_3",
         "improvised": true,
-        "url": "index.php/schlachtermesser.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_715"
@@ -3480,7 +3480,7 @@
         "primeattrID": "ATTR_6",
         "combattechID": "CT_4",
         "improvised": false,
-        "url": "index.php/aleeza.html",
+        "url": "",
         "clsrng": true,
         "armed": true,
         "templateID": "ITEMTPL_717"
@@ -3547,7 +3547,7 @@
         "armed": true
     },
     {
-        "name": "Handspiegel",
+        "name": "Hand Mirror",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 16,
@@ -3568,7 +3568,7 @@
         "templateID": "ITEMTPL_335"
     },
     {
-        "name": "Holzhammer",
+        "name": "Wooden Hammer",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3583,12 +3583,12 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": true,
-        "url": "index.php/holzhammer-i.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
     {
-        "name": "Ingerimmshammer",
+        "name": "Ingerimm's Hammer",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3710,7 +3710,7 @@
         "armed": true
     },
     {
-        "name": "Steinhammer",
+        "name": "Stone Hammer",
         "combattech": "Impact Weapons",
         "primeattr": "STR",
         "threshold": 14,
@@ -3725,7 +3725,7 @@
         "primeattrID": "ATTR_8",
         "combattechID": "CT_5",
         "improvised": false,
-        "url": "index.php/steinhammer.html",
+        "url": "",
         "clsrng": true,
         "armed": true
     },
